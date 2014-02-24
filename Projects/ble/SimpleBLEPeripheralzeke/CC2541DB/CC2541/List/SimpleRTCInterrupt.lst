@@ -1,0 +1,183 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Feb/2014  17:43:30 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\SimpleRTCInterrupt. #
+#                          c                                                  #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\SimpleRTCInterrupt. #
+#                          c -D INT_HEAP_LEN=3074 -D HALNODEBUG -D            #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D    #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -Ohz                        #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\Simpl #
+#                          eRTCInterrupt.lst                                  #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\Simple #
+#                          RTCInterrupt.r51                                   #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source\SimpleRTCInterrupt.c
+      1          /*
+      2           * SimpleGPIOInterrupt.c
+      3           *
+      4           *  Created on: 2014-1-16
+      5           *      Author: zekezang
+      6           */
+      7          
+      8          #include "hal_lcd.h"
+      9          #include "hal_ds1307.h"
+     10          
+     11          #define RTC_Interrupt P1_0
+     12          
+     13          #define RTCPinSelect				P1SEL
+     14          #define RTCPinDirectory				P1DIR
+     15          #define RTCPinInterruptEable		P1IEN
+     16          #define RTCPinInterruptControl		PICTL
+     17          #define RTCPinIEN					IEN2
+     18          #define RTCPinInterruptStatus		P1IFG
+     19          #define RTCPinInterruptFlags		IRCON2
+     20          
+     21          void InitialRTCInterrupt() {
+     22          	RTCPinSelect &= ~0x01;
+     23          	RTCPinDirectory &= ~0x01; //input mode
+     24          	RTCPinInterruptEable |= 0x01;
+     25          	RTCPinInterruptControl |= 0x02;
+     26          	RTCPinIEN |= 0x10;
+     27          	RTCPinInterruptStatus &= ~0x01;
+     28          }
+     29          
+     30          uint32 k = 0;
+     31          HAL_ISR_FUNCTION( RTCInterruptIsr, P1INT_VECTOR) {
+     32          	RTCPinInterruptStatus &= ~0x01;
+     33          	k++;
+     34          //	HalLcdWriteStringValue("k: ", k, 10, HAL_LCD_LINE_5);
+     35          	if (k % 10 == 0) {
+     36          		uint8 timeData[7] = { 0 };
+     37          		HalDS1307ReadTimeData(timeData);
+     38          	}
+     39          
+     40          	RTCPinInterruptFlags &= ~0x08;
+     41          }
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      0  InitialRTCInterrupt
+       2      0     28  RTCInterruptIsr
+                          0 0 28 -> HalDS1307ReadTimeData
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       7  ?<Constant {0}>
+       6  ??InitialRTCInterrupt?relay
+       3  ??RTCInterruptIsr??INTVEC 123
+       1  IEN2
+      21  InitialRTCInterrupt
+       1  P1DIR
+       1  P1IEN
+       1  P1IFG
+       1  P1SEL
+       1  PICTL
+     114  RTCInterruptIsr
+       1  _A_IRCON2
+       4  __Constant_1
+       4  __Constant_a
+       4  k
+
+ 
+  21 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+   3 bytes in segment INTVEC
+ 114 bytes in segment NEAR_CODE
+   7 bytes in segment SFR_AN
+  15 bytes in segment XDATA_ROM_C
+   4 bytes in segment XDATA_Z
+ 
+ 141 bytes of CODE  memory (+ 3 bytes shared)
+   7 bytes of CONST memory (+ 8 bytes shared)
+   0 bytes of DATA  memory (+ 7 bytes shared)
+   4 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

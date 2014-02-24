@@ -1,0 +1,375 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Feb/2014  17:46:40 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
+#                          l\target\CC2541EB\hal_sensor.c                     #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
+#                          l\target\CC2541EB\hal_sensor.c -D                  #
+#                          INT_HEAP_LEN=3074 -D HALNODEBUG -D                 #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D    #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -Ohz                        #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\hal_s #
+#                          ensor.lst                                          #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_se #
+#                          nsor.r51                                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_sensor.c
+      1          #include "hal_sensor.h"
+      2          #include "hal_i2c.h"
+      3          
+      4          static uint8 buffer[24];
+      5          static uint8 addrMSB = 0;
+      6          static uint8 addrLSB = 0;
+      7          static uint8 addrBuf[2] = { 0 };
+      8          
+      9          /**************************************************************************************************
+     10           * @fn          HalSensorReadReg
+     11           *
+     12           * @brief       This function implements the I2C protocol to read from a sensor. The sensor must
+     13           *              be selected before this routine is called.
+     14           *
+     15           * @param       addr - which register to read
+     16           * @param       pBuf - pointer to buffer to place data
+     17           * @param       nBytes - numbver of bytes to read
+     18           *
+     19           * @return      TRUE if the required number of bytes are reveived
+     20           **************************************************************************************************/
+     21          bool HalSensorReadReg(uint8 addr, uint8 *pBuf, uint8 nBytes) {
+     22          	uint8 i = 0;
+     23          
+     24          	/* Send address we're reading from */
+     25          	if (HalI2CWrite(1, &addr) == 1) {
+     26          		/* Now read data */
+     27          		i = HalI2CRead(nBytes, pBuf);
+     28          	}
+     29          
+     30          	return i == nBytes;
+     31          }
+     32          
+     33          /**************************************************************************************************
+     34           * @fn          HalSensorWriteReg
+     35           * @brief       This function implements the I2C protocol to write to a sensor. he sensor must
+     36           *              be selected before this routine is called.
+     37           *
+     38           * @param       addr - which register to write
+     39           * @param       pBuf - pointer to buffer containing data to be written
+     40           * @param       nBytes - number of bytes to write
+     41           *
+     42           * @return      TRUE if successful write
+     43           */
+     44          bool HalSensorWriteReg(uint8 addr, uint8 *pBuf, uint8 nBytes) {
+     45          	uint8 i;
+     46          	uint8 *p = buffer;
+     47          
+     48          	/* Copy address and data to local buffer for burst write */
+     49          	*p++ = addr;
+     50          	for (i = 0; i < nBytes; i++) {
+     51          		*p++ = *pBuf++;
+     52          	}
+     53          	nBytes++;
+     54          
+     55          	/* Send address and data */
+     56          	i = HalI2CWrite(nBytes, buffer);
+     57          	if (i != nBytes) {
+     58          	}
+     59          	//HAL_TOGGLE_LED2();
+     60          
+     61          	return (i == nBytes);       
+     62                  
+     63          }
+     64          
+     65          /**************************************************************************************************
+     66           * @fn          HalLongAddrSensorReadReg
+     67           *
+     68           * @brief       This function implements the I2C protocol to read from a sensor. The sensor must
+     69           *              be selected before this routine is called.
+     70           *
+     71           * @param       uint16 addr - which register to read
+     72           * @param       pBuf - pointer to buffer to place data
+     73           * @param       nBytes - numbver of bytes to read
+     74           *
+     75           * @return      TRUE if the required number of bytes are reveived
+     76           **************************************************************************************************/
+     77          bool HalLongAddrSensorReadReg(uint16 addr, uint8 *pBuf, uint8 nBytes) {
+     78          	uint8 i = 0;
+     79          	addrBuf[0] = addr >> 8;
+     80          	addrBuf[1] = addr & 0xFF;
+     81          	/* Send address we're reading from */
+     82          	if (HalI2CWrite(2, addrBuf) == 2) {
+     83          		/* Now read data */
+     84          		i = HalI2CRead(nBytes, pBuf);
+     85          	}
+     86          
+     87          	return i == nBytes;
+     88                  
+     89                  
+     90                 
+     91          }
+     92          
+     93          /**************************************************************************************************
+     94           * @fn          HalLongAddrSensorWriteReg
+     95           * @brief       This function implements the I2C protocol to write to a sensor. he sensor must
+     96           *              be selected before this routine is called.
+     97           *
+     98           * @param       uint16 addr - which register to write
+     99           * @param       pBuf - pointer to buffer containing data to be written
+    100           * @param       nBytes - number of bytes to write
+    101           *
+    102           * @return      TRUE if successful write
+    103           */
+    104          bool HalLongAddrSensorWriteReg(uint16 addr, uint8 *pBuf, uint8 nBytes) {
+    105          	uint8 i;
+    106          	uint8 *p = buffer;
+    107                  addrMSB = addr >> 8;
+    108          	addrLSB = addr & 0xFF;
+    109          
+    110          	/*Copy address and data to local buffer for burst write*/ 
+    111          	*p++ = addrMSB;
+    112          	*p++ = addrLSB;
+    113          	for (i = 0; i < nBytes; i++) {
+    114          		*p++ = *pBuf++;
+    115          	}
+    116          	nBytes++;
+    117          	nBytes++;
+    118          
+    119          	/* Send address and data */
+    120          	i = HalI2CWrite(nBytes, buffer);
+    121          	if (i != nBytes) {
+    122          	}
+    123          	//HAL_TOGGLE_LED2();
+    124          
+    125          	return (i == nBytes);
+    126                 
+    127          }
+    128          
+    129          void Hal_HW_WaitUs(uint16 microSecs) {
+    130          	while (microSecs--) {
+    131          		/* 32 NOPs == 1 usecs */
+    132          		asm("NOP");
+    133          		asm("NOP");
+    134          		asm("NOP");
+    135          		asm("NOP");
+    136          		asm("NOP");
+    137          		asm("NOP");
+    138          		asm("NOP");
+    139          		asm("NOP");
+    140          		asm("NOP");
+    141          		asm("NOP");
+    142          		asm("NOP");
+    143          		asm("NOP");
+    144          		asm("NOP");
+    145          		asm("NOP");
+    146          		asm("NOP");
+    147          		asm("NOP");
+    148          		asm("NOP");
+    149          		asm("NOP");
+    150          		asm("NOP");
+    151          		asm("NOP");
+    152          		asm("NOP");
+    153          		asm("NOP");
+    154          		asm("NOP");
+    155          		asm("NOP");
+    156          		asm("NOP");
+    157          		asm("NOP");
+    158          		asm("NOP");
+    159          		asm("NOP");
+    160          		asm("NOP");
+    161          		asm("NOP");
+    162          		asm("NOP");
+    163          		asm("NOP");
+    164          	}
+    165          }
+    166          
+    167          
+    168          /**************************************************************************************************
+    169           * @fn          HalSensorWriteReg
+    170           * @brief       This function implements the I2C protocol to write to a sensor. he sensor must
+    171           *              be selected before this routine is called.
+    172           *
+    173           * @param       addr - which register to write
+    174           * @param       pBuf - pointer to buffer containing data to be written
+    175           * @param       nBytes - number of bytes to write
+    176           *
+    177           * @return      TRUE if successful write
+    178           */
+    179          void HalWriteReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToWrite) {
+    180            
+    181                  while(NumToWrite--)
+    182          	{
+    183          		HalSensorWriteReg(addr,pBuf,nBytes);
+    184          		addr++;
+    185          		pBuf++;
+    186          	}
+    187          	  
+    188                  
+    189          }
+    190          
+    191          
+    192          /**************************************************************************************************
+    193           * @fn          HalSensorReadReg
+    194           *
+    195           * @brief       This function implements the I2C protocol to read from a sensor. The sensor must
+    196           *              be selected before this routine is called.
+    197           *
+    198           * @param       addr - which register to read
+    199           * @param       pBuf - pointer to buffer to place data
+    200           * @param       nBytes - numbver of bytes to read
+    201           *
+    202           * @return      TRUE if the required number of bytes are reveived
+    203           **************************************************************************************************/
+    204          void HalReadReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToRead) {
+    205          	
+    206            	while(NumToRead)
+    207          	{
+    208          		
+    209                          HalSensorReadReg(addr, pBuf, nBytes);
+    210                          addr++;
+    211          		NumToRead--;       
+    212          	}
+    213            
+    214          }
+    215          
+    216          
+    217          
+    218          
+    219          
+    220          
+    221          
+    222          
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0     10  HalLongAddrSensorReadReg
+                          0 0 10 -> HalI2CRead
+                          0 0 10 -> HalI2CWrite
+       1      0      9  HalLongAddrSensorWriteReg
+                          0 0  9 -> HalI2CWrite
+       0      0     11  HalReadReg
+                          0 0 11 -> HalSensorReadReg
+       1      0     22  HalSensorReadReg
+                          0 0 11 -> HalI2CRead
+                          0 0 11 -> HalI2CWrite
+       1      0     20  HalSensorWriteReg
+                          0 0  9 -> HalI2CWrite
+       0      0     11  HalWriteReg
+                          0 0 11 -> HalSensorWriteReg
+       0      0      0  Hal_HW_WaitUs
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??HalLongAddrSensorReadReg?relay
+       6  ??HalLongAddrSensorWriteReg?relay
+       6  ??HalReadReg?relay
+       6  ??HalSensorReadReg?relay
+       6  ??HalSensorWriteReg?relay
+       6  ??HalWriteReg?relay
+       6  ??Hal_HW_WaitUs?relay
+       5  ?Subroutine0
+       5  ?Subroutine1
+       5  ?Subroutine2
+      63  HalLongAddrSensorReadReg
+     100  HalLongAddrSensorWriteReg
+      38  HalReadReg
+      70  HalSensorReadReg
+      76  HalSensorWriteReg
+      49  HalWriteReg
+      53  Hal_HW_WaitUs
+       2  addrBuf
+       1  addrLSB
+       1  addrMSB
+      24  buffer
+
+ 
+ 464 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+  28 bytes in segment XDATA_Z
+ 
+ 506 bytes of CODE  memory
+  28 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

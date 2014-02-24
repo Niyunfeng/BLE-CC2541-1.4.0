@@ -6,7 +6,7 @@
   Description:    This file contains the Simple GATT profile definitions and
                   prototypes.
 
-  Copyright 2010 - 2013 Texas Instruments Incorporated. All rights reserved.
+  Copyright 2010 Texas Instruments Incorporated. All rights reserved.
 
   IMPORTANT: Your use of this Software is limited to those specific rights
   granted under the terms of a software license agreement between the user
@@ -22,7 +22,7 @@
   its documentation for any purpose.
 
   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
-  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+  PROVIDED ï¿½AS ISï¿½ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
@@ -74,8 +74,10 @@ extern "C"
 #define SIMPLEPROFILE_SERVICE               0x00000001
 
 // Length of Characteristic 5 in bytes
-#define SIMPLEPROFILE_CHAR5_LEN           5  
-
+#define SIMPLEPROFILE_CHAR5_LEN           5 
+  
+#define SIMPLEPROFILE_CHAR3_LEN           6 
+#define SIMPLEPROFILE_CHAR1_LEN           20 
 /*********************************************************************
  * TYPEDEFS
  */
@@ -90,7 +92,7 @@ extern "C"
  */
 
 // Callback when a characteristic value has changed
-typedef void (*simpleProfileChange_t)( uint8 paramID );
+typedef NULL_OK void (*simpleProfileChange_t)( uint8 paramID );
 
 typedef struct
 {
@@ -144,6 +146,20 @@ extern bStatus_t SimpleProfile_SetParameter( uint8 param, uint8 len, void *value
  *          uint16 pointer).
  */
 extern bStatus_t SimpleProfile_GetParameter( uint8 param, void *value );
+
+
+/*********************************************************************
+ * @fn          simpleProfile_StateNotify
+ *
+ * @brief       Send a notification containing a rate
+ *              measurement.
+ *
+ * @param       connHandle - connection handle
+ * @param       pNoti - pointer to notification structure
+ *
+ * @return      Success or Failure
+ */
+extern bStatus_t simpleProfile_StateNotify( uint16 connHandle, attHandleValueNoti_t *pNoti );
 
 
 /*********************************************************************

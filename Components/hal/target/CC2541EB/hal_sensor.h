@@ -16,6 +16,9 @@ bool HalSensorWriteReg(uint8 addr, uint8 *pBuf, uint8 nBytes);
 bool HalLongAddrSensorReadReg(uint16 addr, uint8 *pBuf, uint8 nBytes);
 bool HalLongAddrSensorWriteReg(uint16 addr, uint8 *pBuf, uint8 nBytes);
 
+void HalWriteReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToWrite);
+void HalReadReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToRead);
+
 #ifdef __cplusplus
 }
 #endif

@@ -45,6 +45,8 @@
 #include "hal_assert.h"
 #include "hal_board_cfg.h"
 #include "hal_i2c.h"
+#include "hal_lcd.h"
+#include "hal_lcd.h"
 
 /* ------------------------------------------------------------------------------------------------
  *                                          Constants
@@ -249,17 +251,20 @@ uint8 HalI2CRead(uint8 len, uint8 *pBuf) {
  * @return      The number of bytes successfully written.
  */
 uint8 HalI2CWrite(uint8 len, uint8 *pBuf) {
+  
 	if (i2cMstStrt(0) != mstAddrAckW) {
 		len = 0;
 	}
-
+       // I2C_WRITE(*pBuf++);
 	for (uint8 cnt = 0; cnt < len; cnt++) {
 		I2C_WRITE(*pBuf++);
-
+      
 		if (I2CSTAT != mstDataAckW) {
 			if (I2CSTAT == mstDataNackW) {
 				len = cnt + 1;
-			} else {
+                       //HalLcdWriteString("ok", HAL_LCD_LINE_5);
+			} 
+                        else {
 				len = cnt;
 			}
 			break;

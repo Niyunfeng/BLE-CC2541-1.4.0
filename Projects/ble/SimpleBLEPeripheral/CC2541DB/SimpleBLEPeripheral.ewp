@@ -1091,18 +1091,6 @@
     <file>
       <name>$PROJ_DIR$\..\Source\SimpleBLESerialUart.h</name>
     </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.h</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\SimpleRTCInterrupt.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\..\Source\SimpleRTCInterrupt.h</name>
-    </file>
   </group>
   <group>
     <name>HAL</name>

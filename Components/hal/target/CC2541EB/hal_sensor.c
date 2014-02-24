@@ -58,7 +58,8 @@ bool HalSensorWriteReg(uint8 addr, uint8 *pBuf, uint8 nBytes) {
 	}
 	//HAL_TOGGLE_LED2();
 
-	return (i == nBytes);
+	return (i == nBytes);       
+        
 }
 
 /**************************************************************************************************
@@ -84,6 +85,9 @@ bool HalLongAddrSensorReadReg(uint16 addr, uint8 *pBuf, uint8 nBytes) {
 	}
 
 	return i == nBytes;
+        
+        
+       
 }
 
 /**************************************************************************************************
@@ -100,11 +104,10 @@ bool HalLongAddrSensorReadReg(uint16 addr, uint8 *pBuf, uint8 nBytes) {
 bool HalLongAddrSensorWriteReg(uint16 addr, uint8 *pBuf, uint8 nBytes) {
 	uint8 i;
 	uint8 *p = buffer;
-
-	addrMSB = addr >> 8;
+        addrMSB = addr >> 8;
 	addrLSB = addr & 0xFF;
 
-	/* Copy address and data to local buffer for burst write */
+	/*Copy address and data to local buffer for burst write*/ 
 	*p++ = addrMSB;
 	*p++ = addrLSB;
 	for (i = 0; i < nBytes; i++) {
@@ -120,6 +123,7 @@ bool HalLongAddrSensorWriteReg(uint16 addr, uint8 *pBuf, uint8 nBytes) {
 	//HAL_TOGGLE_LED2();
 
 	return (i == nBytes);
+       
 }
 
 void Hal_HW_WaitUs(uint16 microSecs) {
@@ -159,3 +163,60 @@ void Hal_HW_WaitUs(uint16 microSecs) {
 		asm("NOP");
 	}
 }
+
+
+/**************************************************************************************************
+ * @fn          HalSensorWriteReg
+ * @brief       This function implements the I2C protocol to write to a sensor. he sensor must
+ *              be selected before this routine is called.
+ *
+ * @param       addr - which register to write
+ * @param       pBuf - pointer to buffer containing data to be written
+ * @param       nBytes - number of bytes to write
+ *
+ * @return      TRUE if successful write
+ */
+void HalWriteReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToWrite) {
+  
+        while(NumToWrite--)
+	{
+		HalSensorWriteReg(addr,pBuf,nBytes);
+		addr++;
+		pBuf++;
+	}
+	  
+        
+}
+
+
+/**************************************************************************************************
+ * @fn          HalSensorReadReg
+ *
+ * @brief       This function implements the I2C protocol to read from a sensor. The sensor must
+ *              be selected before this routine is called.
+ *
+ * @param       addr - which register to read
+ * @param       pBuf - pointer to buffer to place data
+ * @param       nBytes - numbver of bytes to read
+ *
+ * @return      TRUE if the required number of bytes are reveived
+ **************************************************************************************************/
+void HalReadReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToRead) {
+	
+  	while(NumToRead)
+	{
+		
+                HalSensorReadReg(addr, pBuf, nBytes);
+                addr++;
+		NumToRead--;       
+	}
+  
+}
+
+
+
+
+
+
+
+

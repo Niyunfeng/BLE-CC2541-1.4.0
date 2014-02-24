@@ -36,7 +36,7 @@
   Should you have any questions regarding your right to use this Software,
   contact Texas Instruments Incorporated at www.TI.com.
 ******************************************************************************/
-
+#include"hal_types.h"
 #ifndef OSAL_CLOCK_H
 #define OSAL_CLOCK_H
 

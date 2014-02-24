@@ -9,8 +9,8 @@ extern "C"
 #include "comdef.h"
 #include "hal_sensor.h"
 
-bool HalAT24C32Read(uint16 addr, uint8 *pBuf, uint8 nBytes);
-bool HalAT24C32Write(uint16 addr, uint8 *pBuf, uint8 nBytes);
+void HalAT24C32Read(uint16 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToWrite);
+void HalAT24C32Write(uint16 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToRead);
 
 #ifdef __cplusplus
 }
