@@ -180,7 +180,7 @@
         </option>
         <option>
           <name>General Idata Stack Size</name>
-          <state>0xC0</state>
+          <state>0xC8</state>
         </option>
         <option>
           <name>General Pdata Stack Size</name>

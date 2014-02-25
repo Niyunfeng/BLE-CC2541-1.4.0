@@ -447,8 +447,8 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 
 	//bool success;
 	char *data;
-	data = osal_mem_alloc(7);
-	osal_memset(data, 0, 7);
+	data = osal_mem_alloc(8);
+	osal_memset(data, 0, 8);
 	osal_memcpy(data, "1234567", 7);
         
 	//success = HalAT24C32Write(0x0004, (uint8 *) data, 1,7);
@@ -457,14 +457,16 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 	//HalLcdWriteStringValue("HalINFWrite: ", success, 16, HAL_LCD_LINE_2);
 	osal_mem_free(data);
 
-	char *data1;
-	data1 = osal_mem_alloc(7);
-	osal_memset(data1, 0, 7);
+	//char *data1;
+        uint8 *data1;
+	data1 = osal_mem_alloc(8);
+	osal_memset(data1, 0, 8);
 	//success = HalAT24C32Read(0x0004, (uint8 *) data1, 1,7);
         HalAT24C32Read(0x0004, (uint8 *) data1, 1,7);
-	HalLcdWriteString(data1, HAL_LCD_LINE_5);
+	HalLcdWriteString((uint8*)data1, HAL_LCD_LINE_6);
+        
 	//HalLcdWriteStringValue("HalINFWrite: ", success, 16, HAL_LCD_LINE_4);
-	osal_mem_free(data1);
+	//osal_mem_free(data1);
 
 
 

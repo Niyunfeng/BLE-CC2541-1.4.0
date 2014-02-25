@@ -255,10 +255,11 @@ uint8 HalI2CWrite(uint8 len, uint8 *pBuf) {
 	if (i2cMstStrt(0) != mstAddrAckW) {
 		len = 0;
 	}
-       // I2C_WRITE(*pBuf++);
-	for (uint8 cnt = 0; cnt < len; cnt++) {
-		I2C_WRITE(*pBuf++);
       
+	for (uint8 cnt = 0; cnt < len; cnt++) {
+	// HalLcdWriteString(pBuf, HAL_LCD_LINE_5); 
+          I2C_WRITE(*pBuf++);
+           
 		if (I2CSTAT != mstDataAckW) {
 			if (I2CSTAT == mstDataNackW) {
 				len = cnt + 1;

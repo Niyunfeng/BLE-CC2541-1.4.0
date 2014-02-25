@@ -1,5 +1,6 @@
 #include "hal_sensor.h"
 #include "hal_i2c.h"
+#include "hal_lcd.h"
 
 static uint8 buffer[24];
 static uint8 addrMSB = 0;
@@ -178,11 +179,15 @@ void Hal_HW_WaitUs(uint16 microSecs) {
  */
 void HalWriteReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToWrite) {
   
-        while(NumToWrite--)
+        
+  uint8 *p;
+  
+  while(NumToWrite--)
 	{
-		HalSensorWriteReg(addr,pBuf,nBytes);
+		*p=*pBuf++;
+                HalSensorWriteReg(addr,p,nBytes);
 		addr++;
-		pBuf++;
+		
 	}
 	  
         
@@ -207,6 +212,9 @@ void HalReadReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToRead) {
 	{
 		
                 HalSensorReadReg(addr, pBuf, nBytes);
+                HalLcdWriteString((uint8*)pBuf, HAL_LCD_LINE_5);
+                Hal_HW_WaitUs(5000000);
+                //while(1);
                 addr++;
 		NumToRead--;       
 	}

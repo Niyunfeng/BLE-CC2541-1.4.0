@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Feb/2014  16:24:13 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             25/Feb/2014  11:52:19 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -350,48 +350,49 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_i2c.c
     255          	if (i2cMstStrt(0) != mstAddrAckW) {
     256          		len = 0;
     257          	}
-    258                 // I2C_WRITE(*pBuf++);
+    258                
     259          	for (uint8 cnt = 0; cnt < len; cnt++) {
-    260          		I2C_WRITE(*pBuf++);
-    261                
-    262          		if (I2CSTAT != mstDataAckW) {
-    263          			if (I2CSTAT == mstDataNackW) {
-    264          				len = cnt + 1;
-    265                                 //HalLcdWriteString("ok", HAL_LCD_LINE_5);
-    266          			} 
-    267                                  else {
-    268          				len = cnt;
-    269          			}
-    270          			break;
-    271          		}
-    272          	}
-    273          
-    274          	I2C_STOP();
-    275          
-    276          	return len;
-    277          }
-    278          
-    279          /**************************************************************************************************
-    280           * @fn          HalI2CDisable
-    281           *
-    282           * @brief       Places the I2C bus in inactive mode
-    283           *
-    284           * input parameters
-    285           *
-    286           * None.
-    287           *
-    288           * output parameters
-    289           *
-    290           * None.
-    291           *
-    292           * @return      None.
-    293           */
-    294          void HalI2CDisable(void) {
-    295          	I2C_DISABLE();
-    296          }
-    297          
-    298          /*********************************************************************
-    299           *********************************************************************/
+    260          	// HalLcdWriteString(pBuf, HAL_LCD_LINE_5); 
+    261                    I2C_WRITE(*pBuf++);
+    262                     
+    263          		if (I2CSTAT != mstDataAckW) {
+    264          			if (I2CSTAT == mstDataNackW) {
+    265          				len = cnt + 1;
+    266                                 //HalLcdWriteString("ok", HAL_LCD_LINE_5);
+    267          			} 
+    268                                  else {
+    269          				len = cnt;
+    270          			}
+    271          			break;
+    272          		}
+    273          	}
+    274          
+    275          	I2C_STOP();
+    276          
+    277          	return len;
+    278          }
+    279          
+    280          /**************************************************************************************************
+    281           * @fn          HalI2CDisable
+    282           *
+    283           * @brief       Places the I2C bus in inactive mode
+    284           *
+    285           * input parameters
+    286           *
+    287           * None.
+    288           *
+    289           * output parameters
+    290           *
+    291           * None.
+    292           *
+    293           * @return      None.
+    294           */
+    295          void HalI2CDisable(void) {
+    296          	I2C_DISABLE();
+    297          }
+    298          
+    299          /*********************************************************************
+    300           *********************************************************************/
 
    Maximum stack usage in bytes:
 
