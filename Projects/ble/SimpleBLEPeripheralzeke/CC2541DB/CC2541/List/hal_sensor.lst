@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             25/Feb/2014  13:39:12 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             26/Feb/2014  15:20:51 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -307,8 +307,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_sensor.c
     212          	{
     213          		
     214                          HalSensorReadReg(addr, pBuf, nBytes);
-    215                          HalLcdWriteString((uint8*)pBuf, HAL_LCD_LINE_5);
-    216                          Hal_HW_WaitUs(5000000);
+    215                          //HalLcdWriteString((uint8*)pBuf, HAL_LCD_LINE_5);
+    216                         // Hal_HW_WaitUs(5000000);
     217                          //while(1);
     218                          addr++;
     219          		NumToRead--;       
@@ -334,9 +334,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_sensor.c
        1      0      9  HalLongAddrSensorWriteReg
                           0 0  9 -> HalI2CWrite
        0      0     11  HalReadReg
-                          0 0 11 -> HalLcdWriteString
                           0 0 11 -> HalSensorReadReg
-                          0 0 11 -> Hal_HW_WaitUs
        1      0     22  HalSensorReadReg
                           0 0 11 -> HalI2CRead
                           0 0 11 -> HalI2CWrite
@@ -344,7 +342,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_sensor.c
                           0 0  9 -> HalI2CWrite
        1      0     13  HalWriteReg
                           0 0 13 -> HalSensorWriteReg
-       0      0     11  Hal_HW_WaitUs
+       0      0      0  Hal_HW_WaitUs
 
 
    Segment part sizes:
@@ -362,7 +360,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_sensor.c
        5  ?Subroutine1
       63  HalLongAddrSensorReadReg
      100  HalLongAddrSensorWriteReg
-      57  HalReadReg
+      41  HalReadReg
       70  HalSensorReadReg
       76  HalSensorWriteReg
       66  HalWriteReg
@@ -373,12 +371,12 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_sensor.c
       24  buffer
 
  
- 495 bytes in segment BANKED_CODE
+ 479 bytes in segment BANKED_CODE
   42 bytes in segment BANK_RELAYS
   28 bytes in segment XDATA_Z
  
- 537 bytes of CODE  memory
+ 521 bytes of CODE  memory
   28 bytes of XDATA memory
 
 Errors: none
-Warnings: 3
+Warnings: 1

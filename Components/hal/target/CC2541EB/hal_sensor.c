@@ -212,8 +212,8 @@ void HalReadReg(uint8 addr, uint8 *pBuf, uint8 nBytes,uint8 NumToRead) {
 	{
 		
                 HalSensorReadReg(addr, pBuf, nBytes);
-                HalLcdWriteString((uint8*)pBuf, HAL_LCD_LINE_5);
-                Hal_HW_WaitUs(5000000);
+                //HalLcdWriteString((uint8*)pBuf, HAL_LCD_LINE_5);
+               // Hal_HW_WaitUs(5000000);
                 //while(1);
                 addr++;
 		NumToRead--;       

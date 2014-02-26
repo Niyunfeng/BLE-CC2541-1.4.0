@@ -3,7 +3,7 @@ Warning[w52]: More than one definition for the byte at address 0x6b in common se
 #                                                                              #
 #      IAR Universal Linker V5.4.1.30                                          #
 #                                                                              #
-#           Link time     =  25/Feb/2014  13:59:07                             #
+#           Link time     =  26/Feb/2014  15:41:48                             #
 #           Target CPU    =  x51                                               #
 #           List file     =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble #
 #                            \SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\Sim #
@@ -403,20 +403,20 @@ Module  Entry                                          Address
         _CODEBANK_END                                  CODE 0000FFFF
         _NR_OF_BANKS                                   CODE 00000007
 att_server ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        ATT_ErrorRsp                                   CODE 0001AFF7
-        ATT_ExchangeMTURsp                             CODE 0001B00E
-        ATT_FindInfoRsp                                CODE 0001B03F
-        ATT_FindByTypeValueRsp                         CODE 0001B07A
-        ATT_ReadByTypeRsp                              CODE 0001B0A4
-        ATT_ReadRsp                                    CODE 0001B0CE
-        ATT_ReadBlobRsp                                CODE 0001B0E5
-        ATT_ReadMultiRsp                               CODE 0001B0FC
-        ATT_ReadByGrpTypeRsp                           CODE 0001B113
-        ATT_WriteRsp                                   CODE 0001B13C
-        ATT_PrepareWriteRsp                            CODE 0001B14F
-        ATT_ExecuteWriteRsp                            CODE 0001B165
-        ATT_HandleValueNoti                            CODE 0001B178
-        ATT_HandleValueInd                             CODE 0001B19F
+        ATT_ErrorRsp                                   CODE 0001B445
+        ATT_ExchangeMTURsp                             CODE 0001B45C
+        ATT_FindInfoRsp                                CODE 0001B48D
+        ATT_FindByTypeValueRsp                         CODE 0001B4C8
+        ATT_ReadByTypeRsp                              CODE 0001B4F2
+        ATT_ReadRsp                                    CODE 0001B51C
+        ATT_ReadBlobRsp                                CODE 0001B533
+        ATT_ReadMultiRsp                               CODE 0001B54A
+        ATT_ReadByGrpTypeRsp                           CODE 0001B561
+        ATT_WriteRsp                                   CODE 0001B58A
+        ATT_PrepareWriteRsp                            CODE 0001B59D
+        ATT_ExecuteWriteRsp                            CODE 0001B5B3
+        ATT_HandleValueNoti                            CODE 0001B5C6
+        ATT_HandleValueInd                             CODE 0001B5ED
         ATT_ErrorRsp::?relay                           CODE 00000456
         ATT_ExchangeMTURsp::?relay                     CODE 0000045C
         ATT_FindInfoRsp::?relay                        CODE 00000462
@@ -432,32 +432,32 @@ att_server ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541D
         ATT_HandleValueNoti::?relay                    CODE 0000049E
         ATT_HandleValueInd::?relay                     CODE 000004A4
 att_util ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        btBaseUUID                                     CONST 00008370
-        ATT_ParsePacket                                CODE 000135BB
-        ATT_BuildErrorRsp                              CODE 000136BF
-        ATT_ParseExchangeMTUReq                        CODE 000136F7
-        ATT_BuildExchangeMTURsp                        CODE 0001371A
-        ATT_ParseFindInfoReq                           CODE 00013725
-        ATT_BuildFindInfoRsp                           CODE 00013748
-        ATT_ParseFindByTypeValueReq                    CODE 00013857
-        ATT_BuildFindByTypeValueRsp                    CODE 0001392C
-        ATT_ParseReadByTypeReq                         CODE 000139A7
-        ATT_BuildReadByTypeRsp                         CODE 00013A2F
-        ATT_ParseReadReq                               CODE 00013A6A
-        ATT_BuildReadRsp                               CODE 00013AA1
-        ATT_ParseWriteReq                              CODE 00013B2F
-        ATT_ParseReadBlobReq                           CODE 00013C08
-        ATT_BuildReadBlobRsp                           CODE 00013C68
-        ATT_ParseReadMultiReq                          CODE 00013C73
-        ATT_BuildReadMultiRsp                          CODE 00013CF2
-        ATT_BuildReadByGrpTypeRsp                      CODE 00013CF5
-        ATT_ParsePrepareWriteReq                       CODE 00013CF8
-        ATT_BuildPrepareWriteRsp                       CODE 00013D87
-        ATT_ParseExecuteWriteReq                       CODE 00013D8A
-        ATT_BuildHandleValueInd                        CODE 00013DBA
-        attSendMsg                                     CODE 00013DE4
-        ATT_CompareUUID                                CODE 00013ED2
-        ATT_ConvertUUIDto128                           CODE 00013F84
+        btBaseUUID                                     CONST 00008360
+        ATT_ParsePacket                                CODE 000140E9
+        ATT_BuildErrorRsp                              CODE 000141ED
+        ATT_ParseExchangeMTUReq                        CODE 00014225
+        ATT_BuildExchangeMTURsp                        CODE 00014248
+        ATT_ParseFindInfoReq                           CODE 00014253
+        ATT_BuildFindInfoRsp                           CODE 00014276
+        ATT_ParseFindByTypeValueReq                    CODE 00014385
+        ATT_BuildFindByTypeValueRsp                    CODE 0001445A
+        ATT_ParseReadByTypeReq                         CODE 000144D5
+        ATT_BuildReadByTypeRsp                         CODE 0001455D
+        ATT_ParseReadReq                               CODE 00014598
+        ATT_BuildReadRsp                               CODE 000145CF
+        ATT_ParseWriteReq                              CODE 0001465D
+        ATT_ParseReadBlobReq                           CODE 00014736
+        ATT_BuildReadBlobRsp                           CODE 00014796
+        ATT_ParseReadMultiReq                          CODE 000147A1
+        ATT_BuildReadMultiRsp                          CODE 00014820
+        ATT_BuildReadByGrpTypeRsp                      CODE 00014823
+        ATT_ParsePrepareWriteReq                       CODE 00014826
+        ATT_BuildPrepareWriteRsp                       CODE 000148B5
+        ATT_ParseExecuteWriteReq                       CODE 000148B8
+        ATT_BuildHandleValueInd                        CODE 000148E8
+        attSendMsg                                     CODE 00014912
+        ATT_CompareUUID                                CODE 00014A00
+        ATT_ConvertUUIDto128                           CODE 00014AB2
         ATT_ParsePacket::?relay                        CODE 000004AA
         ATT_BuildErrorRsp::?relay                      CODE 000004B0
         ATT_ParseExchangeMTUReq::?relay                CODE 000004B6
@@ -489,24 +489,24 @@ gap_configmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC25
         gapDeviceAddrMode                              XDATA 00000282
         gapPrivateAddrChangeTimeout                    XDATA 00000283
         gapAutoAdvPrivateAddrChange                    XDATA 00000285
-        GAP_SetParamValue                              CODE 00016DDD
-        GAP_GetParamValue                              CODE 00016E05
-        GAP_ParamsInit                                 CODE 00016E33
-        GAP_SecParamsInit                              CODE 00016E6A
-        gapReadBD_ADDRStatus                           CODE 00016EC8
-        gapReadBufSizeCmdStatus                        CODE 00016F13
-        gapProcessNewAddr                              CODE 00016F5E
-        gapAddAddrAdj                                  CODE 00016F9E
-        gapDetermineAddrType                           CODE 00016FE4
-        gapProcessRandomAddrComplete                   CODE 00017012
-        gapGetSRK                                      CODE 000170CF
-        gapGetSignCounter                              CODE 000170D9
-        gapIncSignCounter                              CODE 000170E6
-        gapUpdateConnSignCounter                       CODE 00017119
-        gapGetDevAddressMode                           CODE 000171E5
-        gapGetDevAddress                               CODE 000171F1
-        gapGetIRK                                      CODE 00017209
-        __Constant_ea60                                CONST 0000844C
+        GAP_SetParamValue                              CODE 000170CD
+        GAP_GetParamValue                              CODE 000170F5
+        GAP_ParamsInit                                 CODE 00017123
+        GAP_SecParamsInit                              CODE 0001715A
+        gapReadBD_ADDRStatus                           CODE 000171B8
+        gapReadBufSizeCmdStatus                        CODE 00017203
+        gapProcessNewAddr                              CODE 0001724E
+        gapAddAddrAdj                                  CODE 0001728E
+        gapDetermineAddrType                           CODE 000172D4
+        gapProcessRandomAddrComplete                   CODE 00017302
+        gapGetSRK                                      CODE 000173BF
+        gapGetSignCounter                              CODE 000173C9
+        gapIncSignCounter                              CODE 000173D6
+        gapUpdateConnSignCounter                       CODE 00017409
+        gapGetDevAddressMode                           CODE 000174D5
+        gapGetDevAddress                               CODE 000174E1
+        gapGetIRK                                      CODE 000174F9
+        __Constant_ea60                                CONST 00008440
         GAP_SetParamValue::?relay                      CODE 00000540
         GAP_GetParamValue::?relay                      CODE 00000546
         GAP_ParamsInit::?relay                         CODE 0000054C
@@ -524,14 +524,14 @@ gap_configmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC25
         gapGetDevAddressMode::?relay                   CODE 00000594
         gapGetDevAddress::?relay                       CODE 0000059A
         gapGetIRK::?relay                              CODE 000005A0
-        gapSendDeviceInitDoneEvent                     CODE 00017213
+        gapSendDeviceInitDoneEvent                     CODE 00017503
         gapSendDeviceInitDoneEvent::?relay             CODE 000005A6
 gap_devmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         pGapAdvertState                                XDATA 0000029C
-        GAP_ResolvePrivateAddr                         CODE 0001BEB8
-        gapIsAdvertising                               CODE 0001BEC6
-        gapValidADType                                 CODE 0001BEDE
-        gapFindADType                                  CODE 0001BEF6
+        GAP_ResolvePrivateAddr                         CODE 0001C1A8
+        gapIsAdvertising                               CODE 0001C1B6
+        gapValidADType                                 CODE 0001C1CE
+        gapFindADType                                  CODE 0001C1E6
         GAP_ResolvePrivateAddr::?relay                 CODE 000005AC
         gapIsAdvertising::?relay                       CODE 000005B2
         gapValidADType::?relay                         CODE 000005B8
@@ -540,22 +540,22 @@ gap_linkmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541
         pEstLink                                       XDATA 0000029E
         pAuthLink                                      XDATA 000002A0
         pfnCentralConnCBs                              XDATA 000002A2
-        GAP_TerminateLinkReq                           CODE 0000CD27
-        GAP_Signable                                   CODE 0000CDD3
-        GAP_Authenticate                               CODE 0000CE4E
-        GAP_TerminateAuth                              CODE 0000CF6F
-        GAP_PasscodeUpdate                             CODE 0000CFAB
-        GAP_Bond                                       CODE 0000D054
-        gapProcessConnectionCompleteEvt                CODE 0000D13B
-        gapProcessConnUpdateCompleteEvt                CODE 0000D29F
-        gapProcessDisconnectCompleteEvt                CODE 0000D2F6
-        sendEstLinkEvent                               CODE 0000D377
-        gapSendLinkUpdateEvent                         CODE 0000D4B4
-        gapFreeEstLink                                 CODE 0000D7C2
-        gapSendBondCompleteEvent                       CODE 0000D7E0
-        gapSendPairingReqEvent                         CODE 0000D863
-        gapPasskeyNeededCB                             CODE 0000D937
-        gapPairingCompleteCB                           CODE 0000D9FF
+        GAP_TerminateLinkReq                           CODE 0000CD24
+        GAP_Signable                                   CODE 0000CDD0
+        GAP_Authenticate                               CODE 0000CE4B
+        GAP_TerminateAuth                              CODE 0000CF6C
+        GAP_PasscodeUpdate                             CODE 0000CFA8
+        GAP_Bond                                       CODE 0000D051
+        gapProcessConnectionCompleteEvt                CODE 0000D138
+        gapProcessConnUpdateCompleteEvt                CODE 0000D29C
+        gapProcessDisconnectCompleteEvt                CODE 0000D2F3
+        sendEstLinkEvent                               CODE 0000D374
+        gapSendLinkUpdateEvent                         CODE 0000D4B1
+        gapFreeEstLink                                 CODE 0000D7BF
+        gapSendBondCompleteEvent                       CODE 0000D7DD
+        gapSendPairingReqEvent                         CODE 0000D860
+        gapPasskeyNeededCB                             CODE 0000D934
+        gapPairingCompleteCB                           CODE 0000D9FC
         GAP_TerminateLinkReq::?relay                   CODE 000005C4
         GAP_Signable::?relay                           CODE 000005CA
         GAP_Authenticate::?relay                       CODE 000005D0
@@ -572,24 +572,24 @@ gap_linkmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541
         gapSendPairingReqEvent::?relay                 CODE 0000062A
         gapPasskeyNeededCB::?relay                     CODE 00000630
         gapPairingCompleteCB::?relay                   CODE 00000636
-        sendTerminateEvent                             CODE 0000D467
-        disconnectNext                                 CODE 0000D53A
-        sendAuthEvent                                  CODE 0000D56C
-        gapFreeAuthLink                                CODE 0000D780
+        sendTerminateEvent                             CODE 0000D464
+        disconnectNext                                 CODE 0000D537
+        sendAuthEvent                                  CODE 0000D569
+        gapFreeAuthLink                                CODE 0000D77D
         sendTerminateEvent::?relay                     CODE 00000600
         disconnectNext::?relay                         CODE 0000060C
         sendAuthEvent::?relay                          CODE 00000612
         gapFreeAuthLink::?relay                        CODE 00000618
 gap_peridevmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        GAP_MakeDiscoverable                           CODE 0000F8B3
-        GAP_UpdateAdvertisingData                      CODE 0000F986
-        GAP_EndDiscoverable                            CODE 0000FA2F
-        GAP_PeriDevMgrInit                             CODE 0000FA82
-        gapSetAdvParams                                CODE 0000FBBE
-        gapSetAdvParamsStatus                          CODE 0000FCAA
-        gapWriteAdvEnableStatus                        CODE 0000FCD9
-        gapWriteAdvDataStatus                          CODE 0000FDEC
-        __Constant_3e8                                 CONST 00008450
+        GAP_MakeDiscoverable                           CODE 0000F8B0
+        GAP_UpdateAdvertisingData                      CODE 0000F983
+        GAP_EndDiscoverable                            CODE 0000FA2C
+        GAP_PeriDevMgrInit                             CODE 0000FA7F
+        gapSetAdvParams                                CODE 0000FBBB
+        gapSetAdvParamsStatus                          CODE 0000FCA7
+        gapWriteAdvEnableStatus                        CODE 0000FCD6
+        gapWriteAdvDataStatus                          CODE 0000FDE9
+        __Constant_3e8                                 CONST 00008444
         GAP_MakeDiscoverable::?relay                   CODE 0000063C
         GAP_UpdateAdvertisingData::?relay              CODE 00000642
         GAP_EndDiscoverable::?relay                    CODE 00000648
@@ -598,64 +598,64 @@ gap_peridevmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2
         gapSetAdvParamsStatus::?relay                  CODE 00000660
         gapWriteAdvEnableStatus::?relay                CODE 00000666
         gapWriteAdvDataStatus::?relay                  CODE 0000066C
-        gapPeriProcessHCICmdCompleteEvt                CODE 0000FB32
-        gapProcessAdvertisingEvt                       CODE 0000FE34
-        gapSendMakeDiscEvent                           CODE 0000FF09
-        gapFreeAdvertState                             CODE 0000FF45
-        isLimitedDiscoverableMode                      CODE 0000FF61
+        gapPeriProcessHCICmdCompleteEvt                CODE 0000FB2F
+        gapProcessAdvertisingEvt                       CODE 0000FE31
+        gapSendMakeDiscEvent                           CODE 0000FF06
+        gapFreeAdvertState                             CODE 0000FF42
+        isLimitedDiscoverableMode                      CODE 0000FF5E
         gapPeriProcessHCICmdCompleteEvt::?relay        CODE 00000654
         gapProcessAdvertisingEvt::?relay               CODE 00000672
         gapSendMakeDiscEvent::?relay                   CODE 00000678
         gapFreeAdvertState::?relay                     CODE 0000067E
         isLimitedDiscoverableMode::?relay              CODE 00000684
 gap_perilinkmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        GAP_SendSlaveSecurityRequest                   CODE 0001C188
+        GAP_SendSlaveSecurityRequest                   CODE 0001C478
         GAP_SendSlaveSecurityRequest::?relay           CODE 0000068A
 gap_task ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         gapTaskID                                      XDATA 000002AC
         gapUnwantedTaskID                              XDATA 00000E7F
         pfnPeripheralCBs                               XDATA 000002AD
-        GAP_RegisterForHCIMsgs                         CODE 000198D8
-        GAP_Init                                       CODE 000198EE
-        GAP_ProcessEvent                               CODE 00019914
-        GAP_NumActiveConnections                       CODE 00019A30
-        gapRegisterPeripheral                          CODE 00019C67
+        GAP_RegisterForHCIMsgs                         CODE 00019D26
+        GAP_Init                                       CODE 00019D3C
+        GAP_ProcessEvent                               CODE 00019D62
+        GAP_NumActiveConnections                       CODE 00019E7E
+        gapRegisterPeripheral                          CODE 0001A0B5
         GAP_RegisterForHCIMsgs::?relay                 CODE 00000690
         GAP_Init::?relay                               CODE 00000696
         GAP_ProcessEvent::?relay                       CODE 0000069C
         GAP_NumActiveConnections::?relay               CODE 000006A2
         gapRegisterPeripheral::?relay                  CODE 000006B4
-        gapProcessOSALMsg                              CODE 00019A3A
-        gapProcessHCICmdCompleteEvt                    CODE 00019B6F
+        gapProcessOSALMsg                              CODE 00019E88
+        gapProcessHCICmdCompleteEvt                    CODE 00019FBD
         gapProcessOSALMsg::?relay                      CODE 000006A8
         gapProcessHCICmdCompleteEvt::?relay            CODE 000006AE
 gapgattserver ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        gapServiceCBs                                  CONST 0000841D
-        GGS_SetParameter                               CODE 000168B6
-        GGS_AddService                                 CODE 000169E6
+        gapServiceCBs                                  CONST 0000841F
+        GGS_SetParameter                               CODE 00016BA6
+        GGS_AddService                                 CODE 00016CD6
         GGS_SetParameter::?relay                       CODE 000006BA
         GGS_AddService::?relay                         CODE 000006C0
-        ggs_SetAttrWPermit                             CODE 00016A19
-        ggs_ReadAttrCB                                 CODE 00016A63
-        ggs_WriteAttrCB                                CODE 00016C2A
+        ggs_SetAttrWPermit                             CODE 00016D09
+        ggs_ReadAttrCB                                 CODE 00016D53
+        ggs_WriteAttrCB                                CODE 00016F1A
         ggs_SetAttrWPermit::?relay                     CODE 000006C6
         ggs_ReadAttrCB::?relay                         CODE 000006CC
         ggs_WriteAttrCB::?relay                        CODE 000006D2
 gatt_server ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         serverInfoTbl                                  XDATA 000002D2
         reqTaskId                                      XDATA 00000EE5
-        GATT_InitServer                                CODE 0000AE00
-        GATT_RegisterService                           CODE 0000AE6A
-        GATT_RegisterForReq                            CODE 0000AFC9
-        GATT_VerifyReadPermissions                     CODE 0000AFD9
-        GATT_VerifyWritePermissions                    CODE 0000B006
-        GATT_ServiceChangedInd                         CODE 0000B05D
-        GATT_FindHandleUUID                            CODE 0000B106
-        GATT_FindHandle                                CODE 0000B20D
-        GATT_FindNextAttr                              CODE 0000B2D7
-        GATT_ServiceNumAttrs                           CODE 0000B437
-        GATT_Indication                                CODE 0000B47A
-        GATT_Notification                              CODE 0000B51F
+        GATT_InitServer                                CODE 0000ADFD
+        GATT_RegisterService                           CODE 0000AE67
+        GATT_RegisterForReq                            CODE 0000AFC6
+        GATT_VerifyReadPermissions                     CODE 0000AFD6
+        GATT_VerifyWritePermissions                    CODE 0000B003
+        GATT_ServiceChangedInd                         CODE 0000B05A
+        GATT_FindHandleUUID                            CODE 0000B103
+        GATT_FindHandle                                CODE 0000B20A
+        GATT_FindNextAttr                              CODE 0000B2D4
+        GATT_ServiceNumAttrs                           CODE 0000B434
+        GATT_Indication                                CODE 0000B477
+        GATT_Notification                              CODE 0000B51C
         GATT_InitServer::?relay                        CODE 000006D8
         GATT_RegisterService::?relay                   CODE 000006DE
         GATT_RegisterForReq::?relay                    CODE 000006E4
@@ -668,21 +668,21 @@ gatt_server ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541
         GATT_ServiceNumAttrs::?relay                   CODE 0000070E
         GATT_Indication::?relay                        CODE 00000714
         GATT_Notification::?relay                      CODE 0000071A
-        gattServiceLastHandle                          CODE 0000B56C
-        gattServerProcessMsgCB                         CODE 0000B592
-        gattProcessExchangeMTUReq                      CODE 0000B7A0
-        gattProcessFindInfoReq                         CODE 0000B7A5
-        gattProcessFindByTypeValueReq                  CODE 0000B9AA
-        gattProcessReadByTypeReq                       CODE 0000B9F7
-        gattProcessReadReq                             CODE 0000BA6A
-        gattProcessReadMultiReq                        CODE 0000BA9D
-        gattProcessReadByGrpTypeReq                    CODE 0000BB3F
-        gattProcessWriteReq                            CODE 0000BBE8
-        gattProcessExecuteWriteReq                     CODE 0000BC20
-        gattGetServerStatus                            CODE 0000BC23
-        gattFindServerInfo                             CODE 0000BC6B
-        gattServerHandleTimerCB                        CODE 0000BCAB
-        gattServerHandleConnStatusCB                   CODE 0000BD02
+        gattServiceLastHandle                          CODE 0000B569
+        gattServerProcessMsgCB                         CODE 0000B58F
+        gattProcessExchangeMTUReq                      CODE 0000B79D
+        gattProcessFindInfoReq                         CODE 0000B7A2
+        gattProcessFindByTypeValueReq                  CODE 0000B9A7
+        gattProcessReadByTypeReq                       CODE 0000B9F4
+        gattProcessReadReq                             CODE 0000BA67
+        gattProcessReadMultiReq                        CODE 0000BA9A
+        gattProcessReadByGrpTypeReq                    CODE 0000BB3C
+        gattProcessWriteReq                            CODE 0000BBE5
+        gattProcessExecuteWriteReq                     CODE 0000BC1D
+        gattGetServerStatus                            CODE 0000BC20
+        gattFindServerInfo                             CODE 0000BC68
+        gattServerHandleTimerCB                        CODE 0000BCA8
+        gattServerHandleConnStatusCB                   CODE 0000BCFF
         gattServiceLastHandle::?relay                  CODE 00000720
         gattServerProcessMsgCB::?relay                 CODE 00000726
         gattProcessExchangeMTUReq::?relay              CODE 0000072C
@@ -700,13 +700,13 @@ gatt_server ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541
         gattServerHandleConnStatusCB::?relay           CODE 00000774
 gatt_task ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         gattTaskID                                     XDATA 000002DC
-        gattRegisterServer                             CODE 00019F6A
-        GATT_AppCompletedMsg                           CODE 00019F82
-        GATT_Init                                      CODE 00019FCA
-        GATT_ProcessEvent                              CODE 00019FE0
-        gattNotifyEvent                                CODE 0001A13B
-        gattStartTimer                                 CODE 0001A1C8
-        gattStopTimer                                  CODE 0001A213
+        gattRegisterServer                             CODE 0001A3B8
+        GATT_AppCompletedMsg                           CODE 0001A3D0
+        GATT_Init                                      CODE 0001A418
+        GATT_ProcessEvent                              CODE 0001A42E
+        gattNotifyEvent                                CODE 0001A589
+        gattStartTimer                                 CODE 0001A616
+        gattStopTimer                                  CODE 0001A661
         gattRegisterServer::?relay                     CODE 0000077A
         GATT_AppCompletedMsg::?relay                   CODE 00000780
         GATT_Init::?relay                              CODE 00000786
@@ -714,28 +714,28 @@ gatt_task ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB
         gattNotifyEvent::?relay                        CODE 00000798
         gattStartTimer::?relay                         CODE 0000079E
         gattStopTimer::?relay                          CODE 000007A4
-        gattProcessRxData                              CODE 0001A027
+        gattProcessRxData                              CODE 0001A475
         gattProcessRxData::?relay                      CODE 00000792
 gattservapp ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         GATTServApp_TaskID                             XDATA 000002E1
         appTaskID                                      XDATA 00000EE8
-        gattServiceCBs                                 CONST 0000842F
-        GATTServApp_RegisterForMsg                     CODE 00002B6C
-        GATTServApp_Init                               CODE 00002B78
-        GATTServApp_ProcessEvent                       CODE 00002BB3
-        GATTServApp_RegisterService                    CODE 00002BF8
-        GATTServApp_FindAttr                           CODE 00002D3E
-        GATTServApp_AddService                         CODE 00002DA3
-        GATTServApp_ReadAttr                           CODE 00003BEB
-        GATTServApp_WriteAttr                          CODE 000040AC
-        GATTServApp_UpdateCharCfg                      CODE 00004141
-        GATTServApp_SendServiceChangedInd              CODE 00004192
-        GATTServApp_InitCharCfg                        CODE 000041B9
-        GATTServApp_ReadCharCfg                        CODE 0000420B
-        GATTServApp_WriteCharCfg                       CODE 00004229
-        GATTServApp_ProcessCCCWriteReq                 CODE 00004283
-        GATTServApp_ProcessCharCfg                     CODE 0000436C
-        GATTServApp_SendCCCUpdatedEvent                CODE 00004566
+        gattServiceCBs                                 CONST 00008419
+        GATTServApp_RegisterForMsg                     CODE 00002B64
+        GATTServApp_Init                               CODE 00002B70
+        GATTServApp_ProcessEvent                       CODE 00002BAB
+        GATTServApp_RegisterService                    CODE 00002BF0
+        GATTServApp_FindAttr                           CODE 00002D36
+        GATTServApp_AddService                         CODE 00002D9B
+        GATTServApp_ReadAttr                           CODE 00003BE3
+        GATTServApp_WriteAttr                          CODE 000040A4
+        GATTServApp_UpdateCharCfg                      CODE 00004139
+        GATTServApp_SendServiceChangedInd              CODE 0000418A
+        GATTServApp_InitCharCfg                        CODE 000041B1
+        GATTServApp_ReadCharCfg                        CODE 00004203
+        GATTServApp_WriteCharCfg                       CODE 00004221
+        GATTServApp_ProcessCCCWriteReq                 CODE 0000427B
+        GATTServApp_ProcessCharCfg                     CODE 00004364
+        GATTServApp_SendCCCUpdatedEvent                CODE 0000455E
         GATTServApp_RegisterForMsg::?relay             CODE 000007AA
         GATTServApp_Init::?relay                       CODE 000007B0
         GATTServApp_ProcessEvent::?relay               CODE 000007B6
@@ -752,21 +752,21 @@ gattservapp ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541
         GATTServApp_ProcessCCCWriteReq::?relay         CODE 0000084C
         GATTServApp_ProcessCharCfg::?relay             CODE 00000852
         GATTServApp_SendCCCUpdatedEvent::?relay        CODE 0000085E
-        gattServApp_SetNumPrepareWrites                CODE 00002CB8
-        gattServApp_FindServiceCBs                     CODE 00002DCF
-        gattServApp_ProcessMsg                         CODE 00002E08
-        gattServApp_ProcessFindByTypeValueReq          CODE 00003046
-        gattServApp_ProcessReadByTypeReq               CODE 0000322A
-        gattServApp_ProcessReadMultiReq                CODE 00003410
-        gattServApp_ProcessReadByGrpTypeReq            CODE 00003553
-        gattServApp_ProcessWriteReq                    CODE 000037A1
-        gattServApp_ProcessPrepareWriteReq             CODE 000038B3
-        gattServApp_ProcessExecuteWriteReq             CODE 000039FE
-        gattServApp_FindPrepareWriteQ                  CODE 00003B0E
-        gattServApp_FindCharCfgItem                    CODE 00003B2B
-        gattServApp_FindAuthorizeAttrCB                CODE 00003B66
-        gattServApp_WriteAttrCB                        CODE 00003B88
-        gattServApp_HandleConnStatusCB                 CODE 000044E2
+        gattServApp_SetNumPrepareWrites                CODE 00002CB0
+        gattServApp_FindServiceCBs                     CODE 00002DC7
+        gattServApp_ProcessMsg                         CODE 00002E00
+        gattServApp_ProcessFindByTypeValueReq          CODE 0000303E
+        gattServApp_ProcessReadByTypeReq               CODE 00003222
+        gattServApp_ProcessReadMultiReq                CODE 00003408
+        gattServApp_ProcessReadByGrpTypeReq            CODE 0000354B
+        gattServApp_ProcessWriteReq                    CODE 00003799
+        gattServApp_ProcessPrepareWriteReq             CODE 000038AB
+        gattServApp_ProcessExecuteWriteReq             CODE 000039F6
+        gattServApp_FindPrepareWriteQ                  CODE 00003B06
+        gattServApp_FindCharCfgItem                    CODE 00003B23
+        gattServApp_FindAuthorizeAttrCB                CODE 00003B5E
+        gattServApp_WriteAttrCB                        CODE 00003B80
+        gattServApp_HandleConnStatusCB                 CODE 000044DA
         gattServApp_SetNumPrepareWrites::?relay        CODE 000007C2
         gattServApp_FindServiceCBs::?relay             CODE 000007D4
         gattServApp_ProcessMsg::?relay                 CODE 000007DA
@@ -787,27 +787,27 @@ hci ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\C
         ctrlToHostEnable                               XDATA 00000320
         numHostBufs                                    XDATA 00000321
         hciCtrlCmdToken                                XDATA 00000323
-        HCI_bm_alloc                                   CODE 00017734
-        HCI_SendDataPkt                                CODE 0001773E
-        HCI_DisconnectCmd                              CODE 00017781
-        HCI_HostNumCompletedPktCmd                     CODE 0001779C
-        HCI_ReadBDADDRCmd                              CODE 0001782C
-        HCI_ReadRssiCmd                                CODE 00017854
-        HCI_LE_ReadBufSizeCmd                          CODE 00017891
-        HCI_LE_SetRandomAddressCmd                     CODE 000178C8
-        HCI_LE_SetAdvParamCmd                          CODE 000178F1
-        HCI_LE_SetAdvDataCmd                           CODE 00017966
-        HCI_LE_SetScanRspDataCmd                       CODE 0001797B
-        HCI_LE_SetAdvEnableCmd                         CODE 00017990
-        HCI_LE_ClearWhiteListCmd                       CODE 000179C1
-        HCI_LE_AddWhiteListCmd                         CODE 000179D5
-        HCI_LE_RandCmd                                 CODE 000179FA
-        HCI_LE_LtkReqReplyCmd                          CODE 00017A34
-        HCI_LE_LtkReqNegReplyCmd                       CODE 00017A60
-        LL_RandCback                                   CODE 00017AE3
-        LL_EXT_SetRxGainCback                          CODE 00017B2C
-        LL_EXT_SetTxPowerCback                         CODE 00017B56
-        LL_EXT_ExtendRfRangeCback                      CODE 00017B81
+        HCI_bm_alloc                                   CODE 00017A24
+        HCI_SendDataPkt                                CODE 00017A2E
+        HCI_DisconnectCmd                              CODE 00017A71
+        HCI_HostNumCompletedPktCmd                     CODE 00017A8C
+        HCI_ReadBDADDRCmd                              CODE 00017B1C
+        HCI_ReadRssiCmd                                CODE 00017B44
+        HCI_LE_ReadBufSizeCmd                          CODE 00017B81
+        HCI_LE_SetRandomAddressCmd                     CODE 00017BB8
+        HCI_LE_SetAdvParamCmd                          CODE 00017BE1
+        HCI_LE_SetAdvDataCmd                           CODE 00017C56
+        HCI_LE_SetScanRspDataCmd                       CODE 00017C6B
+        HCI_LE_SetAdvEnableCmd                         CODE 00017C80
+        HCI_LE_ClearWhiteListCmd                       CODE 00017CB1
+        HCI_LE_AddWhiteListCmd                         CODE 00017CC5
+        HCI_LE_RandCmd                                 CODE 00017CEA
+        HCI_LE_LtkReqReplyCmd                          CODE 00017D24
+        HCI_LE_LtkReqNegReplyCmd                       CODE 00017D50
+        LL_RandCback                                   CODE 00017DD3
+        LL_EXT_SetRxGainCback                          CODE 00017E1C
+        LL_EXT_SetTxPowerCback                         CODE 00017E46
+        LL_EXT_ExtendRfRangeCback                      CODE 00017E71
         HCI_bm_alloc::?relay                           CODE 00000864
         HCI_SendDataPkt::?relay                        CODE 0000086A
         HCI_DisconnectCmd::?relay                      CODE 00000870
@@ -830,7 +830,7 @@ hci ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\C
         LL_EXT_SetTxPowerCback::?relay                 CODE 000008D6
         LL_EXT_ExtendRfRangeCback::?relay              CODE 000008DC
 hci_data ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        LL_RxDataCompleteCback                         CODE 0001BAB8
+        LL_RxDataCompleteCback                         CODE 00007EDD
         LL_RxDataCompleteCback::?relay                 CODE 000008E2
 hci_event ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         bleEvtMask                                     XDATA 00000324
@@ -866,11 +866,11 @@ hci_event ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB
         LL_EncChangeCback::?relay                      CODE 00000936
         LL_EncKeyRefreshCback::?relay                  CODE 0000093C
 l2cap_if ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        L2CAP_RegisterApp                              CODE 00007E99
-        L2CAP_SendData                                 CODE 00007F02
-        L2CAP_CmdReject                                CODE 00007F56
-        L2CAP_ConnParamUpdateReq                       CODE 00007F7D
-        L2CAP_HostNumCompletedPkts                     CODE 00007FAE
+        L2CAP_RegisterApp                              CODE 00017E99
+        L2CAP_SendData                                 CODE 00017F02
+        L2CAP_CmdReject                                CODE 00017F56
+        L2CAP_ConnParamUpdateReq                       CODE 00017F7D
+        L2CAP_HostNumCompletedPkts                     CODE 00017FAE
         L2CAP_RegisterApp::?relay                      CODE 00000942
         L2CAP_SendData::?relay                         CODE 00000948
         L2CAP_CmdReject::?relay                        CODE 0000094E
@@ -893,24 +893,24 @@ l2cap_task ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541D
         l2capProcessRsp::?relay                        CODE 00000978
         l2capProcessReq::?relay                        CODE 0000097E
 l2cap_util ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        l2capParseSignalHdr                            CODE 00013FF5
-        l2capSendReq                                   CODE 00014037
-        l2capSendCmd                                   CODE 00014109
-        l2capEncapSendData                             CODE 000141E2
-        l2capParsePacket                               CODE 000142DC
-        L2CAP_BuildCmdReject                           CODE 000143BE
-        l2capParseCmdReject                            CODE 00014427
-        l2capBuildParamUpdateReq                       CODE 000144DD
-        L2CAP_ParseParamUpdateReq                      CODE 00014551
-        l2capParseParamUpdateRsp                       CODE 000145BD
-        l2capNotifyData                                CODE 000145E6
-        l2capNotifySignal                              CODE 00014660
-        l2capAllocChannel                              CODE 000146F9
-        l2capFreeChannel                               CODE 0001475E
-        l2capFindLocalId                               CODE 00014773
-        l2capStopTimer                                 CODE 000147B9
-        l2capHandleRxError                             CODE 00014837
-        L2CAP_bm_alloc                                 CODE 0001483A
+        l2capParseSignalHdr                            CODE 00014B23
+        l2capSendReq                                   CODE 00014B65
+        l2capSendCmd                                   CODE 00014C37
+        l2capEncapSendData                             CODE 00014D10
+        l2capParsePacket                               CODE 00014E0A
+        L2CAP_BuildCmdReject                           CODE 00014EEC
+        l2capParseCmdReject                            CODE 00014F55
+        l2capBuildParamUpdateReq                       CODE 0001500B
+        L2CAP_ParseParamUpdateReq                      CODE 0001507F
+        l2capParseParamUpdateRsp                       CODE 000150EB
+        l2capNotifyData                                CODE 00015114
+        l2capNotifySignal                              CODE 0001518E
+        l2capAllocChannel                              CODE 00015227
+        l2capFreeChannel                               CODE 0001528C
+        l2capFindLocalId                               CODE 000152A1
+        l2capStopTimer                                 CODE 000152E7
+        l2capHandleRxError                             CODE 00015365
+        L2CAP_bm_alloc                                 CODE 00015368
         l2capParseSignalHdr::?relay                    CODE 00000984
         l2capSendReq::?relay                           CODE 0000098A
         l2capSendCmd::?relay                           CODE 00000990
@@ -929,19 +929,19 @@ l2cap_util ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541D
         l2capStopTimer::?relay                         CODE 000009DE
         l2capHandleRxError::?relay                     CODE 000009EA
         L2CAP_bm_alloc::?relay                         CODE 000009F0
-        l2capHandleTimerCB                             CODE 000147D2
+        l2capHandleTimerCB                             CODE 00015300
         l2capHandleTimerCB::?relay                     CODE 000009E4
 linkdb ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        linkDB_Init                                    CODE 00019C71
-        linkDB_Register                                CODE 00019C99
-        linkDB_Add                                     CODE 00019CD7
-        linkDB_Remove                                  CODE 00019D95
-        linkDB_Find                                    CODE 00019DFC
-        linkDB_FindFirst                               CODE 00019E18
-        linkDB_State                                   CODE 00019E40
-        linkDB_NumActive                               CODE 00019E70
-        linkDB_Authen                                  CODE 00019E7F
-        linkDB_PerformFunc                             CODE 00019EFC
+        linkDB_Init                                    CODE 0001A0BF
+        linkDB_Register                                CODE 0001A0E7
+        linkDB_Add                                     CODE 0001A125
+        linkDB_Remove                                  CODE 0001A1E3
+        linkDB_Find                                    CODE 0001A24A
+        linkDB_FindFirst                               CODE 0001A266
+        linkDB_State                                   CODE 0001A28E
+        linkDB_NumActive                               CODE 0001A2BE
+        linkDB_Authen                                  CODE 0001A2CD
+        linkDB_PerformFunc                             CODE 0001A34A
         linkDB_Init::?relay                            CODE 000009F6
         linkDB_Register::?relay                        CODE 000009FC
         linkDB_Add::?relay                             CODE 00000A02
@@ -952,7 +952,7 @@ linkdb ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bi
         linkDB_NumActive::?relay                       CODE 00000A20
         linkDB_Authen::?relay                          CODE 00000A26
         linkDB_PerformFunc::?relay                     CODE 00000A2C
-        reportStatusChange                             CODE 00019F22
+        reportStatusChange                             CODE 0001A370
         reportStatusChange::?relay                     CODE 00000A32
 ll ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         PMUX                                           DATA 000000AE
@@ -996,28 +996,28 @@ ll ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC
         taskErrorEndCauses                             XDATA 00000F18
         trngCounter                                    XDATA 00000544
         myPC                                           IDATA 00000029
-        LL_Init                                        CODE 0000BDEF
-        LL_ProcessEvent                                CODE 0000BFCD
-        LL_TX_bm_alloc                                 CODE 0000C1FF
-        LL_RX_bm_alloc                                 CODE 0000C23B
-        LL_Reset                                       CODE 0000C268
-        LL_ReadBDADDR                                  CODE 0000C352
-        LL_SetRandomAddress                            CODE 0000C39D
-        LL_ClearWhiteList                              CODE 0000C3E8
-        LL_AddWhiteListDevice                          CODE 0000C3FA
-        LL_Encrypt                                     CODE 0000C43A
-        LL_Rand                                        CODE 0000C46F
-        LL_PseudoRand                                  CODE 0000C4BD
-        LL_CtrlToHostFlowControl                       CODE 0000C4EC
-        LL_ReadRssi                                    CODE 0000C50F
-        LL_Disconnect                                  CODE 0000C55C
-        LL_TxData                                      CODE 0000C5E1
-        LL_SetAdvParam                                 CODE 0000C7FB
-        LL_SetAdvData                                  CODE 0000CA3A
-        LL_SetAdvControl                               CODE 0000CA7B
-        LL_SetScanRspData                              CODE 0000CC1D
-        LL_EncLtkReply                                 CODE 0000CC5E
-        LL_EncLtkNegReply                              CODE 0000CCD1
+        LL_Init                                        CODE 0000BDEC
+        LL_ProcessEvent                                CODE 0000BFCA
+        LL_TX_bm_alloc                                 CODE 0000C1FC
+        LL_RX_bm_alloc                                 CODE 0000C238
+        LL_Reset                                       CODE 0000C265
+        LL_ReadBDADDR                                  CODE 0000C34F
+        LL_SetRandomAddress                            CODE 0000C39A
+        LL_ClearWhiteList                              CODE 0000C3E5
+        LL_AddWhiteListDevice                          CODE 0000C3F7
+        LL_Encrypt                                     CODE 0000C437
+        LL_Rand                                        CODE 0000C46C
+        LL_PseudoRand                                  CODE 0000C4BA
+        LL_CtrlToHostFlowControl                       CODE 0000C4E9
+        LL_ReadRssi                                    CODE 0000C50C
+        LL_Disconnect                                  CODE 0000C559
+        LL_TxData                                      CODE 0000C5DE
+        LL_SetAdvParam                                 CODE 0000C7F8
+        LL_SetAdvData                                  CODE 0000CA37
+        LL_SetAdvControl                               CODE 0000CA78
+        LL_SetScanRspData                              CODE 0000CC1A
+        LL_EncLtkReply                                 CODE 0000CC5B
+        LL_EncLtkNegReply                              CODE 0000CCCE
         LL_Init::?relay                                CODE 00000A38
         LL_ProcessEvent::?relay                        CODE 00000A3E
         LL_TX_bm_alloc::?relay                         CODE 00000A44
@@ -1064,51 +1064,51 @@ ll_common ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB
         T1CNTH                                         DATA 000000E3
         T1CTL                                          DATA 000000E4
         T1CCTL0                                        DATA 000000E5
-        llRfInit                                       CODE 000045CD
-        llSetFreqTune                                  CODE 0000467C
-        llClearSetInts                                 CODE 000046A9
-        llProcessPostRfOps                             CODE 000046EF
-        llFindTxPowerSettings                          CODE 0000482F
-        llExtendRfRange                                CODE 000049C5
-        llCheckWhiteListUsage                          CODE 00004A3F
-        llSetupAdv                                     CODE 00004A5A
-        llSetupDirectedAdvEvt                          CODE 00004AD5
-        llSetupUndirectedAdvEvt                        CODE 00004C2F
-        llSetupNonConnectableAdvEvt                    CODE 00004D8F
-        llSetupScannableAdvEvt                         CODE 00004E95
-        llStartAdvSetup                                CODE 00004FF6
-        llStartSlaveSetup                              CODE 0000500F
-        llSetupEncRsp                                  CODE 0000506D
-        llGetNextDataChan                              CODE 00001B68
-        llSetNextDataChan                              CODE 00001C26
-        llEventInRange                                 CODE 00001DA6
-        llEventDelta                                   CODE 00001DE5
-        llProcessRxData                                CODE 00001DED
-        llProcessTxData                                CODE 00001F9A
-        llSetupStartEncReq                             CODE 0000515B
-        llSetupStartEncRsp                             CODE 0000518E
-        llSetupPauseEncRsp                             CODE 000051FE
-        llSetupRejectInd                               CODE 00005278
-        llSetupFeatureSetRsp                           CODE 000052C2
-        llSetupVersionIndReq                           CODE 0000538C
-        llSetupTermInd                                 CODE 00005461
-        llSetupUnknownRsp                              CODE 00005540
-        llEnqueueCtrlPkt                               CODE 000055CB
-        llDequeueCtrlPkt                               CODE 00005639
-        llReplaceCtrlPkt                               CODE 000056AD
-        llProcessChanMap                               CODE 000056D8
-        llAllocConnId                                  CODE 00005797
-        llReleaseAllConnId                             CODE 000058FC
-        llGetNextConn                                  CODE 00005919
-        llConnCleanup                                  CODE 00005938
-        llConnTerminate                                CODE 00005A29
-        llInitFeatureSet                               CODE 00005A4E
-        llConvertLstoToEvent                           CODE 00005A78
-        llConvertCtrlProcTimeoutToEvent                CODE 00005AF3
-        llAdjustForMissedEvent                         CODE 00005B4D
-        llWriteTxData                                  CODE 00005CB6
-        llEnqueueDataQ                                 CODE 00005D64
-        llMemCopySrc                                   CODE 00005DA5
+        llRfInit                                       CODE 000045C5
+        llSetFreqTune                                  CODE 00004674
+        llClearSetInts                                 CODE 000046A1
+        llProcessPostRfOps                             CODE 000046E7
+        llFindTxPowerSettings                          CODE 00004827
+        llExtendRfRange                                CODE 000049BD
+        llCheckWhiteListUsage                          CODE 00004A37
+        llSetupAdv                                     CODE 00004A52
+        llSetupDirectedAdvEvt                          CODE 00004ACD
+        llSetupUndirectedAdvEvt                        CODE 00004C27
+        llSetupNonConnectableAdvEvt                    CODE 00004D87
+        llSetupScannableAdvEvt                         CODE 00004E8D
+        llStartAdvSetup                                CODE 00004FEE
+        llStartSlaveSetup                              CODE 00005007
+        llSetupEncRsp                                  CODE 00005065
+        llGetNextDataChan                              CODE 00001B60
+        llSetNextDataChan                              CODE 00001C1E
+        llEventInRange                                 CODE 00001D9E
+        llEventDelta                                   CODE 00001DDD
+        llProcessRxData                                CODE 00001DE5
+        llProcessTxData                                CODE 00001F92
+        llSetupStartEncReq                             CODE 00005153
+        llSetupStartEncRsp                             CODE 00005186
+        llSetupPauseEncRsp                             CODE 000051F6
+        llSetupRejectInd                               CODE 00005270
+        llSetupFeatureSetRsp                           CODE 000052BA
+        llSetupVersionIndReq                           CODE 00005384
+        llSetupTermInd                                 CODE 00005459
+        llSetupUnknownRsp                              CODE 00005538
+        llEnqueueCtrlPkt                               CODE 000055C3
+        llDequeueCtrlPkt                               CODE 00005631
+        llReplaceCtrlPkt                               CODE 000056A5
+        llProcessChanMap                               CODE 000056D0
+        llAllocConnId                                  CODE 0000578F
+        llReleaseAllConnId                             CODE 000058F4
+        llGetNextConn                                  CODE 00005911
+        llConnCleanup                                  CODE 00005930
+        llConnTerminate                                CODE 00005A21
+        llInitFeatureSet                               CODE 00005A46
+        llConvertLstoToEvent                           CODE 00005A70
+        llConvertCtrlProcTimeoutToEvent                CODE 00005AEB
+        llAdjustForMissedEvent                         CODE 00005B45
+        llWriteTxData                                  CODE 00005CAE
+        llEnqueueDataQ                                 CODE 00005D5C
+        llMemCopySrc                                   CODE 00005D9D
         llRfInit::?relay                               CODE 00000AE0
         llSetFreqTune::?relay                          CODE 00000AE6
         llClearSetInts::?relay                         CODE 00000AEC
@@ -1149,8 +1149,8 @@ ll_common ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB
         llEnqueueDataQ::?relay                         CODE 00000BBE
         llMemCopySrc::?relay                           CODE 00000BC4
 ll_constData ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        savedTxPowerSetting                            CODE 00002B68
-        ptmFreqTune                                    CODE 00002B64
+        savedTxPowerSetting                            CODE 00002B60
+        ptmFreqTune                                    CODE 00002B5C
 ll_enc ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         DMAREQ                                         DATA 000000D7
         dataPkt                                        XDATA 00000545
@@ -1185,10 +1185,10 @@ ll_enc ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bi
         LL_ENC_Encrypt::?relay                         CODE 00000C12
         LL_ENC_Decrypt::?relay                         CODE 00000C18
 ll_errorEndCauses ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        llUnexpectedEndCauseHandler                    CODE 00007FF4
+        llUnexpectedEndCauseHandler                    CODE 00017FF4
         llUnexpectedEndCauseHandler::?relay            CODE 00000C1E
 ll_halt ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        HaltMcuUsingPhyFlag                            CODE 000020E8
+        HaltMcuUsingPhyFlag                            CODE 000020E0
         phyState                                       DATA 00000021
         clkState                                       DATA 00000022
 ll_isr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
@@ -1202,29 +1202,29 @@ ll_isr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bi
         RFERRF                                         DATA 000000BF
         CLKCONCMD                                      DATA 000000C6
         RFIRQF0                                        DATA 000000E9
-        RF_NormalIsr                                   CODE 000020EF
-        RF_ErrorIsr                                    CODE 00002283
-        T2_Isr                                         CODE 000022F6
-        llT2OVFC1_ISR                                  CODE 0000235B
+        RF_NormalIsr                                   CODE 000020E7
+        RF_ErrorIsr                                    CODE 0000227B
+        T2_Isr                                         CODE 000022EE
+        llT2OVFC1_ISR                                  CODE 00002353
         RF_ErrorIsr::??INTVEC 3                        CODE 00000003
         T2_Isr::??INTVEC 83                            CODE 00000053
         RF_NormalIsr::??INTVEC 131                     CODE 00000083
 ll_math ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        llDivide31By16To16                             CODE 000023E0
+        llDivide31By16To16                             CODE 000023D8
 ll_scheduler ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        llSchedulerInit                                CODE 000099ED
-        llScheduler                                    CODE 00009A1D
-        llScheduleTask                                 CODE 0000A0F6
-        llFindNextSecTask                              CODE 0000A27B
-        llAllocTask                                    CODE 0000A878
-        llFreeTask                                     CODE 0000A960
-        llGetCurrentTask                               CODE 0000A99D
-        llGetTaskState                                 CODE 0000A9C0
-        llGetActiveTasks                               CODE 0000A9F1
-        llGetNumTasks                                  CODE 0000A9FA
-        llSave_txFIFO                                  CODE 0000AA04
-        llSave_rxFIFO                                  CODE 0000AAF2
-        llRestoreConnState                             CODE 0000ABE8
+        llSchedulerInit                                CODE 000099EA
+        llScheduler                                    CODE 00009A1A
+        llScheduleTask                                 CODE 0000A0F3
+        llFindNextSecTask                              CODE 0000A278
+        llAllocTask                                    CODE 0000A875
+        llFreeTask                                     CODE 0000A95D
+        llGetCurrentTask                               CODE 0000A99A
+        llGetTaskState                                 CODE 0000A9BD
+        llGetActiveTasks                               CODE 0000A9EE
+        llGetNumTasks                                  CODE 0000A9F7
+        llSave_txFIFO                                  CODE 0000AA01
+        llSave_rxFIFO                                  CODE 0000AAEF
+        llRestoreConnState                             CODE 0000ABE5
         llSchedulerInit::?relay                        CODE 00000C24
         llScheduler::?relay                            CODE 00000C2A
         llScheduleTask::?relay                         CODE 00000C30
@@ -1239,20 +1239,20 @@ ll_scheduler ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC254
         llSave_rxFIFO::?relay                          CODE 00000C66
         llRestoreConnState::?relay                     CODE 00000C6C
 ll_slaveEndCauses ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        llSlaveEvt_TaskEndOk                           CODE 000084DE
-        llSlaveEvt_TaskAbort                           CODE 000088DD
-        llSetupNextSlaveEvent                          CODE 000088E3
-        llProcessSlaveControlPacket                    CODE 0000901E
-        llProcessSlaveControlProcedures                CODE 00009537
+        llSlaveEvt_TaskEndOk                           CODE 000084DB
+        llSlaveEvt_TaskAbort                           CODE 000088DA
+        llSetupNextSlaveEvent                          CODE 000088E0
+        llProcessSlaveControlPacket                    CODE 0000901B
+        llProcessSlaveControlProcedures                CODE 00009534
         llSlaveEvt_TaskEndOk::?relay                   CODE 00000C72
         llSlaveEvt_TaskAbort::?relay                   CODE 00000C78
         llSetupNextSlaveEvent::?relay                  CODE 00000C7E
         llProcessSlaveControlPacket::?relay            CODE 00000C84
         llProcessSlaveControlProcedures::?relay        CODE 00000C8A
 ll_sleep ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        LL_TimeToNextRfEvent                           CODE 00002431
-        LL_PowerOffReq                                 CODE 000025EE
-        LL_PowerOnReq                                  CODE 00002687
+        LL_TimeToNextRfEvent                           CODE 00002429
+        LL_PowerOffReq                                 CODE 000025E6
+        LL_PowerOnReq                                  CODE 0000267F
 ll_timer2 ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         T2CTRL                                         DATA 00000094
         T2CSPCFG                                       DATA 0000009C
@@ -1262,23 +1262,23 @@ ll_timer2 ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB
         T2MOVF1                                        DATA 000000A5
         T2MOVF2                                        DATA 000000A6
         T2MSEL                                         DATA 000000C3
-        llInitTimer2                                   CODE 0001950A
-        llStopTimer2                                   CODE 000195A0
-        llStartTimer2                                  CODE 000195B6
-        llSetT2LongC1Timeout                           CODE 0001962C
-        llSetT2C1Event1                                CODE 000196A0
-        llSetT2LongC1Event1                            CODE 000196DE
-        llSetT2OVFC2Event2                             CODE 00019752
-        llDisableT2Ints                                CODE 000197CB
-        llDisableT2IntsEvts                            CODE 000197D4
-        llDisableT2E1                                  CODE 000197E0
-        llGetTimer2Capture                             CODE 000197F5
-        llGetCurrentTime                               CODE 00019833
-        llGetFullCTandST                               CODE 00019849
-        ll24BitTimeCompare                             CODE 00002757
-        ll24BitTimeDelta                               CODE 000027B0
-        llAdjustTimeBackward                           CODE 0000281F
-        ll_McuPrecisionCount                           CODE 000198A8
+        llInitTimer2                                   CODE 00019958
+        llStopTimer2                                   CODE 000199EE
+        llStartTimer2                                  CODE 00019A04
+        llSetT2LongC1Timeout                           CODE 00019A7A
+        llSetT2C1Event1                                CODE 00019AEE
+        llSetT2LongC1Event1                            CODE 00019B2C
+        llSetT2OVFC2Event2                             CODE 00019BA0
+        llDisableT2Ints                                CODE 00019C19
+        llDisableT2IntsEvts                            CODE 00019C22
+        llDisableT2E1                                  CODE 00019C2E
+        llGetTimer2Capture                             CODE 00019C43
+        llGetCurrentTime                               CODE 00019C81
+        llGetFullCTandST                               CODE 00019C97
+        ll24BitTimeCompare                             CODE 0000274F
+        ll24BitTimeDelta                               CODE 000027A8
+        llAdjustTimeBackward                           CODE 00002817
+        ll_McuPrecisionCount                           CODE 00019CF6
         llInitTimer2::?relay                           CODE 00000C90
         llStopTimer2::?relay                           CODE 00000C96
         llStartTimer2::?relay                          CODE 00000C9C
@@ -1294,43 +1294,43 @@ ll_timer2 ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB
         llGetFullCTandST::?relay                       CODE 00000CD8
         ll_McuPrecisionCount::?relay                   CODE 00000CDE
 ll_timerDrift ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        SCA                                            CONST 00008340
-        OverheadJitter                                 CONST 00008400
-        llCalcScaFactor                                CODE 0000288E
-        llCalcTimerDrift                               CODE 000028E4
+        SCA                                            CONST 00008320
+        OverheadJitter                                 CONST 00008404
+        llCalcScaFactor                                CODE 00002886
+        llCalcTimerDrift                               CODE 000028DC
 phy ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         numWLEntries                                   XDATA 00000730
-        PHY_Init                                       CODE 000188C9
-        PHY_Reset                                      CODE 000188D6
-        PHY_ClearAllRegsAndFifos                       CODE 000188F0
-        PHY_SetOwnAddr                                 CODE 0001892F
-        PHY_SetPeerAddr                                CODE 0001896D
-        PHY_SetCRCInit                                 CODE 000189D2
-        PHY_GetAdvChans                                CODE 000189E7
-        PHY_SetAdvChans                                CODE 000189F2
-        PHY_SetDataChan                                CODE 000029A3
-        PHY_SetEndConnection                           CODE 000189FF
-        PHY_ConfigureMD                                CODE 00018A16
-        PHY_GetEndCause                                CODE 00018A24
-        PHY_InitSeqStat                                CODE 00018A2F
-        PHY_SetSyncWord                                CODE 00018A3B
-        PHY_SetMaxNack                                 CODE 00018A4A
-        PHY_ClearWhitelist                             CODE 00018A55
-        PHY_AddWlEntry                                 CODE 00018A78
-        PHY_SetAdvWlPolicy                             CODE 00018B1F
-        PHY_SetBlacklistIndex                          CODE 00018B2F
-        PHY_ClearBlacklistIndex                        CODE 00018B49
-        PHY_ClearBlacklist                             CODE 00018B66
-        PHY_ClearSavedWhiteList                        CODE 00018B82
-        PHY_ConfigureFifoDataProcessing                CODE 00018BA7
-        PHY_ConfigureAppendRfStatus                    CODE 00018BB2
-        PHY_SetFifoConfig                              CODE 00018BC7
-        PHY_ConfigWhitener                             CODE 00018BDB
-        PHY_RetryTxFifo                                CODE 00018C3C
-        PHY_RetryRxFifo                                CODE 00018C42
-        PHY_CommitRxFifo                               CODE 00018C48
-        PHY_DeallocateRxFifo                           CODE 00018C4E
-        PHY_SetRfFreq                                  CODE 00018C66
+        PHY_Init                                       CODE 00018D17
+        PHY_Reset                                      CODE 00018D24
+        PHY_ClearAllRegsAndFifos                       CODE 00018D3E
+        PHY_SetOwnAddr                                 CODE 00018D7D
+        PHY_SetPeerAddr                                CODE 00018DBB
+        PHY_SetCRCInit                                 CODE 00018E20
+        PHY_GetAdvChans                                CODE 00018E35
+        PHY_SetAdvChans                                CODE 00018E40
+        PHY_SetDataChan                                CODE 0000299B
+        PHY_SetEndConnection                           CODE 00018E4D
+        PHY_ConfigureMD                                CODE 00018E64
+        PHY_GetEndCause                                CODE 00018E72
+        PHY_InitSeqStat                                CODE 00018E7D
+        PHY_SetSyncWord                                CODE 00018E89
+        PHY_SetMaxNack                                 CODE 00018E98
+        PHY_ClearWhitelist                             CODE 00018EA3
+        PHY_AddWlEntry                                 CODE 00018EC6
+        PHY_SetAdvWlPolicy                             CODE 00018F6D
+        PHY_SetBlacklistIndex                          CODE 00018F7D
+        PHY_ClearBlacklistIndex                        CODE 00018F97
+        PHY_ClearBlacklist                             CODE 00018FB4
+        PHY_ClearSavedWhiteList                        CODE 00018FD0
+        PHY_ConfigureFifoDataProcessing                CODE 00018FF5
+        PHY_ConfigureAppendRfStatus                    CODE 00019000
+        PHY_SetFifoConfig                              CODE 00019015
+        PHY_ConfigWhitener                             CODE 00019029
+        PHY_RetryTxFifo                                CODE 0001908A
+        PHY_RetryRxFifo                                CODE 00019090
+        PHY_CommitRxFifo                               CODE 00019096
+        PHY_DeallocateRxFifo                           CODE 0001909C
+        PHY_SetRfFreq                                  CODE 000190B4
         PHY_Init::?relay                               CODE 00000CE4
         PHY_Reset::?relay                              CODE 00000CEA
         PHY_ClearAllRegsAndFifos::?relay               CODE 00000CF0
@@ -1361,23 +1361,23 @@ phy ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\C
         PHY_CommitRxFifo::?relay                       CODE 00000D86
         PHY_DeallocateRxFifo::?relay                   CODE 00000D8C
         PHY_SetRfFreq::?relay                          CODE 00000D92
-        phyFindWlEntry                                 CODE 00018C99
+        phyFindWlEntry                                 CODE 000190E7
         phyFindWlEntry::?relay                         CODE 00000D98
 phy_image ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
 sm_mgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        SM_CalcRandomAddr                              CODE 0000EA89
-        SM_ResolveRandomAddrs                          CODE 0000EB0D
-        SM_GenerateAuthenSig                           CODE 0000EBBC
-        SM_VerifyAuthenSig                             CODE 0000ED1B
-        smProcessRandComplete                          CODE 0000EF3C
-        smStartRspTimer                                CODE 0000F028
-        smStopRspTimer                                 CODE 0000F05D
-        sm_ah                                          CODE 0000F07F
-        sm_c1new                                       CODE 0000F12E
-        sm_s1                                          CODE 0000F34F
-        smGenerateRandBuf                              CODE 0000F3E1
-        smAuthReqToUint8                               CODE 0000F413
-        smUint8ToAuthReq                               CODE 0000F420
+        SM_CalcRandomAddr                              CODE 0000EA86
+        SM_ResolveRandomAddrs                          CODE 0000EB0A
+        SM_GenerateAuthenSig                           CODE 0000EBB9
+        SM_VerifyAuthenSig                             CODE 0000ED18
+        smProcessRandComplete                          CODE 0000EF39
+        smStartRspTimer                                CODE 0000F025
+        smStopRspTimer                                 CODE 0000F05A
+        sm_ah                                          CODE 0000F07C
+        sm_c1new                                       CODE 0000F12B
+        sm_s1                                          CODE 0000F34C
+        smGenerateRandBuf                              CODE 0000F3DE
+        smAuthReqToUint8                               CODE 0000F410
+        smUint8ToAuthReq                               CODE 0000F41D
         SM_CalcRandomAddr::?relay                      CODE 00000D9E
         SM_ResolveRandomAddrs::?relay                  CODE 00000DA4
         SM_GenerateAuthenSig::?relay                   CODE 00000DAA
@@ -1391,12 +1391,12 @@ sm_mgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bi
         smGenerateRandBuf::?relay                      CODE 00000DE0
         smAuthReqToUint8::?relay                       CODE 00000DE6
         smUint8ToAuthReq::?relay                       CODE 00000DEC
-        sm_xor                                         CODE 0000F326
-        smEncrypt                                      CODE 0000F477
-        sm_CMAC                                        CODE 0000F49D
-        generate_subkey                                CODE 0000F70A
-        xor_128                                        CODE 0000F80D
-        leftshift_onebit                               CODE 0000F865
+        sm_xor                                         CODE 0000F323
+        smEncrypt                                      CODE 0000F474
+        sm_CMAC                                        CODE 0000F49A
+        generate_subkey                                CODE 0000F707
+        xor_128                                        CODE 0000F80A
+        leftshift_onebit                               CODE 0000F862
         sm_xor::?relay                                 CODE 00000DD4
         smEncrypt::?relay                              CODE 00000DF2
         sm_CMAC::?relay                                CODE 00000DF8
@@ -1406,29 +1406,29 @@ sm_mgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bi
 sm_pairing ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         pPairingParams                                 XDATA 00000733
         pfnResponderCBs                                XDATA 00000735
-        SM_StartPairing                                CODE 0000DC18
-        SM_PasskeyUpdate                               CODE 0000DD22
-        smRegisterResponder                            CODE 0000DE09
-        smLinkCheck                                    CODE 0000DE13
-        smTimedOut                                     CODE 0000DE35
-        smProcessDataMsg                               CODE 0000DE41
-        smSendFailAndEnd                               CODE 0000DFDA
-        smProcessEncryptChange                         CODE 0000E009
-        smNextPairingState                             CODE 0000E125
-        sm_c1                                          CODE 0000E17E
-        smProcessPairingReq                            CODE 0000E2E4
-        smStartEncryption                              CODE 0000E3C3
-        smGeneratePairingReqRsp                        CODE 0000E41F
-        smGenerateConfirm                              CODE 0000E48C
-        smGenerateRandMsg                              CODE 0000E4C7
-        smSavePairInfo                                 CODE 0000E506
-        smPairingSendEncInfo                           CODE 0000E7BF
-        smPairingSendMasterID                          CODE 0000E7D9
-        smPairingSendIdentityInfo                      CODE 0000E865
-        smPairingSendIdentityAddrInfo                  CODE 0000E873
-        smPairingSendSingingInfo                       CODE 0000E8CC
-        smEndPairing                                   CODE 0000E94D
-        smDetermineKeySize                             CODE 0000E9B1
+        SM_StartPairing                                CODE 0000DC15
+        SM_PasskeyUpdate                               CODE 0000DD1F
+        smRegisterResponder                            CODE 0000DE06
+        smLinkCheck                                    CODE 0000DE10
+        smTimedOut                                     CODE 0000DE32
+        smProcessDataMsg                               CODE 0000DE3E
+        smSendFailAndEnd                               CODE 0000DFD7
+        smProcessEncryptChange                         CODE 0000E006
+        smNextPairingState                             CODE 0000E122
+        sm_c1                                          CODE 0000E17B
+        smProcessPairingReq                            CODE 0000E2E1
+        smStartEncryption                              CODE 0000E3C0
+        smGeneratePairingReqRsp                        CODE 0000E41C
+        smGenerateConfirm                              CODE 0000E489
+        smGenerateRandMsg                              CODE 0000E4C4
+        smSavePairInfo                                 CODE 0000E503
+        smPairingSendEncInfo                           CODE 0000E7BC
+        smPairingSendMasterID                          CODE 0000E7D6
+        smPairingSendIdentityInfo                      CODE 0000E862
+        smPairingSendIdentityAddrInfo                  CODE 0000E870
+        smPairingSendSingingInfo                       CODE 0000E8C9
+        smEndPairing                                   CODE 0000E94A
+        smDetermineKeySize                             CODE 0000E9AE
         SM_StartPairing::?relay                        CODE 00000E10
         SM_PasskeyUpdate::?relay                       CODE 00000E16
         smRegisterResponder::?relay                    CODE 00000E1C
@@ -1452,20 +1452,20 @@ sm_pairing ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541D
         smPairingSendSingingInfo::?relay               CODE 00000E88
         smEndPairing::?relay                           CODE 00000E94
         smDetermineKeySize::?relay                     CODE 00000E9A
-        smFreePairingParams                            CODE 0000E8DA
-        smSetPairingReqRsp                             CODE 0000E9FB
+        smFreePairingParams                            CODE 0000E8D7
+        smSetPairingReqRsp                             CODE 0000E9F8
         smFreePairingParams::?relay                    CODE 00000E8E
         smSetPairingReqRsp::?relay                     CODE 00000EA0
 sm_rsppairing ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        SM_ResponderInit                               CODE 0000736B
-        smpResponderProcessPairingReq                  CODE 000078C8
+        SM_ResponderInit                               CODE 000135BB
+        smpResponderProcessPairingReq                  CODE 00013B18
         SM_ResponderInit::?relay                       CODE 00000EA6
         smpResponderProcessPairingReq::?relay          CODE 00000EB8
-        smResponderProcessLTKReq                       CODE 0000738D
-        smpResponderProcessIncoming                    CODE 000075B3
-        smpResponderProcessPairingRandom               CODE 000079E0
-        smpResponderProcessMasterID                    CODE 00007A93
-        smResponderSendNextKeyInfo                     CODE 00007B75
+        smResponderProcessLTKReq                       CODE 000135DD
+        smpResponderProcessIncoming                    CODE 00013803
+        smpResponderProcessPairingRandom               CODE 00013C30
+        smpResponderProcessMasterID                    CODE 00013CE3
+        smResponderSendNextKeyInfo                     CODE 00013DC5
         smResponderProcessLTKReq::?relay               CODE 00000EAC
         smpResponderProcessIncoming::?relay            CODE 00000EB2
         smpResponderProcessPairingRandom::?relay       CODE 00000EBE
@@ -1473,36 +1473,36 @@ sm_rsppairing ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC25
         smResponderSendNextKeyInfo::?relay             CODE 00000ECA
 sm_task ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
         smTaskID                                       XDATA 00000739
-        SM_Init                                        CODE 0001B1B1
-        SM_ProcessEvent                                CODE 0001B1D6
+        SM_Init                                        CODE 0001B5FF
+        SM_ProcessEvent                                CODE 0001B624
         SM_Init::?relay                                CODE 00000ED0
         SM_ProcessEvent::?relay                        CODE 00000ED6
-        smProcessOSALMsg                               CODE 0001B248
+        smProcessOSALMsg                               CODE 0001B696
         smProcessOSALMsg::?relay                       CODE 00000EDC
 smp ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\CC2541DB\bin\CC2541_BLE_peri.lib )
-        smpBuildPairingReq                             CODE 0001613C
-        smpBuildPairingRsp                             CODE 00016145
-        smpBuildPairingReqRsp                          CODE 0001614E
-        smpParsePairingReq                             CODE 00016225
-        smpBuildPairingConfirm                         CODE 000163D6
-        smpParsePairingConfirm                         CODE 0001640C
-        smpBuildPairingRandom                          CODE 00016446
-        smpParsePairingRandom                          CODE 0001647C
-        smpBuildPairingFailed                          CODE 000164B6
-        smpParsePairingFailed                          CODE 000164EA
-        smpBuildEncInfo                                CODE 00016516
-        smpParseEncInfo                                CODE 0001655F
-        smpBuildMasterID                               CODE 00016599
-        smpParseMasterID                               CODE 000165E2
-        smpBuildIdentityInfo                           CODE 0001663A
-        smpBuildIdentityAddrInfo                       CODE 0001666F
-        smpParseIdentityInfo                           CODE 000166CA
-        smpParseIdentityAddrInfo                       CODE 00016704
-        smpBuildSigningInfo                            CODE 00016755
-        smpParseSigningInfo                            CODE 0001678B
-        smpBuildSecurityReq                            CODE 000167C5
-        smpParseSecurityReq                            CODE 000167F3
-        smSendSMMsg                                    CODE 00016816
+        smpBuildPairingReq                             CODE 0001642C
+        smpBuildPairingRsp                             CODE 00016435
+        smpBuildPairingReqRsp                          CODE 0001643E
+        smpParsePairingReq                             CODE 00016515
+        smpBuildPairingConfirm                         CODE 000166C6
+        smpParsePairingConfirm                         CODE 000166FC
+        smpBuildPairingRandom                          CODE 00016736
+        smpParsePairingRandom                          CODE 0001676C
+        smpBuildPairingFailed                          CODE 000167A6
+        smpParsePairingFailed                          CODE 000167DA
+        smpBuildEncInfo                                CODE 00016806
+        smpParseEncInfo                                CODE 0001684F
+        smpBuildMasterID                               CODE 00016889
+        smpParseMasterID                               CODE 000168D2
+        smpBuildIdentityInfo                           CODE 0001692A
+        smpBuildIdentityAddrInfo                       CODE 0001695F
+        smpParseIdentityInfo                           CODE 000169BA
+        smpParseIdentityAddrInfo                       CODE 000169F4
+        smpBuildSigningInfo                            CODE 00016A45
+        smpParseSigningInfo                            CODE 00016A7B
+        smpBuildSecurityReq                            CODE 00016AB5
+        smpParseSecurityReq                            CODE 00016AE3
+        smSendSMMsg                                    CODE 00016B06
         smpBuildPairingReq::?relay                     CODE 00000EE2
         smpBuildPairingRsp::?relay                     CODE 00000EE8
         smpBuildPairingReqRsp::?relay                  CODE 00000EEE
@@ -1533,11 +1533,11 @@ hci_tl ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\Common\bin\
         hciL2capTaskID                                 XDATA 0000073D
         hciSmpTaskID                                   XDATA 0000073E
         hciExtTaskID                                   XDATA 0000073F
-        HCI_Init                                       CODE 0001C045
-        HCI_ProcessEvent                               CODE 0001C071
-        HCI_GAPTaskRegister                            CODE 0001C0CC
-        HCI_L2CAPTaskRegister                          CODE 0001C0D6
-        HCI_SMPTaskRegister                            CODE 0001C0E6
+        HCI_Init                                       CODE 0001C335
+        HCI_ProcessEvent                               CODE 0001C361
+        HCI_GAPTaskRegister                            CODE 0001C3BC
+        HCI_L2CAPTaskRegister                          CODE 0001C3C6
+        HCI_SMPTaskRegister                            CODE 0001C3D6
         HCI_Init::?relay                               CODE 00000F6C
         HCI_ProcessEvent::?relay                       CODE 00000F72
         HCI_GAPTaskRegister::?relay                    CODE 00000F78
@@ -1545,28 +1545,28 @@ hci_tl ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Libraries\Common\bin\
         HCI_SMPTaskRegister::?relay                    CODE 00000F84
 OSAL ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\OSAL.r51 )
         osal_qHead                                     XDATA 00000740
-        osal_strlen                                    CODE 0001485E
-        osal_memcpy                                    CODE 00014868
-        osal_revmemcpy                                 CODE 000148A6
-        osal_memdup                                    CODE 000148EF
-        osal_memcmp                                    CODE 00014929
-        osal_memset                                    CODE 00014983
-        _ltoa                                          CODE 000149A4
-        osal_rand                                      CODE 00014C7C
-        osal_msg_allocate                              CODE 00014C85
-        osal_msg_deallocate                            CODE 00014CD2
-        osal_msg_send                                  CODE 00014CFB
-        osal_msg_receive                               CODE 00014D71
-        osal_msg_enqueue                               CODE 00014E03
-        osal_msg_push                                  CODE 00014E4D
-        osal_msg_extract                               CODE 00014E83
-        osal_set_event                                 CODE 00014F0F
-        osal_clear_event                               CODE 00014F50
-        osal_int_disable                               CODE 00014F87
-        osal_init_system                               CODE 00014F99
-        osal_start_system                              CODE 00014FB8
-        osal_run_system                                CODE 00014FC1
-        osal_isbufset                                  CODE 0001508E
+        osal_strlen                                    CODE 0001538C
+        osal_memcpy                                    CODE 00015396
+        osal_revmemcpy                                 CODE 000153D4
+        osal_memdup                                    CODE 0001541D
+        osal_memcmp                                    CODE 00015457
+        osal_memset                                    CODE 000154B1
+        _ltoa                                          CODE 000154D2
+        osal_rand                                      CODE 000157AA
+        osal_msg_allocate                              CODE 000157B3
+        osal_msg_deallocate                            CODE 00015800
+        osal_msg_send                                  CODE 00015829
+        osal_msg_receive                               CODE 0001589F
+        osal_msg_enqueue                               CODE 00015931
+        osal_msg_push                                  CODE 0001597B
+        osal_msg_extract                               CODE 000159B1
+        osal_set_event                                 CODE 00015A3D
+        osal_clear_event                               CODE 00015A7E
+        osal_int_disable                               CODE 00015AB5
+        osal_init_system                               CODE 00015AC7
+        osal_start_system                              CODE 00015AE6
+        osal_run_system                                CODE 00015AEF
+        osal_isbufset                                  CODE 00015BBC
         osal_strlen::?relay                            CODE 00000F8A
         osal_memcpy::?relay                            CODE 00000F90
         osal_revmemcpy::?relay                         CODE 00000F96
@@ -1589,41 +1589,41 @@ OSAL ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke
         osal_start_system::?relay                      CODE 00001002
         osal_run_system::?relay                        CODE 00001008
         osal_isbufset::?relay                          CODE 0000100E
-        __Constant_2710                                CONST 00008468
-        __Constant_5f5e100                             CONST 0000846C
+        __Constant_2710                                CONST 00008454
+        __Constant_5f5e100                             CONST 00008458
         IEN0                                           DATA 000000A8
         activeTaskID                                   XDATA 00000F2A
-        ?Subroutine2                                   CODE 00014920
-        ?Subroutine18                                  CODE 00014C5F
-        ?Subroutine8                                   CODE 00014C74
-        ?Subroutine0                                   CODE 00014CF4
-        osal_msg_enqueue_push                          CODE 00014D05
-        ?Subroutine14                                  CODE 00014D64
-        ?Subroutine6                                   CODE 00014DFD
-        ?Subroutine5                                   CODE 00014E32
-        ?Subroutine1                                   CODE 00014E36
-        ?Subroutine3                                   CODE 00014E3E
-        ?Subroutine17                                  CODE 00014E43
-        ?Subroutine10                                  CODE 00014E7D
-        ?Subroutine15                                  CODE 00014EF7
-        ?Subroutine19                                  CODE 00014F02
-        ?Subroutine13                                  CODE 00015065
-        ?Subroutine11                                  CODE 0001506E
-        ?Subroutine7                                   CODE 00015082
+        ?Subroutine2                                   CODE 0001544E
+        ?Subroutine18                                  CODE 0001578D
+        ?Subroutine8                                   CODE 000157A2
+        ?Subroutine0                                   CODE 00015822
+        osal_msg_enqueue_push                          CODE 00015833
+        ?Subroutine14                                  CODE 00015892
+        ?Subroutine6                                   CODE 0001592B
+        ?Subroutine5                                   CODE 00015960
+        ?Subroutine1                                   CODE 00015964
+        ?Subroutine3                                   CODE 0001596C
+        ?Subroutine17                                  CODE 00015971
+        ?Subroutine10                                  CODE 000159AB
+        ?Subroutine15                                  CODE 00015A25
+        ?Subroutine19                                  CODE 00015A30
+        ?Subroutine13                                  CODE 00015B93
+        ?Subroutine11                                  CODE 00015B9C
+        ?Subroutine7                                   CODE 00015BB0
         osal_msg_enqueue_push::?relay                  CODE 00000FCC
 OSAL_ClockBLE ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\OSAL_ClockBLE.r51 )
         OSAL_timeSeconds                               XDATA 00000748
-        osalTimeUpdate                                 CODE 0001BCD5
+        osalTimeUpdate                                 CODE 0001BFC5
         osalTimeUpdate::?relay                         CODE 00001014
         previousLLTimerTick                            XDATA 00000742
         remUsTicks                                     XDATA 00000744
         timeMSec                                       XDATA 00000746
-        ?Subroutine3                                   CODE 0001BDBF
+        ?Subroutine3                                   CODE 0001C0AF
 OSAL_Memory ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\OSAL_Memory.r51 )
-        osal_mem_init                                  CODE 0001AE06
-        osal_mem_kick                                  CODE 0001AE3C
-        osal_mem_alloc                                 CODE 0001AE72
-        osal_mem_free                                  CODE 0001AFBD
+        osal_mem_init                                  CODE 0001B254
+        osal_mem_kick                                  CODE 0001B28A
+        osal_mem_alloc                                 CODE 0001B2C0
+        osal_mem_free                                  CODE 0001B40B
         osal_mem_init::?relay                          CODE 0000101A
         osal_mem_kick::?relay                          CODE 00001020
         osal_mem_alloc::?relay                         CODE 00001026
@@ -1632,38 +1632,38 @@ OSAL_Memory ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeriphe
         theHeap                                        XDATA 00001131
         ff1                                            XDATA 00001D33
         osalMemStat                                    XDATA 0000074C
-        ?Subroutine0                                   CODE 0001AE35
+        ?Subroutine0                                   CODE 0001B283
 OSAL_PwrMgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\OSAL_PwrMgr.r51 )
         pwrmgr_attribute                               XDATA 0000074D
-        osal_pwrmgr_init                               CODE 0001C0F0
-        osal_pwrmgr_device                             CODE 0001C106
-        osal_pwrmgr_task_state                         CODE 0001C110
-        osal_pwrmgr_powerconserve                      CODE 0001C15A
+        osal_pwrmgr_init                               CODE 0001C3E0
+        osal_pwrmgr_device                             CODE 0001C3F6
+        osal_pwrmgr_task_state                         CODE 0001C400
+        osal_pwrmgr_powerconserve                      CODE 0001C44A
         osal_pwrmgr_init::?relay                       CODE 00001032
         osal_pwrmgr_device::?relay                     CODE 00001038
         osal_pwrmgr_task_state::?relay                 CODE 0000103E
         osal_pwrmgr_powerconserve::?relay              CODE 00001044
         IEN0                                           DATA 000000A8
-        ?Subroutine0                                   CODE 0001C0FE
+        ?Subroutine0                                   CODE 0001C3EE
 OSAL_SimpleBLEPeripheral ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\OSAL_SimpleBLEPeripheral.r51 )
         tasksArr                                       CONST 00008244
-        tasksCnt                                       CONST 000084DB
+        tasksCnt                                       CONST 000084D8
         tasksEvents                                    XDATA 00000754
-        osalInitTasks                                  CODE 0001C20C
+        osalInitTasks                                  CODE 0001C4FC
         osalInitTasks::?relay                          CODE 0000104A
 OSAL_Timers ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\OSAL_Timers.r51 )
         timerHead                                      XDATA 00000756
-        osalTimerInit                                  CODE 0001729A
-        osalAddTimer                                   CODE 000172AF
-        osalFindTimer                                  CODE 0001735F
-        osalDeleteTimer                                CODE 0001739F
-        osal_start_timerEx                             CODE 000173B8
-        osal_start_reload_timer                        CODE 000173F3
-        osal_stop_timerEx                              CODE 00017440
-        osal_get_timeoutEx                             CODE 00017472
-        osalTimerUpdate                                CODE 000174B4
-        osal_next_timeout                              CODE 000176B5
-        osal_GetSystemClock                            CODE 00017727
+        osalTimerInit                                  CODE 0001758A
+        osalAddTimer                                   CODE 0001759F
+        osalFindTimer                                  CODE 0001764F
+        osalDeleteTimer                                CODE 0001768F
+        osal_start_timerEx                             CODE 000176A8
+        osal_start_reload_timer                        CODE 000176E3
+        osal_stop_timerEx                              CODE 00017730
+        osal_get_timeoutEx                             CODE 00017762
+        osalTimerUpdate                                CODE 000177A4
+        osal_next_timeout                              CODE 000179A5
+        osal_GetSystemClock                            CODE 00017A17
         osalTimerInit::?relay                          CODE 00001050
         osalAddTimer::?relay                           CODE 00001056
         osalFindTimer::?relay                          CODE 0000105C
@@ -1677,21 +1677,21 @@ OSAL_Timers ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeriphe
         osal_GetSystemClock::?relay                    CODE 0000108C
         IEN0                                           DATA 000000A8
         osal_systemClock                               XDATA 00000758
-        ?Subroutine0                                   CODE 0001735A
-        ?Subroutine2                                   CODE 000173EE
-        ?Subroutine3                                   CODE 0001743B
-        ?Subroutine1                                   CODE 000174AD
-        ?Subroutine4                                   CODE 000176AA
-        ?Subroutine5                                   CODE 0001771B
+        ?Subroutine0                                   CODE 0001764A
+        ?Subroutine2                                   CODE 000176DE
+        ?Subroutine3                                   CODE 0001772B
+        ?Subroutine1                                   CODE 0001779D
+        ?Subroutine4                                   CODE 0001799A
+        ?Subroutine5                                   CODE 00017A0B
 OnBoard ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\OnBoard.r51 )
         OnboardKeyIntEnable                            XDATA 0000075C
-        InitBoard                                      CODE 0001B69A
-        Onboard_rand                                   CODE 0001B6C3
-        _itoa                                          CODE 0001B6F2
-        RegisterForKeys                                CODE 0001B78A
-        OnBoard_SendKeys                               CODE 0001B7A2
-        OnBoard_KeyCallback                            CODE 0001B7E4
-        Onboard_soft_reset                             CODE 000029B1
+        InitBoard                                      CODE 0001BAE8
+        Onboard_rand                                   CODE 0001BB11
+        _itoa                                          CODE 0001BB40
+        RegisterForKeys                                CODE 0001BBD8
+        OnBoard_SendKeys                               CODE 0001BBF0
+        OnBoard_KeyCallback                            CODE 0001BC32
+        Onboard_soft_reset                             CODE 000029A9
         InitBoard::?relay                              CODE 00001092
         Onboard_rand::?relay                           CODE 00001098
         _itoa::?relay                                  CODE 0000109E
@@ -1700,40 +1700,40 @@ OnBoard ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralz
         OnBoard_KeyCallback::?relay                    CODE 000010B0
         IEN0                                           DATA 000000A8
         registeredKeysTaskID                           XDATA 00000F2B
-        ?Subroutine0                                   CODE 0001B6BE
-        ?Subroutine1                                   CODE 0001B6EB
+        ?Subroutine0                                   CODE 0001BB0C
+        ?Subroutine1                                   CODE 0001BB39
 SimpleBLEPeripheral_Main ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\SimpleBLEPeripheral_Main.r51 )
         SLEEPSTA                                       DATA 0000009D
         CLKCONSTA                                      DATA 0000009E
-        main                                           CODE 0001C2C4
+        main                                           CODE 0001C5B4
         IEN0                                           DATA 000000A8
 SimpleBLESerialUart ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\SimpleBLESerialUart.r51 )
         SBP_UART_STUDY_CMD                             XDATA 00000F2C
         SBP_UART_STUDY_CMD_LEN                         XDATA 00000F2D
         u_state                                        XDATA 0000075D
         UartBuffer                                     XDATA 0000075E
-        SbpHalUART_Init                                CODE 0001ABF5
-        SbpHalUARTInit                                 CODE 0001ABFE
-        studyCompletedAndBroadcastData                 CODE 0001AC6F
+        SbpHalUART_Init                                CODE 0001B043
+        SbpHalUARTInit                                 CODE 0001B04C
+        studyCompletedAndBroadcastData                 CODE 0001B0BD
         numBytes                                       XDATA 0000085D
         point                                          XDATA 0000085F
         irdatalen                                      XDATA 00000861
         pktBuffer                                      XDATA 00000863
         UART_PORT_HAVE_READ                            XDATA 00000962
-        SbpHalUARTReadCallback                         CODE 0001AC83
-        SbpHalUARTRead                                 CODE 0001ADD8
-        SbpHalUARTWrite                                CODE 0001ADFA
+        SbpHalUARTReadCallback                         CODE 0001B0D1
+        SbpHalUARTRead                                 CODE 0001B226
+        SbpHalUARTWrite                                CODE 0001B248
         SbpHalUART_Init::?relay                        CODE 000010B6
         SbpHalUARTInit::?relay                         CODE 000010BC
         studyCompletedAndBroadcastData::?relay         CODE 000010C2
         SbpHalUARTReadCallback::?relay                 CODE 000010C8
         SbpHalUARTRead::?relay                         CODE 000010CE
         SbpHalUARTWrite::?relay                        CODE 000010D4
-        ?Subroutine0                                   CODE 0001AC7C
-        ?Subroutine3                                   CODE 0001ADBD
-        ?Subroutine2                                   CODE 0001ADC7
-        ?Subroutine1                                   CODE 0001ADD2
-        ?Subroutine4                                   CODE 0001ADED
+        ?Subroutine0                                   CODE 0001B0CA
+        ?Subroutine3                                   CODE 0001B20B
+        ?Subroutine2                                   CODE 0001B215
+        ?Subroutine1                                   CODE 0001B220
+        ?Subroutine4                                   CODE 0001B23B
 SimpleEepromUtils ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\SimpleEepromUtils.r51 )
 SimpleRTCInterrupt ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\SimpleRTCInterrupt.r51 )
         P1IFG                                          DATA 0000008A
@@ -1743,71 +1743,71 @@ SimpleRTCInterrupt ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLE
         _A_IRCON2                                      DATA 000000E8
         P1SEL                                          DATA 000000F4
         P1DIR                                          DATA 000000FE
-        InitialRTCInterrupt                            CODE 0001C43B
+        InitialRTCInterrupt                            CODE 0001C727
         k                                              XDATA 00000963
-        RTCInterruptIsr                                CODE 000029B7
+        RTCInterruptIsr                                CODE 000029AF
         RTCInterruptIsr::??INTVEC 123                  CODE 0000007B
         InitialRTCInterrupt::?relay                    CODE 000010DA
-        __Constant_1                                   CONST 00008470
-        __Constant_a                                   CONST 00008474
+        __Constant_1                                   CONST 0000845C
+        __Constant_a                                   CONST 00008480
         IRCON2                                         DATA 000000E8
 devinfoservice ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\devinfoservice.r51 )
-        devInfoServUUID                                CONST 0000849F
-        devInfoSystemIdUUID                            CONST 000084A1
-        devInfoModelNumberUUID                         CONST 000084C5
-        devInfoSerialNumberUUID                        CONST 000084C7
-        devInfoFirmwareRevUUID                         CONST 000084C9
-        devInfoHardwareRevUUID                         CONST 000084CB
-        devInfoSoftwareRevUUID                         CONST 000084CD
-        devInfoMfrNameUUID                             CONST 000084CF
-        devInfo11073CertUUID                           CONST 000084D1
-        devInfoPnpIdUUID                               CONST 000084B5
-        devInfoCBs                                     CONST 00008429
-        DevInfo_AddService                             CODE 0001A23D
-        DevInfo_SetParameter                           CODE 0001A262
+        devInfoServUUID                                CONST 0000849B
+        devInfoSystemIdUUID                            CONST 000084AF
+        devInfoModelNumberUUID                         CONST 000084B3
+        devInfoSerialNumberUUID                        CONST 000084B5
+        devInfoFirmwareRevUUID                         CONST 000084B9
+        devInfoHardwareRevUUID                         CONST 000084C1
+        devInfoSoftwareRevUUID                         CONST 000084C7
+        devInfoMfrNameUUID                             CONST 000084C9
+        devInfo11073CertUUID                           CONST 000084CB
+        devInfoPnpIdUUID                               CONST 000084CD
+        devInfoCBs                                     CONST 00008425
+        DevInfo_AddService                             CODE 0001A68B
+        DevInfo_SetParameter                           CODE 0001A6B0
         DevInfo_AddService::?relay                     CODE 000010E0
         DevInfo_SetParameter::?relay                   CODE 000010E6
-        devInfoService                                 CONST 0000849C
+        devInfoService                                 CONST 0000848C
         devInfoSystemIdProps                           XDATA 00000F2E
         devInfoSystemId                                XDATA 00000967
         devInfoModelNumberProps                        XDATA 00000F2F
-        devInfoModelNumber                             CONST 000083B6
+        devInfoModelNumber                             CONST 000083C5
         devInfoSerialNumberProps                       XDATA 00000F30
-        devInfoSerialNumber                            CONST 00008380
+        devInfoSerialNumber                            CONST 0000838F
         devInfoFirmwareRevProps                        XDATA 00000F31
-        devInfoFirmwareRev                             CONST 000082A9
+        devInfoFirmwareRev                             CONST 000082BB
         devInfoHardwareRevProps                        XDATA 00000F32
-        devInfoHardwareRev                             CONST 000082BB
+        devInfoHardwareRev                             CONST 00008285
         devInfoSoftwareRevProps                        XDATA 00000F33
-        devInfoSoftwareRev                             CONST 00008285
+        devInfoSoftwareRev                             CONST 000082A9
         devInfoMfrNameProps                            XDATA 00000F34
         devInfoMfrName                                 CONST 00008297
         devInfo11073CertProps                          XDATA 00000F35
-        devInfo11073Cert                               CONST 0000838E
+        devInfo11073Cert                               CONST 0000839D
         devInfoPnpIdProps                              XDATA 00000F36
         devInfoPnpId                                   XDATA 00000F37
         devInfoAttrTbl                                 XDATA 00000F3E
-        ?Subroutine0                                   CODE 0001A25D
-        devInfo_ReadAttrCB                             CODE 0001A28C
-        ?Subroutine5                                   CODE 0001A4DC
-        ?Subroutine4                                   CODE 0001A4E4
-        ?Subroutine3                                   CODE 0001A4EB
-        ?Subroutine2                                   CODE 0001A4F4
-        ?Subroutine1                                   CODE 0001A4FD
+        ?Subroutine0                                   CODE 0001A6AB
+        devInfo_ReadAttrCB                             CODE 0001A6DA
+        ?Subroutine5                                   CODE 0001A92A
+        ?Subroutine4                                   CODE 0001A932
+        ?Subroutine3                                   CODE 0001A939
+        ?Subroutine2                                   CODE 0001A942
+        ?Subroutine1                                   CODE 0001A94B
         devInfo_ReadAttrCB::?relay                     CODE 000010EC
 gap ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\gap.r51 )
-        GAP_DeviceInit                                 CODE 0001C31C
+        GAP_DeviceInit                                 CODE 0001C60C
         GAP_DeviceInit::?relay                         CODE 000010F2
 gapbondmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\gapbondmgr.r51 )
-        GAPBondMgr_SetParameter                        CODE 00005DD5
-        GAPBondMgr_LinkEst                             CODE 0000603A
-        GAPBondMgr_ResolveAddr                         CODE 000061DB
-        GAPBondMgr_ServiceChangeInd                    CODE 0000628F
-        GAPBondMgr_UpdateCharCfg                       CODE 00006322
-        GAPBondMgr_Register                            CODE 000063A7
-        GAPBondMgr_ProcessGAPMsg                       CODE 000063CC
-        GAPBondMgr_Init                                CODE 00006E1F
-        GAPBondMgr_ProcessEvent                        CODE 00006E2F
+        GAPBondMgr_SetParameter                        CODE 00005DCD
+        GAPBondMgr_LinkEst                             CODE 00006032
+        GAPBondMgr_ResolveAddr                         CODE 000061D3
+        GAPBondMgr_ServiceChangeInd                    CODE 00006287
+        GAPBondMgr_UpdateCharCfg                       CODE 0000631A
+        GAPBondMgr_Register                            CODE 0000639F
+        GAPBondMgr_ProcessGAPMsg                       CODE 000063C4
+        GAPBondMgr_Init                                CODE 00006E17
+        GAPBondMgr_ProcessEvent                        CODE 00006E27
         GAPBondMgr_SetParameter::?relay                CODE 000010F8
         GAPBondMgr_LinkEst::?relay                     CODE 000010FE
         GAPBondMgr_ResolveAddr::?relay                 CODE 00001104
@@ -1817,7 +1817,7 @@ gapbondmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripher
         GAPBondMgr_ProcessGAPMsg::?relay               CODE 0000111C
         GAPBondMgr_Init::?relay                        CODE 0000116A
         GAPBondMgr_ProcessEvent::?relay                CODE 00001170
-        __Constant_f4240                               CONST 0000845C
+        __Constant_f4240                               CONST 00008474
         gapBondMgr_TaskID                              XDATA 0000096F
         gapBond_PairingMode                            XDATA 00000FD6
         gapBond_InitiateWait                           XDATA 00000FD7
@@ -1838,51 +1838,51 @@ gapbondmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripher
         bondsToDelete                                  XDATA 00000A19
         bondIdx                                        XDATA 00000FDC
         pAuthEvt                                       XDATA 00000A23
-        ?Subroutine15                                  CODE 00006030
-        ?Subroutine1                                   CODE 00006318
-        ?Subroutine0                                   CODE 000066FA
-        ?Subroutine12                                  CODE 00006702
-        ?Subroutine11                                  CODE 0000670B
-        ?Subroutine23                                  CODE 0000671A
-        gapBondMgrChangeState                          CODE 00006722
-        gapBondMgrUpdateCharCfg                        CODE 000067A8
-        ?Subroutine18                                  CODE 000068CF
-        gapBondMgrFindCharCfgItem                      CODE 000068DB
-        ?Subroutine19                                  CODE 0000690E
-        gapBondMgrInvertCharCfgItem                    CODE 00006915
-        gapBondMgrAddBond                              CODE 0000694A
-        ?Subroutine20                                  CODE 00006ADA
-        ?Subroutine14                                  CODE 00006AE3
-        ?Subroutine13                                  CODE 00006AEC
-        ?Subroutine10                                  CODE 00006AF7
-        ?Subroutine22                                  CODE 00006B04
-        gapBondMgrGetPublicAddr                        CODE 00006B0A
-        gapBondMgrFindAddr                             CODE 00006B67
-        gapBondMgrResolvePrivateAddr                   CODE 00006BB0
-        gapBondMgrReadBonds                            CODE 00006C1B
-        gapBondMgrBondTotal                            CODE 00006C8C
-        ?Subroutine4                                   CODE 00006CB9
-        gapBondMgrEraseAllBondings                     CODE 00006CBE
-        gapBondMgrEraseBonding                         CODE 00006CD6
-        ?Subroutine5                                   CODE 00006E17
-        ?Subroutine9                                   CODE 00006F3A
-        ?Subroutine6                                   CODE 00006F45
-        gapBondMgrSendServiceChange                    CODE 00006F4A
-        ?Subroutine8                                   CODE 00006F60
-        gapBondSetupPrivFlag                           CODE 00006F6C
-        ?Subroutine3                                   CODE 00006F9B
-        gapBondMgrAuthenticate                         CODE 00006FA2
-        ?Subroutine2                                   CODE 0000713D
-        ?Subroutine21                                  CODE 00007145
-        ?Subroutine17                                  CODE 0000714C
-        gapBondMgrBondReq                              CODE 00007156
-        gapBondMgr_SyncWhiteList                       CODE 000071E3
-        gapBondMgr_SyncCharCfg                         CODE 00007222
-        ?Subroutine16                                  CODE 00007333
-        ?Subroutine7                                   CODE 0000733B
+        ?Subroutine15                                  CODE 00006028
+        ?Subroutine1                                   CODE 00006310
+        ?Subroutine0                                   CODE 000066F2
+        ?Subroutine12                                  CODE 000066FA
+        ?Subroutine11                                  CODE 00006703
+        ?Subroutine23                                  CODE 00006712
+        gapBondMgrChangeState                          CODE 0000671A
+        gapBondMgrUpdateCharCfg                        CODE 000067A0
+        ?Subroutine18                                  CODE 000068C7
+        gapBondMgrFindCharCfgItem                      CODE 000068D3
+        ?Subroutine19                                  CODE 00006906
+        gapBondMgrInvertCharCfgItem                    CODE 0000690D
+        gapBondMgrAddBond                              CODE 00006942
+        ?Subroutine20                                  CODE 00006AD2
+        ?Subroutine14                                  CODE 00006ADB
+        ?Subroutine13                                  CODE 00006AE4
+        ?Subroutine10                                  CODE 00006AEF
+        ?Subroutine22                                  CODE 00006AFC
+        gapBondMgrGetPublicAddr                        CODE 00006B02
+        gapBondMgrFindAddr                             CODE 00006B5F
+        gapBondMgrResolvePrivateAddr                   CODE 00006BA8
+        gapBondMgrReadBonds                            CODE 00006C13
+        gapBondMgrBondTotal                            CODE 00006C84
+        ?Subroutine4                                   CODE 00006CB1
+        gapBondMgrEraseAllBondings                     CODE 00006CB6
+        gapBondMgrEraseBonding                         CODE 00006CCE
+        ?Subroutine5                                   CODE 00006E0F
+        ?Subroutine9                                   CODE 00006F32
+        ?Subroutine6                                   CODE 00006F3D
+        gapBondMgrSendServiceChange                    CODE 00006F42
+        ?Subroutine8                                   CODE 00006F58
+        gapBondSetupPrivFlag                           CODE 00006F64
+        ?Subroutine3                                   CODE 00006F93
+        gapBondMgrAuthenticate                         CODE 00006F9A
+        ?Subroutine2                                   CODE 00007135
+        ?Subroutine21                                  CODE 0000713D
+        ?Subroutine17                                  CODE 00007144
+        gapBondMgrBondReq                              CODE 0000714E
+        gapBondMgr_SyncWhiteList                       CODE 000071DB
+        gapBondMgr_SyncCharCfg                         CODE 0000721A
+        ?Subroutine16                                  CODE 0000732B
+        ?Subroutine7                                   CODE 00007333
         gapBondMgr_SyncCharCfg::pAttr                  XDATA 00000A25
         gapBondMgr_SyncCharCfg::service                XDATA 00000A27
-        gapBondFreeAuthEvt                             CODE 00007346
+        gapBondFreeAuthEvt                             CODE 0000733E
         gapBondMgrChangeState::?relay                  CODE 00001122
         gapBondMgrUpdateCharCfg::?relay                CODE 00001128
         gapBondMgrFindCharCfgItem::?relay              CODE 0000112E
@@ -1903,46 +1903,46 @@ gapbondmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripher
         gapBondMgr_SyncCharCfg::?relay                 CODE 00001194
         gapBondFreeAuthEvt::?relay                     CODE 0000119A
 gatt_uuid ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\gatt_uuid.r51 )
-        gapServiceUUID                                 CONST 000084C1
-        gattServiceUUID                                CONST 000084BB
-        primaryServiceUUID                             CONST 000084B9
-        secondaryServiceUUID                           CONST 000084B7
-        characterUUID                                  CONST 000084B3
-        charUserDescUUID                               CONST 000084B1
-        clientCharCfgUUID                              CONST 000084AF
-        deviceNameUUID                                 CONST 000084AD
-        appearanceUUID                                 CONST 000084AB
-        periPrivacyFlagUUID                            CONST 000084A9
-        reconnectAddrUUID                              CONST 000084A7
-        periConnParamUUID                              CONST 000084A5
-        serviceChangedUUID                             CONST 000084A3
+        gapServiceUUID                                 CONST 000084AD
+        gattServiceUUID                                CONST 000084C5
+        primaryServiceUUID                             CONST 000084A9
+        secondaryServiceUUID                           CONST 000084A7
+        characterUUID                                  CONST 000084A5
+        charUserDescUUID                               CONST 000084A3
+        clientCharCfgUUID                              CONST 000084A1
+        deviceNameUUID                                 CONST 0000849F
+        appearanceUUID                                 CONST 0000849D
+        periPrivacyFlagUUID                            CONST 000084AB
+        reconnectAddrUUID                              CONST 000084B1
+        periConnParamUUID                              CONST 000084D5
+        serviceChangedUUID                             CONST 000084C3
 hal_adc ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_adc.r51 )
         ADCCON1                                        DATA 000000B4
         ADCCON3                                        DATA 000000B6
         ADCL                                           DATA 000000BA
         ADCH                                           DATA 000000BB
         ADCCFG                                         DATA 000000F2
-        HalAdcInit                                     CODE 0001BF8F
-        HalAdcRead                                     CODE 0001BFA0
+        HalAdcInit                                     CODE 0001C27F
+        HalAdcRead                                     CODE 0001C290
         HalAdcInit::?relay                             CODE 000011A0
         HalAdcRead::?relay                             CODE 000011A6
         adcRef                                         XDATA 00000A29
-        ?Subroutine0                                   CODE 0001BF98
+        ?Subroutine0                                   CODE 0001C288
 hal_aes ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_aes.r51 )
         ENCCS                                          DATA 000000B3
         DMAIRQ                                         DATA 000000D1
         DMAARM                                         DATA 000000D6
-        aesDmaInit                                     CODE 0001C372
-        HalAesInit                                     CODE 0001C3B1
+        aesDmaInit                                     CODE 0001C662
+        HalAesInit                                     CODE 0001C6A1
         aesDmaInit::?relay                             CODE 000011AC
         HalAesInit::?relay                             CODE 000011B2
-        ?Subroutine0                                   CODE 0001C3AA
+        ?Subroutine0                                   CODE 0001C69A
 hal_at24c32 ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_at24c32.r51 )
-        HalAT24C32Write                                CODE 0001C26B
-        HalAT24C32Read                                 CODE 0001C299
+        HalAT24C32Write                                CODE 0001C55B
+        HalAT24C32Read                                 CODE 0001C589
         HalAT24C32Write::?relay                        CODE 000011B8
         HalAT24C32Read::?relay                         CODE 000011BE
-        ?Subroutine0                                   CODE 0001C294
+        ?Subroutine0                                   CODE 0001C584
 hal_crc ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_crc.r51 )
         RNDL                                           DATA 000000BC
         RNDH                                           DATA 000000BD
@@ -1955,8 +1955,8 @@ hal_dma ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralz
         DMA0CFGH                                       DATA 000000D5
         dmaCh0                                         XDATA 00000A2A
         dmaCh1234                                      XDATA 00000A32
-        HalDmaInit                                     CODE 0001C450
-        halDmaIsr                                      CODE 00002A29
+        HalDmaInit                                     CODE 0001C73C
+        halDmaIsr                                      CODE 00002A21
         halDmaIsr::??INTVEC 67                         CODE 00000043
         HalDmaInit::?relay                             CODE 000011C4
         IEN0                                           DATA 000000A8
@@ -1964,50 +1964,50 @@ hal_dma ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralz
         IRCON                                          DATA 000000C0
 hal_drivers ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_drivers.r51 )
         Hal_TaskID                                     XDATA 00000A52
-        Hal_Init                                       CODE 0001BDCC
-        HalDriverInit                                  CODE 0001BDDC
-        Hal_ProcessEvent                               CODE 0001BDF7
-        Hal_ProcessPoll                                CODE 0001BEAB
-        __Constant_64                                  CONST 00008454
+        Hal_Init                                       CODE 0001C0BC
+        HalDriverInit                                  CODE 0001C0CC
+        Hal_ProcessEvent                               CODE 0001C0E7
+        Hal_ProcessPoll                                CODE 0001C19B
+        __Constant_64                                  CONST 00008488
         Hal_Init::?relay                               CODE 000011CA
         HalDriverInit::?relay                          CODE 000011D0
         Hal_ProcessEvent::?relay                       CODE 000011D6
         Hal_ProcessPoll::?relay                        CODE 000011DC
-        ?Subroutine0                                   CODE 0001BDD5
+        ?Subroutine0                                   CODE 0001C0C5
 hal_ds1307 ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_ds1307.r51 )
-        HalDS1307ReadTimeData                          CODE 0001A509
+        HalDS1307ReadTimeData                          CODE 0001A957
         HalDS1307ReadTimeData::?relay                  CODE 000011E2
-        ?Subroutine0                                   CODE 0001A535
-        showDate                                       CODE 0001A53A
-        ?Subroutine4                                   CODE 0001A6E7
-        ?Subroutine3                                   CODE 0001A6EE
-        ?Subroutine6                                   CODE 0001A6F7
-        ?Subroutine2                                   CODE 0001A706
-        ?Subroutine1                                   CODE 0001A711
-        hex2char                                       CODE 0001A724
+        ?Subroutine0                                   CODE 0001A983
+        showDate                                       CODE 0001A988
+        ?Subroutine4                                   CODE 0001AB35
+        ?Subroutine3                                   CODE 0001AB3C
+        ?Subroutine6                                   CODE 0001AB45
+        ?Subroutine2                                   CODE 0001AB54
+        ?Subroutine1                                   CODE 0001AB5F
+        hex2char                                       CODE 0001AB72
         showDate::?relay                               CODE 000011E8
         hex2char::?relay                               CODE 000011EE
 hal_eeprom ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_eeprom.r51 )
 hal_flash ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_flash.r51 )
         MEMCTR                                         DATA 000000C7
-        HalFlashRead                                   CODE 0001BBD1
-        HalFlashWrite                                  CODE 0001BC56
-        HalFlashErase                                  CODE 0001BCBC
+        HalFlashRead                                   CODE 0001BEC1
+        HalFlashWrite                                  CODE 0001BF46
+        HalFlashErase                                  CODE 0001BFAC
         HalFlashRead::?relay                           CODE 000011F4
         HalFlashWrite::?relay                          CODE 000011FA
         HalFlashErase::?relay                          CODE 00001200
         IEN0                                           DATA 000000A8
 hal_i2c ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_i2c.r51 )
-        HalI2CInit                                     CODE 0001B9A9
-        HalI2CRead                                     CODE 0001B9D2
-        HalI2CWrite                                    CODE 0001BA49
+        HalI2CInit                                     CODE 0001BCAB
+        HalI2CRead                                     CODE 0001BCD4
+        HalI2CWrite                                    CODE 0001BD4B
         HalI2CInit::?relay                             CODE 0000120C
         HalI2CRead::?relay                             CODE 00001212
         HalI2CWrite::?relay                            CODE 00001218
         i2cAddr                                        XDATA 00000A53
-        i2cMstStrt                                     CODE 0001B975
-        ?Subroutine0                                   CODE 0001B9CA
-        ?Subroutine1                                   CODE 0001BAB0
+        i2cMstStrt                                     CODE 0001BC77
+        ?Subroutine0                                   CODE 0001BCCC
+        ?Subroutine1                                   CODE 0001BDB2
         i2cMstStrt::?relay                             CODE 00001206
 hal_key ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_key.r51 )
         _A_P0                                          DATA 00000080
@@ -2022,19 +2022,19 @@ hal_key ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralz
         P0DIR                                          DATA 000000FD
         P2DIR                                          DATA 000000FF
         Hal_KeyIntEnable                               XDATA 00000A58
-        HalKeyInit                                     CODE 0001B356
-        HalKeyConfig                                   CODE 0001B37F
-        HalKeyRead                                     CODE 0001B3E5
-        HalKeyPoll                                     CODE 0001B405
-        halGetJoyKeyInput                              CODE 0001B456
-        halProcessKeyInterrupt                         CODE 0001B4B1
-        HalKeyEnterSleep                               CODE 0001B4EB
-        HalKeyExitSleep                                CODE 0001B4EE
-        halKeyPort0Isr                                 CODE 00002A52
-        halKeyPort2Isr                                 CODE 00002A7B
+        HalKeyInit                                     CODE 0001B7A4
+        HalKeyConfig                                   CODE 0001B7CD
+        HalKeyRead                                     CODE 0001B833
+        HalKeyPoll                                     CODE 0001B853
+        halGetJoyKeyInput                              CODE 0001B8A4
+        halProcessKeyInterrupt                         CODE 0001B8FF
+        HalKeyEnterSleep                               CODE 0001B939
+        HalKeyExitSleep                                CODE 0001B93C
+        halKeyPort0Isr                                 CODE 00002A4A
+        halKeyPort2Isr                                 CODE 00002A73
         halKeyPort2Isr::??INTVEC 51                    CODE 00000033
         halKeyPort0Isr::??INTVEC 107                   CODE 0000006B
-        __Constant_19                                  CONST 00008440
+        __Constant_19                                  CONST 00008484
         HalKeyInit::?relay                             CODE 0000121E
         HalKeyConfig::?relay                           CODE 00001224
         HalKeyRead::?relay                             CODE 0000122A
@@ -2052,9 +2052,9 @@ hal_key ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralz
         halKeySavedKeys                                XDATA 00000A54
         pHalKeyProcessFunction                         XDATA 00000A55
         HalKeyConfigured                               XDATA 00000A57
-        ?Subroutine0                                   CODE 0001B378
-        ?Subroutine1                                   CODE 0001B400
-        ?Subroutine2                                   CODE 00002A6E
+        ?Subroutine0                                   CODE 0001B7C6
+        ?Subroutine1                                   CODE 0001B84E
+        ?Subroutine2                                   CODE 00002A66
 hal_lcd ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_lcd.r51 )
         _A_P1                                          DATA 00000090
         PERCFG                                         DATA 000000F1
@@ -2063,18 +2063,18 @@ hal_lcd ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralz
         U1BAUD                                         DATA 000000FA
         U1UCR                                          DATA 000000FB
         U1GCR                                          DATA 000000FC
-        set_ddram_line_col                             CODE 00017BA9
-        DisplayByte_5x7                                CODE 00017BE2
-        HalLcdInit                                     CODE 00017C54
-        HalLcdWriteString                              CODE 00017C69
-        HalLcdWriteStringValue                         CODE 00017D94
-        HalLcd_HW_Init                                 CODE 00017E10
-        HalLcd_HW_Control                              CODE 00017ED6
-        HalLcd_HW_Write                                CODE 00017EF5
-        HalLcd_HW_Clear                                CODE 00017F1C
-        HalLcd_HW_WriteChar                            CODE 00017F59
-        HalLcd_HW_WriteLine                            CODE 00017F71
-        HalLcd_HW_WaitUs                               CODE 00017FC2
+        set_ddram_line_col                             CODE 000188C9
+        DisplayByte_5x7                                CODE 00018902
+        HalLcdInit                                     CODE 00018974
+        HalLcdWriteString                              CODE 00018989
+        HalLcdWriteStringValue                         CODE 00018AB4
+        HalLcd_HW_Init                                 CODE 00018B30
+        HalLcd_HW_Control                              CODE 00018BF6
+        HalLcd_HW_Write                                CODE 00018C15
+        HalLcd_HW_Clear                                CODE 00018C3C
+        HalLcd_HW_WriteChar                            CODE 00018C79
+        HalLcd_HW_WriteLine                            CODE 00018C91
+        HalLcd_HW_WaitUs                               CODE 00018CE2
         ascii_table_5x7                                CONST 00008000
         set_ddram_line_col::?relay                     CODE 0000124E
         DisplayByte_5x7::?relay                        CODE 00001254
@@ -2091,21 +2091,21 @@ hal_lcd ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralz
         P1                                             DATA 00000090
         U1CSR                                          DATA 000000F8
         Lcd_Line1                                      XDATA 00000A59
-        ?Subroutine2                                   CODE 00017C62
-        ?Subroutine3                                   CODE 00017D7D
-        ?Subroutine4                                   CODE 00017E04
-        ?Subroutine1                                   CODE 00017EEC
-        ?Subroutine6                                   CODE 00017F0D
-        ?Subroutine0                                   CODE 00017F49
-        ?Subroutine5                                   CODE 00017F4E
+        ?Subroutine2                                   CODE 00018982
+        ?Subroutine3                                   CODE 00018A9D
+        ?Subroutine4                                   CODE 00018B24
+        ?Subroutine1                                   CODE 00018C0C
+        ?Subroutine6                                   CODE 00018C2D
+        ?Subroutine0                                   CODE 00018C69
+        ?Subroutine5                                   CODE 00018C6E
 hal_led ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_led.r51 )
-        HalLedInit                                     CODE 00018D16
-        HalLedSet                                      CODE 00018D2D
-        HalLedBlink                                    CODE 00018DA7
-        HalLedUpdate                                   CODE 00018E8B
-        HalLedOnOff                                    CODE 00019062
-        HalLedEnterSleep                               CODE 000190C7
-        HalLedExitSleep                                CODE 0001911E
+        HalLedInit                                     CODE 00019164
+        HalLedSet                                      CODE 0001917B
+        HalLedBlink                                    CODE 000191F5
+        HalLedUpdate                                   CODE 000192D9
+        HalLedOnOff                                    CODE 000194B0
+        HalLedEnterSleep                               CODE 00019515
+        HalLedExitSleep                                CODE 0001956C
         HalLedInit::?relay                             CODE 00001296
         HalLedSet::?relay                              CODE 0000129C
         HalLedBlink::?relay                            CODE 000012A2
@@ -2118,22 +2118,20 @@ hal_led ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralz
         HalSleepLedState                               XDATA 00000A5C
         preBlinkState                                  XDATA 00000A5D
         HalLedStatusControl                            XDATA 00000A5E
-        ?Subroutine1                                   CODE 00018E82
-        ?Subroutine0                                   CODE 000190BB
+        ?Subroutine1                                   CODE 000192D0
+        ?Subroutine0                                   CODE 00019509
 hal_sensor ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_sensor.r51 )
-        HalSensorReadReg                               CODE 0001B829
-        HalSensorWriteReg                              CODE 0001B874
-        Hal_HW_WaitUs                                  CODE 0001B8C5
-        HalWriteReg                                    CODE 0001B8FA
-        HalReadReg                                     CODE 0001B93C
+        HalSensorReadReg                               CODE 0001BDBA
+        HalSensorWriteReg                              CODE 0001BE05
+        HalWriteReg                                    CODE 0001BE56
+        HalReadReg                                     CODE 0001BE98
         HalSensorReadReg::?relay                       CODE 000012C0
         HalSensorWriteReg::?relay                      CODE 000012C6
-        Hal_HW_WaitUs::?relay                          CODE 000012CC
-        HalWriteReg::?relay                            CODE 000012D2
-        HalReadReg::?relay                             CODE 000012D8
+        HalWriteReg::?relay                            CODE 000012CC
+        HalReadReg::?relay                             CODE 000012D2
         buffer                                         XDATA 00000A83
-        ?Subroutine0                                   CODE 0001B86F
-        ?Subroutine1                                   CODE 0001B8C0
+        ?Subroutine0                                   CODE 0001BE00
+        ?Subroutine1                                   CODE 0001BE51
 hal_sleep ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_sleep.r51 )
         PCON                                           DATA 00000087
         ST0                                            DATA 00000095
@@ -2142,29 +2140,29 @@ hal_sleep ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeriphera
         STLOAD                                         DATA 000000AD
         halSleepPconValue                              DATA 0000001A
         halSetSleepMode                                CODE 00007FF8
-        halSleep                                       CODE 0001A9B0
-        halSleepSetTimer                               CODE 0001AB4B
-        halSleepReadTimer                              CODE 0001ABAC
-        halRestoreSleepLevel                           CODE 0001ABF2
-        halSleepTimerIsr                               CODE 00002A99
+        halSleep                                       CODE 0001ADFE
+        halSleepSetTimer                               CODE 0001AF99
+        halSleepReadTimer                              CODE 0001AFFA
+        halRestoreSleepLevel                           CODE 0001B040
+        halSleepTimerIsr                               CODE 00002A91
         halSleepTimerIsr::??INTVEC 43                  CODE 0000002B
-        __Constant_9c41                                CONST 0000848C
-        __Constant_43                                  CONST 00008458
-        __Constant_ff0001                              CONST 00008488
-        __Constant_ff0000                              CONST 00008464
-        __Constant_7d                                  CONST 00008484
-        __Constant_ffffffe7                            CONST 00008480
-        halSetSleepMode::?relay                        CODE 000012DE
-        halSleep::?relay                               CODE 000012E4
-        halSleepSetTimer::?relay                       CODE 000012EA
-        halSleepReadTimer::?relay                      CODE 000012F0
-        halRestoreSleepLevel::?relay                   CODE 000012F6
+        __Constant_9c41                                CONST 0000847C
+        __Constant_43                                  CONST 00008478
+        __Constant_ff0001                              CONST 00008450
+        __Constant_ff0000                              CONST 00008470
+        __Constant_7d                                  CONST 0000846C
+        __Constant_ffffffe7                            CONST 00008468
+        halSetSleepMode::?relay                        CODE 000012D8
+        halSleep::?relay                               CODE 000012DE
+        halSleepSetTimer::?relay                       CODE 000012E4
+        halSleepReadTimer::?relay                      CODE 000012EA
+        halRestoreSleepLevel::?relay                   CODE 000012F0
         IEN0                                           DATA 000000A8
         IEN1                                           DATA 000000B8
         IRCON                                          DATA 000000C0
         halPwrMgtMode                                  XDATA 00000A9B
         wakeForRF                                      XDATA 00000A9C
-        ?Subroutine0                                   CODE 0001AB42
+        ?Subroutine0                                   CODE 0001AF90
 hal_startup ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_startup.r51 )
         __low_level_init                               CODE 00000086
 hal_timer ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_timer.r51 )
@@ -2175,24 +2173,24 @@ hal_uart ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral
         U0UCR                                          DATA 000000C4
         U0GCR                                          DATA 000000C5
         sweepIdx                                       XDATA 00000C26
-        port0Isr                                       CODE 00002ABD
-        halUart0TxIsr                                  CODE 00002AF8
-        HalUARTInit                                    CODE 00019449
-        HalUARTOpen                                    CODE 00019452
-        HalUARTRead                                    CODE 000194C2
-        HalUARTWrite                                   CODE 000194D5
-        HalUARTPoll                                    CODE 000194EB
-        Hal_UART_RxBufLen                              CODE 000194F4
-        HalUARTIsrDMA                                  CODE 00019507
+        port0Isr                                       CODE 00002AB5
+        halUart0TxIsr                                  CODE 00002AF0
+        HalUARTInit                                    CODE 00019897
+        HalUARTOpen                                    CODE 000198A0
+        HalUARTRead                                    CODE 00019910
+        HalUARTWrite                                   CODE 00019923
+        HalUARTPoll                                    CODE 00019939
+        Hal_UART_RxBufLen                              CODE 00019942
+        HalUARTIsrDMA                                  CODE 00019955
         halUart0TxIsr::??INTVEC 59                     CODE 0000003B
         port0Isr::??INTVEC 107                         CODE 0000006B
-        HalUARTInit::?relay                            CODE 00001320
-        HalUARTOpen::?relay                            CODE 00001326
-        HalUARTRead::?relay                            CODE 0000132C
-        HalUARTWrite::?relay                           CODE 00001332
-        HalUARTPoll::?relay                            CODE 00001338
-        Hal_UART_RxBufLen::?relay                      CODE 0000133E
-        HalUARTIsrDMA::?relay                          CODE 00001344
+        HalUARTInit::?relay                            CODE 0000131A
+        HalUARTOpen::?relay                            CODE 00001320
+        HalUARTRead::?relay                            CODE 00001326
+        HalUARTWrite::?relay                           CODE 0000132C
+        HalUARTPoll::?relay                            CODE 00001332
+        Hal_UART_RxBufLen::?relay                      CODE 00001338
+        HalUARTIsrDMA::?relay                          CODE 0000133E
         P0                                             DATA 00000080
         IEN0                                           DATA 000000A8
         IEN1                                           DATA 000000B8
@@ -2201,100 +2199,100 @@ hal_uart ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral
         dmaRdyIsr                                      XDATA 00000A9D
         dmaRdyDly                                      XDATA 00000A9E
         dmaCfg                                         XDATA 00000A9F
-        HalUARTInitDMA                                 CODE 00019132
-        ?Subroutine0                                   CODE 000191C8
-        HalUARTReadDMA                                 CODE 000191CD
-        HalUARTWriteDMA                                CODE 00019251
-        HalUARTPollDMA                                 CODE 000192EA
-        HalUARTRxAvailDMA                              CODE 000193AC
-        ?Subroutine3                                   CODE 0001940C
-        HalUARTBusyDMA                                 CODE 00019421
-        ?Subroutine2                                   CODE 000194BB
-        ?Subroutine1                                   CODE 000194E6
-        HalUARTInitDMA::?relay                         CODE 000012FC
-        HalUARTReadDMA::?relay                         CODE 00001302
-        HalUARTWriteDMA::?relay                        CODE 00001308
-        HalUARTPollDMA::?relay                         CODE 0000130E
-        HalUARTRxAvailDMA::?relay                      CODE 00001314
-        HalUARTBusyDMA::?relay                         CODE 0000131A
+        HalUARTInitDMA                                 CODE 00019580
+        ?Subroutine0                                   CODE 00019616
+        HalUARTReadDMA                                 CODE 0001961B
+        HalUARTWriteDMA                                CODE 0001969F
+        HalUARTPollDMA                                 CODE 00019738
+        HalUARTRxAvailDMA                              CODE 000197FA
+        ?Subroutine3                                   CODE 0001985A
+        HalUARTBusyDMA                                 CODE 0001986F
+        ?Subroutine2                                   CODE 00019909
+        ?Subroutine1                                   CODE 00019934
+        HalUARTInitDMA::?relay                         CODE 000012F6
+        HalUARTReadDMA::?relay                         CODE 000012FC
+        HalUARTWriteDMA::?relay                        CODE 00001302
+        HalUARTPollDMA::?relay                         CODE 00001308
+        HalUARTRxAvailDMA::?relay                      CODE 0000130E
+        HalUARTBusyDMA::?relay                         CODE 00001314
 npi ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\npi.r51 )
 osal_bufmgr ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\osal_bufmgr.r51 )
-        osal_bm_alloc                                  CODE 0001B4F8
-        osal_bm_free                                   CODE 0001B54A
-        osal_bm_adjust_header                          CODE 0001B5D4
-        osal_bm_alloc::?relay                          CODE 0000134A
-        osal_bm_free::?relay                           CODE 00001350
-        osal_bm_adjust_header::?relay                  CODE 00001356
+        osal_bm_alloc                                  CODE 0001B946
+        osal_bm_free                                   CODE 0001B998
+        osal_bm_adjust_header                          CODE 0001BA22
+        osal_bm_alloc::?relay                          CODE 00001344
+        osal_bm_free::?relay                           CODE 0000134A
+        osal_bm_adjust_header::?relay                  CODE 00001350
         IEN0                                           DATA 000000A8
         bm_list_ptr                                    XDATA 00000C27
-        ?Subroutine0                                   CODE 0001B545
-        bm_desc_from_payload                           CODE 0001B63B
-        ?Subroutine2                                   CODE 0001B67D
-        ?Subroutine1                                   CODE 0001B686
-        bm_desc_from_payload::?relay                   CODE 0000135C
+        ?Subroutine0                                   CODE 0001B993
+        bm_desc_from_payload                           CODE 0001BA89
+        ?Subroutine2                                   CODE 0001BACB
+        ?Subroutine1                                   CODE 0001BAD4
+        bm_desc_from_payload::?relay                   CODE 00001356
 osal_cbtimer ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\osal_cbtimer.r51 )
         baseTaskID                                     XDATA 00000FDD
         cbTimers                                       XDATA 00000C29
-        osal_CbTimerInit                               CODE 0001A76B
-        osal_CbTimerProcessEvent                       CODE 0001A795
-        osal_CbTimerStart                              CODE 0001A863
-        osal_CbTimerStop                               CODE 0001A93E
-        osal_CbTimerInit::?relay                       CODE 00001362
-        osal_CbTimerProcessEvent::?relay               CODE 00001368
-        osal_CbTimerStart::?relay                      CODE 0000136E
-        osal_CbTimerStop::?relay                       CODE 00001374
-        ?Subroutine1                                   CODE 0001A927
-        ?Subroutine0                                   CODE 0001A934
+        osal_CbTimerInit                               CODE 0001ABB9
+        osal_CbTimerProcessEvent                       CODE 0001ABE3
+        osal_CbTimerStart                              CODE 0001ACB1
+        osal_CbTimerStop                               CODE 0001AD8C
+        osal_CbTimerInit::?relay                       CODE 0000135C
+        osal_CbTimerProcessEvent::?relay               CODE 00001362
+        osal_CbTimerStart::?relay                      CODE 00001368
+        osal_CbTimerStop::?relay                       CODE 0000136E
+        ?Subroutine1                                   CODE 0001AD75
+        ?Subroutine0                                   CODE 0001AD82
 osal_snv ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\osal_snv.r51 )
         _nvBuf                                         CODE 0003E800
-        osal_snv_init                                  CODE 00015731
-        osal_snv_write                                 CODE 00015748
-        osal_snv_read                                  CODE 00015862
-        osal_snv_compact                               CODE 000158A0
-        __Constant_100000                              CONST 0000847C
-        __Constant_ffffffff                            CONST 00008478
-        osal_snv_init::?relay                          CODE 000013BC
-        osal_snv_write::?relay                         CODE 000013C2
-        osal_snv_read::?relay                          CODE 000013C8
-        osal_snv_compact::?relay                       CODE 000013CE
+        osal_snv_init                                  CODE 0001625F
+        osal_snv_write                                 CODE 00016276
+        osal_snv_read                                  CODE 00016390
+        osal_snv_compact                               CODE 000163CE
+        __Constant_100000                              CONST 00008464
+        __Constant_ffffffff                            CONST 00008460
+        osal_snv_init::?relay                          CODE 000013B6
+        osal_snv_write::?relay                         CODE 000013BC
+        osal_snv_read::?relay                          CODE 000013C2
+        osal_snv_compact::?relay                       CODE 000013C8
         activePg                                       XDATA 00000C65
         pgOff                                          XDATA 00000C66
         failF                                          XDATA 00000C68
-        initNV                                         CODE 000150BC
-        setActivePage                                  CODE 00015183
-        ?Subroutine1                                   CODE 000151B0
-        setXferPage                                    CODE 000151BA
-        ?Subroutine7                                   CODE 000151DE
-        erasePage                                      CODE 000151E4
-        ?Subroutine4                                   CODE 00015236
-        ?Subroutine0                                   CODE 0001523A
-        cleanErasedPage                                CODE 00015244
-        ?Subroutine8                                   CODE 0001528E
-        findOffset                                     CODE 0001529A
-        findItem                                       CODE 000152FF
-        ?Subroutine10                                  CODE 0001538C
-        writeItem                                      CODE 00015397
-        ?Subroutine2                                   CODE 00015487
-        ?Subroutine5                                   CODE 0001548C
-        ?Subroutine12                                  CODE 0001549A
-        compactPage                                    CODE 000154A6
-        ?Subroutine9                                   CODE 00015634
-        verifyWordM                                    CODE 0001563D
-        ?Subroutine3                                   CODE 000156C2
-        writeWord                                      CODE 000156CA
-        ?Subroutine11                                  CODE 00015848
-        ?Subroutine6                                   CODE 00015852
-        initNV::?relay                                 CODE 0000137A
-        setActivePage::?relay                          CODE 00001380
-        setXferPage::?relay                            CODE 00001386
-        erasePage::?relay                              CODE 0000138C
-        cleanErasedPage::?relay                        CODE 00001392
-        findOffset::?relay                             CODE 00001398
-        findItem::?relay                               CODE 0000139E
-        writeItem::?relay                              CODE 000013A4
-        compactPage::?relay                            CODE 000013AA
-        verifyWordM::?relay                            CODE 000013B0
-        writeWord::?relay                              CODE 000013B6
+        initNV                                         CODE 00015BEA
+        setActivePage                                  CODE 00015CB1
+        ?Subroutine1                                   CODE 00015CDE
+        setXferPage                                    CODE 00015CE8
+        ?Subroutine7                                   CODE 00015D0C
+        erasePage                                      CODE 00015D12
+        ?Subroutine4                                   CODE 00015D64
+        ?Subroutine0                                   CODE 00015D68
+        cleanErasedPage                                CODE 00015D72
+        ?Subroutine8                                   CODE 00015DBC
+        findOffset                                     CODE 00015DC8
+        findItem                                       CODE 00015E2D
+        ?Subroutine10                                  CODE 00015EBA
+        writeItem                                      CODE 00015EC5
+        ?Subroutine2                                   CODE 00015FB5
+        ?Subroutine5                                   CODE 00015FBA
+        ?Subroutine12                                  CODE 00015FC8
+        compactPage                                    CODE 00015FD4
+        ?Subroutine9                                   CODE 00016162
+        verifyWordM                                    CODE 0001616B
+        ?Subroutine3                                   CODE 000161F0
+        writeWord                                      CODE 000161F8
+        ?Subroutine11                                  CODE 00016376
+        ?Subroutine6                                   CODE 00016380
+        initNV::?relay                                 CODE 00001374
+        setActivePage::?relay                          CODE 0000137A
+        setXferPage::?relay                            CODE 00001380
+        erasePage::?relay                              CODE 00001386
+        cleanErasedPage::?relay                        CODE 0000138C
+        findOffset::?relay                             CODE 00001392
+        findItem::?relay                               CODE 00001398
+        writeItem::?relay                              CODE 0000139E
+        compactPage::?relay                            CODE 000013A4
+        verifyWordM::?relay                            CODE 000013AA
+        writeWord::?relay                              CODE 000013B0
 peripheral ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\peripheral.r51 )
         GAPRole_SetParameter                           CODE 00010000
         GAPRole_GetParameter                           CODE 00010381
@@ -2303,13 +2301,13 @@ peripheral ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripher
         GAPRole_Init                                   CODE 0001057F
         GAPRole_ProcessEvent                           CODE 000105FD
         GAPRole_SendUpdateParam                        CODE 00010D5C
-        GAPRole_SetParameter::?relay                   CODE 000013D4
-        GAPRole_GetParameter::?relay                   CODE 000013DA
-        GAPRole_StartDevice::?relay                    CODE 000013E0
-        GAPRole_TerminateConnection::?relay            CODE 000013E6
-        GAPRole_Init::?relay                           CODE 000013EC
-        GAPRole_ProcessEvent::?relay                   CODE 000013F2
-        GAPRole_SendUpdateParam::?relay                CODE 0000140A
+        GAPRole_SetParameter::?relay                   CODE 000013CE
+        GAPRole_GetParameter::?relay                   CODE 000013D4
+        GAPRole_StartDevice::?relay                    CODE 000013DA
+        GAPRole_TerminateConnection::?relay            CODE 000013E0
+        GAPRole_Init::?relay                           CODE 000013E6
+        GAPRole_ProcessEvent::?relay                   CODE 000013EC
+        GAPRole_SendUpdateParam::?relay                CODE 00001404
         gapRole_TaskID                                 XDATA 00000C69
         gapRole_state                                  XDATA 00000C6A
         gapRole_profileRole                            XDATA 00000C6B
@@ -2364,16 +2362,16 @@ peripheral ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripher
         ?Subroutine2                                   CODE 00010C7D
         gapRole_startConnUpdate                        CODE 00010C86
         ?Subroutine16                                  CODE 00010DF6
-        gapRole_ProcessOSALMsg::?relay                 CODE 000013F8
-        gapRole_ProcessGAPMsg::?relay                  CODE 000013FE
-        gapRole_startConnUpdate::?relay                CODE 00001404
+        gapRole_ProcessOSALMsg::?relay                 CODE 000013F2
+        gapRole_ProcessGAPMsg::?relay                  CODE 000013F8
+        gapRole_startConnUpdate::?relay                CODE 000013FE
 simpleBLEPeripheral ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\simpleBLEPeripheral.r51 )
-        SimpleBLEPeripheral_Init                       CODE 00015971
-        SimpleBLEPeripheral_ProcessEvent               CODE 00015C91
-        SimpleBLEPeripheral_Init::?relay               CODE 00001416
-        SimpleBLEPeripheral_ProcessEvent::?relay       CODE 0000141C
-        __Constant_bb8                                 CONST 00008448
-        __Constant_1388                                CONST 00008444
+        SimpleBLEPeripheral_Init                       CODE 000073D6
+        SimpleBLEPeripheral_ProcessEvent               CODE 00007A2D
+        SimpleBLEPeripheral_Init::?relay               CODE 00001410
+        SimpleBLEPeripheral_ProcessEvent::?relay       CODE 00001416
+        __Constant_bb8                                 CONST 0000843C
+        __Constant_1388                                CONST 0000844C
         gapConnHandle                                  XDATA 00000CD6
         recv_value                                     XDATA 00000CD8
         TRANSFER_DATA_STATE_IN                         XDATA 00000DD6
@@ -2390,36 +2388,39 @@ simpleBLEPeripheral ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBL
         simpleBLEPeripheral_PeripheralCBs              XDATA 00001045
         simpleBLEPeripheral_BondMgrCBs                 XDATA 00001049
         simpleBLEPeripheral_SimpleProfileCBs           XDATA 0000104D
-        simpleBLEPeripheralPairStateCB                 CODE 000158FE
-        ?Subroutine0                                   CODE 00015C89
-        peripheralStateNotificationCB                  CODE 00015E17
-        ?Subroutine1                                   CODE 00015EE1
-        simpleProfileChangeCB                          CODE 00015EE9
-        bdAddr2Str                                     CODE 000160BA
-        ?Subroutine2                                   CODE 00016120
+        simpleBLEPeripheralPairStateCB                 CODE 00007363
+        ?Subroutine4                                   CODE 00007A0F
+        ?Subroutine3                                   CODE 00007A15
+        ?Subroutine2                                   CODE 00007A21
+        ?Subroutine0                                   CODE 00007BB3
+        peripheralStateNotificationCB                  CODE 00007BB8
+        ?Subroutine1                                   CODE 00007C82
+        simpleProfileChangeCB                          CODE 00007C8A
+        bdAddr2Str                                     CODE 00007E5B
+        ?Subroutine5                                   CODE 00007EC1
         bdAddr2Str::str                                XDATA 00000DF1
-        simpleBLEPeripheralPairStateCB::?relay         CODE 00001410
-        peripheralStateNotificationCB::?relay          CODE 00001422
-        simpleProfileChangeCB::?relay                  CODE 00001428
-        bdAddr2Str::?relay                             CODE 0000142E
+        simpleBLEPeripheralPairStateCB::?relay         CODE 0000140A
+        peripheralStateNotificationCB::?relay          CODE 0000141C
+        simpleProfileChangeCB::?relay                  CODE 00001422
+        bdAddr2Str::?relay                             CODE 00001428
 simpleGATTprofile ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\simpleGATTprofile.r51 )
-        simpleProfileServUUID                          CONST 000084D3
-        simpleProfilechar1UUID                         CONST 000084D5
-        simpleProfilechar2UUID                         CONST 000084D7
-        simpleProfilechar3UUID                         CONST 000084D9
-        simpleProfilechar4UUID                         CONST 000084C3
-        simpleProfilechar5UUID                         CONST 000084BF
-        simpleProfileCBs                               CONST 00008435
+        simpleProfileServUUID                          CONST 000084CF
+        simpleProfilechar1UUID                         CONST 000084D1
+        simpleProfilechar2UUID                         CONST 000084D3
+        simpleProfilechar3UUID                         CONST 000084BF
+        simpleProfilechar4UUID                         CONST 000084BD
+        simpleProfilechar5UUID                         CONST 000084BB
+        simpleProfileCBs                               CONST 00008431
         SimpleProfile_AddService                       CODE 0001846D
         SimpleProfile_RegisterAppCBs                   CODE 000184B2
         SimpleProfile_SetParameter                     CODE 000184CF
         SimpleProfile_GetParameter                     CODE 00018594
-        SimpleProfile_AddService::?relay               CODE 00001434
-        SimpleProfile_RegisterAppCBs::?relay           CODE 0000143A
-        SimpleProfile_SetParameter::?relay             CODE 00001440
-        SimpleProfile_GetParameter::?relay             CODE 00001446
+        SimpleProfile_AddService::?relay               CODE 0000142E
+        SimpleProfile_RegisterAppCBs::?relay           CODE 00001434
+        SimpleProfile_SetParameter::?relay             CODE 0000143A
+        SimpleProfile_GetParameter::?relay             CODE 00001440
         simpleProfile_AppCBs                           XDATA 00000E00
-        simpleProfileService                           CONST 00008496
+        simpleProfileService                           CONST 00008492
         simpleProfileChar1Props                        XDATA 0000104F
         simpleProfileChar1                             XDATA 00000E02
         simpleProfileChar1UserDesp                     XDATA 00001050
@@ -2445,9 +2446,9 @@ simpleGATTprofile ( E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEP
         ?Subroutine3                                   CODE 00018882
         ?Subroutine4                                   CODE 00018887
         simpleProfile_HandleConnStatusCB               CODE 00018890
-        simpleProfile_ReadAttrCB::?relay               CODE 0000144C
-        simpleProfile_WriteAttrCB::?relay              CODE 00001452
-        simpleProfile_HandleConnStatusCB::?relay       CODE 00001458
+        simpleProfile_ReadAttrCB::?relay               CODE 00001446
+        simpleProfile_WriteAttrCB::?relay              CODE 0000144C
+        simpleProfile_HandleConnStatusCB::?relay       CODE 00001452
 ?cexit ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
         exit                                           CODE 00000091
         ?C_EXIT                                        CODE 00000091
@@ -2478,118 +2479,118 @@ VIRTUAL_REGISTERS ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB
         ?BRET_FF                                       CODE 00000135
         ?BDISPATCH_FF                                  CODE 00000138
 ?L_EQ_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_EQ_X                                        CODE 00001476
+        ?L_EQ_X                                        CODE 00001470
 ?L_EQ_C ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
 ?UL_GT ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?UL_GT                                         CODE 0000148B
+        ?UL_GT                                         CODE 00001485
 ?UL_GT_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?UL_GT_X                                       CODE 0000149B
+        ?UL_GT_X                                       CODE 00001495
 ?UL_GE_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?UL_GE_X                                       CODE 000014AB
+        ?UL_GE_X                                       CODE 000014A5
 ?L_MUL ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_MUL                                         CODE 000014CA
-        ?L_MUL_REW                                     CODE 000014CD
+        ?L_MUL                                         CODE 000014C4
+        ?L_MUL_REW                                     CODE 000014C7
 ?UL_DIV_MOD ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?UL_DIV_MOD                                    CODE 0000154A
+        ?UL_DIV_MOD                                    CODE 00001544
 ?UL_SHR ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?UL_SHR                                        CODE 000015BA
+        ?UL_SHR                                        CODE 000015B4
 ?L_SHL ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_SHL                                         CODE 000015D3
-        ?L_SHL_REW                                     CODE 000015D9
+        ?L_SHL                                         CODE 000015CD
+        ?L_SHL_REW                                     CODE 000015D3
 ?L_ADD ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_ADD                                         CODE 000015F2
+        ?L_ADD                                         CODE 000015EC
 ?L_ADD_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_ADD_X                                       CODE 00001605
+        ?L_ADD_X                                       CODE 000015FF
 ?L_ADD_TO_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_ADD_TO_X                                    CODE 00001618
+        ?L_ADD_TO_X                                    CODE 00001612
 ?L_SUB ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_SUB                                         CODE 0000162B
+        ?L_SUB                                         CODE 00001625
 ?L_SUB_FROM_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_SUB_FROM_X                                  CODE 0000163F
+        ?L_SUB_FROM_X                                  CODE 00001639
 ?L_AND ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_AND                                         CODE 00001653
+        ?L_AND                                         CODE 0000164D
 ?L_AND_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_AND_X                                       CODE 00001666
+        ?L_AND_X                                       CODE 00001660
 ?L_AND_TO_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_AND_TO_X                                    CODE 00001679
+        ?L_AND_TO_X                                    CODE 00001673
 ?L_IOR ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
 ?L_IOR_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
 ?L_MOV_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_MOV_X                                       CODE 0000168C
+        ?L_MOV_X                                       CODE 00001686
 ?L_MOV_TO_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?L_MOV_TO_X                                    CODE 0000169B
+        ?L_MOV_TO_X                                    CODE 00001695
 ?XLOAD_R2345 ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?XLOAD_R2345                                   CODE 000016AA
+        ?XLOAD_R2345                                   CODE 000016A4
 ?XSTORE_R2345 ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?XSTORE_R2345                                  CODE 000016B6
+        ?XSTORE_R2345                                  CODE 000016B0
 ?MOVE_LONG8_XDATA_IDATA ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?MOVE_LONG8_XDATA_IDATA                        CODE 000016C2
+        ?MOVE_LONG8_XDATA_IDATA                        CODE 000016BC
 ?MOVE_LONG8_XDATA_XDATA ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?MOVE_LONG8_XDATA_XDATA                        CODE 000016CF
+        ?MOVE_LONG8_XDATA_XDATA                        CODE 000016C9
 iar_move_long_fg ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
 ?S_DIV_MOD ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?S_DIV_MOD                                     CODE 00001729
-        ?US_DIV_MOD                                    CODE 00001731
+        ?S_DIV_MOD                                     CODE 00001723
+        ?US_DIV_MOD                                    CODE 0000172B
 ?SS_SHR ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?SS_SHR                                        CODE 0000178A
+        ?SS_SHR                                        CODE 00001784
 ?US_SHR ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?US_SHR                                        CODE 0000179A
+        ?US_SHR                                        CODE 00001794
 ?S_SHL ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?S_SHL                                         CODE 000017A9
-        ?S_SHL_REW                                     CODE 000017AC
+        ?S_SHL                                         CODE 000017A3
+        ?S_SHL_REW                                     CODE 000017A6
 ?ALLOC_XSTACK8 ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?ALLOC_XSTACK8                                 CODE 000017BC
+        ?ALLOC_XSTACK8                                 CODE 000017B6
 ?DEALLOC_XSTACK8 ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?DEALLOC_XSTACK8                               CODE 000017D2
+        ?DEALLOC_XSTACK8                               CODE 000017CC
 ?ADD_XSTACK_DISP8 ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?ADD_XSTACK_DISP0_8                            CODE 000017EC
+        ?ADD_XSTACK_DISP0_8                            CODE 000017E6
 ?XSTACK_DISP8 ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?XSTACK_DISP0_8                                CODE 00001807
+        ?XSTACK_DISP0_8                                CODE 00001801
 ?CALL_IND ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?CALL_IND                                      CODE 00001811
+        ?CALL_IND                                      CODE 0000180B
 ?BANKED_ENTER_XDATA ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?BANKED_ENTER_XDATA                            CODE 00001813
+        ?BANKED_ENTER_XDATA                            CODE 0000180D
 ?FUNC_ENTER_XDATA ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?FUNC_ENTER_XDATA                              CODE 0000187F
+        ?FUNC_ENTER_XDATA                              CODE 00001879
 ?BANKED_LEAVE_XDATA ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?BANKED_LEAVE_XDATA                            CODE 000018E5
+        ?BANKED_LEAVE_XDATA                            CODE 000018DF
 ?FUNC_LEAVE_XDATA ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?FUNC_LEAVE_XDATA                              CODE 0000192B
+        ?FUNC_LEAVE_XDATA                              CODE 00001925
 ?INTERRUPT_ENTER_XSP ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?INTERRUPT_ENTER_XSP                           CODE 0000196B
+        ?INTERRUPT_ENTER_XSP                           CODE 00001965
 ?INTERRUPT_LEAVE_XSP ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?INTERRUPT_LEAVE_XSP                           CODE 000019CA
+        ?INTERRUPT_LEAVE_XSP                           CODE 000019C4
 iar_stack_enter_leave_dptr ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
 ?PUSH_XSTACK_I ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?PUSH_XSTACK_I_FOUR                            CODE 00001A22
-        ?PUSH_XSTACK_I_TWO                             CODE 00001A26
-        ?PUSH_XSTACK_I_ONE                             CODE 00001A2A
-        ?PUSH_XSTACK_I                                 CODE 00001A2C
+        ?PUSH_XSTACK_I_FOUR                            CODE 00001A1C
+        ?PUSH_XSTACK_I_TWO                             CODE 00001A20
+        ?PUSH_XSTACK_I_ONE                             CODE 00001A24
+        ?PUSH_XSTACK_I                                 CODE 00001A26
 ?PUSH_XSTACK8_X ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?PUSH_XSTACK8_X_FOUR                           CODE 00001A39
-        ?PUSH_XSTACK8_X_TWO                            CODE 00001A3D
-        ?PUSH_XSTACK8_X                                CODE 00001A41
+        ?PUSH_XSTACK8_X_FOUR                           CODE 00001A33
+        ?PUSH_XSTACK8_X_TWO                            CODE 00001A37
+        ?PUSH_XSTACK8_X                                CODE 00001A3B
 ?US_SWITCH_DENSE ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?US_SWITCH_DENSE                               CODE 00001A6A
+        ?US_SWITCH_DENSE                               CODE 00001A64
 ?US_SWITCH_SPARSE ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?US_SWITCH_SPARSE                              CODE 00001AB0
-        ?US_SWITCH_SPARSE_LEAVE                        CODE 00001AEC
+        ?US_SWITCH_SPARSE                              CODE 00001AAA
+        ?US_SWITCH_SPARSE_LEAVE                        CODE 00001AE6
 ?US_JMP_IF_IN_RANGE ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?US_JMP_IF_IN_RANGE                            CODE 00001AFC
+        ?US_JMP_IF_IN_RANGE                            CODE 00001AF6
 ?US_JMP_IF_VALUE ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        ?US_JMP_IF_VALUE                               CODE 00001B3B
+        ?US_JMP_IF_VALUE                               CODE 00001B35
 ?memset ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        memset                                         CODE 0001C3F1
-        memset::?relay                                 CODE 0000145E
+        memset                                         CODE 0000FFD3
+        memset::?relay                                 CODE 00001458
 ?strcat ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        strcat                                         CODE 0001C3BB
-        strcat::?relay                                 CODE 00001464
+        strcat                                         CODE 0001C6AB
+        strcat::?relay                                 CODE 0000145E
 ?strcpy ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        strcpy                                         CODE 0000FFD6
-        strcpy::?relay                                 CODE 0000146A
+        strcpy                                         CODE 0001C6E1
+        strcpy::?relay                                 CODE 00001464
 ?strlen ( C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\LIB\CLIB\cl-pli-blxd-1e16x01.r51 )
-        strlen                                         CODE 0001C41D
-        strlen::?relay                                 CODE 00001470
+        strlen                                         CODE 0001C709
+        strlen::?relay                                 CODE 0000146A
 
 
                 ****************************************
@@ -14124,16 +14125,6 @@ iar_stack_enter_leave_dptr ( C:\Program Files\IAR Systems\Embedded Workbench 6.4
   ->Sub-tree of type: Function tree
                              XSTACK   ISTACK
     | Stack used (prev) :  00001173 000000A9
-  01  Hal_HW_WaitUs::?relay
-      | Stack used (prev) :  00001173 000000A9
-      | + function block  :  00000000 00000000
-  <-Sub-tree of type: Function tree
-    | Stack used          :  00001173 000000A9
-
-
-  ->Sub-tree of type: Function tree
-                             XSTACK   ISTACK
-    | Stack used (prev) :  00001173 000000A9
   01  HalWriteReg::?relay
       | Stack used (prev) :  00001173 000000A9
       | + function block  :  00000000 00000000
@@ -15744,27 +15735,19 @@ iar_stack_enter_leave_dptr ( C:\Program Files\IAR Systems\Embedded Workbench 6.4
                 | Stack used (prev) :  0000027A 0000004C
                 | + function block  :  00000051 00000000
                 |  Already listed
-  08                Hal_HW_WaitUs
-                    | Stack used (prev) :  00001459 000000B3
-                    | + function block  :  0000000B 00000000
   08                HalSensorReadReg
                     | Stack used (prev) :  00000208 00000048
                     | + function block  :  00000021 00000000
                     |  Already listed
-  08                Recursive system consisting of
-                     | HalLcdWriteString
-                    | Stack used (prev) :  0000027A 0000004C
-                    | + function block  :  00000051 00000000
-                    |  Already listed
   07              HalReadReg
-                  | Stack used (prev) :  00001464 000000B3
-                  | + function block  :  00000016 00000000
+                  | Stack used (prev) :  00001459 000000B3
+                  | + function block  :  0000000B 00000000
   07              HalI2CInit
                   | Stack used (prev) :  000001EA 00000046
                   | + function block  :  00000000 00000002
                   |  Already listed
   06            HalAT24C32Read
-                | Stack used (prev) :  0000147A 000000B3
+                | Stack used (prev) :  00001464 000000B3
                 | + function block  :  00000019 00000000
   09                  HalI2CWrite
                       | Stack used (prev) :  000001F4 00000048
@@ -15896,7 +15879,7 @@ iar_stack_enter_leave_dptr ( C:\Program Files\IAR Systems\Embedded Workbench 6.4
                 |  Already listed
   05          SimpleBLEPeripheral_Init
               | Stack used (prev) :  000014B9 000000BD
-              | + function block  :  00000052 00000000
+              | + function block  :  00000086 00000000
   06            osal_snv_read
                 | Stack used (prev) :  00000EA5 0000009E
                 | + function block  :  00000018 00000000
@@ -16117,7 +16100,7 @@ iar_stack_enter_leave_dptr ( C:\Program Files\IAR Systems\Embedded Workbench 6.4
               | Stack used (prev) :  00001459 000000B6
               | + function block  :  00000012 00000000
   04        osalInitTasks
-            | Stack used (prev) :  0000150B 000000BD
+            | Stack used (prev) :  0000153F 000000BD
             | + function block  :  00000000 00000004
   04        osal_pwrmgr_init
             | Stack used (prev) :  00001459 000000B3
@@ -16137,66 +16120,66 @@ iar_stack_enter_leave_dptr ( C:\Program Files\IAR Systems\Embedded Workbench 6.4
             | Stack used (prev) :  00001459 000000B3
             | + function block  :  00000000 00000002
   03      osal_init_system
-          | Stack used (prev) :  0000150B 000000C1
+          | Stack used (prev) :  0000153F 000000C1
           | + function block  :  00000000 00000004
   02    main
-        | Stack used (prev) :  0000150B 000000C5
+        | Stack used (prev) :  0000153F 000000C5
         | + function block  :  00000000 00000000
   01  ?call_main
-      | Stack used (prev) :  0000150B 000000C5
+      | Stack used (prev) :  0000153F 000000C5
       | + function block  :  00000000 00000000
   <-Sub-tree of type: Function tree
-    | Stack used          :  0000150B 000000C5
+    | Stack used          :  0000153F 000000C5
 
 
   ->Sub-tree of type: Function tree
                              XSTACK   ISTACK
-    | Stack used (prev) :  0000150B 000000C5
+    | Stack used (prev) :  0000153F 000000C5
   01  __program_start
-      | Stack used (prev) :  0000150B 000000C5
+      | Stack used (prev) :  0000153F 000000C5
       | + function block  :  00000000 00000000
   <-Sub-tree of type: Function tree
-    | Stack used          :  0000150B 000000C5
+    | Stack used          :  0000153F 000000C5
 
 
   ->Sub-tree of type: Function tree
                              XSTACK   ISTACK
-    | Stack used (prev) :  0000150B 000000C5
+    | Stack used (prev) :  0000153F 000000C5
   01  memset::?relay
-      | Stack used (prev) :  0000150B 000000C5
+      | Stack used (prev) :  0000153F 000000C5
       | + function block  :  00000000 00000000
   <-Sub-tree of type: Function tree
-    | Stack used          :  0000150B 000000C5
+    | Stack used          :  0000153F 000000C5
 
 
   ->Sub-tree of type: Function tree
                              XSTACK   ISTACK
-    | Stack used (prev) :  0000150B 000000C5
+    | Stack used (prev) :  0000153F 000000C5
   01  strcat::?relay
-      | Stack used (prev) :  0000150B 000000C5
+      | Stack used (prev) :  0000153F 000000C5
       | + function block  :  00000000 00000000
   <-Sub-tree of type: Function tree
-    | Stack used          :  0000150B 000000C5
+    | Stack used          :  0000153F 000000C5
 
 
   ->Sub-tree of type: Function tree
                              XSTACK   ISTACK
-    | Stack used (prev) :  0000150B 000000C5
+    | Stack used (prev) :  0000153F 000000C5
   01  strcpy::?relay
-      | Stack used (prev) :  0000150B 000000C5
+      | Stack used (prev) :  0000153F 000000C5
       | + function block  :  00000000 00000000
   <-Sub-tree of type: Function tree
-    | Stack used          :  0000150B 000000C5
+    | Stack used          :  0000153F 000000C5
 
 
   ->Sub-tree of type: Function tree
                              XSTACK   ISTACK
-    | Stack used (prev) :  0000150B 000000C5
+    | Stack used (prev) :  0000153F 000000C5
   01  strlen::?relay
-      | Stack used (prev) :  0000150B 000000C5
+      | Stack used (prev) :  0000153F 000000C5
       | + function block  :  00000000 00000000
   <-Sub-tree of type: Function tree
-    | Stack used          :  0000150B 000000C5
+    | Stack used          :  0000153F 000000C5
 
 
 
@@ -16219,18 +16202,18 @@ IXDATA_ID            CODE               0000014E                     dse    0
 PDATA_ID             CODE               0000014E                     dse    0
 IDATA_ID             CODE               0000014E                     dse    0
 XDATA_ID             CODE          0000014E - 00000455         308   rel    0
-BANK_RELAYS          CODE          00000456 - 00001475        1020   rel    0
-RCODE                CODE          00001476 - 00001B65         6F0   rel    0
-CODE_N               CODE               00001B66                     dse    0
-DIFUNCT              CODE               00001B66                     dse    0
-NEAR_CODE            CODE          00001B68 - 00002B61         FFA   rel    2
+BANK_RELAYS          CODE          00000456 - 0000146F        101A   rel    0
+RCODE                CODE          00001470 - 00001B5F         6F0   rel    0
+CODE_N               CODE               00001B60                     dse    0
+DIFUNCT              CODE               00001B60                     dse    0
+NEAR_CODE            CODE          00001B60 - 00002B59         FFA   rel    2
 <BANKED_CODE,CODE_C> 1
-                     CODE          00002B64 - 00007FF6        5493   rel    2
+                     CODE          00002B5C - 00007FF5        549A   rel    2
 SLEEP_CODE           CODE          00007FF8 - 00007FFF           8   rel    0
 <BANKED_CODE,XDATA_ROM_C_FLASH> 1
-                     CODE          00008000 - 0000FFFD        7FFE   rel    2
+                     CODE          00008000 - 0000FFFE        7FFF   rel    2
 <BANKED_CODE> 1      CODE          00010000 - 00017FF6        7FF7   rel    0
-<BANKED_CODE> 2      CODE          00018000 - 0001C462        4463   rel    0
+<BANKED_CODE> 2      CODE          00018000 - 0001C74E        474F   rel    0
 BLENV_ADDRESS_SPACE
                      CODE          0003E800 - 0003F7FF        1000   rel    0
 REGISTERS            DATA          00000000 - 00000007           8   rel    0
@@ -16261,7 +16244,7 @@ XSTACK               XDATA         00000001 - 00000280         280   rel    0
 XDATA_Z              XDATA         00000281 - 00000E28         BA8   rel    0
 XDATA_I              XDATA         00000E29 - 00001130         308   rel    0
 <XDATA_N> 1          XDATA         00001131 - 00001D34         C04   rel    0
-<XDATA_ROM_C> 1      CONST         00008000 - 000084DD         4DE   rel    2
+<XDATA_ROM_C> 1      CONST         00008000 - 000084DA         4DB   rel    2
 IDATA_I              IDATA              00000029                     dse    0
 IDATA_Z              IDATA         00000029 - 0000002A           2   rel    0
 ISTACK               IDATA         00000038 - 000000FF          C8   rel    0
@@ -16272,12 +16255,12 @@ ISTACK               IDATA         00000038 - 000000FF          C8   rel    0
                 *                                      *
                 ****************************************
 
- 119 891 bytes of CODE  memory
+ 120 641 bytes of CODE  memory
       35 bytes of DATA  memory (+ 88 absolute )
    7 476 bytes of XDATA memory
      202 bytes of IDATA memory
        8 bits  of BIT   memory
-   1 246 bytes of CONST memory
+   1 243 bytes of CONST memory
 
 Errors: none
 Warnings: 1
