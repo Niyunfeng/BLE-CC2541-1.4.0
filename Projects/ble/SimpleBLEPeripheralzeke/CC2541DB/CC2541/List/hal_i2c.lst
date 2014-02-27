@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             26/Feb/2014  14:53:20 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             27/Feb/2014  13:26:25 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -141,7 +141,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_i2c.c
      46          #include "hal_board_cfg.h"
      47          #include "hal_i2c.h"
      48          #include "hal_lcd.h"
-     49          #include "hal_lcd.h"
+     49          
      50          
      51          /* ------------------------------------------------------------------------------------------------
      52           *                                          Constants

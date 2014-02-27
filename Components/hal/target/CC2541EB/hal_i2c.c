@@ -46,7 +46,7 @@
 #include "hal_board_cfg.h"
 #include "hal_i2c.h"
 #include "hal_lcd.h"
-#include "hal_lcd.h"
+
 
 /* ------------------------------------------------------------------------------------------------
  *                                          Constants

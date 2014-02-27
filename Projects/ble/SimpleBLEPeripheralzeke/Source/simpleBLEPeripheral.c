@@ -83,6 +83,7 @@
 #include "hal_ds1307.h"
 #include "SimpleEepromUtils.h"
 #include "SimpleRTCInterrupt.h"
+#include "SimpleBLESPIFlash.h"
 
 /*********************************************************************
  * MACROS
@@ -155,8 +156,12 @@ static char newValueBuf[20] = { 0 };
 static uint8 data_len = 0, cur_data_len = 0, data_len_index = 0, send_times = 0;
 
 /*********************************************************************
- * TYPEDEFS
+ * SPI FLASH
  */
+uint8 buf[20]="aico5678901234567890";
+uint8 bufrx[20];
+
+
 
 /*********************************************************************
  * GLOBAL VARIABLES
@@ -327,7 +332,7 @@ static void simpleBLEPeripheralPairStateCB(uint16 connHandle, uint8 state, uint8
 void SimpleBLEPeripheral_Init(uint8 task_id) {
 	simpleBLEPeripheral_TaskID = task_id;
 	SbpHalUART_Init(task_id);
-
+        
 	// Setup the GAP Peripheral Role Profile
 	{
 
@@ -437,103 +442,19 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 	osal_set_event(simpleBLEPeripheral_TaskID, SBP_START_DEVICE_EVT);
 
 	/***********************************test something zekezang**********************************/
-	//HalLcdWriteString("i2c start", HAL_LCD_LINE_1);
-	InitialRTCInterrupt();
-
-	//HalDS1307WriteTimeData("20140120180830");
-	//HalDS1307InitControlRegister();
-
-        
-
-	//bool success;
-	char *data;
-	data = osal_mem_alloc(15);
-	osal_memset(data, 0, 15);
-	osal_memcpy(data, "1234567890aico", 14);
-        
-	//success = HalAT24C32Write(0x0004, (uint8 *) data, 1,7);
-        HalAT24C32Write(0x0004, (uint8 *) data, 1,14);
-        HalLcdWriteString(data, HAL_LCD_LINE_3);
-	//HalLcdWriteStringValue("HalINFWrite: ", success, 16, HAL_LCD_LINE_2);
-	osal_mem_free(data);
-
-	//char *data1;
-        uint8 *data1,*data2,*data3,*data4,*data5,*data6,*data7,*data8,*data9,*data10,*data11,*data12,*data13,*data14;
-	data1 = osal_mem_alloc(8);
-	osal_memset(data1, 0, 8);
-        data2 = osal_mem_alloc(8);
-	osal_memset(data2, 0, 8);
-        data3 = osal_mem_alloc(8);
-	osal_memset(data3, 0, 8);
-        data4 = osal_mem_alloc(8);
-	osal_memset(data4, 0, 8);
-        data5 = osal_mem_alloc(8);
-	osal_memset(data5, 0, 8);
-        data6 = osal_mem_alloc(8);
-	osal_memset(data6, 0, 8);
-        data7 = osal_mem_alloc(8);
-	osal_memset(data7, 0, 8);
-        data8 = osal_mem_alloc(8);
-	osal_memset(data8, 0, 8);
-        data9 = osal_mem_alloc(8);
-	osal_memset(data9, 0, 8);
-        data10 = osal_mem_alloc(8);
-	osal_memset(data10, 0, 8);
-        data11 = osal_mem_alloc(8);
-	osal_memset(data11, 0, 8);
-        data12 = osal_mem_alloc(8);
-	osal_memset(data12, 0, 8);
-        data13 = osal_mem_alloc(8);
-	osal_memset(data13, 0, 8);
-        data14 = osal_mem_alloc(8);
-	osal_memset(data14, 0, 8);
-        
-        
-        
-        
-        
-        
-	//success = HalAT24C32Read(0x0004, (uint8 *) data1, 1,7);
-        HalAT24C32Read(0x0004, (uint8 *) data1, 1,1);
-        HalAT24C32Read(0x0005, (uint8 *) data2, 1,1);
-        HalAT24C32Read(0x0006, (uint8 *) data3, 1,1);
-        HalAT24C32Read(0x0007, (uint8 *) data4, 1,1);
-        HalAT24C32Read(0x0008, (uint8 *) data5, 1,1);
-        HalAT24C32Read(0x0009, (uint8 *) data6, 1,1);
-        HalAT24C32Read(0x000A, (uint8 *) data7, 1,1);
-        HalAT24C32Read(0x000B, (uint8 *) data8, 1,1);
-        HalAT24C32Read(0x000C, (uint8 *) data9, 1,1);
-        HalAT24C32Read(0x000D, (uint8 *) data10, 1,1);
-        HalAT24C32Read(0x000E, (uint8 *) data11, 1,1);
-        HalAT24C32Read(0x000F, (uint8 *) data12, 1,1);
-        HalAT24C32Read(0x0010, (uint8 *) data13, 1,1);
-        HalAT24C32Read(0x0011, (uint8 *) data14, 1,1);
-        
-        
-        HalLcdWriteString((uint8*)data11, HAL_LCD_LINE_1);
-        HalLcdWriteString((uint8*)data12, HAL_LCD_LINE_2);
-        HalLcdWriteString((uint8*)data13, HAL_LCD_LINE_3);
-        HalLcdWriteString((uint8*)data14, HAL_LCD_LINE_4);         
-	HalLcdWriteString((uint8*)data5, HAL_LCD_LINE_5);
-        HalLcdWriteString((uint8*)data6, HAL_LCD_LINE_6);
-        HalLcdWriteString((uint8*)data7, HAL_LCD_LINE_7);
-        HalLcdWriteString((uint8*)data8, HAL_LCD_LINE_8);
-        
-	//HalLcdWriteStringValue("HalINFWrite: ", success, 16, HAL_LCD_LINE_4);
-	osal_mem_free(data1);
-        osal_mem_free(data2);
-        osal_mem_free(data3);
-        osal_mem_free(data4);
-        osal_mem_free(data5);
-        osal_mem_free(data6);
-        osal_mem_free(data7);
-        osal_mem_free(data8);
-        osal_mem_free(data9);
- osal_mem_free(data10);
-  osal_mem_free(data11);
-   osal_mem_free(data12);
-    osal_mem_free(data13);
-
+	HalLcdWriteString("spi start", HAL_LCD_LINE_1);
+	
+              XNV_SPI_INIT();
+              HalSPIWrite(0x0,buf,20);
+              HalLcdWriteString((uint8*)buf, HAL_LCD_LINE_6);
+		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Write:"); 
+		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf); 
+		  //注意，连续读写之间至少要延时800us
+		  //HalHW_WaitUs(800);
+	      HalSPIRead(0x0,bufrx,20);
+              HalLcdWriteString((uint8*)bufrx, HAL_LCD_LINE_7);
+		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_6, "Read:"); 
+		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_7, bufrx); 
 
 
 
@@ -790,66 +711,9 @@ static void simpleProfileChangeCB(uint8 paramID) {
 	osal_memset(newValueBuf, 0, 20);
 	switch (paramID) {
 	case SIMPLEPROFILE_CHAR1:
-		SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1, newValueBuf);
+		SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1,newValueBuf);
 
-		if ((newValueBuf[0] == TRANSFER_DATA_SIGN) && (newValueBuf[1] == TRANSFER_DATA_SIGN_RE)) {
-			TRANSFER_DATA_STATE_IN = FALSE;
-		}
-
-		if ((newValueBuf[2] != 0) && (!TRANSFER_DATA_STATE_IN)) {
-			data_len = newValueBuf[UART_DATA_START_INDEX];
-			TRANSFER_DATA_STATE_IN = TRUE;
-			data_len_index = 0;
-			osal_memset(recv_value, 0, data_len);
-		}
-
-		cur_data_len = osal_strlen(newValueBuf);
-
-		if (TRANSFER_DATA_STATE_IN) {
-			osal_memcpy((recv_value + data_len_index), newValueBuf, cur_data_len);
-			data_len_index += cur_data_len;
-
-			if ((data_len_index - send_times * one_time_data_len - UART_DATA_START_INDEX) >= one_time_data_len) {
-				if (send_times == 0) {
-					recv_value[UART_DATA_START_INDEX] = 0xE3;
-					//if (u_state != IR_DATA_SEND_BEGIN_STATE) {
-					//u_state = IR_DATA_SEND_BEGIN_STATE;
-					SbpHalUARTWrite(recv_value + UART_DATA_START_INDEX, one_time_data_len);
-					//}
-				} else {
-					SbpHalUARTWrite(recv_value + UART_DATA_START_INDEX + send_times * one_time_data_len,
-							one_time_data_len);
-				}
-				send_times++;
-			} else if ((send_times > 0) && ((data_len_index - send_times * one_time_data_len) < one_time_data_len)
-					&& (data_len_index == data_len)) {
-
-				SbpHalUARTWrite(recv_value + UART_DATA_START_INDEX + send_times * one_time_data_len,
-						data_len - send_times * one_time_data_len - UART_DATA_START_INDEX);
-				send_times++;
-
-			} else if ((send_times == 0) && (data_len < one_time_data_len) && (data_len_index == data_len)) {
-				recv_value[UART_DATA_START_INDEX] = 0xE3;
-				//if (u_state != IR_DATA_SEND_BEGIN_STATE) {
-				//u_state = IR_DATA_SEND_BEGIN_STATE;
-				SbpHalUARTWrite(recv_value + UART_DATA_START_INDEX, data_len - UART_DATA_START_INDEX);
-				//}
-			} else {
-
-			}
-		}
-
-		HalLcdWriteStringValue("data_len_index:", data_len_index, 10, HAL_LCD_LINE_7);
-
-		if (data_len_index == data_len) {
-			TRANSFER_DATA_STATE_IN = FALSE;
-			HalLcdWriteStringValue("data_len:", osal_strlen((char *) recv_value), 10, HAL_LCD_LINE_6);
-			send_times = 0;
-			data_len = 0;
-			cur_data_len = 0;
-			data_len_index = 0;
-			osal_memset(recv_value, 0, data_len);
-		}
+		
 
 		break;
 	case SIMPLEPROFILE_CHAR3:

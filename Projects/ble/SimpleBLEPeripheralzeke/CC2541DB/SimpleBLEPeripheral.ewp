@@ -1092,6 +1092,12 @@
       <name>$PROJ_DIR$\..\Source\SimpleBLESerialUart.h</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\Source\SimpleBLESPIFlash.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleBLESPIFlash.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.c</name>
     </file>
     <file>
