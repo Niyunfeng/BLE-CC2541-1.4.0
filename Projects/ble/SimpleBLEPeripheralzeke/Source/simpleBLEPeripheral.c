@@ -84,6 +84,7 @@
 #include "SimpleEepromUtils.h"
 #include "SimpleRTCInterrupt.h"
 #include "SimpleBLESPIFlash.h"
+#include "battservice.h"
 
 /*********************************************************************
  * MACROS
@@ -95,6 +96,9 @@
 
 // How often to perform periodic event
 #define SBP_PERIODIC_EVT_PERIOD                   5000
+
+// How often to check battery voltage (in ms)
+#define BATTERY_CHECK_PERIOD                  5000////////////////////////////////////batt
 
 // What is the advertising interval when device is discoverable (units of 625us, 160=100ms)
 #define DEFAULT_ADVERTISING_INTERVAL          160
@@ -158,7 +162,7 @@ static uint8 data_len = 0, cur_data_len = 0, data_len_index = 0, send_times = 0;
 /*********************************************************************
  * SPI FLASH
  */
-uint8 buf[20]="aico5678901234567890";
+uint8 buf[20];
 uint8 bufrx[20];
 
 
@@ -405,6 +409,11 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 	GATTServApp_AddService(GATT_ALL_SERVICES); // GATT attributes
 	DevInfo_AddService(); // Device Information Service
 	SimpleProfile_AddService(GATT_ALL_SERVICES); // Simple GATT Profile
+        Batt_AddService( );     // Battery Service
+        
+        
+        
+        
 #if defined FEATURE_OAD
 			VOID OADTarget_AddService(); // OAD Profile
 #endif
@@ -440,22 +449,16 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 #endif // defined ( DC_DC_P0_7 )
 	// Setup a delayed profile startup
 	osal_set_event(simpleBLEPeripheral_TaskID, SBP_START_DEVICE_EVT);
+        
+        
+         // initialize the ADC for battery reads
+         HalAdcInit();
 
 	/***********************************test something zekezang**********************************/
 	HalLcdWriteString("spi start", HAL_LCD_LINE_1);
 	
               XNV_SPI_INIT();
-              HalSPIWrite(0x0,buf,20);
-              HalLcdWriteString((uint8*)buf, HAL_LCD_LINE_6);
-		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Write:"); 
-		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf); 
-		  //注意，连续读写之间至少要延时800us
-		  //HalHW_WaitUs(800);
-	      HalSPIRead(0x0,bufrx,20);
-              HalLcdWriteString((uint8*)bufrx, HAL_LCD_LINE_7);
-		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_6, "Read:"); 
-		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_7, bufrx); 
-
+             
 
 
 
@@ -502,19 +505,24 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
 		GAPBondMgr_Register(&simpleBLEPeripheral_BondMgrCBs);
 
 		// Set timer for first periodic event
-		osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD);
+		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD);
+                
+                // Set timer for first battery read event
+                osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
 
 		return (events ^ SBP_START_DEVICE_EVT);
 	}
 
 	if (events & SBP_PERIODIC_EVT) {
-		// Restart timer
-		if (SBP_PERIODIC_EVT_PERIOD) {
-			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD);
-		}
+		
+                 // Restart timer
+                if ( BATTERY_CHECK_PERIOD )
+                {
+                  osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+                }
 
-		// Perform periodic application task
-		performPeriodicTask();
+                // perform battery level check
+                Batt_MeasLevel( );
 
 		return (events ^ SBP_PERIODIC_EVT);
 	}
@@ -708,10 +716,20 @@ static void performPeriodicTask(void) {
  * @return  none
  */
 static void simpleProfileChangeCB(uint8 paramID) {
-	osal_memset(newValueBuf, 0, 20);
+	osal_memset(buf, 0, 20);
 	switch (paramID) {
 	case SIMPLEPROFILE_CHAR1:
-		SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1,newValueBuf);
+		SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1,buf);
+                 HalSPIWrite(0x0,buf,20);
+                 HalLcdWriteString((uint8*)buf, HAL_LCD_LINE_6);
+		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Write:"); 
+		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf); 
+		  //注意，连续读写之间至少要延时800us
+		  //HalHW_WaitUs(800);
+	          HalSPIRead(0x0,bufrx,20);
+                   HalLcdWriteString((uint8*)bufrx, HAL_LCD_LINE_7);
+		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_6, "Read:"); 
+		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_7, bufrx); 
 
 		
 

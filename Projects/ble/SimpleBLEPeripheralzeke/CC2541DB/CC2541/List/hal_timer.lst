@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             26/Feb/2014  14:53:21 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:34 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -81,7 +81,12 @@
 #                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
 #                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
 #                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
-#                          .\..\Profiles\DevInfo\ -Ohz                        #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
 #    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\hal_t #
 #                          imer.lst                                           #

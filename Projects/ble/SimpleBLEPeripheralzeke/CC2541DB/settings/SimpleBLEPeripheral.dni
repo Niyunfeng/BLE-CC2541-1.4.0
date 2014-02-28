@@ -9,16 +9,13 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=973843794
+Checksum=502275754
 [CallStack]
 ShowArgs=0
 [Disassembly]
 MixedMode=1
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\simpleBLEPeripheral.c}.447.15" 1 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\Source\simpleBLEPeripheral.c}.447.15" 1 0 0 0 "" 0 ""
-Bp2=_ "STD_CODE" "{$PROJ_DIR$\..\Source\simpleBLEPeripheral.c}.447.15" 1 0 0 0 "" 0 ""
-Count=3
+Count=0
 [ChipconEmu]
 Stop timers on halt=0
 Leave target running=1

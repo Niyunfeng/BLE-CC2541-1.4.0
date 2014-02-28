@@ -49,7 +49,7 @@
 #include "gatt_profile_uuid.h"
 #include "gattservapp.h"
 #include "hiddev.h"
-
+#include "hal_lcd.h"
 #include "battservice.h"
 
 /*********************************************************************
@@ -349,9 +349,9 @@ bStatus_t Batt_GetParameter( uint8 param, void *value )
 bStatus_t Batt_MeasLevel( void )
 {
   uint8 level;
-
+HalLcdWriteString("now  start batt..", HAL_LCD_LINE_4);
   level = battMeasure();
-
+HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_5);
   // If level has gone down
   if (level < battLevel)
   {
