@@ -1451,6 +1451,12 @@
       <name>$PROJ_DIR$\..\..\common\cc2540\OnBoard.h</name>
     </file>
   </group>
+  <file>
+    <name>$PROJ_DIR$\..\Source\SimpleTemperature.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\Source\SimpleTemperature.h</name>
+  </file>
 </project>
 
 

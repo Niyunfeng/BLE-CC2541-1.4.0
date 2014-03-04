@@ -85,7 +85,7 @@
 #include "SimpleRTCInterrupt.h"
 #include "SimpleBLESPIFlash.h"
 #include "battservice.h"
-
+#include "SimpleTemperature.h"
 /*********************************************************************
  * MACROS
  */
@@ -458,7 +458,33 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 	HalLcdWriteString("spi start", HAL_LCD_LINE_1);
 	
               XNV_SPI_INIT();
-             
+              uint8 i; 
+        uint8 TempValue[6];  
+        float AvgTemp; 
+        initTempSensor();
+        
+        while(1) 
+        { 
+          AvgTemp = 0;          
+          for(i = 0 ; i < 4 ; i++) 
+          {    
+            AvgTemp += getTemperature();  
+            AvgTemp=AvgTemp/2;                  //每次累加后除 2 
+          }
+          /****温度转换成ascii码发送****/
+          TempValue[0] = (unsigned char)(AvgTemp)/10 + 48;          //十位
+          TempValue[1] = (unsigned char)(AvgTemp)%10 + 48;          //个位
+          TempValue[2] = '.';                                       //小数点 
+          TempValue[3] = (unsigned char)(AvgTemp*10)%10+48;         //十分位
+          TempValue[4] = (unsigned char)(AvgTemp*100)%10+48;        //百分位
+          TempValue[5] = '\0';                                       //字符串结束符  
+          
+          HalLcdWriteString(TempValue, HAL_LCD_LINE_7);
+          //SbpHalUARTWrite(" Temperature: ",14);                      
+          //SbpHalUARTWrite( TempValue,6); 
+          UART_HAL_DELAY(10000); 
+        }
+
 
 
 
