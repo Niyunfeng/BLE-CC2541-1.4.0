@@ -1,0 +1,315 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:38 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\SimpleBLESPIFlash.c #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\SimpleBLESPIFlash.c #
+#                           -D INT_HEAP_LEN=3074 -D HALNODEBUG -D             #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D    #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\Simpl #
+#                          eBLESPIFlash.lst                                   #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\Simple #
+#                          BLESPIFlash.r51                                    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source\SimpleBLESPIFlash.c
+      1          /*
+      2          CC2540 
+      3          ghostyu
+      4          20130204
+      5          */
+      6          
+      7          /*
+      8          说明：
+      9          
+     10          */
+     11          //#include<ioCC2540.h>
+     12          //#include"Common.h"
+     13          //#include"hal_lcd.h"
+     14          #include "hal_assert.h"
+     15          #include "hal_board_cfg.h"
+     16          #include "SimpleBLESPIFlash.h"
+     17          
+     18          
+     19          
+     20          #define XNV_STAT_CMD  0x05
+     21          #define XNV_WREN_CMD  0x06
+     22          #define XNV_WRPG_CMD  0x0A
+     23          #define XNV_READ_CMD  0x0B
+     24          
+     25          #define XNV_STAT_WIP  0x01
+     26          
+     27          
+     28          /* ----------- XNV ---------- */
+     29          #define XNV_SPI_BEGIN()             st(P1_3 = 0;)
+     30          #define XNV_SPI_TX(x)               st(U1CSR &= ~0x02; U1DBUF = (x);)
+     31          #define XNV_SPI_RX()                U1DBUF
+     32          #define XNV_SPI_WAIT_RXRDY()        st(while (!(U1CSR & 0x02));)
+     33          #define XNV_SPI_END()               st(P1_3 = 1;)
+     34          
+     35          // The TI reference design uses UART1 Alt. 2 in SPI mode.
+     36          #define XNV_SPI_INIT() \
+     37          st( \
+     38            /* Mode select UART1 SPI Mode as master. */\
+     39            U1CSR = 0; \
+     40            \
+     41            /* Setup for 115200 baud. */\
+     42            U1GCR = 11; \
+     43            U1BAUD = 216; \
+     44            \
+     45            /* Set bit order to MSB */\
+     46            U1GCR |= BV(5); \
+     47            \
+     48            /* Set UART1 I/O to alternate 2 location on P1 pins. */\
+     49            PERCFG |= 0x02;  /* U1CFG */\
+     50            \
+     51            /* Select peripheral function on I/O pins but SS is left as GPIO for separate control. */\
+     52            P1SEL |= 0xE0;  /* SELP1_[7:4] */\
+     53            /* P1.1,2,3: reset, LCD CS, XNV CS. */\
+     54            P1SEL &= ~0x0E; \
+     55            P1 |= 0x0E; \
+     56            P1_1 = 0; \
+     57            P1DIR |= 0x0E; \
+     58            \
+     59            /* Give UART1 priority over Timer3. */\
+     60            P2SEL &= ~0x20;  /* PRI2P1 */\
+     61            \
+     62            /* When SPI config is complete, enable it. */\
+     63            U1CSR |= 0x40; \
+     64            /* Release XNV reset. */\
+     65            P1_1 = 1; \
+     66          )
+     67          
+     68           void xnvSPIWrite(uint8 ch)
+     69          {
+     70            XNV_SPI_TX(ch);
+     71            XNV_SPI_WAIT_RXRDY();
+     72          }
+     73          
+     74          void HalSPIRead(uint32 addr, uint8 *pBuf, uint16 len)
+     75          {
+     76          
+     77            uint8 shdw = P1DIR;
+     78            P1DIR |= BV(3);
+     79            
+     80            XNV_SPI_BEGIN();
+     81            do {
+     82              xnvSPIWrite(XNV_STAT_CMD);
+     83            } while (XNV_SPI_RX() & XNV_STAT_WIP);
+     84            XNV_SPI_END();
+     85            asm("NOP"); asm("NOP");
+     86          
+     87            XNV_SPI_BEGIN();
+     88            xnvSPIWrite(XNV_READ_CMD);
+     89            xnvSPIWrite(addr >> 16);
+     90            xnvSPIWrite(addr >> 8);
+     91            xnvSPIWrite(addr);
+     92            xnvSPIWrite(0);
+     93          
+     94            while (len--)
+     95            {
+     96              xnvSPIWrite(0);
+     97              *pBuf++ = XNV_SPI_RX();
+     98            }
+     99            XNV_SPI_END();
+    100          
+    101            P1DIR = shdw;
+    102          }
+    103          
+    104           void HalSPIWrite(uint32 addr, uint8 *pBuf, uint16 len)
+    105          {
+    106            uint8 cnt;
+    107            uint8 shdw = P1DIR;
+    108            P1DIR |= BV(3);
+    109            while (len)
+    110            {
+    111              XNV_SPI_BEGIN();
+    112              do {
+    113                xnvSPIWrite(XNV_STAT_CMD);
+    114              } while (XNV_SPI_RX() & XNV_STAT_WIP);
+    115              XNV_SPI_END();
+    116              asm("NOP"); asm("NOP");
+    117          
+    118              XNV_SPI_BEGIN();
+    119              xnvSPIWrite(XNV_WREN_CMD);
+    120              XNV_SPI_END();
+    121              asm("NOP"); asm("NOP");
+    122          
+    123              XNV_SPI_BEGIN();
+    124              xnvSPIWrite(XNV_WRPG_CMD);
+    125              xnvSPIWrite(addr >> 16);
+    126              xnvSPIWrite(addr >> 8);
+    127              xnvSPIWrite(addr);
+    128          
+    129              // Can only write within any one page boundary, so prepare for next page write if bytes remain.
+    130              cnt = 0 - (uint8)addr;
+    131              if (cnt)
+    132              {
+    133                addr += cnt;
+    134              }
+    135              else
+    136              {
+    137                addr += 256;
+    138              }
+    139          
+    140              do
+    141              {
+    142                xnvSPIWrite(*pBuf++);
+    143                cnt--;
+    144                len--;
+    145              } while (len && cnt);
+    146              XNV_SPI_END();
+    147            }
+    148            P1DIR = shdw;
+    149          }
+    150          
+    151          /*uint8 buf[15]="123456789000000";
+    152          uint8 bufrx[15];
+    153          
+    154          
+    155          
+    156          int main()
+    157          {
+    158            HalLcd_HW_Init();
+    159            
+    160            HalLcd_HW_WriteLine(HAL_LCD_LINE_1, "      CC2540EM");
+    161            HalLcd_HW_WriteLine(HAL_LCD_LINE_3, "-->SPI-FLASH_TEST"); 
+    162            
+    163            XNV_SPI_INIT();
+    164          
+    165            HalSPIWrite(0x0,buf,15);
+    166            HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Write:"); 
+    167            HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf); 
+    168            //注意，连续读写之间至少要延时800us
+    169            HalHW_WaitUs(800);
+    170            HalSPIRead(0x0,bufrx,15);
+    171            HalLcd_HW_WriteLine(HAL_LCD_LINE_6, "Read:"); 
+    172            HalLcd_HW_WriteLine(HAL_LCD_LINE_7, bufrx); 
+    173            while(1);
+    174          }*/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       1      0     24  HalSPIRead
+                          0 0 20 -> xnvSPIWrite
+       0      0     24  HalSPIWrite
+                          0 0 20 -> xnvSPIWrite
+       0      0     20  xnvSPIWrite
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??HalSPIRead?relay
+       6  ??HalSPIWrite?relay
+       6  ??xnvSPIWrite?relay
+       8  ?Subroutine0
+     153  HalSPIRead
+     200  HalSPIWrite
+       1  P1DIR
+       1  U1DBUF
+       1  _A_P1
+       1  _A_U1CSR
+       4  __Constant_100
+      11  xnvSPIWrite
+
+ 
+ 372 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+   4 bytes in segment XDATA_ROM_C
+ 
+ 390 bytes of CODE  memory
+   0 bytes of CONST memory (+ 4 bytes shared)
+   0 bytes of DATA  memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: 1

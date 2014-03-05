@@ -1,0 +1,467 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:35 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Components\os #
+#                          al\common\osal_cbtimer.c                           #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\os #
+#                          al\common\osal_cbtimer.c -D INT_HEAP_LEN=3074 -D   #
+#                          HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D          #
+#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ -o   #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\ -e    #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\osal_ #
+#                          cbtimer.lst                                        #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\osal_c #
+#                          btimer.r51                                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\osal_cbtimer.c
+      1          /*************************************************************************************************
+      2            Filename:       osal_cbtimer.c
+      3            Revised:        $Date: 2009-01-14 14:51:34 -0800 (Wed, 14 Jan 2009) $
+      4            Revision:       $Revision: 18762 $
+      5          
+      6            Description:    This file contains the Callback Timer task(s). This module
+      7                            provides 'callback' timers using the existing 'event' timers.
+      8                            In other words, the registered callback function is called 
+      9                            instead of an OSAL event being sent to the owner of the timer
+     10                            when it expires.
+     11          
+     12          
+     13            Copyright 2008-2009 Texas Instruments Incorporated. All rights reserved.
+     14          
+     15            IMPORTANT: Your use of this Software is limited to those specific rights
+     16            granted under the terms of a software license agreement between the user
+     17            who downloaded the software, his/her employer (which must be your employer)
+     18            and Texas Instruments Incorporated (the "License").  You may not use this
+     19            Software unless you agree to abide by the terms of the License. The License
+     20            limits your use, and you acknowledge, that the Software may not be modified,
+     21            copied or distributed unless embedded on a Texas Instruments microcontroller
+     22            or used solely and exclusively in conjunction with a Texas Instruments radio
+     23            frequency transceiver, which is integrated into your product.  Other than for
+     24            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     25            works of, modify, distribute, perform, display or sell this Software and/or
+     26            its documentation for any purpose.
+     27          
+     28            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     29            PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, 
+     30            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE, 
+     31            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     32            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     33            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     34            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     35            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     36            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     37            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     38            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     39          
+     40            Should you have any questions regarding your right to use this Software,
+     41            contact Texas Instruments Incorporated at www.TI.com. 
+     42          **************************************************************************************************/
+     43          
+     44          #include "OSAL.h"
+     45          #include "OSAL_Tasks.h"
+     46          
+     47          #include "osal_cbtimer.h"
+     48          
+     49          /*********************************************************************
+     50           * MACROS
+     51           */
+     52          // Macros to convert one-dimensional index 'timer id' to two-dimensional indices
+     53          // 'task id' and 'event id'.
+     54          
+     55          // Find out event id using timer id
+     56          #define EVENT_ID( timerId )            ( 0x0001 << ( ( timerId ) % NUM_CBTIMERS_PER_TASK ) )
+     57          
+     58          // Find out task id using timer id
+     59          #define TASK_ID( timerId )             ( ( ( timerId ) / NUM_CBTIMERS_PER_TASK ) + baseTaskID )
+     60          
+     61          // Find out bank task id using task id
+     62          #define BANK_TASK_ID( taskId )         ( ( baseTaskID - ( taskId ) ) * NUM_CBTIMERS )
+     63          
+     64          /*********************************************************************
+     65           * CONSTANTS
+     66           */
+     67          // Number of callback timers supported per task (limited by the number of OSAL event timers)
+     68          #define NUM_CBTIMERS_PER_TASK          15
+     69          
+     70          // Total number of callback timers
+     71          #define NUM_CBTIMERS                   ( OSAL_CBTIMER_NUM_TASKS * NUM_CBTIMERS_PER_TASK )
+     72          
+     73          /*********************************************************************
+     74           * TYPEDEFS
+     75           */
+     76          // Callback Timer structure
+     77          typedef struct
+     78          {
+     79            pfnCbTimer_t pfnCbTimer; // callback function to be called when timer expires
+     80            uint8 *pData;            // data to be passed in to callback function
+     81          } cbTimer_t;
+     82          
+     83          /*********************************************************************
+     84           * GLOBAL VARIABLES
+     85           */
+     86          // Callback Timer base task id
+     87          uint16 baseTaskID = TASK_NO_TASK;
+     88          
+     89          /*********************************************************************
+     90           * EXTERNAL VARIABLES
+     91           */
+     92          
+     93          /*********************************************************************
+     94           * EXTERNAL FUNCTIONS
+     95           */
+     96          
+     97          /*********************************************************************
+     98           * LOCAL VARIABLES
+     99           */
+    100          // Callback Timers table.
+    101          #if ( NUM_CBTIMERS > 0 )
+    102            cbTimer_t cbTimers[NUM_CBTIMERS];
+    103          #endif
+    104          
+    105          /*********************************************************************
+    106           * LOCAL FUNCTIONS
+    107           */
+    108          
+    109          /*********************************************************************
+    110           * API FUNCTIONS
+    111           */
+    112          
+    113          /*********************************************************************
+    114           * @fn          osal_CbTimerInit
+    115           *
+    116           * @brief       Callback Timer task initialization function. This function
+    117           *              can be called more than once (OSAL_CBTIMER_NUM_TASKS times).
+    118           *
+    119           * @param       taskId - Message Timer task ID.
+    120           *
+    121           * @return      void
+    122           */
+    123          void osal_CbTimerInit( uint8 taskId )
+    124          {
+    125            if ( baseTaskID == TASK_NO_TASK )
+    126            {
+    127              // Only initialize the base task id
+    128              baseTaskID = taskId;
+    129          
+    130              // Initialize all timer structures
+    131              osal_memset( cbTimers, 0, sizeof( cbTimers ) );
+    132            }
+    133          }
+    134          
+    135          /*********************************************************************
+    136           * @fn          osal_CbTimerProcessEvent
+    137           *
+    138           * @brief       Callback Timer task event processing function.
+    139           *
+    140           * @param       taskId - task ID.
+    141           * @param       events - events.
+    142           *
+    143           * @return      events not processed
+    144           */
+    145          uint16 osal_CbTimerProcessEvent( uint8 taskId, uint16 events )
+    146          {
+    147            if ( events & SYS_EVENT_MSG )
+    148            {
+    149              // Process OSAL messages
+    150          
+    151              // return unprocessed events
+    152              return ( events ^ SYS_EVENT_MSG );
+    153            }
+    154          
+    155            if ( events )
+    156            {
+    157              uint8 i;
+    158              uint16 event;
+    159          
+    160              // Process event timers
+    161              for ( i = 0; i < NUM_CBTIMERS_PER_TASK; i++ )
+    162              {
+    163                if ( ( events >> i ) & 0x0001 )
+    164                {
+    165                  cbTimer_t *pTimer = &cbTimers[BANK_TASK_ID( taskId )+i];
+    166          
+    167                  // Found the first event
+    168                  event =  0x0001 << i;
+    169          
+    170                  // Timer expired, call the registered callback function
+    171                  pTimer->pfnCbTimer( pTimer->pData );
+    172          
+    173                  // Mark entry as free
+    174                  pTimer->pfnCbTimer = NULL;
+    175                  
+    176                  // Null out data pointer
+    177                  pTimer->pData = NULL;
+    178                
+    179                  // We only process one event at a time
+    180                  break;
+    181                }
+    182              }
+    183          
+    184              // return unprocessed events
+    185              return ( events ^ event );
+    186            }
+    187          
+    188            // If reach here, the events are unknown
+    189            // Discard or make more handlers
+    190            return 0;
+    191          }
+    192          
+    193          /*********************************************************************
+    194           * @fn      osal_CbTimerStart
+    195           *
+    196           * @brief   This function is called to start a callback timer to expire 
+    197           *          in n mSecs. When the timer expires, the registered callback
+    198           *          function will be called.
+    199           *
+    200           * @param   pfnCbTimer - callback function to be called when timer expires
+    201           * @param   pData - data to be passed in to callback function
+    202           * @param   timeout - in milliseconds.
+    203           * @param   pTimerId - will point to new timer Id (if not null)
+    204           *
+    205           * @return  Success, or Failure.
+    206           */
+    207          Status_t osal_CbTimerStart( pfnCbTimer_t pfnCbTimer, uint8 *pData,  
+    208                                     uint16 timeout, uint8 *pTimerId )
+    209          {
+    210            uint8 i;
+    211           
+    212            // Validate input parameters
+    213            if ( pfnCbTimer == NULL )
+    214            {
+    215              return ( INVALIDPARAMETER );
+    216            }
+    217          
+    218            // Look for an unused timer first
+    219            for ( i = 0; i < NUM_CBTIMERS; i++ )
+    220            {
+    221              if ( cbTimers[i].pfnCbTimer == NULL )
+    222              {
+    223                // Start the OSAL event timer first
+    224                if ( osal_start_timerEx( TASK_ID( i ), EVENT_ID( i ), timeout ) == SUCCESS )
+    225                {
+    226                  // Set up the callback timer
+    227                  cbTimers[i].pfnCbTimer = pfnCbTimer;
+    228                  cbTimers[i].pData = pData;
+    229          
+    230                  if ( pTimerId != NULL )
+    231                  {
+    232                    // Caller is intreseted in the timer id
+    233                    *pTimerId = i;
+    234                  }
+    235          
+    236                  return ( SUCCESS );
+    237                }
+    238              }
+    239            }
+    240          
+    241            // No timer available
+    242            return ( NO_TIMER_AVAIL );
+    243          }
+    244          
+    245          /*********************************************************************
+    246           * @fn      osal_CbTimerUpdate
+    247           *
+    248           * @brief   This function is called to update a message timer that has
+    249           *          already been started. If SUCCESS, the function will update
+    250           *          the timer's timeout value. If INVALIDPARAMETER, the timer 
+    251           *          either doesn't exit.
+    252           *
+    253           * @param   timerId - identifier of the timer that is to be updated
+    254           * @param   timeout - new timeout in milliseconds.
+    255           *
+    256           * @return  SUCCESS or INVALIDPARAMETER if timer not found
+    257           */
+    258          Status_t osal_CbTimerUpdate( uint8 timerId, uint16 timeout )
+    259          {
+    260            // Look for the existing timer
+    261            if ( timerId < NUM_CBTIMERS )
+    262            {
+    263              if ( cbTimers[timerId].pfnCbTimer != NULL )
+    264              {
+    265                // Make sure the corresponding OSAL event timer is still running
+    266                if ( osal_get_timeoutEx( TASK_ID( timerId ), EVENT_ID( timerId ) ) != 0 )
+    267                {
+    268                  // Timer exists; update it
+    269                  osal_start_timerEx( TASK_ID( timerId ), EVENT_ID( timerId ), timeout );
+    270          
+    271                  return (  SUCCESS );
+    272                }
+    273              }
+    274            }
+    275          
+    276            // Timer not found
+    277            return ( INVALIDPARAMETER );
+    278          }
+    279          
+    280          
+    281          /*********************************************************************
+    282           * @fn      osal_CbTimerStop
+    283           *
+    284           * @brief   This function is called to stop a timer that has already been
+    285           *          started. If SUCCESS, the function will cancel the timer. If 
+    286           *          INVALIDPARAMETER, the timer doesn't exit.
+    287           *
+    288           * @param   timerId - identifier of the timer that is to be stopped
+    289           *
+    290           * @return  SUCCESS or INVALIDPARAMETER if timer not found
+    291           */
+    292          Status_t osal_CbTimerStop( uint8 timerId )
+    293          {
+    294            // Look for the existing timer
+    295            if ( timerId < NUM_CBTIMERS )
+    296            {
+    297              if ( cbTimers[timerId].pfnCbTimer != NULL )
+    298              {
+    299                // Timer exists; stop the OSAL event timer first
+    300                osal_stop_timerEx( TASK_ID( timerId ), EVENT_ID( timerId ) );
+    301          
+    302                // Mark entry as free
+    303                cbTimers[timerId].pfnCbTimer = NULL;
+    304          
+    305                // Null out data pointer
+    306                cbTimers[timerId].pData = NULL;
+    307          
+    308                return ( SUCCESS );
+    309              }
+    310            }
+    311          
+    312            // Timer not found
+    313            return ( INVALIDPARAMETER );
+    314          }
+    315          
+    316          /****************************************************************************
+    317          ****************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      9  osal_CbTimerInit
+                          0 0  9 -> osal_memset
+       0      0     15  osal_CbTimerProcessEvent
+       1      0     27  osal_CbTimerStart
+                          0 0 23 -> osal_start_timerEx
+       0      0     11  osal_CbTimerStop
+                          0 0 11 -> osal_stop_timerEx
+       0      0     18  osal_CbTimerUpdate
+                          0 0 14 -> osal_get_timeoutEx
+                          0 0 18 -> osal_start_timerEx
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       2  ?<Initializer for baseTaskID>
+       8  ??Subroutine2_0
+       6  ??osal_CbTimerInit?relay
+       6  ??osal_CbTimerProcessEvent?relay
+       6  ??osal_CbTimerStart?relay
+       6  ??osal_CbTimerStop?relay
+       6  ??osal_CbTimerUpdate?relay
+       2  ?Subroutine0
+      13  ?Subroutine1
+       2  baseTaskID
+      60  cbTimers
+      42  osal_CbTimerInit
+     206  osal_CbTimerProcessEvent
+     196  osal_CbTimerStart
+     114  osal_CbTimerStop
+     135  osal_CbTimerUpdate
+
+ 
+ 716 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+   2 bytes in segment XDATA_I
+   2 bytes in segment XDATA_ID
+  60 bytes in segment XDATA_Z
+ 
+ 748 bytes of CODE  memory
+  62 bytes of XDATA memory
+
+Errors: none
+Warnings: none

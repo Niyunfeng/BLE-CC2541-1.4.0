@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:34 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             05/Mar/2014  15:11:23 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -31,32 +31,33 @@
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
 #                          l\target\CC2540EB\hal_sleep.c -D                   #
 #                          INT_HEAP_LEN=3074 -D HALNODEBUG -D                 #
-#                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D    #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D xHAL_AES_DMA=TRUE -D   #
 #                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
 #                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
-#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
-#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
-#                          -e --debug --core=plain --dptr=16,1                #
-#                          --data_model=large --code_model=banked             #
-#                          --calling_convention=xdata_reentrant               #
-#                          --place_constants=data_rom --nr_virtual_regs 16    #
-#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
-#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
-#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
-#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
-#                          omponents\hal\include\ -I                          #
+#                          -D HAL_ADC=TRUE -lcN E:\TexasInstruments\BLE-CC254 #
+#                          x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC254 #
+#                          1DB\CC2541\List\ -o E:\TexasInstruments\BLE-CC254x #
+#                          -1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541 #
+#                          DB\CC2541\Obj\ -e --debug --core=plain             #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\common\ -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\include\ -I                           #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
-#                          nents\hal\target\CC2541EB\ -I                      #
+#                          nents\hal\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\hal\target\CC2541EB\   #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\osal\include\ -I                          #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
-#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
-#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
-#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          nents\services\saddr\ -I                           #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
 #                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #

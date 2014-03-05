@@ -268,13 +268,14 @@
           <state>INT_HEAP_LEN=3074</state>
           <state>HALNODEBUG</state>
           <state>OSAL_CBTIMER_NUM_TASKS=1</state>
-          <state>HAL_AES_DMA=TRUE</state>
+          <state>xHAL_AES_DMA=TRUE</state>
           <state>HAL_DMA=TRUE</state>
           <state>POWER_SAVING</state>
           <state>xPLUS_BROADCASTER</state>
           <state>HAL_LCD=TRUE</state>
           <state>HAL_LED=TRUE</state>
           <state>HAL_UART=TRUE</state>
+          <state>HAL_ADC=TRUE</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -1111,6 +1112,12 @@
     <file>
       <name>$PROJ_DIR$\..\Source\SimpleRTCInterrupt.h</name>
     </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleTemperature.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleTemperature.h</name>
+    </file>
   </group>
   <group>
     <name>HAL</name>
@@ -1451,12 +1458,6 @@
       <name>$PROJ_DIR$\..\..\common\cc2540\OnBoard.h</name>
     </file>
   </group>
-  <file>
-    <name>$PROJ_DIR$\..\Source\SimpleTemperature.c</name>
-  </file>
-  <file>
-    <name>$PROJ_DIR$\..\Source\SimpleTemperature.h</name>
-  </file>
 </project>
 
 

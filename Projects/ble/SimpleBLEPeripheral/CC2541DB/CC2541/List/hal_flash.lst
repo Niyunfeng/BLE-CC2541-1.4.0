@@ -1,0 +1,305 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:41 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
+#                          l\target\CC2540EB\hal_flash.c                      #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
+#                          l\target\CC2540EB\hal_flash.c -D                   #
+#                          INT_HEAP_LEN=3074 -D HALNODEBUG -D                 #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D    #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\hal_f #
+#                          lash.lst                                           #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_fl #
+#                          ash.r51                                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_flash.c
+      1          /**************************************************************************************************
+      2            Filename:       _hal_flash.c
+      3            Revised:        $Date: 2010-07-06 15:24:36 -0700 (Tue, 06 Jul 2010) $
+      4            Revision:       $Revision: 22897 $
+      5          
+      6            Description: This file contains the interface to the H/W Flash driver.
+      7          
+      8          
+      9            Copyright 2006-2010 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /* ------------------------------------------------------------------------------------------------
+     41           *                                          Includes
+     42           * ------------------------------------------------------------------------------------------------
+     43           */
+     44          
+     45          #include "hal_board_cfg.h"
+     46          #include "hal_dma.h"
+     47          #include "hal_flash.h"
+     48          #include "hal_types.h"
+     49          
+     50          /**************************************************************************************************
+     51           * @fn          HalFlashRead
+     52           *
+     53           * @brief       This function reads 'cnt' bytes from the internal flash.
+     54           *
+     55           * input parameters
+     56           *
+     57           * @param       pg - A valid flash page number.
+     58           * @param       offset - A valid offset into the page.
+     59           * @param       buf - A valid buffer space at least as big as the 'cnt' parameter.
+     60           * @param       cnt - A valid number of bytes to read.
+     61           *
+     62           * output parameters
+     63           *
+     64           * None.
+     65           *
+     66           * @return      None.
+     67           **************************************************************************************************
+     68           */
+     69          void HalFlashRead(uint8 pg, uint16 offset, uint8 *buf, uint16 cnt)
+     70          {
+     71            // Calculate the offset into the containing flash bank as it gets mapped into XDATA.
+     72            uint8 *ptr = (uint8 *)(offset + HAL_FLASH_PAGE_MAP) +
+     73                         ((pg % HAL_FLASH_PAGE_PER_BANK) * HAL_FLASH_PAGE_SIZE);
+     74            uint8 memctr = MEMCTR;  // Save to restore.
+     75          
+     76          #if !defined HAL_OAD_BOOT_CODE
+     77            halIntState_t is;
+     78          #endif
+     79          
+     80            pg /= HAL_FLASH_PAGE_PER_BANK;  // Calculate the flash bank from the flash page.
+     81          
+     82          #if !defined HAL_OAD_BOOT_CODE
+     83            HAL_ENTER_CRITICAL_SECTION(is);
+     84          #endif
+     85          
+     86            // Calculate and map the containing flash bank into XDATA.
+     87            MEMCTR = (MEMCTR & 0xF8) | pg;
+     88          
+     89            while (cnt--)
+     90            {
+     91              *buf++ = *ptr++;
+     92            }
+     93          
+     94            MEMCTR = memctr;
+     95          
+     96          #if !defined HAL_OAD_BOOT_CODE
+     97            HAL_EXIT_CRITICAL_SECTION(is);
+     98          #endif
+     99          }
+    100          
+    101          /**************************************************************************************************
+    102           * @fn          HalFlashWrite
+    103           *
+    104           * @brief       This function writes 'cnt' bytes to the internal flash.
+    105           *
+    106           * input parameters
+    107           *
+    108           * @param       addr - Valid HAL flash write address: actual addr / 4 and quad-aligned.
+    109           * @param       buf - Valid buffer space at least as big as 'cnt' X 4.
+    110           * @param       cnt - Number of 4-byte blocks to write.
+    111           *
+    112           * output parameters
+    113           *
+    114           * None.
+    115           *
+    116           * @return      None.
+    117           **************************************************************************************************
+    118           */
+    119          void HalFlashWrite(uint16 addr, uint8 *buf, uint16 cnt)
+    120          {
+    121          #if (defined HAL_DMA) && (HAL_DMA == TRUE)
+    122            halDMADesc_t *ch = HAL_NV_DMA_GET_DESC();
+    123          
+    124            HAL_DMA_SET_SOURCE(ch, buf);
+    125            HAL_DMA_SET_DEST(ch, &FWDATA);
+    126            HAL_DMA_SET_VLEN(ch, HAL_DMA_VLEN_USE_LEN);
+    127            HAL_DMA_SET_LEN(ch, (cnt * HAL_FLASH_WORD_SIZE));
+    128            HAL_DMA_SET_WORD_SIZE(ch, HAL_DMA_WORDSIZE_BYTE);
+    129            HAL_DMA_SET_TRIG_MODE(ch, HAL_DMA_TMODE_SINGLE);
+    130            HAL_DMA_SET_TRIG_SRC(ch, HAL_DMA_TRIG_FLASH);
+    131            HAL_DMA_SET_SRC_INC(ch, HAL_DMA_SRCINC_1);
+    132            HAL_DMA_SET_DST_INC(ch, HAL_DMA_DSTINC_0);
+    133            // The DMA is to be polled and shall not issue an IRQ upon completion.
+    134            HAL_DMA_SET_IRQ(ch, HAL_DMA_IRQMASK_DISABLE);
+    135            HAL_DMA_SET_M8( ch, HAL_DMA_M8_USE_8_BITS);
+    136            HAL_DMA_SET_PRIORITY(ch, HAL_DMA_PRI_HIGH);
+    137            HAL_DMA_CLEAR_IRQ(HAL_NV_DMA_CH);
+    138            HAL_DMA_ARM_CH(HAL_NV_DMA_CH);
+    139          
+    140            FADDRL = (uint8)addr;
+    141            FADDRH = (uint8)(addr >> 8);
+    142            FCTL |= 0x02;         // Trigger the DMA writes.
+    143            while (FCTL & 0x80);  // Wait until writing is done.
+    144          #endif
+    145          }
+    146          
+    147          /**************************************************************************************************
+    148           * @fn          HalFlashErase
+    149           *
+    150           * @brief       This function erases the specified page of the internal flash.
+    151           *
+    152           * input parameters
+    153           *
+    154           * @param       pg - A valid flash page number to erase.
+    155           *
+    156           * output parameters
+    157           *
+    158           * None.
+    159           *
+    160           * @return      None.
+    161           **************************************************************************************************
+    162           */
+    163          void HalFlashErase(uint8 pg)
+    164          {
+    165            FADDRH = pg * (HAL_FLASH_PAGE_SIZE / HAL_FLASH_WORD_SIZE / 256);
+    166            FCTL |= 0x01;
+    167          }
+    168          
+    169          /**************************************************************************************************
+    170          */
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       2      0      0  HalFlashErase
+       1      0     14  HalFlashRead
+       0      0     12  HalFlashWrite
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??HalFlashErase?relay
+       6  ??HalFlashRead?relay
+       6  ??HalFlashWrite?relay
+       1  DMAARM
+       1  DMAIRQ
+      25  HalFlashErase
+     133  HalFlashRead
+     102  HalFlashWrite
+       1  MEMCTR
+       1  _A_IEN0
+
+ 
+ 260 bytes in segment BANKED_CODE
+  18 bytes in segment BANK_RELAYS
+   4 bytes in segment SFR_AN
+ 
+ 278 bytes of CODE memory
+   0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

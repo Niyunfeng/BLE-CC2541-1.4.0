@@ -1,0 +1,1589 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:43 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          Profiles\Roles\peripheral.c                        #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          Profiles\Roles\peripheral.c -D INT_HEAP_LEN=3074   #
+#                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D       #
+#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ -o   #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\ -e    #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\perip #
+#                          heral.lst                                          #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\periph #
+#                          eral.r51                                           #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Roles\peripheral.c
+      1          /**************************************************************************************************
+      2            Filename:       peripheral.c
+      3            Revised:        $Date: 2013-09-23 08:15:44 -0700 (Mon, 23 Sep 2013) $
+      4            Revision:       $Revision: 35416 $
+      5          
+      6            Description:    GAP Peripheral Role
+      7          
+      8          
+      9            Copyright 2009 - 2013 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "bcomdef.h"
+     44          #include "OSAL.h"
+     45          #include "hci_tl.h"
+     46          #include "l2cap.h"
+     47          #include "gap.h"
+     48          #include "linkdb.h"
+     49          #include "att.h"
+     50          #include "gatt.h"
+     51          #include "osal_snv.h"
+     52          
+     53          #include "peripheral.h"
+     54          #include "gapbondmgr.h"
+     55          
+     56          /*********************************************************************
+     57           * MACROS
+     58           */
+     59          
+     60          /*********************************************************************
+     61           * CONSTANTS
+     62           */
+     63          // Profile Events
+     64          #define START_ADVERTISING_EVT         0x0001  // Start Advertising
+     65          #define RSSI_READ_EVT                 0x0002  // Read RSSI
+     66          #define START_CONN_UPDATE_EVT         0x0004  // Start Connection Update Procedure
+     67          #define CONN_PARAM_TIMEOUT_EVT        0x0008  // Connection Parameters Update Timeout
+     68          
+     69          #define DEFAULT_ADVERT_OFF_TIME       30000   // 30 seconds
+     70          
+     71          #define RSSI_NOT_AVAILABLE            127
+     72          
+     73          #define DEFAULT_MIN_CONN_INTERVAL     0x0006  // 100 milliseconds
+     74          #define DEFAULT_MAX_CONN_INTERVAL     0x0C80  // 4 seconds
+     75          
+     76          #define MIN_CONN_INTERVAL             0x0006
+     77          #define MAX_CONN_INTERVAL             0x0C80
+     78          
+     79          #define DEFAULT_TIMEOUT_MULTIPLIER    1000
+     80          
+     81          #define CONN_INTERVAL_MULTIPLIER      6
+     82          
+     83          #define MIN_SLAVE_LATENCY             0
+     84          #define MAX_SLAVE_LATENCY             500
+     85          
+     86          #define MIN_TIMEOUT_MULTIPLIER        0x000a
+     87          #define MAX_TIMEOUT_MULTIPLIER        0x0c80
+     88          
+     89          #define MAX_TIMEOUT_VALUE             0xFFFF
+     90          
+     91          /*********************************************************************
+     92           * TYPEDEFS
+     93           */
+     94          
+     95          /*********************************************************************
+     96           * GLOBAL VARIABLES
+     97           */
+     98          
+     99          /*********************************************************************
+    100           * EXTERNAL VARIABLES
+    101           */
+    102          
+    103          /*********************************************************************
+    104           * EXTERNAL FUNCTIONS
+    105           */
+    106          
+    107          /*********************************************************************
+    108           * LOCAL VARIABLES
+    109           */
+    110          static uint8 gapRole_TaskID;   // Task ID for internal task/event processing
+    111          
+    112          static gaprole_States_t gapRole_state;
+    113          
+    114          /*********************************************************************
+    115           * Profile Parameters - reference GAPROLE_PROFILE_PARAMETERS for
+    116           * descriptions
+    117           */
+    118          
+    119          static uint8  gapRole_profileRole;
+    120          static uint8  gapRole_IRK[KEYLEN];
+    121          static uint8  gapRole_SRK[KEYLEN];
+    122          static uint32 gapRole_signCounter;
+    123          static uint8  gapRole_bdAddr[B_ADDR_LEN];
+    124          static uint8  gapRole_AdvEnabled = TRUE;
+    125          static uint16 gapRole_AdvertOffTime = DEFAULT_ADVERT_OFF_TIME;
+    126          static uint8  gapRole_AdvertDataLen = 3;
+    127          static uint8  gapRole_AdvertData[B_MAX_ADV_LEN] =
+    128          {
+    129            0x02,   // length of this data
+    130            GAP_ADTYPE_FLAGS,   // AD Type = Flags
+    131            // Limited Discoverable & BR/EDR not supported
+    132            (GAP_ADTYPE_FLAGS_GENERAL | GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED),
+    133            0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+    134          };
+    135          static uint8  gapRole_ScanRspDataLen = 0;
+    136          static uint8  gapRole_ScanRspData[B_MAX_ADV_LEN] = {0};
+    137          static uint8  gapRole_AdvEventType;
+    138          static uint8  gapRole_AdvDirectType;
+    139          static uint8  gapRole_AdvDirectAddr[B_ADDR_LEN] = {0};
+    140          static uint8  gapRole_AdvChanMap;
+    141          static uint8  gapRole_AdvFilterPolicy;
+    142          
+    143          static uint16 gapRole_ConnectionHandle = INVALID_CONNHANDLE;
+    144          static uint16 gapRole_RSSIReadRate = 0;
+    145          
+    146          static uint8  gapRole_ConnectedDevAddr[B_ADDR_LEN] = {0};
+    147          
+    148          static uint8  gapRole_ParamUpdateEnable = FALSE;
+    149          static uint16 gapRole_MinConnInterval = DEFAULT_MIN_CONN_INTERVAL;
+    150          static uint16 gapRole_MaxConnInterval = DEFAULT_MAX_CONN_INTERVAL;
+    151          static uint16 gapRole_SlaveLatency = MIN_SLAVE_LATENCY;
+    152          static uint16 gapRole_TimeoutMultiplier = DEFAULT_TIMEOUT_MULTIPLIER;
+    153          
+    154          static uint16 gapRole_ConnInterval = 0;
+    155          static uint16 gapRole_ConnSlaveLatency = 0;
+    156          static uint16 gapRole_ConnTimeout = 0;
+    157          
+    158          static uint8 paramUpdateNoSuccessOption = GAPROLE_NO_ACTION;
+    159          
+    160          // Application callbacks
+    161          static gapRolesCBs_t *pGapRoles_AppCGs = NULL;
+    162          static gapRolesParamUpdateCB_t *pGapRoles_ParamUpdateCB = NULL;
+    163          
+    164          /*********************************************************************
+    165           * Profile Attributes - variables
+    166           */
+    167          
+    168          /*********************************************************************
+    169           * Profile Attributes - Table
+    170           */
+    171          
+    172          /*********************************************************************
+    173           * LOCAL FUNCTIONS
+    174           */
+    175          static void gapRole_ProcessOSALMsg( osal_event_hdr_t *pMsg );
+    176          static void gapRole_ProcessGAPMsg( gapEventHdr_t *pMsg );
+    177          static void gapRole_SetupGAP( void );
+    178          static void gapRole_HandleParamUpdateNoSuccess( void );
+    179          static void gapRole_startConnUpdate( uint8 handleFailure );
+    180          
+    181          /*********************************************************************
+    182           * NETWORK LAYER CALLBACKS
+    183           */
+    184          
+    185          /*********************************************************************
+    186           * PUBLIC FUNCTIONS
+    187           */
+    188          
+    189          /*********************************************************************
+    190           * @brief   Set a GAP Role parameter.
+    191           *
+    192           * Public function defined in peripheral.h.
+    193           */
+    194          bStatus_t GAPRole_SetParameter( uint16 param, uint8 len, void *pValue )
+    195          {
+    196            bStatus_t ret = SUCCESS;
+    197            switch ( param )
+    198            {
+    199              case GAPROLE_IRK:
+    200                if ( len == KEYLEN )
+    201                {
+    202                  VOID osal_memcpy( gapRole_IRK, pValue, KEYLEN ) ;
+    203                }
+    204                else
+    205                {
+    206                  ret = bleInvalidRange;
+    207                }
+    208                break;
+    209          
+    210              case GAPROLE_SRK:
+    211                if ( len == KEYLEN )
+    212                {
+    213                  VOID osal_memcpy( gapRole_SRK, pValue, KEYLEN ) ;
+    214                }
+    215                else
+    216                {
+    217                  ret = bleInvalidRange;
+    218                }
+    219                break;
+    220          
+    221              case GAPROLE_SIGNCOUNTER:
+    222                if ( len == sizeof ( uint32 ) )
+    223                {
+    224                  gapRole_signCounter = *((uint32*)pValue);
+    225                }
+    226                else
+    227                {
+    228                  ret = bleInvalidRange;
+    229                }
+    230                break;
+    231          
+    232              case GAPROLE_ADVERT_ENABLED:
+    233                if ( len == sizeof( uint8 ) )
+    234                {
+    235                  uint8 oldAdvEnabled = gapRole_AdvEnabled;
+    236                  gapRole_AdvEnabled = *((uint8*)pValue);
+    237          
+    238                  if ( (oldAdvEnabled) && (gapRole_AdvEnabled == FALSE) )
+    239                  {
+    240                    // Turn off Advertising
+    241                    if ( ( gapRole_state == GAPROLE_ADVERTISING ) 
+    242                        || ( gapRole_state == GAPROLE_CONNECTED_ADV )
+    243                        || ( gapRole_state == GAPROLE_WAITING_AFTER_TIMEOUT ) )
+    244                    {
+    245                      VOID GAP_EndDiscoverable( gapRole_TaskID );
+    246                    }
+    247                  }
+    248                  else if ( (oldAdvEnabled == FALSE) && (gapRole_AdvEnabled) )
+    249                  {
+    250                    // Turn on Advertising
+    251                    if ( (gapRole_state == GAPROLE_STARTED)
+    252                        || (gapRole_state == GAPROLE_WAITING)
+    253                        || (gapRole_state == GAPROLE_CONNECTED)
+    254                        || (gapRole_state == GAPROLE_WAITING_AFTER_TIMEOUT) )
+    255                    {
+    256                      VOID osal_set_event( gapRole_TaskID, START_ADVERTISING_EVT );
+    257                    }
+    258                  }
+    259                }
+    260                else
+    261                {
+    262                  ret = bleInvalidRange;
+    263                }
+    264                break;
+    265          
+    266              case GAPROLE_ADVERT_OFF_TIME:
+    267                if ( len == sizeof ( uint16 ) )
+    268                {
+    269                  gapRole_AdvertOffTime = *((uint16*)pValue);
+    270                }
+    271                else
+    272                {
+    273                  ret = bleInvalidRange;
+    274                }
+    275                break;
+    276          
+    277              case GAPROLE_ADVERT_DATA:
+    278                if ( len <= B_MAX_ADV_LEN )
+    279                {
+    280                  VOID osal_memset( gapRole_AdvertData, 0, B_MAX_ADV_LEN );
+    281                  VOID osal_memcpy( gapRole_AdvertData, pValue, len );
+    282                  gapRole_AdvertDataLen = len;
+    283                  
+    284                  // Update the advertising data
+    285                  ret = GAP_UpdateAdvertisingData( gapRole_TaskID,
+    286                                        TRUE, gapRole_AdvertDataLen, gapRole_AdvertData );
+    287                }
+    288                else
+    289                {
+    290                  ret = bleInvalidRange;
+    291                }
+    292                break;
+    293          
+    294              case GAPROLE_SCAN_RSP_DATA:
+    295                if ( len <= B_MAX_ADV_LEN )
+    296                {
+    297                  VOID osal_memset( gapRole_ScanRspData, 0, B_MAX_ADV_LEN );
+    298                  VOID osal_memcpy( gapRole_ScanRspData, pValue, len );
+    299                  gapRole_ScanRspDataLen = len;
+    300                  
+    301                  // Update the Response Data
+    302                  ret = GAP_UpdateAdvertisingData( gapRole_TaskID,
+    303                                        FALSE, gapRole_ScanRspDataLen, gapRole_ScanRspData );
+    304                }
+    305                else
+    306                {
+    307                  ret = bleInvalidRange;
+    308                }
+    309                break;
+    310          
+    311              case GAPROLE_ADV_EVENT_TYPE:
+    312                if ( (len == sizeof ( uint8 )) && (*((uint8*)pValue) <= GAP_ADTYPE_ADV_LDC_DIRECT_IND) )
+    313                {
+    314                  gapRole_AdvEventType = *((uint8*)pValue);
+    315                }
+    316                else
+    317                {
+    318                  ret = bleInvalidRange;
+    319                }
+    320                break;
+    321          
+    322              case GAPROLE_ADV_DIRECT_TYPE:
+    323                if ( (len == sizeof ( uint8 )) && (*((uint8*)pValue) <= ADDRTYPE_PRIVATE_RESOLVE) )
+    324                {
+    325                  gapRole_AdvDirectType = *((uint8*)pValue);
+    326                }
+    327                else
+    328                {
+    329                  ret = bleInvalidRange;
+    330                }
+    331                break;
+    332          
+    333              case GAPROLE_ADV_DIRECT_ADDR:
+    334                if ( len == B_ADDR_LEN )
+    335                {
+    336                  VOID osal_memcpy( gapRole_AdvDirectAddr, pValue, B_ADDR_LEN ) ;
+    337                }
+    338                else
+    339                {
+    340                  ret = bleInvalidRange;
+    341                }
+    342                break;
+    343          
+    344              case GAPROLE_ADV_CHANNEL_MAP:
+    345                if ( (len == sizeof ( uint8 )) && (*((uint8*)pValue) <= 0x07) )
+    346                {
+    347                  gapRole_AdvChanMap = *((uint8*)pValue);
+    348                }
+    349                else
+    350                {
+    351                  ret = bleInvalidRange;
+    352                }
+    353                break;
+    354          
+    355              case GAPROLE_ADV_FILTER_POLICY:
+    356                if ( (len == sizeof ( uint8 )) && (*((uint8*)pValue) <= GAP_FILTER_POLICY_WHITE) )
+    357                {
+    358                  gapRole_AdvFilterPolicy = *((uint8*)pValue);
+    359                }
+    360                else
+    361                {
+    362                  ret = bleInvalidRange;
+    363                }
+    364                break;
+    365          
+    366              case GAPROLE_RSSI_READ_RATE:
+    367                if ( len == sizeof ( uint16 ) )
+    368                {
+    369                  gapRole_RSSIReadRate = *((uint16*)pValue);
+    370          
+    371                  if ( (gapRole_RSSIReadRate) && (gapRole_state == GAPROLE_CONNECTED) )
+    372                  {
+    373                    // Start the RSSI Reads
+    374                    VOID osal_start_timerEx( gapRole_TaskID, RSSI_READ_EVT, gapRole_RSSIReadRate );
+    375                  }
+    376                }
+    377                else
+    378                {
+    379                  ret = bleInvalidRange;
+    380                }
+    381                break;
+    382          
+    383              case GAPROLE_PARAM_UPDATE_ENABLE:
+    384                if ( (len == sizeof ( uint8 )) && (*((uint8*)pValue) <= TRUE) )
+    385                {
+    386                  gapRole_ParamUpdateEnable = *((uint8*)pValue);
+    387                }
+    388                else
+    389                {
+    390                  ret = bleInvalidRange;
+    391                }
+    392                break;
+    393          
+    394              case GAPROLE_MIN_CONN_INTERVAL:
+    395                {
+    396                  uint16 newInterval = *((uint16*)pValue);
+    397                  if (   len == sizeof ( uint16 )           &&
+    398                       ( newInterval >= MIN_CONN_INTERVAL ) &&
+    399                       ( newInterval <= MAX_CONN_INTERVAL ) )
+    400                  {
+    401                    gapRole_MinConnInterval = newInterval;
+    402                  }
+    403                  else
+    404                  {
+    405                    ret = bleInvalidRange;
+    406                  }
+    407                }
+    408                break;
+    409          
+    410              case GAPROLE_MAX_CONN_INTERVAL:
+    411                {
+    412                  uint16 newInterval = *((uint16*)pValue);
+    413                  if (   len == sizeof ( uint16 )          &&
+    414                       ( newInterval >= MIN_CONN_INTERVAL) &&
+    415                       ( newInterval <= MAX_CONN_INTERVAL) )
+    416                  {
+    417                    gapRole_MaxConnInterval = newInterval;
+    418                  }
+    419                  else
+    420                  {
+    421                    ret = bleInvalidRange;
+    422                  }
+    423                }
+    424                break;
+    425          
+    426              case GAPROLE_SLAVE_LATENCY:
+    427                {
+    428                  uint16 latency = *((uint16*)pValue);
+    429                  if ( len == sizeof ( uint16 ) && (latency < MAX_SLAVE_LATENCY) )
+    430                  {
+    431                    gapRole_SlaveLatency = latency;
+    432                  }
+    433                  else
+    434                  {
+    435                    ret = bleInvalidRange;
+    436                  }
+    437                }
+    438                break;
+    439          
+    440              case GAPROLE_TIMEOUT_MULTIPLIER:
+    441                {
+    442                  uint16 newTimeout = *((uint16*)pValue);
+    443                  if ( len == sizeof ( uint16 )
+    444                      && (newTimeout >= MIN_TIMEOUT_MULTIPLIER) && (newTimeout <= MAX_TIMEOUT_MULTIPLIER) )
+    445                  {
+    446                    gapRole_TimeoutMultiplier = newTimeout;
+    447                  }
+    448                  else
+    449                  {
+    450                    ret = bleInvalidRange;
+    451                  }
+    452                }
+    453                break;
+    454          
+    455                case GAPROLE_PARAM_UPDATE_REQ:
+    456                  {
+    457                    uint8 req = *((uint8*)pValue);
+    458                    if ( len == sizeof ( uint8 ) && (req == TRUE) )
+    459                    {
+    460                      // Make sure we don't send an L2CAP Connection Parameter Update Request
+    461                      // command within TGAP(conn_param_timeout) of an L2CAP Connection Parameter
+    462                      // Update Response being received.
+    463                      if ( osal_get_timeoutEx( gapRole_TaskID, CONN_PARAM_TIMEOUT_EVT ) == 0 )
+    464                      {             
+    465                        // Start connection update procedure
+    466                        gapRole_startConnUpdate( GAPROLE_NO_ACTION );
+    467                        
+    468                        // Connection update requested by app, cancel such pending procedure (if active)
+    469                        VOID osal_stop_timerEx( gapRole_TaskID, START_CONN_UPDATE_EVT );
+    470                      }
+    471                      else
+    472                      {
+    473                        ret = blePending;
+    474                      }
+    475                    }
+    476                    else
+    477                    {
+    478                      ret = bleInvalidRange;
+    479                    }
+    480                  }
+    481                  break;
+    482            
+    483              default:
+    484                // The param value isn't part of this profile, try the GAP.
+    485                if ( (param < TGAP_PARAMID_MAX) && (len == sizeof ( uint16 )) )
+    486                {
+    487                  ret = GAP_SetParamValue( param, *((uint16*)pValue) );
+    488                }
+    489                else
+    490                {
+    491                  ret = INVALIDPARAMETER;
+    492                }
+    493                break;
+    494            }
+    495          
+    496            return ( ret );
+    497          }
+    498          
+    499          /*********************************************************************
+    500           * @brief   Get a GAP Role parameter.
+    501           *
+    502           * Public function defined in peripheral.h.
+    503           */
+    504          bStatus_t GAPRole_GetParameter( uint16 param, void *pValue )
+    505          {
+    506            bStatus_t ret = SUCCESS;
+    507            switch ( param )
+    508            {
+    509              case GAPROLE_PROFILEROLE:
+    510                *((uint8*)pValue) = gapRole_profileRole;
+    511                break;
+    512          
+    513              case GAPROLE_IRK:
+    514                VOID osal_memcpy( pValue, gapRole_IRK, KEYLEN ) ;
+    515                break;
+    516          
+    517              case GAPROLE_SRK:
+    518                VOID osal_memcpy( pValue, gapRole_SRK, KEYLEN ) ;
+    519                break;
+    520          
+    521              case GAPROLE_SIGNCOUNTER:
+    522                *((uint32*)pValue) = gapRole_signCounter;
+    523                break;
+    524          
+    525              case GAPROLE_BD_ADDR:
+    526                VOID osal_memcpy( pValue, gapRole_bdAddr, B_ADDR_LEN ) ;
+    527                break;
+    528          
+    529              case GAPROLE_ADVERT_ENABLED:
+    530                *((uint8*)pValue) = gapRole_AdvEnabled;
+    531                break;
+    532          
+    533              case GAPROLE_ADVERT_OFF_TIME:
+    534                *((uint16*)pValue) = gapRole_AdvertOffTime;
+    535                break;
+    536          
+    537              case GAPROLE_ADVERT_DATA:
+    538                VOID osal_memcpy( pValue , gapRole_AdvertData, gapRole_AdvertDataLen );
+    539                break;
+    540          
+    541              case GAPROLE_SCAN_RSP_DATA:
+    542                VOID osal_memcpy( pValue, gapRole_ScanRspData, gapRole_ScanRspDataLen ) ;
+    543                break;
+    544          
+    545              case GAPROLE_ADV_EVENT_TYPE:
+    546                *((uint8*)pValue) = gapRole_AdvEventType;
+    547                break;
+    548          
+    549              case GAPROLE_ADV_DIRECT_TYPE:
+    550                *((uint8*)pValue) = gapRole_AdvDirectType;
+    551                break;
+    552          
+    553              case GAPROLE_ADV_DIRECT_ADDR:
+    554                VOID osal_memcpy( pValue, gapRole_AdvDirectAddr, B_ADDR_LEN ) ;
+    555                break;
+    556          
+    557              case GAPROLE_ADV_CHANNEL_MAP:
+    558                *((uint8*)pValue) = gapRole_AdvChanMap;
+    559                break;
+    560          
+    561              case GAPROLE_ADV_FILTER_POLICY:
+    562                *((uint8*)pValue) = gapRole_AdvFilterPolicy;
+    563                break;
+    564          
+    565              case GAPROLE_CONNHANDLE:
+    566                *((uint16*)pValue) = gapRole_ConnectionHandle;
+    567                break;
+    568          
+    569              case GAPROLE_RSSI_READ_RATE:
+    570                *((uint16*)pValue) = gapRole_RSSIReadRate;
+    571                break;
+    572          
+    573              case GAPROLE_PARAM_UPDATE_ENABLE:
+    574                *((uint16*)pValue) = gapRole_ParamUpdateEnable;
+    575                break;
+    576          
+    577              case GAPROLE_MIN_CONN_INTERVAL:
+    578                *((uint16*)pValue) = gapRole_MinConnInterval;
+    579                break;
+    580          
+    581              case GAPROLE_MAX_CONN_INTERVAL:
+    582                *((uint16*)pValue) = gapRole_MaxConnInterval;
+    583                break;
+    584          
+    585              case GAPROLE_SLAVE_LATENCY:
+    586                *((uint16*)pValue) = gapRole_SlaveLatency;
+    587                break;
+    588          
+    589              case GAPROLE_TIMEOUT_MULTIPLIER:
+    590                *((uint16*)pValue) = gapRole_TimeoutMultiplier;
+    591                break;
+    592          
+    593              case GAPROLE_CONN_BD_ADDR:
+    594                VOID osal_memcpy( pValue, gapRole_ConnectedDevAddr, B_ADDR_LEN ) ;
+    595                break;
+    596          
+    597              case GAPROLE_CONN_INTERVAL:
+    598                *((uint16*)pValue) = gapRole_ConnInterval;
+    599                break;
+    600          
+    601              case GAPROLE_CONN_LATENCY:
+    602                *((uint16*)pValue) = gapRole_ConnSlaveLatency;
+    603                break;
+    604          
+    605              case GAPROLE_CONN_TIMEOUT:
+    606                *((uint16*)pValue) = gapRole_ConnTimeout;
+    607                break;
+    608          
+    609              case GAPROLE_STATE:
+    610                *((uint8*)pValue) = gapRole_state;
+    611                break;
+    612              
+    613              default:
+    614                // The param value isn't part of this profile, try the GAP.
+    615                if ( param < TGAP_PARAMID_MAX )
+    616                {
+    617                  *((uint16*)pValue) = GAP_GetParamValue( param );
+    618                }
+    619                else
+    620                {
+    621                  ret = INVALIDPARAMETER;
+    622                }
+    623                break;
+    624            }
+    625          
+    626            return ( ret );
+    627          }
+    628          
+    629          /*********************************************************************
+    630           * @brief   Does the device initialization.
+    631           *
+    632           * Public function defined in peripheral.h.
+    633           */
+    634          bStatus_t GAPRole_StartDevice( gapRolesCBs_t *pAppCallbacks )
+    635          {
+    636            if ( gapRole_state == GAPROLE_INIT )
+    637            {
+    638              // Clear all of the Application callbacks
+    639              if ( pAppCallbacks )
+    640              {
+    641                pGapRoles_AppCGs = pAppCallbacks;
+    642              }
+    643          
+    644              // Start the GAP
+    645              gapRole_SetupGAP();
+    646          
+    647              return ( SUCCESS );
+    648            }
+    649            else
+    650            {
+    651              return ( bleAlreadyInRequestedMode );
+    652            }
+    653          }
+    654          
+    655          /*********************************************************************
+    656           * @brief   Register application's callbacks.
+    657           *
+    658           * Public function defined in peripheral.h.
+    659           */
+    660          void GAPRole_RegisterAppCBs( gapRolesParamUpdateCB_t *pParamUpdateCB )
+    661          {
+    662            if ( pParamUpdateCB != NULL )
+    663            {
+    664              pGapRoles_ParamUpdateCB = pParamUpdateCB;
+    665            }
+    666          }
+    667          
+    668          /*********************************************************************
+    669           * @brief   Terminates the existing connection.
+    670           *
+    671           * Public function defined in peripheral.h.
+    672           */
+    673          bStatus_t GAPRole_TerminateConnection( void )
+    674          {
+    675            if ( gapRole_state == GAPROLE_CONNECTED )
+    676            {
+    677              return ( GAP_TerminateLinkReq( gapRole_TaskID, gapRole_ConnectionHandle, 
+    678                                             HCI_DISCONNECT_REMOTE_USER_TERM ) );
+    679            }
+    680            else
+    681            {
+    682              return ( bleIncorrectMode );
+    683            }
+    684          }
+    685          
+    686          /*********************************************************************
+    687           * LOCAL FUNCTION PROTOTYPES
+    688           */
+    689          
+    690          /*********************************************************************
+    691           * @brief   Task Initialization function.
+    692           *
+    693           * Internal function defined in peripheral.h.
+    694           */
+    695          void GAPRole_Init( uint8 task_id )
+    696          {
+    697            gapRole_TaskID = task_id;
+    698          
+    699            gapRole_state = GAPROLE_INIT;
+    700            gapRole_ConnectionHandle = INVALID_CONNHANDLE;
+    701          
+    702            GAP_RegisterForHCIMsgs( gapRole_TaskID );
+    703          
+    704            // Initialize the Profile Advertising and Connection Parameters
+    705            gapRole_profileRole = GAP_PROFILE_PERIPHERAL;
+    706            VOID osal_memset( gapRole_IRK, 0, KEYLEN );
+    707            VOID osal_memset( gapRole_SRK, 0, KEYLEN );
+    708            gapRole_signCounter = 0;
+    709            gapRole_AdvEventType = GAP_ADTYPE_ADV_IND;
+    710            gapRole_AdvDirectType = ADDRTYPE_PUBLIC;
+    711            gapRole_AdvChanMap = GAP_ADVCHAN_ALL;
+    712            gapRole_AdvFilterPolicy = GAP_FILTER_POLICY_ALL;
+    713          
+    714            // Restore Items from NV
+    715            VOID osal_snv_read( BLE_NVID_IRK, KEYLEN, gapRole_IRK );
+    716            VOID osal_snv_read( BLE_NVID_CSRK, KEYLEN, gapRole_SRK );
+    717            VOID osal_snv_read( BLE_NVID_SIGNCOUNTER, sizeof( uint32 ), &gapRole_signCounter );
+    718          }
+    719          
+    720          /*********************************************************************
+    721           * @brief   Task Event Processor function.
+    722           *
+    723           * Internal function defined in peripheral.h.
+    724           */
+    725          uint16 GAPRole_ProcessEvent( uint8 task_id, uint16 events )
+    726          {
+    727            VOID task_id; // OSAL required parameter that isn't used in this function
+    728          
+    729            if ( events & SYS_EVENT_MSG )
+    730            {
+    731              uint8 *pMsg;
+    732          
+    733              if ( (pMsg = osal_msg_receive( gapRole_TaskID )) != NULL )
+    734              {
+    735                gapRole_ProcessOSALMsg( (osal_event_hdr_t *)pMsg );
+    736          
+    737                // Release the OSAL message
+    738                VOID osal_msg_deallocate( pMsg );
+    739              }
+    740          
+    741              // return unprocessed events
+    742              return (events ^ SYS_EVENT_MSG);
+    743            }
+    744          
+    745            if ( events & GAP_EVENT_SIGN_COUNTER_CHANGED )
+    746            {
+    747              // Sign counter changed, save it to NV
+    748              VOID osal_snv_write( BLE_NVID_SIGNCOUNTER, sizeof( uint32 ), &gapRole_signCounter );
+    749          
+    750              return ( events ^ GAP_EVENT_SIGN_COUNTER_CHANGED );
+    751            }
+    752          
+    753            if ( events & START_ADVERTISING_EVT )
+    754            {
+    755              if ( gapRole_AdvEnabled )
+    756              {
+    757                gapAdvertisingParams_t params;
+    758          
+    759                // Setup advertisement parameters
+    760                if ( gapRole_state == GAPROLE_CONNECTED )
+    761                {
+    762                  // While in a connection, we can only advertise non-connectable undirected.
+    763                  params.eventType = GAP_ADTYPE_ADV_NONCONN_IND;
+    764                }
+    765                else
+    766                {
+    767                  params.eventType = gapRole_AdvEventType;
+    768                  params.initiatorAddrType = gapRole_AdvDirectType;
+    769                  VOID osal_memcpy( params.initiatorAddr, gapRole_AdvDirectAddr, B_ADDR_LEN );
+    770                }
+    771                params.channelMap = gapRole_AdvChanMap;
+    772                params.filterPolicy = gapRole_AdvFilterPolicy;
+    773          
+    774                if ( GAP_MakeDiscoverable( gapRole_TaskID, &params ) != SUCCESS )
+    775                {
+    776                  gapRole_state = GAPROLE_ERROR;
+    777                  
+    778                  // Notify the application with the new state change
+    779                  if ( pGapRoles_AppCGs && pGapRoles_AppCGs->pfnStateChange )
+    780                  {
+    781                    pGapRoles_AppCGs->pfnStateChange( gapRole_state );
+    782                  }
+    783                }
+    784              }
+    785              return ( events ^ START_ADVERTISING_EVT );
+    786            }
+    787          
+    788            if ( events & RSSI_READ_EVT )
+    789            {
+    790              // Only get RSSI when in a connection
+    791              if ( gapRole_state == GAPROLE_CONNECTED )
+    792              {
+    793                // Ask for RSSI
+    794                VOID HCI_ReadRssiCmd( gapRole_ConnectionHandle );
+    795          
+    796                // Setup next event
+    797                if ( gapRole_RSSIReadRate )
+    798                {
+    799                  VOID osal_start_timerEx( gapRole_TaskID, RSSI_READ_EVT, gapRole_RSSIReadRate );
+    800                }
+    801              }
+    802              return ( events ^ RSSI_READ_EVT );
+    803            }
+    804          
+    805            if ( events & START_CONN_UPDATE_EVT )
+    806            {
+    807              // Start connection update procedure
+    808              gapRole_startConnUpdate( GAPROLE_NO_ACTION );
+    809          
+    810              return ( events ^ START_CONN_UPDATE_EVT );
+    811            }
+    812            
+    813            if ( events & CONN_PARAM_TIMEOUT_EVT )
+    814            {
+    815              // Unsuccessful in updating connection parameters
+    816              gapRole_HandleParamUpdateNoSuccess();
+    817          
+    818              return ( events ^ CONN_PARAM_TIMEOUT_EVT );
+    819            }
+    820            
+    821            // Discard unknown events
+    822            return 0;
+    823          }
+    824          
+    825          /*********************************************************************
+    826           * @fn      gapRole_ProcessOSALMsg
+    827           *
+    828           * @brief   Process an incoming task message.
+    829           *
+    830           * @param   pMsg - message to process
+    831           *
+    832           * @return  none
+    833           */
+    834          static void gapRole_ProcessOSALMsg( osal_event_hdr_t *pMsg )
+    835          {
+    836            switch ( pMsg->event )
+    837            {
+    838              case HCI_GAP_EVENT_EVENT:
+    839                if ( pMsg->status == HCI_COMMAND_COMPLETE_EVENT_CODE )
+    840                {
+    841                  hciEvt_CmdComplete_t *pPkt = (hciEvt_CmdComplete_t *)pMsg;
+    842          
+    843                  if ( pPkt->cmdOpcode == HCI_READ_RSSI )
+    844                  {
+    845                    int8 rssi = (int8)pPkt->pReturnParam[3];
+    846          
+    847                    if ( (gapRole_state == GAPROLE_CONNECTED) && (rssi != RSSI_NOT_AVAILABLE) )
+    848                    {
+    849                      // Report RSSI to app
+    850                      if ( pGapRoles_AppCGs && pGapRoles_AppCGs->pfnRssiRead )
+    851                      {
+    852                        pGapRoles_AppCGs->pfnRssiRead( rssi );
+    853                      }
+    854                    }
+    855                  }
+    856                }
+    857                break;
+    858          
+    859              case GAP_MSG_EVENT:
+    860                gapRole_ProcessGAPMsg( (gapEventHdr_t *)pMsg );
+    861                break;
+    862          
+    863              case L2CAP_SIGNAL_EVENT:
+    864                {
+    865                  l2capSignalEvent_t *pPkt = (l2capSignalEvent_t *)pMsg;
+    866          
+    867                  // Process the Parameter Update Response
+    868                  if ( pPkt->opcode == L2CAP_PARAM_UPDATE_RSP )
+    869                  {
+    870                    l2capParamUpdateRsp_t *pRsp = (l2capParamUpdateRsp_t *)&(pPkt->cmd.updateRsp);
+    871                            
+    872                    if ( ( pRsp->result == L2CAP_CONN_PARAMS_REJECTED ) &&
+    873                         ( paramUpdateNoSuccessOption == GAPROLE_TERMINATE_LINK ) )
+    874                    {
+    875                      // Cancel connection param update timeout timer
+    876                      VOID osal_stop_timerEx( gapRole_TaskID, CONN_PARAM_TIMEOUT_EVT );
+    877                                
+    878                      // Terminate connection immediately
+    879                      GAPRole_TerminateConnection();
+    880                    }
+    881                    else
+    882                    {
+    883                      uint16 timeout = GAP_GetParamValue( TGAP_CONN_PARAM_TIMEOUT );
+    884                      
+    885                      // Let's wait for Controller to update connection parameters if they're
+    886                      // accepted. Otherwise, decide what to do based on no success option.
+    887                      VOID osal_start_timerEx( gapRole_TaskID, CONN_PARAM_TIMEOUT_EVT, timeout );
+    888                    }
+    889                  }
+    890                }
+    891                break;
+    892          
+    893              default:
+    894                break;
+    895            }
+    896          }
+    897          
+    898          /*********************************************************************
+    899           * @fn      gapRole_ProcessGAPMsg
+    900           *
+    901           * @brief   Process an incoming task message.
+    902           *
+    903           * @param   pMsg - message to process
+    904           *
+    905           * @return  none
+    906           */
+    907          static void gapRole_ProcessGAPMsg( gapEventHdr_t *pMsg )
+    908          {
+    909            uint8 notify = FALSE;   // State changed notify the app? (default no)
+    910          
+    911            switch ( pMsg->opcode )
+    912            {
+    913              case GAP_DEVICE_INIT_DONE_EVENT:
+    914                {
+    915                  gapDeviceInitDoneEvent_t *pPkt = (gapDeviceInitDoneEvent_t *)pMsg;
+    916                  bStatus_t stat = pPkt->hdr.status;
+    917          
+    918                  if ( stat == SUCCESS )
+    919                  {
+    920                    // Save off the generated keys
+    921                    VOID osal_snv_write( BLE_NVID_IRK, KEYLEN, gapRole_IRK );
+    922                    VOID osal_snv_write( BLE_NVID_CSRK, KEYLEN, gapRole_SRK );
+    923          
+    924                    // Save off the information
+    925                    VOID osal_memcpy( gapRole_bdAddr, pPkt->devAddr, B_ADDR_LEN );
+    926          
+    927                    gapRole_state = GAPROLE_STARTED;
+    928          
+    929                    // Update the advertising data
+    930                    stat = GAP_UpdateAdvertisingData( gapRole_TaskID,
+    931                                        TRUE, gapRole_AdvertDataLen, gapRole_AdvertData );
+    932                  }
+    933          
+    934                  if ( stat != SUCCESS )
+    935                  {
+    936                    gapRole_state = GAPROLE_ERROR;
+    937                  }
+    938          
+    939                  notify = TRUE;
+    940                }
+    941                break;
+    942          
+    943              case GAP_ADV_DATA_UPDATE_DONE_EVENT:
+    944                {
+    945                  gapAdvDataUpdateEvent_t *pPkt = (gapAdvDataUpdateEvent_t *)pMsg;
+    946          
+    947                  if ( pPkt->hdr.status == SUCCESS )
+    948                  {
+    949                    if ( pPkt->adType )
+    950                    {
+    951                      // Setup the Response Data
+    952                      pPkt->hdr.status = GAP_UpdateAdvertisingData( gapRole_TaskID,
+    953                                        FALSE, gapRole_ScanRspDataLen, gapRole_ScanRspData );
+    954                    }
+    955                    else if ( ( gapRole_state != GAPROLE_ADVERTISING ) &&
+    956                              ( osal_get_timeoutEx( gapRole_TaskID, START_ADVERTISING_EVT ) == 0 ) )
+    957                    {
+    958                      // Start advertising
+    959                      VOID osal_set_event( gapRole_TaskID, START_ADVERTISING_EVT );
+    960                    }
+    961                  }
+    962          
+    963                  if ( pPkt->hdr.status != SUCCESS )
+    964                  {
+    965                    // Set into Error state
+    966                    gapRole_state = GAPROLE_ERROR;
+    967                    notify = TRUE;
+    968                  }
+    969                }
+    970                break;
+    971          
+    972              case GAP_MAKE_DISCOVERABLE_DONE_EVENT:
+    973              case GAP_END_DISCOVERABLE_DONE_EVENT:
+    974                {
+    975                  gapMakeDiscoverableRspEvent_t *pPkt = (gapMakeDiscoverableRspEvent_t *)pMsg;
+    976          
+    977                  if ( pPkt->hdr.status == SUCCESS )
+    978                  {
+    979                    if ( pMsg->opcode == GAP_MAKE_DISCOVERABLE_DONE_EVENT )
+    980                    {
+    981                      if (gapRole_state == GAPROLE_CONNECTED)
+    982                      {
+    983                        gapRole_state = GAPROLE_CONNECTED_ADV;
+    984                      }
+    985                      else
+    986                      {
+    987                        gapRole_state = GAPROLE_ADVERTISING;
+    988                      }
+    989                    }
+    990                    else // GAP_END_DISCOVERABLE_DONE_EVENT
+    991                    {
+    992          
+    993                      if ( gapRole_AdvertOffTime != 0 )
+    994                      {
+    995                        if ( ( gapRole_AdvEnabled ) )
+    996                        {
+    997                          VOID osal_start_timerEx( gapRole_TaskID, START_ADVERTISING_EVT, gapRole_AdvertOffTime );
+    998                        }
+    999                      }
+   1000                      else
+   1001                      {
+   1002                        // Since gapRole_AdvertOffTime is set to 0, the device should not
+   1003                        // automatically become discoverable again after a period of time.
+   1004                        // Set enabler to FALSE; device will become discoverable again when
+   1005                        // this value gets set to TRUE
+   1006                        gapRole_AdvEnabled = FALSE;
+   1007                      }
+   1008                      
+   1009                      if (gapRole_state == GAPROLE_CONNECTED_ADV)
+   1010                      {
+   1011                        // In the Advertising Off period
+   1012                        gapRole_state = GAPROLE_CONNECTED;
+   1013                      }
+   1014                      else if (gapRole_state == GAPROLE_WAITING_AFTER_TIMEOUT)
+   1015                      {
+   1016                        // Advertising was just turned off after the link disconnected so begin
+   1017                        // advertising again.
+   1018                        gapRole_AdvEnabled = TRUE;
+   1019                        
+   1020                        // Turn advertising back on.
+   1021                        VOID osal_set_event( gapRole_TaskID, START_ADVERTISING_EVT );
+   1022                      }
+   1023                      else
+   1024                      {
+   1025                        // In the Advertising Off period
+   1026                        gapRole_state = GAPROLE_WAITING;
+   1027                      }
+   1028          
+   1029                    }
+   1030                  }
+   1031                  else
+   1032                  {
+   1033                    gapRole_state = GAPROLE_ERROR;
+   1034                  }
+   1035                  notify = TRUE;
+   1036                }
+   1037                break;
+   1038          
+   1039              case GAP_LINK_ESTABLISHED_EVENT:
+   1040                {
+   1041                  gapEstLinkReqEvent_t *pPkt = (gapEstLinkReqEvent_t *)pMsg;
+   1042          
+   1043                  if ( pPkt->hdr.status == SUCCESS )
+   1044                  {
+   1045                    VOID osal_memcpy( gapRole_ConnectedDevAddr, pPkt->devAddr, B_ADDR_LEN );
+   1046                    gapRole_ConnectionHandle = pPkt->connectionHandle;
+   1047                    gapRole_state = GAPROLE_CONNECTED;
+   1048          
+   1049                    if ( gapRole_RSSIReadRate )
+   1050                    {
+   1051                      // Start the RSSI Reads
+   1052                      VOID osal_start_timerEx( gapRole_TaskID, RSSI_READ_EVT, gapRole_RSSIReadRate );
+   1053                    }
+   1054          
+   1055                    // Store connection information
+   1056                    gapRole_ConnInterval = pPkt->connInterval;
+   1057                    gapRole_ConnSlaveLatency = pPkt->connLatency;
+   1058                    gapRole_ConnTimeout = pPkt->connTimeout;
+   1059          
+   1060                    // Check whether update parameter request is enabled
+   1061                    if ( gapRole_ParamUpdateEnable == TRUE )
+   1062                    {
+   1063                      // Get the minimum time upon connection establishment before the 
+   1064                      // peripheral can start a connection update procedure.
+   1065                      uint16 timeout = GAP_GetParamValue( TGAP_CONN_PAUSE_PERIPHERAL );
+   1066                      
+   1067                      osal_start_timerEx( gapRole_TaskID, START_CONN_UPDATE_EVT, timeout*1000 );
+   1068                    }
+   1069          
+   1070                    // Notify the Bond Manager to the connection
+   1071                    VOID GAPBondMgr_LinkEst( pPkt->devAddrType, pPkt->devAddr, pPkt->connectionHandle, GAP_PROFILE_PERIPHERAL );
+   1072                    
+   1073                    // Set enabler to FALSE; device will become discoverable again when
+   1074                    // this value gets set to TRUE
+   1075                    gapRole_AdvEnabled = FALSE;          
+   1076                  }
+   1077                  else if ( pPkt->hdr.status == bleGAPConnNotAcceptable )
+   1078                  {
+   1079                    // Set enabler to FALSE; device will become discoverable again when
+   1080                    // this value gets set to TRUE
+   1081                    gapRole_AdvEnabled = FALSE;
+   1082          
+   1083                    // Go to WAITING state, and then start advertising
+   1084                    gapRole_state = GAPROLE_WAITING;
+   1085                  }
+   1086                  else
+   1087                  {
+   1088                    gapRole_state = GAPROLE_ERROR;
+   1089                  }
+   1090                  notify = TRUE;
+   1091                }
+   1092                break;
+   1093          
+   1094              case GAP_LINK_TERMINATED_EVENT:
+   1095                {
+   1096                  gapTerminateLinkEvent_t *pPkt = (gapTerminateLinkEvent_t *)pMsg;
+   1097          
+   1098                  VOID GAPBondMgr_ProcessGAPMsg( (gapEventHdr_t *)pMsg );
+   1099                  osal_memset( gapRole_ConnectedDevAddr, 0, B_ADDR_LEN );
+   1100          
+   1101                  // Erase connection information
+   1102                  gapRole_ConnInterval = 0;
+   1103                  gapRole_ConnSlaveLatency = 0;
+   1104                  gapRole_ConnTimeout = 0;
+   1105          
+   1106                  // Cancel all connection parameter update timers (if any active)
+   1107                  VOID osal_stop_timerEx( gapRole_TaskID, START_CONN_UPDATE_EVT );
+   1108                  VOID osal_stop_timerEx( gapRole_TaskID, CONN_PARAM_TIMEOUT_EVT );
+   1109                    
+   1110                  // Go to WAITING state, and then start advertising
+   1111                  if( pPkt->reason == LL_SUPERVISION_TIMEOUT_TERM )
+   1112                  {
+   1113                    gapRole_state = GAPROLE_WAITING_AFTER_TIMEOUT;
+   1114                  }
+   1115                  else
+   1116                  {
+   1117                    gapRole_state = GAPROLE_WAITING;
+   1118                  }
+   1119          
+   1120                  notify = TRUE;
+   1121                  
+   1122                  // Check if still advertising from within last connection.
+   1123                  if ( gapRole_AdvEnabled)
+   1124                  {
+   1125                    // End advertising so we can restart advertising in order 
+   1126                    // to change to connectable advertising from nonconnectable.
+   1127                    VOID GAP_EndDiscoverable( gapRole_TaskID );
+   1128                  }
+   1129                  else  // Turn advertising back on.
+   1130                  {
+   1131                    gapRole_AdvEnabled = TRUE;
+   1132                    VOID osal_set_event( gapRole_TaskID, START_ADVERTISING_EVT);
+   1133                  }
+   1134          
+   1135                  gapRole_ConnectionHandle = INVALID_CONNHANDLE;
+   1136                }
+   1137                break;
+   1138          
+   1139              case GAP_LINK_PARAM_UPDATE_EVENT:
+   1140                {
+   1141                  gapLinkUpdateEvent_t *pPkt = (gapLinkUpdateEvent_t *)pMsg;
+   1142          
+   1143                  // Cancel connection param update timeout timer (if active)
+   1144                  VOID osal_stop_timerEx( gapRole_TaskID, CONN_PARAM_TIMEOUT_EVT );
+   1145                  
+   1146                  if ( pPkt->hdr.status == SUCCESS )
+   1147                  {
+   1148                    // Store new connection parameters
+   1149                    gapRole_ConnInterval = pPkt->connInterval;
+   1150                    gapRole_ConnSlaveLatency = pPkt->connLatency;
+   1151                    gapRole_ConnTimeout = pPkt->connTimeout;
+   1152                    
+   1153                    // Make sure there's no pending connection update procedure
+   1154                    if ( osal_get_timeoutEx( gapRole_TaskID, START_CONN_UPDATE_EVT ) == 0 )
+   1155                    {
+   1156                      // Notify the application with the new connection parameters
+   1157                      if ( pGapRoles_ParamUpdateCB != NULL )
+   1158                      {
+   1159                        (*pGapRoles_ParamUpdateCB)( gapRole_ConnInterval, 
+   1160                                                    gapRole_ConnSlaveLatency, 
+   1161                                                    gapRole_ConnTimeout );
+   1162                      }
+   1163                    }
+   1164                  }
+   1165                }
+   1166                break;
+   1167          
+   1168              default:
+   1169                break;
+   1170            }
+   1171          
+   1172            if ( notify == TRUE )
+   1173            {
+   1174              // Notify the application with the new state change
+   1175              if ( pGapRoles_AppCGs && pGapRoles_AppCGs->pfnStateChange )
+   1176              {
+   1177                pGapRoles_AppCGs->pfnStateChange( gapRole_state );
+   1178              }
+   1179            }
+   1180          }
+   1181          
+   1182          /*********************************************************************
+   1183           * @fn      gapRole_SetupGAP
+   1184           *
+   1185           * @brief   Call the GAP Device Initialization function using the
+   1186           *          Profile Parameters.
+   1187           *
+   1188           * @param   none
+   1189           *
+   1190           * @return  none
+   1191           */
+   1192          static void gapRole_SetupGAP( void )
+   1193          {
+   1194            VOID GAP_DeviceInit( gapRole_TaskID,
+   1195                    gapRole_profileRole, 0,
+   1196                    gapRole_IRK, gapRole_SRK,
+   1197                    &gapRole_signCounter );
+   1198          }
+   1199          
+   1200          /*********************************************************************
+   1201           * @fn      gapRole_HandleParamUpdateNoSuccess
+   1202           *
+   1203           * @brief   Handle unsuccessful connection parameters update.
+   1204           *
+   1205           * @param   none
+   1206           *
+   1207           * @return  none
+   1208           */
+   1209          static void gapRole_HandleParamUpdateNoSuccess( void )
+   1210          {
+   1211            // See which option was choosen for unsuccessful updates
+   1212            switch ( paramUpdateNoSuccessOption )
+   1213            {
+   1214              case GAPROLE_RESEND_PARAM_UPDATE:
+   1215                GAPRole_SendUpdateParam( gapRole_MinConnInterval, gapRole_MaxConnInterval,
+   1216                                         gapRole_SlaveLatency, gapRole_TimeoutMultiplier,
+   1217                                         GAPROLE_RESEND_PARAM_UPDATE );
+   1218                break;
+   1219          
+   1220              case GAPROLE_TERMINATE_LINK:
+   1221                GAPRole_TerminateConnection();
+   1222                break;
+   1223          
+   1224              case GAPROLE_NO_ACTION:
+   1225                // fall through
+   1226              default:
+   1227                //do nothing
+   1228                break;
+   1229            }
+   1230          }
+   1231          
+   1232          /********************************************************************
+   1233           * @fn          gapRole_startConnUpdate
+   1234           *
+   1235           * @brief       Start the connection update procedure
+   1236           *
+   1237           * @param       handleFailure - what to do if the update does not occur.
+   1238           *              Method may choose to terminate connection, try again, or take no action
+   1239           *
+   1240           * @return      none
+   1241           */
+   1242          static void gapRole_startConnUpdate( uint8 handleFailure )
+   1243          {
+   1244            // First check the current connection parameters versus the configured parameters
+   1245            if ( (gapRole_ConnInterval < gapRole_MinConnInterval)   ||
+   1246                 (gapRole_ConnInterval > gapRole_MaxConnInterval)   ||
+   1247                 (gapRole_ConnSlaveLatency != gapRole_SlaveLatency) ||
+   1248                 (gapRole_ConnTimeout  != gapRole_TimeoutMultiplier) )
+   1249            {
+   1250              l2capParamUpdateReq_t updateReq;
+   1251              uint16 timeout = GAP_GetParamValue( TGAP_CONN_PARAM_TIMEOUT );
+   1252                  
+   1253              updateReq.intervalMin = gapRole_MinConnInterval;
+   1254              updateReq.intervalMax = gapRole_MaxConnInterval;
+   1255              updateReq.slaveLatency = gapRole_SlaveLatency;
+   1256              updateReq.timeoutMultiplier = gapRole_TimeoutMultiplier;
+   1257              
+   1258              VOID L2CAP_ConnParamUpdateReq( gapRole_ConnectionHandle, &updateReq, gapRole_TaskID );
+   1259                  
+   1260              paramUpdateNoSuccessOption = handleFailure;
+   1261                  
+   1262              // Let's wait for L2CAP Connection Parameters Update Response
+   1263              VOID osal_start_timerEx( gapRole_TaskID, CONN_PARAM_TIMEOUT_EVT, timeout );
+   1264            }
+   1265          }
+   1266          
+   1267          /********************************************************************
+   1268           * @fn          GAPRole_SendUpdateParam
+   1269           *
+   1270           * @brief       Update the parameters of an existing connection
+   1271           *
+   1272           * @param       minConnInterval - the new min connection interval
+   1273           * @param       maxConnInterval - the new max connection interval
+   1274           * @param       latency - the new slave latency
+   1275           * @param       connTimeout - the new timeout value
+   1276           * @param       handleFailure - what to do if the update does not occur.
+   1277           *              Method may choose to terminate connection, try again, or take no action
+   1278           *
+   1279           * @return      SUCCESS, bleNotConnected, or bleInvalidRange
+   1280           */
+   1281          bStatus_t GAPRole_SendUpdateParam( uint16 minConnInterval, uint16 maxConnInterval,
+   1282                                             uint16 latency, uint16 connTimeout, uint8 handleFailure )
+   1283          {    
+   1284            // If there is no existing connection no update need be sent
+   1285            if ( gapRole_state != GAPROLE_CONNECTED )
+   1286            {
+   1287              return ( bleNotConnected );
+   1288            }
+   1289            
+   1290            // Check that all parameters are in range before sending request
+   1291            if ( ( minConnInterval >= DEFAULT_MIN_CONN_INTERVAL ) &&
+   1292                 ( minConnInterval < DEFAULT_MAX_CONN_INTERVAL  ) &&
+   1293                 ( maxConnInterval >= DEFAULT_MIN_CONN_INTERVAL ) &&
+   1294                 ( maxConnInterval < DEFAULT_MAX_CONN_INTERVAL  ) &&
+   1295                 ( latency         < MAX_SLAVE_LATENCY          ) &&
+   1296                 ( connTimeout     >= MIN_TIMEOUT_MULTIPLIER    ) &&
+   1297                 ( connTimeout     < MAX_TIMEOUT_MULTIPLIER     ) )
+   1298            {
+   1299              gapRole_MinConnInterval = minConnInterval;
+   1300              gapRole_MaxConnInterval = maxConnInterval;
+   1301              gapRole_SlaveLatency = latency;
+   1302              gapRole_TimeoutMultiplier = connTimeout;
+   1303          
+   1304              // Start connection update procedure
+   1305              gapRole_startConnUpdate( handleFailure );
+   1306          
+   1307              // Connection update requested by app, cancel such pending procedure (if active)
+   1308              VOID osal_stop_timerEx( gapRole_TaskID, START_CONN_UPDATE_EVT );
+   1309                        
+   1310              return ( SUCCESS );
+   1311            }
+   1312          
+   1313            return ( bleInvalidRange );
+   1314          }
+   1315          
+   1316          /*********************************************************************
+   1317          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       1      0     14  GAPRole_GetParameter
+                          0 0 12 -> GAP_GetParamValue
+                          0 0 14 -> osal_memcpy
+       0      0      9  GAPRole_Init
+                          0 0  9 -> GAP_RegisterForHCIMsgs
+                          0 0  9 -> osal_memset
+                          0 0  9 -> osal_snv_read
+       1      0     26  GAPRole_ProcessEvent
+                          0 0 26 -> GAPRole_SendUpdateParam
+                          0 0 22 -> GAPRole_TerminateConnection
+                          0 0 22 -> GAP_MakeDiscoverable
+                          0 0 22 -> HCI_ReadRssiCmd
+                          0 0 22 -> gapRole_ProcessOSALMsg
+                          0 0 22 -> gapRole_startConnUpdate
+                          0 0 24 -> osal_memcpy
+                          0 0 22 -> osal_msg_deallocate
+                          0 0 22 -> osal_msg_receive
+                          0 0 22 -> osal_snv_write
+                          0 0 26 -> osal_start_timerEx
+       2      0      0  GAPRole_RegisterAppCBs
+       0      0     38  GAPRole_SendUpdateParam
+                          0 0 12 -> gapRole_startConnUpdate
+                          0 0 12 -> osal_stop_timerEx
+       0      0     20  GAPRole_SetParameter
+                          0 0 16 -> GAP_EndDiscoverable
+                          0 0 16 -> GAP_SetParamValue
+                          0 0 16 -> GAP_UpdateAdvertisingData
+                          0 0 16 -> gapRole_startConnUpdate
+                          0 0 16 -> osal_get_timeoutEx
+                          0 0 18 -> osal_memcpy
+                          0 0 16 -> osal_memset
+                          0 0 16 -> osal_set_event
+                          0 0 20 -> osal_start_timerEx
+                          0 0 16 -> osal_stop_timerEx
+       0      0     14  GAPRole_StartDevice
+                          0 0 14 -> GAP_DeviceInit
+       2      0     22  GAPRole_TerminateConnection
+                          2 0  0 -> GAP_TerminateLinkReq
+       1      0     36  gapRole_ProcessGAPMsg
+                          0 0 21 -> GAPBondMgr_LinkEst
+                          0 0 20 -> GAPBondMgr_ProcessGAPMsg
+                          0 0 20 -> GAP_EndDiscoverable
+                          0 0 20 -> GAP_GetParamValue
+                          0 0 20 -> GAP_UpdateAdvertisingData
+                          0 0 20 -> osal_get_timeoutEx
+                          0 0 22 -> osal_memcpy
+                          0 0 20 -> osal_memset
+                          0 0 20 -> osal_set_event
+                          0 0 20 -> osal_snv_write
+                          0 0 24 -> osal_start_timerEx
+                          0 0 20 -> osal_stop_timerEx
+       0      0     38  gapRole_ProcessOSALMsg
+                          0 0 12 -> GAPRole_TerminateConnection
+                          0 0 12 -> GAP_GetParamValue
+                          0 0 12 -> gapRole_ProcessGAPMsg
+                          0 0 16 -> osal_start_timerEx
+                          0 0 12 -> osal_stop_timerEx
+       2      0     46  gapRole_startConnUpdate
+                          0 0 20 -> GAP_GetParamValue
+                          0 0 20 -> L2CAP_ConnParamUpdateReq
+                          0 0 24 -> osal_start_timerEx
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       1  ?<Initializer for gapRole_AdvEnabled>
+      31  ?<Initializer for gapRole_AdvertData>
+       1  ?<Initializer for gapRole_AdvertDataLen>
+       2  ?<Initializer for gapRole_AdvertOffTime>
+       2  ?<Initializer for gapRole_ConnectionHandle>
+       2  ?<Initializer for gapRole_MaxConnInterval>
+       2  ?<Initializer for gapRole_MinConnInterval>
+       2  ?<Initializer for gapRole_TimeoutMultiplier>
+       6  ??GAPRole_GetParameter?relay
+       6  ??GAPRole_Init?relay
+       6  ??GAPRole_ProcessEvent?relay
+       6  ??GAPRole_RegisterAppCBs?relay
+       6  ??GAPRole_SendUpdateParam?relay
+       6  ??GAPRole_SetParameter?relay
+       6  ??GAPRole_StartDevice?relay
+       6  ??GAPRole_TerminateConnection?relay
+       6  ??Subroutine19_0
+       5  ??Subroutine20_0
+       6  ??Subroutine21_0
+       4  ??Subroutine22_0
+       6  ??Subroutine23_0
+       6  ??Subroutine24_0
+       6  ??gapRole_ProcessGAPMsg?relay
+       6  ??gapRole_ProcessOSALMsg?relay
+       6  ??gapRole_startConnUpdate?relay
+       3  ?Subroutine0
+       7  ?Subroutine1
+       3  ?Subroutine10
+       6  ?Subroutine11
+       9  ?Subroutine12
+      12  ?Subroutine13
+       6  ?Subroutine14
+      12  ?Subroutine15
+       9  ?Subroutine16
+       6  ?Subroutine17
+       2  ?Subroutine18
+       3  ?Subroutine2
+      14  ?Subroutine3
+       3  ?Subroutine4
+      15  ?Subroutine5
+      12  ?Subroutine6
+      12  ?Subroutine7
+      12  ?Subroutine8
+       4  ?Subroutine9
+     375  GAPRole_GetParameter
+     126  GAPRole_Init
+     400  GAPRole_ProcessEvent
+      16  GAPRole_RegisterAppCBs
+     154  GAPRole_SendUpdateParam
+     863  GAPRole_SetParameter
+      80  GAPRole_StartDevice
+      31  GAPRole_TerminateConnection
+       1  gapRole_AdvChanMap
+       6  gapRole_AdvDirectAddr
+       1  gapRole_AdvDirectType
+       1  gapRole_AdvEnabled
+       1  gapRole_AdvEventType
+       1  gapRole_AdvFilterPolicy
+      31  gapRole_AdvertData
+       1  gapRole_AdvertDataLen
+       2  gapRole_AdvertOffTime
+       2  gapRole_ConnInterval
+       2  gapRole_ConnSlaveLatency
+       2  gapRole_ConnTimeout
+       6  gapRole_ConnectedDevAddr
+       2  gapRole_ConnectionHandle
+      16  gapRole_IRK
+       2  gapRole_MaxConnInterval
+       2  gapRole_MinConnInterval
+       1  gapRole_ParamUpdateEnable
+     928  gapRole_ProcessGAPMsg
+     229  gapRole_ProcessOSALMsg
+       2  gapRole_RSSIReadRate
+      16  gapRole_SRK
+      31  gapRole_ScanRspData
+       1  gapRole_ScanRspDataLen
+       2  gapRole_SlaveLatency
+       1  gapRole_TaskID
+       2  gapRole_TimeoutMultiplier
+       6  gapRole_bdAddr
+       1  gapRole_profileRole
+       4  gapRole_signCounter
+     214  gapRole_startConnUpdate
+       1  gapRole_state
+       2  pGapRoles_AppCGs
+       2  pGapRoles_ParamUpdateCB
+       1  paramUpdateNoSuccessOption
+
+ 
+ 3 599 bytes in segment BANKED_CODE
+    66 bytes in segment BANK_RELAYS
+    43 bytes in segment XDATA_I
+    43 bytes in segment XDATA_ID
+   109 bytes in segment XDATA_Z
+ 
+ 3 708 bytes of CODE  memory
+   152 bytes of XDATA memory
+
+Errors: none
+Warnings: 1

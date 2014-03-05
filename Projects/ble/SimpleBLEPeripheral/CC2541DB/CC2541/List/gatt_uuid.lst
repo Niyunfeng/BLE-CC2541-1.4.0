@@ -1,0 +1,494 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:39 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Components\bl #
+#                          e\host\gatt_uuid.c                                 #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\bl #
+#                          e\host\gatt_uuid.c -D INT_HEAP_LEN=3074 -D         #
+#                          HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D          #
+#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ -o   #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\ -e    #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\gatt_ #
+#                          uuid.lst                                           #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\gatt_u #
+#                          uid.r51                                            #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ble\host\gatt_uuid.c
+      1          /**************************************************************************************************
+      2            Filename:       gatt_uuid.c
+      3            Revised:        $Date: 2009-06-29 16:20:52 -0700 (Mon, 29 Jun 2009) $
+      4            Revision:       $Revision: 20240 $
+      5          
+      6            Description:    This file contains Generic Attribute Profile (GATT)
+      7                            UUID types.
+      8          
+      9          
+     10            Copyright 2011-2013 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          
+     42          /*********************************************************************
+     43           * INCLUDES
+     44           */
+     45          #include "comdef.h"
+     46          #include "OSAL.h"
+     47          
+     48          #include "gatt.h"
+     49          #include "gatt_uuid.h"
+     50          
+     51          /*********************************************************************
+     52           * MACROS
+     53           */
+     54          
+     55          /*********************************************************************
+     56           * CONSTANTS
+     57           */
+     58          
+     59          /*********************************************************************
+     60           * TYPEDEFS
+     61           */
+     62          
+     63          /*********************************************************************
+     64           * GLOBAL VARIABLES
+     65           */
+     66          
+     67          /**
+     68           * GATT Services
+     69           */
+     70          // Generic Access Profile Service UUID
+     71          CONST uint8 gapServiceUUID[ATT_BT_UUID_SIZE] =
+     72          {
+     73            LO_UINT16( GAP_SERVICE_UUID ), HI_UINT16( GAP_SERVICE_UUID )
+     74          };
+     75          
+     76          // Generic Attribute Profile Service UUID
+     77          CONST uint8 gattServiceUUID[ATT_BT_UUID_SIZE] =
+     78          {
+     79            LO_UINT16( GATT_SERVICE_UUID ), HI_UINT16( GATT_SERVICE_UUID )
+     80          };
+     81          
+     82          /**
+     83           * GATT Declarations
+     84           */
+     85          // Primary Service UUID
+     86          CONST uint8 primaryServiceUUID[ATT_BT_UUID_SIZE] =
+     87          {
+     88            LO_UINT16( GATT_PRIMARY_SERVICE_UUID ), HI_UINT16( GATT_PRIMARY_SERVICE_UUID )
+     89          };
+     90          
+     91          // Secondary Service UUID
+     92          CONST uint8 secondaryServiceUUID[ATT_BT_UUID_SIZE] =
+     93          {
+     94            LO_UINT16( GATT_SECONDARY_SERVICE_UUID ), HI_UINT16( GATT_SECONDARY_SERVICE_UUID )
+     95          };
+     96          
+     97          // Include UUID
+     98          CONST uint8 includeUUID[ATT_BT_UUID_SIZE] =
+     99          {
+    100            LO_UINT16( GATT_INCLUDE_UUID ), HI_UINT16( GATT_INCLUDE_UUID )
+    101          };
+    102          
+    103          // Characteristic UUID
+    104          CONST uint8 characterUUID[ATT_BT_UUID_SIZE] =
+    105          {
+    106            LO_UINT16( GATT_CHARACTER_UUID ), HI_UINT16( GATT_CHARACTER_UUID )
+    107          };
+    108          
+    109          /**
+    110           * GATT Descriptors
+    111           */
+    112          // Characteristic Extended Properties UUID
+    113          CONST uint8 charExtPropsUUID[ATT_BT_UUID_SIZE] =
+    114          {
+    115            LO_UINT16( GATT_CHAR_EXT_PROPS_UUID ), HI_UINT16( GATT_CHAR_EXT_PROPS_UUID )
+    116          };
+    117          
+    118          // Characteristic User Description UUID
+    119          CONST uint8 charUserDescUUID[ATT_BT_UUID_SIZE] =
+    120          {
+    121            LO_UINT16( GATT_CHAR_USER_DESC_UUID ), HI_UINT16( GATT_CHAR_USER_DESC_UUID )
+    122          };
+    123          
+    124          // Client Characteristic Configuration UUID
+    125          CONST uint8 clientCharCfgUUID[ATT_BT_UUID_SIZE] =
+    126          {
+    127            LO_UINT16( GATT_CLIENT_CHAR_CFG_UUID ), HI_UINT16( GATT_CLIENT_CHAR_CFG_UUID )
+    128          };
+    129          
+    130          // Server Characteristic Configuration UUID
+    131          CONST uint8 servCharCfgUUID[ATT_BT_UUID_SIZE] =
+    132          {
+    133            LO_UINT16( GATT_SERV_CHAR_CFG_UUID ), HI_UINT16( GATT_SERV_CHAR_CFG_UUID )
+    134          };
+    135          
+    136          // Characteristic Presentation Format UUID
+    137          CONST uint8 charFormatUUID[ATT_BT_UUID_SIZE] =
+    138          {
+    139            LO_UINT16( GATT_CHAR_FORMAT_UUID ), HI_UINT16( GATT_CHAR_FORMAT_UUID )
+    140          };
+    141          
+    142          // Characteristic Aggregate Format UUID
+    143          CONST uint8 charAggFormatUUID[ATT_BT_UUID_SIZE] =
+    144          {
+    145            LO_UINT16( GATT_CHAR_AGG_FORMAT_UUID ), HI_UINT16( GATT_CHAR_AGG_FORMAT_UUID )
+    146          };
+    147          
+    148          /**
+    149           * GATT Characteristics
+    150           */
+    151          // Device Name UUID
+    152          CONST uint8 deviceNameUUID[ATT_BT_UUID_SIZE] =
+    153          {
+    154            LO_UINT16( DEVICE_NAME_UUID ), HI_UINT16( DEVICE_NAME_UUID )
+    155          };
+    156          
+    157          // Appearance UUID
+    158          CONST uint8 appearanceUUID[ATT_BT_UUID_SIZE] =
+    159          {
+    160            LO_UINT16( APPEARANCE_UUID ), HI_UINT16( APPEARANCE_UUID )
+    161          };
+    162          
+    163          // Peripheral Privacy Flag UUID
+    164          CONST uint8 periPrivacyFlagUUID[ATT_BT_UUID_SIZE] =
+    165          {
+    166            LO_UINT16( PERI_PRIVACY_FLAG_UUID ), HI_UINT16( PERI_PRIVACY_FLAG_UUID )
+    167          };
+    168          
+    169          // Reconnection Address UUID
+    170          CONST uint8 reconnectAddrUUID[ATT_BT_UUID_SIZE] =
+    171          {
+    172            LO_UINT16( RECONNECT_ADDR_UUID ), HI_UINT16( RECONNECT_ADDR_UUID )
+    173          };
+    174          
+    175          // Peripheral Preferred Connection Parameters UUID
+    176          CONST uint8 periConnParamUUID[ATT_BT_UUID_SIZE] =
+    177          {
+    178            LO_UINT16( PERI_CONN_PARAM_UUID ), HI_UINT16( PERI_CONN_PARAM_UUID )
+    179          };
+    180          
+    181          // Service Changed UUID
+    182          CONST uint8 serviceChangedUUID[ATT_BT_UUID_SIZE] =
+    183          {
+    184            LO_UINT16( SERVICE_CHANGED_UUID ), HI_UINT16( SERVICE_CHANGED_UUID )
+    185          };
+    186          
+    187          // Valid Range UUID
+    188          CONST uint8 validRangeUUID[ATT_BT_UUID_SIZE] =
+    189          {
+    190            LO_UINT16( GATT_VALID_RANGE_UUID ), HI_UINT16( GATT_VALID_RANGE_UUID )
+    191          };
+    192          
+    193          // External Report Reference Descriptor
+    194          CONST uint8 extReportRefUUID[ATT_BT_UUID_SIZE] =
+    195          {
+    196            LO_UINT16( GATT_EXT_REPORT_REF_UUID ), HI_UINT16( GATT_EXT_REPORT_REF_UUID )
+    197          };
+    198          
+    199          // Report Reference characteristic descriptor
+    200          CONST uint8 reportRefUUID[ATT_BT_UUID_SIZE] =
+    201          {
+    202            LO_UINT16( GATT_REPORT_REF_UUID ), HI_UINT16( GATT_REPORT_REF_UUID )
+    203          };
+    204          
+    205          /*********************************************************************
+    206           * GLOBAL FUNCTIONS
+    207           */
+    208          
+    209          /*********************************************************************
+    210           * LOCAL VARIABLES
+    211           */
+    212          
+    213          /*********************************************************************
+    214           * LOCAL FUNCTIONS
+    215           */
+    216          
+    217          /*********************************************************************
+    218           * API FUNCTIONS
+    219           */
+    220          
+    221          /*********************************************************************
+    222           * @fn      GATT_FindUUIDRec
+    223           *
+    224           * @brief   Find the UUID record for a given UUID.
+    225           *
+    226           * @param   pUUID - UUID to look for.
+    227           * @param   len - length of UUID.
+    228           *
+    229           * @return  Pointer to UUID record. NULL, otherwise.
+    230           */
+    231          const uint8 *GATT_FindUUIDRec( const uint8 *pUUID, uint8 len )
+    232          {
+    233            const uint8 *pRec = NULL;
+    234          
+    235            if ( len == ATT_BT_UUID_SIZE )
+    236            {
+    237              // 16-bit UUID
+    238              uint16 uuid = BUILD_UINT16( pUUID[0], pUUID[1] );
+    239              switch ( uuid )
+    240              {
+    241                /*** GATT Services ***/
+    242          
+    243                case GAP_SERVICE_UUID:
+    244                  pRec = gapServiceUUID;
+    245                  break;
+    246          
+    247                case GATT_SERVICE_UUID:
+    248                  pRec = gattServiceUUID;
+    249                  break;
+    250          
+    251                /*** GATT Declarations ***/
+    252          
+    253                case GATT_PRIMARY_SERVICE_UUID:
+    254                  pRec = primaryServiceUUID;
+    255                  break;
+    256          
+    257                case GATT_SECONDARY_SERVICE_UUID:
+    258                  pRec = secondaryServiceUUID;
+    259                  break;
+    260          
+    261                case GATT_INCLUDE_UUID:
+    262                  pRec = includeUUID;
+    263                  break;
+    264          
+    265                case GATT_CHARACTER_UUID:
+    266                  pRec = characterUUID;
+    267                  break;
+    268          
+    269                /*** GATT Descriptors ***/
+    270          
+    271                case GATT_CHAR_EXT_PROPS_UUID:
+    272                  pRec = charExtPropsUUID;
+    273                  break;
+    274          
+    275                case GATT_CHAR_USER_DESC_UUID:
+    276                  pRec = charUserDescUUID;
+    277                  break;
+    278          
+    279                case GATT_CLIENT_CHAR_CFG_UUID:
+    280                  pRec = clientCharCfgUUID;
+    281                  break;
+    282          
+    283                case GATT_SERV_CHAR_CFG_UUID:
+    284                  pRec = servCharCfgUUID;
+    285                  break;
+    286          
+    287                case GATT_CHAR_FORMAT_UUID:
+    288                  pRec = charFormatUUID;
+    289                  break;
+    290          
+    291                case GATT_CHAR_AGG_FORMAT_UUID:
+    292                  pRec = charAggFormatUUID;
+    293                  break;
+    294          
+    295                case GATT_VALID_RANGE_UUID:
+    296                  pRec = validRangeUUID;
+    297                  break;
+    298          
+    299                case GATT_EXT_REPORT_REF_UUID:
+    300                  pRec = extReportRefUUID;
+    301                  break;
+    302          
+    303                case GATT_REPORT_REF_UUID:
+    304                  pRec = reportRefUUID;
+    305                  break;
+    306          
+    307                /*** GATT Characteristics ***/
+    308          
+    309                case DEVICE_NAME_UUID:
+    310                  pRec = deviceNameUUID;
+    311                  break;
+    312          
+    313                case APPEARANCE_UUID:
+    314                  pRec = appearanceUUID;
+    315                  break;
+    316          
+    317                case RECONNECT_ADDR_UUID:
+    318                  pRec = reconnectAddrUUID;
+    319                  break;
+    320          
+    321                case PERI_PRIVACY_FLAG_UUID:
+    322                  pRec = periPrivacyFlagUUID;
+    323                  break;
+    324          
+    325                case PERI_CONN_PARAM_UUID:
+    326                  pRec = periConnParamUUID;
+    327                  break;
+    328          
+    329                case SERVICE_CHANGED_UUID:
+    330                  pRec = serviceChangedUUID;
+    331                  break;
+    332          
+    333                /*** GATT Units ***/
+    334          
+    335                default:
+    336                  break;
+    337              }
+    338            }
+    339            else if ( len == ATT_UUID_SIZE )
+    340            {
+    341              // 128-bit UUID
+    342            }
+    343          
+    344            return ( pRec );
+    345          }
+    346          
+    347          /****************************************************************************
+    348          ****************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0     10  GATT_FindUUIDRec
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??GATT_FindUUIDRec?relay
+     263  GATT_FindUUIDRec
+       2  appearanceUUID
+       2  charAggFormatUUID
+       2  charExtPropsUUID
+       2  charFormatUUID
+       2  charUserDescUUID
+       2  characterUUID
+       2  clientCharCfgUUID
+       2  deviceNameUUID
+       2  extReportRefUUID
+       2  gapServiceUUID
+       2  gattServiceUUID
+       2  includeUUID
+       2  periConnParamUUID
+       2  periPrivacyFlagUUID
+       2  primaryServiceUUID
+       2  reconnectAddrUUID
+       2  reportRefUUID
+       2  secondaryServiceUUID
+       2  servCharCfgUUID
+       2  serviceChangedUUID
+       2  validRangeUUID
+
+ 
+ 263 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+  42 bytes in segment XDATA_ROM_C
+ 
+ 269 bytes of CODE  memory
+  42 bytes of CONST memory
+
+Errors: none
+Warnings: none

@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             04/Mar/2014  17:28:26 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             05/Mar/2014  15:11:19 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -31,32 +31,33 @@
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\Source\SimpleTemperature.c #
 #                           -D INT_HEAP_LEN=3074 -D HALNODEBUG -D             #
-#                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D    #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D xHAL_AES_DMA=TRUE -D   #
 #                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
 #                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
-#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
-#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
-#                          -e --debug --core=plain --dptr=16,1                #
-#                          --data_model=large --code_model=banked             #
-#                          --calling_convention=xdata_reentrant               #
-#                          --place_constants=data_rom --nr_virtual_regs 16    #
-#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
-#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
-#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
-#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
-#                          omponents\hal\include\ -I                          #
+#                          -D HAL_ADC=TRUE -lcN E:\TexasInstruments\BLE-CC254 #
+#                          x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC254 #
+#                          1DB\CC2541\List\ -o E:\TexasInstruments\BLE-CC254x #
+#                          -1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541 #
+#                          DB\CC2541\Obj\ -e --debug --core=plain             #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\common\ -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\include\ -I                           #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
-#                          nents\hal\target\CC2541EB\ -I                      #
+#                          nents\hal\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\hal\target\CC2541EB\   #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\osal\include\ -I                          #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
-#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
-#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
-#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          nents\services\saddr\ -I                           #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
 #                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
@@ -81,7 +82,12 @@
 #                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
 #                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
 #                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
-#                          .\..\Profiles\DevInfo\ -Ohz                        #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
 #    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\Simpl #
 #                          eTemperature.lst                                   #
@@ -107,8 +113,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source
      12          { 
      13             DISABLE_ALL_INTERRUPTS();            //关闭所有中断 
      14             //InitClock();                         //设置系统主时钟为 32M 
-     15             TR0=0X01;         //set '1' to connectthe temperature sensorto the SOC_ADC.
-     16             ATEST=0X01;       // Enablesthe temperature sensor
+     15             TR0=0x01;         //set '1' to connectthe temperature sensorto the SOC_ADC.
+     16             ATEST=0x01;       // Enablesthe temperature sensor
      17          }   
      18          
      19          /**************************************************************** 
@@ -116,33 +122,24 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source
      21          ****************************************************************/ 
      22          uint8 getTemperature(void){ 
      23             
-     24            uint8 i;
-     25            uint16 adcvalue;
-     26            uint16 value;
-     27            
-     28            adcvalue=0;
-     29            for(i=0;i<4;i++)
-     30            {
-     31              ADCCON3 |=0X0E;//单通道AD转换源为温度传感器
-     32              ADCCON3 &=0X3F;//单通道AD转换参考电压为1.25内部电压
-     33              ADCCON3 |=0X30;//单通道AD转换分辨率为512DEC，12有效
-     34              ADCCON1 |=0X30;//ADC启动方式选择为ADCCON1.ST=1事件
-     35              ADCCON1 |=0X40;//ADC启动转换
-     36                  
-     37              while(!ADCCON1&0X80);//等待AD转换完成
-     38              value =  ADCL >> 2; //ADCL寄存器低2位无效
-     39              value |=(((uint16)ADCH)<<6);//连接ADCH和ADCL，并赋值给value
-     40              adcvalue +=value;//adcvalue被赋值为4次AD值之和
-     41            }
-     42            value=adcvalue>>2;//累加除以4，得到平均值
-     43            return ((value) >> 4) - 315;     //根据AD值，计算出实际的温度
-     44          }
+     24             uint16  value;
+     25             float v ;
+     26             ADCCON3  = (0x3E);                  //选择1.25V为参考电压；14位分辨率；对片内温度传感器采样        
+     27             while(!ADCIF);                //等待 AD 转换完成 
+     28             value =  ADCL ;                //ADCL 寄存器低 2 位无效 
+     29             value |= (((uint16)ADCH) << 8);
+     30             value=value>>4;
+     31             
+     32             v=(value-1367.5)/4.5;    //根据 AD 值，计算出实际的温度,芯片手册有错，温度系数应该是4.5 /℃
+     33             return   v;                           //进行温度校正，这里减去5℃（不同芯片根据具体情况校正）
+     34          
+     35          }
 
    Maximum stack usage in bytes:
 
    ISTACK PSTACK XSTACK Function
    ------ ------ ------ --------
-       0      0     12  getTemperature
+       0      0     16  getTemperature
        2      0      0  initTempSensor
 
 
@@ -152,23 +149,27 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source
    -----  --------------
        6  ??getTemperature?relay
        6  ??initTempSensor?relay
-       1  ADCCON1
        1  ADCCON3
        1  ADCH
        1  ADCL
        1  IEN2
        1  _A_IEN0
        1  _A_IEN1
-      88  getTemperature
+       1  _A_TCON
+       4  __Constant_40900000
+       4  __Constant_c4aaf000
+      78  getTemperature
       30  initTempSensor
 
  
- 118 bytes in segment BANKED_CODE
+ 108 bytes in segment BANKED_CODE
   12 bytes in segment BANK_RELAYS
    7 bytes in segment SFR_AN
+   8 bytes in segment XDATA_ROM_C
  
- 130 bytes of CODE memory
-   0 bytes of DATA memory (+ 7 bytes shared)
+ 120 bytes of CODE  memory
+   0 bytes of CONST memory (+ 8 bytes shared)
+   0 bytes of DATA  memory (+ 7 bytes shared)
 
 Errors: none
-Warnings: none
+Warnings: 1

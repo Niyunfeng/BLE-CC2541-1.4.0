@@ -1,0 +1,498 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:36 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Components\os #
+#                          al\common\OSAL_ClockBLE.c                          #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\os #
+#                          al\common\OSAL_ClockBLE.c -D INT_HEAP_LEN=3074 -D  #
+#                          HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D          #
+#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ -o   #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\ -e    #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\OSAL_ #
+#                          ClockBLE.lst                                       #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\OSAL_C #
+#                          lockBLE.r51                                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_ClockBLE.c
+      1          /**************************************************************************************************
+      2            Filename:       OSAL_ClockBLE.c
+      3            Revised:        $Date: 2008-12-15 15:42:47 -0800 (Mon, 15 Dec 2008) $
+      4            Revision:       $Revision: 18616 $
+      5          
+      6            Description:    OSAL Clock definition and manipulation functions for BLE projects.
+      7          
+      8            Copyright 2008-2011 Texas Instruments Incorporated. All rights reserved.
+      9          
+     10            IMPORTANT: Your use of this Software is limited to those specific rights
+     11            granted under the terms of a software license agreement between the user
+     12            who downloaded the software, his/her employer (which must be your employer)
+     13            and Texas Instruments Incorporated (the "License"). You may not use this
+     14            Software unless you agree to abide by the terms of the License. The License
+     15            limits your use, and you acknowledge, that the Software may not be modified,
+     16            copied or distributed unless embedded on a Texas Instruments microcontroller
+     17            or used solely and exclusively in conjunction with a Texas Instruments radio
+     18            frequency transceiver, which is integrated into your product. Other than for
+     19            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     20            works of, modify, distribute, perform, display or sell this Software and/or
+     21            its documentation for any purpose.
+     22          
+     23            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     24            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     25            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     26            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     27            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     28            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     29            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     30            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     31            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     32            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     33            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     34          
+     35            Should you have any questions regarding your right to use this Software,
+     36            contact Texas Instruments Incorporated at www.TI.com.
+     37          **************************************************************************************************/
+     38          
+     39          /*********************************************************************
+     40           * INCLUDES
+     41           */
+     42          
+     43          #include "comdef.h"
+     44          #include "OnBoard.h"
+     45          #include "OSAL.h"
+     46          #include "OSAL_Clock.h"
+     47          
+     48          /*********************************************************************
+     49           * MACROS
+     50           */
+     51          
+     52          #define	YearLength(yr)	(IsLeapYear(yr) ? 366 : 365)
+     53          
+     54          /*********************************************************************
+     55           * CONSTANTS
+     56           */
+     57          
+     58          // (MAXCALCTICKS * 5) + (max remainder) must be <= (uint16 max),
+     59          // so: (13105 * 5) + 7 <= 65535
+     60          #define MAXCALCTICKS  ((uint16)(13105))
+     61          
+     62          #define	BEGYEAR	        2000     // UTC started at 00:00:00 January 1, 2000
+     63          
+     64          #define	DAY             86400UL  // 24 hours * 60 minutes * 60 seconds
+     65          
+     66          /*********************************************************************
+     67           * TYPEDEFS
+     68           */
+     69          
+     70          /*********************************************************************
+     71           * GLOBAL VARIABLES
+     72           */
+     73          
+     74          /*********************************************************************
+     75           * EXTERNAL VARIABLES
+     76           */
+     77          
+     78          /*********************************************************************
+     79           * EXTERNAL FUNCTIONS
+     80           */
+     81          extern uint16 ll_McuPrecisionCount(void);
+     82          
+     83          /*********************************************************************
+     84           * LOCAL VARIABLES
+     85           */
+     86          static uint16 previousLLTimerTick = 0;
+     87          static uint16 remUsTicks = 0;
+     88          static uint16 timeMSec = 0;
+     89          
+     90          // number of seconds since 0 hrs, 0 minutes, 0 seconds, on the
+     91          // 1st of January 2000 UTC
+     92          UTCTime OSAL_timeSeconds = 0;
+     93          
+     94          /*********************************************************************
+     95           * LOCAL FUNCTION PROTOTYPES
+     96           */
+     97          static uint8 monthLength( uint8 lpyr, uint8 mon );
+     98          
+     99          static void osalClockUpdate( uint16 elapsedMSec );
+    100          
+    101          /*********************************************************************
+    102           * FUNCTIONS
+    103           *********************************************************************/
+    104          
+    105          /*********************************************************************
+    106           * @fn      osalTimeUpdate
+    107           *
+    108           * @brief   Uses the free running rollover count of the MAC backoff timer;
+    109           *          this timer runs freely with a constant 320 usec interval.  The
+    110           *          count of 320-usec ticks is converted to msecs and used to update
+    111           *          the OSAL clock and Timers by invoking osalClockUpdate() and
+    112           *          osalTimerUpdate().  This function is intended to be invoked
+    113           *          from the background, not interrupt level.
+    114           *
+    115           * @param   None.
+    116           *
+    117           * @return  None.
+    118           */
+    119          void osalTimeUpdate( void )
+    120          {
+    121            uint16 tmp;
+    122            uint16 ticks625us;
+    123            uint16 elapsedMSec = 0;
+    124          
+    125            // Get the free-running count of 625us timer ticks
+    126            tmp = ll_McuPrecisionCount();
+    127          
+    128            if ( tmp != previousLLTimerTick )
+    129            {
+    130              // Calculate the elapsed ticks of the free-running timer.
+    131              ticks625us = tmp - previousLLTimerTick;
+    132          
+    133              // Store the LL Timer tick count for the next time through this function.
+    134              previousLLTimerTick = tmp;
+    135          
+    136              /* It is necessary to loop to convert the usecs to msecs in increments so as
+    137               * not to overflow the 16-bit variables.
+    138               */
+    139              while ( ticks625us > MAXCALCTICKS )
+    140              {
+    141                ticks625us -= MAXCALCTICKS;
+    142                elapsedMSec += MAXCALCTICKS * 5 / 8;
+    143                remUsTicks += MAXCALCTICKS * 5 % 8;
+    144              }
+    145          
+    146              // update converted number with remaining ticks from loop and the
+    147              // accumulated remainder from loop
+    148              tmp = (ticks625us * 5) + remUsTicks;
+    149          
+    150              // Convert the 625 us ticks into milliseconds and a remainder
+    151              elapsedMSec += tmp / 8;
+    152              remUsTicks = tmp % 8;
+    153          
+    154              // Update OSAL Clock and Timers
+    155              if ( elapsedMSec )
+    156              {
+    157                osalClockUpdate( elapsedMSec );
+    158                osalTimerUpdate( elapsedMSec );
+    159              }
+    160            }
+    161          }
+    162          
+    163          /*********************************************************************
+    164           * @fn      osalClockUpdate
+    165           *
+    166           * @brief   Updates the OSAL Clock time with elapsed milliseconds.
+    167           *
+    168           * @param   elapsedMSec - elapsed milliseconds
+    169           *
+    170           * @return  none
+    171           */
+    172          static void osalClockUpdate( uint16 elapsedMSec )
+    173          {
+    174            // Add elapsed milliseconds to the saved millisecond portion of time
+    175            timeMSec += elapsedMSec;
+    176          
+    177            // Roll up milliseconds to the number of seconds
+    178            if ( timeMSec >= 1000 )
+    179            {
+    180              OSAL_timeSeconds += timeMSec / 1000;
+    181              timeMSec = timeMSec % 1000;
+    182            }
+    183          }
+    184          
+    185          /*********************************************************************
+    186           * @fn      osal_setClock
+    187           *
+    188           * @brief   Set the new time.  This will only set the seconds portion
+    189           *          of time and doesn't change the factional second counter.
+    190           *
+    191           * @param   newTime - number of seconds since 0 hrs, 0 minutes,
+    192           *                    0 seconds, on the 1st of January 2000 UTC
+    193           *
+    194           * @return  none
+    195           */
+    196          void osal_setClock( UTCTime newTime )
+    197          {
+    198            OSAL_timeSeconds = newTime;
+    199          }
+    200          
+    201          /*********************************************************************
+    202           * @fn      osal_getClock
+    203           *
+    204           * @brief   Gets the current time.  This will only return the seconds
+    205           *          portion of time and doesn't include the factional second
+    206           *          counter.
+    207           *
+    208           * @param   none
+    209           *
+    210           * @return  number of seconds since 0 hrs, 0 minutes, 0 seconds,
+    211           *          on the 1st of January 2000 UTC
+    212           */
+    213          UTCTime osal_getClock( void )
+    214          {
+    215            return ( OSAL_timeSeconds );
+    216          }
+    217          
+    218          /*********************************************************************
+    219           * @fn      osal_ConvertUTCTime
+    220           *
+    221           * @brief   Converts UTCTime to UTCTimeStruct
+    222           *
+    223           * @param   tm - pointer to breakdown struct
+    224           *
+    225           * @param   secTime - number of seconds since 0 hrs, 0 minutes,
+    226           *          0 seconds, on the 1st of January 2000 UTC
+    227           *
+    228           * @return  none
+    229           */
+    230          void osal_ConvertUTCTime( UTCTimeStruct *tm, UTCTime secTime )
+    231          {
+    232            // calculate the time less than a day - hours, minutes, seconds
+    233            {
+    234              uint32 day = secTime % DAY;
+    235              tm->seconds = day % 60UL;
+    236              tm->minutes = (day % 3600UL) / 60UL;
+    237              tm->hour = day / 3600UL;
+    238            }
+    239          
+    240            // Fill in the calendar - day, month, year
+    241            {
+    242              uint16 numDays = secTime / DAY;
+    243              tm->year = BEGYEAR;
+    244              while ( numDays >= YearLength( tm->year ) )
+    245              {
+    246                numDays -= YearLength( tm->year );
+    247                tm->year++;
+    248              }
+    249          
+    250              tm->month = 0;
+    251              while ( numDays >= monthLength( IsLeapYear( tm->year ), tm->month ) )
+    252              {
+    253                numDays -= monthLength( IsLeapYear( tm->year ), tm->month );
+    254                tm->month++;
+    255              }
+    256          
+    257              tm->day = numDays;
+    258            }
+    259          }
+    260          
+    261          /*********************************************************************
+    262           * @fn      monthLength
+    263           *
+    264           * @param   lpyr - 1 for leap year, 0 if not
+    265           *
+    266           * @param   mon - 0 - 11 (jan - dec)
+    267           *
+    268           * @return  number of days in specified month
+    269           */
+    270          static uint8 monthLength( uint8 lpyr, uint8 mon )
+    271          {
+    272            uint8 days = 31;
+    273          
+    274            if ( mon == 1 ) // feb
+    275            {
+    276              days = ( 28 + lpyr );
+    277            }
+    278            else
+    279            {
+    280              if ( mon > 6 ) // aug-dec
+    281              {
+    282                mon--;
+    283              }
+    284          
+    285              if ( mon & 1 )
+    286              {
+    287                days = 30;
+    288              }
+    289            }
+    290          
+    291            return ( days );
+    292          }
+    293          
+    294          /*********************************************************************
+    295           * @fn      osal_ConvertUTCSecs
+    296           *
+    297           * @brief   Converts a UTCTimeStruct to UTCTime
+    298           *
+    299           * @param   tm - pointer to provided struct
+    300           *
+    301           * @return  number of seconds since 00:00:00 on 01/01/2000 (UTC)
+    302           */
+    303          UTCTime osal_ConvertUTCSecs( UTCTimeStruct *tm )
+    304          {
+    305            uint32 seconds;
+    306          
+    307            /* Seconds for the partial day */
+    308            seconds = (((tm->hour * 60UL) + tm->minutes) * 60UL) + tm->seconds;
+    309          
+    310            /* Account for previous complete days */
+    311            {
+    312              /* Start with complete days in current month */
+    313              uint16 days = tm->day;
+    314          
+    315              /* Next, complete months in current year */
+    316              {
+    317                int8 month = tm->month;
+    318                while ( --month >= 0 )
+    319                {
+    320                  days += monthLength( IsLeapYear( tm->year ), month );
+    321                }
+    322              }
+    323          
+    324              /* Next, complete years before current year */
+    325              {
+    326                uint16 year = tm->year;
+    327                while ( --year >= BEGYEAR )
+    328                {
+    329                  days += YearLength( year );
+    330                }
+    331              }
+    332          
+    333              /* Add total seconds before partial day */
+    334              seconds += (days * DAY);
+    335            }
+    336          
+    337            return ( seconds );
+    338          }
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0     26  monthLength
+       0      0     14  osalTimeUpdate
+                          0 0 14 -> ll_McuPrecisionCount
+                          0 0 14 -> osalTimerUpdate
+       0      0     20  osal_ConvertUTCSecs
+                          0 0 20 -> monthLength
+       1      0     30  osal_ConvertUTCTime
+                          0 0 26 -> monthLength
+       2      0      0  osal_getClock
+       0      0     12  osal_setClock
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      20  ??Subroutine6_0
+       6  ??monthLength?relay
+       6  ??osalTimeUpdate?relay
+       6  ??osal_ConvertUTCSecs?relay
+       6  ??osal_ConvertUTCTime?relay
+       6  ??osal_getClock?relay
+       6  ??osal_setClock?relay
+       1  ?Subroutine0
+      15  ?Subroutine1
+       6  ?Subroutine2
+      13  ?Subroutine3
+       4  ?Subroutine4
+      15  ?Subroutine5
+       4  OSAL_timeSeconds
+       4  __Constant_15180
+       4  __Constant_3c
+       4  __Constant_e10
+      31  monthLength
+     234  osalTimeUpdate
+     312  osal_ConvertUTCSecs
+     497  osal_ConvertUTCTime
+      17  osal_getClock
+      26  osal_setClock
+       2  previousLLTimerTick
+       2  remUsTicks
+       2  timeMSec
+
+ 
+ 1 191 bytes in segment BANKED_CODE
+    36 bytes in segment BANK_RELAYS
+    12 bytes in segment XDATA_ROM_C
+    10 bytes in segment XDATA_Z
+ 
+ 1 227 bytes of CODE  memory
+     0 bytes of CONST memory (+ 12 bytes shared)
+    10 bytes of XDATA memory
+
+Errors: none
+Warnings: none

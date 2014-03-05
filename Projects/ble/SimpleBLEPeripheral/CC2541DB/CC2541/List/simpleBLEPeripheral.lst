@@ -1,0 +1,1056 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             04/Mar/2014  17:52:52 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\simpleBLEPeripheral #
+#                          .c                                                 #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\simpleBLEPeripheral #
+#                          .c -D INT_HEAP_LEN=3074 -D HALNODEBUG -D           #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D    #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\simpl #
+#                          eBLEPeripheral.lst                                 #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\simple #
+#                          BLEPeripheral.r51                                  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source\simpleBLEPeripheral.c
+      1          /**************************************************************************************************
+      2           Filename:       simpleBLEPeripheral.c
+      3           Revised:        $Date: 2010-08-06 08:56:11 -0700 (Fri, 06 Aug 2010) $
+      4           Revision:       $Revision: 23333 $
+      5          
+      6           Description:    This file contains the Simple BLE Peripheral sample application
+      7           for use with the CC2540 Bluetooth Low Energy Protocol Stack.
+      8          
+      9           Copyright 2010 - 2012 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11           IMPORTANT: Your use of this Software is limited to those specific rights
+     12           granted under the terms of a software license agreement between the user
+     13           who downloaded the software, his/her employer (which must be your employer)
+     14           and Texas Instruments Incorporated (the "License").  You may not use this
+     15           Software unless you agree to abide by the terms of the License. The License
+     16           limits your use, and you acknowledge, that the Software may not be modified,
+     17           copied or distributed unless embedded on a Texas Instruments microcontroller
+     18           or used solely and exclusively in conjunction with a Texas Instruments radio
+     19           frequency transceiver, which is integrated into your product.  Other than for
+     20           the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21           works of, modify, distribute, perform, display or sell this Software and/or
+     22           its documentation for any purpose.
+     23          
+     24           YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25           PROVIDED �AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26           INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27           NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28           TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29           NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30           LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31           INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32           OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33           OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34           (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36           Should you have any questions regarding your right to use this Software,
+     37           contact Texas Instruments Incorporated at www.TI.com.
+     38           **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          
+     44          #include "bcomdef.h"
+     45          #include "OSAL.h"
+     46          #include "OSAL_PwrMgr.h"
+     47          #include "osal_snv.h"
+     48          
+     49          #include "OnBoard.h"
+     50          #include "hal_adc.h"
+     51          #include "hal_led.h"
+     52          #include "hal_key.h"
+     53          #include "hal_lcd.h"
+     54          #include "SimpleBLESerialUart.h"
+     55          
+     56          #include "gatt.h"
+     57          
+     58          #include "hci.h"
+     59          
+     60          #include "gapgattserver.h"
+     61          #include "gattservapp.h"
+     62          #include "devinfoservice.h"
+     63          #include "simpleGATTprofile.h"
+     64          
+     65          #if defined ( PLUS_BROADCASTER )
+     66          #include "peripheralBroadcaster.h"
+     67          #else
+     68          #include "peripheral.h"
+     69          #endif
+     70          
+     71          #include "gapbondmgr.h"
+     72          
+     73          #include "simpleBLEPeripheral.h"
+     74          
+     75          #if defined FEATURE_OAD
+     76          #include "oad.h"
+     77          #include "oad_target.h"
+     78          #endif
+     79          
+     80          #include "hal_i2c.h"
+     81          #include "hal_eeprom.h"
+     82          #include "hal_at24c32.h"
+     83          #include "hal_ds1307.h"
+     84          #include "SimpleEepromUtils.h"
+     85          #include "SimpleRTCInterrupt.h"
+     86          #include "SimpleBLESPIFlash.h"
+     87          #include "battservice.h"
+     88          #include "SimpleTemperature.h"
+     89          /*********************************************************************
+     90           * MACROS
+     91           */
+     92          
+     93          /*********************************************************************
+     94           * CONSTANTS
+     95           */
+     96          
+     97          // How often to perform periodic event
+     98          #define SBP_PERIODIC_EVT_PERIOD                   5000
+     99          
+    100          // How often to check battery voltage (in ms)
+    101          #define BATTERY_CHECK_PERIOD                  5000////////////////////////////////////batt
+    102          
+    103          // What is the advertising interval when device is discoverable (units of 625us, 160=100ms)
+    104          #define DEFAULT_ADVERTISING_INTERVAL          160
+    105          
+    106          // Whether to enable automatic parameter update request when a connection is formed
+    107          #define DEFAULT_ENABLE_UPDATE_REQUEST         FALSE
+    108          
+    109          // Limited discoverable mode advertises for 30.72s, and then stops
+    110          // General discoverable mode advertises indefinitely
+    111          
+    112          #if defined ( CC2540_MINIDK )
+    113          #define DEFAULT_DISCOVERABLE_MODE             GAP_ADTYPE_FLAGS_LIMITED
+    114          #else
+    115          #define DEFAULT_DISCOVERABLE_MODE             GAP_ADTYPE_FLAGS_GENERAL
+    116          #endif  // defined ( CC2540_MINIDK )
+    117          // Minimum connection interval (units of 1.25ms, 80=100ms) if automatic parameter update request is enabled
+    118          #define DEFAULT_DESIRED_MIN_CONN_INTERVAL     80
+    119          
+    120          // Maximum connection interval (units of 1.25ms, 800=1000ms) if automatic parameter update request is enabled
+    121          #define DEFAULT_DESIRED_MAX_CONN_INTERVAL     800
+    122          
+    123          // Slave latency to use if automatic parameter update request is enabled
+    124          #define DEFAULT_DESIRED_SLAVE_LATENCY         10
+    125          
+    126          // Supervision timeout value (units of 10ms, 1000=10s) if automatic parameter update request is enabled
+    127          #define DEFAULT_DESIRED_CONN_TIMEOUT          1000
+    128          
+    129          // Company Identifier: Texas Instruments Inc. (13)
+    130          #define TI_COMPANY_ID                         0x000D
+    131          
+    132          #define INVALID_CONNHANDLE                    0xFFFF
+    133          
+    134          // Length of bd addr as a string
+    135          #define B_ADDR_STR_LEN                        15
+    136          
+    137          #if defined ( PLUS_BROADCASTER )
+    138          #define ADV_IN_CONN_WAIT                    500 // delay 500 ms
+    139          #endif
+    140          
+    141          // GAP connection handle
+    142          static uint16 gapConnHandle;
+    143          
+    144          extern uint8 SBP_UART_STUDY_CMD;
+    145          extern uint8 SBP_UART_STUDY_CMD_LEN;
+    146          
+    147          /*************************************************************
+    148           *  recv data define
+    149           */
+    150          //XDATA uint8 a[3000]={0};
+    151          extern UartState u_state;
+    152          #define TRANSFER_DATA_SIGN 0xFE
+    153          #define TRANSFER_DATA_SIGN_RE 0xFF
+    154          #define UART_DATA_START_INDEX 2
+    155          #define one_time_data_len 125
+    156          // uint8 code recv_value1[2540] = { 0 };
+    157          static uint8  recv_value[254] = { 0 };
+    158          static uint8 TRANSFER_DATA_STATE_IN = FALSE;
+    159          static char newValueBuf[20] = { 0 };
+    160          static uint8 data_len = 0, cur_data_len = 0, data_len_index = 0, send_times = 0;
+    161          
+    162          /*********************************************************************
+    163           * SPI FLASH
+    164           */
+    165          uint8 buf[20];
+    166          uint8 bufrx[20];
+    167          
+    168          
+    169          
+    170          /*********************************************************************
+    171           * GLOBAL VARIABLES
+    172           */
+    173          
+    174          /*********************************************************************
+    175           * EXTERNAL VARIABLES
+    176           */
+    177          
+    178          /*********************************************************************
+    179           * EXTERNAL FUNCTIONS
+    180           */
+    181          
+    182          /*********************************************************************
+    183           * LOCAL VARIABLES
+    184           */
+    185          static uint8 simpleBLEPeripheral_TaskID; // Task ID for internal task/event processing
+    186          
+    187          static gaprole_States_t gapProfileState = GAPROLE_INIT;
+    188          
+    189          // GAP - SCAN RSP data (max size = 31 bytes)
+    190          static uint8 scanRspData[] = {
+    191          // complete name
+    192          		0x14,// length of this data
+    193          		GAP_ADTYPE_LOCAL_NAME_COMPLETE, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    194          		0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    195          
+    196          		// connection interval range
+    197          		0x05,// length of this data
+    198          		GAP_ADTYPE_SLAVE_CONN_INTERVAL_RANGE, LO_UINT16(DEFAULT_DESIRED_MIN_CONN_INTERVAL), // 100ms
+    199          		HI_UINT16(DEFAULT_DESIRED_MIN_CONN_INTERVAL), LO_UINT16(DEFAULT_DESIRED_MAX_CONN_INTERVAL), // 1s
+    200          		HI_UINT16(DEFAULT_DESIRED_MAX_CONN_INTERVAL),
+    201          
+    202          		// Tx power level
+    203          		0x02,// length of this data
+    204          		GAP_ADTYPE_POWER_LEVEL, 0 // 0dBm
+    205          		};
+    206          
+    207          // GAP - Advertisement data (max size = 31 bytes, though this is
+    208          // best kept short to conserve power while advertisting)
+    209          static uint8 advertData[] = {
+    210          // Flags; this sets the device to use limited discoverable
+    211          // mode (advertises for 30 seconds at a time) instead of general
+    212          // discoverable mode (advertises indefinitely)
+    213          		0x02,// length of this data
+    214          		GAP_ADTYPE_FLAGS, DEFAULT_DISCOVERABLE_MODE | GAP_ADTYPE_FLAGS_BREDR_NOT_SUPPORTED,
+    215          
+    216          		// service UUID, to notify central devices what services are included
+    217          		// in this peripheral
+    218          		0x03,// length of this data
+    219          		GAP_ADTYPE_16BIT_MORE, // some of the UUID's, but not all
+    220          		LO_UINT16(SIMPLEPROFILE_SERV_UUID), HI_UINT16(SIMPLEPROFILE_SERV_UUID),
+    221          
+    222          };
+    223          
+    224          // GAP GATT Attributes
+    225          static uint8 attDeviceName[GAP_DEVICE_NAME_LEN] = "zekezang";
+    226          
+    227          /*********************************************************************
+    228           * LOCAL FUNCTIONS
+    229           */
+    230          static void simpleBLEPeripheral_ProcessOSALMsg(osal_event_hdr_t *pMsg);
+    231          static void peripheralStateNotificationCB(gaprole_States_t newState);
+    232          static void performPeriodicTask(void);
+    233          static void simpleProfileChangeCB(uint8 paramID);
+    234          static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys);
+    235          //static void simpleBLEPeripheralPasscodeCB(uint8 *deviceAddr, uint16 connectionHandle, uint8 uiInputs, uint8 uiOutputs);
+    236          static void simpleBLEPeripheralPairStateCB(uint16 connHandle, uint8 state, uint8 status);
+    237          static char *bdAddr2Str(uint8 *pAddr);
+    238          //static void updateDeviceName(char *name, uint8 len);
+    239          /*********************************************************************
+    240           * PROFILE CALLBACKS
+    241           */
+    242          
+    243          // GAP Role Callbacks
+    244          static gapRolesCBs_t simpleBLEPeripheral_PeripheralCBs = { peripheralStateNotificationCB, // Profile State Change Callbacks
+    245          		NULL // When a valid RSSI is read from controller (not used by application)
+    246          		};
+    247          
+    248          // GAP Bond Manager Callbacks
+    249          static gapBondCBs_t simpleBLEPeripheral_BondMgrCBs = { NULL, // Passcode callback (not used by application)
+    250          		simpleBLEPeripheralPairStateCB // Pairing / Bonding state Callback (not used by application)
+    251          		};
+    252          
+    253          // Simple GATT Profile Callbacks
+    254          static simpleProfileCBs_t simpleBLEPeripheral_SimpleProfileCBs = { simpleProfileChangeCB // Charactersitic value change callback
+    255          		};
+    256          
+    257          /*********************************************************************
+    258           * @fn      pairStateCB
+    259           * @brief   Pairing state callback.
+    260           * @return  none
+    261           */
+    262          static void simpleBLEPeripheralPairStateCB(uint16 connHandle, uint8 state, uint8 status) {
+    263          	if (state == GAPBOND_PAIRING_STATE_STARTED) {
+    264          		HalLcdWriteString("Pairing started", HAL_LCD_LINE_7);
+    265          	} else if (state == GAPBOND_PAIRING_STATE_COMPLETE) {
+    266          		if (status == SUCCESS) {
+    267          			HalLcdWriteString("Pairing success", HAL_LCD_LINE_7);
+    268          		} else {
+    269          			HalLcdWriteStringValue("Pairing fail", status, 10, HAL_LCD_LINE_7);
+    270          			uint8 a = GAPRole_TerminateConnection();
+    271          			HalLcdWriteStringValue("Pairing fail--a", a, 10, HAL_LCD_LINE_7);
+    272          		}
+    273          	} else if (state == GAPBOND_PAIRING_STATE_BONDED) {
+    274          		if (status == SUCCESS) {
+    275          			HalLcdWriteString("Bonding success", HAL_LCD_LINE_1);
+    276          		}
+    277          	}
+    278          
+    279          	//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_ZEKEZANG_EVT, 5000);
+    280          }
+    281          
+    282          /*********************************************************************
+    283           * @fn      simpleBLECentralPasscodeCB
+    284           * @brief   Passcode callback.
+    285           * @return  none
+    286          
+    287           static void simpleBLEPeripheralPasscodeCB(uint8 *deviceAddr, uint16 connectionHandle, uint8 uiInputs, uint8 uiOutputs) {
+    288           HalLcdWriteStringValue("uiInputs:", uiInputs, 10, HAL_LCD_LINE_5);
+    289           HalLcdWriteStringValue("uiOutputs", uiOutputs, 10, HAL_LCD_LINE_6);
+    290           }
+    291           */
+    292          
+    293          /*********************************************************************
+    294           * @fn      readWriteFlash
+    295           * @brief   readWriteFlash
+    296           * @return  none
+    297          
+    298           static uint32 passs = 0;
+    299           static void readWriteFlash() {
+    300           uint8 * aa;
+    301           aa = osal_msg_allocate(15);
+    302           osal_memset(aa, 0, 15);
+    303           osal_memcpy(aa, "as", 2);
+    304           uint16 p = 1234;
+    305           if (osal_snv_write(0xE0, sizeof(uint16), &p) == SUCCESS) {
+    306           HalLcdWriteString("write ok", HAL_LCD_LINE_2);
+    307           }
+    308           osal_msg_deallocate(aa);
+    309           uint8 bb[15] = { 0x0 };
+    310           uint16 bb = 0;
+    311           if (osal_snv_read(0xE0, 15, &bb) == SUCCESS) {
+    312           HalLcdWriteString("read ok", HAL_LCD_LINE_2);
+    313           passs = bb;
+    314           }
+    315           }
+    316           */
+    317          
+    318          /*********************************************************************
+    319           * PUBLIC FUNCTIONS
+    320           */
+    321          
+    322          /*********************************************************************
+    323           * @fn      SimpleBLEPeripheral_Init
+    324           *
+    325           * @brief   Initialization function for the Simple BLE Peripheral App Task.
+    326           *          This is called during initialization and should contain
+    327           *          any application specific initialization (ie. hardware
+    328           *          initialization/setup, table initialization, power up
+    329           *          notificaiton ... ).
+    330           *
+    331           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    332           *                    used to send messages and set timers.
+    333           *
+    334           * @return  none
+    335           */
+    336          void SimpleBLEPeripheral_Init(uint8 task_id) {
+    337          	simpleBLEPeripheral_TaskID = task_id;
+    338          	SbpHalUART_Init(task_id);
+    339                  
+    340          	// Setup the GAP Peripheral Role Profile
+    341          	{
+    342          
+    343          #if defined( CC2540_MINIDK )
+    344          		// For the CC2540DK-MINI keyfob, device doesn't start advertising until button is pressed
+    345          		uint8 initial_advertising_enable = FALSE;
+    346          #else
+    347          		// For other hardware platforms, device starts advertising upon initialization
+    348          		uint8 initial_advertising_enable = TRUE;
+    349          #endif
+    350          
+    351          		// By setting this to zero, the device will go into the waiting state after
+    352          		// being discoverable for 30.72 second, and will not being advertising again
+    353          		// until the enabler is set back to TRUE
+    354          		uint16 gapRole_AdvertOffTime = 0;
+    355          
+    356          		uint8 enable_update_request = DEFAULT_ENABLE_UPDATE_REQUEST;
+    357          		uint16 desired_min_interval = DEFAULT_DESIRED_MIN_CONN_INTERVAL;
+    358          		uint16 desired_max_interval = DEFAULT_DESIRED_MAX_CONN_INTERVAL;
+    359          		uint16 desired_slave_latency = DEFAULT_DESIRED_SLAVE_LATENCY;
+    360          		uint16 desired_conn_timeout = DEFAULT_DESIRED_CONN_TIMEOUT;
+    361          
+    362          		// Set the GAP Role Parameters
+    363          		GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &initial_advertising_enable);
+    364          		GAPRole_SetParameter(GAPROLE_ADVERT_OFF_TIME, sizeof(uint16), &gapRole_AdvertOffTime);
+    365          
+    366          		GAPRole_SetParameter(GAPROLE_SCAN_RSP_DATA, sizeof(scanRspData), scanRspData);
+    367          		GAPRole_SetParameter(GAPROLE_ADVERT_DATA, sizeof(advertData), advertData);
+    368          
+    369          		GAPRole_SetParameter(GAPROLE_PARAM_UPDATE_ENABLE, sizeof(uint8), &enable_update_request);
+    370          		GAPRole_SetParameter(GAPROLE_MIN_CONN_INTERVAL, sizeof(uint16), &desired_min_interval);
+    371          		GAPRole_SetParameter(GAPROLE_MAX_CONN_INTERVAL, sizeof(uint16), &desired_max_interval);
+    372          		GAPRole_SetParameter(GAPROLE_SLAVE_LATENCY, sizeof(uint16), &desired_slave_latency);
+    373          		GAPRole_SetParameter(GAPROLE_TIMEOUT_MULTIPLIER, sizeof(uint16), &desired_conn_timeout);
+    374          	}
+    375          
+    376          	//readWriteFlash();
+    377          
+    378          	// Set the GAP Characteristics
+    379          	GGS_SetParameter(GGS_DEVICE_NAME_ATT, GAP_DEVICE_NAME_LEN, attDeviceName);
+    380          
+    381          	// Set advertising interval
+    382          	{
+    383          		uint16 advInt = DEFAULT_ADVERTISING_INTERVAL;
+    384          
+    385          		GAP_SetParamValue(TGAP_LIM_DISC_ADV_INT_MIN, advInt);
+    386          		GAP_SetParamValue(TGAP_LIM_DISC_ADV_INT_MAX, advInt);
+    387          		GAP_SetParamValue(TGAP_GEN_DISC_ADV_INT_MIN, advInt);
+    388          		GAP_SetParamValue(TGAP_GEN_DISC_ADV_INT_MAX, advInt);
+    389          	}
+    390          
+    391          	//HalLcdWriteStringValue("bb:", passs, 10, HAL_LCD_LINE_6);
+    392          	// Setup the GAP Bond Manager
+    393          	{
+    394          		uint32 passkey = 1234; // passkey "000000"
+    395          		//uint8 pairMode = GAPBOND_PAIRING_MODE_WAIT_FOR_REQ;
+    396          		uint8 pairMode = GAPBOND_PAIRING_MODE_INITIATE;
+    397          		uint8 mitm = TRUE;
+    398          		uint8 ioCap = GAPBOND_IO_CAP_DISPLAY_ONLY;
+    399          		uint8 bonding = FALSE;
+    400          		GAPBondMgr_SetParameter(GAPBOND_DEFAULT_PASSCODE, sizeof(uint32), &passkey);
+    401          		GAPBondMgr_SetParameter(GAPBOND_PAIRING_MODE, sizeof(uint8), &pairMode);
+    402          		GAPBondMgr_SetParameter(GAPBOND_MITM_PROTECTION, sizeof(uint8), &mitm);
+    403          		GAPBondMgr_SetParameter(GAPBOND_IO_CAPABILITIES, sizeof(uint8), &ioCap);
+    404          		GAPBondMgr_SetParameter(GAPBOND_BONDING_ENABLED, sizeof(uint8), &bonding);
+    405          	}
+    406          
+    407          	// Initialize GATT attributes
+    408          	GGS_AddService(GATT_ALL_SERVICES); // GAP
+    409          	GATTServApp_AddService(GATT_ALL_SERVICES); // GATT attributes
+    410          	DevInfo_AddService(); // Device Information Service
+    411          	SimpleProfile_AddService(GATT_ALL_SERVICES); // Simple GATT Profile
+    412                  Batt_AddService( );     // Battery Service
+    413                  
+    414                  
+    415                  
+    416                  
+    417          #if defined FEATURE_OAD
+    418          			VOID OADTarget_AddService(); // OAD Profile
+    419          #endif
+    420          
+    421          	// Setup the SimpleProfile Characteristic Values
+    422          	{
+    423          		uint8 charValue1 = 1;
+    424          		uint8 charValue2 = 2;
+    425          		uint8 charValue3 = 3;
+    426          		uint8 charValue4 = 4;
+    427          		uint8 charValue5[SIMPLEPROFILE_CHAR5_LEN] = { 1, 2, 3, 4, 5 };
+    428          		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR1, sizeof(uint8), &charValue1);
+    429          		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint8), &charValue2);
+    430          		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR3, sizeof(uint8), &charValue3);
+    431          		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8), &charValue4);
+    432          		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN, charValue5);
+    433          	}
+    434          
+    435          	HalLcdWriteString("BLE slave zekezang", HAL_LCD_LINE_1);
+    436          
+    437          	// Register callback with SimpleGATTprofile
+    438          	VOID SimpleProfile_RegisterAppCBs(&simpleBLEPeripheral_SimpleProfileCBs);
+    439          
+    440          	//who open who byebye
+    441          	//HCI_EXT_ClkDivOnHaltCmd(HCI_EXT_ENABLE_CLK_DIVIDE_ON_HALT); no no no...
+    442          
+    443          	// Register for all key events - This app will handle all key events
+    444          	RegisterForKeys(simpleBLEPeripheral_TaskID);
+    445          
+    446          #if defined ( DC_DC_P0_7 )
+    447          	// Enable stack to toggle bypass control on TPS62730 (DC/DC converter)
+    448          	HCI_EXT_MapPmIoPortCmd( HCI_EXT_PM_IO_PORT_P0, HCI_EXT_PM_IO_PORT_PIN7 );
+    449          #endif // defined ( DC_DC_P0_7 )
+    450          	// Setup a delayed profile startup
+    451          	osal_set_event(simpleBLEPeripheral_TaskID, SBP_START_DEVICE_EVT);
+    452                  
+    453                  
+    454                   // initialize the ADC for battery reads
+    455                   HalAdcInit();
+    456          
+    457          	/***********************************test something zekezang**********************************/
+    458          	HalLcdWriteString("spi start", HAL_LCD_LINE_1);
+    459          	
+    460                        XNV_SPI_INIT();
+    461                        uint8 i; 
+    462                  uint8 TempValue[6];  
+    463                  float AvgTemp; 
+    464                  initTempSensor();
+    465                  
+    466                  while(1) 
+    467                  { 
+    468                    AvgTemp = 0;          
+    469                    for(i = 0 ; i < 4 ; i++) 
+    470                    {    
+    471                      AvgTemp += getTemperature();  
+    472                      AvgTemp=AvgTemp/2;                  //每次累加后除 2 
+    473                    }
+    474                    /****温度转换成ascii码发送****/
+    475                    TempValue[0] = (unsigned char)(AvgTemp)/10 + 48;          //十位
+    476                    TempValue[1] = (unsigned char)(AvgTemp)%10 + 48;          //个位
+    477                    TempValue[2] = '.';                                       //小数点 
+    478                    TempValue[3] = (unsigned char)(AvgTemp*10)%10+48;         //十分位
+    479                    TempValue[4] = (unsigned char)(AvgTemp*100)%10+48;        //百分位
+    480                    TempValue[5] = '\0';                                       //字符串结束符  
+    481                    
+    482                    HalLcdWriteString(TempValue, HAL_LCD_LINE_7);
+    483                    //SbpHalUARTWrite(" Temperature: ",14);                      
+    484                    //SbpHalUARTWrite( TempValue,6); 
+    485                    UART_HAL_DELAY(10000); 
+    486                  }
+    487          
+    488          
+    489          
+    490          
+    491          
+    492          	/***********************************test something zekezang**********************************/
+    493          }
+    494          
+    495          /*********************************************************************
+    496           * @fn      SimpleBLEPeripheral_ProcessEvent
+    497           *
+    498           * @brief   Simple BLE Peripheral Application Task event processor.  This function
+    499           *          is called to process all events for the task.  Events
+    500           *          include timers, messages and any other user defined events.
+    501           *
+    502           * @param   task_id  - The OSAL assigned task ID.
+    503           * @param   events - events to process.  This is a bit map and can
+    504           *                   contain more than one event.
+    505           *
+    506           * @return  events not processed
+    507           */
+    508          uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
+    509          
+    510          	VOID task_id; // OSAL required parameter that isn't used in this function
+    511          
+    512          	if (events & SYS_EVENT_MSG) {
+    513          		uint8 *pMsg;
+    514          
+    515          		if ((pMsg = osal_msg_receive(simpleBLEPeripheral_TaskID)) != NULL) {
+    516          			simpleBLEPeripheral_ProcessOSALMsg((osal_event_hdr_t *) pMsg);
+    517          
+    518          			// Release the OSAL message
+    519          			VOID osal_msg_deallocate(pMsg);
+    520          		}
+    521          
+    522          		// return unprocessed events
+    523          		return (events ^ SYS_EVENT_MSG);
+    524          	}
+    525          
+    526          	if (events & SBP_START_DEVICE_EVT) {
+    527          		// Start the Device
+    528          		GAPRole_StartDevice(&simpleBLEPeripheral_PeripheralCBs);
+    529          
+    530          		// Start Bond Manager
+    531          		GAPBondMgr_Register(&simpleBLEPeripheral_BondMgrCBs);
+    532          
+    533          		// Set timer for first periodic event
+    534          		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD);
+    535                          
+    536                          // Set timer for first battery read event
+    537                          osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+    538          
+    539          		return (events ^ SBP_START_DEVICE_EVT);
+    540          	}
+    541          
+    542          	if (events & SBP_PERIODIC_EVT) {
+    543          		
+    544                           // Restart timer
+    545                          if ( BATTERY_CHECK_PERIOD )
+    546                          {
+    547                            osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+    548                          }
+    549          
+    550                          // perform battery level check
+    551                          Batt_MeasLevel( );
+    552          
+    553          		return (events ^ SBP_PERIODIC_EVT);
+    554          	}
+    555          
+    556          	if (events & SBP_ZEKEZANG_EVT) {
+    557          		uint8 initial_advertising_enable = FALSE;
+    558          		GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &initial_advertising_enable);
+    559          		return (events ^ SBP_ZEKEZANG_EVT);
+    560          	}
+    561          
+    562          	if (events & SBP_SEND_IRDATA_EVT) {
+    563          		HalLcdWriteString("send plan complete...", HAL_LCD_LINE_4);
+    564          		return (events ^ SBP_SEND_IRDATA_EVT);
+    565          	}
+    566          
+    567          	if (events & SBP_ADV_IN_CONNECTION_EVT) {
+    568          		uint8 turnOnAdv = TRUE;
+    569          		// Turn on advertising while in a connection
+    570          		GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &turnOnAdv);
+    571          
+    572          		return (events ^ SBP_ADV_IN_CONNECTION_EVT);
+    573          	}
+    574          
+    575          	return 0;
+    576          }
+    577          
+    578          /*********************************************************************
+    579           * @fn      simpleBLEPeripheral_ProcessOSALMsg
+    580           *
+    581           * @brief   Process an incoming task message.
+    582           *
+    583           * @param   pMsg - message to process
+    584           *
+    585           * @return  none
+    586           */
+    587          static void simpleBLEPeripheral_ProcessOSALMsg(osal_event_hdr_t *pMsg) {
+    588          	switch (pMsg->event) {
+    589          	case KEY_CHANGE:
+    590          		simpleBLEPeripheral_HandleKeys(((keyChange_t *) pMsg)->state, ((keyChange_t *) pMsg)->keys);
+    591          		break;
+    592          	default:
+    593          		// do nothing
+    594          		break;
+    595          	}
+    596          }
+    597          
+    598          static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
+    599          	if (keys & HAL_KEY_UP) {
+    600          		u_state = IR_DATA_STUDY_CMD_START_BEGIN_STATE;
+    601          		SbpHalUARTWrite(&SBP_UART_STUDY_CMD, SBP_UART_STUDY_CMD_LEN);
+    602          	}
+    603          
+    604          	if (keys & HAL_KEY_LEFT) {
+    605          		HalLcdWriteString("read rtc ...", HAL_LCD_LINE_3);
+    606          	}
+    607          
+    608          	if (keys & HAL_KEY_DOWN) {
+    609          		HalLcdWriteString("send after 3s...", HAL_LCD_LINE_4);
+    610          		osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT, 3000);
+    611          	}
+    612          
+    613          	if (keys & HAL_KEY_RIGHT) {
+    614          		HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_2);
+    615          	}
+    616          
+    617          }
+    618          
+    619          /*********************************************************************
+    620           * @fn      peripheralStateNotificationCB
+    621           *
+    622           * @brief   Notification from the profile of a state change.
+    623           *
+    624           * @param   newState - new state
+    625           *
+    626           * @return  none
+    627           */
+    628          static void peripheralStateNotificationCB(gaprole_States_t newState) {
+    629          
+    630          	//HalLcdWriteStringValue("newState", newState, 10, HAL_LCD_LINE_4);
+    631          
+    632          	switch (newState) {
+    633          	case GAPROLE_STARTED: {
+    634          		uint8 ownAddress[B_ADDR_LEN];
+    635          		uint8 systemId[DEVINFO_SYSTEM_ID_LEN];
+    636          
+    637          		GAPRole_GetParameter(GAPROLE_BD_ADDR, ownAddress);
+    638          
+    639          		// use 6 bytes of device address for 8 bytes of system ID value
+    640          		systemId[0] = ownAddress[0];
+    641          		systemId[1] = ownAddress[1];
+    642          		systemId[2] = ownAddress[2];
+    643          
+    644          		// set middle bytes to zero
+    645          		systemId[4] = 0x00;
+    646          		systemId[3] = 0x00;
+    647          
+    648          		// shift three bytes up
+    649          		systemId[7] = ownAddress[5];
+    650          		systemId[6] = ownAddress[4];
+    651          		systemId[5] = ownAddress[3];
+    652          
+    653          		DevInfo_SetParameter(DEVINFO_SYSTEM_ID, DEVINFO_SYSTEM_ID_LEN, systemId);
+    654          
+    655          		// Display device address
+    656          		bdAddr2Str(ownAddress);
+    657          		//HalLcdWriteString(bdAddr2Str(ownAddress), HAL_LCD_LINE_3);
+    658          		//HalLcdWriteString("Initialized", HAL_LCD_LINE_3);
+    659          	}
+    660          		break;
+    661          
+    662          	case GAPROLE_ADVERTISING: {
+    663          		//HalLcdWriteString("Advertising", HAL_LCD_LINE_3);
+    664          	}
+    665          		break;
+    666          
+    667          	case GAPROLE_CONNECTED: {
+    668          		//HalLcdWriteString("Connected", HAL_LCD_LINE_3);
+    669          		//simpleProfile_StateNotify( uint16 connHandle, attHandleValueNoti_t *pNoti )
+    670          		GAPRole_GetParameter(GAPROLE_CONNHANDLE, &gapConnHandle);
+    671          	}
+    672          		break;
+    673          
+    674          	case GAPROLE_WAITING: {
+    675          		//HalLcdWriteString("Disconnected", HAL_LCD_LINE_3);
+    676          	}
+    677          		break;
+    678          
+    679          	case GAPROLE_WAITING_AFTER_TIMEOUT: {
+    680          		//HalLcdWriteString("Timed Out", HAL_LCD_LINE_3);
+    681          	}
+    682          		break;
+    683          
+    684          	case GAPROLE_ERROR: {
+    685          		//HalLcdWriteString("Error", HAL_LCD_LINE_3);
+    686          	}
+    687          		break;
+    688          
+    689          	default: {
+    690          		//HalLcdWriteString("", HAL_LCD_LINE_3);
+    691          	}
+    692          		break;
+    693          
+    694          	}
+    695          
+    696          	gapProfileState = newState;
+    697          
+    698          #if !defined( CC2540_MINIDK )
+    699          	VOID gapProfileState; // added to prevent compiler warning with
+    700          						  // "CC2540 Slave" configurations
+    701          #endif
+    702          
+    703          }
+    704          
+    705          /*********************************************************************
+    706           * @fn      performPeriodicTask
+    707           *
+    708           * @brief   Perform a periodic application task. This function gets
+    709           *          called every five seconds as a result of the SBP_PERIODIC_EVT
+    710           *          OSAL event. In this example, the value of the third
+    711           *          characteristic in the SimpleGATTProfile service is retrieved
+    712           *          from the profile, and then copied into the value of the
+    713           *          the fourth characteristic.
+    714           *
+    715           * @param   none
+    716           *
+    717           * @return  none
+    718           */
+    719          static void performPeriodicTask(void) {
+    720          	uint8 valueToCopy;
+    721          	uint8 stat;
+    722          
+    723          	// Call to retrieve the value of the third characteristic in the profile
+    724          	stat = SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, &valueToCopy);
+    725          
+    726          	if (stat == SUCCESS) {
+    727          		/*
+    728          		 * Call to set that value of the fourth characteristic in the profile. Note
+    729          		 * that if notifications of the fourth characteristic have been enabled by
+    730          		 * a GATT client device, then a notification will be sent every time this
+    731          		 * function is called.
+    732          		 */
+    733          		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8), &valueToCopy);
+    734          	}
+    735          }
+    736          
+    737          /*********************************************************************
+    738           * @fn      simpleProfileChangeCB
+    739           * @brief   Callback from SimpleBLEProfile indicating a value change
+    740           * @param   paramID - parameter ID of the value that was changed.
+    741           *
+    742           * @return  none
+    743           */
+    744          static void simpleProfileChangeCB(uint8 paramID) {
+    745          	osal_memset(buf, 0, 20);
+    746          	switch (paramID) {
+    747          	case SIMPLEPROFILE_CHAR1:
+    748          		SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1,buf);
+    749                           HalSPIWrite(0x0,buf,20);
+    750                           HalLcdWriteString((uint8*)buf, HAL_LCD_LINE_6);
+    751          		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Write:"); 
+    752          		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf); 
+    753          		  //注意，连续读写之间至少要延时800us
+    754          		  //HalHW_WaitUs(800);
+    755          	          HalSPIRead(0x0,bufrx,20);
+    756                             HalLcdWriteString((uint8*)bufrx, HAL_LCD_LINE_7);
+    757          		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_6, "Read:"); 
+    758          		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_7, bufrx); 
+    759          
+    760          		
+    761          
+    762          		break;
+    763          	case SIMPLEPROFILE_CHAR3:
+    764          		//SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, &newValue);
+    765          		break;
+    766          	default:
+    767          		// should not reach here!
+    768          		break;
+    769          	}
+    770          }
+    771          
+    772          /*********************************************************************
+    773           * @fn      bdAddr2Str
+    774           *
+    775           * @brief   Convert Bluetooth address to string. Only needed when
+    776           *          LCD display is used.
+    777           *
+    778           * @return  none
+    779           */
+    780          char *bdAddr2Str(uint8 *pAddr) {
+    781          	uint8 i;
+    782          	char hex[] = "0123456789ABCDEF";
+    783          	static char str[B_ADDR_STR_LEN];
+    784          	char *pStr = str;
+    785          
+    786          	*pStr++ = '0';
+    787          	*pStr++ = 'x';
+    788          
+    789          	// Start from end of addr
+    790          	pAddr += B_ADDR_LEN;
+    791          
+    792          	for (i = B_ADDR_LEN; i > 0; i--) {
+    793          		*pStr++ = hex[*--pAddr >> 4];
+    794          		*pStr++ = hex[*pAddr & 0x0F];
+    795          	}
+    796          
+    797          	*pStr = 0;
+    798          
+    799          	return str;
+    800          }
+    801          /*********************************************************************
+    802           *********************************************************************/
+    803          //static int ascii2hex(char c) {
+    804          //	int ret = -1;
+    805          //	if ((c >= '0') && (c <= '9')) {
+    806          //		ret = c - '0';
+    807          //	} else if ((c >= 'A') && (c <= 'Z')) {
+    808          //		ret = c - 'A' + 65;
+    809          //	} else if ((c >= 'a') && (c <= 'z')) {
+    810          //		ret = c - 'a' + 97;
+    811          //	}
+    812          //	return ret;
+    813          //}
+    814          //static void updateDeviceName(char *name, uint8 len) {
+    815          //	uint8 k = 0;
+    816          //	for (k = 0; k < len; k++) {
+    817          //		scanRspData[k + 2] = ascii2hex(*(name + k));
+    818          //	}
+    819          //}
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       2      0     55  SimpleBLEPeripheral_Init
+                          0 0 55 -> Batt_AddService
+                          0 0 55 -> DevInfo_AddService
+                          0 0 55 -> GAPBondMgr_SetParameter
+                          0 0 55 -> GAPRole_SetParameter
+                          0 0 55 -> GAP_SetParamValue
+                          0 0 55 -> GATTServApp_AddService
+                          0 0 55 -> GGS_AddService
+                          0 0 55 -> GGS_SetParameter
+                          0 0 55 -> HalAdcInit
+                          0 0 55 -> HalLcdWriteString
+                          0 0 55 -> RegisterForKeys
+                          0 0 55 -> SbpHalUART_Init
+                          0 0 55 -> SimpleProfile_AddService
+                          0 0 55 -> SimpleProfile_RegisterAppCBs
+                          0 0 55 -> SimpleProfile_SetParameter
+                          0 0 55 -> getTemperature
+                          0 0 55 -> initTempSensor
+                          0 0 55 -> osal_set_event
+       0      0     17  SimpleBLEPeripheral_ProcessEvent
+                          0 0 13 -> Batt_MeasLevel
+                          0 0 13 -> GAPBondMgr_Register
+                          0 0 13 -> GAPRole_SetParameter
+                          0 0 13 -> GAPRole_StartDevice
+                          0 0 13 -> HalLcdWriteString
+                          0 0 14 -> HalLcdWriteStringValue
+                          0 0 13 -> SbpHalUARTWrite
+                          0 0 13 -> osal_msg_deallocate
+                          0 0 13 -> osal_msg_receive
+                          0 0 17 -> osal_start_timerEx
+       2      0     49  bdAddr2Str
+       1      0     23  peripheralStateNotificationCB
+                          0 0 23 -> DevInfo_SetParameter
+                          0 0 23 -> GAPRole_GetParameter
+                          0 0 23 -> bdAddr2Str
+       0      0     12  simpleBLEPeripheralPairStateCB
+                          0 0 12 -> GAPRole_TerminateConnection
+                          0 0 11 -> HalLcdWriteString
+                          0 0 12 -> HalLcdWriteStringValue
+       0      0     14  simpleProfileChangeCB
+                          0 0 10 -> HalLcdWriteString
+                          0 0 14 -> HalSPIRead
+                          0 0 14 -> HalSPIWrite
+                          0 0 10 -> SimpleProfile_GetParameter
+                          0 0 10 -> osal_memset
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      17  ?<Constant "0123456789ABCDEF">
+      19  ?<Constant "BLE slave zekezang">
+      16  ?<Constant "Bonding success">
+      13  ?<Constant "Pairing fail">
+      16  ?<Constant "Pairing fail--a">
+      16  ?<Constant "Pairing started">
+      16  ?<Constant "Pairing success">
+      10  ?<Constant "data_len:">
+      13  ?<Constant "read rtc ...">
+      17  ?<Constant "send after 3s...">
+      22  ?<Constant "send plan complete...">
+      10  ?<Constant "spi start">
+       5  ?<Constant {1, 2, 3, 4, 5}>
+       7  ?<Initializer for advertData>
+      22  ?<Initializer for attDeviceName>
+      30  ?<Initializer for scanRspData>
+       4  ?<Initializer for simpleBLEPeripheral_BondMgrC
+       4  ?<Initializer for simpleBLEPeripheral_Peripher
+       2  ?<Initializer for simpleBLEPeripheral_SimplePr
+       6  ??SimpleBLEPeripheral_Init?relay
+       6  ??SimpleBLEPeripheral_ProcessEvent?relay
+       6  ??bdAddr2Str?relay
+       6  ??peripheralStateNotificationCB?relay
+       6  ??simpleBLEPeripheralPairStateCB?relay
+       6  ??simpleProfileChangeCB?relay
+       8  ?Subroutine0
+      28  ?Subroutine1
+       1  P1DIR
+       1  P1SEL
+       1  P2SEL
+       1  PERCFG
+     977  SimpleBLEPeripheral_Init
+     362  SimpleBLEPeripheral_ProcessEvent
+       1  U1BAUD
+       1  U1GCR
+       1  _A_P1
+       1  _A_U1CSR
+       4  __Constant_0
+       4  __Constant_1
+       4  __Constant_1388
+       4  __Constant_2710
+       4  __Constant_3f000000
+       4  __Constant_41200000
+       4  __Constant_42c80000
+       4  __Constant_bb8
+       4  __Constant_ffffffff
+       7  advertData
+      22  attDeviceName
+     102  bdAddr2Str
+      20  buf
+      20  bufrx
+       1  data_len
+       2  gapConnHandle
+       1  gapProfileState
+     202  peripheralStateNotificationCB
+      30  scanRspData
+     115  simpleBLEPeripheralPairStateCB
+       4  simpleBLEPeripheral_BondMgrCBs
+       4  simpleBLEPeripheral_PeripheralCBs
+       2  simpleBLEPeripheral_SimpleProfileCBs
+       1  simpleBLEPeripheral_TaskID
+     127  simpleProfileChangeCB
+      15  str
+
+ 
+ 1 921 bytes in segment BANKED_CODE
+    36 bytes in segment BANK_RELAYS
+     8 bytes in segment SFR_AN
+    69 bytes in segment XDATA_I
+    69 bytes in segment XDATA_ID
+   226 bytes in segment XDATA_ROM_C
+    60 bytes in segment XDATA_Z
+ 
+ 2 026 bytes of CODE  memory
+   190 bytes of CONST memory (+ 36 bytes shared)
+     0 bytes of DATA  memory (+  8 bytes shared)
+   129 bytes of XDATA memory
+
+Errors: none
+Warnings: 11
