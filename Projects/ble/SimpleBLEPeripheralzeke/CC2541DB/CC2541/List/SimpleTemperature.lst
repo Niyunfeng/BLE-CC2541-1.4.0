@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  11:25:33 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  17:15:47 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -132,26 +132,27 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source
      31             value =  ADCL ;                //ADCL 寄存器低 2 位无效 
      32             value |= ((uint16)ADCH) << 8;
      33             value=value>>4;  
-     34          
-     35             
-     36            HalLcdWriteStringValue("adc_value:", value, 10, HAL_LCD_LINE_2);
-     37            
-     38            //v=value*0.06229-311.43; //高十度
-     39             v=(value-1367.5)/4.5;    //根据 AD 值，计算出实际的温度,芯片手册有错，温度系数应该是4.5 /℃
-     40           
+     34            //ADCL &=0x00;
+     35           // ADCH &=0x00;
+     36             
+     37            HalLcdWriteStringValue("adc_value:", value, 10, HAL_LCD_LINE_2);
+     38            
+     39            //v=value*0.06229-311.43; //高十度
+     40             v=(value-1367.5)/4.5;    //根据 AD 值，计算出实际的温度,芯片手册有错，温度系数应该是4.5 /℃
      41           
-     42           HalLcdWriteStringValue("temp_value:", v, 10, HAL_LCD_LINE_3); 
-     43           
+     42           
+     43           HalLcdWriteStringValue("temp_value:", v, 10, HAL_LCD_LINE_3); 
      44           
      45           
      46           
-     47             return   v;                           //进行温度校正，这里减去5℃（不同芯片根据具体情况校正）
-     48             
+     47           
+     48             return   v;                           //进行温度校正，这里减去5℃（不同芯片根据具体情况校正）
      49             
      50             
      51             
-     52          
-     53          }
+     52             
+     53          
+     54          }
 
    Maximum stack usage in bytes:
 

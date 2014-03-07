@@ -98,8 +98,10 @@
 // How often to perform periodic event
 #define SBP_PERIODIC_EVT_PERIOD                   5000
 
+#define TEMP_CHECK_PERIOD                         4000//3600000
+
 // How often to check battery voltage (in ms)
-#define BATTERY_CHECK_PERIOD                  5000////////////////////////////////////batt
+#define BATTERY_CHECK_PERIOD                     13000////////////////////////////////////batt
 
 // What is the advertising interval when device is discoverable (units of 625us, 160=100ms)
 #define DEFAULT_ADVERTISING_INTERVAL          160
@@ -166,7 +168,11 @@ static uint8 data_len = 0, cur_data_len = 0, data_len_index = 0, send_times = 0;
 uint8 buf[20];
 uint8 bufrx[20];
 
-
+/*********************************************************************
+ * temperature
+ */
+uint16 temperature[20];
+uint8 temp_flag=0;
 
 /*********************************************************************
  * GLOBAL VARIABLES
@@ -236,6 +242,7 @@ static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys);
 //static void simpleBLEPeripheralPasscodeCB(uint8 *deviceAddr, uint16 connectionHandle, uint8 uiInputs, uint8 uiOutputs);
 static void simpleBLEPeripheralPairStateCB(uint16 connHandle, uint8 state, uint8 status);
 static char *bdAddr2Str(uint8 *pAddr);
+static void gettemp(void);
 //static void updateDeviceName(char *name, uint8 len);
 /*********************************************************************
  * PROFILE CALLBACKS
@@ -316,6 +323,39 @@ static void simpleBLEPeripheralPairStateCB(uint16 connHandle, uint8 state, uint8
  }
  */
 
+void gettemp(void)
+{
+
+       // uint8 TempValue[6];  
+        uint8 AvgTemp,i=0; 
+        initTempSensor();
+        
+        AvgTemp = 0;          
+        
+        AvgTemp = getTemperature();  
+        // UART_HAL_DELAY(10000);  
+         // 温度转换成ascii码发送
+       // TempValue[0] = (unsigned char)(AvgTemp)/10 + 48;          //十位
+       // TempValue[1] = (unsigned char)(AvgTemp)%10 + 48;          //个位
+//          TempValue[2] = '.';                                       //小数点 
+//          TempValue[3] = (unsigned char)(AvgTemp*10)%10+48;         //十分位
+//          TempValue[4] = (unsigned char)(AvgTemp*100)%10+48;        //百分位
+        //TempValue[2] = '\0';                                       //字符串结束符  
+          
+        //HalLcdWriteString(TempValue, HAL_LCD_LINE_4);
+       HalLcdWriteStringValue("AvgTemp:", AvgTemp, 10, HAL_LCD_LINE_4);
+       
+        temperature[temp_flag]=AvgTemp;
+        temp_flag++;
+        //HalLcdWriteString((uint8*)temperature, HAL_LCD_LINE_6);
+        if(temp_flag==2)
+        {
+          for(i=0;i<temp_flag;i++)
+            HalLcdWriteStringValue("AvgTemp:", temperature[temp_flag], 10, i+1);
+          
+            //UART_HAL_DELAY(100000); 
+        }
+}
 /*********************************************************************
  * PUBLIC FUNCTIONS
  */
@@ -433,7 +473,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN, charValue5);
 	}
 
-	HalLcdWriteString("BLE slave zekezang", HAL_LCD_LINE_1);
+	HalLcdWriteString("BLE slave aico", HAL_LCD_LINE_1);
 
 	// Register callback with SimpleGATTprofile
 	VOID SimpleProfile_RegisterAppCBs(&simpleBLEPeripheral_SimpleProfileCBs);
@@ -456,10 +496,10 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
         HalAdcInit();
 
 	/***********************************test something zekezang**********************************/
-	HalLcdWriteString("spi start", HAL_LCD_LINE_1);
+	HalLcdWriteString(" start", HAL_LCD_LINE_1);
 	
             XNV_SPI_INIT();
-             uint8 i; 
+        /*     uint8 i; 
         uint8 TempValue[6];  
         uint8 AvgTemp; 
         initTempSensor();
@@ -481,7 +521,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
           HalLcdWriteString(TempValue, HAL_LCD_LINE_7);
          
           UART_HAL_DELAY(10000); 
-        }
+        }*/
               
               
 //              uint8 i;
@@ -502,7 +542,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 //              }
 
 
-
+//osal_start_timerEx(simpleBLEPeripheral_TaskID, TEMP_EVT, TEMP_CHECK_PERIOD ); 
 
 
 	/***********************************test something zekezang**********************************/
@@ -524,7 +564,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
 
 	VOID task_id; // OSAL required parameter that isn't used in this function
-
+        uint8 i;
 	if (events & SYS_EVENT_MSG) {
 		uint8 *pMsg;
 
@@ -551,21 +591,29 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
                 
                 // Set timer for first battery read event
                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+                
 
+                osal_start_timerEx(simpleBLEPeripheral_TaskID, TEMP_EVT, TEMP_CHECK_PERIOD );
+          
 		return (events ^ SBP_START_DEVICE_EVT);
 	}
 
 	if (events & SBP_PERIODIC_EVT) {
 		
-                 // Restart timer
-                if ( BATTERY_CHECK_PERIOD )
-               {
-                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
-                }
-
-                // perform battery level check
-                Batt_MeasLevel( );
-
+//                 // Restart timer
+//                if ( BATTERY_CHECK_PERIOD )
+//               {
+//                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+//                }
+//                 
+//               HalLedSet(HAL_LED_1, HAL_LED_MODE_ON ); 
+//                 //延时1S
+//               for(i=20; i>0; i--)
+//                  delay_nus(50000);
+//               HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );
+//               // perform battery level check
+//               Batt_MeasLevel();
+               
 		return (events ^ SBP_PERIODIC_EVT);
 	}
 
@@ -587,6 +635,20 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
 
 		return (events ^ SBP_ADV_IN_CONNECTION_EVT);
 	}
+        
+        if (events & TEMP_EVT) {
+              // HalLcdWriteString("start get temp", HAL_LCD_LINE_5);
+               HalLedSet(HAL_LED_2, HAL_LED_MODE_ON ); 
+                 //延时1S
+               for(i=20; i>0; i--)
+                  delay_nus(50000);
+               HalLedSet(HAL_LED_2, HAL_LED_MODE_OFF );
+	       gettemp();
+               osal_start_timerEx(simpleBLEPeripheral_TaskID, TEMP_EVT, TEMP_CHECK_PERIOD ); 
+                
+	       return (events ^ TEMP_EVT);
+	}
+        
 
 	return 0;
 }

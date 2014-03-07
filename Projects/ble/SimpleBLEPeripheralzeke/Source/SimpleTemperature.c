@@ -31,7 +31,8 @@ uint8 getTemperature(void){
    value =  ADCL ;                //ADCL ¼Ä´æÆ÷µÍ 2 Î»ÎÞÐ§ 
    value |= ((uint16)ADCH) << 8;
    value=value>>4;  
-
+  //ADCL &=0x00;
+ // ADCH &=0x00;
    
   HalLcdWriteStringValue("adc_value:", value, 10, HAL_LCD_LINE_2);
   

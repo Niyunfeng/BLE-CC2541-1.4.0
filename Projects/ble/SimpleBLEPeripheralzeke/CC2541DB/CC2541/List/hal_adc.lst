@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  14:41:26 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  17:15:47 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -273,72 +273,75 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_adc.c
     173            reading = (int16) (ADCL);
     174            reading |= (int16) (ADCH << 8);
     175          
-    176            /* Treat small negative as 0 */
-    177            if (reading < 0)
-    178              reading = 0;
-    179          
-    180            switch (resolution)
-    181            {
-    182              case HAL_ADC_RESOLUTION_8:
-    183                reading >>= 8;
-    184                break;
-    185              case HAL_ADC_RESOLUTION_10:
-    186                reading >>= 6;
+    176           // ADCL &=0x00;
+    177            //ADCH &=0x00;
+    178            
+    179            /* Treat small negative as 0 */
+    180            if (reading < 0)
+    181              reading = 0;
+    182          
+    183            switch (resolution)
+    184            {
+    185              case HAL_ADC_RESOLUTION_8:
+    186                reading >>= 8;
     187                break;
-    188              case HAL_ADC_RESOLUTION_12:
-    189                reading >>= 4;
+    188              case HAL_ADC_RESOLUTION_10:
+    189                reading >>= 6;
     190                break;
-    191              case HAL_ADC_RESOLUTION_14:
-    192              default:
-    193                reading >>= 2;
-    194              break;
-    195            }
-    196          #else
-    197            // unused arguments
-    198            (void) channel;
-    199            (void) resolution;
-    200          #endif
-    201          
-    202            return ((uint16)reading);
-    203          }
+    191              case HAL_ADC_RESOLUTION_12:
+    192                reading >>= 4;
+    193                break;
+    194              case HAL_ADC_RESOLUTION_14:
+    195              default:
+    196                reading >>= 2;
+    197              break;
+    198            }
+    199          #else
+    200            // unused arguments
+    201            (void) channel;
+    202            (void) resolution;
+    203          #endif
     204          
-    205          /**************************************************************************************************
-    206           * @fn      HalAdcSetReference
-    207           *
-    208           * @brief   Sets the reference voltage for the ADC and initializes the service
-    209           *
-    210           * @param   reference - the reference voltage to be used by the ADC
-    211           *
-    212           * @return  none
-    213           *
-    214           **************************************************************************************************/
-    215          void HalAdcSetReference ( uint8 reference )
-    216          {
-    217          #if (HAL_ADC == TRUE)
-    218            adcRef = reference;
-    219          #endif
-    220          }
-    221          
-    222          /*********************************************************************
-    223           * @fn      HalAdcCheckVdd
-    224           *
-    225           * @brief   Check for minimum Vdd specified.
-    226           *
-    227           * @param   vdd - The board-specific Vdd reading to check for.
-    228           *
-    229           * @return  TRUE if the Vdd measured is greater than the 'vdd' minimum parameter;
-    230           *          FALSE if not.
+    205            return ((uint16)reading);
+    206          }
+    207          
+    208          /**************************************************************************************************
+    209           * @fn      HalAdcSetReference
+    210           *
+    211           * @brief   Sets the reference voltage for the ADC and initializes the service
+    212           *
+    213           * @param   reference - the reference voltage to be used by the ADC
+    214           *
+    215           * @return  none
+    216           *
+    217           **************************************************************************************************/
+    218          void HalAdcSetReference ( uint8 reference )
+    219          {
+    220          #if (HAL_ADC == TRUE)
+    221            adcRef = reference;
+    222          #endif
+    223          }
+    224          
+    225          /*********************************************************************
+    226           * @fn      HalAdcCheckVdd
+    227           *
+    228           * @brief   Check for minimum Vdd specified.
+    229           *
+    230           * @param   vdd - The board-specific Vdd reading to check for.
     231           *
-    232           *********************************************************************/
-    233          bool HalAdcCheckVdd(uint8 vdd)
-    234          {
-    235            ADCCON3 = 0x0F;
-    236            while (!(ADCCON1 & 0x80));
-    237            return (ADCH > vdd);
-    238          }
-    239          
-    240          /**************************************************************************************************
-    241          **************************************************************************************************/
+    232           * @return  TRUE if the Vdd measured is greater than the 'vdd' minimum parameter;
+    233           *          FALSE if not.
+    234           *
+    235           *********************************************************************/
+    236          bool HalAdcCheckVdd(uint8 vdd)
+    237          {
+    238            ADCCON3 = 0x0F;
+    239            while (!(ADCCON1 & 0x80));
+    240            return (ADCH > vdd);
+    241          }
+    242          
+    243          /**************************************************************************************************
+    244          **************************************************************************************************/
 
    Maximum stack usage in bytes:
 
@@ -381,4 +384,4 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_adc.c
    1 byte  of XDATA memory
 
 Errors: none
-Warnings: 1
+Warnings: none

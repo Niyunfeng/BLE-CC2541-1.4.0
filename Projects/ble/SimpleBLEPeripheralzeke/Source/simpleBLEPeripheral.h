@@ -59,6 +59,7 @@ extern "C"
 #define SBP_ADV_IN_CONNECTION_EVT                         0x0004
 #define SBP_ZEKEZANG_EVT							  0x0009
 #define SBP_SEND_IRDATA_EVT							  0x0005
+#define TEMP_EVT                                          0x0020
 
 /*********************************************************************
  * MACROS

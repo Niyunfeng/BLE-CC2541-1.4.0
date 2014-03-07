@@ -51,6 +51,8 @@
 #include "hiddev.h"
 #include "hal_lcd.h"
 #include "battservice.h"
+#include "hal_led.h"
+//#include "SimpleDS18B20.h"
 
 /*********************************************************************
  * MACROS
@@ -193,7 +195,6 @@ static bStatus_t battWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
 static void battNotifyCB( linkDBItem_t *pLinkItem );
 static uint8 battMeasure( void );
 static void battNotifyLevel( void );
-
 /*********************************************************************
  * PROFILE CALLBACKS
  */
@@ -208,7 +209,6 @@ CONST gattServiceCBs_t battCBs =
 /*********************************************************************
  * PUBLIC FUNCTIONS
  */
-
 /*********************************************************************
  * @fn      Batt_AddService
  *
@@ -348,10 +348,12 @@ bStatus_t Batt_GetParameter( uint8 param, void *value )
  */
 bStatus_t Batt_MeasLevel( void )
 {
+
+  
   uint8 level;
-HalLcdWriteString("now  start batt..", HAL_LCD_LINE_4);
+HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
   level = battMeasure();
-HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_5);
+HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
   // If level has gone down
   if (level < battLevel)
   {

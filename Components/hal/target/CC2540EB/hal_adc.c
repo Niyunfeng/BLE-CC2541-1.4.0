@@ -173,6 +173,9 @@ uint16 HalAdcRead (uint8 channel, uint8 resolution)
   reading = (int16) (ADCL);
   reading |= (int16) (ADCH << 8);
 
+ // ADCL &=0x00;
+  //ADCH &=0x00;
+  
   /* Treat small negative as 0 */
   if (reading < 0)
     reading = 0;
