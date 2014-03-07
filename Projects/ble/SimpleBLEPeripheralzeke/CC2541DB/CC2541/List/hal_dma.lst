@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             05/Mar/2014  15:11:22 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  14:43:51 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -267,4 +267,4 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_dma.c
  40 bytes of XDATA memory
 
 Errors: none
-Warnings: none
+Warnings: 1

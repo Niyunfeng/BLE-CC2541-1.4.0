@@ -1,0 +1,401 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  13:38:07 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\SimpleDS18B20.c     #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\SimpleDS18B20.c -D  #
+#                          INT_HEAP_LEN=3074 -D HALNODEBUG -D                 #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D xHAL_AES_DMA=TRUE -D   #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -D HAL_ADC=TRUE -lcN E:\TexasInstruments\BLE-CC254 #
+#                          x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC254 #
+#                          1DB\CC2541\List\ -o E:\TexasInstruments\BLE-CC254x #
+#                          -1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541 #
+#                          DB\CC2541\Obj\ -e --debug --core=plain             #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\common\ -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\include\ -I                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\hal\target\CC2541EB\   #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\osal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\services\saddr\ -I                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\Simpl #
+#                          eDS18B20.lst                                       #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\Simple #
+#                          DS18B20.r51                                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source\SimpleDS18B20.c
+      1          
+      2          #include<ioCC2541.h>
+      3          #include "SimpleDS18B20.h"
+      4          #include "hal_types.h"
+      5          #include "hal_defs.h"
+      6          
+      7          
+      8          #define CL_DQ()     DQ = LOW              //清除数据
+      9          #define SET_DQ()    DQ = HIGH             //设置数据
+     10          #define SET_OUT()   DQ_PORT |=  BV(DQ_PIN);  //设置IO方向,out设置IO方向为输出
+     11          #define SET_IN()    DQ_PORT &= ~(BV(DQ_PIN));  //设置IO方向,in设备IO方向为输入
+     12          
+     13          /*
+     14           *    延时函数
+     15           *    输入微妙
+     16           */
+     17          void delay_nus(uint16 timeout)
+     18          {
+     19             
+     20              while (timeout--)
+     21              {
+     22                  asm("NOP");
+     23                  asm("NOP");
+     24                  asm("NOP");
+     25              }
+     26          }
+     27          
+     28          
+     29          
+     30          /*
+     31           *    写命令函数
+     32           *    输入参数：  命令（DS18B20.H中定义）
+     33           *    输出参数：  无
+     34           *    返回参数：  无
+     35           *
+     36           */
+     37          void DS18B20_Write(unsigned char cmd)
+     38          {
+     39              unsigned char i;
+     40              SET_OUT();                  //设置IO为输出，2530->DS18B20
+     41              
+     42              /*每次一位，循环8次*/
+     43              for(i=0; i<8; i++)
+     44              {
+     45                  CL_DQ();              //IO为低    
+     46                  if( cmd & (1<<i) )    //写数据从低位开始
+     47                  {
+     48                    SET_DQ();           //IO输入高电平
+     49                  }
+     50                  else
+     51                  {
+     52                    CL_DQ();            //IO输出低电平
+     53                  }
+     54                  delay_nus(40);        //保持15~60us
+     55                  SET_DQ();             //IO口拉高
+     56              }
+     57              SET_DQ();                 //IO口拉高
+     58          }
+     59          
+     60          
+     61          /*
+     62           *    读数据函数
+     63           *    输入参数：  无
+     64           *    输出参数：  无
+     65           *    返回参数：  读取的数据
+     66           *
+     67           */
+     68          unsigned char DS18B20_Read(void)
+     69          {
+     70              unsigned char rdData;     //读出的数据
+     71              unsigned char i, dat;     //临时变量
+     72              
+     73              rdData = 0;               //读出的数据初始化为0     
+     74              
+     75              /* 每次读一位，读8次 */
+     76              for(i=0; i<8; i++)
+     77              {
+     78                  CL_DQ();            //IO拉低
+     79                  SET_DQ();           //IO拉高
+     80                  SET_IN();           //设置IO方向为输入 DS18B20->CC2540
+     81                  dat = DQ;           //读数据,从低位开始
+     82                  
+     83                  if(dat)
+     84                  {
+     85                    rdData |= (1<<i); //如果读出的数据位为正
+     86                  }
+     87                  else
+     88                  {
+     89                    rdData &= ~(1<<i);//如果读出的数据位为负
+     90                  }
+     91                  
+     92                  delay_nus(70);      //保持60~120us
+     93                  SET_OUT();          //设置IO方向为输出 CC2540->DS18B20
+     94          
+     95              }
+     96              return (rdData);        //返回读出的数据
+     97          }
+     98          
+     99          
+    100          /*
+    101           *    DS18B20初始化/复位函数
+    102           *    输入参数：  无
+    103           *    输出参数：  无
+    104           *    返回参数：  无
+    105           *
+    106           */
+    107          void DS18B20_Init(void)
+    108          {
+    109              SET_OUT();
+    110              SET_DQ();         //IO口拉高
+    111              CL_DQ();          //IO口拉低
+    112              delay_nus(550);   //IO拉低后保持一段时间 480-960us
+    113              SET_DQ();         //释放
+    114              delay_nus(40);    //释放总线后等待15-60us
+    115              SET_IN();         //IO方向为输入 DS18B20->CC2540
+    116            
+    117              
+    118              /* 等待DQ变低 */
+    119              while(DQ)
+    120              {
+    121                  ; 
+    122              }
+    123              delay_nus(240);   //检测到DQ 变低后，延时60-240us
+    124              SET_OUT();        //设置IO方向为输出 CC2540->DS18B20
+    125              SET_DQ();         //IO拉高
+    126          }
+    127          
+    128          
+    129          /*
+    130           *    DS18B20 转换温度函数
+    131           *    输入参数：  无
+    132           *    输出参数：  无
+    133           *    返回参数：  无
+    134           *
+    135           */
+    136          void DS18B20_SendConvert(void)
+    137          {
+    138              DS18B20_Init();               //复位18B20
+    139              DS18B20_Write(SKIP_ROM);      //发出跳过ROM匹配操作
+    140              DS18B20_Write(CONVERT_T);     //启动温度转换
+    141          }
+    142          
+    143          
+    144          
+    145          uint8 DS18B20_GetTem(void)
+    146          {
+    147              unsigned char tem_h,tem_l;    //温度高位字节及低位字节
+    148              unsigned char a,b;            //临时变量
+    149              unsigned char flag;           //温度正负标记，正为0，负为1
+    150              unsigned char FRACTION_INDEX[16] = {0, 1, 1, 2, 2, 3, 4, 4, 5, 6, 6, 7, 7, 8, 9, 9 };//小数值查询表
+    151              unsigned char sensor_data_value[2];  //传感器数据
+    152           
+    153              DS18B20_Init();               //DS18B20复位       
+    154              DS18B20_Write(SKIP_ROM);      //跳过ROM匹配
+    155              
+    156              DS18B20_Write(RD_SCRATCHPAD); //写入读9字节命令
+    157              tem_l = DS18B20_Read();       //读温度低位。第一字节
+    158              tem_h = DS18B20_Read();       //读温度高位，第二字节
+    159          
+    160              /* 判断RAM中存储的温度正负 
+    161                 并提取出符号位和真实的数据
+    162              */
+    163              if(tem_h & 0x80)
+    164              {
+    165                  flag = 1;                 //温度为负
+    166                  a = (tem_l>>4);           //取温度低4位原码
+    167                  b = (tem_h<<4)& 0xf0;     //取温度高4位原码
+    168                  /*补码-原码转换
+    169                    负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1
+    170                  */
+    171                  tem_h = ~(a|b) + 1;       //取整数部分数值，不符号位
+    172                  
+    173                  tem_l = ~(a&0x0f) + 1;    //取小数部分原值，不含符号位
+    174              }
+    175              else
+    176              {
+    177                  flag = 0;                 //为正
+    178                  a = tem_h<<4;
+    179                  a += (tem_l&0xf0)>>4;     //得到整数部分值 
+    180                  b = tem_l&0x0f;           //得出小数部分值
+    181                  tem_h = a;                //整数部分
+    182                  tem_l = b&0xff;           //小数部分
+    183              }
+    184            
+    185              sensor_data_value[0] = FRACTION_INDEX[tem_l]; //查表得小数值
+    186              sensor_data_value[1] = tem_h| (flag<<7);      //整数部分，包括符号位
+    187              
+    188              return sensor_data_value[1];
+    189          }
+    190          
+    191          /*int 转 字符串函数*/
+    192          uint8* IntToStr(uint8* buf, int16 m)
+    193          {
+    194              int8 tmp[16];
+    195              int32 isNegtive = 0;
+    196              int32 index;
+    197          
+    198              if(m < 0)
+    199              {
+    200                  isNegtive = 1;
+    201                  m = - m;
+    202              }
+    203          
+    204              tmp[15] = '\0';
+    205              index = 14;
+    206              do 
+    207              {
+    208                  tmp[index--] = m % 10 + '0';
+    209                  m /= 10;
+    210              } while (m > 0);
+    211          
+    212              if(isNegtive)
+    213                  tmp[index--] = '-';
+    214              
+    215              strcpy((char *)buf, (char *)tmp + index + 1);
+    216          
+    217              return buf;
+    218          }
+    219          /*
+    220          int main()
+    221          {
+    222            HAL_BOARD_INIT();
+    223            HalLcd_HW_Init();
+    224            
+    225            HalLcd_HW_WriteLine(HAL_LCD_LINE_1, "      CC2541EM");
+    226            HalLcd_HW_WriteLine(HAL_LCD_LINE_3, "-->DS18B20_TEST"); 
+    227            HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Current Temp:");
+    228          
+    229            uint8 i;
+    230            uint8 buf[10];
+    231            while(1){
+    232                 
+    233              //开始转换
+    234              DS18B20_SendConvert();
+    235              //延时1S
+    236              for(i=20; i>0; i--)
+    237                delay_nus(50000);
+    238              DS18B20_GetTem();
+    239              IntToStr(buf,sensor_data_value[1]);
+    240              HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf);
+    241            }
+    242          }*/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      9  DS18B20_GetTem
+                          0 0  9 -> DS18B20_Init
+                          0 0  9 -> DS18B20_Read
+                          0 0  9 -> DS18B20_Write
+       2      0      9  DS18B20_Init
+                          2 0  0 -> delay_nus
+       0      0     21  DS18B20_Read
+                          0 0 12 -> delay_nus
+       2      0      0  DS18B20_SendConvert
+                          2 0  0 -> DS18B20_Init
+                          2 0  0 -> DS18B20_Write
+       0      0     19  DS18B20_Write
+                          0 0 10 -> delay_nus
+       1      0     34  IntToStr
+                          0 0 34 -> strcpy
+       0      0     12  delay_nus
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??DS18B20_GetTem?relay
+       6  ??DS18B20_Init?relay
+       6  ??DS18B20_Read?relay
+       6  ??DS18B20_SendConvert?relay
+       6  ??DS18B20_Write?relay
+       6  ??IntToStr?relay
+       6  ??delay_nus?relay
+       7  ?Subroutine0
+      69  DS18B20_GetTem
+      46  DS18B20_Init
+      66  DS18B20_Read
+      19  DS18B20_SendConvert
+      60  DS18B20_Write
+     227  IntToStr
+       1  P0DIR
+       1  _A_P0
+       4  __Constant_ffffffff
+      24  delay_nus
+
+ 
+ 518 bytes in segment BANKED_CODE
+  42 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+   4 bytes in segment XDATA_ROM_C
+ 
+ 560 bytes of CODE  memory
+   0 bytes of CONST memory (+ 4 bytes shared)
+   0 bytes of DATA  memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: 1

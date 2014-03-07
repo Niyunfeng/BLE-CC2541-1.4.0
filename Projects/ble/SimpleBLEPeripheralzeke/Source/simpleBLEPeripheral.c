@@ -86,6 +86,7 @@
 #include "SimpleBLESPIFlash.h"
 #include "battservice.h"
 #include "SimpleTemperature.h"
+#include "SimpleDS18B20.h"
 /*********************************************************************
  * MACROS
  */
@@ -455,34 +456,50 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
         HalAdcInit();
 
 	/***********************************test something zekezang**********************************/
-	/*HalLcdWriteString("spi start", HAL_LCD_LINE_1);
+	HalLcdWriteString("spi start", HAL_LCD_LINE_1);
 	
-              XNV_SPI_INIT();
-              uint8 i; 
+            XNV_SPI_INIT();
+             uint8 i; 
         uint8 TempValue[6];  
-        float AvgTemp; 
+        uint8 AvgTemp; 
         initTempSensor();
         
         while(1) 
         { 
           AvgTemp = 0;          
-          for(i = 0 ; i < 4 ; i++) 
-          {    
-            AvgTemp += getTemperature();  
-            AvgTemp=AvgTemp/2;                  //每次累加后除 2 
-          }
+        
+            AvgTemp = getTemperature();  
+         
          // 温度转换成ascii码发送
           TempValue[0] = (unsigned char)(AvgTemp)/10 + 48;          //十位
           TempValue[1] = (unsigned char)(AvgTemp)%10 + 48;          //个位
-          TempValue[2] = '.';                                       //小数点 
-          TempValue[3] = (unsigned char)(AvgTemp*10)%10+48;         //十分位
-          TempValue[4] = (unsigned char)(AvgTemp*100)%10+48;        //百分位
-          TempValue[5] = '\0';                                       //字符串结束符  
+//          TempValue[2] = '.';                                       //小数点 
+//          TempValue[3] = (unsigned char)(AvgTemp*10)%10+48;         //十分位
+//          TempValue[4] = (unsigned char)(AvgTemp*100)%10+48;        //百分位
+          TempValue[2] = '\0';                                       //字符串结束符  
           
           HalLcdWriteString(TempValue, HAL_LCD_LINE_7);
          
           UART_HAL_DELAY(10000); 
-        }*/
+        }
+              
+              
+//              uint8 i;
+//              uint8 buf[10];
+//              uint8 sensor_data_value;  //传感器数据
+//              while(1){
+//                   
+//                //开始转换
+//                DS18B20_SendConvert();
+//                //延时1S
+//                for(i=20; i>0; i--)
+//                  delay_nus(50000);
+//                sensor_data_value=DS18B20_GetTem();
+//                HalLcdWriteStringValue("sensor_value:",  sensor_data_value, 10, HAL_LCD_LINE_4);
+//                IntToStr(buf,sensor_data_value);
+//                
+//                HalLcdWriteString(buf, HAL_LCD_LINE_6);
+//              }
 
 
 
@@ -542,8 +559,8 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
 		
                  // Restart timer
                 if ( BATTERY_CHECK_PERIOD )
-                {
-                  osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+               {
+                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
                 }
 
                 // perform battery level check

@@ -1101,6 +1101,12 @@
       <name>$PROJ_DIR$\..\Source\SimpleBLESPIFlash.h</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\Source\SimpleDS18B20.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleDS18B20.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.c</name>
     </file>
     <file>

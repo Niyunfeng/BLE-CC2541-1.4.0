@@ -465,6 +465,8 @@
           <state>$PROJ_DIR$\..\..\Profiles\Roles</state>
           <state>$PROJ_DIR$\..\..\Profiles\SimpleProfile</state>
           <state>$PROJ_DIR$\..\..\Profiles\DevInfo</state>
+          <state>$PROJ_DIR$\..\..\Profiles\Batt</state>
+          <state>$PROJ_DIR$\..\..\Profiles\HIDDev</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1086,7 +1088,28 @@
       <name>$PROJ_DIR$\..\Source\SimpleBLEPeripheral_Main.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\Source\SimpleBLESerialUart.c</name>
+      <name>$PROJ_DIR$\..\Source\SimpleBLESPIFlash.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleBLESPIFlash.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleDS18B20.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleDS18B20.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleTemperature.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleTemperature.h</name>
     </file>
   </group>
   <group>
@@ -1311,6 +1334,12 @@
   <group>
     <name>PROFILES</name>
     <file>
+      <name>$PROJ_DIR$\..\..\Profiles\Batt\battservice.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Profiles\Batt\battservice.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\..\Profiles\DevInfo\devinfoservice.c</name>
     </file>
     <file>
@@ -1404,6 +1433,12 @@
       <name>$PROJ_DIR$\..\..\common\cc2540\OnBoard.h</name>
     </file>
   </group>
+  <file>
+    <name>$PROJ_DIR$\..\Source\SimpleBLESerialUart.c</name>
+  </file>
+  <file>
+    <name>$PROJ_DIR$\..\Source\SimpleBLESerialUart.h</name>
+  </file>
 </project>
 
 

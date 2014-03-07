@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             05/Mar/2014  15:11:22 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  14:41:26 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -303,4 +303,4 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_flash.c
    0 bytes of DATA memory (+ 4 bytes shared)
 
 Errors: none
-Warnings: none
+Warnings: 1

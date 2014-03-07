@@ -1,4 +1,4 @@
-/**************************************************************************************************
+/********************************************************************
   Filename:     hal_uart.c
   Revised:      $Date: 2013-02-06 09:21:21 -0800 (Wed, 06 Feb 2013) $
   Revision:     $Revision: 33001 $
@@ -351,6 +351,20 @@ uint16 Hal_UART_RxBufLen( uint8 port )
   return 0;
 #endif
 }
+
+/*************************************************************************************************
+ * @fn      Hal_UART_TxBufLen()
+ *
+ * @brief   Calculate Tx Buffer length of a port
+ *
+ * @param   port - UART port (not used.)
+ *
+ * @return  length of current Tx buffer
+ *************************************************************************************************/
+ uint16 Hal_UART_TxBufLen() {
+	return HalUARTBusyDMA();
+}
+
 
 void HalUARTIsrDMA(void)
 {

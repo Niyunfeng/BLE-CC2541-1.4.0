@@ -1,4 +1,4 @@
-/**
+/*
   @headerfile:    hal_types.h
 
   <!--

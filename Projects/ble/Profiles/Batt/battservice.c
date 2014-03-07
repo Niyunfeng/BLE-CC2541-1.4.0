@@ -575,7 +575,7 @@ static uint8 battMeasure( void )
 
   // Configure ADC and perform a read
   HalAdcSetReference( HAL_ADC_REF_125V );
-  adc = HalAdcRead( battServiceAdcCh, HAL_ADC_RESOLUTION_10 );
+  adc = HalAdcRead( battServiceAdcCh, HAL_ADC_RESOLUTION_10 );//0X0F
 
   // Call measurement teardown callback
   if (battServiceTeardownCB != NULL)

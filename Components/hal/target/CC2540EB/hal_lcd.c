@@ -1,9 +1,9 @@
 /**************************************************************************************************
-  ÎÄ¼şÃû:       hal_lcd.c
-  ĞŞ¸ÄÈÕÆÚ:     2013-02-03
-  ×÷Õß:         ghostyuÔÚTIÔ­ÓĞ»ù´¡ÉÏĞŞ¸Ä
+ æ–‡ä»¶å:       hal_lcd.c
+ ä¿®æ”¹æ—¥æœŸ:     2013-02-03
+ ä½œè€…:         ghostyuåœ¨TIåŸæœ‰åŸºç¡€ä¸Šä¿®æ”¹
 
-**************************************************************************************************/
+ **************************************************************************************************/
 
 /**************************************************************************************************
  *                                           INCLUDES
@@ -15,36 +15,36 @@
 #include "hal_assert.h"
 
 #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
-  #include "DebugTrace.h"
+#include "DebugTrace.h"
 #endif
 
 /**************************************************************************************************
  *                                          CONSTANTS
  **************************************************************************************************/
 /*
-  LCD pins
+ LCD pins
 
-Version-1:
-  //control
-  P0.0 - LCD_MODE
-  P1.2 - LCD_CS
+ Version-1:
+ //control
+ P0.0 - LCD_MODE
+ P1.2 - LCD_CS
 
-  //spi
-  P1.5 - CLK
-  P1.6 - MOSI
-  P1.7 - MISO
+ //spi
+ P1.5 - CLK
+ P1.6 - MOSI
+ P1.7 - MISO
 
-Version-2:
-  //control
-  P1.7 - LCD_MODE(ÓÉMISO¸´ÓÃ,LCD²¢Î´Ê¹ÓÃµ½MISOÒı½Å)
-  P1.2 - LCD_CS
+ Version-2:
+ //control
+ P1.7 - LCD_MODE(ç”±MISOå¤ç”¨,LCDå¹¶æœªä½¿ç”¨åˆ°MISOå¼•è„š)
+ P1.2 - LCD_CS
 
-  //spi
-  P1.5 - CLK
-  P1.6 - MOSI
-  P1.7 - MISO
+ //spi
+ P1.5 - CLK
+ P1.6 - MOSI
+ P1.7 - MISO
 
-*/
+ */
 #ifdef CC2530DK_V1
 /* LCD Control lines */
 #define HAL_LCD_MODE_PORT 0
@@ -78,8 +78,6 @@ Version-2:
 #define LCD_MAX_LINE_LENGTH             21
 #define LCD_MAX_BUF                     25
 
-
-
 /**************************************************************************************************
  *                                           MACROS
  **************************************************************************************************/
@@ -95,8 +93,6 @@ Version-2:
 #define HAL_CONFIG_IO_PERIPHERAL(port, pin)      HAL_CONFIG_IO_PERIPHERAL_PREP(port, pin)
 #define HAL_CONFIG_IO_PERIPHERAL_PREP(port, pin) st( P##port##SEL |= BV(pin); )
 
-
-
 /* SPI interface control */
 #define LCD_SPI_BEGIN()     HAL_IO_SET(HAL_LCD_CS_PORT,  HAL_LCD_CS_PIN,  0); /* chip select */
 #define LCD_SPI_END()                                                         \
@@ -111,12 +107,9 @@ Version-2:
 #define LCD_SPI_TX(x)                   { U1CSR &= ~(BV(2) | BV(1)); U1DBUF = x; while( !(U1CSR & BV(1)) ); }
 #define LCD_SPI_WAIT_RXRDY()            { while(!(U1CSR & BV(1))); }
 
-
-
 /* Control macros */
 #define LCD_DO_WRITE()        HAL_IO_SET(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  1);
 #define LCD_DO_CONTROL()      HAL_IO_SET(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  0);
-
 
 #if (HAL_LCD == TRUE)
 /**************************************************************************************************
@@ -139,75 +132,71 @@ void HalLcd_HW_SetContrast(uint8 value);
 void HalLcd_HW_WriteChar(uint8 line, uint8 col, char text);
 void HalLcd_HW_WriteLine(uint8 line, const char *pText);
 
-//ghostyuÌí¼Ó
+//ghostyuæ·»åŠ 
 void set_ddram_line_col(uint8 line,uint8 col);
 void DisplayByte_5x7(uint8 page,uint8 column,uint8 text);
 
-
 #endif //LCD
-
 #if (HAL_LCD == TRUE)
 /*
-×÷ÓÃ    ÉèÖÃLCD ÎÄ±¾ÏÔÊ¾µÄÆäÊµĞĞºÍÁĞ
-²ÎÊı1   line,·¶Î§:0~7,¼´ÄÜ¹»ÏÔÊ¾µÄĞĞÎª1~8ĞĞ£¬Ò²¾ÍÊÇlcdÊÖ²áÀïÌáµ½µÄpage
-²ÎÊı2   col,·¶Î§:0~127,¼´lcdµÄ×ÜÁĞÊı£¬ÏÔÊ¾µÄÆğÊ¼Î»ÖÃ¿ÉÒÔÉèÖÃµ½Ã¿Ò»ÁĞ
-*/
+ ä½œç”¨    è®¾ç½®LCD æ–‡æœ¬æ˜¾ç¤ºçš„å…¶å®è¡Œå’Œåˆ—
+ å‚æ•°1   line,èŒƒå›´:0~7,å³èƒ½å¤Ÿæ˜¾ç¤ºçš„è¡Œä¸º1~8è¡Œï¼Œä¹Ÿå°±æ˜¯lcdæ‰‹å†Œé‡Œæåˆ°çš„page
+ å‚æ•°2   col,èŒƒå›´:0~127,å³lcdçš„æ€»åˆ—æ•°ï¼Œæ˜¾ç¤ºçš„èµ·å§‹ä½ç½®å¯ä»¥è®¾ç½®åˆ°æ¯ä¸€åˆ—
+ */
 void set_ddram_line_col(uint8 line,uint8 col)
 {
 
-  uint8 page,coll,coll_l,coll_h;
-  page = line;
-  coll = col;
-  coll_h = coll>>4;
-  coll_l = coll&0x0f;
-  HalLcd_HW_Control(0xB0+page);
-  HalLcd_HW_WaitUs(15); // 15 us
-  HalLcd_HW_Control(0x10+coll_h);
-  HalLcd_HW_WaitUs(15); // 15 us
-  HalLcd_HW_Control(0x00+coll_l);
-  HalLcd_HW_WaitUs(15); // 15 us
+	uint8 page,coll,coll_l,coll_h;
+	page = line;
+	coll = col;
+	coll_h = coll>>4;
+	coll_l = coll&0x0f;
+	HalLcd_HW_Control(0xB0+page);
+	HalLcd_HW_WaitUs(15); // 15 us
+	HalLcd_HW_Control(0x10+coll_h);
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0x00+coll_l);
+	HalLcd_HW_WaitUs(15);// 15 us
 }
 
 /*
-×÷ÓÃ     ÏÔÊ¾Ò»¸ö×Ö½ÚµÄ×Ö·û£¬¸Ã×Ö·û´óĞ¡Îª¿í5¸öµã£¬¸ß7¸öµã
-²ÎÊı1    page,·¶Î§0~7,¹²8ĞĞ
-²ÎÊı2    column,·¶Î§0~127
-²ÎÊı3    text,ÒªÏÔÊ¾µÄ×Ö·û£¬¸ÃÖµÎªasciiÂë
-*/
+ ä½œç”¨     æ˜¾ç¤ºä¸€ä¸ªå­—èŠ‚çš„å­—ç¬¦ï¼Œè¯¥å­—ç¬¦å¤§å°ä¸ºå®½5ä¸ªç‚¹ï¼Œé«˜7ä¸ªç‚¹
+ å‚æ•°1    page,èŒƒå›´0~7,å…±8è¡Œ
+ å‚æ•°2    column,èŒƒå›´0~127
+ å‚æ•°3    text,è¦æ˜¾ç¤ºçš„å­—ç¬¦ï¼Œè¯¥å€¼ä¸ºasciiç 
+ */
 void DisplayByte_5x7(uint8 page,uint8 column,uint8 text)
 {
 	int j,k;
 
-	if((text>=0x20)&&(text<0x7e)){/*ĞèÒªÏÔÊ¾µÄÎÄ×Ö*/
-		j=text-0x20;/*Ñ°Ö·£¬Í¨¹ı×Ö·ûµÄasciiÂëÕÒµ½µãÕó¿âÖĞµÄ¸Ä×Ö·ûµÄÎ»ÖÃ*/
+	if((text>=0x20)&&(text<0x7e)) {/*éœ€è¦æ˜¾ç¤ºçš„æ–‡å­—*/
+		j=text-0x20;/*å¯»å€ï¼Œé€šè¿‡å­—ç¬¦çš„asciiç æ‰¾åˆ°ç‚¹é˜µåº“ä¸­çš„æ”¹å­—ç¬¦çš„ä½ç½®*/
 		set_ddram_line_col(page,column);
 		for(k=0;k<5;k++)
 		{
-			HalLcd_HW_Write(ascii_table_5x7[j][k]);/*ÏÔÊ¾5x7µÄASCII×Öµ½LCDÉÏ£¬yÎªÒ³µØÖ·£¬xÎªÁĞµØÖ·£¬×îºóÎªÊı¾İ*/
+			HalLcd_HW_Write(ascii_table_5x7[j][k]);/*æ˜¾ç¤º5x7çš„ASCIIå­—åˆ°LCDä¸Šï¼Œyä¸ºé¡µåœ°å€ï¼Œxä¸ºåˆ—åœ°å€ï¼Œæœ€åä¸ºæ•°æ®*/
 		}
-		//µÚÁùÁĞĞ´Èë0£¬¼´Çå³ıÉÏÒ»´ÎÁôÏÂÀ´µÄÊı¾İ
+		//ç¬¬å…­åˆ—å†™å…¥0ï¼Œå³æ¸…é™¤ä¸Šä¸€æ¬¡ç•™ä¸‹æ¥çš„æ•°æ®
 		HalLcd_HW_Write(0x00);
 		column+=6;
-	}else if(text==0x00){/*²»ĞèÒªÏÔÊ¾£¬Çå¿ÕÖ¸¶¨Î»ÖÃ*/
+	} else if(text==0x00) {/*ä¸éœ€è¦æ˜¾ç¤ºï¼Œæ¸…ç©ºæŒ‡å®šä½ç½®*/
 		set_ddram_line_col(page,column);
-		for(k=0;k<5;k++){
-			HalLcd_HW_Write(0x00); //Çå¿ÕÖ¸¶¨µÄ×Ö·ûÎ»ÖÃ
+		for(k=0;k<5;k++) {
+			HalLcd_HW_Write(0x00); //æ¸…ç©ºæŒ‡å®šçš„å­—ç¬¦ä½ç½®
 		}
 	}
 
 }
 
-
 #endif
 
 /**************************************************************************************************
-z-stack´úÂë,Î´ĞŞ¸Ä
+ z-stackä»£ç ,æœªä¿®æ”¹
  **************************************************************************************************/
-void HalLcdInit(void)
-{
+void HalLcdInit(void) {
 #if (HAL_LCD == TRUE)
-  Lcd_Line1 = NULL;
-  HalLcd_HW_Init();
+	Lcd_Line1 = NULL;
+	HalLcd_HW_Init();
 #endif
 }
 
@@ -228,199 +217,188 @@ void HalLcdInit(void)
  *
  *************************************************************************************************/
 
-
 /**************************************************************************************************
-z-stack´úÂë,Î´ĞŞ¸Ä
+ z-stackä»£ç ,æœªä¿®æ”¹
  **************************************************************************************************/
-void HalLcdWriteString ( char *str, uint8 option)
-{
+void HalLcdWriteString(char *str, uint8 option) {
 #if (HAL_LCD == TRUE)
 
-  uint8 strLen = 0;
-  uint8 totalLen = 0;
-  uint8 *buf;
-  uint8 tmpLen;
+	uint8 strLen = 0;
+	uint8 totalLen = 0;
+	uint8 *buf;
+	uint8 tmpLen;
 
-  if ( Lcd_Line1 == NULL )
-  {
-    Lcd_Line1 = osal_mem_alloc( HAL_LCD_MAX_CHARS+1 );
-    HalLcdWriteString( "TexasInstruments", 1 );
-  }
+	if ( Lcd_Line1 == NULL )
+	{
+		Lcd_Line1 = osal_mem_alloc( HAL_LCD_MAX_CHARS+1 );
+		HalLcdWriteString( "TexasInstruments", 1 );
+	}
 
-  strLen = (uint8)osal_strlen( (char*)str );
+	strLen = (uint8)osal_strlen( (char*)str );
 
-  /* Check boundries */
-  if ( strLen > HAL_LCD_MAX_CHARS )
-    strLen = HAL_LCD_MAX_CHARS;
+	/* Check boundries */
+	if ( strLen > HAL_LCD_MAX_CHARS )
+	strLen = HAL_LCD_MAX_CHARS;
 
-  if ( option == HAL_LCD_LINE_1 )
-  {
-    /* Line 1 gets saved for later */
-    osal_memcpy( Lcd_Line1, str, strLen );
-    Lcd_Line1[strLen] = '\0';
-  }
-  else
-  {
-    /* Line 2 triggers action */
-    tmpLen = (uint8)osal_strlen( (char*)Lcd_Line1 );
-    totalLen =  tmpLen + 1 + strLen + 1;
-    buf = osal_mem_alloc( totalLen );
-    if ( buf != NULL )
-    {
-      /* Concatenate strings */
-      osal_memcpy( buf, Lcd_Line1, tmpLen );
-      buf[tmpLen++] = ' ';
-      osal_memcpy( &buf[tmpLen], str, strLen );
-      buf[tmpLen+strLen] = '\0';
+	if ( option == HAL_LCD_LINE_1 )
+	{
+		/* Line 1 gets saved for later */
+		osal_memcpy( Lcd_Line1, str, strLen );
+		Lcd_Line1[strLen] = '\0';
+	}
+	else
+	{
+		/* Line 2 triggers action */
+		tmpLen = (uint8)osal_strlen( (char*)Lcd_Line1 );
+		totalLen = tmpLen + 1 + strLen + 1;
+		buf = osal_mem_alloc( totalLen );
+		if ( buf != NULL )
+		{
+			/* Concatenate strings */
+			osal_memcpy( buf, Lcd_Line1, tmpLen );
+			buf[tmpLen++] = ' ';
+			osal_memcpy( &buf[tmpLen], str, strLen );
+			buf[tmpLen+strLen] = '\0';
 
-      /* Send it out */
+			/* Send it out */
 #if defined (ZTOOL_P1) || defined (ZTOOL_P2)
 
 #if defined(SERIAL_DEBUG_SUPPORTED)
-      debug_str( (uint8*)buf );
+			debug_str( (uint8*)buf );
 #endif //LCD_SUPPORTED
-
 #endif //ZTOOL_P1
+			/* Free mem */
+			osal_mem_free( buf );
+		}
+	}
 
-      /* Free mem */
-      osal_mem_free( buf );
-    }
-  }
-
-  /* Display the string */
-  HalLcd_HW_WriteLine (option, str);
+	/* Display the string */
+	HalLcd_HW_WriteLine (option, str);
 
 #endif //HAL_LCD
-
 }
 
 /**************************************************************************************************
  * @fn      HalLcdWriteValue
  *
  * @brief   Write a value to the LCD,
-            ÏòlcdÖ¸¶¨ĞĞĞ´ÈëÒ»¸ö32Î»µÄÖµ
+ å‘lcdæŒ‡å®šè¡Œå†™å…¥ä¸€ä¸ª32ä½çš„å€¼
  *
  * @param   value  - value that will be displayed,
-            ĞèÒªÏÔÊ¾µÄ32Î»Êı
+ éœ€è¦æ˜¾ç¤ºçš„32ä½æ•°
  *          radix  - 8, 10, 16,
-            ½øÖÆ£¬8½øÖÆÏÔÊ¾ 10½øÖÆÏÔÊ¾£¬16½øÖÆÏÔÊ¾
+ è¿›åˆ¶ï¼Œ8è¿›åˆ¶æ˜¾ç¤º 10è¿›åˆ¶æ˜¾ç¤ºï¼Œ16è¿›åˆ¶æ˜¾ç¤º
  *          option - display options,
-            Ö¸¶¨ĞĞÏÔÊ¾
+ æŒ‡å®šè¡Œæ˜¾ç¤º
  *
  * @return  None
  **************************************************************************************************/
-void HalLcdWriteValue ( uint32 value, const uint8 radix, uint8 option)
-{
+void HalLcdWriteValue(uint32 value, const uint8 radix, uint8 option) {
 #if (HAL_LCD == TRUE)
-  uint8 buf[LCD_MAX_BUF];
+	uint8 buf[LCD_MAX_BUF];
 
-  _ltoa( value, &buf[0], radix );
-  HalLcdWriteString( (char*)buf, option );
+	_ltoa( value, &buf[0], radix );
+	HalLcdWriteString( (char*)buf, option );
 #endif
 }
 
 /**************************************************************************************************
-z-stack´úÂë,Î´ĞŞ¸Ä
+ z-stackä»£ç ,æœªä¿®æ”¹
  **************************************************************************************************/
-void HalLcdWriteScreen( char *line1, char *line2 )
-{
+void HalLcdWriteScreen(char *line1, char *line2) {
 #if (HAL_LCD == TRUE)
-  HalLcdWriteString( line1, 1 );
-  HalLcdWriteString( line2, 2 );
+	HalLcdWriteString( line1, 1 );
+	HalLcdWriteString( line2, 2 );
 #endif
 }
 
 /**************************************************************************************************
-z-stack´úÂë,Î´ĞŞ¸Ä
+ z-stackä»£ç ,æœªä¿®æ”¹
  **************************************************************************************************/
-void HalLcdWriteStringValue( char *title, uint16 value, uint8 format, uint8 line )
-{
+void HalLcdWriteStringValue(char *title, uint16 value, uint8 format, uint8 line) {
 #if (HAL_LCD == TRUE)
-  uint8 tmpLen;
-  uint8 buf[LCD_MAX_BUF];
-  uint32 err;
+	uint8 tmpLen;
+	uint8 buf[LCD_MAX_BUF];
+	uint32 err;
 
-  tmpLen = (uint8)osal_strlen( (char*)title );
-  osal_memcpy( buf, title, tmpLen );
-  buf[tmpLen] = ' ';
-  err = (uint32)(value);
-  _ltoa( err, &buf[tmpLen+1], format );
-  HalLcdWriteString( (char*)buf, line );		
+	tmpLen = (uint8)osal_strlen( (char*)title );
+	osal_memcpy( buf, title, tmpLen );
+	buf[tmpLen] = ' ';
+	err = (uint32)(value);
+	_ltoa( err, &buf[tmpLen+1], format );
+	HalLcdWriteString( (char*)buf, line );
 #endif
 }
 
 /**************************************************************************************************
-z-stack´úÂë,Î´ĞŞ¸Ä
+ z-stackä»£ç ,æœªä¿®æ”¹
  **************************************************************************************************/
-void HalLcdWriteStringValueValue( char *title, uint16 value1, uint8 format1,
-                                  uint16 value2, uint8 format2, uint8 line )
-{
+void HalLcdWriteStringValueValue(char *title, uint16 value1, uint8 format1, uint16 value2, uint8 format2, uint8 line) {
 
 #if (HAL_LCD == TRUE)
 
-  uint8 tmpLen;
-  uint8 buf[LCD_MAX_BUF];
-  uint32 err;
+	uint8 tmpLen;
+	uint8 buf[LCD_MAX_BUF];
+	uint32 err;
 
-  tmpLen = (uint8)osal_strlen( (char*)title );
-  if ( tmpLen )
-  {
-    osal_memcpy( buf, title, tmpLen );
-    buf[tmpLen++] = ' ';
-  }
+	tmpLen = (uint8)osal_strlen( (char*)title );
+	if ( tmpLen )
+	{
+		osal_memcpy( buf, title, tmpLen );
+		buf[tmpLen++] = ' ';
+	}
 
-  err = (uint32)(value1);
-  _ltoa( err, &buf[tmpLen], format1 );
-  tmpLen = (uint8)osal_strlen( (char*)buf );
+	err = (uint32)(value1);
+	_ltoa( err, &buf[tmpLen], format1 );
+	tmpLen = (uint8)osal_strlen( (char*)buf );
 
-  buf[tmpLen++] = ',';
-  buf[tmpLen++] = ' ';
-  err = (uint32)(value2);
-  _ltoa( err, &buf[tmpLen], format2 );
+	buf[tmpLen++] = ',';
+	buf[tmpLen++] = ' ';
+	err = (uint32)(value2);
+	_ltoa( err, &buf[tmpLen], format2 );
 
-  HalLcdWriteString( (char *)buf, line );		
+	HalLcdWriteString( (char *)buf, line );
 
 #endif
 }
 
 /**************************************************************************************************
-z-stack´úÂë,Î´ĞŞ¸Ä
+ z-stackä»£ç ,æœªä¿®æ”¹
  **************************************************************************************************/
-void HalLcdDisplayPercentBar( char *title, uint8 value )
-{
+void HalLcdDisplayPercentBar(char *title, uint8 value) {
 #if (HAL_LCD == TRUE)
 
-  uint8 percent;
-  uint8 leftOver;
-  uint8 buf[17];
-  uint32 err;
-  uint8 x;
+	uint8 percent;
+	uint8 leftOver;
+	uint8 buf[17];
+	uint32 err;
+	uint8 x;
 
-  /* Write the title: */
-  HalLcdWriteString( title, HAL_LCD_LINE_1 );
+	/* Write the title: */
+	HalLcdWriteString( title, HAL_LCD_LINE_1 );
 
-  if ( value > 100 )
-    value = 100;
+	if ( value > 100 )
+	value = 100;
 
-  /* convert to blocks */
-  percent = (uint8)(value / 10);
-  leftOver = (uint8)(value % 10);
+	/* convert to blocks */
+	percent = (uint8)(value / 10);
+	leftOver = (uint8)(value % 10);
 
-  /* Make window */
-  osal_memcpy( buf, "[          ]  ", 15 );
+	/* Make window */
+	osal_memcpy( buf, "[          ]  ", 15 );
 
-  for ( x = 0; x < percent; x ++ )
-  {
-    buf[1+x] = '>';
-  }
+	for ( x = 0; x < percent; x ++ )
+	{
+		buf[1+x] = '>';
+	}
 
-  if ( leftOver >= 5 )
-    buf[1+x] = '+';
+	if ( leftOver >= 5 )
+	buf[1+x] = '+';
 
-  err = (uint32)value;
-  _ltoa( err, (uint8*)&buf[13], 10 );
+	err = (uint32)value;
+	_ltoa( err, (uint8*)&buf[13], 10 );
 
-  HalLcdWriteString( (char*)buf, HAL_LCD_LINE_2 );
+	HalLcdWriteString( (char*)buf, HAL_LCD_LINE_2 );
 
 #endif
 
@@ -432,167 +410,165 @@ void HalLcdDisplayPercentBar( char *title, uint8 value )
  **************************************************************************************************/
 
 /**************************************************************************************************
-lcdËùĞèµÄGPIO¿ÚÅäÖÃ
+ lcdæ‰€éœ€çš„GPIOå£é…ç½®
  **************************************************************************************************/
 static void halLcd_ConfigIO(void)
 {
-  /* GPIO configuration */
+	/* GPIO configuration */
 #ifdef CC2530DK_V1
-  HAL_CONFIG_IO_OUTPUT(HAL_LCD_MODE_PORT,  HAL_LCD_MODE_PIN,  1);
+	HAL_CONFIG_IO_OUTPUT(HAL_LCD_MODE_PORT, HAL_LCD_MODE_PIN, 1);
 #else
 
 #endif
-  HAL_CONFIG_IO_OUTPUT(HAL_LCD_CS_PORT,    HAL_LCD_CS_PIN,    1);
+	HAL_CONFIG_IO_OUTPUT(HAL_LCD_CS_PORT, HAL_LCD_CS_PIN, 1);
 }
 
 /**************************************************************************************************
-SPI×ÜÏß¼Ä´æÆ÷ÅäÖÃ
+ SPIæ€»çº¿å¯„å­˜å™¨é…ç½®
  **************************************************************************************************/
 static void halLcd_ConfigSPI(void)
 {
-  /* UART/SPI Peripheral configuration */
+	/* UART/SPI Peripheral configuration */
 
-   uint8 baud_exponent;
-   uint8 baud_mantissa;
+	uint8 baud_exponent;
+	uint8 baud_mantissa;
 
-  /* Set SPI on UART 1 alternative 2 */
-  PERCFG |= 0x02;
+	/* Set SPI on UART 1 alternative 2 */
+	PERCFG |= 0x02;
 
-  /* Configure clk, master out and master in lines */
-  HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_CLK_PORT,  HAL_LCD_CLK_PIN);
-  HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_MOSI_PORT, HAL_LCD_MOSI_PIN);
-  HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_MISO_PORT, HAL_LCD_MISO_PIN);
+	/* Configure clk, master out and master in lines */
+	HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_CLK_PORT, HAL_LCD_CLK_PIN);
+	HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_MOSI_PORT, HAL_LCD_MOSI_PIN);
+	HAL_CONFIG_IO_PERIPHERAL(HAL_LCD_MISO_PORT, HAL_LCD_MISO_PIN);
 
+	/* Set SPI speed to 1 MHz (the values assume system clk of 32MHz)
+	 * Confirm on board that this results in 1MHz spi clk.
+	 */
+	baud_exponent = 15;
+	baud_mantissa = 0;
 
-  /* Set SPI speed to 1 MHz (the values assume system clk of 32MHz)
-   * Confirm on board that this results in 1MHz spi clk.
-   */
-  baud_exponent = 15;
-  baud_mantissa =  0;
-
-  /* Configure SPI */
-  U1UCR  = 0x80;      /* Flush and goto IDLE state. 8-N-1. */
-  U1CSR  = 0x00;      /* SPI mode, master. */
-  U1GCR  = HAL_SPI_TRANSFER_MSB_FIRST | HAL_SPI_CLOCK_PHA_0 | HAL_SPI_CLOCK_POL_LO | baud_exponent;
-  U1BAUD = baud_mantissa;
+	/* Configure SPI */
+	U1UCR = 0x80; /* Flush and goto IDLE state. 8-N-1. */
+	U1CSR = 0x00; /* SPI mode, master. */
+	U1GCR = HAL_SPI_TRANSFER_MSB_FIRST | HAL_SPI_CLOCK_PHA_0 | HAL_SPI_CLOCK_POL_LO | baud_exponent;
+	U1BAUD = baud_mantissa;
 }
 
 /**************************************************************************************************
-³õÊ¼»¯£¬ÒÑ¸ù¾İlcd12864ÊÖ²á¸ü¸Ä
+ åˆå§‹åŒ–ï¼Œå·²æ ¹æ®lcd12864æ‰‹å†Œæ›´æ”¹
  **************************************************************************************************/
 void HalLcd_HW_Init(void)
 {
-  /* Initialize LCD IO lines */
-  halLcd_ConfigIO();
+	/* Initialize LCD IO lines */
+	halLcd_ConfigIO();
 
-  /* Initialize SPI */
-  halLcd_ConfigSPI();
+	/* Initialize SPI */
+	halLcd_ConfigSPI();
 
-	HalLcd_HW_Control(0xe2);	//Èí¸´Î»
-	HalLcd_HW_WaitUs(15000); // 15 us
-	HalLcd_HW_Control(0x2c);	//ÉıÑ¹²½¾Û1
-	HalLcd_HW_WaitUs(15); // 15 us
-	HalLcd_HW_Control(0x2e);	//ÉıÑ¹²½¾Û2
-	HalLcd_HW_WaitUs(15); // 15 us
-	HalLcd_HW_Control(0x2f);	//ÉıÑ¹²½¾Û3
-	HalLcd_HW_WaitUs(150); // 15 us
-	HalLcd_HW_Control(0x23);	//´Öµ÷¶Ô±È¶È£¬¿ÉÉèÖÃ·¶Î§0x20¡«0x27
-	HalLcd_HW_WaitUs(15); // 15 us
-	HalLcd_HW_Control(0x81);	//Î¢µ÷¶Ô±È¶È
-	HalLcd_HW_WaitUs(15); // 15 us
-	HalLcd_HW_Control(0x28);	//0x1a,Î¢µ÷¶Ô±È¶ÈµÄÖµ£¬¿ÉÉèÖÃ·¶Î§0x00¡«0x3f
-	HalLcd_HW_WaitUs(15); // 15 us
-	
-	HalLcd_HW_Control(0xa2);	// 1/9Æ«Ñ¹±È£¨bias£©
-	HalLcd_HW_WaitUs(15); // 15 us
-	HalLcd_HW_Control(0xa0);	//ĞĞÉ¨ÃèË³Ğò£º´ÓÉÏµ½ÏÂ
-	HalLcd_HW_WaitUs(15); // 15 us
-	HalLcd_HW_Control(0xc8);	//ÁĞÉ¨ÃèË³Ğò£º´Ó×óµ½ÓÒ
-	HalLcd_HW_WaitUs(15); // 15 us
-	HalLcd_HW_Control(0x40);	//ÆğÊ¼ĞĞ£ºµÚÒ»ĞĞ¿ªÊ¼
-	HalLcd_HW_WaitUs(15); // 15 us
-	HalLcd_HW_Control(0xaf);	//´ò¿ªÏÔÊ¾
-	HalLcd_HW_WaitUs(15); // 15 us
-    HalLcd_HW_Control(0xa4);	
-	HalLcd_HW_WaitUs(15); // 15 us
-        
+	HalLcd_HW_Control(0xe2); //è½¯å¤ä½
+	HalLcd_HW_WaitUs(15000);// 15 us
+	HalLcd_HW_Control(0x2c);//å‡å‹æ­¥èš1
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0x2e);//å‡å‹æ­¥èš2
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0x2f);//å‡å‹æ­¥èš3
+	HalLcd_HW_WaitUs(150);// 15 us
+	HalLcd_HW_Control(0x23);//ç²—è°ƒå¯¹æ¯”åº¦ï¼Œå¯è®¾ç½®èŒƒå›´0x20ï½0x27
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0x81);//å¾®è°ƒå¯¹æ¯”åº¦
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0x28);//0x1a,å¾®è°ƒå¯¹æ¯”åº¦çš„å€¼ï¼Œå¯è®¾ç½®èŒƒå›´0x00ï½0x3f
+	HalLcd_HW_WaitUs(15);// 15 us
+
+	HalLcd_HW_Control(0xa2);// 1/9åå‹æ¯”ï¼ˆbiasï¼‰
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0xa0);//è¡Œæ‰«æé¡ºåºï¼šä»ä¸Šåˆ°ä¸‹
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0xc8);//åˆ—æ‰«æé¡ºåºï¼šä»å·¦åˆ°å³
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0x40);//èµ·å§‹è¡Œï¼šç¬¬ä¸€è¡Œå¼€å§‹
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0xaf);//æ‰“å¼€æ˜¾ç¤º
+	HalLcd_HW_WaitUs(15);// 15 us
+	HalLcd_HW_Control(0xa4);
+	HalLcd_HW_WaitUs(15);// 15 us
+
 	HalLcd_HW_Clear();
-        //display_string_5x7(1,1,"abcdefghijklmnopqrstuvwxyz");
-        //display_string_5x7(8,1,"uvwxyz0123456789");
-        //while(1);
-
+	//display_string_5x7(1,1,"abcdefghijklmnopqrstuvwxyz");
+	//display_string_5x7(8,1,"uvwxyz0123456789");
+	//while(1);
 
 }
 
 /**************************************************************************************************
-z-stack´úÂë,SPI×ÜÏßĞ´ÃüÁî
+ z-stackä»£ç ,SPIæ€»çº¿å†™å‘½ä»¤
  **************************************************************************************************/
 void HalLcd_HW_Control(uint8 cmd)
 {
 #ifdef CC2530DK_V1
-  //do nothiing
+	//do nothiing
 #else
-  //±£´æÔ­À´MISOÒı½ÅµÄÉèÖÃ
-  uint8 dir = P1DIR;
-  uint8 sel = P1SEL;
-  P1DIR |=BV(7);
-  /*
-  0ÎªGPIO,1ÎªÍâÉè£¬
-  ÕâÀïÓÃµ½µÄÊÇMISOÒı½ÅµÄGPIO¹¦ÄÜ£¬
-  Òò´ËÏàÓ¦Òı½ÅÉèÎª0?  */
-  P1SEL &=~(BV(7));
+	//ä¿å­˜åŸæ¥MISOå¼•è„šçš„è®¾ç½®
+	uint8 dir = P1DIR;
+	uint8 sel = P1SEL;
+	P1DIR |=BV(7);
+	/*
+	 0ä¸ºGPIO,1ä¸ºå¤–è®¾ï¼Œ
+	 è¿™é‡Œç”¨åˆ°çš„æ˜¯MISOå¼•è„šçš„GPIOåŠŸèƒ½ï¼Œ
+	 å› æ­¤ç›¸åº”å¼•è„šè®¾ä¸º0?  */
+	P1SEL &=~(BV(7));
 #endif
-  LCD_SPI_BEGIN();
-  LCD_DO_CONTROL();
-  LCD_SPI_TX(cmd);
-  LCD_SPI_WAIT_RXRDY();
-  LCD_SPI_END();
+	LCD_SPI_BEGIN();
+	LCD_DO_CONTROL();
+	LCD_SPI_TX(cmd);
+	LCD_SPI_WAIT_RXRDY();
+	LCD_SPI_END();
 
 #ifdef CC2530DK_V1
-  //do nothiing
+	//do nothiing
 #else
-  P1DIR =dir;
-  P1SEL =sel;
+	P1DIR =dir;
+	P1SEL =sel;
 #endif
 }
 
 /**************************************************************************************************
-z-stack´úÂë,SPI×ÜÏßĞ´Êı¾İ
+ z-stackä»£ç ,SPIæ€»çº¿å†™æ•°æ®
  **************************************************************************************************/
 void HalLcd_HW_Write(uint8 data)
 {
 #ifdef CC2530DK_V1
-  //do nothiing
+	//do nothiing
 #else
-  //±£´æÔ­À´MISOÒı½ÅµÄÉèÖÃ£¬·½ÏòºÍ¹¦ÄÜÑ¡Ôñ
-  uint8 dir = P1DIR;
-  uint8 sel = P1SEL;
-  /*
-  0Îªinput 1Îªoutput
-  ÕâÀïÒªÉèÎªÊä³ö£¬¿ØÖÆlcdµÄA0(ÃüÁî»òÊı¾İÑ¡Ôñ)
-  */
-  P1DIR |=BV(7);
-  /*
-  0ÎªGPIO,1ÎªÍâÉè£¬
-  ÕâÀïÓÃµ½µÄÊÇMISOÒı½ÅµÄGPIO¹¦ÄÜ£¬
-  Òò´ËÏàÓ¦Òı½ÅÉèÎª0?  */
-  P1SEL &=~(BV(7));
+	//ä¿å­˜åŸæ¥MISOå¼•è„šçš„è®¾ç½®ï¼Œæ–¹å‘å’ŒåŠŸèƒ½é€‰æ‹©
+	uint8 dir = P1DIR;
+	uint8 sel = P1SEL;
+	/*
+	 0ä¸ºinput 1ä¸ºoutput
+	 è¿™é‡Œè¦è®¾ä¸ºè¾“å‡ºï¼Œæ§åˆ¶lcdçš„A0(å‘½ä»¤æˆ–æ•°æ®é€‰æ‹©)
+	 */
+	P1DIR |=BV(7);
+	/*
+	 0ä¸ºGPIO,1ä¸ºå¤–è®¾ï¼Œ
+	 è¿™é‡Œç”¨åˆ°çš„æ˜¯MISOå¼•è„šçš„GPIOåŠŸèƒ½ï¼Œ
+	 å› æ­¤ç›¸åº”å¼•è„šè®¾ä¸º0?  */
+	P1SEL &=~(BV(7));
 #endif
-  LCD_SPI_BEGIN();
-  LCD_DO_WRITE();
-  LCD_SPI_TX(data);
-  LCD_SPI_WAIT_RXRDY();
-  LCD_SPI_END();
+	LCD_SPI_BEGIN();
+	LCD_DO_WRITE();
+	LCD_SPI_TX(data);
+	LCD_SPI_WAIT_RXRDY();
+	LCD_SPI_END();
 #ifdef CC2530DK_V1
-  //do nothiing
+	//do nothiing
 #else
-  P1DIR =dir;
-  P1SEL =sel;
+	P1DIR =dir;
+	P1SEL =sel;
 #endif
 }
 
 /**************************************************************************************************
-z-stack´úÂë
+ z-stackä»£ç 
  **************************************************************************************************/
 void HalLcd_HW_SetContrast(uint8 value)
 {
@@ -600,22 +576,22 @@ void HalLcd_HW_SetContrast(uint8 value)
 }
 
 /**************************************************************************************************
-×÷ÓÃ    ÇåÆÁ
+ ä½œç”¨    æ¸…å±
  **************************************************************************************************/
 void HalLcd_HW_Clear(void)
 {
 
-  int i,j;
-  for(i=0;i<8;i++){
-        set_ddram_line_col(i,0);
-	for(j=0;j<128;j++){
-		HalLcd_HW_Write(0x00);
+	int i,j;
+	for(i=0;i<8;i++) {
+		set_ddram_line_col(i,0);
+		for(j=0;j<128;j++) {
+			HalLcd_HW_Write(0x00);
+		}
 	}
-  }
 }
 
 /**************************************************************************************************
-z-stack´úÂë
+ z-stackä»£ç 
  **************************************************************************************************/
 void HalLcd_HW_ClearAllSpecChars(void)
 {
@@ -623,40 +599,40 @@ void HalLcd_HW_ClearAllSpecChars(void)
 }
 
 /**************************************************************************************************
-×÷ÓÃ    ÏòÖ¸¶¨µÄĞĞºÍÁĞĞ´ÈëÒ»¸ö×Ö·û
-²ÎÊı1   line£¬·¶Î§1~8,´øÏÔÊ¾µÄĞĞ,×¢ÒâÕâÀïµÄ·¶Î§ÊÇ1~8,¶ø²»ÊÇ0~7,Ä¿µÄÊÇ¼æÈİÉÏ²ãµÄ´úÂë
-²ÎÊı2   col£¬·¶Î§1~LCD_MAX_LINE_LENGTH,´ıÏÔÊ¾µÄÁĞ,×¢Òâ£¬ÕâÀï½«128µÈ·Ö³ÉLCD_MAX_LINE_LENGTH¸öÇøÓò£¬Ã¿¸öÇøÓòÏÔÊ¾Ò»¸ö×Ö·û
-²ÎÊı3   text£¬ĞèÒªÏÔÊ¾µÄascii×Ö·û
+ ä½œç”¨    å‘æŒ‡å®šçš„è¡Œå’Œåˆ—å†™å…¥ä¸€ä¸ªå­—ç¬¦
+ å‚æ•°1   lineï¼ŒèŒƒå›´1~8,å¸¦æ˜¾ç¤ºçš„è¡Œ,æ³¨æ„è¿™é‡Œçš„èŒƒå›´æ˜¯1~8,è€Œä¸æ˜¯0~7,ç›®çš„æ˜¯å…¼å®¹ä¸Šå±‚çš„ä»£ç 
+ å‚æ•°2   colï¼ŒèŒƒå›´1~LCD_MAX_LINE_LENGTH,å¾…æ˜¾ç¤ºçš„åˆ—,æ³¨æ„ï¼Œè¿™é‡Œå°†128ç­‰åˆ†æˆLCD_MAX_LINE_LENGTHä¸ªåŒºåŸŸï¼Œæ¯ä¸ªåŒºåŸŸæ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦
+ å‚æ•°3   textï¼Œéœ€è¦æ˜¾ç¤ºçš„asciiå­—ç¬¦
  **************************************************************************************************/
 void HalLcd_HW_WriteChar(uint8 line, uint8 col, char text)
 {
 	uint8 column = 1+col*6;
 	uint8 page = line-1;
-	if(col > LCD_MAX_LINE_LENGTH)/*³¬³ö²¿·Ö²»ÏÔÊ¾*/
-		return;
+	if(col > LCD_MAX_LINE_LENGTH)/*è¶…å‡ºéƒ¨åˆ†ä¸æ˜¾ç¤º*/
+	return;
 	DisplayByte_5x7(page,column,(unsigned char)text);
 }
 
 /**************************************************************************************************
-×÷ÓÃ    ÏòÖ¸¶¨ĞĞĞ´ÈëÒ»´®×Ö·û´®
-²ÎÊı1   line¡£·¶Î§1~8
-²ÎÊı2   pText¡£´ıÏÔÊ¾µÄ×Ö·û´®
+ ä½œç”¨    å‘æŒ‡å®šè¡Œå†™å…¥ä¸€ä¸²å­—ç¬¦ä¸²
+ å‚æ•°1   lineã€‚èŒƒå›´1~8
+ å‚æ•°2   pTextã€‚å¾…æ˜¾ç¤ºçš„å­—ç¬¦ä¸²
  **************************************************************************************************/
 void HalLcd_HW_WriteLine(uint8 line, const char *pText)
 {
-  uint8 count;
-  uint8 totalLength = (uint8)osal_strlen( (char *)pText );
-  /* Write the content first */
-  for (count=0; count<totalLength; count++)
-  {
-    HalLcd_HW_WriteChar(line, count, (*(pText++)));
-  }
+	uint8 count;
+	uint8 totalLength = (uint8)osal_strlen( (char *)pText );
+	/* Write the content first */
+	for (count=0; count<totalLength; count++)
+	{
+		HalLcd_HW_WriteChar(line, count, (*(pText++)));
+	}
 
-  /* Write blank spaces to rest of the line */
-  for(count=totalLength; count<LCD_MAX_LINE_LENGTH;count++)
-  {
-    HalLcd_HW_WriteChar(line, count, 0x00);
-  }
+	/* Write blank spaces to rest of the line */
+	for(count=totalLength; count<LCD_MAX_LINE_LENGTH;count++)
+	{
+		HalLcd_HW_WriteChar(line, count, 0x00);
+	}
 }
 
 /**************************************************************************************************
@@ -670,125 +646,122 @@ void HalLcd_HW_WriteLine(uint8 line, const char *pText)
  **************************************************************************************************/
 void HalLcd_HW_WaitUs(uint16 microSecs)
 {
-  while(microSecs--)
-  {
-    /* 32 NOPs == 1 usecs */
-    asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
-    asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
-    asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
-    asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
-    asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
-    asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
-    asm("nop"); asm("nop");
-  }
+	while(microSecs--)
+	{
+		/* 32 NOPs == 1 usecs */
+		asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+		asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+		asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+		asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+		asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+		asm("nop"); asm("nop"); asm("nop"); asm("nop"); asm("nop");
+		asm("nop"); asm("nop");
+	}
 }
 
 #if 1
-/*È«ÌåASCII ÁĞ±í:5x7µãÕó¿â*/
-const uint8  ascii_table_5x7[95][5]={
-0x00,0x00,0x00,0x00,0x00,//space
-0x00,0x00,0x4f,0x00,0x00,//!
-0x00,0x07,0x00,0x07,0x00,//"
-0x14,0x7f,0x14,0x7f,0x14,//#
-0x24,0x2a,0x7f,0x2a,0x12,//$
-0x23,0x13,0x08,0x64,0x62,//%
-0x36,0x49,0x55,0x22,0x50,//&
-0x00,0x05,0x07,0x00,0x00,//]
-0x00,0x1c,0x22,0x41,0x00,//(
-0x00,0x41,0x22,0x1c,0x00,//)
-0x14,0x08,0x3e,0x08,0x14,//*
-0x08,0x08,0x3e,0x08,0x08,//+
-0x00,0x50,0x30,0x00,0x00,//,
-0x08,0x08,0x08,0x08,0x08,//-
-0x00,0x60,0x60,0x00,0x00,//.
-0x20,0x10,0x08,0x04,0x02,///
-0x3e,0x51,0x49,0x45,0x3e,//0
-0x00,0x42,0x7f,0x40,0x00,//1
-0x42,0x61,0x51,0x49,0x46,//2
-0x21,0x41,0x45,0x4b,0x31,//3
-0x18,0x14,0x12,0x7f,0x10,//4
-0x27,0x45,0x45,0x45,0x39,//5
-0x3c,0x4a,0x49,0x49,0x30,//6
-0x01,0x71,0x09,0x05,0x03,//7
-0x36,0x49,0x49,0x49,0x36,//8
-0x06,0x49,0x49,0x29,0x1e,//9
-0x00,0x36,0x36,0x00,0x00,//:
-0x00,0x56,0x36,0x00,0x00,//;
-0x08,0x14,0x22,0x41,0x00,//<
-0x14,0x14,0x14,0x14,0x14,//=
-0x00,0x41,0x22,0x14,0x08,//>
-0x02,0x01,0x51,0x09,0x06,//?
-0x32,0x49,0x79,0x41,0x3e,//@
-0x7e,0x11,0x11,0x11,0x7e,//A
-0x7f,0x49,0x49,0x49,0x36,//B
-0x3e,0x41,0x41,0x41,0x22,//C
-0x7f,0x41,0x41,0x22,0x1c,//D
-0x7f,0x49,0x49,0x49,0x41,//E
-0x7f,0x09,0x09,0x09,0x01,//F
-0x3e,0x41,0x49,0x49,0x7a,//G
-0x7f,0x08,0x08,0x08,0x7f,//H
-0x00,0x41,0x7f,0x41,0x00,//I
-0x20,0x40,0x41,0x3f,0x01,//J
-0x7f,0x08,0x14,0x22,0x41,//K
-0x7f,0x40,0x40,0x40,0x40,//L
-0x7f,0x02,0x0c,0x02,0x7f,//M
-0x7f,0x04,0x08,0x10,0x7f,//N
-0x3e,0x41,0x41,0x41,0x3e,//O
-0x7f,0x09,0x09,0x09,0x06,//P
-0x3e,0x41,0x51,0x21,0x5e,//Q
-0x7f,0x09,0x19,0x29,0x46,//R
-0x46,0x49,0x49,0x49,0x31,//S
-0x01,0x01,0x7f,0x01,0x01,//T
-0x3f,0x40,0x40,0x40,0x3f,//U
-0x1f,0x20,0x40,0x20,0x1f,//V
-0x3f,0x40,0x38,0x40,0x3f,//W
-0x63,0x14,0x08,0x14,0x63,//X
-0x07,0x08,0x70,0x08,0x07,//Y
-0x61,0x51,0x49,0x45,0x43,//Z
-0x00,0x7f,0x41,0x41,0x00,//[
-0x02,0x04,0x08,0x10,0x20,// Ğ±¸Ü
-0x00,0x41,0x41,0x7f,0x00,//]
-0x04,0x02,0x01,0x02,0x04,//^
-0x40,0x40,0x40,0x40,0x40,//_
-0x01,0x02,0x04,0x00,0x00,//`
-0x20,0x54,0x54,0x54,0x78,//a
-0x7f,0x48,0x48,0x48,0x30,//b
-0x38,0x44,0x44,0x44,0x44,//c
-0x30,0x48,0x48,0x48,0x7f,//d
-0x38,0x54,0x54,0x54,0x58,//e
-0x00,0x08,0x7e,0x09,0x02,//f
-0x48,0x54,0x54,0x54,0x3c,//g
-0x7f,0x08,0x08,0x08,0x70,//h
-0x00,0x00,0x7a,0x00,0x00,//i
-0x20,0x40,0x40,0x3d,0x00,//j
-0x7f,0x20,0x28,0x44,0x00,//k
-0x00,0x41,0x7f,0x40,0x00,//l
-0x7c,0x04,0x38,0x04,0x7c,//m
-0x7c,0x08,0x04,0x04,0x78,//n
-0x38,0x44,0x44,0x44,0x38,//o
-0x7c,0x14,0x14,0x14,0x08,//p
-0x08,0x14,0x14,0x14,0x7c,//q
-0x7c,0x08,0x04,0x04,0x08,//r
-0x48,0x54,0x54,0x54,0x24,//s
-0x04,0x04,0x3f,0x44,0x24,//t
-0x3c,0x40,0x40,0x40,0x3c,//u
-0x1c,0x20,0x40,0x20,0x1c,//v
-0x3c,0x40,0x30,0x40,0x3c,//w
-0x44,0x28,0x10,0x28,0x44,//x
-0x04,0x48,0x30,0x08,0x04,//y
-0x44,0x64,0x54,0x4c,0x44,//z
-0x08,0x36,0x41,0x41,0x00,//{
-0x00,0x00,0x77,0x00,0x00,//|
-0x00,0x41,0x41,0x36,0x08,//}
-0x04,0x02,0x02,0x02,0x01,//~
+/*å…¨ä½“ASCII åˆ—è¡¨:5x7ç‚¹é˜µåº“*/
+const uint8 ascii_table_5x7[95][5]= {
+	0x00,0x00,0x00,0x00,0x00, //space
+	0x00,0x00,0x4f,0x00,0x00,//!
+	0x00,0x07,0x00,0x07,0x00,//"
+	0x14,0x7f,0x14,0x7f,0x14,//#
+	0x24,0x2a,0x7f,0x2a,0x12,//$
+	0x23,0x13,0x08,0x64,0x62,//%
+	0x36,0x49,0x55,0x22,0x50,//&
+	0x00,0x05,0x07,0x00,0x00,//]
+	0x00,0x1c,0x22,0x41,0x00,//(
+	0x00,0x41,0x22,0x1c,0x00,//)
+	0x14,0x08,0x3e,0x08,0x14,//*
+	0x08,0x08,0x3e,0x08,0x08,//+
+	0x00,0x50,0x30,0x00,0x00,//,
+	0x08,0x08,0x08,0x08,0x08,//-
+	0x00,0x60,0x60,0x00,0x00,//.
+	0x20,0x10,0x08,0x04,0x02,///
+	0x3e,0x51,0x49,0x45,0x3e,//0
+	0x00,0x42,0x7f,0x40,0x00,//1
+	0x42,0x61,0x51,0x49,0x46,//2
+	0x21,0x41,0x45,0x4b,0x31,//3
+	0x18,0x14,0x12,0x7f,0x10,//4
+	0x27,0x45,0x45,0x45,0x39,//5
+	0x3c,0x4a,0x49,0x49,0x30,//6
+	0x01,0x71,0x09,0x05,0x03,//7
+	0x36,0x49,0x49,0x49,0x36,//8
+	0x06,0x49,0x49,0x29,0x1e,//9
+	0x00,0x36,0x36,0x00,0x00,//:
+	0x00,0x56,0x36,0x00,0x00,//;
+	0x08,0x14,0x22,0x41,0x00,//<
+	0x14,0x14,0x14,0x14,0x14,//=
+	0x00,0x41,0x22,0x14,0x08,//>
+	0x02,0x01,0x51,0x09,0x06,//?
+	0x32,0x49,0x79,0x41,0x3e,//@
+	0x7e,0x11,0x11,0x11,0x7e,//A
+	0x7f,0x49,0x49,0x49,0x36,//B
+	0x3e,0x41,0x41,0x41,0x22,//C
+	0x7f,0x41,0x41,0x22,0x1c,//D
+	0x7f,0x49,0x49,0x49,0x41,//E
+	0x7f,0x09,0x09,0x09,0x01,//F
+	0x3e,0x41,0x49,0x49,0x7a,//G
+	0x7f,0x08,0x08,0x08,0x7f,//H
+	0x00,0x41,0x7f,0x41,0x00,//I
+	0x20,0x40,0x41,0x3f,0x01,//J
+	0x7f,0x08,0x14,0x22,0x41,//K
+	0x7f,0x40,0x40,0x40,0x40,//L
+	0x7f,0x02,0x0c,0x02,0x7f,//M
+	0x7f,0x04,0x08,0x10,0x7f,//N
+	0x3e,0x41,0x41,0x41,0x3e,//O
+	0x7f,0x09,0x09,0x09,0x06,//P
+	0x3e,0x41,0x51,0x21,0x5e,//Q
+	0x7f,0x09,0x19,0x29,0x46,//R
+	0x46,0x49,0x49,0x49,0x31,//S
+	0x01,0x01,0x7f,0x01,0x01,//T
+	0x3f,0x40,0x40,0x40,0x3f,//U
+	0x1f,0x20,0x40,0x20,0x1f,//V
+	0x3f,0x40,0x38,0x40,0x3f,//W
+	0x63,0x14,0x08,0x14,0x63,//X
+	0x07,0x08,0x70,0x08,0x07,//Y
+	0x61,0x51,0x49,0x45,0x43,//Z
+	0x00,0x7f,0x41,0x41,0x00,//[
+	0x02,0x04,0x08,0x10,0x20,// æ–œæ 
+	0x00,0x41,0x41,0x7f,0x00,//]
+	0x04,0x02,0x01,0x02,0x04,//^
+	0x40,0x40,0x40,0x40,0x40,//_
+	0x01,0x02,0x04,0x00,0x00,//`
+	0x20,0x54,0x54,0x54,0x78,//a
+	0x7f,0x48,0x48,0x48,0x30,//b
+	0x38,0x44,0x44,0x44,0x44,//c
+	0x30,0x48,0x48,0x48,0x7f,//d
+	0x38,0x54,0x54,0x54,0x58,//e
+	0x00,0x08,0x7e,0x09,0x02,//f
+	0x48,0x54,0x54,0x54,0x3c,//g
+	0x7f,0x08,0x08,0x08,0x70,//h
+	0x00,0x00,0x7a,0x00,0x00,//i
+	0x20,0x40,0x40,0x3d,0x00,//j
+	0x7f,0x20,0x28,0x44,0x00,//k
+	0x00,0x41,0x7f,0x40,0x00,//l
+	0x7c,0x04,0x38,0x04,0x7c,//m
+	0x7c,0x08,0x04,0x04,0x78,//n
+	0x38,0x44,0x44,0x44,0x38,//o
+	0x7c,0x14,0x14,0x14,0x08,//p
+	0x08,0x14,0x14,0x14,0x7c,//q
+	0x7c,0x08,0x04,0x04,0x08,//r
+	0x48,0x54,0x54,0x54,0x24,//s
+	0x04,0x04,0x3f,0x44,0x24,//t
+	0x3c,0x40,0x40,0x40,0x3c,//u
+	0x1c,0x20,0x40,0x20,0x1c,//v
+	0x3c,0x40,0x30,0x40,0x3c,//w
+	0x44,0x28,0x10,0x28,0x44,//x
+	0x04,0x48,0x30,0x08,0x04,//y
+	0x44,0x64,0x54,0x4c,0x44,//z
+	0x08,0x36,0x41,0x41,0x00,//{
+	0x00,0x00,0x77,0x00,0x00,//|
+	0x00,0x41,0x41,0x36,0x08,//}
+	0x04,0x02,0x02,0x02,0x01,//~
 };
 #endif
 
 #endif
 
-
 /**************************************************************************************************
-**************************************************************************************************/
-
-
+ **************************************************************************************************/
 

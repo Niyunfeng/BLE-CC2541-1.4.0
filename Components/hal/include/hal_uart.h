@@ -203,8 +203,8 @@ extern uint16 Hal_UART_RxBufLen ( uint8 port );
 /*
  * Return the number of bytes in the Tx buffer
  */
-extern uint16 Hal_UART_TxBufLen ( uint8 port );
-
+//extern uint16 Hal_UART_TxBufLen ( uint8 port );
+extern uint16 Hal_UART_TxBufLen ();
 /*
  * This enable/disable flow control
  */
