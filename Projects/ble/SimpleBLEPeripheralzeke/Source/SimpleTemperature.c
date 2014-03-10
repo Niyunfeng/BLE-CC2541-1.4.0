@@ -34,13 +34,13 @@ uint8 getTemperature(void){
   //ADCL &=0x00;
  // ADCH &=0x00;
    
-  HalLcdWriteStringValue("adc_value:", value, 10, HAL_LCD_LINE_2);
+ // HalLcdWriteStringValue("adc_value:", value, 10, HAL_LCD_LINE_2);
   
   //v=value*0.06229-311.43; //高十度
    v=(value-1367.5)/4.5;    //根据 AD 值，计算出实际的温度,芯片手册有错，温度系数应该是4.5 /℃
  
  
- HalLcdWriteStringValue("temp_value:", v, 10, HAL_LCD_LINE_3); 
+ //HalLcdWriteStringValue("temp_value:", v, 10, HAL_LCD_LINE_3); 
  
  
  

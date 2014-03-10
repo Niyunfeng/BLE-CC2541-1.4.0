@@ -98,7 +98,7 @@
 // How often to perform periodic event
 #define SBP_PERIODIC_EVT_PERIOD                   5000
 
-#define TEMP_CHECK_PERIOD                         4000//3600000
+#define TEMP_CHECK_PERIOD                         3600000
 
 // How often to check battery voltage (in ms)
 #define BATTERY_CHECK_PERIOD                     13000////////////////////////////////////batt
@@ -171,8 +171,10 @@ uint8 bufrx[20];
 /*********************************************************************
  * temperature
  */
-uint16 temperature[20];
+uint8 temperature[20];
+uint8 temp_18b20[10];
 uint8 temp_flag=0;
+uint8 temp_18b20_flag=0;
 
 /*********************************************************************
  * GLOBAL VARIABLES
@@ -325,36 +327,33 @@ static void simpleBLEPeripheralPairStateCB(uint16 connHandle, uint8 state, uint8
 
 void gettemp(void)
 {
-
+     // osal_snv_read(0xE0,6,&temperature);
        // uint8 TempValue[6];  
-        uint8 AvgTemp,i=0; 
+        uint8 AvgTemp=0,i=0,j;
+        uint8 sensor_data_value;  //传感器数据
+
         initTempSensor();
-        
-        AvgTemp = 0;          
-        
         AvgTemp = getTemperature();  
-        // UART_HAL_DELAY(10000);  
-         // 温度转换成ascii码发送
-       // TempValue[0] = (unsigned char)(AvgTemp)/10 + 48;          //十位
-       // TempValue[1] = (unsigned char)(AvgTemp)%10 + 48;          //个位
-//          TempValue[2] = '.';                                       //小数点 
-//          TempValue[3] = (unsigned char)(AvgTemp*10)%10+48;         //十分位
-//          TempValue[4] = (unsigned char)(AvgTemp*100)%10+48;        //百分位
-        //TempValue[2] = '\0';                                       //字符串结束符  
-          
-        //HalLcdWriteString(TempValue, HAL_LCD_LINE_4);
-       HalLcdWriteStringValue("AvgTemp:", AvgTemp, 10, HAL_LCD_LINE_4);
-       
         temperature[temp_flag]=AvgTemp;
         temp_flag++;
-        //HalLcdWriteString((uint8*)temperature, HAL_LCD_LINE_6);
-        if(temp_flag==2)
+       
+        DS18B20_SendConvert();
+        //延时1S
+        for(j=20; j>0; j--)
+          delay_nus(50000);
+        sensor_data_value=DS18B20_GetTem();
+        temp_18b20[temp_18b20_flag]=sensor_data_value;
+        temp_18b20_flag++;
+
+        if(temp_flag==8)
         {
+
           for(i=0;i<temp_flag;i++)
-            HalLcdWriteStringValue("AvgTemp:", temperature[temp_flag], 10, i+1);
-          
-            //UART_HAL_DELAY(100000); 
+          // HalLcdWriteStringValue("AvgTemp:", temperature[i], 10, i+1);
+           HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
         }
+        
+        
 }
 /*********************************************************************
  * PUBLIC FUNCTIONS
