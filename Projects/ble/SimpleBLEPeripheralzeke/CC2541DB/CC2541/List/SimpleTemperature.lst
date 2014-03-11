@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             10/Mar/2014  10:13:37 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             11/Mar/2014  15:30:16 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -129,7 +129,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source
      28             ATEST=0x01;       // Enablesthe temperature sensor
      29             ADCCON3  = (0x3E);                  //选择1.25V为参考电压；14位分辨率；对片内温度传感器采样        
      30             while(!ADCIF);                //等待 AD 转换完成 
-     31             value =  ADCL ;                //ADCL 寄存器低 2 位无效 
+     31             value = ADCL;                //ADCL 寄存器低 2 位无效 
      32             value |= ((uint16)ADCH) << 8;
      33             value=value>>4;  
      34            //ADCL &=0x00;

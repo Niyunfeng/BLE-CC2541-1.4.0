@@ -9,13 +9,13 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=635431171
+Checksum=-2111439580
 [CallStack]
 ShowArgs=0
 [Disassembly]
 MixedMode=1
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\simpleBLEPeripheral.c}.335.9" 1 0 0 0 "" 0 ""
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\Simplepasscode.c}.43.28" 0 0 0 0 "" 0 ""
 Count=1
 [ChipconEmu]
 Stop timers on halt=0

@@ -351,9 +351,9 @@ bStatus_t Batt_MeasLevel( void )
 
   
   uint8 level;
-HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
+//HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
   level = battMeasure();
-HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
+//HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
   // If level has gone down
   if (level < battLevel)
   {

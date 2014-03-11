@@ -28,7 +28,7 @@ uint8 getTemperature(void){
    ATEST=0x01;       // Enablesthe temperature sensor
    ADCCON3  = (0x3E);                  //选择1.25V为参考电压；14位分辨率；对片内温度传感器采样        
    while(!ADCIF);                //等待 AD 转换完成 
-   value =  ADCL ;                //ADCL 寄存器低 2 位无效 
+   value = ADCL;                //ADCL 寄存器低 2 位无效 
    value |= ((uint16)ADCH) << 8;
    value=value>>4;  
   //ADCL &=0x00;

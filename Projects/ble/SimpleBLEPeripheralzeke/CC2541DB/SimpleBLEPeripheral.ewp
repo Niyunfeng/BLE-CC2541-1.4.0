@@ -1113,6 +1113,12 @@
       <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.h</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\..\Source\Simplepasscode.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\Simplepasscode.h</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\Source\SimpleRTCInterrupt.c</name>
     </file>
     <file>
