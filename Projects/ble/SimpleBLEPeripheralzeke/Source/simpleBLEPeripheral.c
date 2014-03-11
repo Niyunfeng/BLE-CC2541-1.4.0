@@ -97,12 +97,12 @@
  */
 
 // How often to perform periodic event
-#define SBP_PERIODIC_EVT_PERIOD                   5000
+//#define SBP_PERIODIC_EVT_PERIOD                   5000
 
-#define TEMP_CHECK_PERIOD                         2000
+#define TEMP_CHECK_PERIOD                         5000
 
 // How often to check battery voltage (in ms)
-#define BATTERY_CHECK_PERIOD                     13000////////////////////////////////////batt
+#define BATTERY_CHECK_PERIOD                     20000////////////////////////////////////batt
 
 // What is the advertising interval when device is discoverable (units of 625us, 160=100ms)
 #define DEFAULT_ADVERTISING_INTERVAL          160
@@ -110,7 +110,7 @@
 //若广播事件是可扫描无向事件或非连接无向事件 其值不得小于100MS，若广播事件是可连接无向事件，其值可以为20MS或者更大   
 //与手机通信过程中用的是,默认设置  GAP_ADTYPE_ADV_IND即可连接无向事件  测功耗时可以适当调整其值 */
 // Whether to enable automatic parameter update request when a connection is formed
-#define DEFAULT_ENABLE_UPDATE_REQUEST        TRUE// FALSE
+#define DEFAULT_ENABLE_UPDATE_REQUEST         FALSE//TRUE
 
 // Limited discoverable mode advertises for 30.72s, and then stops
 // General discoverable mode advertises indefinitely
@@ -373,12 +373,11 @@ void gettemp(void)
         temp_18b20[temp_18b20_flag]=sensor_data_value;
         temp_18b20_flag++;
 
-        if(temp_flag==8)
+        if(temp_flag==10)
         {
 
           for(i=0;i<temp_flag;i++)
-          // HalLcdWriteStringValue("AvgTemp:", temperature[i], 10, i+1);
-           HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
+             HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
         }
         
         
@@ -561,60 +560,65 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
                 
 
-                osal_start_timerEx(simpleBLEPeripheral_TaskID, TEMP_EVT, TEMP_CHECK_PERIOD );
+                osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_TEMP_EVT, TEMP_CHECK_PERIOD );
           
 		return (events ^ SBP_START_DEVICE_EVT);
 	}
 
 	if (events & SBP_PERIODIC_EVT) {
 		
-//                //Restart timer
-//                if ( BATTERY_CHECK_PERIOD )
-//               {
-//                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
-//                }
-//                 
-//               HalLedSet(HAL_LED_1, HAL_LED_MODE_ON ); 
-//                 //延时1S
-//               for(i=20; i>0; i--)
-//                  delay_nus(50000);
-//               HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );
-//               // perform battery level check
-//               Batt_MeasLevel();
-//               
+                //Restart timer
+                if ( BATTERY_CHECK_PERIOD )
+               {
+                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+                }
+                 
+               HalLedSet(HAL_LED_1, HAL_LED_MODE_ON ); 
+                 //延时1S
+               for(i=20; i>0; i--)
+                  delay_nus(50000);
+               HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );
+               // perform battery level check
+               Batt_MeasLevel();
+               
 		return (events ^ SBP_PERIODIC_EVT);
 	}
 
-	if (events & SBP_ZEKEZANG_EVT) {
-		uint8 initial_advertising_enable = FALSE;
-		GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &initial_advertising_enable);
-		return (events ^ SBP_ZEKEZANG_EVT);
-	}
+//	if (events & SBP_ZEKEZANG_EVT) {
+//		uint8 initial_advertising_enable = FALSE;
+//		GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &initial_advertising_enable);
+//		return (events ^ SBP_ZEKEZANG_EVT);
+//	}
 
-	if (events & SBP_SEND_IRDATA_EVT) {
-		HalLcdWriteString("send plan complete...", HAL_LCD_LINE_4);
-		return (events ^ SBP_SEND_IRDATA_EVT);
-	}
-
-	if (events & SBP_ADV_IN_CONNECTION_EVT) {
-		uint8 turnOnAdv = TRUE;
-		// Turn on advertising while in a connection
-		GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &turnOnAdv);
-
-		return (events ^ SBP_ADV_IN_CONNECTION_EVT);
-	}
+//	if (events & SBP_SEND_IRDATA_EVT) {
+//		HalLcdWriteString("send plan compl", HAL_LCD_LINE_4);
+//		return (events ^ SBP_SEND_IRDATA_EVT);
+//	}
+//
+//	if (events & SBP_ADV_IN_CONNECTION_EVT) {
+//		uint8 turnOnAdv = TRUE;
+//		// Turn on advertising while in a connection
+//		GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &turnOnAdv);
+//
+//		return (events ^ SBP_ADV_IN_CONNECTION_EVT);
+//	}
         
-        if (events & TEMP_EVT) {
+        if (events & SBP_TEMP_EVT) {
               // HalLcdWriteString("start get temp", HAL_LCD_LINE_5);
-               HalLedSet(HAL_LED_2, HAL_LED_MODE_ON ); 
+              
+              if ( SBP_TEMP_EVT)
+               {
+                  osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_TEMP_EVT, TEMP_CHECK_PERIOD ); 
+               }
+              HalLedSet(HAL_LED_2, HAL_LED_MODE_ON ); 
                  //延时1S
                for(i=20; i>0; i--)
                   delay_nus(50000);
                HalLedSet(HAL_LED_2, HAL_LED_MODE_OFF );
 	       gettemp();
-               osal_start_timerEx(simpleBLEPeripheral_TaskID, TEMP_EVT, TEMP_CHECK_PERIOD ); 
+              
                 
-	       return (events ^ TEMP_EVT);
+	       return (events ^ SBP_TEMP_EVT);
 	}
         
 
@@ -643,8 +647,8 @@ static void simpleBLEPeripheral_ProcessOSALMsg(osal_event_hdr_t *pMsg) {
 
 static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
 	if (keys & HAL_KEY_UP) {
-		u_state = IR_DATA_STUDY_CMD_START_BEGIN_STATE;
-		SbpHalUARTWrite(&SBP_UART_STUDY_CMD, SBP_UART_STUDY_CMD_LEN);
+		//u_state = IR_DATA_STUDY_CMD_START_BEGIN_STATE;
+		//SbpHalUARTWrite(&SBP_UART_STUDY_CMD, SBP_UART_STUDY_CMD_LEN);
 	}
 
 	if (keys & HAL_KEY_LEFT) {
@@ -654,11 +658,11 @@ static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
 
 	if (keys & HAL_KEY_DOWN) {
 		HalLcdWriteString("send after 3s...", HAL_LCD_LINE_4);
-		osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT, 3000);
+		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT, 3000);
 	}
 
 	if (keys & HAL_KEY_RIGHT) {
-		HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_2);
+		//HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_2);
 	}
 
 }

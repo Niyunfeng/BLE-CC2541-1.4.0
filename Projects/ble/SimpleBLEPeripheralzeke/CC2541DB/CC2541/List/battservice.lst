@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             11/Mar/2014  15:14:21 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             11/Mar/2014  15:56:26 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -451,9 +451,9 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
     351          
     352            
     353            uint8 level;
-    354          //HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
+    354          HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
     355            level = battMeasure();
-    356          //HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
+    356          HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
     357            // If level has gone down
     358            if (level < battLevel)
     359            {
@@ -768,9 +768,11 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        0      0      9  Batt_HandleConnStatusCB
                           0 0  9 -> GATTServApp_InitCharCfg
                           0 0  9 -> linkDB_State
-       2      0      0  Batt_MeasLevel
-                          2 0  0 -> battMeasure
-                          2 0  0 -> linkDB_PerformFunc
+       0      0     11  Batt_MeasLevel
+                          0 0 10 -> HalLcdWriteString
+                          0 0 11 -> HalLcdWriteStringValue
+                          0 0 10 -> battMeasure
+                          0 0 10 -> linkDB_PerformFunc
        2      0      0  Batt_Register
        0      0      9  Batt_SetParameter
                           0 0  9 -> linkDB_PerformFunc
@@ -792,6 +794,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
 
    Bytes  Function/Label
    -----  --------------
+      12  ?<Constant "batt_lebel:">
+      18  ?<Constant "now  start batt..">
       40  ?<Initializer for battAttrTbl>
        1  ?<Initializer for battLevel>
        1  ?<Initializer for battLevelProps>
@@ -806,27 +810,26 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        6  ??Batt_Register?relay
        6  ??Batt_SetParameter?relay
        6  ??Batt_Setup?relay
-       4  ??Subroutine10_0
-       5  ??Subroutine11_0
+       5  ??Subroutine10_0
+       4  ??Subroutine9_0
        6  ??battMeasure?relay
        6  ??battNotifyCB?relay
        6  ??battReadAttrCB?relay
        6  ??battWriteAttrCB?relay
        5  ?Subroutine0
-       7  ?Subroutine1
-       1  ?Subroutine2
-       6  ?Subroutine3
-      12  ?Subroutine4
-      14  ?Subroutine5
-       3  ?Subroutine6
-      10  ?Subroutine7
+       1  ?Subroutine1
+       6  ?Subroutine2
+      12  ?Subroutine3
+      14  ?Subroutine4
+       3  ?Subroutine5
+      10  ?Subroutine6
+       6  ?Subroutine7
        6  ?Subroutine8
-       6  ?Subroutine9
       43  Batt_AddService
      104  Batt_GetParameter
       55  Batt_HandleConnStatusCB
-      31  Batt_MeasLevel
-      12  Batt_Register
+      71  Batt_MeasLevel
+      19  Batt_Register
       47  Batt_SetParameter
       97  Batt_Setup
       40  battAttrTbl
@@ -852,15 +855,15 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        2  hidReportRefBattLevel
 
  
- 1 085 bytes in segment BANKED_CODE
+ 1 125 bytes in segment BANKED_CODE
     66 bytes in segment BANK_RELAYS
     49 bytes in segment XDATA_I
     49 bytes in segment XDATA_ID
-    13 bytes in segment XDATA_ROM_C
+    43 bytes in segment XDATA_ROM_C
     15 bytes in segment XDATA_Z
  
- 1 200 bytes of CODE  memory
-    13 bytes of CONST memory
+ 1 240 bytes of CODE  memory
+    43 bytes of CONST memory
     64 bytes of XDATA memory
 
 Errors: none
