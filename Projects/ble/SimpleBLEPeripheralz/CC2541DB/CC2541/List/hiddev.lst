@@ -1,0 +1,1680 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:49:07 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          Profiles\HIDDev\hiddev.c                           #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          Profiles\HIDDev\hiddev.c -D INT_HEAP_LEN=3074 -D   #
+#                          HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D          #
+#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ -o   #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\ -e    #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\hidde #
+#                          v.lst                                              #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hiddev #
+#                          .r51                                               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\HIDDev\hiddev.c
+      1          /**************************************************************************************************
+      2            Filename:       hiddev.c
+      3          
+      4            Revised:        $Date: 2013-08-15 15:28:40 -0700 (Thu, 15 Aug 2013) $
+      5            Revision:       $Revision: 34986 $
+      6          
+      7            Description:    This file contains the common HID Device profile
+      8                            for use with the CC2540 Bluetooth Low Energy Protocol Stack.
+      9          
+     10            Copyright 2011-2013 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12            IMPORTANT: Your use of this Software is limited to those specific rights
+     13            granted under the terms of a software license agreement between the user
+     14            who downloaded the software, his/her employer (which must be your employer)
+     15            and Texas Instruments Incorporated (the "License").  You may not use this
+     16            Software unless you agree to abide by the terms of the License. The License
+     17            limits your use, and you acknowledge, that the Software may not be modified,
+     18            copied or distributed unless embedded on a Texas Instruments microcontroller
+     19            or used solely and exclusively in conjunction with a Texas Instruments radio
+     20            frequency transceiver, which is integrated into your product.  Other than for
+     21            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22            works of, modify, distribute, perform, display or sell this Software and/or
+     23            its documentation for any purpose.
+     24          
+     25            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37            Should you have any questions regarding your right to use this Software,
+     38            contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          
+     42          /*********************************************************************
+     43           * INCLUDES
+     44           */
+     45          
+     46          #include "bcomdef.h"
+     47          #include "OSAL.h"
+     48          #include "OnBoard.h"
+     49          #include "gatt.h"
+     50          #include "hci.h"
+     51          #include "gapgattserver.h"
+     52          #include "gattservapp.h"
+     53          #include "gatt_uuid.h"
+     54          #include "gatt_profile_uuid.h"
+     55          #include "linkdb.h"
+     56          #include "peripheral.h"
+     57          #include "gapbondmgr.h"
+     58          #include "devinfoservice.h"
+     59          #include "battservice.h"
+     60          //#include "scanparamservice.h"
+     61          #include "hiddev.h"
+     62          
+     63          /*********************************************************************
+     64           * MACROS
+     65           */
+     66          
+     67          // Battery measurement period in ms
+     68          #define DEFAULT_BATT_PERIOD                   15000
+     69          
+     70          // TRUE to run scan parameters refresh notify test
+     71          #define DEFAULT_SCAN_PARAM_NOTIFY_TEST        TRUE
+     72          
+     73          // Advertising intervals (units of 625us, 160=100ms)
+     74          #define HID_INITIAL_ADV_INT_MIN               48
+     75          #define HID_INITIAL_ADV_INT_MAX               80
+     76          #define HID_HIGH_ADV_INT_MIN                  32
+     77          #define HID_HIGH_ADV_INT_MAX                  48
+     78          #define HID_LOW_ADV_INT_MIN                   1600
+     79          #define HID_LOW_ADV_INT_MAX                   1600
+     80          
+     81          // Advertising timeouts in sec
+     82          #define HID_INITIAL_ADV_TIMEOUT               60
+     83          #define HID_HIGH_ADV_TIMEOUT                  5
+     84          #define HID_LOW_ADV_TIMEOUT                   0
+     85          
+     86          // Heart Rate Task Events
+     87          #define START_DEVICE_EVT                      0x0001
+     88          #define BATT_PERIODIC_EVT                     0x0002
+     89          #define HID_IDLE_EVT                          0x0004
+     90          #define HID_SEND_REPORT_EVT                   0x0008
+     91          
+     92          #define reportQEmpty()                        ( firstQIdx == lastQIdx )
+     93          
+     94          /*********************************************************************
+     95           * CONSTANTS
+     96           */
+     97          
+     98          #define HID_DEV_DATA_LEN                      8
+     99          
+    100          #ifdef HID_DEV_RPT_QUEUE_LEN
+    101            #define HID_DEV_REPORT_Q_SIZE               (HID_DEV_RPT_QUEUE_LEN+1)
+    102          #else
+    103            #define HID_DEV_REPORT_Q_SIZE               (10+1)
+    104          #endif
+    105          
+    106          /*********************************************************************
+    107           * TYPEDEFS
+    108           */
+    109          
+    110          typedef struct
+    111          {
+    112           uint8 id;
+    113           uint8 type;
+    114           uint8 len;
+    115           uint8 data[HID_DEV_DATA_LEN];
+    116          } hidDevReport_t;
+    117          
+    118          /*********************************************************************
+    119           * GLOBAL VARIABLES
+    120           */
+    121          
+    122          // Task ID
+    123          uint8 hidDevTaskId;
+    124          
+    125          /*********************************************************************
+    126           * EXTERNAL VARIABLES
+    127           */
+    128          
+    129          /*********************************************************************
+    130           * EXTERNAL FUNCTIONS
+    131           */
+    132          
+    133          /*********************************************************************
+    134           * LOCAL VARIABLES
+    135           */
+    136          
+    137          // GAP State
+    138          static gaprole_States_t hidDevGapState = GAPROLE_INIT;
+    139          
+    140          // TRUE if connection is secure
+    141          static uint8 hidDevConnSecure = FALSE;
+    142          
+    143          // GAP connection handle
+    144          static uint16 gapConnHandle;
+    145          
+    146          // TRUE if pairing in progress
+    147          static uint8 hidDevPairingStarted = FALSE;
+    148          
+    149          // Status of last pairing
+    150          static uint8 pairingStatus = SUCCESS;
+    151          
+    152          static hidRptMap_t *pHidDevRptTbl;
+    153          
+    154          static uint8 hidDevRptTblLen;
+    155          
+    156          static hidDevCB_t *pHidDevCB;
+    157          
+    158          static hidDevCfg_t *pHidDevCfg;
+    159          
+    160          // Whether to change to the preferred connection parameters
+    161          static uint8 updateConnParams = TRUE;
+    162          
+    163          // Pending reports
+    164          static uint8 firstQIdx = 0;
+    165          static uint8 lastQIdx = 0;
+    166          static hidDevReport_t hidDevReportQ[HID_DEV_REPORT_Q_SIZE];
+    167          
+    168          // Last report sent out
+    169          static attHandleValueNoti_t lastNoti = { 0 };
+    170          
+    171          /*********************************************************************
+    172           * LOCAL FUNCTIONS
+    173           */
+    174          
+    175          static void hidDev_ProcessOSALMsg( osal_event_hdr_t *pMsg );
+    176          static void hidDevProcessGattMsg( gattMsgEvent_t *pMsg );
+    177          static void hidDevDisconnected( void );
+    178          static void hidDevGapStateCB( gaprole_States_t newState );
+    179          static void hidDevPairStateCB( uint16 connHandle, uint8 state, uint8 status );
+    180          static void hidDevPasscodeCB( uint8 *deviceAddr, uint16 connectionHandle,
+    181                                        uint8 uiInputs, uint8 uiOutputs );
+    182          static void hidDevBattCB( uint8 event );
+    183          static void hidDevScanParamCB( uint8 event );
+    184          static void hidDevBattPeriodicTask( void );
+    185          static hidRptMap_t *hidDevRptByHandle( uint16 handle );
+    186          static hidRptMap_t *hidDevRptById( uint8 id, uint8 type );
+    187          static hidRptMap_t *hidDevRptByCccdHandle( uint16 handle );
+    188          static void hidDevEnqueueReport( uint8 id, uint8 type, uint8 len, uint8 *pData );
+    189          static hidDevReport_t *hidDevDequeueReport( void );
+    190          static void hidDevSendReport( uint8 id, uint8 type, uint8 len, uint8 *pData );
+    191          static void hidDevHighAdvertising( void );
+    192          static void hidDevLowAdvertising( void );
+    193          static void hidDevInitialAdvertising( void );
+    194          static uint8 hidDevBondCount( void );
+    195          static void hidDevStartIdleTimer( void );
+    196          static void hidDevStopIdleTimer( void );
+    197          
+    198          /*********************************************************************
+    199           * PROFILE CALLBACKS
+    200           */
+    201          
+    202          // GAP Role Callbacks
+    203          static gapRolesCBs_t hidDev_PeripheralCBs =
+    204          {
+    205            hidDevGapStateCB,   // Profile State Change Callbacks
+    206            NULL                // When a valid RSSI is read from controller
+    207          };
+    208          
+    209          // Bond Manager Callbacks
+    210          static const gapBondCBs_t hidDevBondCB =
+    211          {
+    212            hidDevPasscodeCB,
+    213            hidDevPairStateCB
+    214          };
+    215          
+    216          /*********************************************************************
+    217           * PUBLIC FUNCTIONS
+    218           */
+    219          
+    220          /*********************************************************************
+    221           * @fn      HidDev_Init
+    222           *
+    223           * @brief   Initialization function for the Hid Dev Task.
+    224           *          This is called during initialization and should contain
+    225           *          any application specific initialization (ie. hardware
+    226           *          initialization/setup, table initialization, power up
+    227           *          notificaiton ... ).
+    228           *
+    229           * @param   task_id - the ID assigned by OSAL.  This ID should be
+    230           *                    used to send messages and set timers.
+    231           *
+    232           * @return  none
+    233           */
+    234          void HidDev_Init( uint8 task_id )
+    235          {
+    236            hidDevTaskId = task_id;
+    237          
+    238            // Setup the GAP Bond Manager
+    239            {
+    240              uint8 syncWL = TRUE;
+    241          
+    242              // If a bond is created, the HID Device should write the address of the
+    243              // HID Host in the HID Device controller's white list and set the HID
+    244              // Device controller's advertising filter policy to 'process scan and
+    245              // connection requests only from devices in the White List'.
+    246              VOID GAPBondMgr_SetParameter( GAPBOND_AUTO_SYNC_WL, sizeof( uint8 ), &syncWL );
+    247            }
+    248          
+    249            // Set up services
+    250            GGS_AddService( GATT_ALL_SERVICES );         // GAP
+    251            GATTServApp_AddService( GATT_ALL_SERVICES ); // GATT attributes
+    252            DevInfo_AddService( );
+    253            Batt_AddService( );
+    254            ScanParam_AddService( );
+    255          
+    256            // Register for Battery service callback
+    257            Batt_Register( hidDevBattCB );
+    258          
+    259            // Register for Scan Parameters service callback
+    260            ScanParam_Register( hidDevScanParamCB );
+    261          
+    262            // Setup a delayed profile startup
+    263            osal_set_event( hidDevTaskId, START_DEVICE_EVT );
+    264          }
+    265          
+    266          /*********************************************************************
+    267           * @fn      HidDev_ProcessEvent
+    268           *
+    269           * @brief   Hid Dev Task event processor.  This function
+    270           *          is called to process all events for the task.  Events
+    271           *          include timers, messages and any other user defined events.
+    272           *
+    273           * @param   task_id  - The OSAL assigned task ID.
+    274           * @param   events - events to process.  This is a bit map and can
+    275           *                   contain more than one event.
+    276           *
+    277           * @return  events not processed
+    278           */
+    279          uint16 HidDev_ProcessEvent( uint8 task_id, uint16 events )
+    280          {
+    281          
+    282            VOID task_id; // OSAL required parameter that isn't used in this function
+    283          
+    284            if ( events & SYS_EVENT_MSG )
+    285            {
+    286              uint8 *pMsg;
+    287          
+    288              if ( (pMsg = osal_msg_receive( hidDevTaskId )) != NULL )
+    289              {
+    290                hidDev_ProcessOSALMsg( (osal_event_hdr_t *)pMsg );
+    291          
+    292                // Release the OSAL message
+    293                VOID osal_msg_deallocate( pMsg );
+    294              }
+    295          
+    296              // return unprocessed events
+    297              return (events ^ SYS_EVENT_MSG);
+    298            }
+    299          
+    300            if ( events & START_DEVICE_EVT )
+    301            {
+    302              // Start the Device
+    303              VOID GAPRole_StartDevice( &hidDev_PeripheralCBs );
+    304          
+    305              // Register with bond manager after starting device
+    306              GAPBondMgr_Register( (gapBondCBs_t *) &hidDevBondCB );
+    307          
+    308              return ( events ^ START_DEVICE_EVT );
+    309            }
+    310          
+    311            if ( events & HID_IDLE_EVT )
+    312            {
+    313              if ( hidDevGapState == GAPROLE_CONNECTED )
+    314              {
+    315                // if pairing in progress then restart timer
+    316                if ( hidDevPairingStarted )
+    317                {
+    318                  hidDevStartIdleTimer();
+    319                }
+    320                // else disconnect
+    321                else
+    322                {
+    323                  GAPRole_TerminateConnection();
+    324                }
+    325              }
+    326          
+    327              return ( events ^ HID_IDLE_EVT );
+    328            }
+    329          
+    330            if ( events & BATT_PERIODIC_EVT )
+    331            {
+    332              // Perform periodic battery task
+    333              hidDevBattPeriodicTask();
+    334          
+    335              return ( events ^ BATT_PERIODIC_EVT );
+    336            }
+    337          
+    338            if ( events & HID_SEND_REPORT_EVT )
+    339            {
+    340              // if connection is secure
+    341              if ( hidDevConnSecure )
+    342              {
+    343                hidDevReport_t *pReport = hidDevDequeueReport();
+    344          
+    345                if ( pReport != NULL )
+    346                {
+    347                  // Send report
+    348                  hidDevSendReport( pReport->id, pReport->type, pReport->len, pReport->data );
+    349                }
+    350          
+    351                return ( reportQEmpty() ? events ^ HID_SEND_REPORT_EVT : events );
+    352              }
+    353          
+    354              return ( events ^ HID_SEND_REPORT_EVT );
+    355            }
+    356          
+    357            return 0;
+    358          }
+    359          
+    360          /*********************************************************************
+    361           * @fn      HidDev_Register
+    362           *
+    363           * @brief   Register a callback function with HID Dev.
+    364           *
+    365           * @param   pCfg - Parameter configuration.
+    366           * @param   pfnServiceCB - Callback function.
+    367           *
+    368           * @return  None.
+    369           */
+    370          void HidDev_Register( hidDevCfg_t *pCfg, hidDevCB_t *pCBs )
+    371          {
+    372            pHidDevCB = pCBs;
+    373            pHidDevCfg = pCfg;
+    374          }
+    375          
+    376          /*********************************************************************
+    377           * @fn      HidDev_RegisterReports
+    378           *
+    379           * @brief   Register the report table with HID Dev.
+    380           *
+    381           * @param   numReports - Length of report table.
+    382           * @param   pRpt - Report table.
+    383           *
+    384           * @return  None.
+    385           */
+    386          void HidDev_RegisterReports( uint8 numReports, hidRptMap_t *pRpt )
+    387          {
+    388            pHidDevRptTbl = pRpt;
+    389            hidDevRptTblLen = numReports;
+    390          }
+    391          
+    392          /*********************************************************************
+    393           * @fn      HidDev_Report
+    394           *
+    395           * @brief   Send a HID report.
+    396           *
+    397           * @param   id - HID report ID.
+    398           * @param   type - HID report type.
+    399           * @param   len - Length of report.
+    400           * @param   pData - Report data.
+    401           *
+    402           * @return  None.
+    403           */
+    404          void HidDev_Report( uint8 id, uint8 type, uint8 len, uint8*pData )
+    405          {
+    406            // if connected
+    407            if ( hidDevGapState == GAPROLE_CONNECTED )
+    408            {
+    409              // if connection is secure
+    410              if ( hidDevConnSecure )
+    411              {
+    412                // Make sure there're no pending reports
+    413                if ( reportQEmpty() )
+    414                {
+    415                  // send report
+    416                  hidDevSendReport( id, type, len, pData );
+    417          
+    418                  return; // we're done
+    419                }
+    420              }
+    421            }
+    422            // else if not already advertising
+    423            else if ( hidDevGapState != GAPROLE_ADVERTISING )
+    424            {
+    425              // if bonded
+    426              if ( hidDevBondCount() > 0 )
+    427              {
+    428                // start high duty cycle advertising
+    429                hidDevHighAdvertising();
+    430              }
+    431              // else not bonded
+    432              else
+    433              {
+    434                // start initial advertising
+    435                hidDevInitialAdvertising();
+    436              }
+    437            }
+    438          
+    439            // hidDev task will send report when secure connection is established
+    440            hidDevEnqueueReport( id, type, len, pData );
+    441          }
+    442          
+    443          /*********************************************************************
+    444           * @fn      HidDev_Close
+    445           *
+    446           * @brief   Close the connection or stop advertising.
+    447           *
+    448           * @return  None.
+    449           */
+    450          void HidDev_Close( void )
+    451          {
+    452            uint8 param;
+    453          
+    454            // if connected then disconnect
+    455            if ( hidDevGapState == GAPROLE_CONNECTED )
+    456            {
+    457              GAPRole_TerminateConnection();
+    458            }
+    459            // else stop advertising
+    460            else
+    461            {
+    462              param = FALSE;
+    463              GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+    464            }
+    465          }
+    466          
+    467          /*********************************************************************
+    468           * @fn      HidDev_SetParameter
+    469           *
+    470           * @brief   Set a HID Dev parameter.
+    471           *
+    472           * @param   param - Profile parameter ID
+    473           * @param   len - length of data to right
+    474           * @param   pValue - pointer to data to write.  This is dependent on
+    475           *          the parameter ID and WILL be cast to the appropriate
+    476           *          data type (example: data type of uint16 will be cast to
+    477           *          uint16 pointer).
+    478           *
+    479           * @return  bStatus_t
+    480           */
+    481          bStatus_t HidDev_SetParameter( uint8 param, uint8 len, void *pValue )
+    482          {
+    483            bStatus_t ret = SUCCESS;
+    484          
+    485            switch ( param )
+    486            {
+    487              case HIDDEV_ERASE_ALLBONDS:
+    488                if ( len == 0 )
+    489                {
+    490                  // See if the last report sent out wasn't a release key
+    491                  if ( osal_isbufset( lastNoti.value, 0x00, lastNoti.len ) == FALSE )
+    492                  {
+    493                    // Send a release report before disconnecting, otherwise
+    494                    // the last pressed key would get 'stuck' on the HID Host.
+    495                    osal_memset( lastNoti.value, 0x00, lastNoti.len );
+    496          
+    497                    GATT_Notification( gapConnHandle, &lastNoti, FALSE );
+    498                  }
+    499          
+    500                  // Drop connection
+    501                  if ( hidDevGapState == GAPROLE_CONNECTED )
+    502                  {
+    503                    GAPRole_TerminateConnection();
+    504                  }
+    505          
+    506                  // Flush report queue
+    507                  firstQIdx = lastQIdx = 0;
+    508          
+    509                  // Erase bonding info
+    510                  GAPBondMgr_SetParameter( GAPBOND_ERASE_ALLBONDS, 0, NULL );
+    511                }
+    512                else
+    513                {
+    514                  ret = bleInvalidRange;
+    515                }
+    516                break;
+    517          
+    518              default:
+    519                ret = INVALIDPARAMETER;
+    520                break;
+    521            }
+    522          
+    523            return ( ret );
+    524          }
+    525          
+    526          /*********************************************************************
+    527           * @fn      HidDev_GetParameter
+    528           *
+    529           * @brief   Get a HID Dev parameter.
+    530           *
+    531           * @param   param - Profile parameter ID
+    532           * @param   pValue - pointer to data to get.  This is dependent on
+    533           *          the parameter ID and WILL be cast to the appropriate
+    534           *          data type (example: data type of uint16 will be cast to
+    535           *          uint16 pointer).
+    536           *
+    537           * @return  bStatus_t
+    538           */
+    539          bStatus_t HidDev_GetParameter( uint8 param, void *pValue )
+    540          {
+    541            bStatus_t ret = SUCCESS;
+    542          
+    543            switch ( param )
+    544            {
+    545          
+    546              default:
+    547                ret = INVALIDPARAMETER;
+    548                break;
+    549            }
+    550          
+    551            return ( ret );
+    552          }
+    553          
+    554          /*********************************************************************
+    555           * @fn      HidDev_PasscodeRsp
+    556           *
+    557           * @brief   Respond to a passcode request.
+    558           *
+    559           * @param   status - SUCCESS if passcode is available, otherwise
+    560           *                   see @ref SMP_PAIRING_FAILED_DEFINES.
+    561           * @param   passcode - integer value containing the passcode.
+    562           *
+    563           * @return  none
+    564           */
+    565          void HidDev_PasscodeRsp( uint8 status, uint32 passcode )
+    566          {
+    567            // Send passcode response
+    568            GAPBondMgr_PasscodeRsp( gapConnHandle, status, passcode );
+    569          }
+    570          
+    571          /*********************************************************************
+    572           * @fn          HidDev_ReadAttrCB
+    573           *
+    574           * @brief       HID Dev attribute read callback.
+    575           *
+    576           * @param       connHandle - connection message was received on
+    577           * @param       pAttr - pointer to attribute
+    578           * @param       pValue - pointer to data to be read
+    579           * @param       pLen - length of data to be read
+    580           * @param       offset - offset of the first octet to be read
+    581           * @param       maxLen - maximum length of data to be read
+    582           *
+    583           * @return      Success or Failure
+    584           */
+    585          uint8 HidDev_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+    586                                   uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+    587          {
+    588            bStatus_t   status = SUCCESS;
+    589            hidRptMap_t *pRpt;
+    590          
+    591            uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+    592          
+    593            // Only report map is long
+    594            if ( offset > 0 && uuid != REPORT_MAP_UUID )
+    595            {
+    596              return ( ATT_ERR_ATTR_NOT_LONG );
+    597            }
+    598          
+    599            if ( uuid == REPORT_UUID ||
+    600                 uuid == BOOT_KEY_INPUT_UUID ||
+    601                 uuid == BOOT_KEY_OUTPUT_UUID ||
+    602                 uuid == BOOT_MOUSE_INPUT_UUID )
+    603            {
+    604              // find report ID in table
+    605              if ( (pRpt = hidDevRptByHandle(pAttr->handle)) != NULL )
+    606              {
+    607                // execute report callback
+    608                status  = (*pHidDevCB->reportCB)( pRpt->id, pRpt->type, uuid,
+    609                                                  HID_DEV_OPER_READ, pLen, pValue );
+    610              }
+    611              else
+    612              {
+    613                *pLen = 0;
+    614              }
+    615            }
+    616            else if ( uuid == REPORT_MAP_UUID )
+    617            {
+    618              // verify offset
+    619              if ( offset >= hidReportMapLen )
+    620              {
+    621                status = ATT_ERR_INVALID_OFFSET;
+    622              }
+    623              else
+    624              {
+    625                // determine read length
+    626                *pLen = MIN( maxLen, (hidReportMapLen - offset) );
+    627          
+    628                // copy data
+    629                osal_memcpy( pValue, pAttr->pValue + offset, *pLen );
+    630              }
+    631            }
+    632            else if ( uuid == HID_INFORMATION_UUID )
+    633            {
+    634              *pLen = HID_INFORMATION_LEN;
+    635              osal_memcpy( pValue, pAttr->pValue, HID_INFORMATION_LEN );
+    636            }
+    637            else if ( uuid == GATT_REPORT_REF_UUID )
+    638            {
+    639              *pLen = HID_REPORT_REF_LEN;
+    640              osal_memcpy( pValue, pAttr->pValue, HID_REPORT_REF_LEN );
+    641            }
+    642            else if ( uuid == PROTOCOL_MODE_UUID )
+    643            {
+    644              *pLen = HID_PROTOCOL_MODE_LEN;
+    645              pValue[0] = pAttr->pValue[0];
+    646            }
+    647            else if ( uuid == GATT_EXT_REPORT_REF_UUID )
+    648            {
+    649              *pLen = HID_EXT_REPORT_REF_LEN;
+    650              osal_memcpy( pValue, pAttr->pValue, HID_EXT_REPORT_REF_LEN );
+    651            }
+    652          
+    653            // restart idle timer
+    654            if ( status == SUCCESS )
+    655            {
+    656              hidDevStartIdleTimer();
+    657            }
+    658          
+    659            return ( status );
+    660          }
+    661          
+    662          /*********************************************************************
+    663           * @fn      HidDev_WriteAttrCB
+    664           *
+    665           * @brief   HID Dev attribute read callback.
+    666           *
+    667           * @param   connHandle - connection message was received on
+    668           * @param   pAttr - pointer to attribute
+    669           * @param   pValue - pointer to data to be written
+    670           * @param   len - length of data
+    671           * @param   offset - offset of the first octet to be written
+    672           *
+    673           * @return  Success or Failure
+    674           */
+    675          bStatus_t HidDev_WriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+    676                                        uint8 *pValue, uint8 len, uint16 offset )
+    677          {
+    678            bStatus_t status = SUCCESS;
+    679            hidRptMap_t *pRpt;
+    680          
+    681            // Make sure it's not a blob operation (no attributes in the profile are long)
+    682            if ( offset > 0 )
+    683            {
+    684              return ( ATT_ERR_ATTR_NOT_LONG );
+    685            }
+    686          
+    687            uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+    688          
+    689            if ( uuid == REPORT_UUID ||
+    690                 uuid == BOOT_KEY_OUTPUT_UUID )
+    691            {
+    692              // find report ID in table
+    693              if ((pRpt = hidDevRptByHandle(pAttr->handle)) != NULL)
+    694              {
+    695                // execute report callback
+    696                status  = (*pHidDevCB->reportCB)( pRpt->id, pRpt->type, uuid,
+    697                                                  HID_DEV_OPER_WRITE, &len, pValue );
+    698              }
+    699            }
+    700            else if ( uuid == HID_CTRL_PT_UUID )
+    701            {
+    702              // Validate length and value range
+    703              if ( len == 1 )
+    704              {
+    705                if ( pValue[0] == HID_CMD_SUSPEND ||  pValue[0] == HID_CMD_EXIT_SUSPEND )
+    706                {
+    707                  // execute HID app event callback
+    708                  (*pHidDevCB->evtCB)( (pValue[0] == HID_CMD_SUSPEND) ?
+    709                                       HID_DEV_SUSPEND_EVT : HID_DEV_EXIT_SUSPEND_EVT );
+    710                }
+    711                else
+    712                {
+    713                  status = ATT_ERR_INVALID_VALUE;
+    714                }
+    715              }
+    716              else
+    717              {
+    718                status = ATT_ERR_INVALID_VALUE_SIZE;
+    719              }
+    720            }
+    721            else if ( uuid == GATT_CLIENT_CHAR_CFG_UUID )
+    722            {
+    723              status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+    724                                                       offset, GATT_CLIENT_CFG_NOTIFY );
+    725              if ( status == SUCCESS )
+    726              {
+    727                uint16 charCfg = BUILD_UINT16( pValue[0], pValue[1] );
+    728          
+    729                // find report ID in table
+    730                if ( (pRpt = hidDevRptByCccdHandle(pAttr->handle)) != NULL )
+    731                {
+    732                  // execute report callback
+    733                  (*pHidDevCB->reportCB)( pRpt->id, pRpt->type, uuid,
+    734                                          (charCfg == GATT_CLIENT_CFG_NOTIFY) ?
+    735                                            HID_DEV_OPER_ENABLE : HID_DEV_OPER_DISABLE,
+    736                                          &len, pValue );
+    737                }
+    738              }
+    739            }
+    740            else if ( uuid == PROTOCOL_MODE_UUID )
+    741            {
+    742              if ( len == HID_PROTOCOL_MODE_LEN )
+    743              {
+    744                if ( pValue[0] == HID_PROTOCOL_MODE_BOOT ||
+    745                     pValue[0] == HID_PROTOCOL_MODE_REPORT )
+    746                {
+    747                  pAttr->pValue[0] = pValue[0];
+    748          
+    749                  // execute HID app event callback
+    750                  (*pHidDevCB->evtCB)( (pValue[0] == HID_PROTOCOL_MODE_BOOT) ?
+    751                                       HID_DEV_SET_BOOT_EVT : HID_DEV_SET_REPORT_EVT );
+    752                }
+    753                else
+    754                {
+    755                  status = ATT_ERR_INVALID_VALUE;
+    756                }
+    757              }
+    758              else
+    759              {
+    760                status = ATT_ERR_INVALID_VALUE_SIZE;
+    761              }
+    762            }
+    763          
+    764            // restart idle timer
+    765            if (status == SUCCESS)
+    766            {
+    767              hidDevStartIdleTimer();
+    768            }
+    769          
+    770            return ( status );
+    771          }
+    772          
+    773          /*********************************************************************
+    774           * @fn      hidDev_ProcessOSALMsg
+    775           *
+    776           * @brief   Process an incoming task message.
+    777           *
+    778           * @param   pMsg - message to process
+    779           *
+    780           * @return  none
+    781           */
+    782          static void hidDev_ProcessOSALMsg( osal_event_hdr_t *pMsg )
+    783          {
+    784            switch ( pMsg->event )
+    785            {
+    786            case GATT_MSG_EVENT:
+    787                hidDevProcessGattMsg( (gattMsgEvent_t *) pMsg );
+    788                break;
+    789          
+    790            default:
+    791                break;
+    792            }
+    793          }
+    794          
+    795          /*********************************************************************
+    796           * @fn      hidDevProcessGattMsg
+    797           *
+    798           * @brief   Process GATT messages
+    799           *
+    800           * @return  none
+    801           */
+    802          static void hidDevProcessGattMsg( gattMsgEvent_t *pMsg )
+    803          {
+    804          
+    805          }
+    806          
+    807          /*********************************************************************
+    808           * @fn          hidDevHandleConnStatusCB
+    809           *
+    810           * @brief       Reset client char config.
+    811           *
+    812           * @param       connHandle - connection handle
+    813           * @param       changeType - type of change
+    814           *
+    815           * @return      none
+    816           */
+    817          static void hidDevHandleConnStatusCB( uint16 connHandle, uint8 changeType )
+    818          {
+    819            uint8           i;
+    820            hidRptMap_t     *p = pHidDevRptTbl;
+    821            uint16          retHandle;
+    822            gattAttribute_t *pAttr;
+    823          
+    824            // Make sure this is not loopback connection
+    825            if ( connHandle != LOOPBACK_CONNHANDLE )
+    826            {
+    827              if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+    828                   ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) &&
+    829                     ( !linkDB_Up( connHandle ) ) ) )
+    830              {
+    831                for ( i = hidDevRptTblLen; i > 0; i--, p++ )
+    832                {
+    833                  if ( p->cccdHandle != 0 )
+    834                  {
+    835                    if ( (pAttr = GATT_FindHandle(p->cccdHandle, &retHandle)) != NULL )
+    836                    {
+    837                      GATTServApp_InitCharCfg( connHandle, (gattCharCfg_t *) pAttr->pValue );
+    838                    }
+    839                  }
+    840                }
+    841              }
+    842            }
+    843          }
+    844          
+    845          /*********************************************************************
+    846           * @fn      hidDevDisconnected
+    847           *
+    848           * @brief   Handle disconnect.
+    849           *
+    850           * @return  none
+    851           */
+    852          static void hidDevDisconnected( void )
+    853          {
+    854            // Stop idle timer
+    855            hidDevStopIdleTimer();
+    856          
+    857            // Reset client characteristic configuration descriptors
+    858            Batt_HandleConnStatusCB( gapConnHandle, LINKDB_STATUS_UPDATE_REMOVED );
+    859            ScanParam_HandleConnStatusCB( gapConnHandle, LINKDB_STATUS_UPDATE_REMOVED );
+    860            hidDevHandleConnStatusCB( gapConnHandle, LINKDB_STATUS_UPDATE_REMOVED );
+    861          
+    862            // Reset state variables
+    863            hidDevConnSecure = FALSE;
+    864            hidProtocolMode = HID_PROTOCOL_MODE_REPORT;
+    865            hidDevPairingStarted = FALSE;
+    866          
+    867            // Reset last report sent out
+    868            osal_memset( &lastNoti, 0, sizeof( attHandleValueNoti_t ) );
+    869          
+    870            // if bonded and normally connectable start advertising
+    871            if ( ( hidDevBondCount() > 0 ) &&
+    872                 ( pHidDevCfg->hidFlags & HID_FLAGS_NORMALLY_CONNECTABLE ) )
+    873            {
+    874              hidDevLowAdvertising();
+    875            }
+    876          }
+    877          
+    878          /*********************************************************************
+    879           * @fn      hidDevGapStateCB
+    880           *
+    881           * @brief   Notification from the profile of a state change.
+    882           *
+    883           * @param   newState - new state
+    884           *
+    885           * @return  none
+    886           */
+    887          static void hidDevGapStateCB( gaprole_States_t newState )
+    888          {
+    889            // if connected
+    890            if ( newState == GAPROLE_CONNECTED )
+    891            {
+    892              // get connection handle
+    893              GAPRole_GetParameter( GAPROLE_CONNHANDLE, &gapConnHandle );
+    894          
+    895              // connection not secure yet
+    896              hidDevConnSecure = FALSE;
+    897          
+    898              // don't start advertising when connection is closed
+    899              uint8 param = FALSE;
+    900              GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+    901          
+    902              // start idle timer
+    903              hidDevStartIdleTimer();
+    904            }
+    905            // if disconnected
+    906            else if ( hidDevGapState == GAPROLE_CONNECTED &&
+    907                      newState != GAPROLE_CONNECTED )
+    908            {
+    909              hidDevDisconnected();
+    910              updateConnParams = TRUE;
+    911          
+    912              if ( pairingStatus == SMP_PAIRING_FAILED_CONFIRM_VALUE )
+    913              {
+    914                // bonding failed due to mismatched confirm values
+    915                hidDevInitialAdvertising();
+    916          
+    917                pairingStatus = SUCCESS;
+    918              }
+    919            }
+    920            // if started
+    921            else if ( newState == GAPROLE_STARTED )
+    922            {
+    923              // nothing to do for now!
+    924            }
+    925          
+    926            hidDevGapState = newState;
+    927          }
+    928          
+    929          /*********************************************************************
+    930           * @fn      hidDevPairStateCB
+    931           *
+    932           * @brief   Pairing state callback.
+    933           *
+    934           * @return  none
+    935           */
+    936          static void hidDevPairStateCB( uint16 connHandle, uint8 state, uint8 status )
+    937          {
+    938            if ( state == GAPBOND_PAIRING_STATE_STARTED )
+    939            {
+    940              hidDevPairingStarted = TRUE;
+    941            }
+    942            else if ( state == GAPBOND_PAIRING_STATE_COMPLETE )
+    943            {
+    944              hidDevPairingStarted = FALSE;
+    945          
+    946              if ( status == SUCCESS )
+    947              {
+    948                hidDevConnSecure = TRUE;
+    949              }
+    950          
+    951              pairingStatus = status;
+    952            }
+    953            else if ( state == GAPBOND_PAIRING_STATE_BONDED )
+    954            {
+    955              if ( status == SUCCESS )
+    956              {
+    957                hidDevConnSecure = TRUE;
+    958          
+    959          #if DEFAULT_SCAN_PARAM_NOTIFY_TEST == TRUE
+    960                ScanParam_RefreshNotify( gapConnHandle );
+    961          #endif
+    962              }
+    963            }
+    964          
+    965            if ( !reportQEmpty() && hidDevConnSecure )
+    966            {
+    967              // Notify our task to send out pending reports
+    968              osal_set_event( hidDevTaskId, HID_SEND_REPORT_EVT );
+    969            }
+    970          }
+    971          
+    972          /*********************************************************************
+    973           * @fn      hidDevPasscodeCB
+    974           *
+    975           * @brief   Passcode callback.
+    976           *
+    977           * @param   deviceAddr - address of device to pair with, and could be either public or random.
+    978           * @param   connectionHandle - connection handle
+    979           * @param   uiInputs - pairing User Interface Inputs - Ask user to input passcode
+    980           * @param   uiOutputs - pairing User Interface Outputs - Display passcode
+    981           *
+    982           * @return  none
+    983           */
+    984          static void hidDevPasscodeCB( uint8 *deviceAddr, uint16 connectionHandle,
+    985                                                  uint8 uiInputs, uint8 uiOutputs )
+    986          {
+    987            if ( pHidDevCB && pHidDevCB->passcodeCB )
+    988            {
+    989              // execute HID app passcode callback
+    990              (*pHidDevCB->passcodeCB)( deviceAddr, connectionHandle, uiInputs, uiOutputs );
+    991            }
+    992            else
+    993            {
+    994              // Send passcode response
+    995              GAPBondMgr_PasscodeRsp( connectionHandle, SUCCESS, 0 );
+    996            }
+    997          }
+    998          
+    999          /*********************************************************************
+   1000           * @fn      hidDevBattCB
+   1001           *
+   1002           * @brief   Callback function for battery service.
+   1003           *
+   1004           * @param   event - service event
+   1005           *
+   1006           * @return  none
+   1007           */
+   1008          static void hidDevBattCB( uint8 event )
+   1009          {
+   1010            if ( event == BATT_LEVEL_NOTI_ENABLED )
+   1011            {
+   1012              // if connected start periodic measurement
+   1013              if ( hidDevGapState == GAPROLE_CONNECTED )
+   1014              {
+   1015                osal_start_timerEx( hidDevTaskId, BATT_PERIODIC_EVT, DEFAULT_BATT_PERIOD );
+   1016              }
+   1017            }
+   1018            else if ( event == BATT_LEVEL_NOTI_DISABLED )
+   1019            {
+   1020              // stop periodic measurement
+   1021              osal_stop_timerEx( hidDevTaskId, BATT_PERIODIC_EVT );
+   1022            }
+   1023          }
+   1024          
+   1025          /*********************************************************************
+   1026           * @fn      hidDevScanParamCB
+   1027           *
+   1028           * @brief   Callback function for scan parameter service.
+   1029           *
+   1030           * @param   event - service event
+   1031           *
+   1032           * @return  none
+   1033           */
+   1034          static void hidDevScanParamCB( uint8 event )
+   1035          {
+   1036          
+   1037          }
+   1038          
+   1039          /*********************************************************************
+   1040           * @fn      hidDevBattPeriodicTask
+   1041           *
+   1042           * @brief   Perform a periodic task for battery measurement.
+   1043           *
+   1044           * @param   none
+   1045           *
+   1046           * @return  none
+   1047           */
+   1048          static void hidDevBattPeriodicTask( void )
+   1049          {
+   1050            if ( hidDevGapState == GAPROLE_CONNECTED )
+   1051            {
+   1052              // perform battery level check
+   1053              Batt_MeasLevel( );
+   1054          
+   1055              // Restart timer
+   1056              osal_start_timerEx( hidDevTaskId, BATT_PERIODIC_EVT, DEFAULT_BATT_PERIOD );
+   1057            }
+   1058          }
+   1059          
+   1060          /*********************************************************************
+   1061           * @fn      hidDevRptByHandle
+   1062           *
+   1063           * @brief   Find the HID report structure for the given handle.
+   1064           *
+   1065           * @param   handle - ATT handle
+   1066           *
+   1067           * @return  Pointer to HID report structure
+   1068           */
+   1069          static hidRptMap_t *hidDevRptByHandle( uint16 handle )
+   1070          {
+   1071            uint8       i;
+   1072            hidRptMap_t *p = pHidDevRptTbl;
+   1073          
+   1074            for ( i = hidDevRptTblLen; i > 0; i--, p++ )
+   1075            {
+   1076              if ( p->handle == handle && p->mode == hidProtocolMode)
+   1077              {
+   1078                return p;
+   1079              }
+   1080            }
+   1081          
+   1082            return NULL;
+   1083          }
+   1084          
+   1085          /*********************************************************************
+   1086           * @fn      hidDevRptByCccdHandle
+   1087           *
+   1088           * @brief   Find the HID report structure for the given CCC handle.
+   1089           *
+   1090           * @param   handle - ATT handle
+   1091           *
+   1092           * @return  Pointer to HID report structure
+   1093           */
+   1094          static hidRptMap_t *hidDevRptByCccdHandle( uint16 handle )
+   1095          {
+   1096            uint8       i;
+   1097            hidRptMap_t *p = pHidDevRptTbl;
+   1098          
+   1099            for ( i = hidDevRptTblLen; i > 0; i--, p++ )
+   1100            {
+   1101              if ( p->cccdHandle == handle)
+   1102              {
+   1103                return p;
+   1104              }
+   1105            }
+   1106          
+   1107            return NULL;
+   1108          }
+   1109          
+   1110          /*********************************************************************
+   1111           * @fn      hidDevRptById
+   1112           *
+   1113           * @brief   Find the HID report structure for the Report ID and type.
+   1114           *
+   1115           * @param   id - HID report ID
+   1116           * @param   type - HID report type
+   1117           *
+   1118           * @return  Pointer to HID report structure
+   1119           */
+   1120          static hidRptMap_t *hidDevRptById( uint8 id, uint8 type )
+   1121          {
+   1122            uint8       i;
+   1123            hidRptMap_t *p = pHidDevRptTbl;
+   1124          
+   1125            for ( i = hidDevRptTblLen; i > 0; i--, p++ )
+   1126            {
+   1127              if ( p->id == id && p->type == type && p->mode == hidProtocolMode )
+   1128              {
+   1129                return p;
+   1130              }
+   1131            }
+   1132          
+   1133            return NULL;
+   1134          }
+   1135          
+   1136          /*********************************************************************
+   1137           * @fn      hidDevSendReport
+   1138           *
+   1139           * @brief   Send a HID report.
+   1140           *
+   1141           * @param   id - HID report ID.
+   1142           * @param   type - HID report type.
+   1143           * @param   len - Length of report.
+   1144           * @param   pData - Report data.
+   1145           *
+   1146           * @return  None.
+   1147           */
+   1148          static void hidDevSendReport( uint8 id, uint8 type, uint8 len, uint8 *pData )
+   1149          {
+   1150            hidRptMap_t           *pRpt;
+   1151            gattAttribute_t       *pAttr;
+   1152            uint16                retHandle;
+   1153          
+   1154            // get att handle for report
+   1155            if ( (pRpt = hidDevRptById(id, type)) != NULL )
+   1156            {
+   1157              // if notifications are enabled
+   1158              if ( (pAttr = GATT_FindHandle(pRpt->cccdHandle, &retHandle)) != NULL )
+   1159              {
+   1160                uint16 value;
+   1161          
+   1162                value  = GATTServApp_ReadCharCfg( gapConnHandle, (gattCharCfg_t *) pAttr->pValue );
+   1163                if ( value & GATT_CLIENT_CFG_NOTIFY )
+   1164                {
+   1165                  // After service discovery and encryption, the HID Device should request to
+   1166                  // change to the preferred connection parameters that best suit its use case.
+   1167                  if ( updateConnParams )
+   1168                  {
+   1169                    GAPRole_SetParameter( GAPROLE_PARAM_UPDATE_REQ, sizeof( uint8 ), &updateConnParams );
+   1170                    updateConnParams = FALSE;
+   1171                  }
+   1172          
+   1173                  // send notification
+   1174                  lastNoti.handle = pRpt->handle;
+   1175                  lastNoti.len = len;
+   1176                  osal_memcpy(lastNoti.value, pData, len);
+   1177          
+   1178                  GATT_Notification( gapConnHandle, &lastNoti, FALSE );
+   1179          
+   1180                  // start idle timer
+   1181                  hidDevStartIdleTimer();
+   1182                }
+   1183              }
+   1184            }
+   1185          }
+   1186          
+   1187          /*********************************************************************
+   1188           * @fn      hidDevEnqueueReport
+   1189           *
+   1190           * @brief   Enqueue a HID report to be sent later.
+   1191           *
+   1192           * @param   id - HID report ID.
+   1193           * @param   type - HID report type.
+   1194           * @param   len - Length of report.
+   1195           * @param   pData - Report data.
+   1196           *
+   1197           * @return  None.
+   1198           */
+   1199          static void hidDevEnqueueReport( uint8 id, uint8 type, uint8 len, uint8 *pData )
+   1200          {
+   1201            // Enqueue only if bonded
+   1202            if ( hidDevBondCount() > 0 )
+   1203            {
+   1204              // Update last index
+   1205              lastQIdx = ( lastQIdx + 1 ) % HID_DEV_REPORT_Q_SIZE;
+   1206          
+   1207              if ( lastQIdx == firstQIdx )
+   1208              {
+   1209                // Queue overflow; discard oldest report
+   1210                firstQIdx = ( firstQIdx + 1 ) % HID_DEV_REPORT_Q_SIZE;
+   1211              }
+   1212          
+   1213              // Save report
+   1214              hidDevReportQ[lastQIdx].id = id;
+   1215              hidDevReportQ[lastQIdx].type = type;
+   1216              hidDevReportQ[lastQIdx].len = len;
+   1217              osal_memcpy( hidDevReportQ[lastQIdx].data, pData, len );
+   1218          
+   1219              if ( hidDevConnSecure )
+   1220              {
+   1221                // Notify our task to send out pending reports
+   1222                osal_set_event( hidDevTaskId, HID_SEND_REPORT_EVT );
+   1223              }
+   1224            }
+   1225          }
+   1226          
+   1227          /*********************************************************************
+   1228           * @fn      hidDevDequeueReport
+   1229           *
+   1230           * @brief   Dequeue a HID report to be sent out.
+   1231           *
+   1232           * @param   id - HID report ID.
+   1233           * @param   type - HID report type.
+   1234           * @param   len - Length of report.
+   1235           * @param   pData - Report data.
+   1236           *
+   1237           * @return  None.
+   1238           */
+   1239          static hidDevReport_t *hidDevDequeueReport( void )
+   1240          {
+   1241            if ( reportQEmpty() )
+   1242            {
+   1243              return NULL;
+   1244            }
+   1245          
+   1246            // Update first index
+   1247            firstQIdx = ( firstQIdx + 1 ) % HID_DEV_REPORT_Q_SIZE;
+   1248          
+   1249            return ( &(hidDevReportQ[firstQIdx]) );
+   1250          }
+   1251          
+   1252          /*********************************************************************
+   1253           * @fn      hidDevHighAdvertising
+   1254           *
+   1255           * @brief   Start advertising at a high duty cycle.
+   1256          
+   1257           * @param   None.
+   1258           *
+   1259           * @return  None.
+   1260           */
+   1261          static void hidDevHighAdvertising( void )
+   1262          {
+   1263            uint8 param;
+   1264          
+   1265            VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, HID_HIGH_ADV_INT_MIN );
+   1266            VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, HID_HIGH_ADV_INT_MAX );
+   1267            VOID GAP_SetParamValue( TGAP_LIM_ADV_TIMEOUT, HID_HIGH_ADV_TIMEOUT );
+   1268          
+   1269            // Setup adverstising filter policy first
+   1270            param = GAP_FILTER_POLICY_WHITE;
+   1271            VOID GAPRole_SetParameter( GAPROLE_ADV_FILTER_POLICY, sizeof( uint8 ), &param );
+   1272          
+   1273            param = TRUE;
+   1274            GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+   1275          }
+   1276          
+   1277          /*********************************************************************
+   1278           * @fn      hidDevLowAdvertising
+   1279           *
+   1280           * @brief   Start advertising at a low duty cycle.
+   1281           *
+   1282           * @param   None.
+   1283           *
+   1284           * @return  None.
+   1285           */
+   1286          static void hidDevLowAdvertising( void )
+   1287          {
+   1288            uint8 param;
+   1289          
+   1290            VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, HID_LOW_ADV_INT_MIN );
+   1291            VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, HID_LOW_ADV_INT_MAX );
+   1292            VOID GAP_SetParamValue( TGAP_LIM_ADV_TIMEOUT, HID_LOW_ADV_TIMEOUT );
+   1293          
+   1294            // Setup adverstising filter policy first
+   1295            param = GAP_FILTER_POLICY_WHITE;
+   1296            VOID GAPRole_SetParameter( GAPROLE_ADV_FILTER_POLICY, sizeof( uint8 ), &param );
+   1297          
+   1298            param = TRUE;
+   1299            VOID GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+   1300          }
+   1301          
+   1302          /*********************************************************************
+   1303           * @fn      hidDevInitialAdvertising
+   1304           *
+   1305           * @brief   Start advertising for initial connection
+   1306           *
+   1307           * @return  None.
+   1308           */
+   1309          static void hidDevInitialAdvertising( void )
+   1310          {
+   1311            uint8 param;
+   1312          
+   1313            VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MIN, HID_INITIAL_ADV_INT_MIN );
+   1314            VOID GAP_SetParamValue( TGAP_LIM_DISC_ADV_INT_MAX, HID_INITIAL_ADV_INT_MAX );
+   1315            VOID GAP_SetParamValue( TGAP_LIM_ADV_TIMEOUT, HID_INITIAL_ADV_TIMEOUT );
+   1316          
+   1317            // Setup adverstising filter policy first
+   1318            param = GAP_FILTER_POLICY_ALL;
+   1319            VOID GAPRole_SetParameter( GAPROLE_ADV_FILTER_POLICY, sizeof( uint8 ), &param );
+   1320          
+   1321            param = TRUE;
+   1322            VOID GAPRole_SetParameter( GAPROLE_ADVERT_ENABLED, sizeof( uint8 ), &param );
+   1323          }
+   1324          
+   1325          /*********************************************************************
+   1326           * @fn      hidDevBondCount
+   1327           *
+   1328           * @brief   Gets the total number of bonded devices.
+   1329           *
+   1330           * @param   None.
+   1331           *
+   1332           * @return  number of bonded devices.
+   1333           */
+   1334          static uint8 hidDevBondCount( void )
+   1335          {
+   1336            uint8 bondCnt = 0;
+   1337          
+   1338            VOID GAPBondMgr_GetParameter( GAPBOND_BOND_COUNT, &bondCnt );
+   1339          
+   1340            return ( bondCnt );
+   1341          }
+   1342          
+   1343          /*********************************************************************
+   1344           * @fn      hidDevStartIdleTimer
+   1345           *
+   1346           * @brief   Start the idle timer.
+   1347           *
+   1348           * @return  None.
+   1349           */
+   1350          static void hidDevStartIdleTimer( void )
+   1351          {
+   1352            if ( pHidDevCfg->idleTimeout > 0 )
+   1353            {
+   1354              osal_start_timerEx( hidDevTaskId, HID_IDLE_EVT, pHidDevCfg->idleTimeout );
+   1355            }
+   1356          }
+   1357          
+   1358          /*********************************************************************
+   1359           * @fn      hidDevStopIdleTimer
+   1360           *
+   1361           * @brief   Stop the idle timer.
+   1362           *
+   1363           * @return  None.
+   1364           */
+   1365          static void hidDevStopIdleTimer( void )
+   1366          {
+   1367            osal_stop_timerEx( hidDevTaskId, HID_IDLE_EVT );
+   1368          }
+   1369          
+   1370          /*********************************************************************
+   1371          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       2      0      1  HidDev_Close
+                          2 0  1 -> GAPRole_SetParameter
+                          2 0  1 -> GAPRole_TerminateConnection
+       0      0      0  HidDev_GetParameter
+       0      0     10  HidDev_Init
+                          0 0 10 -> Batt_AddService
+                          0 0 10 -> Batt_Register
+                          0 0 10 -> DevInfo_AddService
+                          0 0 10 -> GAPBondMgr_SetParameter
+                          0 0 10 -> GATTServApp_AddService
+                          0 0 10 -> GGS_AddService
+                          0 0 10 -> ScanParam_AddService
+                          0 0 10 -> ScanParam_Register
+                          0 0 10 -> osal_set_event
+       0      0     16  HidDev_PasscodeRsp
+                          0 0 16 -> GAPBondMgr_PasscodeRsp
+       0      0     15  HidDev_ProcessEvent
+                          0 0 11 -> Batt_MeasLevel
+                          0 0 11 -> GAPBondMgr_Register
+                          0 0 11 -> GAPRole_StartDevice
+                          0 0 11 -> GAPRole_TerminateConnection
+                          0 0 11 -> hidDevSendReport
+                          0 0 11 -> hidDevStartIdleTimer
+                          0 0 11 -> osal_msg_deallocate
+                          0 0 11 -> osal_msg_receive
+                          0 0 15 -> osal_start_timerEx
+       1      0     30  HidDev_ReadAttrCB
+                          0 0 20 -> hidDevRptByHandle
+                          0 0 20 -> hidDevStartIdleTimer
+                          0 0 22 -> osal_memcpy
+       2      0      0  HidDev_Register
+       2      0      0  HidDev_RegisterReports
+       1      0     17  HidDev_Report
+                          0 0 15 -> GAPRole_SetParameter
+                          0 0 15 -> GAP_SetParamValue
+                          0 0 15 -> hidDevBondCount
+                          0 0 15 -> hidDevInitialAdvertising
+                          0 0 15 -> hidDevSendReport
+                          0 0 17 -> osal_memcpy
+                          0 0 15 -> osal_set_event
+       0      0      9  HidDev_SetParameter
+                          0 0  9 -> GAPBondMgr_SetParameter
+                          0 0  9 -> GAPRole_TerminateConnection
+                          0 0  9 -> GATT_Notification
+                          0 0  9 -> osal_isbufset
+                          0 0  9 -> osal_memset
+       1      0     27  HidDev_WriteAttrCB
+                          0 0 23 -> GATTServApp_ProcessCCCWriteReq
+                          0 0 17 -> hidDevRptByHandle
+                          0 0 17 -> hidDevStartIdleTimer
+       0      0     13  hidDevBattCB
+                          0 0 13 -> osal_start_timerEx
+                          0 0  9 -> osal_stop_timerEx
+       2      0     18  hidDevBondCount
+                          2 0  1 -> GAPBondMgr_GetParameter
+       0      0     27  hidDevDisconnected
+                          0 0 17 -> Batt_HandleConnStatusCB
+                          0 0 17 -> GAPRole_SetParameter
+                          0 0 17 -> GAP_SetParamValue
+                          0 0 17 -> GATTServApp_InitCharCfg
+                          0 0 17 -> GATT_FindHandle
+                          0 0 17 -> ScanParam_HandleConnStatusCB
+                          0 0 17 -> hidDevBondCount
+                          0 0 17 -> osal_memset
+                          0 0 17 -> osal_stop_timerEx
+       0      0     10  hidDevGapStateCB
+                          0 0 10 -> GAPRole_GetParameter
+                          0 0 10 -> GAPRole_SetParameter
+                          0 0 10 -> hidDevDisconnected
+                          0 0 10 -> hidDevInitialAdvertising
+                          0 0 10 -> hidDevStartIdleTimer
+       2      0     16  hidDevInitialAdvertising
+                          2 0  1 -> GAPRole_SetParameter
+                          2 0  1 -> GAP_SetParamValue
+       0      0      9  hidDevPairStateCB
+                          0 0  9 -> ScanParam_RefreshNotify
+                          0 0  9 -> osal_set_event
+       0      0     15  hidDevPasscodeCB
+                          0 0 14 -> GAPBondMgr_PasscodeRsp
+       2      0     20  hidDevRptByHandle
+       0      0      0  hidDevScanParamCB
+       0      0     35  hidDevSendReport
+                          0 0 18 -> GAPRole_SetParameter
+                          0 0 18 -> GATTServApp_ReadCharCfg
+                          0 0 18 -> GATT_FindHandle
+                          0 0 18 -> GATT_Notification
+                          0 0 18 -> hidDevStartIdleTimer
+                          0 0 20 -> osal_memcpy
+       0      0     36  hidDevStartIdleTimer
+                          0 0 16 -> osal_start_timerEx
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ?<Initializer for hidDev_PeripheralCBs>
+       1  ?<Initializer for updateConnParams>
+       6  ??HidDev_Close?relay
+       6  ??HidDev_GetParameter?relay
+       6  ??HidDev_Init?relay
+       6  ??HidDev_PasscodeRsp?relay
+       6  ??HidDev_ProcessEvent?relay
+       6  ??HidDev_ReadAttrCB?relay
+       6  ??HidDev_Register?relay
+       6  ??HidDev_RegisterReports?relay
+       6  ??HidDev_Report?relay
+       6  ??HidDev_SetParameter?relay
+       6  ??HidDev_WriteAttrCB?relay
+       6  ??Subroutine20_0
+       7  ??Subroutine21_0
+       5  ??Subroutine22_0
+       4  ??Subroutine23_0
+      16  ??Subroutine24_0
+       3  ??Subroutine25_0
+       6  ??Subroutine26_0
+       6  ??hidDevBattCB?relay
+       6  ??hidDevBondCount?relay
+       6  ??hidDevDisconnected?relay
+       6  ??hidDevGapStateCB?relay
+       6  ??hidDevInitialAdvertising?relay
+       6  ??hidDevPairStateCB?relay
+       6  ??hidDevPasscodeCB?relay
+       6  ??hidDevRptByHandle?relay
+       6  ??hidDevScanParamCB?relay
+       6  ??hidDevSendReport?relay
+       6  ??hidDevStartIdleTimer?relay
+       5  ?Subroutine0
+       5  ?Subroutine1
+      11  ?Subroutine10
+       9  ?Subroutine11
+       2  ?Subroutine12
+      13  ?Subroutine13
+      16  ?Subroutine14
+      13  ?Subroutine15
+       6  ?Subroutine16
+      10  ?Subroutine17
+       8  ?Subroutine18
+       9  ?Subroutine19
+       8  ?Subroutine2
+       5  ?Subroutine3
+       8  ?Subroutine4
+       9  ?Subroutine5
+      10  ?Subroutine6
+      13  ?Subroutine7
+      15  ?Subroutine8
+       6  ?Subroutine9
+      38  HidDev_Close
+       5  HidDev_GetParameter
+      82  HidDev_Init
+      29  HidDev_PasscodeRsp
+     258  HidDev_ProcessEvent
+     461  HidDev_ReadAttrCB
+      22  HidDev_Register
+      19  HidDev_RegisterReports
+     230  HidDev_Report
+      94  HidDev_SetParameter
+     517  HidDev_WriteAttrCB
+       4  __Constant_0
+       4  __Constant_3a98
+       4  __Constant_ffffffff
+       1  firstQIdx
+       2  gapConnHandle
+      65  hidDevBattCB
+       4  hidDevBondCB
+      37  hidDevBondCount
+       1  hidDevConnSecure
+     241  hidDevDisconnected
+       1  hidDevGapState
+      91  hidDevGapStateCB
+      66  hidDevInitialAdvertising
+      91  hidDevPairStateCB
+       1  hidDevPairingStarted
+      85  hidDevPasscodeCB
+     121  hidDevReportQ
+      67  hidDevRptByHandle
+       1  hidDevRptTblLen
+       3  hidDevScanParamCB
+     237  hidDevSendReport
+      51  hidDevStartIdleTimer
+       1  hidDevTaskId
+       4  hidDev_PeripheralCBs
+      23  lastNoti
+       1  lastQIdx
+       2  pHidDevCB
+       2  pHidDevCfg
+       2  pHidDevRptTbl
+       1  pairingStatus
+       1  updateConnParams
+
+ 
+ 3 017 bytes in segment BANKED_CODE
+   132 bytes in segment BANK_RELAYS
+     5 bytes in segment XDATA_I
+     5 bytes in segment XDATA_ID
+    16 bytes in segment XDATA_ROM_C
+   160 bytes in segment XDATA_Z
+ 
+ 3 154 bytes of CODE  memory
+     4 bytes of CONST memory (+ 12 bytes shared)
+   165 bytes of XDATA memory
+
+Errors: none
+Warnings: 4

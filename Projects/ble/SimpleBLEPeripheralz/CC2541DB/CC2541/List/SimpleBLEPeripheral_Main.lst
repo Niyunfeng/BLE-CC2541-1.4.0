@@ -1,0 +1,250 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             13/Mar/2014  11:19:49 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\SimpleBLEPeripheral #
+#                          _Main.c                                            #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\SimpleBLEPeripheral #
+#                          _Main.c -D INT_HEAP_LEN=3074 -D HALNODEBUG -D      #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D xHAL_AES_DMA=TRUE -D   #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -D HAL_ADC=TRUE -lcN E:\TexasInstruments\BLE-CC254 #
+#                          x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC254 #
+#                          1DB\CC2541\List\ -o E:\TexasInstruments\BLE-CC254x #
+#                          -1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541 #
+#                          DB\CC2541\Obj\ -e --debug --core=plain             #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\common\ -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\include\ -I                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\hal\target\CC2541EB\   #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\osal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\services\saddr\ -I                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\Simpl #
+#                          eBLEPeripheral_Main.lst                            #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\Simple #
+#                          BLEPeripheral_Main.r51                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source\SimpleBLEPeripheral_Main.c
+      1          /**************************************************************************************************
+      2           Filename:       SimpleBLEPeripheral_Main.c
+      3           Revised:        $Date: 2010-07-06 15:39:18 -0700 (Tue, 06 Jul 2010) $
+      4           Revision:       $Revision: 22902 $
+      5          
+      6           Description:    This file contains the main and callback functions for
+      7           the Simple BLE Peripheral sample application.
+      8          
+      9           Copyright 2010 - 2011 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11           IMPORTANT: Your use of this Software is limited to those specific rights
+     12           granted under the terms of a software license agreement between the user
+     13           who downloaded the software, his/her employer (which must be your employer)
+     14           and Texas Instruments Incorporated (the "License").  You may not use this
+     15           Software unless you agree to abide by the terms of the License. The License
+     16           limits your use, and you acknowledge, that the Software may not be modified,
+     17           copied or distributed unless embedded on a Texas Instruments microcontroller
+     18           or used solely and exclusively in conjunction with a Texas Instruments radio
+     19           frequency transceiver, which is integrated into your product.  Other than for
+     20           the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21           works of, modify, distribute, perform, display or sell this Software and/or
+     22           its documentation for any purpose.
+     23          
+     24           YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25           PROVIDED �AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26           INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27           NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28           TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29           NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30           LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31           INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32           OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33           OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34           (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36           Should you have any questions regarding your right to use this Software,
+     37           contact Texas Instruments Incorporated at www.TI.com.
+     38           **************************************************************************************************/
+     39          
+     40          /**************************************************************************************************
+     41           *                                           Includes
+     42           **************************************************************************************************/
+     43          /* Hal Drivers */
+     44          #include "hal_types.h"
+     45          #include "hal_key.h"
+     46          #include "hal_timer.h"
+     47          #include "hal_drivers.h"
+     48          #include "hal_led.h"
+     49          
+     50          /* OSAL */
+     51          #include "OSAL.h"
+     52          #include "OSAL_Tasks.h"
+     53          #include "OSAL_PwrMgr.h"
+     54          #include "osal_snv.h"
+     55          #include "OnBoard.h"
+     56          
+     57          /**************************************************************************************************
+     58           * FUNCTIONS
+     59           **************************************************************************************************/
+     60          
+     61          /* This callback is triggered when a key is pressed */
+     62          void MSA_Main_KeyCallback(uint8 keys, uint8 state);
+     63          
+     64          /**************************************************************************************************
+     65           * @fn          main
+     66           *
+     67           * @brief       Start of application.
+     68           *
+     69           * @param       none
+     70           *
+     71           * @return      none
+     72           **************************************************************************************************
+     73           */
+     74          int main(void) {
+     75          	/* Initialize hardware */
+     76          	HAL_BOARD_INIT();
+     77          
+     78          	// Initialize board I/O
+     79          	InitBoard(OB_COLD);
+     80          
+     81          	/* Initialze the HAL driver */
+     82          	HalDriverInit();
+     83          
+     84          	/* Initialize NV system */
+     85          	osal_snv_init();
+     86          
+     87          	/* Initialize LL */
+     88          
+     89          	/* Initialize the operating system */
+     90          	osal_init_system();
+     91          
+     92          	/* Enable interrupts */HAL_ENABLE_INTERRUPTS();
+     93          
+     94          	// Final board initialization
+     95          	InitBoard(OB_READY);
+     96          
+     97          #if defined ( POWER_SAVING )
+     98          	osal_pwrmgr_device( PWRMGR_BATTERY );
+     99          #endif
+    100          
+    101          	/* Start OSAL */
+    102          	osal_start_system(); // No Return from here
+    103          
+    104          	return 0;
+    105          }
+    106          
+    107          /**************************************************************************************************
+    108           CALL-BACKS
+    109           **************************************************************************************************/
+    110          
+    111          /*************************************************************************************************
+    112           **************************************************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      0  main
+                          0 0 0 -> HalDriverInit
+                          0 0 0 -> InitBoard
+                          0 0 0 -> osal_init_system
+                          0 0 0 -> osal_pwrmgr_device
+                          0 0 0 -> osal_snv_init
+                          0 0 0 -> osal_start_system
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??main?relay
+       1  CLKCONCMD
+       1  CLKCONSTA
+       1  SLEEPCMD
+       1  SLEEPSTA
+       1  _A_IEN0
+      88  main
+
+ 
+ 88 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+  5 bytes in segment SFR_AN
+ 
+ 94 bytes of CODE memory
+  0 bytes of DATA memory (+ 5 bytes shared)
+
+Errors: none
+Warnings: 1

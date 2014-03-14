@@ -355,14 +355,14 @@ HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
   level = battMeasure();
 HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
   // If level has gone down
-  if (level < battLevel)
-  {
-    // Update level
-    battLevel = level;
-
-    // Send a notification
-    battNotifyLevel();
-  }
+//  if (level > battLevel)
+//  {
+//    // Update level
+//    battLevel = level;
+//
+//    // Send a notification
+//    battNotifyLevel();
+//  }
 
   return SUCCESS;
 }

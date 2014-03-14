@@ -1,0 +1,860 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             05/Mar/2014  15:11:20 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          Profiles\DevInfo\devinfoservice.c                  #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          Profiles\DevInfo\devinfoservice.c -D               #
+#                          INT_HEAP_LEN=3074 -D HALNODEBUG -D                 #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D xHAL_AES_DMA=TRUE -D   #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -D HAL_ADC=TRUE -lcN E:\TexasInstruments\BLE-CC254 #
+#                          x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC254 #
+#                          1DB\CC2541\List\ -o E:\TexasInstruments\BLE-CC254x #
+#                          -1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541 #
+#                          DB\CC2541\Obj\ -e --debug --core=plain             #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\common\ -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\include\ -I                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\hal\target\CC2541EB\   #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\osal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\services\saddr\ -I                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\devin #
+#                          foservice.lst                                      #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\devinf #
+#                          oservice.r51                                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\DevInfo\devinfoservice.c
+      1          /**************************************************************************************************
+      2            Filename:       devinfoservice.c
+      3            Revised:        $Date $
+      4            Revision:       $Revision $
+      5          
+      6            Description:    This file contains the Device Information service.
+      7          
+      8          
+      9            Copyright 2012 - 2013 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          
+     40          /*********************************************************************
+     41           * INCLUDES
+     42           */
+     43          #include "bcomdef.h"
+     44          #include "OSAL.h"
+     45          #include "linkdb.h"
+     46          #include "att.h"
+     47          #include "gatt.h"
+     48          #include "gatt_uuid.h"
+     49          #include "gatt_profile_uuid.h"
+     50          #include "gattservapp.h"
+     51          
+     52          #include "devinfoservice.h"
+     53          
+     54          /*********************************************************************
+     55           * MACROS
+     56           */
+     57          
+     58          /*********************************************************************
+     59           * CONSTANTS
+     60           */
+     61          
+     62          /*********************************************************************
+     63           * TYPEDEFS
+     64           */
+     65          
+     66          /*********************************************************************
+     67           * GLOBAL VARIABLES
+     68           */
+     69          // Device information service
+     70          CONST uint8 devInfoServUUID[ATT_BT_UUID_SIZE] =
+     71          {
+     72            LO_UINT16(DEVINFO_SERV_UUID), HI_UINT16(DEVINFO_SERV_UUID)
+     73          };
+     74          
+     75          // System ID
+     76          CONST uint8 devInfoSystemIdUUID[ATT_BT_UUID_SIZE] =
+     77          {
+     78            LO_UINT16(SYSTEM_ID_UUID), HI_UINT16(SYSTEM_ID_UUID)
+     79          };
+     80          
+     81          // Model Number String
+     82          CONST uint8 devInfoModelNumberUUID[ATT_BT_UUID_SIZE] =
+     83          {
+     84            LO_UINT16(MODEL_NUMBER_UUID), HI_UINT16(MODEL_NUMBER_UUID)
+     85          };
+     86          
+     87          // Serial Number String
+     88          CONST uint8 devInfoSerialNumberUUID[ATT_BT_UUID_SIZE] =
+     89          {
+     90            LO_UINT16(SERIAL_NUMBER_UUID), HI_UINT16(SERIAL_NUMBER_UUID)
+     91          };
+     92          
+     93          // Firmware Revision String
+     94          CONST uint8 devInfoFirmwareRevUUID[ATT_BT_UUID_SIZE] =
+     95          {
+     96            LO_UINT16(FIRMWARE_REV_UUID), HI_UINT16(FIRMWARE_REV_UUID)
+     97          };
+     98          
+     99          // Hardware Revision String
+    100          CONST uint8 devInfoHardwareRevUUID[ATT_BT_UUID_SIZE] =
+    101          {
+    102            LO_UINT16(HARDWARE_REV_UUID), HI_UINT16(HARDWARE_REV_UUID)
+    103          };
+    104          
+    105          // Software Revision String
+    106          CONST uint8 devInfoSoftwareRevUUID[ATT_BT_UUID_SIZE] =
+    107          {
+    108            LO_UINT16(SOFTWARE_REV_UUID), HI_UINT16(SOFTWARE_REV_UUID)
+    109          };
+    110          
+    111          // Manufacturer Name String
+    112          CONST uint8 devInfoMfrNameUUID[ATT_BT_UUID_SIZE] =
+    113          {
+    114            LO_UINT16(MANUFACTURER_NAME_UUID), HI_UINT16(MANUFACTURER_NAME_UUID)
+    115          };
+    116          
+    117          // IEEE 11073-20601 Regulatory Certification Data List
+    118          CONST uint8 devInfo11073CertUUID[ATT_BT_UUID_SIZE] =
+    119          {
+    120            LO_UINT16(IEEE_11073_CERT_DATA_UUID), HI_UINT16(IEEE_11073_CERT_DATA_UUID)
+    121          };
+    122          
+    123          // PnP ID
+    124          CONST uint8 devInfoPnpIdUUID[ATT_BT_UUID_SIZE] =
+    125          {
+    126            LO_UINT16(PNP_ID_UUID), HI_UINT16(PNP_ID_UUID)
+    127          };
+    128          
+    129          
+    130          /*********************************************************************
+    131           * EXTERNAL VARIABLES
+    132           */
+    133          
+    134          /*********************************************************************
+    135           * EXTERNAL FUNCTIONS
+    136           */
+    137          
+    138          /*********************************************************************
+    139           * LOCAL VARIABLES
+    140           */
+    141          
+    142          /*********************************************************************
+    143           * Profile Attributes - variables
+    144           */
+    145          
+    146          // Device Information Service attribute
+    147          static CONST gattAttrType_t devInfoService = { ATT_BT_UUID_SIZE, devInfoServUUID };
+    148          
+    149          // System ID characteristic
+    150          static uint8 devInfoSystemIdProps = GATT_PROP_READ;
+    151          static uint8 devInfoSystemId[DEVINFO_SYSTEM_ID_LEN] = {0, 0, 0, 0, 0, 0, 0, 0};
+    152          
+    153          // Model Number String characteristic
+    154          static uint8 devInfoModelNumberProps = GATT_PROP_READ;
+    155          static const uint8 devInfoModelNumber[] = "Model Number";
+    156          
+    157          // Serial Number String characteristic
+    158          static uint8 devInfoSerialNumberProps = GATT_PROP_READ;
+    159          static const uint8 devInfoSerialNumber[] = "Serial Number";
+    160          
+    161          // Firmware Revision String characteristic
+    162          static uint8 devInfoFirmwareRevProps = GATT_PROP_READ;
+    163          static const uint8 devInfoFirmwareRev[] = "Firmware Revision";
+    164          
+    165          // Hardware Revision String characteristic
+    166          static uint8 devInfoHardwareRevProps = GATT_PROP_READ;
+    167          static const uint8 devInfoHardwareRev[] = "Hardware Revision";
+    168          
+    169          // Software Revision String characteristic
+    170          static uint8 devInfoSoftwareRevProps = GATT_PROP_READ;
+    171          static const uint8 devInfoSoftwareRev[] = "Software Revision";
+    172          
+    173          // Manufacturer Name String characteristic
+    174          static uint8 devInfoMfrNameProps = GATT_PROP_READ;
+    175          static const uint8 devInfoMfrName[] = "Manufacturer Name";
+    176          
+    177          // IEEE 11073-20601 Regulatory Certification Data List characteristic
+    178          static uint8 devInfo11073CertProps = GATT_PROP_READ;
+    179          static const uint8 devInfo11073Cert[] =
+    180          {
+    181            DEVINFO_11073_BODY_EXP,      // authoritative body type
+    182            0x00,                       // authoritative body structure type
+    183                                        // authoritative body data follows below:
+    184            'e', 'x', 'p', 'e', 'r', 'i', 'm', 'e', 'n', 't', 'a', 'l'
+    185          };
+    186          
+    187          // System ID characteristic
+    188          static uint8 devInfoPnpIdProps = GATT_PROP_READ;
+    189          static uint8 devInfoPnpId[DEVINFO_PNP_ID_LEN] =
+    190          {
+    191            1,                                      // Vendor ID source (1=Bluetooth SIG)
+    192            LO_UINT16(0x000D), HI_UINT16(0x000D),   // Vendor ID (Texas Instruments)
+    193            LO_UINT16(0x0000), HI_UINT16(0x0000),   // Product ID (vendor-specific)
+    194            LO_UINT16(0x0110), HI_UINT16(0x0110)    // Product version (JJ.M.N)
+    195          };
+    196          
+    197          /*********************************************************************
+    198           * Profile Attributes - Table
+    199           */
+    200          
+    201          static gattAttribute_t devInfoAttrTbl[] =
+    202          {
+    203            // Device Information Service
+    204            {
+    205              { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+    206              GATT_PERMIT_READ,                         /* permissions */
+    207              0,                                        /* handle */
+    208              (uint8 *)&devInfoService                /* pValue */
+    209            },
+    210          
+    211              // System ID Declaration
+    212              {
+    213                { ATT_BT_UUID_SIZE, characterUUID },
+    214                GATT_PERMIT_READ,
+    215                0,
+    216                &devInfoSystemIdProps
+    217              },
+    218          
+    219                // System ID Value
+    220                {
+    221                  { ATT_BT_UUID_SIZE, devInfoSystemIdUUID },
+    222                  GATT_PERMIT_READ,
+    223                  0,
+    224                  (uint8 *) devInfoSystemId
+    225                },
+    226          
+    227              // Model Number String Declaration
+    228              {
+    229                { ATT_BT_UUID_SIZE, characterUUID },
+    230                GATT_PERMIT_READ,
+    231                0,
+    232                &devInfoModelNumberProps
+    233              },
+    234          
+    235                // Model Number Value
+    236                {
+    237                  { ATT_BT_UUID_SIZE, devInfoModelNumberUUID },
+    238                  GATT_PERMIT_READ,
+    239                  0,
+    240                  (uint8 *) devInfoModelNumber
+    241                },
+    242          
+    243              // Serial Number String Declaration
+    244              {
+    245                { ATT_BT_UUID_SIZE, characterUUID },
+    246                GATT_PERMIT_READ,
+    247                0,
+    248                &devInfoSerialNumberProps
+    249              },
+    250          
+    251                // Serial Number Value
+    252                {
+    253                  { ATT_BT_UUID_SIZE, devInfoSerialNumberUUID },
+    254                  GATT_PERMIT_READ,
+    255                  0,
+    256                  (uint8 *) devInfoSerialNumber
+    257                },
+    258          
+    259              // Firmware Revision String Declaration
+    260              {
+    261                { ATT_BT_UUID_SIZE, characterUUID },
+    262                GATT_PERMIT_READ,
+    263                0,
+    264                &devInfoFirmwareRevProps
+    265              },
+    266          
+    267                // Firmware Revision Value
+    268                {
+    269                  { ATT_BT_UUID_SIZE, devInfoFirmwareRevUUID },
+    270                  GATT_PERMIT_READ,
+    271                  0,
+    272                  (uint8 *) devInfoFirmwareRev
+    273                },
+    274          
+    275              // Hardware Revision String Declaration
+    276              {
+    277                { ATT_BT_UUID_SIZE, characterUUID },
+    278                GATT_PERMIT_READ,
+    279                0,
+    280                &devInfoHardwareRevProps
+    281              },
+    282          
+    283                // Hardware Revision Value
+    284                {
+    285                  { ATT_BT_UUID_SIZE, devInfoHardwareRevUUID },
+    286                  GATT_PERMIT_READ,
+    287                  0,
+    288                  (uint8 *) devInfoHardwareRev
+    289                },
+    290          
+    291              // Software Revision String Declaration
+    292              {
+    293                { ATT_BT_UUID_SIZE, characterUUID },
+    294                GATT_PERMIT_READ,
+    295                0,
+    296                &devInfoSoftwareRevProps
+    297              },
+    298          
+    299                // Software Revision Value
+    300                {
+    301                  { ATT_BT_UUID_SIZE, devInfoSoftwareRevUUID },
+    302                  GATT_PERMIT_READ,
+    303                  0,
+    304                  (uint8 *) devInfoSoftwareRev
+    305                },
+    306          
+    307              // Manufacturer Name String Declaration
+    308              {
+    309                { ATT_BT_UUID_SIZE, characterUUID },
+    310                GATT_PERMIT_READ,
+    311                0,
+    312                &devInfoMfrNameProps
+    313              },
+    314          
+    315                // Manufacturer Name Value
+    316                {
+    317                  { ATT_BT_UUID_SIZE, devInfoMfrNameUUID },
+    318                  GATT_PERMIT_READ,
+    319                  0,
+    320                  (uint8 *) devInfoMfrName
+    321                },
+    322          
+    323              // IEEE 11073-20601 Regulatory Certification Data List Declaration
+    324              {
+    325                { ATT_BT_UUID_SIZE, characterUUID },
+    326                GATT_PERMIT_READ,
+    327                0,
+    328                &devInfo11073CertProps
+    329              },
+    330          
+    331                // IEEE 11073-20601 Regulatory Certification Data List Value
+    332                {
+    333                  { ATT_BT_UUID_SIZE, devInfo11073CertUUID },
+    334                  GATT_PERMIT_READ,
+    335                  0,
+    336                  (uint8 *) devInfo11073Cert
+    337                },
+    338          
+    339              // PnP ID Declaration
+    340              {
+    341                { ATT_BT_UUID_SIZE, characterUUID },
+    342                GATT_PERMIT_READ,
+    343                0,
+    344                &devInfoPnpIdProps
+    345              },
+    346          
+    347                // PnP ID Value
+    348                {
+    349                  { ATT_BT_UUID_SIZE, devInfoPnpIdUUID },
+    350                  GATT_PERMIT_READ,
+    351                  0,
+    352                  (uint8 *) devInfoPnpId
+    353                }
+    354          };
+    355          
+    356          
+    357          /*********************************************************************
+    358           * LOCAL FUNCTIONS
+    359           */
+    360          static uint8 devInfo_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+    361                                      uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+    362          
+    363          /*********************************************************************
+    364           * PROFILE CALLBACKS
+    365           */
+    366          // Device Info Service Callbacks
+    367          CONST gattServiceCBs_t devInfoCBs =
+    368          {
+    369            devInfo_ReadAttrCB, // Read callback function pointer
+    370            NULL,               // Write callback function pointer
+    371            NULL                // Authorization callback function pointer
+    372          };
+    373          
+    374          /*********************************************************************
+    375           * NETWORK LAYER CALLBACKS
+    376           */
+    377          
+    378          /*********************************************************************
+    379           * PUBLIC FUNCTIONS
+    380           */
+    381          
+    382          /*********************************************************************
+    383           * @fn      DevInfo_AddService
+    384           *
+    385           * @brief   Initializes the Device Information service by registering
+    386           *          GATT attributes with the GATT server.
+    387           *
+    388           * @return  Success or Failure
+    389           */
+    390          bStatus_t DevInfo_AddService( void )
+    391          {
+    392            // Register GATT attribute list and CBs with GATT Server App
+    393            return GATTServApp_RegisterService( devInfoAttrTbl,
+    394                                                GATT_NUM_ATTRS( devInfoAttrTbl ),
+    395                                                &devInfoCBs );
+    396          }
+    397          
+    398          /*********************************************************************
+    399           * @fn      DevInfo_SetParameter
+    400           *
+    401           * @brief   Set a Device Information parameter.
+    402           *
+    403           * @param   param - Profile parameter ID
+    404           * @param   len - length of data to write
+    405           * @param   value - pointer to data to write.  This is dependent on
+    406           *          the parameter ID and WILL be cast to the appropriate
+    407           *          data type (example: data type of uint16 will be cast to
+    408           *          uint16 pointer).
+    409           *
+    410           * @return  bStatus_t
+    411           */
+    412          bStatus_t DevInfo_SetParameter( uint8 param, uint8 len, void *value )
+    413          {
+    414            bStatus_t ret = SUCCESS;
+    415          
+    416            switch ( param )
+    417            {
+    418               case DEVINFO_SYSTEM_ID:
+    419                osal_memcpy(devInfoSystemId, value, len);
+    420                break;
+    421          
+    422              default:
+    423                ret = INVALIDPARAMETER;
+    424                break;
+    425            }
+    426          
+    427            return ( ret );
+    428          }
+    429          
+    430          /*********************************************************************
+    431           * @fn      DevInfo_GetParameter
+    432           *
+    433           * @brief   Get a Device Information parameter.
+    434           *
+    435           * @param   param - Profile parameter ID
+    436           * @param   value - pointer to data to get.  This is dependent on
+    437           *          the parameter ID and WILL be cast to the appropriate
+    438           *          data type (example: data type of uint16 will be cast to
+    439           *          uint16 pointer).
+    440           *
+    441           * @return  bStatus_t
+    442           */
+    443          bStatus_t DevInfo_GetParameter( uint8 param, void *value )
+    444          {
+    445            bStatus_t ret = SUCCESS;
+    446          
+    447            switch ( param )
+    448            {
+    449              case DEVINFO_SYSTEM_ID:
+    450                osal_memcpy(value, devInfoSystemId, sizeof(devInfoSystemId));
+    451                break;
+    452          
+    453              case DEVINFO_MODEL_NUMBER:
+    454                osal_memcpy(value, devInfoModelNumber, sizeof(devInfoModelNumber));
+    455                break;
+    456              case DEVINFO_SERIAL_NUMBER:
+    457                osal_memcpy(value, devInfoSerialNumber, sizeof(devInfoSerialNumber));
+    458                break;
+    459          
+    460              case DEVINFO_FIRMWARE_REV:
+    461                osal_memcpy(value, devInfoFirmwareRev, sizeof(devInfoFirmwareRev));
+    462                break;
+    463          
+    464              case DEVINFO_HARDWARE_REV:
+    465                osal_memcpy(value, devInfoHardwareRev, sizeof(devInfoHardwareRev));
+    466                break;
+    467          
+    468              case DEVINFO_SOFTWARE_REV:
+    469                osal_memcpy(value, devInfoSoftwareRev, sizeof(devInfoSoftwareRev));
+    470                break;
+    471          
+    472              case DEVINFO_MANUFACTURER_NAME:
+    473                osal_memcpy(value, devInfoMfrName, sizeof(devInfoMfrName));
+    474                break;
+    475          
+    476              case DEVINFO_11073_CERT_DATA:
+    477                osal_memcpy(value, devInfo11073Cert, sizeof(devInfo11073Cert));
+    478                break;
+    479          
+    480              case DEVINFO_PNP_ID:
+    481                osal_memcpy(value, devInfoPnpId, sizeof(devInfoPnpId));
+    482                break;
+    483          
+    484              default:
+    485                ret = INVALIDPARAMETER;
+    486                break;
+    487            }
+    488          
+    489            return ( ret );
+    490          }
+    491          
+    492          /*********************************************************************
+    493           * @fn          devInfo_ReadAttrCB
+    494           *
+    495           * @brief       Read an attribute.
+    496           *
+    497           * @param       connHandle - connection message was received on
+    498           * @param       pAttr - pointer to attribute
+    499           * @param       pValue - pointer to data to be read
+    500           * @param       pLen - length of data to be read
+    501           * @param       offset - offset of the first octet to be read
+    502           * @param       maxLen - maximum length of data to be read
+    503           *
+    504           * @return      Success or Failure
+    505           */
+    506          static uint8 devInfo_ReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+    507                                      uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+    508          {
+    509            bStatus_t status = SUCCESS;
+    510            uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+    511          
+    512            switch (uuid)
+    513            {
+    514              case SYSTEM_ID_UUID:
+    515                // verify offset
+    516                if (offset >= sizeof(devInfoSystemId))
+    517                {
+    518                  status = ATT_ERR_INVALID_OFFSET;
+    519                }
+    520                else
+    521                {
+    522                  // determine read length
+    523                  *pLen = MIN(maxLen, (sizeof(devInfoSystemId) - offset));
+    524          
+    525                  // copy data
+    526                  osal_memcpy(pValue, &devInfoSystemId[offset], *pLen);
+    527                }
+    528                break;
+    529          
+    530              case MODEL_NUMBER_UUID:
+    531                // verify offset
+    532                if (offset >= (sizeof(devInfoModelNumber) - 1))
+    533                {
+    534                  status = ATT_ERR_INVALID_OFFSET;
+    535                }
+    536                else
+    537                {
+    538                  // determine read length (exclude null terminating character)
+    539                  *pLen = MIN(maxLen, ((sizeof(devInfoModelNumber) - 1) - offset));
+    540          
+    541                  // copy data
+    542                  osal_memcpy(pValue, &devInfoModelNumber[offset], *pLen);
+    543                }
+    544                break;
+    545          
+    546              case SERIAL_NUMBER_UUID:
+    547                // verify offset
+    548                if (offset >= (sizeof(devInfoSerialNumber) - 1))
+    549                {
+    550                  status = ATT_ERR_INVALID_OFFSET;
+    551                }
+    552                else
+    553                {
+    554                  // determine read length (exclude null terminating character)
+    555                  *pLen = MIN(maxLen, ((sizeof(devInfoSerialNumber) - 1) - offset));
+    556          
+    557                  // copy data
+    558                  osal_memcpy(pValue, &devInfoSerialNumber[offset], *pLen);
+    559                }
+    560                break;
+    561          
+    562              case FIRMWARE_REV_UUID:
+    563                // verify offset
+    564                if (offset >= (sizeof(devInfoFirmwareRev) - 1))
+    565                {
+    566                  status = ATT_ERR_INVALID_OFFSET;
+    567                }
+    568                else
+    569                {
+    570                  // determine read length (exclude null terminating character)
+    571                  *pLen = MIN(maxLen, ((sizeof(devInfoFirmwareRev) - 1) - offset));
+    572                  
+    573                  // copy data
+    574                  osal_memcpy(pValue, &devInfoFirmwareRev[offset], *pLen);
+    575                }
+    576                break;
+    577          
+    578              case HARDWARE_REV_UUID:
+    579                // verify offset
+    580                if (offset >= (sizeof(devInfoHardwareRev) - 1))
+    581                {
+    582                  status = ATT_ERR_INVALID_OFFSET;
+    583                }
+    584                else
+    585                {
+    586                  // determine read length (exclude null terminating character)
+    587                  *pLen = MIN(maxLen, ((sizeof(devInfoHardwareRev) - 1) - offset));
+    588          
+    589                  // copy data
+    590                  osal_memcpy(pValue, &devInfoHardwareRev[offset], *pLen);
+    591                }
+    592                break;
+    593          
+    594              case SOFTWARE_REV_UUID:
+    595                // verify offset
+    596                if (offset >= (sizeof(devInfoSoftwareRev) - 1))
+    597                {
+    598                  status = ATT_ERR_INVALID_OFFSET;
+    599                }
+    600                else
+    601                {
+    602                  // determine read length (exclude null terminating character)
+    603                  *pLen = MIN(maxLen, ((sizeof(devInfoSoftwareRev) - 1) - offset));
+    604                  
+    605                  // copy data
+    606                  osal_memcpy(pValue, &devInfoSoftwareRev[offset], *pLen);
+    607                }
+    608                break;
+    609          
+    610              case MANUFACTURER_NAME_UUID:
+    611                // verify offset
+    612                if (offset >= (sizeof(devInfoMfrName) - 1))
+    613                {
+    614                  status = ATT_ERR_INVALID_OFFSET;
+    615                }
+    616                else
+    617                {
+    618                  // determine read length (exclude null terminating character)
+    619                  *pLen = MIN(maxLen, ((sizeof(devInfoMfrName) - 1) - offset));
+    620                  
+    621                  // copy data
+    622                  osal_memcpy(pValue, &devInfoMfrName[offset], *pLen);
+    623                }
+    624                break;
+    625          
+    626              case IEEE_11073_CERT_DATA_UUID:
+    627                // verify offset
+    628                if (offset >= sizeof(devInfo11073Cert))
+    629                {
+    630                  status = ATT_ERR_INVALID_OFFSET;
+    631                }
+    632                else
+    633                {
+    634                  // determine read length
+    635                  *pLen = MIN(maxLen, (sizeof(devInfo11073Cert) - offset));
+    636          
+    637                  // copy data
+    638                  osal_memcpy(pValue, &devInfo11073Cert[offset], *pLen);
+    639                }
+    640                break;
+    641          
+    642              case PNP_ID_UUID:
+    643                // verify offset
+    644                if (offset >= sizeof(devInfoPnpId))
+    645                {
+    646                  status = ATT_ERR_INVALID_OFFSET;
+    647                }
+    648                else
+    649                {
+    650                  // determine read length
+    651                  *pLen = MIN(maxLen, (sizeof(devInfoPnpId) - offset));
+    652          
+    653                  // copy data
+    654                  osal_memcpy(pValue, &devInfoPnpId[offset], *pLen);
+    655                }
+    656                break;
+    657          
+    658              default:
+    659                *pLen = 0;
+    660                status = ATT_ERR_ATTR_NOT_FOUND;
+    661                break;
+    662            }
+    663          
+    664            return ( status );
+    665          }
+    666          
+    667          
+    668          /*********************************************************************
+    669          *********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0     12  DevInfo_AddService
+                          0 0 12 -> GATTServApp_RegisterService
+       0      0     12  DevInfo_GetParameter
+                          0 0 12 -> osal_memcpy
+       0      0     13  DevInfo_SetParameter
+                          0 0 13 -> osal_memcpy
+       1      0     31  devInfo_ReadAttrCB
+                          0 0 25 -> osal_memcpy
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       1  ?<Initializer for devInfo11073CertProps>
+     152  ?<Initializer for devInfoAttrTbl>
+       1  ?<Initializer for devInfoFirmwareRevProps>
+       1  ?<Initializer for devInfoHardwareRevProps>
+       1  ?<Initializer for devInfoMfrNameProps>
+       1  ?<Initializer for devInfoModelNumberProps>
+       7  ?<Initializer for devInfoPnpId>
+       1  ?<Initializer for devInfoPnpIdProps>
+       1  ?<Initializer for devInfoSerialNumberProps>
+       1  ?<Initializer for devInfoSoftwareRevProps>
+       1  ?<Initializer for devInfoSystemIdProps>
+       6  ??DevInfo_AddService?relay
+       6  ??DevInfo_GetParameter?relay
+       6  ??DevInfo_SetParameter?relay
+       6  ??devInfo_ReadAttrCB?relay
+       5  ?Subroutine0
+      12  ?Subroutine1
+       9  ?Subroutine2
+       9  ?Subroutine3
+       7  ?Subroutine4
+       8  ?Subroutine5
+      32  DevInfo_AddService
+     199  DevInfo_GetParameter
+      42  DevInfo_SetParameter
+      14  devInfo11073Cert
+       1  devInfo11073CertProps
+       2  devInfo11073CertUUID
+     152  devInfoAttrTbl
+       6  devInfoCBs
+      18  devInfoFirmwareRev
+       1  devInfoFirmwareRevProps
+       2  devInfoFirmwareRevUUID
+      18  devInfoHardwareRev
+       1  devInfoHardwareRevProps
+       2  devInfoHardwareRevUUID
+      18  devInfoMfrName
+       1  devInfoMfrNameProps
+       2  devInfoMfrNameUUID
+      13  devInfoModelNumber
+       1  devInfoModelNumberProps
+       2  devInfoModelNumberUUID
+       7  devInfoPnpId
+       1  devInfoPnpIdProps
+       2  devInfoPnpIdUUID
+      14  devInfoSerialNumber
+       1  devInfoSerialNumberProps
+       2  devInfoSerialNumberUUID
+       2  devInfoServUUID
+       3  devInfoService
+      18  devInfoSoftwareRev
+       1  devInfoSoftwareRevProps
+       2  devInfoSoftwareRevUUID
+       8  devInfoSystemId
+       1  devInfoSystemIdProps
+       2  devInfoSystemIdUUID
+     592  devInfo_ReadAttrCB
+
+ 
+ 915 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
+ 168 bytes in segment XDATA_I
+ 168 bytes in segment XDATA_ID
+ 142 bytes in segment XDATA_ROM_C
+   8 bytes in segment XDATA_Z
+ 
+ 1 107 bytes of CODE  memory
+   142 bytes of CONST memory
+   176 bytes of XDATA memory
+
+Errors: none
+Warnings: none

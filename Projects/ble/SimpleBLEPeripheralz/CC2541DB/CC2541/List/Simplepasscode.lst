@@ -1,0 +1,341 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             11/Mar/2014  17:53:02 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\Simplepasscode.c    #
+#    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
+#                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
+#                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
+#                          -DINIT_CFG=0x08 -DADV_CFG=ADV_NCONN_CFG+ADV_CONN_C #
+#                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
+#                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
+#                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
+#                          -DOAD_IMAGE_VERSION=0x0000                         #
+#                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
+#                          "-DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'")        #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\Source\Simplepasscode.c    #
+#                          -D INT_HEAP_LEN=3074 -D HALNODEBUG -D              #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D xHAL_AES_DMA=TRUE -D   #
+#                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
+#                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
+#                          -D HAL_ADC=TRUE -lcN E:\TexasInstruments\BLE-CC254 #
+#                          x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC254 #
+#                          1DB\CC2541\List\ -o E:\TexasInstruments\BLE-CC254x #
+#                          -1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541 #
+#                          DB\CC2541\Obj\ -e --debug --core=plain             #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\common\ -I E:\TexasInstruments\BLE-CC #
+#                          254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC #
+#                          2541DB\..\..\include\ -I                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\hal\target\CC2541EB\   #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\osal\include\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\services\saddr\ -I                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
+#    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\Simpl #
+#                          epasscode.lst                                      #
+#    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\Simple #
+#                          passcode.r51                                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\Source\Simplepasscode.c
+      1          #include "bcomdef.h"
+      2          #include "OSAL.h"
+      3          #include "OSAL_PwrMgr.h"
+      4          #include "osal_snv.h"
+      5          
+      6          #include "OnBoard.h"
+      7          #include "hal_adc.h"
+      8          #include "hal_led.h"
+      9          #include "hal_key.h"
+     10          #include "hal_lcd.h"
+     11          #include "SimpleBLESerialUart.h"
+     12          
+     13          #include "gatt.h"
+     14          
+     15          #include "hci.h"
+     16          
+     17          #include "gapgattserver.h"
+     18          #include "gattservapp.h"
+     19          #include "devinfoservice.h"
+     20          #include "simpleGATTprofile.h"
+     21          
+     22          
+     23          #include "peripheral.h"
+     24          
+     25          
+     26          #include "gapbondmgr.h"
+     27          
+     28          #include "simpleBLEPeripheral.h"
+     29          /*********************************************************************
+     30           * PASSKEY
+     31           */
+     32           uint8 passkey_flag;
+     33           uint32 newpasskey;
+     34           uint32 de_passkey=123456;
+     35           uint8 newname[20]={0};
+     36           uint8 code_flag=0;
+     37           uint8 name_flag=0;
+     38           
+     39           // GAP GATT Attributes
+     40          static uint8 attDeviceName[GAP_DEVICE_NAME_LEN] = "aico-egg";
+     41          
+     42          	
+     43           void set_de_passkey(void)
+     44          {
+     45                GGS_SetParameter(GGS_DEVICE_NAME_ATT, GAP_DEVICE_NAME_LEN, attDeviceName); 
+     46          
+     47                uint32 de_passkey = 123456;
+     48                uint8 pairMode = GAPBOND_PAIRING_MODE_INITIATE;
+     49                uint8 mitm = TRUE;
+     50                uint8 ioCap = GAPBOND_IO_CAP_DISPLAY_ONLY;              
+     51                uint8 bonding = FALSE;
+     52                
+     53                GAPBondMgr_SetParameter(GAPBOND_DEFAULT_PASSCODE, sizeof(uint32), &de_passkey);
+     54                GAPBondMgr_SetParameter(GAPBOND_PAIRING_MODE, sizeof(uint8), &pairMode);
+     55                GAPBondMgr_SetParameter(GAPBOND_MITM_PROTECTION, sizeof(uint8), &mitm);
+     56                GAPBondMgr_SetParameter(GAPBOND_IO_CAPABILITIES, sizeof(uint8), &ioCap);
+     57                GAPBondMgr_SetParameter(GAPBOND_BONDING_ENABLED, sizeof(uint8), &bonding);
+     58                
+     59               // GAPBondMgr_PasscodeRsp( 0, SUCCESS,de_passkey );
+     60                passkey_flag=0xAB;
+     61                osal_snv_write(0xE0,1,&passkey_flag);
+     62                       
+     63                          
+     64                          
+     65          	
+     66          		
+     67          }
+     68          void set_new_passkey(uint32 newpasskeyvalue,uint8 newname[])
+     69          {
+     70                //uint32 newpasskey = 4567; // passkey "000000"
+     71                uint8 newname_len;
+     72                newname_len=osal_strlen(newname);
+     73                GGS_SetParameter(GGS_DEVICE_NAME_ATT, newname_len, newname);
+     74               
+     75              // HalLcdWriteStringValue("nnl:",newname_len, 10, HAL_LCD_LINE_5);
+     76               
+     77                
+     78                newpasskey=newpasskeyvalue;
+     79                uint8 pairMode = GAPBOND_PAIRING_MODE_INITIATE;
+     80                uint8 mitm = TRUE;
+     81                uint8 ioCap = GAPBOND_IO_CAP_DISPLAY_ONLY;      
+     82                uint8 bonding = FALSE;
+     83                
+     84                GAPBondMgr_SetParameter(GAPBOND_DEFAULT_PASSCODE, sizeof(uint32), &newpasskey);
+     85                GAPBondMgr_SetParameter(GAPBOND_PAIRING_MODE, sizeof(uint8), &pairMode);
+     86                GAPBondMgr_SetParameter(GAPBOND_MITM_PROTECTION, sizeof(uint8), &mitm);
+     87                GAPBondMgr_SetParameter(GAPBOND_IO_CAPABILITIES, sizeof(uint8), &ioCap);
+     88                GAPBondMgr_SetParameter(GAPBOND_BONDING_ENABLED, sizeof(uint8), &bonding);
+     89                //GAPBondMgr_PasscodeRsp( 0, SUCCESS,newpasskey );
+     90                
+     91                passkey_flag=0xAA;
+     92                osal_snv_write(0xE0,1,&passkey_flag);
+     93                osal_snv_write(0xE1,6,&newpasskey);
+     94                osal_snv_write(0xE2,newname_len,newname);
+     95                          
+     96          }
+     97           
+     98           void set_passkey(void)
+     99           {
+    100              //uint32 newpasskey;
+    101                uint8 newname_len;
+    102             
+    103                osal_snv_read(0xE0,1,&passkey_flag);
+    104                osal_snv_read(0xE1,6,&newpasskey);
+    105                osal_snv_read(0xE2,20,newname);
+    106                 
+    107                newname_len=osal_strlen(newname);
+    108               // HalLcdWriteStringValue("nnl:",newname_len, 10, HAL_LCD_LINE_4);
+    109                //HalLcdWriteString(newname,  HAL_LCD_LINE_5);
+    110                
+    111                if(passkey_flag==0xAA)
+    112                {
+    113                   set_new_passkey(newpasskey,newname);
+    114                }
+    115                else 
+    116                {
+    117                   set_de_passkey();
+    118                }
+    119           }
+    120            /*********************************************************************
+    121           *********************************************************************/
+    122          
+    123          /*将字符串s转换成相应的整数*/
+    124          uint32 atoi(uint8 s[])
+    125          {
+    126                uint8 i;
+    127                uint32 n = 0;
+    128                for (i = 0;i<6;++i)
+    129                {
+    130                  if(s[i] >= '0' && s[i] <= '9')	
+    131                    n = 10 * n + (s[i] - '0');
+    132                }
+    133                return n;
+    134          } 
+    135           
+    136           void set_code_name(uint8 valuechar3[])
+    137           {
+    138                uint32 newpasskeyvalue;
+    139                uint8 valuechar3_1[6]={0};
+    140                        
+    141                if(valuechar3[0]==0x61)
+    142                 {
+    143                   osal_memset(valuechar3_1, 0, osal_strlen((char*)valuechar3)-1);
+    144                    osal_memcpy(valuechar3_1, valuechar3+1, osal_strlen((char*)valuechar3));
+    145                   newpasskeyvalue=atoi(valuechar3_1);        
+    146                   //HalLcdWriteString("newpasskey",  HAL_LCD_LINE_5 );
+    147                   HalLcdWriteString(valuechar3_1,  HAL_LCD_LINE_8 );
+    148                   code_flag=1;
+    149                 }
+    150                 else if(valuechar3[0]==0x62)
+    151                 {
+    152                
+    153                   osal_memset(newname, 0, osal_strlen((char*)valuechar3)-1);
+    154                   osal_memcpy(newname, valuechar3+1, osal_strlen((char*)valuechar3));
+    155                   name_flag=1;
+    156                   HalLcdWriteString(newname,  HAL_LCD_LINE_8 );
+    157                   
+    158                 }
+    159                 
+    160                   if(code_flag==1&&name_flag==1)
+    161                   {
+    162                     
+    163                     set_new_passkey(newpasskeyvalue,newname);
+    164                   }
+    165                         
+    166           }
+    167          
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0     42  atoi
+       2      0     24  set_code_name
+                          0 0 22 -> HalLcdWriteString
+                          0 0 22 -> atoi
+                          0 0 24 -> osal_memcpy
+                          0 0 22 -> osal_memset
+                          0 0 22 -> osal_strlen
+                          0 0 24 -> set_new_passkey
+       0      0     27  set_de_passkey
+                          0 0 17 -> GAPBondMgr_SetParameter
+                          0 0 17 -> GGS_SetParameter
+                          0 0 17 -> osal_snv_write
+       0      0     44  set_new_passkey
+                          0 0 20 -> GAPBondMgr_SetParameter
+                          0 0 20 -> GGS_SetParameter
+                          0 0 20 -> osal_snv_write
+                          0 0 20 -> osal_strlen
+       0      0     12  set_passkey
+                          0 0 10 -> osal_snv_read
+                          0 0 10 -> osal_strlen
+                          0 0 10 -> set_de_passkey
+                          0 0 12 -> set_new_passkey
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ?<Constant {0}>
+       8  ?<Initializer for attDeviceName>
+       4  ?<Initializer for de_passkey>
+       6  ??atoi?relay
+       6  ??set_code_name?relay
+       6  ??set_de_passkey?relay
+       6  ??set_new_passkey?relay
+       6  ??set_passkey?relay
+       8  ?Subroutine0
+      10  ?Subroutine1
+      11  ?Subroutine2
+      10  ?Subroutine3
+       4  __Constant_a
+     103  atoi
+       8  attDeviceName
+       1  code_flag
+       4  de_passkey
+       1  name_flag
+      20  newname
+       4  newpasskey
+       1  passkey_flag
+     270  set_code_name
+     172  set_de_passkey
+     196  set_new_passkey
+      88  set_passkey
+
+ 
+ 868 bytes in segment BANKED_CODE
+  30 bytes in segment BANK_RELAYS
+  12 bytes in segment XDATA_I
+  12 bytes in segment XDATA_ID
+  10 bytes in segment XDATA_ROM_C
+  27 bytes in segment XDATA_Z
+ 
+ 910 bytes of CODE  memory
+   6 bytes of CONST memory (+ 4 bytes shared)
+  39 bytes of XDATA memory
+
+Errors: none
+Warnings: 6
