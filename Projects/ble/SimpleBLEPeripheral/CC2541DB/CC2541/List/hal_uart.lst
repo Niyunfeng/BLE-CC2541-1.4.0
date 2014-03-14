@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:42 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  14:43:51 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -31,14 +31,14 @@
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
 #                          l\target\CC2540EB\hal_uart.c -D INT_HEAP_LEN=3074  #
 #                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D       #
-#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ -o   #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\ -e    #
-#                          --debug --core=plain --dptr=16,1                   #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
 #                          --data_model=large --code_model=banked             #
 #                          --calling_convention=xdata_reentrant               #
 #                          --place_constants=data_rom --nr_virtual_regs 16    #
@@ -98,7 +98,7 @@
 ###############################################################################
 
 E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_uart.c
-      1          /**************************************************************************************************
+      1          /********************************************************************
       2            Filename:     hal_uart.c
       3            Revised:      $Date: 2013-02-06 09:21:21 -0800 (Wed, 06 Feb 2013) $
       4            Revision:     $Revision: 33001 $
@@ -452,26 +452,40 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_uart.c
     352          #endif
     353          }
     354          
-    355          void HalUARTIsrDMA(void)
-    356          {
-    357          #if (HAL_UART_DMA && HAL_UART_SPI)  // When both are defined, port is run-time choice.
-    358            if (HAL_UART_PORT)
-    359            {
-    360              HalUART_DMAIsrSPI();
-    361            }
-    362            else
-    363            {
-    364              HalUART_DMAIsrDMA();
-    365            }
-    366          #elif HAL_UART_DMA
-    367            HalUART_DMAIsrDMA();
-    368          #elif HAL_UART_SPI
-    369            HalUART_DMAIsrSPI();
-    370          #endif
-    371          }
-    372          
-    373          /******************************************************************************
-    374          ******************************************************************************/
+    355          /*************************************************************************************************
+    356           * @fn      Hal_UART_TxBufLen()
+    357           *
+    358           * @brief   Calculate Tx Buffer length of a port
+    359           *
+    360           * @param   port - UART port (not used.)
+    361           *
+    362           * @return  length of current Tx buffer
+    363           *************************************************************************************************/
+    364           uint16 Hal_UART_TxBufLen() {
+    365          	return HalUARTBusyDMA();
+    366          }
+    367          
+    368          
+    369          void HalUARTIsrDMA(void)
+    370          {
+    371          #if (HAL_UART_DMA && HAL_UART_SPI)  // When both are defined, port is run-time choice.
+    372            if (HAL_UART_PORT)
+    373            {
+    374              HalUART_DMAIsrSPI();
+    375            }
+    376            else
+    377            {
+    378              HalUART_DMAIsrDMA();
+    379            }
+    380          #elif HAL_UART_DMA
+    381            HalUART_DMAIsrDMA();
+    382          #elif HAL_UART_SPI
+    383            HalUART_DMAIsrSPI();
+    384          #endif
+    385          }
+    386          
+    387          /******************************************************************************
+    388          ******************************************************************************/
 
    Maximum stack usage in bytes:
 
@@ -503,6 +517,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_uart.c
        0      0      0  HalUART_DMAIsrDMA
        0      0      9  Hal_UART_RxBufLen
                           0 0  9 -> HalUARTRxAvailDMA
+       0      0      9  Hal_UART_TxBufLen
+                          0 0  9 -> HalUARTBusyDMA
        8      0      0  halUart0TxIsr
        0      0     14  port0Isr
                           0 0 14 -> osal_pwrmgr_task_state
@@ -528,6 +544,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_uart.c
        6  ??HalUARTWriteDMA?relay
        6  ??HalUART_DMAIsrDMA?relay
        6  ??Hal_UART_RxBufLen?relay
+       6  ??Hal_UART_TxBufLen?relay
        3  ??halUart0TxIsr??INTVEC 59
        3  ??port0Isr??INTVEC 107
        5  ?Subroutine0
@@ -552,6 +569,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_uart.c
      153  HalUARTWriteDMA
        3  HalUART_DMAIsrDMA
       19  Hal_UART_RxBufLen
+      16  Hal_UART_TxBufLen
        1  IEN2
        1  P0DIR
        1  P0IEN
@@ -579,16 +597,16 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_uart.c
        1  sweepIdx
 
  
- 993 bytes in segment BANKED_CODE
-  96 bytes in segment BANK_RELAYS
-   6 bytes in segment INTVEC
- 165 bytes in segment NEAR_CODE
-  21 bytes in segment SFR_AN
- 394 bytes in segment XDATA_Z
+ 1 009 bytes in segment BANKED_CODE
+   102 bytes in segment BANK_RELAYS
+     6 bytes in segment INTVEC
+   165 bytes in segment NEAR_CODE
+    21 bytes in segment SFR_AN
+   394 bytes in segment XDATA_Z
  
- 1 254 bytes of CODE  memory (+  6 bytes shared)
+ 1 276 bytes of CODE  memory (+  6 bytes shared)
      0 bytes of DATA  memory (+ 21 bytes shared)
    394 bytes of XDATA memory
 
 Errors: none
-Warnings: none
+Warnings: 1

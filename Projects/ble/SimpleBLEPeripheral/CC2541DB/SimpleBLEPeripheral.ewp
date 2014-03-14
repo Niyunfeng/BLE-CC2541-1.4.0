@@ -180,7 +180,7 @@
         </option>
         <option>
           <name>General Idata Stack Size</name>
-          <state>0xC0</state>
+          <state>0xC8</state>
         </option>
         <option>
           <name>General Pdata Stack Size</name>
@@ -229,7 +229,7 @@
         </option>
         <option>
           <name>General Far22 Heap Size</name>
-          <state>0xFFF</state>
+          <state>0xFF</state>
         </option>
         <option>
           <name>GeneralMisraVer</name>
@@ -265,16 +265,17 @@
         </option>
         <option>
           <name>CCDefines</name>
-          <state>INT_HEAP_LEN=3072</state>
+          <state>INT_HEAP_LEN=3074</state>
           <state>HALNODEBUG</state>
           <state>OSAL_CBTIMER_NUM_TASKS=1</state>
-          <state>HAL_AES_DMA=TRUE</state>
+          <state>xHAL_AES_DMA=TRUE</state>
           <state>HAL_DMA=TRUE</state>
           <state>POWER_SAVING</state>
           <state>xPLUS_BROADCASTER</state>
           <state>HAL_LCD=TRUE</state>
           <state>HAL_LED=TRUE</state>
           <state>HAL_UART=TRUE</state>
+          <state>HAL_ADC=TRUE</state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -290,7 +291,7 @@
         </option>
         <option>
           <name>CCListCFile</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>CCListCMnemonics</name>
@@ -465,6 +466,8 @@
           <state>$PROJ_DIR$\..\..\Profiles\Roles</state>
           <state>$PROJ_DIR$\..\..\Profiles\SimpleProfile</state>
           <state>$PROJ_DIR$\..\..\Profiles\DevInfo</state>
+          <state>$PROJ_DIR$\..\..\Profiles\Batt</state>
+          <state>$PROJ_DIR$\..\..\Profiles\HIDDev</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -769,7 +772,7 @@
         </option>
         <option>
           <name>ListSymbols</name>
-          <state>2</state>
+          <state>1</state>
         </option>
         <option>
           <name>PageLengthCheck</name>
@@ -897,7 +900,7 @@
         </option>
         <option>
           <name>ModuleSummary</name>
-          <state>1</state>
+          <state>0</state>
         </option>
         <option>
           <name>xcProgramEntryLabel</name>
@@ -959,7 +962,7 @@
         </option>
         <option>
           <name>OverlaySystemMap</name>
-          <state>0</state>
+          <state>1</state>
         </option>
         <option>
           <name>RawBinaryFile</name>
@@ -1090,6 +1093,42 @@
     </file>
     <file>
       <name>$PROJ_DIR$\..\Source\SimpleBLESerialUart.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleBLESPIFlash.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleBLESPIFlash.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleDS18B20.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleDS18B20.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleEepromUtils.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\Simplepasscode.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\Simplepasscode.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleRTCInterrupt.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleRTCInterrupt.h</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleTemperature.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\Source\SimpleTemperature.h</name>
     </file>
   </group>
   <group>
@@ -1331,6 +1370,12 @@
   </group>
   <group>
     <name>PROFILES</name>
+    <file>
+      <name>$PROJ_DIR$\..\..\Profiles\Batt\battservice.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\..\..\Profiles\Batt\battservice.h</name>
+    </file>
     <file>
       <name>$PROJ_DIR$\..\..\Profiles\DevInfo\devinfoservice.c</name>
     </file>

@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  17:04:20 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             12/Mar/2014  11:34:03 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -31,14 +31,14 @@
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          Profiles\Batt\battservice.c -D INT_HEAP_LEN=3074   #
 #                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D       #
-#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ -o   #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\ -e    #
-#                          --debug --core=plain --dptr=16,1                   #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
 #                          --data_model=large --code_model=banked             #
 #                          --calling_convention=xdata_reentrant               #
 #                          --place_constants=data_rom --nr_virtual_regs 16    #
@@ -151,164 +151,164 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
      51          #include "hiddev.h"
      52          #include "hal_lcd.h"
      53          #include "battservice.h"
-     54          
-     55          /*********************************************************************
-     56           * MACROS
-     57           */
-     58          
-     59          /*********************************************************************
-     60           * CONSTANTS
-     61           */
-     62          
-     63          // ADC voltage levels
-     64          #define BATT_ADC_LEVEL_3V           409
-     65          #define BATT_ADC_LEVEL_2V           273
-     66          
-     67          #define BATT_LEVEL_VALUE_IDX        2 // Position of battery level in attribute array
-     68          #define BATT_LEVEL_VALUE_CCCD_IDX   3 // Position of battery level CCCD in attribute array
-     69          
-     70          /*********************************************************************
-     71           * TYPEDEFS
-     72           */
-     73          
-     74          /*********************************************************************
-     75           * GLOBAL VARIABLES
-     76           */
-     77          // Battery service
-     78          CONST uint8 battServUUID[ATT_BT_UUID_SIZE] =
-     79          {
-     80            LO_UINT16(BATT_SERV_UUID), HI_UINT16(BATT_SERV_UUID)
-     81          };
-     82          
-     83          // Battery level characteristic
-     84          CONST uint8 battLevelUUID[ATT_BT_UUID_SIZE] =
-     85          {
-     86            LO_UINT16(BATT_LEVEL_UUID), HI_UINT16(BATT_LEVEL_UUID)
-     87          };
-     88          
-     89          /*********************************************************************
-     90           * EXTERNAL VARIABLES
-     91           */
-     92          
-     93          /*********************************************************************
-     94           * EXTERNAL FUNCTIONS
-     95           */
-     96          
-     97          /*********************************************************************
-     98           * LOCAL VARIABLES
-     99           */
-    100          
-    101          // Application callback
-    102          static battServiceCB_t battServiceCB;
-    103          
-    104          // Measurement setup callback
-    105          static battServiceSetupCB_t battServiceSetupCB = NULL;
-    106          
-    107          // Measurement teardown callback
-    108          static battServiceTeardownCB_t battServiceTeardownCB = NULL;
-    109          
-    110          // Measurement calculation callback
-    111          static battServiceCalcCB_t battServiceCalcCB = NULL;
-    112          
-    113          static uint16 battMinLevel = BATT_ADC_LEVEL_2V; // For VDD/3 measurements
-    114          static uint16 battMaxLevel = BATT_ADC_LEVEL_3V; // For VDD/3 measurements
-    115          
-    116          // Critical battery level setting
-    117          static uint8 battCriticalLevel;
-    118          
-    119          // ADC channel to be used for reading
-    120          static uint8 battServiceAdcCh = HAL_ADC_CHANNEL_VDD;
-    121          
-    122          /*********************************************************************
-    123           * Profile Attributes - variables
-    124           */
-    125          
-    126          // Battery Service attribute
-    127          static CONST gattAttrType_t battService = { ATT_BT_UUID_SIZE, battServUUID };
-    128          
-    129          // Battery level characteristic
-    130          static uint8 battLevelProps = GATT_PROP_READ | GATT_PROP_NOTIFY;
-    131          static uint8 battLevel = 100;
-    132          static gattCharCfg_t battLevelClientCharCfg[GATT_MAX_NUM_CONN];
-    133          
-    134          // HID Report Reference characteristic descriptor, battery level
-    135          static uint8 hidReportRefBattLevel[HID_REPORT_REF_LEN] =
-    136                       { HID_RPT_ID_BATT_LEVEL_IN, HID_REPORT_TYPE_INPUT };
-    137          
-    138          /*********************************************************************
-    139           * Profile Attributes - Table
-    140           */
-    141          
-    142          static gattAttribute_t battAttrTbl[] =
-    143          {
-    144            // Battery Service
-    145            {
-    146              { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
-    147              GATT_PERMIT_READ,                         /* permissions */
-    148              0,                                        /* handle */
-    149              (uint8 *)&battService                     /* pValue */
-    150            },
-    151          
-    152              // Battery Level Declaration
-    153              {
-    154                { ATT_BT_UUID_SIZE, characterUUID },
-    155                GATT_PERMIT_READ,
-    156                0,
-    157                &battLevelProps
-    158              },
-    159          
-    160                // Battery Level Value
-    161                {
-    162                  { ATT_BT_UUID_SIZE, battLevelUUID },
-    163                  GATT_PERMIT_READ,
-    164                  0,
-    165                  &battLevel
-    166                },
-    167          
-    168                // Battery Level Client Characteristic Configuration
-    169                {
-    170                  { ATT_BT_UUID_SIZE, clientCharCfgUUID },
-    171                  GATT_PERMIT_READ | GATT_PERMIT_WRITE,
-    172                  0,
-    173                  (uint8 *) &battLevelClientCharCfg
-    174                },
-    175          
-    176                // HID Report Reference characteristic descriptor, batter level input
-    177                {
-    178                  { ATT_BT_UUID_SIZE, reportRefUUID },
-    179                  GATT_PERMIT_READ,
-    180                  0,
-    181                  hidReportRefBattLevel
-    182                }
-    183          };
-    184          
-    185          
-    186          /*********************************************************************
-    187           * LOCAL FUNCTIONS
-    188           */
-    189          static uint8 battReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
-    190                                       uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
-    191          static bStatus_t battWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
-    192                                            uint8 *pValue, uint8 len, uint16 offset );
-    193          static void battNotifyCB( linkDBItem_t *pLinkItem );
-    194          static uint8 battMeasure( void );
-    195          static void battNotifyLevel( void );
-    196          
-    197          /*********************************************************************
-    198           * PROFILE CALLBACKS
-    199           */
-    200          // Battery Service Callbacks
-    201          CONST gattServiceCBs_t battCBs =
-    202          {
-    203            battReadAttrCB,  // Read callback function pointer
-    204            battWriteAttrCB, // Write callback function pointer
-    205            NULL             // Authorization callback function pointer
-    206          };
-    207          
-    208          /*********************************************************************
-    209           * PUBLIC FUNCTIONS
-    210           */
-    211          
+     54          #include "hal_led.h"
+     55          //#include "SimpleDS18B20.h"
+     56          
+     57          /*********************************************************************
+     58           * MACROS
+     59           */
+     60          
+     61          /*********************************************************************
+     62           * CONSTANTS
+     63           */
+     64          
+     65          // ADC voltage levels
+     66          #define BATT_ADC_LEVEL_3V           409
+     67          #define BATT_ADC_LEVEL_2V           273
+     68          
+     69          #define BATT_LEVEL_VALUE_IDX        2 // Position of battery level in attribute array
+     70          #define BATT_LEVEL_VALUE_CCCD_IDX   3 // Position of battery level CCCD in attribute array
+     71          
+     72          /*********************************************************************
+     73           * TYPEDEFS
+     74           */
+     75          
+     76          /*********************************************************************
+     77           * GLOBAL VARIABLES
+     78           */
+     79          // Battery service
+     80          CONST uint8 battServUUID[ATT_BT_UUID_SIZE] =
+     81          {
+     82            LO_UINT16(BATT_SERV_UUID), HI_UINT16(BATT_SERV_UUID)
+     83          };
+     84          
+     85          // Battery level characteristic
+     86          CONST uint8 battLevelUUID[ATT_BT_UUID_SIZE] =
+     87          {
+     88            LO_UINT16(BATT_LEVEL_UUID), HI_UINT16(BATT_LEVEL_UUID)
+     89          };
+     90          
+     91          /*********************************************************************
+     92           * EXTERNAL VARIABLES
+     93           */
+     94          
+     95          /*********************************************************************
+     96           * EXTERNAL FUNCTIONS
+     97           */
+     98          
+     99          /*********************************************************************
+    100           * LOCAL VARIABLES
+    101           */
+    102          
+    103          // Application callback
+    104          static battServiceCB_t battServiceCB;
+    105          
+    106          // Measurement setup callback
+    107          static battServiceSetupCB_t battServiceSetupCB = NULL;
+    108          
+    109          // Measurement teardown callback
+    110          static battServiceTeardownCB_t battServiceTeardownCB = NULL;
+    111          
+    112          // Measurement calculation callback
+    113          static battServiceCalcCB_t battServiceCalcCB = NULL;
+    114          
+    115          static uint16 battMinLevel = BATT_ADC_LEVEL_2V; // For VDD/3 measurements
+    116          static uint16 battMaxLevel = BATT_ADC_LEVEL_3V; // For VDD/3 measurements
+    117          
+    118          // Critical battery level setting
+    119          static uint8 battCriticalLevel;
+    120          
+    121          // ADC channel to be used for reading
+    122          static uint8 battServiceAdcCh = HAL_ADC_CHANNEL_VDD;
+    123          
+    124          /*********************************************************************
+    125           * Profile Attributes - variables
+    126           */
+    127          
+    128          // Battery Service attribute
+    129          static CONST gattAttrType_t battService = { ATT_BT_UUID_SIZE, battServUUID };
+    130          
+    131          // Battery level characteristic
+    132          static uint8 battLevelProps = GATT_PROP_READ | GATT_PROP_NOTIFY;
+    133          static uint8 battLevel = 100;
+    134          static gattCharCfg_t battLevelClientCharCfg[GATT_MAX_NUM_CONN];
+    135          
+    136          // HID Report Reference characteristic descriptor, battery level
+    137          static uint8 hidReportRefBattLevel[HID_REPORT_REF_LEN] =
+    138                       { HID_RPT_ID_BATT_LEVEL_IN, HID_REPORT_TYPE_INPUT };
+    139          
+    140          /*********************************************************************
+    141           * Profile Attributes - Table
+    142           */
+    143          
+    144          static gattAttribute_t battAttrTbl[] =
+    145          {
+    146            // Battery Service
+    147            {
+    148              { ATT_BT_UUID_SIZE, primaryServiceUUID }, /* type */
+    149              GATT_PERMIT_READ,                         /* permissions */
+    150              0,                                        /* handle */
+    151              (uint8 *)&battService                     /* pValue */
+    152            },
+    153          
+    154              // Battery Level Declaration
+    155              {
+    156                { ATT_BT_UUID_SIZE, characterUUID },
+    157                GATT_PERMIT_READ,
+    158                0,
+    159                &battLevelProps
+    160              },
+    161          
+    162                // Battery Level Value
+    163                {
+    164                  { ATT_BT_UUID_SIZE, battLevelUUID },
+    165                  GATT_PERMIT_READ,
+    166                  0,
+    167                  &battLevel
+    168                },
+    169          
+    170                // Battery Level Client Characteristic Configuration
+    171                {
+    172                  { ATT_BT_UUID_SIZE, clientCharCfgUUID },
+    173                  GATT_PERMIT_READ | GATT_PERMIT_WRITE,
+    174                  0,
+    175                  (uint8 *) &battLevelClientCharCfg
+    176                },
+    177          
+    178                // HID Report Reference characteristic descriptor, batter level input
+    179                {
+    180                  { ATT_BT_UUID_SIZE, reportRefUUID },
+    181                  GATT_PERMIT_READ,
+    182                  0,
+    183                  hidReportRefBattLevel
+    184                }
+    185          };
+    186          
+    187          
+    188          /*********************************************************************
+    189           * LOCAL FUNCTIONS
+    190           */
+    191          static uint8 battReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+    192                                       uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen );
+    193          static bStatus_t battWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+    194                                            uint8 *pValue, uint8 len, uint16 offset );
+    195          static void battNotifyCB( linkDBItem_t *pLinkItem );
+    196          static uint8 battMeasure( void );
+    197          static void battNotifyLevel( void );
+    198          /*********************************************************************
+    199           * PROFILE CALLBACKS
+    200           */
+    201          // Battery Service Callbacks
+    202          CONST gattServiceCBs_t battCBs =
+    203          {
+    204            battReadAttrCB,  // Read callback function pointer
+    205            battWriteAttrCB, // Write callback function pointer
+    206            NULL             // Authorization callback function pointer
+    207          };
+    208          
+    209          /*********************************************************************
+    210           * PUBLIC FUNCTIONS
+    211           */
     212          /*********************************************************************
     213           * @fn      Batt_AddService
     214           *
@@ -448,312 +448,314 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
     348           */
     349          bStatus_t Batt_MeasLevel( void )
     350          {
-    351            uint8 level;
-    352          HalLcdWriteString("now  start batt..", HAL_LCD_LINE_4);
-    353            level = battMeasure();
-    354          HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_5);
-    355            // If level has gone down
-    356            if (level < battLevel)
-    357            {
-    358              // Update level
-    359              battLevel = level;
-    360          
-    361              // Send a notification
-    362              battNotifyLevel();
-    363            }
-    364          
-    365            return SUCCESS;
-    366          }
-    367          
-    368          /*********************************************************************
-    369           * @fn      Batt_Setup
-    370           *
-    371           * @brief   Set up which ADC source is to be used. Defaults to VDD/3.
+    351          
+    352            
+    353            uint8 level;
+    354          HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
+    355            level = battMeasure();
+    356          HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
+    357            // If level has gone down
+    358          //  if (level > battLevel)
+    359          //  {
+    360          //    // Update level
+    361          //    battLevel = level;
+    362          //
+    363          //    // Send a notification
+    364          //    battNotifyLevel();
+    365          //  }
+    366          
+    367            return SUCCESS;
+    368          }
+    369          
+    370          /*********************************************************************
+    371           * @fn      Batt_Setup
     372           *
-    373           * @param   adc_ch - ADC Channel, e.g. HAL_ADC_CHN_AIN6
-    374           * @param   minVal - max battery level
-    375           * @param   maxVal - min battery level
-    376           * @param   sCB - HW setup callback
-    377           * @param   tCB - HW tear down callback
-    378           * @param   cCB - percentage calculation callback
-    379           *
-    380           * @return  none.
-    381           */
-    382          void Batt_Setup( uint8 adc_ch, uint16 minVal, uint16 maxVal,
-    383                           battServiceSetupCB_t sCB, battServiceTeardownCB_t tCB,
-    384                           battServiceCalcCB_t cCB )
-    385          {
-    386            battServiceAdcCh = adc_ch;
-    387            battMinLevel = minVal;
-    388            battMaxLevel = maxVal;
-    389          
-    390            battServiceSetupCB = sCB;
-    391            battServiceTeardownCB = tCB;
-    392            battServiceCalcCB = cCB;
-    393          }
-    394          
-    395          /*********************************************************************
-    396           * @fn          battReadAttrCB
-    397           *
-    398           * @brief       Read an attribute.
+    373           * @brief   Set up which ADC source is to be used. Defaults to VDD/3.
+    374           *
+    375           * @param   adc_ch - ADC Channel, e.g. HAL_ADC_CHN_AIN6
+    376           * @param   minVal - max battery level
+    377           * @param   maxVal - min battery level
+    378           * @param   sCB - HW setup callback
+    379           * @param   tCB - HW tear down callback
+    380           * @param   cCB - percentage calculation callback
+    381           *
+    382           * @return  none.
+    383           */
+    384          void Batt_Setup( uint8 adc_ch, uint16 minVal, uint16 maxVal,
+    385                           battServiceSetupCB_t sCB, battServiceTeardownCB_t tCB,
+    386                           battServiceCalcCB_t cCB )
+    387          {
+    388            battServiceAdcCh = adc_ch;
+    389            battMinLevel = minVal;
+    390            battMaxLevel = maxVal;
+    391          
+    392            battServiceSetupCB = sCB;
+    393            battServiceTeardownCB = tCB;
+    394            battServiceCalcCB = cCB;
+    395          }
+    396          
+    397          /*********************************************************************
+    398           * @fn          battReadAttrCB
     399           *
-    400           * @param       connHandle - connection message was received on
-    401           * @param       pAttr - pointer to attribute
-    402           * @param       pValue - pointer to data to be read
-    403           * @param       pLen - length of data to be read
-    404           * @param       offset - offset of the first octet to be read
-    405           * @param       maxLen - maximum length of data to be read
-    406           *
-    407           * @return      Success or Failure
-    408           */
-    409          static uint8 battReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
-    410                                       uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
-    411          {
-    412            bStatus_t status = SUCCESS;
-    413          
-    414            // Make sure it's not a blob operation (no attributes in the profile are long)
-    415            if ( offset > 0 )
-    416            {
-    417              return ( ATT_ERR_ATTR_NOT_LONG );
-    418            }
-    419          
-    420            uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1] );
+    400           * @brief       Read an attribute.
+    401           *
+    402           * @param       connHandle - connection message was received on
+    403           * @param       pAttr - pointer to attribute
+    404           * @param       pValue - pointer to data to be read
+    405           * @param       pLen - length of data to be read
+    406           * @param       offset - offset of the first octet to be read
+    407           * @param       maxLen - maximum length of data to be read
+    408           *
+    409           * @return      Success or Failure
+    410           */
+    411          static uint8 battReadAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+    412                                       uint8 *pValue, uint8 *pLen, uint16 offset, uint8 maxLen )
+    413          {
+    414            bStatus_t status = SUCCESS;
+    415          
+    416            // Make sure it's not a blob operation (no attributes in the profile are long)
+    417            if ( offset > 0 )
+    418            {
+    419              return ( ATT_ERR_ATTR_NOT_LONG );
+    420            }
     421          
-    422            // Measure battery level if reading level
-    423            if ( uuid == BATT_LEVEL_UUID )
-    424            {
-    425              uint8 level;
-    426          
-    427              level = battMeasure();
+    422            uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1] );
+    423          
+    424            // Measure battery level if reading level
+    425            if ( uuid == BATT_LEVEL_UUID )
+    426            {
+    427              uint8 level;
     428          
-    429              // If level has gone down
-    430              if (level < battLevel)
-    431              {
-    432                // Update level
-    433                battLevel = level;
-    434              }
-    435          
-    436              *pLen = 1;
-    437              pValue[0] = battLevel;
-    438            }
-    439            else if ( uuid == GATT_REPORT_REF_UUID )
-    440            {
-    441              *pLen = HID_REPORT_REF_LEN;
-    442              osal_memcpy( pValue, pAttr->pValue, HID_REPORT_REF_LEN );
-    443            }
-    444            else
-    445            {
-    446              status = ATT_ERR_ATTR_NOT_FOUND;
-    447            }
-    448          
-    449            return ( status );
-    450          }
-    451          
-    452          /*********************************************************************
-    453           * @fn      battWriteAttrCB
-    454           *
-    455           * @brief   Validate attribute data prior to a write operation
+    429              level = battMeasure();
+    430          
+    431              // If level has gone down
+    432              if (level < battLevel)
+    433              {
+    434                // Update level
+    435                battLevel = level;
+    436              }
+    437          
+    438              *pLen = 1;
+    439              pValue[0] = battLevel;
+    440            }
+    441            else if ( uuid == GATT_REPORT_REF_UUID )
+    442            {
+    443              *pLen = HID_REPORT_REF_LEN;
+    444              osal_memcpy( pValue, pAttr->pValue, HID_REPORT_REF_LEN );
+    445            }
+    446            else
+    447            {
+    448              status = ATT_ERR_ATTR_NOT_FOUND;
+    449            }
+    450          
+    451            return ( status );
+    452          }
+    453          
+    454          /*********************************************************************
+    455           * @fn      battWriteAttrCB
     456           *
-    457           * @param   connHandle - connection message was received on
-    458           * @param   pAttr - pointer to attribute
-    459           * @param   pValue - pointer to data to be written
-    460           * @param   len - length of data
-    461           * @param   offset - offset of the first octet to be written
-    462           *
-    463           * @return  Success or Failure
-    464           */
-    465          static bStatus_t battWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
-    466                                            uint8 *pValue, uint8 len, uint16 offset )
-    467          {
-    468            bStatus_t status = SUCCESS;
-    469          
-    470            uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
-    471            switch ( uuid )
-    472            {
-    473              case GATT_CLIENT_CHAR_CFG_UUID:
-    474                status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
-    475                                                         offset, GATT_CLIENT_CFG_NOTIFY );
-    476                if ( status == SUCCESS )
-    477                {
-    478                  uint16 charCfg = BUILD_UINT16( pValue[0], pValue[1] );
-    479          
-    480                  if ( battServiceCB )
-    481                  {
-    482                    (*battServiceCB)( (charCfg == GATT_CFG_NO_OPERATION) ?
-    483                                      BATT_LEVEL_NOTI_DISABLED :
-    484                                      BATT_LEVEL_NOTI_ENABLED);
-    485                  }
-    486                }
-    487                break;
-    488          
-    489              default:
-    490                status = ATT_ERR_ATTR_NOT_FOUND;
-    491                break;
-    492            }
-    493          
-    494            return ( status );
-    495          }
-    496          
-    497          /*********************************************************************
-    498           * @fn          battNotifyCB
-    499           *
-    500           * @brief       Send a notification of the level state characteristic.
+    457           * @brief   Validate attribute data prior to a write operation
+    458           *
+    459           * @param   connHandle - connection message was received on
+    460           * @param   pAttr - pointer to attribute
+    461           * @param   pValue - pointer to data to be written
+    462           * @param   len - length of data
+    463           * @param   offset - offset of the first octet to be written
+    464           *
+    465           * @return  Success or Failure
+    466           */
+    467          static bStatus_t battWriteAttrCB( uint16 connHandle, gattAttribute_t *pAttr,
+    468                                            uint8 *pValue, uint8 len, uint16 offset )
+    469          {
+    470            bStatus_t status = SUCCESS;
+    471          
+    472            uint16 uuid = BUILD_UINT16( pAttr->type.uuid[0], pAttr->type.uuid[1]);
+    473            switch ( uuid )
+    474            {
+    475              case GATT_CLIENT_CHAR_CFG_UUID:
+    476                status = GATTServApp_ProcessCCCWriteReq( connHandle, pAttr, pValue, len,
+    477                                                         offset, GATT_CLIENT_CFG_NOTIFY );
+    478                if ( status == SUCCESS )
+    479                {
+    480                  uint16 charCfg = BUILD_UINT16( pValue[0], pValue[1] );
+    481          
+    482                  if ( battServiceCB )
+    483                  {
+    484                    (*battServiceCB)( (charCfg == GATT_CFG_NO_OPERATION) ?
+    485                                      BATT_LEVEL_NOTI_DISABLED :
+    486                                      BATT_LEVEL_NOTI_ENABLED);
+    487                  }
+    488                }
+    489                break;
+    490          
+    491              default:
+    492                status = ATT_ERR_ATTR_NOT_FOUND;
+    493                break;
+    494            }
+    495          
+    496            return ( status );
+    497          }
+    498          
+    499          /*********************************************************************
+    500           * @fn          battNotifyCB
     501           *
-    502           * @param       connHandle - linkDB item
+    502           * @brief       Send a notification of the level state characteristic.
     503           *
-    504           * @return      None.
-    505           */
-    506          static void battNotifyCB( linkDBItem_t *pLinkItem )
-    507          {
-    508            if ( pLinkItem->stateFlags & LINK_CONNECTED )
-    509            {
-    510              uint16 value = GATTServApp_ReadCharCfg( pLinkItem->connectionHandle,
-    511                                                      battLevelClientCharCfg );
-    512              if ( value & GATT_CLIENT_CFG_NOTIFY )
-    513              {
-    514                attHandleValueNoti_t noti;
-    515          
-    516                noti.handle = battAttrTbl[BATT_LEVEL_VALUE_IDX].handle;
-    517                noti.len = 1;
-    518                noti.value[0] = battLevel;
-    519          
-    520                GATT_Notification( pLinkItem->connectionHandle, &noti, FALSE );
-    521              }
-    522            }
-    523          }
-    524          
-    525          /*********************************************************************
-    526           * @fn      battMeasure
-    527           *
-    528           * @brief   Measure the battery level with the ADC and return
-    529           *          it as a percentage 0-100%.
-    530           *
-    531           * @return  Battery level.
-    532           */
-    533          static uint8 battMeasure( void )
-    534          {
-    535            uint16 adc;
-    536            uint8 percent;
-    537          
-    538            /**
-    539             * Battery level conversion from ADC to a percentage:
-    540             *
-    541             * The maximum ADC value for the battery voltage level is 511 for a
-    542             * 10-bit conversion.  The ADC value is references vs. 1.25v and
-    543             * this maximum value corresponds to a voltage of 3.75v.
-    544             *
-    545             * For a coin cell battery 3.0v = 100%.  The minimum operating
-    546             * voltage of the CC2540 is 2.0v so 2.0v = 0%.
-    547             *
-    548             * To convert a voltage to an ADC value use:
+    504           * @param       connHandle - linkDB item
+    505           *
+    506           * @return      None.
+    507           */
+    508          static void battNotifyCB( linkDBItem_t *pLinkItem )
+    509          {
+    510            if ( pLinkItem->stateFlags & LINK_CONNECTED )
+    511            {
+    512              uint16 value = GATTServApp_ReadCharCfg( pLinkItem->connectionHandle,
+    513                                                      battLevelClientCharCfg );
+    514              if ( value & GATT_CLIENT_CFG_NOTIFY )
+    515              {
+    516                attHandleValueNoti_t noti;
+    517          
+    518                noti.handle = battAttrTbl[BATT_LEVEL_VALUE_IDX].handle;
+    519                noti.len = 1;
+    520                noti.value[0] = battLevel;
+    521          
+    522                GATT_Notification( pLinkItem->connectionHandle, &noti, FALSE );
+    523              }
+    524            }
+    525          }
+    526          
+    527          /*********************************************************************
+    528           * @fn      battMeasure
+    529           *
+    530           * @brief   Measure the battery level with the ADC and return
+    531           *          it as a percentage 0-100%.
+    532           *
+    533           * @return  Battery level.
+    534           */
+    535          static uint8 battMeasure( void )
+    536          {
+    537            uint16 adc;
+    538            uint8 percent;
+    539          
+    540            /**
+    541             * Battery level conversion from ADC to a percentage:
+    542             *
+    543             * The maximum ADC value for the battery voltage level is 511 for a
+    544             * 10-bit conversion.  The ADC value is references vs. 1.25v and
+    545             * this maximum value corresponds to a voltage of 3.75v.
+    546             *
+    547             * For a coin cell battery 3.0v = 100%.  The minimum operating
+    548             * voltage of the CC2540 is 2.0v so 2.0v = 0%.
     549             *
-    550             *   (v/3)/1.25 * 511 = adc
+    550             * To convert a voltage to an ADC value use:
     551             *
-    552             * 3.0v = 409 ADC
-    553             * 2.0v = 273 ADC
-    554             *
-    555             * We need to map ADC values from 409-273 to 100%-0%.
+    552             *   (v/3)/1.25 * 511 = adc
+    553             *
+    554             * 3.0v = 409 ADC
+    555             * 2.0v = 273 ADC
     556             *
-    557             * Normalize the ADC values to zero:
+    557             * We need to map ADC values from 409-273 to 100%-0%.
     558             *
-    559             * 409 - 273 = 136
+    559             * Normalize the ADC values to zero:
     560             *
-    561             * And convert ADC range to percentage range:
+    561             * 409 - 273 = 136
     562             *
-    563             * percent/adc = 100/136 = 25/34
+    563             * And convert ADC range to percentage range:
     564             *
-    565             * Resulting in the final equation, with round:
+    565             * percent/adc = 100/136 = 25/34
     566             *
-    567             * percent = ((adc - 273) * 25) + 33 / 34
-    568             */
-    569          
-    570            // Call measurement setup callback
-    571            if (battServiceSetupCB != NULL)
-    572            {
-    573              battServiceSetupCB();
-    574            }
-    575          
-    576            // Configure ADC and perform a read
-    577            HalAdcSetReference( HAL_ADC_REF_125V );
-    578            adc = HalAdcRead( battServiceAdcCh, HAL_ADC_RESOLUTION_10 );
-    579          
-    580            // Call measurement teardown callback
-    581            if (battServiceTeardownCB != NULL)
-    582            {
-    583              battServiceTeardownCB();
-    584            }
-    585          
-    586            if (adc >= battMaxLevel)
-    587            {
-    588              percent = 100;
-    589            }
-    590            else if (adc <= battMinLevel)
-    591            {
-    592              percent = 0;
-    593            }
-    594            else
-    595            {
-    596              if (battServiceCalcCB != NULL)
-    597              {
-    598                percent = battServiceCalcCB(adc);
-    599              }
-    600              else
-    601              {
-    602                uint16 range =  battMaxLevel - battMinLevel + 1;
-    603          
-    604                // optional if you want to keep it even, otherwise just take floor of divide
-    605                // range += (range & 1);
-    606                range >>= 2; // divide by 4
-    607          
-    608                percent = (uint8) ((((adc - battMinLevel) * 25) + (range - 1)) / range);
-    609              }
-    610            }
-    611          
-    612            return percent;
-    613          }
-    614          
-    615          /*********************************************************************
-    616           * @fn      battNotifyLevelState
-    617           *
-    618           * @brief   Send a notification of the battery level state
-    619           *          characteristic if a connection is established.
-    620           *
-    621           * @return  None.
-    622           */
-    623          static void battNotifyLevel( void )
-    624          {
-    625            // Execute linkDB callback to send notification
-    626            linkDB_PerformFunc( battNotifyCB );
-    627          }
-    628          
-    629          /*********************************************************************
-    630           * @fn          Batt_HandleConnStatusCB
-    631           *
-    632           * @brief       Battery Service link status change handler function.
+    567             * Resulting in the final equation, with round:
+    568             *
+    569             * percent = ((adc - 273) * 25) + 33 / 34
+    570             */
+    571          
+    572            // Call measurement setup callback
+    573            if (battServiceSetupCB != NULL)
+    574            {
+    575              battServiceSetupCB();
+    576            }
+    577          
+    578            // Configure ADC and perform a read
+    579            HalAdcSetReference( HAL_ADC_REF_125V );
+    580            adc = HalAdcRead( battServiceAdcCh, HAL_ADC_RESOLUTION_10 );//0X0F
+    581          
+    582            // Call measurement teardown callback
+    583            if (battServiceTeardownCB != NULL)
+    584            {
+    585              battServiceTeardownCB();
+    586            }
+    587          
+    588            if (adc >= battMaxLevel)
+    589            {
+    590              percent = 100;
+    591            }
+    592            else if (adc <= battMinLevel)
+    593            {
+    594              percent = 0;
+    595            }
+    596            else
+    597            {
+    598              if (battServiceCalcCB != NULL)
+    599              {
+    600                percent = battServiceCalcCB(adc);
+    601              }
+    602              else
+    603              {
+    604                uint16 range =  battMaxLevel - battMinLevel + 1;
+    605          
+    606                // optional if you want to keep it even, otherwise just take floor of divide
+    607                // range += (range & 1);
+    608                range >>= 2; // divide by 4
+    609          
+    610                percent = (uint8) ((((adc - battMinLevel) * 25) + (range - 1)) / range);
+    611              }
+    612            }
+    613          
+    614            return percent;
+    615          }
+    616          
+    617          /*********************************************************************
+    618           * @fn      battNotifyLevelState
+    619           *
+    620           * @brief   Send a notification of the battery level state
+    621           *          characteristic if a connection is established.
+    622           *
+    623           * @return  None.
+    624           */
+    625          static void battNotifyLevel( void )
+    626          {
+    627            // Execute linkDB callback to send notification
+    628            linkDB_PerformFunc( battNotifyCB );
+    629          }
+    630          
+    631          /*********************************************************************
+    632           * @fn          Batt_HandleConnStatusCB
     633           *
-    634           * @param       connHandle - connection handle
-    635           * @param       changeType - type of change
-    636           *
-    637           * @return      none
-    638           */
-    639          void Batt_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
-    640          {
-    641            // Make sure this is not loopback connection
-    642            if ( connHandle != LOOPBACK_CONNHANDLE )
-    643            {
-    644              // Reset Client Char Config if connection has dropped
-    645              if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
-    646                   ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) &&
-    647                     ( !linkDB_Up( connHandle ) ) ) )
-    648              {
-    649                GATTServApp_InitCharCfg( connHandle, battLevelClientCharCfg );
-    650              }
-    651            }
-    652          }
-    653          
-    654          
-    655          /*********************************************************************
-    656          *********************************************************************/
+    634           * @brief       Battery Service link status change handler function.
+    635           *
+    636           * @param       connHandle - connection handle
+    637           * @param       changeType - type of change
+    638           *
+    639           * @return      none
+    640           */
+    641          void Batt_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
+    642          {
+    643            // Make sure this is not loopback connection
+    644            if ( connHandle != LOOPBACK_CONNHANDLE )
+    645            {
+    646              // Reset Client Char Config if connection has dropped
+    647              if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+    648                   ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) &&
+    649                     ( !linkDB_Up( connHandle ) ) ) )
+    650              {
+    651                GATTServApp_InitCharCfg( connHandle, battLevelClientCharCfg );
+    652              }
+    653            }
+    654          }
+    655          
+    656          
+    657          /*********************************************************************
+    658          *********************************************************************/
 
    Maximum stack usage in bytes:
 
@@ -766,11 +768,10 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        0      0      9  Batt_HandleConnStatusCB
                           0 0  9 -> GATTServApp_InitCharCfg
                           0 0  9 -> linkDB_State
-       0      0     11  Batt_MeasLevel
-                          0 0 10 -> HalLcdWriteString
-                          0 0 11 -> HalLcdWriteStringValue
+       0      0     10  Batt_MeasLevel
+                          0 0  9 -> HalLcdWriteString
+                          0 0 10 -> HalLcdWriteStringValue
                           0 0 10 -> battMeasure
-                          0 0 10 -> linkDB_PerformFunc
        2      0      0  Batt_Register
        0      0      9  Batt_SetParameter
                           0 0  9 -> linkDB_PerformFunc
@@ -808,8 +809,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        6  ??Batt_Register?relay
        6  ??Batt_SetParameter?relay
        6  ??Batt_Setup?relay
-       5  ??Subroutine10_0
-       4  ??Subroutine9_0
+       4  ??Subroutine10_0
+       5  ??Subroutine9_0
        6  ??battMeasure?relay
        6  ??battNotifyCB?relay
        6  ??battReadAttrCB?relay
@@ -824,9 +825,9 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        6  ?Subroutine7
        6  ?Subroutine8
       43  Batt_AddService
-     104  Batt_GetParameter
+     103  Batt_GetParameter
       55  Batt_HandleConnStatusCB
-      71  Batt_MeasLevel
+      50  Batt_MeasLevel
       19  Batt_Register
       47  Batt_SetParameter
       97  Batt_Setup
@@ -840,7 +841,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        2  battMaxLevel
      193  battMeasure
        2  battMinLevel
-     118  battNotifyCB
+     119  battNotifyCB
      171  battReadAttrCB
        2  battServUUID
        3  battService
@@ -853,14 +854,14 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        2  hidReportRefBattLevel
 
  
- 1 125 bytes in segment BANKED_CODE
+ 1 104 bytes in segment BANKED_CODE
     66 bytes in segment BANK_RELAYS
     49 bytes in segment XDATA_I
     49 bytes in segment XDATA_ID
     43 bytes in segment XDATA_ROM_C
     15 bytes in segment XDATA_Z
  
- 1 240 bytes of CODE  memory
+ 1 219 bytes of CODE  memory
     43 bytes of CONST memory
     64 bytes of XDATA memory
 

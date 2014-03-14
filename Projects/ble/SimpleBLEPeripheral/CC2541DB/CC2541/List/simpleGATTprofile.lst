@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:44 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             11/Mar/2014  11:38:58 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -13,8 +13,8 @@
 #    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          Profiles\SimpleProfile\simpleGATTprofile.c         #
 #    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
-#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
+#                          le\SimpleBLEPeripheralz\CC2541DB\..\..\config\buil #
+#                          dComponents.cfg (-DBROADCASTER_CFG=0x01            #
 #                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
 #                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
 #                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
@@ -22,8 +22,8 @@
 #                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
 #                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
 #                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
-#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
-#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
+#                          jects\ble\SimpleBLEPeripheralz\CC2541DB\buildConfi #
+#                          g.cfg (-DHOST_CONFIG=PERIPHERAL_CFG                #
 #                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
 #                          -DOAD_IMAGE_VERSION=0x0000                         #
 #                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
@@ -31,68 +31,66 @@
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          Profiles\SimpleProfile\simpleGATTprofile.c -D      #
 #                          INT_HEAP_LEN=3074 -D HALNODEBUG -D                 #
-#                          OSAL_CBTIMER_NUM_TASKS=1 -D HAL_AES_DMA=TRUE -D    #
+#                          OSAL_CBTIMER_NUM_TASKS=1 -D xHAL_AES_DMA=TRUE -D   #
 #                          HAL_DMA=TRUE -D POWER_SAVING -D xPLUS_BROADCASTER  #
 #                          -D HAL_LCD=TRUE -D HAL_LED=TRUE -D HAL_UART=TRUE   #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
-#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
-#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
-#                          -e --debug --core=plain --dptr=16,1                #
+#                          -D HAL_ADC=TRUE -lcN E:\TexasInstruments\BLE-CC254 #
+#                          x-1.4.0\Projects\ble\SimpleBLEPeripheralz\CC2541DB #
+#                          \CC2541\List\ -o E:\TexasInstruments\BLE-CC254x-1. #
+#                          4.0\Projects\ble\SimpleBLEPeripheralz\CC2541DB\CC2 #
+#                          541\Obj\ -e --debug --core=plain --dptr=16,1       #
 #                          --data_model=large --code_model=banked             #
 #                          --calling_convention=xdata_reentrant               #
 #                          --place_constants=data_rom --nr_virtual_regs 16    #
 #                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
-#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                          le\SimpleBLEPeripheralz\CC2541DB\..\..\common\ -I  #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralz\CC2541DB\..\..\include\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralz\CC2541DB\..\..\..\..\Componen #
+#                          ts\hal\include\ -I E:\TexasInstruments\BLE-CC254x- #
+#                          1.4.0\Projects\ble\SimpleBLEPeripheralz\CC2541DB\. #
+#                          .\..\..\..\Components\hal\target\CC2541EB\ -I      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralz\CC2541DB\..\..\..\..\Componen #
+#                          ts\osal\include\ -I E:\TexasInstruments\BLE-CC254x #
+#                          -1.4.0\Projects\ble\SimpleBLEPeripheralz\CC2541DB\ #
+#                          ..\..\..\..\Components\services\saddr\ -I          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralz\CC2541DB\..\..\..\..\Componen #
+#                          ts\ble\include\ -I E:\TexasInstruments\BLE-CC254x- #
+#                          1.4.0\Projects\ble\SimpleBLEPeripheralz\CC2541DB\. #
+#                          .\..\..\..\Components\ble\controller\phy\ -I       #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralz\CC2541DB\..\..\..\..\Componen #
+#                          ts\ble\controller\include\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralz\CC2541DB\..\..\..\..\Componen #
+#                          ts\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1.4. #
+#                          0\Projects\ble\SimpleBLEPeripheralz\CC2541DB\..\.. #
+#                          \..\..\Components\ble\host\ -I                     #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralz\CC2541DB\..\..\common\cc2540\ #
 #                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
-#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
-#                          omponents\hal\include\ -I                          #
+#                          ble\SimpleBLEPeripheralz\CC2541DB\..\..\common\npi #
+#                          \npi_np\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\P #
+#                          rojects\ble\SimpleBLEPeripheralz\CC2541DB\..\..\Pr #
+#                          ofiles\Roles\ -I E:\TexasInstruments\BLE-CC254x-1. #
+#                          4.0\Projects\ble\SimpleBLEPeripheralz\CC2541DB\..\ #
+#                          ..\Profiles\SimpleProfile\ -I                      #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
-#                          nents\hal\target\CC2541EB\ -I                      #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
-#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
-#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
-#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
-#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
-#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
-#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
-#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
-#                          mponents\ble\controller\include\ -I                #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
-#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
-#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
-#                          \..\..\..\..\Components\ble\host\ -I               #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
-#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
-#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
-#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
-#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
-#                          \..\..\Profiles\Roles\ -I                          #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
-#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
-#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
-#                          .\..\Profiles\DevInfo\ -I                          #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
-#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
-#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
-#                          iles\HIDDev\ -Ohz                                  #
+#                          SimpleBLEPeripheralz\CC2541DB\..\..\Profiles\DevIn #
+#                          fo\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralz\CC2541DB\..\..\Profile #
+#                          s\Batt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Pr #
+#                          ojects\ble\SimpleBLEPeripheralz\CC2541DB\..\..\Pro #
+#                          files\HIDDev\ -Ohz                                 #
 #    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\simpl #
-#                          eGATTprofile.lst                                   #
+#                          SimpleBLEPeripheralz\CC2541DB\CC2541\List\simpleGA #
+#                          TTprofile.lst                                      #
 #    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\simple #
-#                          GATTprofile.r51                                    #
+#                          SimpleBLEPeripheralz\CC2541DB\CC2541\Obj\simpleGAT #
+#                          Tprofile.r51                                       #
 #                                                                             #
 #                                                                             #
 ###############################################################################
@@ -809,7 +807,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\SimpleProfile\simpleG
        1  simpleProfileChar2
        1  simpleProfileChar2Props
       17  simpleProfileChar2UserDesp
-       6  simpleProfileChar3
+      20  simpleProfileChar3
        1  simpleProfileChar3Props
       17  simpleProfileChar3UserDesp
        1  simpleProfileChar4
@@ -838,11 +836,11 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\SimpleProfile\simpleG
    226 bytes in segment XDATA_I
    226 bytes in segment XDATA_ID
     21 bytes in segment XDATA_ROM_C
-    41 bytes in segment XDATA_Z
+    55 bytes in segment XDATA_Z
  
  1 449 bytes of CODE  memory
     21 bytes of CONST memory
-   267 bytes of XDATA memory
+   281 bytes of XDATA memory
 
 Errors: none
 Warnings: none

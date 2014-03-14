@@ -141,9 +141,9 @@ void SbpHalUARTWrite(uint8 *pBuffer, uint16 length) {
 //	exsit_data_len = 0;
 //	send_times = 0;
 
-	//do {
-	//	UART_HAL_DELAY(10);
-//	} while (Hal_UART_TxBufLen() > 0);
+	/*do {
+		UART_HAL_DELAY(10);
+	} while (Hal_UART_TxBufLen() > 0);*/
 
 	HalUARTWrite(SBP_UART_PORT, pBuffer, length);
 }

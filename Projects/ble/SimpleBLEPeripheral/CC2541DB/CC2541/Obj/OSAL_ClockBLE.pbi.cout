@@ -1,37 +1,41 @@
 "E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_ClockBLE.c"
 -std=c99
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\common
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\common
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\include
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\include
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\hal\include
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\hal\include
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\hal\target\CC2541EB
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\hal\target\CC2541EB
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\osal\include
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\osal\include
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\services\saddr
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\services\saddr
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\ble\include
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\ble\include
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\ble\controller\phy
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\ble\controller\phy
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\ble\controller\include
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\ble\controller\include
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\ble\hci
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\ble\hci
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\..\..\Components\ble\host
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Components\ble\host
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\common\cc2540
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc2540
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\common\npi\npi_np
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\npi\npi_np
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\Profiles\Roles
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Roles
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\Profiles\SimpleProfile
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\SimpleProfile
 -I
-E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\Profiles\DevInfo
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\DevInfo
+-I
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Batt
+-I
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\HIDDev
 -I
 C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc
 -I
@@ -68,16 +72,21 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Roles
 E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\SimpleProfile
 -I
 E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\DevInfo
--DINT_HEAP_LEN=3072
+-I
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt
+-I
+E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\HIDDev
+-DINT_HEAP_LEN=3074
 -DHALNODEBUG=0
 -DOSAL_CBTIMER_NUM_TASKS=1
--DHAL_AES_DMA=TRUE
+-DxHAL_AES_DMA=TRUE
 -DHAL_DMA=TRUE
 -DPOWER_SAVING=0
 -DxPLUS_BROADCASTER=0
 -DHAL_LCD=TRUE
 -DHAL_LED=TRUE
 -DHAL_UART=TRUE
+-DHAL_ADC=TRUE
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0
@@ -372,8 +381,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\DevInfo
 -D__XOR_DPSEL_SELECT__=1
 -D__PLAIN_INT_BITFIELD_IS_SIGNED__=1
 -D__IAR_COMPILERBASE__=592903
--D__DATE__="Feb 17 2014"
--D__TIME__="14:45:00"
+-D__DATE__="Mar  5 2014"
+-D__TIME__="15:11:36"
 -D__STDC__=1
 -D__STDC_VERSION__=199901L
 -D__STDC_HOSTED__=1
@@ -416,16 +425,17 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\DevInfo
 -DOAD_IMAGE_VERSION=0x0000
 -DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'
 -DOAD_IMAGE_B_USER_ID='B', 'B', 'B', 'B'
--DINT_HEAP_LEN=3072
+-DINT_HEAP_LEN=3074
 -DHALNODEBUG=1
 -DOSAL_CBTIMER_NUM_TASKS=1
--DHAL_AES_DMA=TRUE
+-DxHAL_AES_DMA=TRUE
 -DHAL_DMA=TRUE
 -DPOWER_SAVING=1
 -DxPLUS_BROADCASTER=1
 -DHAL_LCD=TRUE
 -DHAL_LED=TRUE
 -DHAL_UART=TRUE
+-DHAL_ADC=TRUE
 -D__VERSION__="IAR C/C++ Compiler V8.20.2.41139 for 8051"
 -D__CODE_MEMORY_LIST1__()=__CODE_MEM_HELPER1__(__code, 0 )
 -D__CODE_MEMORY_LIST2__(_P1)=__CODE_MEM_HELPER2__(__code, 0 ,  _P1 )

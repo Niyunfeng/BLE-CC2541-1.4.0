@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             28/Feb/2014  16:48:40 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  14:41:26 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -31,14 +31,14 @@
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
 #                          l\target\CC2540EB\hal_crc.c -D INT_HEAP_LEN=3074   #
 #                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D       #
-#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ -o   #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\ -e    #
-#                          --debug --core=plain --dptr=16,1                   #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
 #                          --data_model=large --code_model=banked             #
 #                          --calling_convention=xdata_reentrant               #
 #                          --place_constants=data_rom --nr_virtual_regs 16    #
@@ -247,4 +247,4 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_crc.c
   0 bytes of DATA memory (+ 3 bytes shared)
 
 Errors: none
-Warnings: none
+Warnings: 1

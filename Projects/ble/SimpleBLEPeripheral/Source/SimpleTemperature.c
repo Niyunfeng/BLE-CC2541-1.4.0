@@ -1,13 +1,9 @@
 #include "SimpleTemperature.h"
 #include<ioCC2541.h>
 #include "hal_types.h"
-#include "hal_adc.h"
+#include "hal_lcd.h"
 
-#define HAL_ADC_DEC_064     0x00    /* Decimate by 64 : 8-bit resolution */
-#define HAL_ADC_DEC_128     0x10    /* Decimate by 128 : 10-bit resolution */
-#define HAL_ADC_DEC_256     0x20    /* Decimate by 256 : 12-bit resolution */
-#define HAL_ADC_DEC_512     0x30    /* Decimate by 512 : 14-bit resolution */
-#define HAL_ADC_DEC_BITS    0x30    /* Bits [5:4] */
+
 #define DISABLE_ALL_INTERRUPTS() (IEN0 = IEN1 = IEN2 = 0x00)//三个   
 
 /**************************************************************** 
@@ -16,9 +12,7 @@
 void initTempSensor(void)
 { 
    DISABLE_ALL_INTERRUPTS();            //关闭所有中断 
-   //InitClock();                         //设置系统主时钟为 32M 
-   TR0=0X01;         //set '1' to connectthe temperature sensorto the SOC_ADC.
-   ATEST=0X01;       // Enablesthe temperature sensor
+ 
 }   
 
 /**************************************************************** 
@@ -26,16 +20,24 @@ void initTempSensor(void)
 ****************************************************************/ 
 uint8 getTemperature(void){ 
    
-  uint16 value;
+   uint16  value;
+   uint8 v ;
+   ADCIF=0;////batt  temp 冲突解决
+   TR0=0x01;         //set '1' to connectthe temperature sensorto the SOC_ADC.
+   ATEST=0x01;       // Enablesthe temperature sensor
+   ADCCON3  = (0x3E);                  //选择1.25V为参考电压；14位分辨率；对片内温度传感器采样        
+   while(!ADCIF);                //等待 AD 转换完成 
+   value = ADCL;                //ADCL 寄存器低 2 位无效 
+   value |= ((uint16)ADCH) << 8;
+   value=value>>4;  
+  
+  // HalLcdWriteStringValue("adc_value:", value, 10, HAL_LCD_LINE_2);
+  
+  //v=value*0.06229-311.43; //高十度
+   v=(value-1367.5)/4.5+10;    //根据 AD 值，计算出实际的温度,芯片手册有错，温度系数应该是4.5 /℃
 
-    ADCIF = 0;
-    ADCCON3 = (HAL_ADC_REF_125V | HAL_ADC_DEC_128 | HAL_ADC_CHN_TEMP);
-    while ( !ADCIF );
-    value = ADCL;
-    value |= ((uint16) ADCH) << 8;
-    value = value >> 6;
-    
+  HalLcdWriteStringValue("temp_value:", v, 10, HAL_LCD_LINE_4); 
 
-    return ( (uint8)value ); 
+   return   v;                           //进行温度校正，这里减去5℃（不同芯片根据具体情况校正）
 
 }

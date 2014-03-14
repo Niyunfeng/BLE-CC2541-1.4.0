@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             05/Mar/2014  14:09:14 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             07/Mar/2014  17:15:47 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -13,8 +13,8 @@
 #    Source file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
 #                          l\target\CC2540EB\hal_adc.c                        #
 #    Command line       =  -f E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheral\CC2541DB\..\..\config\build #
-#                          Components.cfg (-DBROADCASTER_CFG=0x01             #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\config\b #
+#                          uildComponents.cfg (-DBROADCASTER_CFG=0x01         #
 #                          -DOBSERVER_CFG=0x02 -DPERIPHERAL_CFG=0x04          #
 #                          -DCENTRAL_CFG=0x08 -DADV_NCONN_CFG=0x01            #
 #                          -DADV_CONN_CFG=0x02 -DSCAN_CFG=0x04                #
@@ -22,8 +22,8 @@
 #                          FG -DLINK_CFG=ADV_CONN_CFG+INIT_CFG                #
 #                          -DFULL_CFG=INIT_CFG+SCAN_CFG+ADV_NCONN_CFG+ADV_CON #
 #                          N_CFG) -f E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
-#                          jects\ble\SimpleBLEPeripheral\CC2541DB\buildConfig #
-#                          .cfg (-DHOST_CONFIG=PERIPHERAL_CFG                 #
+#                          jects\ble\SimpleBLEPeripheralzeke\CC2541DB\buildCo #
+#                          nfig.cfg (-DHOST_CONFIG=PERIPHERAL_CFG             #
 #                          -DGAP_PRIVACY_RECONNECT -DCC2541                   #
 #                          -DOAD_IMAGE_VERSION=0x0000                         #
 #                          "-DOAD_IMAGE_A_USER_ID='A', 'A', 'A', 'A'"         #
@@ -31,66 +31,68 @@
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Components\ha #
 #                          l\target\CC2540EB\hal_adc.c -D INT_HEAP_LEN=3074   #
 #                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D       #
-#                          HAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING   #
+#                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -lcN                 #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o       #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\CC2541\Obj\ -e        #
-#                          --debug --core=plain --dptr=16,1                   #
+#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
+#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
+#                          \ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\ #
+#                           -o E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\   #
+#                          -e --debug --core=plain --dptr=16,1                #
 #                          --data_model=large --code_model=banked             #
 #                          --calling_convention=xdata_reentrant               #
 #                          --place_constants=data_rom --nr_virtual_regs 16    #
 #                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheral\CC2541DB\..\..\common\ -I   #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\..\..\include\ -I     #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\..\..\..\..\Component #
-#                          s\hal\include\ -I E:\TexasInstruments\BLE-CC254x-1 #
-#                          .4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\ #
-#                          ..\..\..\Components\hal\target\CC2541EB\ -I        #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\..\..\..\..\Component #
-#                          s\osal\include\ -I E:\TexasInstruments\BLE-CC254x- #
-#                          1.4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\.. #
-#                          \..\..\..\Components\services\saddr\ -I            #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\..\..\..\..\Component #
-#                          s\ble\include\ -I E:\TexasInstruments\BLE-CC254x-1 #
-#                          .4.0\Projects\ble\SimpleBLEPeripheral\CC2541DB\..\ #
-#                          ..\..\..\Components\ble\controller\phy\ -I         #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\..\..\..\..\Component #
-#                          s\ble\controller\include\ -I                       #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\..\..\..\..\Component #
-#                          s\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1.4.0 #
-#                          \Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\. #
-#                          .\..\Components\ble\host\ -I                       #
-#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\..\..\common\cc2540\  #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\common\  #
 #                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
-#                          le\SimpleBLEPeripheral\CC2541DB\..\..\common\npi\n #
-#                          pi_np\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Pro #
-#                          jects\ble\SimpleBLEPeripheral\CC2541DB\..\..\Profi #
-#                          les\Roles\ -I E:\TexasInstruments\BLE-CC254x-1.4.0 #
-#                          \Projects\ble\SimpleBLEPeripheral\CC2541DB\..\..\P #
-#                          rofiles\SimpleProfile\ -I                          #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\include\ #
+#                           -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ #
+#                          ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\C #
+#                          omponents\hal\include\ -I                          #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\..\..\Profiles\DevInf #
-#                          o\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Project #
-#                          s\ble\SimpleBLEPeripheral\CC2541DB\..\..\Profiles\ #
-#                          Batt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Proj #
-#                          ects\ble\SimpleBLEPeripheral\CC2541DB\..\..\Profil #
-#                          es\HIDDev\ -Ohz                                    #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\hal\target\CC2541EB\ -I                      #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\osal\include\ -I E:\TexasInstruments\BLE-CC2 #
+#                          54x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2 #
+#                          541DB\..\..\..\..\Components\services\saddr\ -I    #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\include\ -I E:\TexasInstruments\BLE-CC25 #
+#                          4x-1.4.0\Projects\ble\SimpleBLEPeripheralzeke\CC25 #
+#                          41DB\..\..\..\..\Components\ble\controller\phy\    #
+#                          -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\b #
+#                          le\SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Co #
+#                          mponents\ble\controller\include\ -I                #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\..\..\Compo #
+#                          nents\ble\hci\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\..\..\Components\ble\host\ -I               #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\common\cc25 #
+#                          40\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\comm #
+#                          on\npi\npi_np\ -I E:\TexasInstruments\BLE-CC254x-1 #
+#                          .4.0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB #
+#                          \..\..\Profiles\Roles\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Si #
+#                          mpleProfile\ -I E:\TexasInstruments\BLE-CC254x-1.4 #
+#                          .0\Projects\ble\SimpleBLEPeripheralzeke\CC2541DB\. #
+#                          .\..\Profiles\DevInfo\ -I                          #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheralzeke\CC2541DB\..\..\Profiles\Ba #
+#                          tt\ -I E:\TexasInstruments\BLE-CC254x-1.4.0\Projec #
+#                          ts\ble\SimpleBLEPeripheralzeke\CC2541DB\..\..\Prof #
+#                          iles\HIDDev\ -Ohz                                  #
 #    List file          =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\CC2541\List\hal_adc.l #
-#                          st                                                 #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\List\hal_a #
+#                          dc.lst                                             #
 #    Object file        =  E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
-#                          SimpleBLEPeripheral\CC2541DB\CC2541\Obj\hal_adc.r5 #
-#                          1                                                  #
+#                          SimpleBLEPeripheralzeke\CC2541DB\CC2541\Obj\hal_ad #
+#                          c.r51                                              #
 #                                                                             #
 #                                                                             #
 ###############################################################################
@@ -236,7 +238,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_adc.c
     138              }
     139          
     140              /* Enable channel */
-    141              ADCCFG |= adcChannel;//ADCCFG¾ÍÊÇAPCFG
+    141              ADCCFG |= adcChannel;
     142            }
     143          
     144            /* Convert resolution to decimation rate */
@@ -271,72 +273,75 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_adc.c
     173            reading = (int16) (ADCL);
     174            reading |= (int16) (ADCH << 8);
     175          
-    176            /* Treat small negative as 0 */
-    177            if (reading < 0)
-    178              reading = 0;
-    179          
-    180            switch (resolution)
-    181            {
-    182              case HAL_ADC_RESOLUTION_8:
-    183                reading >>= 8;
-    184                break;
-    185              case HAL_ADC_RESOLUTION_10:
-    186                reading >>= 6;
+    176           // ADCL &=0x00;
+    177            //ADCH &=0x00;
+    178            
+    179            /* Treat small negative as 0 */
+    180            if (reading < 0)
+    181              reading = 0;
+    182          
+    183            switch (resolution)
+    184            {
+    185              case HAL_ADC_RESOLUTION_8:
+    186                reading >>= 8;
     187                break;
-    188              case HAL_ADC_RESOLUTION_12:
-    189                reading >>= 4;
+    188              case HAL_ADC_RESOLUTION_10:
+    189                reading >>= 6;
     190                break;
-    191              case HAL_ADC_RESOLUTION_14:
-    192              default:
-    193                reading >>= 2;
-    194              break;
-    195            }
-    196          #else
-    197            // unused arguments
-    198            (void) channel;
-    199            (void) resolution;
-    200          #endif
-    201          
-    202            return ((uint16)reading);
-    203          }
+    191              case HAL_ADC_RESOLUTION_12:
+    192                reading >>= 4;
+    193                break;
+    194              case HAL_ADC_RESOLUTION_14:
+    195              default:
+    196                reading >>= 2;
+    197              break;
+    198            }
+    199          #else
+    200            // unused arguments
+    201            (void) channel;
+    202            (void) resolution;
+    203          #endif
     204          
-    205          /**************************************************************************************************
-    206           * @fn      HalAdcSetReference
-    207           *
-    208           * @brief   Sets the reference voltage for the ADC and initializes the service
-    209           *
-    210           * @param   reference - the reference voltage to be used by the ADC
-    211           *
-    212           * @return  none
-    213           *
-    214           **************************************************************************************************/
-    215          void HalAdcSetReference ( uint8 reference )
-    216          {
-    217          #if (HAL_ADC == TRUE)
-    218            adcRef = reference;
-    219          #endif
-    220          }
-    221          
-    222          /*********************************************************************
-    223           * @fn      HalAdcCheckVdd
-    224           *
-    225           * @brief   Check for minimum Vdd specified.
-    226           *
-    227           * @param   vdd - The board-specific Vdd reading to check for.
-    228           *
-    229           * @return  TRUE if the Vdd measured is greater than the 'vdd' minimum parameter;
-    230           *          FALSE if not.
+    205            return ((uint16)reading);
+    206          }
+    207          
+    208          /**************************************************************************************************
+    209           * @fn      HalAdcSetReference
+    210           *
+    211           * @brief   Sets the reference voltage for the ADC and initializes the service
+    212           *
+    213           * @param   reference - the reference voltage to be used by the ADC
+    214           *
+    215           * @return  none
+    216           *
+    217           **************************************************************************************************/
+    218          void HalAdcSetReference ( uint8 reference )
+    219          {
+    220          #if (HAL_ADC == TRUE)
+    221            adcRef = reference;
+    222          #endif
+    223          }
+    224          
+    225          /*********************************************************************
+    226           * @fn      HalAdcCheckVdd
+    227           *
+    228           * @brief   Check for minimum Vdd specified.
+    229           *
+    230           * @param   vdd - The board-specific Vdd reading to check for.
     231           *
-    232           *********************************************************************/
-    233          bool HalAdcCheckVdd(uint8 vdd)
-    234          {
-    235            ADCCON3 = 0x0F;
-    236            while (!(ADCCON1 & 0x80));
-    237            return (ADCH > vdd);
-    238          }
-    239          
-    240          /**************************************************************************************************
-    241          **************************************************************************************************/
+    232           * @return  TRUE if the Vdd measured is greater than the 'vdd' minimum parameter;
+    233           *          FALSE if not.
+    234           *
+    235           *********************************************************************/
+    236          bool HalAdcCheckVdd(uint8 vdd)
+    237          {
+    238            ADCCON3 = 0x0F;
+    239            while (!(ADCCON1 & 0x80));
+    240            return (ADCH > vdd);
+    241          }
+    242          
+    243          /**************************************************************************************************
+    244          **************************************************************************************************/
 
    Maximum stack usage in bytes:
 
