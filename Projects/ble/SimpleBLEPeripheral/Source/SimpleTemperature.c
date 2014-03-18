@@ -36,7 +36,7 @@ uint8 getTemperature(void){
   //v=value*0.06229-311.43; //高十度
    v=(value-1367.5)/4.5+10;    //根据 AD 值，计算出实际的温度,芯片手册有错，温度系数应该是4.5 /℃
 
-  HalLcdWriteStringValue("temp_value:", v, 10, HAL_LCD_LINE_4); 
+ // HalLcdWriteStringValue("temp_value:", v, 10, HAL_LCD_LINE_4); 
 
    return   v;                           //进行温度校正，这里减去5℃（不同芯片根据具体情况校正）
 

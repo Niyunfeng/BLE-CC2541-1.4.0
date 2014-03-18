@@ -351,18 +351,18 @@ bStatus_t Batt_MeasLevel( void )
 
   
   uint8 level;
-HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
+//HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
   level = battMeasure();
 HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
   // If level has gone down
-//  if (level > battLevel)
-//  {
-//    // Update level
-//    battLevel = level;
-//
-//    // Send a notification
-//    battNotifyLevel();
-//  }
+  if (level > battLevel)
+  {
+    // Update level
+    battLevel = level;
+
+    // Send a notification
+    battNotifyLevel();
+  }
 
   return SUCCESS;
 }
@@ -532,7 +532,8 @@ static void battNotifyCB( linkDBItem_t *pLinkItem )
  *
  * @return  Battery level.
  */
-static uint8 battMeasure( void )
+//static uint8 battMeasure( void )
+uint8 battMeasure( void )
 {
   uint16 adc;
   uint8 percent;
@@ -611,7 +612,7 @@ static uint8 battMeasure( void )
     }
   }
 
-  return percent;
+  return percent; 
 }
 
 /*********************************************************************

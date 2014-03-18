@@ -161,6 +161,7 @@ extern bStatus_t Batt_GetParameter( uint8 param, void *value );
  */
 extern bStatus_t Batt_MeasLevel( void );
 
+
 /*********************************************************************
  * @fn      Batt_Setup
  *

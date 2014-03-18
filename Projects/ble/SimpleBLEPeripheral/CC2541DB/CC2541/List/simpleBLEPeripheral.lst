@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  16:52:23 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  17:35:11 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -451,36 +451,36 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
     353           }
     354           */
     355          
-    356          static void gettemp(void)
-    357          {
-    358               // osal_snv_read(0xE0,6,&temperature);
-    359                 // uint8 TempValue[6];  
-    360                  uint8 AvgTemp=0,i=0,j;
-    361                  uint8 sensor_data_value;  //传感器数据
-    362          
-    363                  initTempSensor();
-    364                  AvgTemp = getTemperature();  
-    365                  
-    366                  temperature[temp_flag]=AvgTemp;
-    367                  temp_flag++;
-    368                 
-    369                  DS18B20_SendConvert();
-    370                  //延时1S
-    371                  for(j=20; j>0; j--)
-    372                    delay_nus(50);
-    373                  sensor_data_value=DS18B20_GetTem();
-    374                  temp_18b20[temp_18b20_flag]=sensor_data_value;
-    375                  temp_18b20_flag++;
-    376          
-    377                  if(temp_flag==3)
-    378                  {
-    379          
-    380                    for(i=0;i<temp_flag;i++)
-    381                       HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
-    382                  }
+    356          //static void gettemp(void)
+    357          //{
+    358          //     // osal_snv_read(0xE0,6,&temperature);
+    359          //       // uint8 TempValue[6];  
+    360          //        uint8 AvgTemp=0,i=0,j;
+    361          //        uint8 sensor_data_value;  //传感器数据
+    362          //
+    363          //        initTempSensor();
+    364          //        AvgTemp = getTemperature();  
+    365          //        
+    366          //        temperature[temp_flag]=AvgTemp;
+    367          //        temp_flag++;
+    368          //       
+    369          //        DS18B20_SendConvert();
+    370          //        //延时1S
+    371          //        for(j=20; j>0; j--)
+    372          //          delay_nus(50);
+    373          //        sensor_data_value=DS18B20_GetTem();
+    374          //        temp_18b20[temp_18b20_flag]=sensor_data_value;
+    375          //        temp_18b20_flag++;
+    376          //
+    377          //        if(temp_flag==3)
+    378          //        {
+    379          //
+    380          //          for(i=0;i<temp_flag;i++)
+    381          //             HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
+    382          //        }
     383                  
     384                  
-    385          }
+    385          //}
     386          /*********************************************************************
     387           * PUBLIC FUNCTIONS
     388           */
@@ -915,7 +915,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
     817           */
     818          static void simpleProfileChangeCB(uint8 paramID) {
     819          	 //osal_memset(buf, 0, 20);
-    820                   uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0};
+    820                   uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0},valuechar6[20]={0},valuechar7[20]={0};
     821          	 uint8 databuf_read[20]={0};
     822          	 uint8 datalen_read=0,i;
     823          	switch (paramID) {
@@ -1005,141 +1005,163 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
     907                    
     908          		break;
     909                   
-    910                  
-    911          	default:
-    912          		// should not reach here!
-    913          		break;
-    914          	}
-    915          }
-    916          /*********************************************************************
-    917           * @fn      Receive_Save_Uartsend_irdata(void)
-    918           * @brief  if
-    919           * @param  
-    920           * @return  none
-    921           */
-    922            static void Receive_Save_Uartsend_irdata(void)
-    923           {
-    924                         
-    925          		/*if(current_list.listlen==1)
-    926          		{	osal_memset(current_list.value1, 0, data_len);
-    927          			osal_memcpy(current_list.value1, recv_value, data_len);
-    928          			current_list.value1_len=data_len;
-    929          			current_list.listlen++;
-    930          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT1, time);
-    931          			
-    932          			 
-    933          			
-    934          		}
-    935          		else if(current_list.listlen==2)
-    936          		{	osal_memset(current_list.value2, 0, data_len);
-    937          			osal_memcpy(current_list.value2, recv_value, data_len);
-    938          			current_list.value2_len=data_len;
-    939          			current_list.listlen++;
-    940          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT2, time);
-    941          			
-    942          		}
-    943          		else if(current_list.listlen==3)
-    944          		{
-    945          			osal_memset(current_list.value3, 0, data_len);
-    946          			osal_memcpy(current_list.value3, recv_value, data_len);
-    947          			current_list.value3_len=data_len;
-    948          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT3, time);
-    949          			current_list.listlen++;
-    950          		} 
-    951          		SimpleProfile_SetParameter( SIMPLEPROFILE_CHAR2, sizeof(uint8), &current_list.listlen);
-    952          	*/
-    953          
-    954          } 
-    955          /*********************************************************************
-    956           * @fn      Uartsend_irdata
-    957           * @brief  
-    958           * @param  
-    959           * @return  none
-    960           */
-    961           static void Uartsend_irdata()
-    962           {
-    963          	        //HalLcdWriteString("ok", HAL_LCD_LINE_5); 
-    964          		recv_value[UART_DATA_START_INDEX] = 0xE3;
-    965                          SbpHalUARTWrite(recv_value + UART_DATA_START_INDEX, data_len-4);
-    966           }
-    967           
-    968          
-    969          /*********************************************************************
-    970           * @fn      bdAddr2Str
-    971           *
-    972           * @brief   Convert Bluetooth address to string. Only needed when
-    973           *          LCD display is used.
-    974           *
-    975           * @return  none
-    976           */
-    977          char *bdAddr2Str(uint8 *pAddr) {
-    978          	uint8 i;
-    979          	char hex[] = "0123456789ABCDEF";
-    980          	static char str[B_ADDR_STR_LEN];
-    981          	char *pStr = str;
-    982          
-    983          	*pStr++ = '0';
-    984          	*pStr++ = 'x';
-    985          
-    986          	// Start from end of addr
-    987          	pAddr += B_ADDR_LEN;
-    988          
-    989          	for (i = B_ADDR_LEN; i > 0; i--) {
-    990          		*pStr++ = hex[*--pAddr >> 4];
-    991          		*pStr++ = hex[*pAddr & 0x0F];
-    992          	}
-    993          
-    994          	*pStr = 0;
-    995          
-    996          	return str;
-    997          }
-    998          char *hex2Str(uint8 *hexcode) {
-    999          	uint8 i;
-   1000          	uint8 hexlen;
+    910                   case SIMPLEPROFILE_CHAR6:
+    911                       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR6, valuechar6);
+    912                       if(valuechar6[0]==0xA1)
+    913                         {
+    914                            // initTempSensor();
+    915                             valuechar6[0]= getTemperature(); 
+    916                             SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, SIMPLEPROFILE_CHAR6_LEN, valuechar6);
+    917                             HalLcdWriteString(hex2Str(valuechar6), HAL_LCD_LINE_7);
+    918                         }
+    919                    
+    920          		break;
+    921                    case SIMPLEPROFILE_CHAR7:
+    922                       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR7, valuechar7);
+    923                       if(valuechar7[0]==0xA2)
+    924                         {
+    925                            
+    926                            Batt_MeasLevel();
+    927                            // battMeasure(); 
+    928                             //SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, SIMPLEPROFILE_CHAR6_LEN, valuechar6);
+    929                             //HalLcdWriteString(hex2Str(valuechar6), HAL_LCD_LINE_7);
+    930                         }
+    931                    
+    932          		break;
+    933          	default:
+    934          		// should not reach here!
+    935          		break;
+    936          	}
+    937          }
+    938          /*********************************************************************
+    939           * @fn      Receive_Save_Uartsend_irdata(void)
+    940           * @brief  if
+    941           * @param  
+    942           * @return  none
+    943           */
+    944            static void Receive_Save_Uartsend_irdata(void)
+    945           {
+    946                         
+    947          		/*if(current_list.listlen==1)
+    948          		{	osal_memset(current_list.value1, 0, data_len);
+    949          			osal_memcpy(current_list.value1, recv_value, data_len);
+    950          			current_list.value1_len=data_len;
+    951          			current_list.listlen++;
+    952          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT1, time);
+    953          			
+    954          			 
+    955          			
+    956          		}
+    957          		else if(current_list.listlen==2)
+    958          		{	osal_memset(current_list.value2, 0, data_len);
+    959          			osal_memcpy(current_list.value2, recv_value, data_len);
+    960          			current_list.value2_len=data_len;
+    961          			current_list.listlen++;
+    962          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT2, time);
+    963          			
+    964          		}
+    965          		else if(current_list.listlen==3)
+    966          		{
+    967          			osal_memset(current_list.value3, 0, data_len);
+    968          			osal_memcpy(current_list.value3, recv_value, data_len);
+    969          			current_list.value3_len=data_len;
+    970          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT3, time);
+    971          			current_list.listlen++;
+    972          		} 
+    973          		SimpleProfile_SetParameter( SIMPLEPROFILE_CHAR2, sizeof(uint8), &current_list.listlen);
+    974          	*/
+    975          
+    976          } 
+    977          /*********************************************************************
+    978           * @fn      Uartsend_irdata
+    979           * @brief  
+    980           * @param  
+    981           * @return  none
+    982           */
+    983           static void Uartsend_irdata()
+    984           {
+    985          	        //HalLcdWriteString("ok", HAL_LCD_LINE_5); 
+    986          		recv_value[UART_DATA_START_INDEX] = 0xE3;
+    987                          SbpHalUARTWrite(recv_value + UART_DATA_START_INDEX, data_len-4);
+    988           }
+    989           
+    990          
+    991          /*********************************************************************
+    992           * @fn      bdAddr2Str
+    993           *
+    994           * @brief   Convert Bluetooth address to string. Only needed when
+    995           *          LCD display is used.
+    996           *
+    997           * @return  none
+    998           */
+    999          char *bdAddr2Str(uint8 *pAddr) {
+   1000          	uint8 i;
    1001          	char hex[] = "0123456789ABCDEF";
-   1002          	hexlen=osal_strlen((char*)hexcode);
-   1003          	static char str[20];
-   1004          	char *pStr = str;
-   1005          
-   1006          	*pStr++ = '0';
-   1007          	*pStr++ = 'x';
-   1008          
-   1009          	// Start from end of addr
-   1010          	//pAddr += B_ADDR_LEN;
-   1011                  for(i=0;i<hexlen;i++)
-   1012          	{
-   1013          	  *pStr++ = hex[*hexcode>>4];
-   1014                    *pStr++ = hex[*hexcode&0x0F];
-   1015                    *hexcode++;
-   1016          	 
-   1017          	}
-   1018          
-   1019          	*pStr = 0;
-   1020          
-   1021          	return str;
-   1022          }
-   1023          
-   1024          /*********************************************************************
-   1025           *********************************************************************/
-   1026          //static int ascii2hex(char c) {
-   1027          //	int ret = -1;
-   1028          //	if ((c >= '0') && (c <= '9')) {
-   1029          //		ret = c - '0';
-   1030          //	} else if ((c >= 'A') && (c <= 'Z')) {
-   1031          //		ret = c - 'A' + 65;
-   1032          //	} else if ((c >= 'a') && (c <= 'z')) {
-   1033          //		ret = c - 'a' + 97;
-   1034          //	}
-   1035          //	return ret;
-   1036          //}
-   1037          //static void updateDeviceName(char *name, uint8 len) {
-   1038          //	uint8 k = 0;
-   1039          //	for (k = 0; k < len; k++) {
-   1040          //		scanRspData[k + 2] = ascii2hex(*(name + k));
-   1041          //	}
-   1042          //}
-   1043          
-   1044          
+   1002          	static char str[B_ADDR_STR_LEN];
+   1003          	char *pStr = str;
+   1004          
+   1005          	*pStr++ = '0';
+   1006          	*pStr++ = 'x';
+   1007          
+   1008          	// Start from end of addr
+   1009          	pAddr += B_ADDR_LEN;
+   1010          
+   1011          	for (i = B_ADDR_LEN; i > 0; i--) {
+   1012          		*pStr++ = hex[*--pAddr >> 4];
+   1013          		*pStr++ = hex[*pAddr & 0x0F];
+   1014          	}
+   1015          
+   1016          	*pStr = 0;
+   1017          
+   1018          	return str;
+   1019          }
+   1020          char *hex2Str(uint8 *hexcode) {
+   1021          	uint8 i;
+   1022          	uint8 hexlen;
+   1023          	char hex[] = "0123456789ABCDEF";
+   1024          	hexlen=osal_strlen((char*)hexcode);
+   1025          	static char str[20];
+   1026          	char *pStr = str;
+   1027          
+   1028          	*pStr++ = '0';
+   1029          	*pStr++ = 'x';
+   1030          
+   1031          	// Start from end of addr
+   1032          	//pAddr += B_ADDR_LEN;
+   1033                  for(i=0;i<hexlen;i++)
+   1034          	{
+   1035          	  *pStr++ = hex[*hexcode>>4];
+   1036                    *pStr++ = hex[*hexcode&0x0F];
+   1037                    *hexcode++;
+   1038          	 
+   1039          	}
+   1040          
+   1041          	*pStr = 0;
+   1042          
+   1043          	return str;
+   1044          }
+   1045          
+   1046          /*********************************************************************
+   1047           *********************************************************************/
+   1048          //static int ascii2hex(char c) {
+   1049          //	int ret = -1;
+   1050          //	if ((c >= '0') && (c <= '9')) {
+   1051          //		ret = c - '0';
+   1052          //	} else if ((c >= 'A') && (c <= 'Z')) {
+   1053          //		ret = c - 'A' + 65;
+   1054          //	} else if ((c >= 'a') && (c <= 'z')) {
+   1055          //		ret = c - 'a' + 97;
+   1056          //	}
+   1057          //	return ret;
+   1058          //}
+   1059          //static void updateDeviceName(char *name, uint8 len) {
+   1060          //	uint8 k = 0;
+   1061          //	for (k = 0; k < len; k++) {
+   1062          //		scanRspData[k + 2] = ascii2hex(*(name + k));
+   1063          //	}
+   1064          //}
+   1065          
+   1066          
 
    Maximum stack usage in bytes:
 
@@ -1168,7 +1190,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
                           0 0  12 -> osal_msg_receive
                           0 0  12 -> set_de_passkey
        2      0     49  bdAddr2Str
-       2      0    117  hex2Str
+       2      0    157  hex2Str
                           0 0  26 -> osal_strlen
        1      0     23  peripheralStateNotificationCB
                           0 0  23 -> DevInfo_SetParameter
@@ -1179,18 +1201,21 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
                           0 0  12 -> GAPRole_TerminateConnection
                           0 0  11 -> HalLcdWriteString
                           0 0  12 -> HalLcdWriteStringValue
-       2      0     95  simpleProfileChangeCB
-                          0 0  91 -> HalLcdWriteString
-                          0 0  92 -> HalLcdWriteStringValue
-                          0 0  95 -> HalSPIRead
-                          0 0  95 -> HalSPIWrite
-                          0 0  91 -> SimpleProfile_GetParameter
-                          0 0  91 -> delay_nus
-                          0 0  91 -> hex2Str
-                          0 0  93 -> osal_memcpy
-                          0 0  91 -> osal_memset
-                          0 0  91 -> osal_strlen
-                          0 0  91 -> set_code_name
+       2      0    135  simpleProfileChangeCB
+                          0 0 131 -> Batt_MeasLevel
+                          0 0 131 -> HalLcdWriteString
+                          0 0 132 -> HalLcdWriteStringValue
+                          0 0 135 -> HalSPIRead
+                          0 0 135 -> HalSPIWrite
+                          0 0 131 -> SimpleProfile_GetParameter
+                          0 0 131 -> SimpleProfile_SetParameter
+                          0 0 131 -> delay_nus
+                          0 0 131 -> getTemperature
+                          0 0 131 -> hex2Str
+                          0 0 133 -> osal_memcpy
+                          0 0 131 -> osal_memset
+                          0 0 131 -> osal_strlen
+                          0 0 131 -> set_code_name
 
 
    Segment part sizes:
@@ -1216,6 +1241,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
       14  ?<Constant "cur_data_len:">
       20  ?<Constant {0}>
       20  ?<Constant {0}>_1
+      20  ?<Constant {0}>_10
+      20  ?<Constant {0}>_11
       20  ?<Constant {0}>_2
       20  ?<Constant {0}>_3
       20  ?<Constant {0}>_4
@@ -1276,7 +1303,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
        4  simpleBLEPeripheral_PeripheralCBs
        2  simpleBLEPeripheral_SimpleProfileCBs
        1  simpleBLEPeripheral_TaskID
-     583  simpleProfileChangeCB
+     726  simpleProfileChangeCB
       15  str
       20  str
       10  temp_18b20
@@ -1285,16 +1312,16 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
       20  temperature
 
  
- 2 077 bytes in segment BANKED_CODE
+ 2 220 bytes in segment BANKED_CODE
     42 bytes in segment BANK_RELAYS
      8 bytes in segment SFR_AN
    351 bytes in segment XDATA_I
    351 bytes in segment XDATA_ID
-   434 bytes in segment XDATA_ROM_C
+   474 bytes in segment XDATA_ROM_C
    369 bytes in segment XDATA_Z
  
- 2 470 bytes of CODE  memory
-   430 bytes of CONST memory (+ 4 bytes shared)
+ 2 613 bytes of CODE  memory
+   470 bytes of CONST memory (+ 4 bytes shared)
      0 bytes of DATA  memory (+ 8 bytes shared)
    720 bytes of XDATA memory
 

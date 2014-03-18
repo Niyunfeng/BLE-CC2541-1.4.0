@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  16:35:31 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  17:41:03 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -449,18 +449,18 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
     351          
     352            
     353            uint8 level;
-    354          HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
+    354          //HalLcdWriteString("now  start batt..", HAL_LCD_LINE_7);
     355            level = battMeasure();
     356          HalLcdWriteStringValue("batt_lebel:", level, 10, HAL_LCD_LINE_8);
     357            // If level has gone down
-    358          //  if (level > battLevel)
-    359          //  {
-    360          //    // Update level
-    361          //    battLevel = level;
-    362          //
-    363          //    // Send a notification
-    364          //    battNotifyLevel();
-    365          //  }
+    358            if (level > battLevel)
+    359            {
+    360              // Update level
+    361              battLevel = level;
+    362          
+    363              // Send a notification
+    364              battNotifyLevel();
+    365            }
     366          
     367            return SUCCESS;
     368          }
@@ -630,130 +630,131 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
     532           *
     533           * @return  Battery level.
     534           */
-    535          static uint8 battMeasure( void )
-    536          {
-    537            uint16 adc;
-    538            uint8 percent;
-    539          
-    540            /**
-    541             * Battery level conversion from ADC to a percentage:
-    542             *
-    543             * The maximum ADC value for the battery voltage level is 511 for a
-    544             * 10-bit conversion.  The ADC value is references vs. 1.25v and
-    545             * this maximum value corresponds to a voltage of 3.75v.
-    546             *
-    547             * For a coin cell battery 3.0v = 100%.  The minimum operating
-    548             * voltage of the CC2540 is 2.0v so 2.0v = 0%.
-    549             *
-    550             * To convert a voltage to an ADC value use:
-    551             *
-    552             *   (v/3)/1.25 * 511 = adc
-    553             *
-    554             * 3.0v = 409 ADC
-    555             * 2.0v = 273 ADC
-    556             *
-    557             * We need to map ADC values from 409-273 to 100%-0%.
-    558             *
-    559             * Normalize the ADC values to zero:
-    560             *
-    561             * 409 - 273 = 136
-    562             *
-    563             * And convert ADC range to percentage range:
-    564             *
-    565             * percent/adc = 100/136 = 25/34
-    566             *
-    567             * Resulting in the final equation, with round:
-    568             *
-    569             * percent = ((adc - 273) * 25) + 33 / 34
-    570             */
-    571          
-    572            // Call measurement setup callback
-    573            if (battServiceSetupCB != NULL)
-    574            {
-    575              battServiceSetupCB();
-    576            }
-    577          
-    578            // Configure ADC and perform a read
-    579            HalAdcSetReference( HAL_ADC_REF_125V );
-    580            adc = HalAdcRead( battServiceAdcCh, HAL_ADC_RESOLUTION_10 );//0X0F
-    581          
-    582            // Call measurement teardown callback
-    583            if (battServiceTeardownCB != NULL)
-    584            {
-    585              battServiceTeardownCB();
-    586            }
-    587          
-    588            if (adc >= battMaxLevel)
-    589            {
-    590              percent = 100;
-    591            }
-    592            else if (adc <= battMinLevel)
-    593            {
-    594              percent = 0;
-    595            }
-    596            else
-    597            {
-    598              if (battServiceCalcCB != NULL)
-    599              {
-    600                percent = battServiceCalcCB(adc);
-    601              }
-    602              else
-    603              {
-    604                uint16 range =  battMaxLevel - battMinLevel + 1;
-    605          
-    606                // optional if you want to keep it even, otherwise just take floor of divide
-    607                // range += (range & 1);
-    608                range >>= 2; // divide by 4
-    609          
-    610                percent = (uint8) ((((adc - battMinLevel) * 25) + (range - 1)) / range);
-    611              }
-    612            }
-    613          
-    614            return percent;
-    615          }
-    616          
-    617          /*********************************************************************
-    618           * @fn      battNotifyLevelState
-    619           *
-    620           * @brief   Send a notification of the battery level state
-    621           *          characteristic if a connection is established.
-    622           *
-    623           * @return  None.
-    624           */
-    625          static void battNotifyLevel( void )
-    626          {
-    627            // Execute linkDB callback to send notification
-    628            linkDB_PerformFunc( battNotifyCB );
-    629          }
-    630          
-    631          /*********************************************************************
-    632           * @fn          Batt_HandleConnStatusCB
-    633           *
-    634           * @brief       Battery Service link status change handler function.
-    635           *
-    636           * @param       connHandle - connection handle
-    637           * @param       changeType - type of change
-    638           *
-    639           * @return      none
-    640           */
-    641          void Batt_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
-    642          {
-    643            // Make sure this is not loopback connection
-    644            if ( connHandle != LOOPBACK_CONNHANDLE )
-    645            {
-    646              // Reset Client Char Config if connection has dropped
-    647              if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
-    648                   ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) &&
-    649                     ( !linkDB_Up( connHandle ) ) ) )
-    650              {
-    651                GATTServApp_InitCharCfg( connHandle, battLevelClientCharCfg );
-    652              }
-    653            }
-    654          }
-    655          
+    535          //static uint8 battMeasure( void )
+    536          uint8 battMeasure( void )
+    537          {
+    538            uint16 adc;
+    539            uint8 percent;
+    540          
+    541            /**
+    542             * Battery level conversion from ADC to a percentage:
+    543             *
+    544             * The maximum ADC value for the battery voltage level is 511 for a
+    545             * 10-bit conversion.  The ADC value is references vs. 1.25v and
+    546             * this maximum value corresponds to a voltage of 3.75v.
+    547             *
+    548             * For a coin cell battery 3.0v = 100%.  The minimum operating
+    549             * voltage of the CC2540 is 2.0v so 2.0v = 0%.
+    550             *
+    551             * To convert a voltage to an ADC value use:
+    552             *
+    553             *   (v/3)/1.25 * 511 = adc
+    554             *
+    555             * 3.0v = 409 ADC
+    556             * 2.0v = 273 ADC
+    557             *
+    558             * We need to map ADC values from 409-273 to 100%-0%.
+    559             *
+    560             * Normalize the ADC values to zero:
+    561             *
+    562             * 409 - 273 = 136
+    563             *
+    564             * And convert ADC range to percentage range:
+    565             *
+    566             * percent/adc = 100/136 = 25/34
+    567             *
+    568             * Resulting in the final equation, with round:
+    569             *
+    570             * percent = ((adc - 273) * 25) + 33 / 34
+    571             */
+    572          
+    573            // Call measurement setup callback
+    574            if (battServiceSetupCB != NULL)
+    575            {
+    576              battServiceSetupCB();
+    577            }
+    578          
+    579            // Configure ADC and perform a read
+    580            HalAdcSetReference( HAL_ADC_REF_125V );
+    581            adc = HalAdcRead( battServiceAdcCh, HAL_ADC_RESOLUTION_10 );//0X0F
+    582          
+    583            // Call measurement teardown callback
+    584            if (battServiceTeardownCB != NULL)
+    585            {
+    586              battServiceTeardownCB();
+    587            }
+    588          
+    589            if (adc >= battMaxLevel)
+    590            {
+    591              percent = 100;
+    592            }
+    593            else if (adc <= battMinLevel)
+    594            {
+    595              percent = 0;
+    596            }
+    597            else
+    598            {
+    599              if (battServiceCalcCB != NULL)
+    600              {
+    601                percent = battServiceCalcCB(adc);
+    602              }
+    603              else
+    604              {
+    605                uint16 range =  battMaxLevel - battMinLevel + 1;
+    606          
+    607                // optional if you want to keep it even, otherwise just take floor of divide
+    608                // range += (range & 1);
+    609                range >>= 2; // divide by 4
+    610          
+    611                percent = (uint8) ((((adc - battMinLevel) * 25) + (range - 1)) / range);
+    612              }
+    613            }
+    614          
+    615            return percent; 
+    616          }
+    617          
+    618          /*********************************************************************
+    619           * @fn      battNotifyLevelState
+    620           *
+    621           * @brief   Send a notification of the battery level state
+    622           *          characteristic if a connection is established.
+    623           *
+    624           * @return  None.
+    625           */
+    626          static void battNotifyLevel( void )
+    627          {
+    628            // Execute linkDB callback to send notification
+    629            linkDB_PerformFunc( battNotifyCB );
+    630          }
+    631          
+    632          /*********************************************************************
+    633           * @fn          Batt_HandleConnStatusCB
+    634           *
+    635           * @brief       Battery Service link status change handler function.
+    636           *
+    637           * @param       connHandle - connection handle
+    638           * @param       changeType - type of change
+    639           *
+    640           * @return      none
+    641           */
+    642          void Batt_HandleConnStatusCB( uint16 connHandle, uint8 changeType )
+    643          {
+    644            // Make sure this is not loopback connection
+    645            if ( connHandle != LOOPBACK_CONNHANDLE )
+    646            {
+    647              // Reset Client Char Config if connection has dropped
+    648              if ( ( changeType == LINKDB_STATUS_UPDATE_REMOVED )      ||
+    649                   ( ( changeType == LINKDB_STATUS_UPDATE_STATEFLAGS ) &&
+    650                     ( !linkDB_Up( connHandle ) ) ) )
+    651              {
+    652                GATTServApp_InitCharCfg( connHandle, battLevelClientCharCfg );
+    653              }
+    654            }
+    655          }
     656          
-    657          /*********************************************************************
-    658          *********************************************************************/
+    657          
+    658          /*********************************************************************
+    659          *********************************************************************/
 
    Maximum stack usage in bytes:
 
@@ -766,10 +767,10 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        0      0      9  Batt_HandleConnStatusCB
                           0 0  9 -> GATTServApp_InitCharCfg
                           0 0  9 -> linkDB_State
-       0      0     10  Batt_MeasLevel
-                          0 0  9 -> HalLcdWriteString
-                          0 0 10 -> HalLcdWriteStringValue
+       0      0     11  Batt_MeasLevel
+                          0 0 11 -> HalLcdWriteStringValue
                           0 0 10 -> battMeasure
+                          0 0 10 -> linkDB_PerformFunc
        2      0      0  Batt_Register
        0      0      9  Batt_SetParameter
                           0 0  9 -> linkDB_PerformFunc
@@ -792,7 +793,6 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
    Bytes  Function/Label
    -----  --------------
       12  ?<Constant "batt_lebel:">
-      18  ?<Constant "now  start batt..">
       40  ?<Initializer for battAttrTbl>
        1  ?<Initializer for battLevel>
        1  ?<Initializer for battLevelProps>
@@ -807,8 +807,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        6  ??Batt_Register?relay
        6  ??Batt_SetParameter?relay
        6  ??Batt_Setup?relay
-       4  ??Subroutine10_0
-       5  ??Subroutine9_0
+       5  ??Subroutine10_0
+       4  ??Subroutine9_0
        6  ??battMeasure?relay
        6  ??battNotifyCB?relay
        6  ??battReadAttrCB?relay
@@ -823,9 +823,9 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        6  ?Subroutine7
        6  ?Subroutine8
       43  Batt_AddService
-     103  Batt_GetParameter
+     104  Batt_GetParameter
       55  Batt_HandleConnStatusCB
-      50  Batt_MeasLevel
+      60  Batt_MeasLevel
       19  Batt_Register
       47  Batt_SetParameter
       97  Batt_Setup
@@ -839,7 +839,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        2  battMaxLevel
      193  battMeasure
        2  battMinLevel
-     119  battNotifyCB
+     118  battNotifyCB
      171  battReadAttrCB
        2  battServUUID
        3  battService
@@ -852,15 +852,15 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
        2  hidReportRefBattLevel
 
  
- 1 104 bytes in segment BANKED_CODE
+ 1 114 bytes in segment BANKED_CODE
     66 bytes in segment BANK_RELAYS
     49 bytes in segment XDATA_I
     49 bytes in segment XDATA_ID
-    43 bytes in segment XDATA_ROM_C
+    25 bytes in segment XDATA_ROM_C
     15 bytes in segment XDATA_Z
  
- 1 219 bytes of CODE  memory
-    43 bytes of CONST memory
+ 1 229 bytes of CODE  memory
+    25 bytes of CONST memory
     64 bytes of XDATA memory
 
 Errors: none

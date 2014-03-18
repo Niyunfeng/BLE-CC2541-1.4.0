@@ -353,36 +353,36 @@ static void simpleBLEPeripheralPairStateCB(uint16 connHandle, uint8 state, uint8
  }
  */
 
-static void gettemp(void)
-{
-     // osal_snv_read(0xE0,6,&temperature);
-       // uint8 TempValue[6];  
-        uint8 AvgTemp=0,i=0,j;
-        uint8 sensor_data_value;  //传感器数据
-
-        initTempSensor();
-        AvgTemp = getTemperature();  
+//static void gettemp(void)
+//{
+//     // osal_snv_read(0xE0,6,&temperature);
+//       // uint8 TempValue[6];  
+//        uint8 AvgTemp=0,i=0,j;
+//        uint8 sensor_data_value;  //传感器数据
+//
+//        initTempSensor();
+//        AvgTemp = getTemperature();  
+//        
+//        temperature[temp_flag]=AvgTemp;
+//        temp_flag++;
+//       
+//        DS18B20_SendConvert();
+//        //延时1S
+//        for(j=20; j>0; j--)
+//          delay_nus(50);
+//        sensor_data_value=DS18B20_GetTem();
+//        temp_18b20[temp_18b20_flag]=sensor_data_value;
+//        temp_18b20_flag++;
+//
+//        if(temp_flag==3)
+//        {
+//
+//          for(i=0;i<temp_flag;i++)
+//             HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
+//        }
         
-        temperature[temp_flag]=AvgTemp;
-        temp_flag++;
-       
-        DS18B20_SendConvert();
-        //延时1S
-        for(j=20; j>0; j--)
-          delay_nus(50);
-        sensor_data_value=DS18B20_GetTem();
-        temp_18b20[temp_18b20_flag]=sensor_data_value;
-        temp_18b20_flag++;
-
-        if(temp_flag==3)
-        {
-
-          for(i=0;i<temp_flag;i++)
-             HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
-        }
         
-        
-}
+//}
 /*********************************************************************
  * PUBLIC FUNCTIONS
  */
@@ -817,7 +817,7 @@ static void performPeriodicTask(void) {
  */
 static void simpleProfileChangeCB(uint8 paramID) {
 	 //osal_memset(buf, 0, 20);
-         uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0};
+         uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0},valuechar6[20]={0},valuechar7[20]={0};
 	 uint8 databuf_read[20]={0};
 	 uint8 datalen_read=0,i;
 	switch (paramID) {
@@ -907,7 +907,29 @@ static void simpleProfileChangeCB(uint8 paramID) {
           
 		break;
          
-        
+         case SIMPLEPROFILE_CHAR6:
+             SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR6, valuechar6);
+             if(valuechar6[0]==0xA1)
+               {
+                  // initTempSensor();
+                   valuechar6[0]= getTemperature(); 
+                   SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, SIMPLEPROFILE_CHAR6_LEN, valuechar6);
+                   HalLcdWriteString(hex2Str(valuechar6), HAL_LCD_LINE_7);
+               }
+          
+		break;
+          case SIMPLEPROFILE_CHAR7:
+             SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR7, valuechar7);
+             if(valuechar7[0]==0xA2)
+               {
+                  
+                  Batt_MeasLevel();
+                  // battMeasure(); 
+                   //SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, SIMPLEPROFILE_CHAR6_LEN, valuechar6);
+                   //HalLcdWriteString(hex2Str(valuechar6), HAL_LCD_LINE_7);
+               }
+          
+		break;
 	default:
 		// should not reach here!
 		break;
