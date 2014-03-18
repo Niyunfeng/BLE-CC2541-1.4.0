@@ -97,7 +97,7 @@
  */
 
 // How often to perform periodic event
-//#define SBP_PERIODIC_EVT_PERIOD                   5000
+#define SBP_PERIODIC_EVT_PERIOD                   5000
 
 #define TEMP_CHECK_PERIOD                         5000
 
@@ -124,13 +124,13 @@
 #define DEFAULT_DESIRED_MIN_CONN_INTERVAL     80
 
 // Maximum connection interval (units of 1.25ms, 800=1000ms) if automatic parameter update request is enabled
-#define DEFAULT_DESIRED_MAX_CONN_INTERVAL    1200
+#define DEFAULT_DESIRED_MAX_CONN_INTERVAL    180
 
 // Slave latency to use if automatic parameter update request is enabled
 #define DEFAULT_DESIRED_SLAVE_LATENCY         0//10  参数更新打开 与手机通信时 要小于4
 
 // Supervision timeout value (units of 10ms, 1000=10s) if automatic parameter update request is enabled
-#define DEFAULT_DESIRED_CONN_TIMEOUT        500//与手机通信时 要大于等于6S
+#define DEFAULT_DESIRED_CONN_TIMEOUT        500//与手机通信时 要小于等于6S
 
 // Company Identifier: Texas Instruments Inc. (13)
 #define TI_COMPANY_ID                         0x000D
@@ -162,8 +162,8 @@ extern UartState u_state;
 // uint8 code recv_value1[2540] = { 0 };
 static uint8  recv_value[254] = { 0 };
 static uint8 TRANSFER_DATA_STATE_IN = FALSE;
-static char newValueBuf[20] = { 0 };
-static uint8 data_len = 0, cur_data_len = 0, data_len_index = 0, send_times = 0;
+//static char newValueBuf[20] = { 0 };
+static uint8 data_len = 0, cur_data_len = 0, data_len_index = 0;
 
 /*********************************************************************
  * SPI FLASH
@@ -267,6 +267,7 @@ static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys);
 //static void simpleBLEPeripheralPasscodeCB(uint8 *deviceAddr, uint16 connectionHandle, uint8 uiInputs, uint8 uiOutputs);
 static void simpleBLEPeripheralPairStateCB(uint16 connHandle, uint8 state, uint8 status);
 static char *bdAddr2Str(uint8 *pAddr);
+static char *hex2Str(uint8 *hexcode);
 static void gettemp(void);
 //static void updateDeviceName(char *name, uint8 len);
 //static uint32 atoi(uint8 s[]);
@@ -532,7 +533,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
 
 	VOID task_id; // OSAL required parameter that isn't used in this function
-        uint8 i;
+       // uint8 i;
 	if (events & SYS_EVENT_MSG) {
 		uint8 *pMsg;
 
@@ -558,10 +559,10 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
 		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD);
                 
                 // Set timer for first battery read event
-                osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+                //osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
                 
 
-                osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_TEMP_EVT, TEMP_CHECK_PERIOD );
+                //osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_TEMP_EVT, TEMP_CHECK_PERIOD );
           
 		return (events ^ SBP_START_DEVICE_EVT);
 	}
@@ -569,19 +570,26 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
 	if (events & SBP_PERIODIC_EVT) {
 		
                 //Restart timer
-                if ( BATTERY_CHECK_PERIOD )
-               {
-                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
-                }
-                 
-               HalLedSet(HAL_LED_1, HAL_LED_MODE_ON ); 
-                 //延时1S
-               for(i=20; i>0; i--)
-                  delay_nus(50);
-               HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );
-               // perform battery level check
-               Batt_MeasLevel();
-               
+//                if ( BATTERY_CHECK_PERIOD )
+//               {
+//                 osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
+//                }
+//                 
+//               HalLedSet(HAL_LED_1, HAL_LED_MODE_ON ); 
+//                 //延时1S
+//               for(i=20; i>0; i--)
+//                  delay_nus(50);
+//               HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );
+//               // perform battery level check
+//               Batt_MeasLevel();
+               // Restart timer
+//		if (SBP_PERIODIC_EVT_PERIOD) {
+//			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD);
+//		}
+//
+//		// Perform periodic application task
+//		performPeriodicTask();
+//               
 		return (events ^ SBP_PERIODIC_EVT);
 	}
 
@@ -607,22 +615,22 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
         if (events & SBP_TEMP_EVT) {
               // HalLcdWriteString("start get temp", HAL_LCD_LINE_5);
               
-              if ( SBP_TEMP_EVT)
-               {
-                  osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_TEMP_EVT, TEMP_CHECK_PERIOD ); 
-               }
-              
-               HalLedSet(HAL_LED_2, HAL_LED_MODE_ON ); 
-              
-                 //延时1S
-               for(i=20; i>0; i--)
-                  delay_nus(4200);
-               HalLedSet(HAL_LED_2, HAL_LED_MODE_OFF );
-              //gettemp();
-              
-               //getTemperature();  
-  
-          HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );
+//              if ( SBP_TEMP_EVT)
+//               {
+//                  osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_TEMP_EVT, TEMP_CHECK_PERIOD ); 
+//               }
+//              
+//               HalLedSet(HAL_LED_2, HAL_LED_MODE_ON ); 
+//              
+//                 //延时1S
+//               for(i=20; i>0; i--)
+//                  delay_nus(500);
+//               HalLedSet(HAL_LED_2, HAL_LED_MODE_OFF );
+//              //gettemp();
+//              
+//               //getTemperature();  
+//  
+//          HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );
 	       return (events ^ SBP_TEMP_EVT);
 	}
         
@@ -662,7 +670,7 @@ static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
 	}
 
 	if (keys & HAL_KEY_DOWN) {
-		HalLcdWriteString("send after 3s...", HAL_LCD_LINE_4);
+		//HalLcdWriteString("send after 3s...", HAL_LCD_LINE_4);
 		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT, 3000);
 	}
 
@@ -777,7 +785,7 @@ static void performPeriodicTask(void) {
 	uint8 stat;
 
 	// Call to retrieve the value of the third characteristic in the profile
-	stat = SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, &valueToCopy);
+	stat = SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR2, &valueToCopy);
 
 	if (stat == SUCCESS) {
 		/*
@@ -786,6 +794,7 @@ static void performPeriodicTask(void) {
 		 * a GATT client device, then a notification will be sent every time this
 		 * function is called.
 		 */
+               // HalLcdWriteString("ok", HAL_LCD_LINE_5);
 		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8), &valueToCopy);
 	}
 }
@@ -798,44 +807,44 @@ static void performPeriodicTask(void) {
  * @return  none
  */
 static void simpleProfileChangeCB(uint8 paramID) {
-	osal_memset(buf, 0, 20);
-         uint8 valuechar3[20]={0};
+	 //osal_memset(buf, 0, 20);
+         uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0};
+	 uint8 databuf_read[20]={0};
+	 uint8 datalen_read=0,i;
 	switch (paramID) {
 	case SIMPLEPROFILE_CHAR1:
-          SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1, newValueBuf);
-           HalLcdWriteString(newValueBuf, HAL_LCD_LINE_5);
-		/* SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1, newValueBuf);
-            //uint8 *new1=&newValueBuf[0];
-            
-            if ((newValueBuf[0] == TRANSFER_DATA_SIGN) && (newValueBuf[1] == TRANSFER_DATA_SIGN_RE)) 
+             SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1,valuechar1);
+             set_code_name(valuechar1);
+		break;
+                
+        case SIMPLEPROFILE_CHAR2:
+             SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR2, valuechar2);
+           //  HalLcdWriteString(valuechar2, HAL_LCD_LINE_5);
+	
+            if ((valuechar2[0] == TRANSFER_DATA_SIGN) && (valuechar2[1] == TRANSFER_DATA_SIGN_RE)) 
 	     {
 			TRANSFER_DATA_STATE_IN = FALSE;
                        
-		}
+	      }
             
             
-	   if ((newValueBuf[4] != 0) && (!TRANSFER_DATA_STATE_IN)) 
+	   if ((valuechar2[3] != 0) && (!TRANSFER_DATA_STATE_IN)) 
 	    {
-			timer_flag=newValueBuf[2];
-                        if(timer_flag==2)
-                         { 
-                           time=newValueBuf[3]*1000;
-                         }
-                        else time=0;
-                        data_len = newValueBuf[UART_DATA_START_INDEX];
+			
+                        data_len = valuechar2[3];
 			TRANSFER_DATA_STATE_IN = TRUE;
 			data_len_index = 0;
 			osal_memset(recv_value, 0, data_len);
-                     //   HalLcdWriteString("ok", HAL_LCD_LINE_5);
-		}
+               
+	    }
 	
-	  cur_data_len = osal_strlen(newValueBuf);//有问题 是0的话 长度不对
-         //  cur_data_len = sizeof(newValueBuf);
+	  cur_data_len = osal_strlen((char*)valuechar2);//有问题 是0的话 长度不对
+         //  cur_data_len = sizeof(valuechar2);
            HalLcdWriteStringValue("cur_data_len:",cur_data_len, 10, HAL_LCD_LINE_5); 
            
 	   if (TRANSFER_DATA_STATE_IN) 
 	    {
-		osal_memcpy((recv_value + data_len_index), newValueBuf, cur_data_len);
+		osal_memcpy((recv_value + data_len_index), valuechar2, cur_data_len);
                 
 		data_len_index += cur_data_len;
                 
@@ -849,45 +858,51 @@ static void simpleProfileChangeCB(uint8 paramID) {
            if (data_len_index == data_len) 
 	   {
             
-                 if(timer_flag==1)
-		    Uartsend_irdata();
-		
-		 else if(timer_flag==2) 
-		
-		    Receive_Save_Uartsend_irdata();
+//                 if(timer_flag==1)
+//		    Uartsend_irdata();
+//		
+//		 else if(timer_flag==2) 
+//		
+//		    Receive_Save_Uartsend_irdata();
 			
 			
-		
+		HalSPIWrite(valuechar2[2]*256,recv_value+3,data_len-3);
 		TRANSFER_DATA_STATE_IN = FALSE;
-		HalLcdWriteStringValue("data_len:", osal_strlen((char *)recv_value), 10, HAL_LCD_LINE_6); 
-                HalLcdWriteStringValue("listlen:", current_list.listlen, 10, HAL_LCD_LINE_8);
+		//HalLcdWriteStringValue("data_len:", osal_strlen((char *)recv_value), 10, HAL_LCD_LINE_6); 
+               // HalLcdWriteStringValue("listlen:", current_list.listlen, 10, HAL_LCD_LINE_8);
 		data_len = 0;
-                send_times = 0;
 		cur_data_len = 0;
 		data_len_index = 0;
 		osal_memset(recv_value, 0, data_len);
-           }*/
-          
-          /*SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1,buf);
-                 HalSPIWrite(0x0,buf,20);
-                 HalLcdWriteString((uint8*)buf, HAL_LCD_LINE_6);
-		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Write:"); 
-		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf); 
-		  //注意，连续读写之间至少要延时800us
-		  //HalHW_WaitUs(800);
-	          HalSPIRead(0x0,bufrx,20);
-                   HalLcdWriteString((uint8*)bufrx, HAL_LCD_LINE_7);
-		  //HalLcd_HW_WriteLine(HAL_LCD_LINE_6, "Read:"); 
-		 // HalLcd_HW_WriteLine(HAL_LCD_LINE_7, bufrx); 
-*/
-		
+           }
 
-		break;
+                 break;
+                 
 	case SIMPLEPROFILE_CHAR3:
 		SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, valuechar3);
-                set_code_name(valuechar3);
- 
+               
+		HalSPIRead(valuechar3[0]*256,&datalen_read,1);
+		    //延时1S
+               for(i=20; i>0; i--)
+                  delay_nus(50);
+                HalSPIRead(valuechar3[0]*256+1,databuf_read,datalen_read-4);
+		
+		//HalLcd(HAL_LCD_LINE_5,hex2Str(databuf_read));
+		HalLcdWriteString(hex2Str(databuf_read), HAL_LCD_LINE_5);
+//		 for(i=20; i>0; i--)
+//                  delay_nus(500);
+		
 		break;
+        case SIMPLEPROFILE_CHAR4:
+           //  SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR4, newValueBuf);
+          
+		break;
+         case SIMPLEPROFILE_CHAR5:
+            // SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR5, newValueBuf);
+          
+		break;
+         
+        
 	default:
 		// should not reach here!
 		break;
@@ -975,6 +990,32 @@ char *bdAddr2Str(uint8 *pAddr) {
 
 	return str;
 }
+char *hex2Str(uint8 *hexcode) {
+	uint8 i;
+	uint8 hexlen;
+	char hex[] = "0123456789ABCDEF";
+	hexlen=osal_strlen((char*)hexcode);
+	static char str[20];
+	char *pStr = str;
+
+	*pStr++ = '0';
+	*pStr++ = 'x';
+
+	// Start from end of addr
+	//pAddr += B_ADDR_LEN;
+        for(i=0;i<hexlen;i++)
+	{
+	  *pStr++ = hex[*hexcode>>4];
+          *pStr++ = hex[*hexcode&0x0F];
+          *hexcode++;
+	 
+	}
+
+	*pStr = 0;
+
+	return str;
+}
+
 /*********************************************************************
  *********************************************************************/
 //static int ascii2hex(char c) {

@@ -125,6 +125,9 @@ extern void HalLcdWriteStringValueValue( char *title, uint16 value1, uint8 forma
 extern void HalLcdDisplayPercentBar( char *title, uint8 value );
 
 
+extern void HalLcd_HW_WriteLine(uint8 line, const char *pText);
+
+
 /**************************************************************************************************
 **************************************************************************************************/
 
