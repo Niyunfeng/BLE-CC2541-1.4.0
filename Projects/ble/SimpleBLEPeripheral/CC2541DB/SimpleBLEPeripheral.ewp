@@ -188,7 +188,7 @@
         </option>
         <option>
           <name>General Xdata Stack Size</name>
-          <state>0x280</state>
+          <state>0x300</state>
         </option>
         <option>
           <name>General Ext Stack Size</name>
@@ -772,7 +772,7 @@
         </option>
         <option>
           <name>ListSymbols</name>
-          <state>1</state>
+          <state>2</state>
         </option>
         <option>
           <name>PageLengthCheck</name>

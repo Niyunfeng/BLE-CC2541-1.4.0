@@ -473,16 +473,25 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 
 	// Setup the SimpleProfile Characteristic Values
 	{
-		uint8 charValue1 = 1;
-		uint8 charValue2 = 2;
-		uint8 charValue3 = 3;
+	
 		uint8 charValue4 = 4;
-		uint8 charValue5[SIMPLEPROFILE_CHAR5_LEN] = { 1, 2, 3, 4, 5 };
-		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR1, sizeof(uint8), &charValue1);
-		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, sizeof(uint8), &charValue2);
-		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR3, sizeof(uint8), &charValue3);
+                uint8 charValue1[SIMPLEPROFILE_CHAR1_LEN] = { 0 };
+                uint8 charValue2[SIMPLEPROFILE_CHAR2_LEN] = { 0 };
+                uint8 charValue3[SIMPLEPROFILE_CHAR3_LEN] = { 0 };
+                uint8 charValue5[SIMPLEPROFILE_CHAR5_LEN] = { 0 };
+                uint8 charValue6[SIMPLEPROFILE_CHAR6_LEN] = { 0 };
+                uint8 charValue7[SIMPLEPROFILE_CHAR7_LEN] = { 0 };
+		
+		
 		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8), &charValue4);
-		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN, charValue5);
+		
+                SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR1, SIMPLEPROFILE_CHAR1_LEN, charValue1);
+                SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR2, SIMPLEPROFILE_CHAR2_LEN, charValue2);
+                SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR3, SIMPLEPROFILE_CHAR3_LEN, charValue3);
+                SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN, charValue5);
+                SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, SIMPLEPROFILE_CHAR6_LEN, charValue6);
+                SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR7, SIMPLEPROFILE_CHAR7_LEN, charValue7);
+             
 	}
 
 	HalLcdWriteString("BLE slave aico", HAL_LCD_LINE_1);
@@ -885,13 +894,9 @@ static void simpleProfileChangeCB(uint8 paramID) {
 		    //延时1S
                for(i=20; i>0; i--)
                   delay_nus(50);
-                HalSPIRead(valuechar3[0]*256+1,databuf_read,datalen_read-4);
-		
-		//HalLcd(HAL_LCD_LINE_5,hex2Str(databuf_read));
-		HalLcdWriteString(hex2Str(databuf_read), HAL_LCD_LINE_5);
-//		 for(i=20; i>0; i--)
-//                  delay_nus(500);
-		
+                HalSPIRead(valuechar3[0]*256+1,databuf_read,datalen_read-4);	
+		HalLcdWriteString(hex2Str(databuf_read), HAL_LCD_LINE_6);
+	
 		break;
         case SIMPLEPROFILE_CHAR4:
            //  SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR4, newValueBuf);
