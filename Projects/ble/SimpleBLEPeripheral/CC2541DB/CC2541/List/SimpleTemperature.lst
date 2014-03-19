@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  17:14:18 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             19/Mar/2014  13:49:29 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -139,6 +139,37 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\Sim
      41             return   v;                           //进行温度校正，这里减去5℃（不同芯片根据具体情况校正）
      42          
      43          }
+     44          
+     45          //static void gettemp(void)
+     46          //{
+     47          //     // osal_snv_read(0xE0,6,&temperature);
+     48          //       // uint8 TempValue[6];  
+     49          //        uint8 AvgTemp=0,i=0,j;
+     50          //        uint8 sensor_data_value;  //传感器数据
+     51          //
+     52          //        initTempSensor();
+     53          //        AvgTemp = getTemperature();  
+     54          //        
+     55          //        temperature[temp_flag]=AvgTemp;
+     56          //        temp_flag++;
+     57          //       
+     58          //        DS18B20_SendConvert();
+     59          //        //延时1S
+     60          //        for(j=20; j>0; j--)
+     61          //          delay_nus(50);
+     62          //        sensor_data_value=DS18B20_GetTem();
+     63          //        temp_18b20[temp_18b20_flag]=sensor_data_value;
+     64          //        temp_18b20_flag++;
+     65          //
+     66          //        if(temp_flag==3)
+     67          //        {
+     68          //
+     69          //          for(i=0;i<temp_flag;i++)
+     70          //             HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
+     71          //        }
+     72                  
+     73                  
+     74          //}
 
    Maximum stack usage in bytes:
 

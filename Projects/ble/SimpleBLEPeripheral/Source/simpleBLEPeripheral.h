@@ -60,7 +60,16 @@ extern "C"
 
 //#define SBP_ZEKEZANG_EVT				  0x0009
 //#define SBP_SEND_IRDATA_EVT			          0x0005
-#define SBP_TEMP_EVT                                      0x0008
+//#define SBP_TEMP_EVT                                      0x0008
+  
+#define SBP_SEND_IRDATA_EVT1                                0x0008
+#define SBP_SEND_IRDATA_EVT2                                0x0010
+#define SBP_SEND_IRDATA_EVT3                                0x0020
+#define SBP_SEND_IRDATA_EVT4                                0x0040
+#define SBP_SEND_IRDATA_EVT5                                0x0080
+#define SBP_SEND_IRDATA_EVT6                                0x0100
+  
+  
 
 /*********************************************************************
  * MACROS

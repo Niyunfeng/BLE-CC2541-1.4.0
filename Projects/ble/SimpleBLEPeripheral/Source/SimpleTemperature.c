@@ -41,3 +41,34 @@ uint8 getTemperature(void){
    return   v;                           //进行温度校正，这里减去5℃（不同芯片根据具体情况校正）
 
 }
+
+//static void gettemp(void)
+//{
+//     // osal_snv_read(0xE0,6,&temperature);
+//       // uint8 TempValue[6];  
+//        uint8 AvgTemp=0,i=0,j;
+//        uint8 sensor_data_value;  //传感器数据
+//
+//        initTempSensor();
+//        AvgTemp = getTemperature();  
+//        
+//        temperature[temp_flag]=AvgTemp;
+//        temp_flag++;
+//       
+//        DS18B20_SendConvert();
+//        //延时1S
+//        for(j=20; j>0; j--)
+//          delay_nus(50);
+//        sensor_data_value=DS18B20_GetTem();
+//        temp_18b20[temp_18b20_flag]=sensor_data_value;
+//        temp_18b20_flag++;
+//
+//        if(temp_flag==3)
+//        {
+//
+//          for(i=0;i<temp_flag;i++)
+//             HalLcdWriteStringValueValue("Temp,18b20:", temperature[i], 10, temp_18b20[i],10,i+1);
+//        }
+        
+        
+//}
