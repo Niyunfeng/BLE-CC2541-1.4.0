@@ -160,7 +160,7 @@ extern UartState u_state;
 //#define UART_DATA_START_INDEX 2
 //#define one_time_data_len 125
 // uint8 code recv_value1[2540] = { 0 };
-static uint8  recv_value[254] = { 0 };
+static uint8  recv_value[128] = { 0 };
 static uint8 TRANSFER_DATA_STATE_IN = FALSE;
 //static char newValueBuf[20] = { 0 };
 static uint8 data_len = 0, cur_data_len = 0, data_len_index = 0;
@@ -426,7 +426,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 		GAP_SetParamValue(TGAP_GEN_DISC_ADV_INT_MIN, advInt);
 		GAP_SetParamValue(TGAP_GEN_DISC_ADV_INT_MAX, advInt);
 	}
-        //set_passkey();
+        set_passkey();
 
 
 	// Initialize GATT attributes
@@ -492,7 +492,13 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 	//HalLcdWriteString(" start", HAL_LCD_LINE_1);
 	
             XNV_SPI_INIT();
-      
+        //设置P1.0端口方向为输出
+        P0DIR |= BV(4);
+        
+        //设置P1.0端口为GPIO功能
+        P0SEL &= ~BV(4);
+        
+     
 
 
 	/***********************************test something zekezang**********************************/
@@ -618,8 +624,8 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
                 HalLcdWriteStringValue("list_len:", current_list.listlen, 10, HAL_LCD_LINE_2);
                 HalLcdWriteString("event2 ok", HAL_LCD_LINE_5);
 
-                //peripheral_event^=SBP_SEND_IRDATA_EVT2;
-                peripheral_event=events ^ SBP_SEND_IRDATA_EVT2;
+                peripheral_event^=SBP_SEND_IRDATA_EVT2;
+                //peripheral_event=events ^ SBP_SEND_IRDATA_EVT2;
 		return (events ^ SBP_SEND_IRDATA_EVT2);
 	}
 	if (events & SBP_SEND_IRDATA_EVT3) {
@@ -637,8 +643,8 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
                 HalLcdWriteStringValue("list_len:", current_list.listlen, 10, HAL_LCD_LINE_2);
                 HalLcdWriteString("event3 ok", HAL_LCD_LINE_5);
 
-               // peripheral_event^=SBP_SEND_IRDATA_EVT3;
-                peripheral_event=events ^ SBP_SEND_IRDATA_EVT3;
+                peripheral_event^=SBP_SEND_IRDATA_EVT3;
+                //peripheral_event=events ^ SBP_SEND_IRDATA_EVT3;
 		return (events ^ SBP_SEND_IRDATA_EVT3);
 	}
         if (events & SBP_SEND_IRDATA_EVT4) {
@@ -656,8 +662,8 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
                 HalLcdWriteStringValue("list_len:", current_list.listlen, 10, HAL_LCD_LINE_2);
                 HalLcdWriteString("event4 ok", HAL_LCD_LINE_5);
 
-                //peripheral_event^=SBP_SEND_IRDATA_EVT3;
-                peripheral_event=events ^ SBP_SEND_IRDATA_EVT4;
+                peripheral_event^=SBP_SEND_IRDATA_EVT3;
+                //peripheral_event=events ^ SBP_SEND_IRDATA_EVT4;
 		return (events ^ SBP_SEND_IRDATA_EVT4);
 	}
         if (events & SBP_SEND_IRDATA_EVT5) {
@@ -674,8 +680,8 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
                 SimpleProfile_SetParameter( SIMPLEPROFILE_CHAR7, SIMPLEPROFILE_CHAR7_LEN, &current_list.listlen);
                 HalLcdWriteStringValue("list_len:", current_list.listlen, 10, HAL_LCD_LINE_2);
                 HalLcdWriteString("event5 ok", HAL_LCD_LINE_5);
-                //peripheral_event^=SBP_SEND_IRDATA_EVT3;
-                peripheral_event=events ^ SBP_SEND_IRDATA_EVT5;
+                peripheral_event^=SBP_SEND_IRDATA_EVT3;
+                //peripheral_event=events ^ SBP_SEND_IRDATA_EVT5;
 		return (events ^ SBP_SEND_IRDATA_EVT5);
 	}
 //        if (events & SBP_SEND_IRDATA_EVT6) {
@@ -873,7 +879,7 @@ static void performPeriodicTask(void) {
  */
 static void simpleProfileChangeCB(uint8 paramID) {
 	 //osal_memset(buf, 0, 20);
-         uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0},valuechar5[20]={0},valuechar6[20]={0},valuechar7[20]={0};
+  uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0},valuechar5[20]={0},valuechar6[20]={0},valuechar7[20]={0},valuechar8[20]={0};
 	 uint8 databuf_read[20]={0};
 	 uint8 datalen_read=0,i;
          uint8  irdata_return[20]={0};
@@ -946,7 +952,14 @@ static void simpleProfileChangeCB(uint8 paramID) {
                   delay_nus(50);
                 HalSPIRead(valuechar3[0]*256+1,databuf_read,datalen_read-4);//读取 红外数据 	
 		HalLcdWriteString(hex2Str(databuf_read), HAL_LCD_LINE_6);
-	
+                
+                 //开始点亮LED
+                P0_4=0;
+               // while(1);
+                for(i=20; i>0; i--)
+                  delay_nus(1200);
+                P0_4=1;
+                
 		break;
         case SIMPLEPROFILE_CHAR4:
            //  SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR4, newValueBuf);
@@ -961,7 +974,7 @@ static void simpleProfileChangeCB(uint8 paramID) {
          
         case SIMPLEPROFILE_CHAR6://接收带有时间戳的指令   编码命令+执行时间戳
           
-            SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR6, valuechar6);
+              SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR6, valuechar6);
       
               if(!(peripheral_event&SBP_SEND_IRDATA_EVT1))
 		{	
@@ -1029,14 +1042,7 @@ static void simpleProfileChangeCB(uint8 paramID) {
            
                 HalLcdWriteStringValue("list_len:", current_list.listlen, 10, HAL_LCD_LINE_2);
            
-//             SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR6, valuechar6);
-//             if(valuechar6[0]==0xA1)
-//               {
-//                  // initTempSensor();
-//                   valuechar6[0]= getTemperature(); 
-//                   SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, SIMPLEPROFILE_CHAR6_LEN, valuechar6);
-//                   HalLcdWriteString(hex2Str(valuechar6), HAL_LCD_LINE_7);
-//               }
+
               
           
 		break;
@@ -1046,12 +1052,23 @@ static void simpleProfileChangeCB(uint8 paramID) {
 //               {
 //                  
 //                  Batt_MeasLevel();
-//                  // battMeasure(); 
-//                   //SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR6, SIMPLEPROFILE_CHAR6_LEN, valuechar6);
-//                   //HalLcdWriteString(hex2Str(valuechar6), HAL_LCD_LINE_7);
+//                 
 //               }
 //          
 		break;
+         case SIMPLEPROFILE_CHAR8:
+            SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR8, valuechar8);
+ 
+             if(valuechar8[0]==0xA1)
+               {
+                  // initTempSensor();
+                   valuechar8[0]= getTemperature(); 
+                   SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR8, SIMPLEPROFILE_CHAR8_LEN, valuechar8);
+                   HalLcdWriteString(hex2Str(valuechar8), HAL_LCD_LINE_7);
+               }
+
+	    break;  
+              
 	default:
 		// should not reach here!
 		break;

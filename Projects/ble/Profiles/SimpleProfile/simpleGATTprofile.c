@@ -54,7 +54,7 @@
 /*********************************************************************
  * CONSTANTS
  */
-#define SERVAPP_NUM_ATTR_SUPPORTED        24
+#define SERVAPP_NUM_ATTR_SUPPORTED        26
 /*********************************************************************
  * TYPEDEFS
  */
@@ -77,6 +77,8 @@ CONST uint8 simpleProfilechar5UUID[ATT_BT_UUID_SIZE] = { LO_UINT16(SIMPLEPROFILE
 CONST uint8 simpleProfilechar6UUID[ATT_BT_UUID_SIZE] = { LO_UINT16(SIMPLEPROFILE_CHAR6_UUID), HI_UINT16(SIMPLEPROFILE_CHAR6_UUID) };
 // Characteristic 7 UUID: 0xFFF7
 CONST uint8 simpleProfilechar7UUID[ATT_BT_UUID_SIZE] = { LO_UINT16(SIMPLEPROFILE_CHAR7_UUID), HI_UINT16(SIMPLEPROFILE_CHAR7_UUID) };
+// Characteristic 8 UUID: 0xFFF8
+CONST uint8 simpleProfilechar8UUID[ATT_BT_UUID_SIZE] = { LO_UINT16(SIMPLEPROFILE_CHAR8_UUID), HI_UINT16(SIMPLEPROFILE_CHAR8_UUID) };
 
 /*********************************************************************
  * EXTERNAL VARIABLES
@@ -176,6 +178,16 @@ static uint8 simpleProfileChar7[SIMPLEPROFILE_CHAR7_LEN] = { 0 };
 static uint8 simpleProfileChar7UserDesp[17] = "Characteristic 7\0";
 
 
+// Simple Profile Characteristic 8 Properties
+static uint8 simpleProfileChar8Props = GATT_PROP_READ | GATT_PROP_WRITE;
+
+// Characteristic 8 Value
+static uint8 simpleProfileChar8[SIMPLEPROFILE_CHAR7_LEN] = { 0 };
+
+// Simple Profile Characteristic 8 User Description
+static uint8 simpleProfileChar8UserDesp[17] = "Characteristic 8\0";
+
+
 
 /*********************************************************************
  * Profile Attributes - Table
@@ -261,6 +273,15 @@ static gattAttribute_t simpleProfileAttrTbl[SERVAPP_NUM_ATTR_SUPPORTED] = {
 
 		// Characteristic 7 User Description
 		{ { ATT_BT_UUID_SIZE, charUserDescUUID }, GATT_PERMIT_READ, 0, simpleProfileChar7UserDesp },
+                
+                 // Characteristic 8 Declaration
+		{ { ATT_BT_UUID_SIZE, characterUUID }, GATT_PERMIT_READ, 0, &simpleProfileChar8Props },
+
+		// Characteristic Value 8
+		{ { ATT_BT_UUID_SIZE, simpleProfilechar8UUID }, GATT_PERMIT_READ | GATT_PERMIT_WRITE, 0, simpleProfileChar8 },
+
+		// Characteristic 8 User Description
+		{ { ATT_BT_UUID_SIZE, charUserDescUUID }, GATT_PERMIT_READ, 0, simpleProfileChar8UserDesp },
 
 };
 
@@ -413,6 +434,16 @@ bStatus_t SimpleProfile_SetParameter(uint8 param, uint8 len, void *value) {
 		else {
 			ret = bleInvalidRange;
 		}
+		break;    
+        case SIMPLEPROFILE_CHAR8:
+          
+		if (len == SIMPLEPROFILE_CHAR8_LEN) {
+			VOID osal_memcpy(simpleProfileChar8, value, SIMPLEPROFILE_CHAR8_LEN);
+		}
+
+		else {
+			ret = bleInvalidRange;
+		}
 		break;        
                 
 
@@ -464,6 +495,9 @@ bStatus_t SimpleProfile_GetParameter(uint8 param, void *value) {
 		break;
         case SIMPLEPROFILE_CHAR7:
 		VOID osal_memcpy(value, simpleProfileChar7, SIMPLEPROFILE_CHAR7_LEN);
+		break;
+        case SIMPLEPROFILE_CHAR8:
+		VOID osal_memcpy(value, simpleProfileChar8, SIMPLEPROFILE_CHAR8_LEN);
 		break;
 
 	default:
@@ -573,6 +607,12 @@ static uint8 simpleProfile_ReadAttrCB(uint16 connHandle, gattAttribute_t *pAttr,
                       *pLen = SIMPLEPROFILE_CHAR7_LEN;
                       VOID osal_memcpy(pValue, pAttr->pValue, SIMPLEPROFILE_CHAR7_LEN);
                       break;
+                 case SIMPLEPROFILE_CHAR8_UUID:
+                      *pLen = SIMPLEPROFILE_CHAR8_LEN;
+                      VOID osal_memcpy(pValue, pAttr->pValue, SIMPLEPROFILE_CHAR8_LEN);
+                      break;
+                      
+                      
 
 		default:
 			// Should never get here! (characteristics 3 and 4 do not have read permissions)
@@ -783,6 +823,36 @@ static bStatus_t simpleProfile_WriteAttrCB(uint16 connHandle, gattAttribute_t *p
                       if (pAttr->pValue == simpleProfileChar7) 
                       {
                         notifyApp = SIMPLEPROFILE_CHAR7;
+                      } 
+                      
+                    }
+          
+                    break;
+                 case SIMPLEPROFILE_CHAR8_UUID: 
+                    //Validate the value
+                    // Make sure it's not a blob oper
+                    if (offset == 0) 
+                    {
+                      if (len > SIMPLEPROFILE_CHAR8_LEN) 
+                      {
+                        status = ATT_ERR_INVALID_VALUE_SIZE;
+                      }
+                    } 
+                    else 
+                    {
+                      status = ATT_ERR_ATTR_NOT_LONG;
+                    }
+                    
+                    //Write the value
+                    if (status == SUCCESS) 
+                    {
+                      uint8 *pCurValue = (uint8 *) pAttr->pValue;
+                      osal_memset(pCurValue, 0, SIMPLEPROFILE_CHAR8_LEN);
+                      VOID osal_memcpy(pCurValue, pValue, len);
+                      
+                      if (pAttr->pValue == simpleProfileChar8) 
+                      {
+                        notifyApp = SIMPLEPROFILE_CHAR8;
                       } 
                       
                     }

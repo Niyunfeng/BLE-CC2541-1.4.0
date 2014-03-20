@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             19/Mar/2014  13:55:27 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             20/Mar/2014  15:13:00 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -297,7 +297,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\Sim
    Bytes  Function/Label
    -----  --------------
        6  ?<Constant {0}>
-       8  ?<Initializer for attDeviceName>
+      20  ?<Initializer for attDeviceName>
        4  ?<Initializer for de_passkey>
        6  ??atoi?relay
        6  ??set_code_name?relay
@@ -310,7 +310,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\Sim
       10  ?Subroutine3
        4  __Constant_a
      103  atoi
-       8  attDeviceName
+      20  attDeviceName
        1  code_flag
        4  de_passkey
        1  name_flag
@@ -325,14 +325,14 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\Sim
  
  868 bytes in segment BANKED_CODE
   30 bytes in segment BANK_RELAYS
-  12 bytes in segment XDATA_I
-  12 bytes in segment XDATA_ID
+  24 bytes in segment XDATA_I
+  24 bytes in segment XDATA_ID
   10 bytes in segment XDATA_ROM_C
   27 bytes in segment XDATA_Z
  
- 910 bytes of CODE  memory
+ 922 bytes of CODE  memory
    6 bytes of CONST memory (+ 4 bytes shared)
-  39 bytes of XDATA memory
+  51 bytes of XDATA memory
 
 Errors: none
 Warnings: 6
