@@ -174,6 +174,10 @@
  **************************************************************************************************/
 
 
+uint8 keypresslasttime=1;
+
+
+
 /**************************************************************************************************
  *                                        GLOBAL VARIABLES
  **************************************************************************************************/
@@ -375,7 +379,7 @@ uint8 HalKeyRead ( void )
  **************************************************************************************************/
 void HalKeyPoll (void)
 {
-  uint8 keys = 0;
+  uint8 keys = 0,sendkeys=0;
   uint8 notify = 0;
 #if defined (CC2540_MINIDK)
   if (!(HAL_KEY_SW_1_PORT & HAL_KEY_SW_1_BIT))    /* Key is active low */
@@ -401,36 +405,67 @@ void HalKeyPoll (void)
   /* If interrupts are not enabled, previous key status and current key status
    * are compared to find out if a key has changed status.
    */
-  if (!Hal_KeyIntEnable)
+ if (!Hal_KeyIntEnable)
   {
-    if (keys == halKeySavedKeys)
-    {
-      /* Exit - since no keys have changed */
-      return;
-    }
+    if (keys == halKeySavedKeys)                       //如果中断关闭（轮询中），并且按键是保持按下的
+      {
+        
+        keypresslasttime++;
+        //因为polling每100ms执行一次，所以当keypresslasttime=20时，发出长按的消息，
+        if(keypresslasttime==20)                                    //如果达到2000ms
+          {
+            sendkeys = keys | HAL_KEY_LONG;                                //加上长按标志
+ 
+            (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);     //发送按键消息
+            keypresslasttime=1;
+
+          }
+        else                                                              //如果没达到2000ms，则直接返回
+          {
+          /* Exit - since no keys have changed */
+            return;
+          }
+      }
     else
-    {
-      notify = 1;
-    }
+      {
+        //当按键弹起时，看一下按下的时间多长，因为polling的时间是100ms，所以当keypresslasttime<5时，发出短按的消息，
+        if(keypresslasttime <5)
+        {
+           sendkeys = halKeySavedKeys | HAL_KEY_SHORT;
+           
+           (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
+            keypresslasttime=1; 
+        }
+            notify = 1;
+      }
   }
-  else
+ else                                                                            
   {
-    /* Key interrupt handled here */
-    if (keys)
-    {
-      notify = 1;
-    }
+      /* Key interrupt handled here */
+      //如果是按键终端，则开始计时
+      keypresslasttime = 1;
+      if (keys)
+      {
+        notify = 1;
+      }
+       /* Store the current keys for comparation next time */
+      halKeySavedKeys = keys;
+
+      /* Invoke Callback if new keys were depressed */
+      if (notify && (pHalKeyProcessFunction))
+      {
+        //(pHalKeyProcessFunction) (sendkeys, HAL_KEY_STATE_NORMAL);
+        (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
+      }
+      
+      
   }
+  
+  
+  
 
-  /* Store the current keys for comparation next time */
-  halKeySavedKeys = keys;
+ 
 
-  /* Invoke Callback if new keys were depressed */
-  if (notify && (pHalKeyProcessFunction))
-  {
-    (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
-
-  }
 }
 
 #if !defined ( CC2540_MINIDK )

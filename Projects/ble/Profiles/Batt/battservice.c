@@ -129,7 +129,7 @@ static uint8 battServiceAdcCh = HAL_ADC_CHANNEL_VDD;
 static CONST gattAttrType_t battService = { ATT_BT_UUID_SIZE, battServUUID };
 
 // Battery level characteristic
-static uint8 battLevelProps = GATT_PROP_READ | GATT_PROP_NOTIFY;
+static uint8 battLevelProps = GATT_PROP_READ | GATT_PROP_NOTIFY;////////////////////////////////////////////////////////////
 static uint8 battLevel = 100;
 static gattCharCfg_t battLevelClientCharCfg[GATT_MAX_NUM_CONN];
 

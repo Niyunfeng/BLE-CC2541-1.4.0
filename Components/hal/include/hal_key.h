@@ -81,6 +81,10 @@ extern "C"
 #define HAL_KEY_CENTER 0x04  // Joystick center
 #define HAL_KEY_LEFT   0x08  // Joystick left
 #define HAL_KEY_DOWN   0x10  // Joystick down
+#define HAL_KEY_SHORT  0x40
+#define HAL_KEY_LONG   0x80
+
+
 
 /* Buttons */  
 #define HAL_PUSH_BUTTON_RIGHT  0x01  // Button right

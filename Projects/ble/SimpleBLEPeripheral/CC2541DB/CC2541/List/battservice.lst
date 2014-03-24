@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             19/Mar/2014  09:29:59 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Mar/2014  11:28:43 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -227,7 +227,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\Profiles\Batt\battservice.c
     129          static CONST gattAttrType_t battService = { ATT_BT_UUID_SIZE, battServUUID };
     130          
     131          // Battery level characteristic
-    132          static uint8 battLevelProps = GATT_PROP_READ | GATT_PROP_NOTIFY;
+    132          static uint8 battLevelProps = GATT_PROP_READ | GATT_PROP_NOTIFY;////////////////////////////////////////////////////////////
     133          static uint8 battLevel = 100;
     134          static gattCharCfg_t battLevelClientCharCfg[GATT_MAX_NUM_CONN];
     135          

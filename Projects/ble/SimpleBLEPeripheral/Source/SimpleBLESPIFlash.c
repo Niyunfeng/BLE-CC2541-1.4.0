@@ -21,6 +21,7 @@ ghostyu
 #define XNV_WREN_CMD  0x06
 #define XNV_WRPG_CMD  0x0A
 #define XNV_READ_CMD  0x0B
+#define XNV_ERASE_CMD 0xC7
 
 #define XNV_STAT_WIP  0x01
 
@@ -146,6 +147,30 @@ void HalSPIRead(uint32 addr, uint8 *pBuf, uint16 len)
     XNV_SPI_END();
   }
   P1DIR = shdw;
+}
+
+void HalSPIErase()
+{
+   
+    
+    XNV_SPI_BEGIN();
+    do {
+      xnvSPIWrite(XNV_STAT_CMD);
+    } while (XNV_SPI_RX() & XNV_STAT_WIP);
+    XNV_SPI_END();
+    asm("NOP"); asm("NOP");
+    
+    XNV_SPI_BEGIN();
+    xnvSPIWrite(XNV_WREN_CMD);
+    XNV_SPI_END();
+    asm("NOP"); asm("NOP");
+    
+    XNV_SPI_BEGIN();
+    xnvSPIWrite(XNV_ERASE_CMD);
+    XNV_SPI_END();
+    asm("NOP"); asm("NOP");
+    
+    
 }
 
 /*uint8 buf[15]="123456789000000";

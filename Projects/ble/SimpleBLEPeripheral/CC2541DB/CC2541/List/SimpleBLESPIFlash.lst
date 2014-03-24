@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  16:35:30 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Mar/2014  11:28:42 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -119,162 +119,189 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\Sim
      21          #define XNV_WREN_CMD  0x06
      22          #define XNV_WRPG_CMD  0x0A
      23          #define XNV_READ_CMD  0x0B
-     24          
-     25          #define XNV_STAT_WIP  0x01
-     26          
+     24          #define XNV_ERASE_CMD 0xC7
+     25          
+     26          #define XNV_STAT_WIP  0x01
      27          
-     28          /* ----------- XNV ---------- */
-     29          #define XNV_SPI_BEGIN()             st(P1_3 = 0;)
-     30          #define XNV_SPI_TX(x)               st(U1CSR &= ~0x02; U1DBUF = (x);)
-     31          #define XNV_SPI_RX()                U1DBUF
-     32          #define XNV_SPI_WAIT_RXRDY()        st(while (!(U1CSR & 0x02));)
-     33          #define XNV_SPI_END()               st(P1_3 = 1;)
-     34          
-     35          // The TI reference design uses UART1 Alt. 2 in SPI mode.
-     36          #define XNV_SPI_INIT() \
-     37          st( \
-     38            /* Mode select UART1 SPI Mode as master. */\
-     39            U1CSR = 0; \
-     40            \
-     41            /* Setup for 115200 baud. */\
-     42            U1GCR = 11; \
-     43            U1BAUD = 216; \
-     44            \
-     45            /* Set bit order to MSB */\
-     46            U1GCR |= BV(5); \
-     47            \
-     48            /* Set UART1 I/O to alternate 2 location on P1 pins. */\
-     49            PERCFG |= 0x02;  /* U1CFG */\
-     50            \
-     51            /* Select peripheral function on I/O pins but SS is left as GPIO for separate control. */\
-     52            P1SEL |= 0xE0;  /* SELP1_[7:4] */\
-     53            /* P1.1,2,3: reset, LCD CS, XNV CS. */\
-     54            P1SEL &= ~0x0E; \
-     55            P1 |= 0x0E; \
-     56            P1_1 = 0; \
-     57            P1DIR |= 0x0E; \
-     58            \
-     59            /* Give UART1 priority over Timer3. */\
-     60            P2SEL &= ~0x20;  /* PRI2P1 */\
-     61            \
-     62            /* When SPI config is complete, enable it. */\
-     63            U1CSR |= 0x40; \
-     64            /* Release XNV reset. */\
-     65            P1_1 = 1; \
-     66          )
-     67          
-     68           void xnvSPIWrite(uint8 ch)
-     69          {
-     70            XNV_SPI_TX(ch);
-     71            XNV_SPI_WAIT_RXRDY();
-     72          }
-     73          
-     74          void HalSPIRead(uint32 addr, uint8 *pBuf, uint16 len)
-     75          {
-     76          
-     77            uint8 shdw = P1DIR;
-     78            P1DIR |= BV(3);
-     79            
-     80            XNV_SPI_BEGIN();
-     81            do {
-     82              xnvSPIWrite(XNV_STAT_CMD);
-     83            } while (XNV_SPI_RX() & XNV_STAT_WIP);
-     84            XNV_SPI_END();
-     85            asm("NOP"); asm("NOP");
-     86          
-     87            XNV_SPI_BEGIN();
-     88            xnvSPIWrite(XNV_READ_CMD);
-     89            xnvSPIWrite(addr >> 16);
-     90            xnvSPIWrite(addr >> 8);
-     91            xnvSPIWrite(addr);
-     92            xnvSPIWrite(0);
-     93          
-     94            while (len--)
-     95            {
-     96              xnvSPIWrite(0);
-     97              *pBuf++ = XNV_SPI_RX();
-     98            }
-     99            XNV_SPI_END();
-    100          
-    101            P1DIR = shdw;
-    102          }
-    103          
-    104           void HalSPIWrite(uint32 addr, uint8 *pBuf, uint16 len)
-    105          {
-    106            uint8 cnt;
-    107            uint8 shdw = P1DIR;
-    108            P1DIR |= BV(3);
-    109            while (len)
-    110            {
-    111              XNV_SPI_BEGIN();
-    112              do {
-    113                xnvSPIWrite(XNV_STAT_CMD);
-    114              } while (XNV_SPI_RX() & XNV_STAT_WIP);
-    115              XNV_SPI_END();
-    116              asm("NOP"); asm("NOP");
-    117          
-    118              XNV_SPI_BEGIN();
-    119              xnvSPIWrite(XNV_WREN_CMD);
-    120              XNV_SPI_END();
-    121              asm("NOP"); asm("NOP");
-    122          
-    123              XNV_SPI_BEGIN();
-    124              xnvSPIWrite(XNV_WRPG_CMD);
-    125              xnvSPIWrite(addr >> 16);
-    126              xnvSPIWrite(addr >> 8);
-    127              xnvSPIWrite(addr);
-    128          
-    129              // Can only write within any one page boundary, so prepare for next page write if bytes remain.
-    130              cnt = 0 - (uint8)addr;
-    131              if (cnt)
-    132              {
-    133                addr += cnt;
-    134              }
-    135              else
-    136              {
-    137                addr += 256;
-    138              }
-    139          
-    140              do
-    141              {
-    142                xnvSPIWrite(*pBuf++);
-    143                cnt--;
-    144                len--;
-    145              } while (len && cnt);
-    146              XNV_SPI_END();
-    147            }
-    148            P1DIR = shdw;
-    149          }
-    150          
-    151          /*uint8 buf[15]="123456789000000";
-    152          uint8 bufrx[15];
-    153          
-    154          
-    155          
-    156          int main()
-    157          {
-    158            HalLcd_HW_Init();
-    159            
-    160            HalLcd_HW_WriteLine(HAL_LCD_LINE_1, "      CC2540EM");
-    161            HalLcd_HW_WriteLine(HAL_LCD_LINE_3, "-->SPI-FLASH_TEST"); 
-    162            
-    163            XNV_SPI_INIT();
-    164          
-    165            HalSPIWrite(0x0,buf,15);
-    166            HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Write:"); 
-    167            HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf); 
-    168            //注意，连续读写之间至少要延时800us
-    169            HalHW_WaitUs(800);
-    170            HalSPIRead(0x0,bufrx,15);
-    171            HalLcd_HW_WriteLine(HAL_LCD_LINE_6, "Read:"); 
-    172            HalLcd_HW_WriteLine(HAL_LCD_LINE_7, bufrx); 
-    173            while(1);
-    174          }*/
+     28          
+     29          /* ----------- XNV ---------- */
+     30          #define XNV_SPI_BEGIN()             st(P1_3 = 0;)
+     31          #define XNV_SPI_TX(x)               st(U1CSR &= ~0x02; U1DBUF = (x);)
+     32          #define XNV_SPI_RX()                U1DBUF
+     33          #define XNV_SPI_WAIT_RXRDY()        st(while (!(U1CSR & 0x02));)
+     34          #define XNV_SPI_END()               st(P1_3 = 1;)
+     35          
+     36          // The TI reference design uses UART1 Alt. 2 in SPI mode.
+     37          #define XNV_SPI_INIT() \
+     38          st( \
+     39            /* Mode select UART1 SPI Mode as master. */\
+     40            U1CSR = 0; \
+     41            \
+     42            /* Setup for 115200 baud. */\
+     43            U1GCR = 11; \
+     44            U1BAUD = 216; \
+     45            \
+     46            /* Set bit order to MSB */\
+     47            U1GCR |= BV(5); \
+     48            \
+     49            /* Set UART1 I/O to alternate 2 location on P1 pins. */\
+     50            PERCFG |= 0x02;  /* U1CFG */\
+     51            \
+     52            /* Select peripheral function on I/O pins but SS is left as GPIO for separate control. */\
+     53            P1SEL |= 0xE0;  /* SELP1_[7:4] */\
+     54            /* P1.1,2,3: reset, LCD CS, XNV CS. */\
+     55            P1SEL &= ~0x0E; \
+     56            P1 |= 0x0E; \
+     57            P1_1 = 0; \
+     58            P1DIR |= 0x0E; \
+     59            \
+     60            /* Give UART1 priority over Timer3. */\
+     61            P2SEL &= ~0x20;  /* PRI2P1 */\
+     62            \
+     63            /* When SPI config is complete, enable it. */\
+     64            U1CSR |= 0x40; \
+     65            /* Release XNV reset. */\
+     66            P1_1 = 1; \
+     67          )
+     68          
+     69           void xnvSPIWrite(uint8 ch)
+     70          {
+     71            XNV_SPI_TX(ch);
+     72            XNV_SPI_WAIT_RXRDY();
+     73          }
+     74          
+     75          void HalSPIRead(uint32 addr, uint8 *pBuf, uint16 len)
+     76          {
+     77          
+     78            uint8 shdw = P1DIR;
+     79            P1DIR |= BV(3);
+     80            
+     81            XNV_SPI_BEGIN();
+     82            do {
+     83              xnvSPIWrite(XNV_STAT_CMD);
+     84            } while (XNV_SPI_RX() & XNV_STAT_WIP);
+     85            XNV_SPI_END();
+     86            asm("NOP"); asm("NOP");
+     87          
+     88            XNV_SPI_BEGIN();
+     89            xnvSPIWrite(XNV_READ_CMD);
+     90            xnvSPIWrite(addr >> 16);
+     91            xnvSPIWrite(addr >> 8);
+     92            xnvSPIWrite(addr);
+     93            xnvSPIWrite(0);
+     94          
+     95            while (len--)
+     96            {
+     97              xnvSPIWrite(0);
+     98              *pBuf++ = XNV_SPI_RX();
+     99            }
+    100            XNV_SPI_END();
+    101          
+    102            P1DIR = shdw;
+    103          }
+    104          
+    105           void HalSPIWrite(uint32 addr, uint8 *pBuf, uint16 len)
+    106          {
+    107            uint8 cnt;
+    108            uint8 shdw = P1DIR;
+    109            P1DIR |= BV(3);
+    110            while (len)
+    111            {
+    112              XNV_SPI_BEGIN();
+    113              do {
+    114                xnvSPIWrite(XNV_STAT_CMD);
+    115              } while (XNV_SPI_RX() & XNV_STAT_WIP);
+    116              XNV_SPI_END();
+    117              asm("NOP"); asm("NOP");
+    118          
+    119              XNV_SPI_BEGIN();
+    120              xnvSPIWrite(XNV_WREN_CMD);
+    121              XNV_SPI_END();
+    122              asm("NOP"); asm("NOP");
+    123          
+    124              XNV_SPI_BEGIN();
+    125              xnvSPIWrite(XNV_WRPG_CMD);
+    126              xnvSPIWrite(addr >> 16);
+    127              xnvSPIWrite(addr >> 8);
+    128              xnvSPIWrite(addr);
+    129          
+    130              // Can only write within any one page boundary, so prepare for next page write if bytes remain.
+    131              cnt = 0 - (uint8)addr;
+    132              if (cnt)
+    133              {
+    134                addr += cnt;
+    135              }
+    136              else
+    137              {
+    138                addr += 256;
+    139              }
+    140          
+    141              do
+    142              {
+    143                xnvSPIWrite(*pBuf++);
+    144                cnt--;
+    145                len--;
+    146              } while (len && cnt);
+    147              XNV_SPI_END();
+    148            }
+    149            P1DIR = shdw;
+    150          }
+    151          
+    152          void HalSPIErase()
+    153          {
+    154             
+    155              
+    156              XNV_SPI_BEGIN();
+    157              do {
+    158                xnvSPIWrite(XNV_STAT_CMD);
+    159              } while (XNV_SPI_RX() & XNV_STAT_WIP);
+    160              XNV_SPI_END();
+    161              asm("NOP"); asm("NOP");
+    162              
+    163              XNV_SPI_BEGIN();
+    164              xnvSPIWrite(XNV_WREN_CMD);
+    165              XNV_SPI_END();
+    166              asm("NOP"); asm("NOP");
+    167              
+    168              XNV_SPI_BEGIN();
+    169              xnvSPIWrite(XNV_ERASE_CMD);
+    170              XNV_SPI_END();
+    171              asm("NOP"); asm("NOP");
+    172              
+    173              
+    174          }
+    175          
+    176          /*uint8 buf[15]="123456789000000";
+    177          uint8 bufrx[15];
+    178          
+    179          
+    180          
+    181          int main()
+    182          {
+    183            HalLcd_HW_Init();
+    184            
+    185            HalLcd_HW_WriteLine(HAL_LCD_LINE_1, "      CC2540EM");
+    186            HalLcd_HW_WriteLine(HAL_LCD_LINE_3, "-->SPI-FLASH_TEST"); 
+    187            
+    188            XNV_SPI_INIT();
+    189          
+    190            HalSPIWrite(0x0,buf,15);
+    191            HalLcd_HW_WriteLine(HAL_LCD_LINE_4, "Write:"); 
+    192            HalLcd_HW_WriteLine(HAL_LCD_LINE_5, buf); 
+    193            //注意，连续读写之间至少要延时800us
+    194            HalHW_WaitUs(800);
+    195            HalSPIRead(0x0,bufrx,15);
+    196            HalLcd_HW_WriteLine(HAL_LCD_LINE_6, "Read:"); 
+    197            HalLcd_HW_WriteLine(HAL_LCD_LINE_7, bufrx); 
+    198            while(1);
+    199          }*/
 
    Maximum stack usage in bytes:
 
    ISTACK PSTACK XSTACK Function
    ------ ------ ------ --------
+       2      0      0  HalSPIErase
+                          2 0  0 -> xnvSPIWrite
        1      0     24  HalSPIRead
                           0 0 20 -> xnvSPIWrite
        0      0     24  HalSPIWrite
@@ -286,10 +313,12 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\Sim
 
    Bytes  Function/Label
    -----  --------------
+       6  ??HalSPIErase?relay
        6  ??HalSPIRead?relay
        6  ??HalSPIWrite?relay
        6  ??xnvSPIWrite?relay
        8  ?Subroutine0
+      50  HalSPIErase
      153  HalSPIRead
      200  HalSPIWrite
        1  P1DIR
@@ -300,12 +329,12 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\Sim
       11  xnvSPIWrite
 
  
- 372 bytes in segment BANKED_CODE
-  18 bytes in segment BANK_RELAYS
+ 422 bytes in segment BANKED_CODE
+  24 bytes in segment BANK_RELAYS
    4 bytes in segment SFR_AN
    4 bytes in segment XDATA_ROM_C
  
- 390 bytes of CODE  memory
+ 446 bytes of CODE  memory
    0 bytes of CONST memory (+ 4 bytes shared)
    0 bytes of DATA  memory (+ 4 bytes shared)
 

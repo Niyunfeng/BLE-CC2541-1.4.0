@@ -5,5 +5,6 @@
 
  void HalSPIRead(uint32 addr, uint8 *pBuf, uint16 len);
  void HalSPIWrite(uint32 addr, uint8 *pBuf, uint16 len);
+ void HalSPIErase();
 
 #endif /* SIMPLEBLESPIFLASH_H_ */
