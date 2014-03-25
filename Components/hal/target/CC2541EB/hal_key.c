@@ -406,64 +406,70 @@ void HalKeyPoll (void)
    * are compared to find out if a key has changed status.
    */
  if (!Hal_KeyIntEnable)
-  {
-    if (keys == halKeySavedKeys)                       //如果中断关闭（轮询中），并且按键是保持按下的
-      {
-        
-        keypresslasttime++;
-        //因为polling每100ms执行一次，所以当keypresslasttime=20时，发出长按的消息，
-        if(keypresslasttime==20)                                    //如果达到2000ms
-          {
-            sendkeys = keys | HAL_KEY_LONG;                                //加上长按标志
- 
-            (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);     //发送按键消息
-            keypresslasttime=1;
-
-          }
-        else                                                              //如果没达到2000ms，则直接返回
-          {
-          /* Exit - since no keys have changed */
-            return;
-          }
-      }
-    else
-      {
-        //当按键弹起时，看一下按下的时间多长，因为polling的时间是100ms，所以当keypresslasttime<5时，发出短按的消息，
-        if(keypresslasttime <5)
+    {
+      if (keys == halKeySavedKeys)                                                //如果中断关闭（轮询中），并且按键是保持按下的
         {
-           sendkeys = halKeySavedKeys | HAL_KEY_SHORT;
-           
-           (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
-            keypresslasttime=1; 
+          
+          keypresslasttime++;
+//          //因为polling每100ms执行一次，所以当keypresslasttime=20时，发出长按的消息，
+//          if(keypresslasttime==20)                                                  //如果达到2000ms
+//            {
+//              sendkeys = keys | HAL_KEY_LONG;                                          //加上长按标志
+//             (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);              //发送按键消息
+//            // keypresslasttime=1;
+//             
+//            }
+//          else                                                                      //如果没达到2000ms，则直接返回
+//            {
+            /* Exit - since no keys have changed */
+              return;
+//            }
         }
-            notify = 1;
-      }
-  }
+      else 
+        {
+          //当按键弹起时，看一下按下的时间多长，因为polling的时间是100ms，所以当keypresslasttime<5时，发出短按的消息，
+          if(keypresslasttime <5&&keypresslasttime!=1)
+            {
+                //keys;
+               sendkeys = halKeySavedKeys| HAL_KEY_SHORT;
+              (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
+               keys=0;
+               keypresslasttime=1;
+            }
+           else if(keypresslasttime >15)
+            {
+                
+               sendkeys = halKeySavedKeys| HAL_KEY_LONG;
+              (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
+               keys=0;
+               keypresslasttime=1;
+            }
+          notify = 1;
+         
+        }
+    }
  else                                                                            
-  {
+    {
       /* Key interrupt handled here */
       //如果是按键终端，则开始计时
       keypresslasttime = 1;
       if (keys)
-      {
-        notify = 1;
-      }
+        {
+          notify = 1;
+        }
+ 
+    }
+  
        /* Store the current keys for comparation next time */
-      halKeySavedKeys = keys;
+    halKeySavedKeys = keys;
 
-      /* Invoke Callback if new keys were depressed */
-      if (notify && (pHalKeyProcessFunction))
+    /* Invoke Callback if new keys were depressed */
+    if (notify && (pHalKeyProcessFunction))
       {
-        //(pHalKeyProcessFunction) (sendkeys, HAL_KEY_STATE_NORMAL);
-        (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
-      }
-      
-      
-  }
-  
-  
-  
 
+            (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
+      }
+ 
  
 
 }

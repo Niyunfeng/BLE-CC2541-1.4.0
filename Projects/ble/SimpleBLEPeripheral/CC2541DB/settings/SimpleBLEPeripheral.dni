@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=900182456
+Checksum=208982006
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -51,9 +51,8 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\Simplepasscode.c}.43.27" 0 0 0 0 "" 0 ""
-Bp1=_ "STD_CODE" "{$PROJ_DIR$\..\..\..\..\Components\hal\target\CC2541EB\hal_key.c}.401.12" 1 0 0 0 "" 0 ""
-Count=2
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\Simplepasscode.c}.43.28" 0 0 0 0 "" 0 ""
+Count=1
 [ChipconEmu]
 Stop timers on halt=0
 Leave target running=1

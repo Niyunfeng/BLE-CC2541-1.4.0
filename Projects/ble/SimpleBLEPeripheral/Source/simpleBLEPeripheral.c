@@ -730,6 +730,7 @@ static void simpleBLEPeripheral_ProcessOSALMsg(osal_event_hdr_t *pMsg) {
 }
 
 static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
+    uint8 i;
 	if (keys & HAL_KEY_UP) {
 		//u_state = IR_DATA_STUDY_CMD_START_BEGIN_STATE;
 		//SbpHalUARTWrite(&SBP_UART_STUDY_CMD, SBP_UART_STUDY_CMD_LEN);
@@ -739,28 +740,67 @@ static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
 //		HalLcdWriteString("change to de_paddkey_name", HAL_LCD_LINE_3);
 //                set_de_passkey();
 	}
-//         if(keys &(HAL_KEY_CENTER|HAL_KEY_LONG))
+         if(keys ==(HAL_KEY_CENTER|HAL_KEY_LONG))
+          {
+             HalLcdWriteString("long ok", HAL_LCD_LINE_7);
+                      HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
+                      for(i=20; i>0; i--)
+                        delay_nus(50000);
+                      HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
+                      for(i=20; i>0; i--)
+                        delay_nus(50000);
+          }
+           if(keys ==(HAL_KEY_CENTER|HAL_KEY_SHORT))
+          {
+             HalLcdWriteString(" ok", HAL_LCD_LINE_6);
+                      HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
+                      for(i=20; i>0; i--)
+                        delay_nus(50000);
+                      HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1
+                      for(i=20; i>0; i--)
+                        delay_nus(50000);
+          }
+//        if (keys == HAL_KEY_CENTER) 
 //        {
-//           HalLcdWriteString("long ok", HAL_LCD_LINE_7);                   
-//           HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1  
+//             HalLcdWriteString(" ok", HAL_LCD_LINE_8);
+//                      HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
+//                      for(i=20; i>0; i--)
+//                        delay_nus(5000);
+//                      HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
+//                      for(i=20; i>0; i--)
+//                        delay_nus(5000);
 //        }
+        
+        
 
 
-	 if (keys & HAL_KEY_CENTER) {
-           
-          
-                 if(keys & HAL_KEY_SHORT)
-                 {
-                   HalLcdWriteString("ok", HAL_LCD_LINE_6);
-                   HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
-                 }
-                 else if(keys & HAL_KEY_LONG)
-                 {
-                   HalLcdWriteString("long ok", HAL_LCD_LINE_7);
-                   HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1
-                 }
-                   
-              
+//	 if (keys & HAL_KEY_CENTER) {
+//           
+//          
+//                 if(keys & HAL_KEY_SHORT)
+//                 {
+//                   HalLcdWriteString("ok", HAL_LCD_LINE_6);
+//                   HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
+//                    for(i=20; i>0; i--)
+//                      delay_nus(5000);
+//                    HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1
+//                    for(i=20; i>0; i--)
+//                      delay_nus(5000);
+//                    
+//                   
+//                 }
+//                 else if(keys & HAL_KEY_LONG)
+//                 {
+//                   HalLcdWriteString("long ok", HAL_LCD_LINE_7);
+//                    HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
+//                    for(i=20; i>0; i--)
+//                      delay_nus(5000);
+//                    HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
+//                    for(i=20; i>0; i--)
+//                      delay_nus(5000);
+//                 }
+//                   
+//              
                 
                 
                 
@@ -768,7 +808,7 @@ static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
                 
 		//HalLcdWriteString("send after 3s...", HAL_LCD_LINE_4);
 		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT, 3000);
-	}
+	//}
         
 	if (keys & HAL_KEY_RIGHT) {
 		//HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_2);

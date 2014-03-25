@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Mar/2014  16:00:16 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             25/Mar/2014  16:59:41 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -828,478 +828,518 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
     730          }
     731          
     732          static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
-    733          	if (keys & HAL_KEY_UP) {
-    734          		//u_state = IR_DATA_STUDY_CMD_START_BEGIN_STATE;
-    735          		//SbpHalUARTWrite(&SBP_UART_STUDY_CMD, SBP_UART_STUDY_CMD_LEN);
-    736          	}
-    737          
-    738          	if (keys & HAL_KEY_LEFT) {
-    739          //		HalLcdWriteString("change to de_paddkey_name", HAL_LCD_LINE_3);
-    740          //                set_de_passkey();
-    741          	}
-    742          //         if(keys &(HAL_KEY_CENTER|HAL_KEY_LONG))
-    743          //        {
-    744          //           HalLcdWriteString("long ok", HAL_LCD_LINE_7);                   
-    745          //           HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1  
-    746          //        }
-    747          
-    748          
-    749          	 if (keys & HAL_KEY_CENTER) {
-    750                     
-    751                    
-    752                           if(keys & HAL_KEY_SHORT)
-    753                           {
-    754                             HalLcdWriteString("ok", HAL_LCD_LINE_6);
-    755                             HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
-    756                           }
-    757                           else if(keys & HAL_KEY_LONG)
-    758                           {
-    759                             HalLcdWriteString("long ok", HAL_LCD_LINE_7);
-    760                             HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1
-    761                           }
-    762                             
-    763                        
-    764                          
-    765                          
-    766                          
-    767                          
-    768                          
-    769          		//HalLcdWriteString("send after 3s...", HAL_LCD_LINE_4);
-    770          		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT, 3000);
-    771          	}
-    772                  
-    773          	if (keys & HAL_KEY_RIGHT) {
-    774          		//HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_2);
-    775          	}
+    733              uint8 i;
+    734          	if (keys & HAL_KEY_UP) {
+    735          		//u_state = IR_DATA_STUDY_CMD_START_BEGIN_STATE;
+    736          		//SbpHalUARTWrite(&SBP_UART_STUDY_CMD, SBP_UART_STUDY_CMD_LEN);
+    737          	}
+    738          
+    739          	if (keys & HAL_KEY_LEFT) {
+    740          //		HalLcdWriteString("change to de_paddkey_name", HAL_LCD_LINE_3);
+    741          //                set_de_passkey();
+    742          	}
+    743                   if(keys ==(HAL_KEY_CENTER|HAL_KEY_LONG))
+    744                    {
+    745                       HalLcdWriteString("long ok", HAL_LCD_LINE_7);
+    746                                HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
+    747                                for(i=20; i>0; i--)
+    748                                  delay_nus(50000);
+    749                                HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
+    750                                for(i=20; i>0; i--)
+    751                                  delay_nus(50000);
+    752                    }
+    753                     if(keys ==(HAL_KEY_CENTER|HAL_KEY_SHORT))
+    754                    {
+    755                       HalLcdWriteString(" ok", HAL_LCD_LINE_6);
+    756                                HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
+    757                                for(i=20; i>0; i--)
+    758                                  delay_nus(50000);
+    759                                HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1
+    760                                for(i=20; i>0; i--)
+    761                                  delay_nus(50000);
+    762                    }
+    763          //        if (keys == HAL_KEY_CENTER) 
+    764          //        {
+    765          //             HalLcdWriteString(" ok", HAL_LCD_LINE_8);
+    766          //                      HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
+    767          //                      for(i=20; i>0; i--)
+    768          //                        delay_nus(5000);
+    769          //                      HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
+    770          //                      for(i=20; i>0; i--)
+    771          //                        delay_nus(5000);
+    772          //        }
+    773                  
+    774                  
+    775          
     776          
-    777          }
-    778          
-    779          /*********************************************************************
-    780           * @fn      peripheralStateNotificationCB
-    781           *
-    782           * @brief   Notification from the profile of a state change.
-    783           *
-    784           * @param   newState - new state
-    785           *
-    786           * @return  none
-    787           */
-    788          static void peripheralStateNotificationCB(gaprole_States_t newState) {
-    789          
-    790          	//HalLcdWriteStringValue("newState", newState, 10, HAL_LCD_LINE_4);
-    791          
-    792          	switch (newState) {
-    793          	case GAPROLE_STARTED: {
-    794          		uint8 ownAddress[B_ADDR_LEN];
-    795          		uint8 systemId[DEVINFO_SYSTEM_ID_LEN];
-    796          
-    797          		GAPRole_GetParameter(GAPROLE_BD_ADDR, ownAddress);
-    798          
-    799          		// use 6 bytes of device address for 8 bytes of system ID value
-    800          		systemId[0] = ownAddress[0];
-    801          		systemId[1] = ownAddress[1];
-    802          		systemId[2] = ownAddress[2];
-    803          
-    804          		// set middle bytes to zero
-    805          		systemId[4] = 0x00;
-    806          		systemId[3] = 0x00;
-    807          
-    808          		// shift three bytes up
-    809          		systemId[7] = ownAddress[5];
-    810          		systemId[6] = ownAddress[4];
-    811          		systemId[5] = ownAddress[3];
-    812          
-    813          		DevInfo_SetParameter(DEVINFO_SYSTEM_ID, DEVINFO_SYSTEM_ID_LEN, systemId);
-    814          
-    815          		// Display device address
-    816          		bdAddr2Str(ownAddress);
-    817          		HalLcdWriteString(bdAddr2Str(ownAddress), HAL_LCD_LINE_3);
-    818          		HalLcdWriteString("Initialized", HAL_LCD_LINE_3);
-    819          	}
-    820          		break;
-    821          
-    822          	case GAPROLE_ADVERTISING: {
-    823          		HalLcdWriteString("Advertising", HAL_LCD_LINE_3);
-    824          	}
-    825          		break;
-    826          
-    827          	case GAPROLE_CONNECTED: {
-    828          		HalLcdWriteString("Connected", HAL_LCD_LINE_3);
-    829          		//simpleProfile_StateNotify( uint16 connHandle, attHandleValueNoti_t *pNoti )
-    830          		GAPRole_GetParameter(GAPROLE_CONNHANDLE, &gapConnHandle);
-    831          	}
-    832          		break;
-    833          
-    834          	case GAPROLE_WAITING: {
-    835          		HalLcdWriteString("Disconnected", HAL_LCD_LINE_3);
-    836          	}
-    837          		break;
+    777          //	 if (keys & HAL_KEY_CENTER) {
+    778          //           
+    779          //          
+    780          //                 if(keys & HAL_KEY_SHORT)
+    781          //                 {
+    782          //                   HalLcdWriteString("ok", HAL_LCD_LINE_6);
+    783          //                   HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
+    784          //                    for(i=20; i>0; i--)
+    785          //                      delay_nus(5000);
+    786          //                    HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1
+    787          //                    for(i=20; i>0; i--)
+    788          //                      delay_nus(5000);
+    789          //                    
+    790          //                   
+    791          //                 }
+    792          //                 else if(keys & HAL_KEY_LONG)
+    793          //                 {
+    794          //                   HalLcdWriteString("long ok", HAL_LCD_LINE_7);
+    795          //                    HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
+    796          //                    for(i=20; i>0; i--)
+    797          //                      delay_nus(5000);
+    798          //                    HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
+    799          //                    for(i=20; i>0; i--)
+    800          //                      delay_nus(5000);
+    801          //                 }
+    802          //                   
+    803          //              
+    804                          
+    805                          
+    806                          
+    807                          
+    808                          
+    809          		//HalLcdWriteString("send after 3s...", HAL_LCD_LINE_4);
+    810          		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT, 3000);
+    811          	//}
+    812                  
+    813          	if (keys & HAL_KEY_RIGHT) {
+    814          		//HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_2);
+    815          	}
+    816          
+    817          }
+    818          
+    819          /*********************************************************************
+    820           * @fn      peripheralStateNotificationCB
+    821           *
+    822           * @brief   Notification from the profile of a state change.
+    823           *
+    824           * @param   newState - new state
+    825           *
+    826           * @return  none
+    827           */
+    828          static void peripheralStateNotificationCB(gaprole_States_t newState) {
+    829          
+    830          	//HalLcdWriteStringValue("newState", newState, 10, HAL_LCD_LINE_4);
+    831          
+    832          	switch (newState) {
+    833          	case GAPROLE_STARTED: {
+    834          		uint8 ownAddress[B_ADDR_LEN];
+    835          		uint8 systemId[DEVINFO_SYSTEM_ID_LEN];
+    836          
+    837          		GAPRole_GetParameter(GAPROLE_BD_ADDR, ownAddress);
     838          
-    839          	case GAPROLE_WAITING_AFTER_TIMEOUT: {
-    840          		HalLcdWriteString("Timed Out", HAL_LCD_LINE_3);
-    841          	}
-    842          		break;
+    839          		// use 6 bytes of device address for 8 bytes of system ID value
+    840          		systemId[0] = ownAddress[0];
+    841          		systemId[1] = ownAddress[1];
+    842          		systemId[2] = ownAddress[2];
     843          
-    844          	case GAPROLE_ERROR: {
-    845          		HalLcdWriteString("Error", HAL_LCD_LINE_3);
-    846          	}
-    847          		break;
-    848          
-    849          	default: {
-    850          		HalLcdWriteString("", HAL_LCD_LINE_3);
-    851          	}
-    852          		break;
-    853          
-    854          	}
-    855          
-    856          	gapProfileState = newState;
-    857          
-    858          #if !defined( CC2540_MINIDK )
-    859          	VOID gapProfileState; // added to prevent compiler warning with
-    860          						  // "CC2540 Slave" configurations
-    861          #endif
-    862          
-    863          }
-    864          
-    865          /*********************************************************************
-    866           * @fn      performPeriodicTask
-    867           *
-    868           * @brief   Perform a periodic application task. This function gets
-    869           *          called every five seconds as a result of the SBP_PERIODIC_EVT
-    870           *          OSAL event. In this example, the value of the third
-    871           *          characteristic in the SimpleGATTProfile service is retrieved
-    872           *          from the profile, and then copied into the value of the
-    873           *          the fourth characteristic.
-    874           *
-    875           * @param   none
-    876           *
-    877           * @return  none
-    878           */
-    879          static void performPeriodicTask(void) {
-    880          	uint8 valueToCopy;
-    881          	uint8 stat;
-    882          
-    883          	// Call to retrieve the value of the third characteristic in the profile
-    884          	stat = SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR2, &valueToCopy);
-    885          
-    886          	if (stat == SUCCESS) {
-    887          		/*
-    888          		 * Call to set that value of the fourth characteristic in the profile. Note
-    889          		 * that if notifications of the fourth characteristic have been enabled by
-    890          		 * a GATT client device, then a notification will be sent every time this
-    891          		 * function is called.
-    892          		 */
-    893                         // HalLcdWriteString("ok", HAL_LCD_LINE_5);
-    894          		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8), &valueToCopy);
-    895          	}
-    896          }
+    844          		// set middle bytes to zero
+    845          		systemId[4] = 0x00;
+    846          		systemId[3] = 0x00;
+    847          
+    848          		// shift three bytes up
+    849          		systemId[7] = ownAddress[5];
+    850          		systemId[6] = ownAddress[4];
+    851          		systemId[5] = ownAddress[3];
+    852          
+    853          		DevInfo_SetParameter(DEVINFO_SYSTEM_ID, DEVINFO_SYSTEM_ID_LEN, systemId);
+    854          
+    855          		// Display device address
+    856          		bdAddr2Str(ownAddress);
+    857          		HalLcdWriteString(bdAddr2Str(ownAddress), HAL_LCD_LINE_3);
+    858          		HalLcdWriteString("Initialized", HAL_LCD_LINE_3);
+    859          	}
+    860          		break;
+    861          
+    862          	case GAPROLE_ADVERTISING: {
+    863          		HalLcdWriteString("Advertising", HAL_LCD_LINE_3);
+    864          	}
+    865          		break;
+    866          
+    867          	case GAPROLE_CONNECTED: {
+    868          		HalLcdWriteString("Connected", HAL_LCD_LINE_3);
+    869          		//simpleProfile_StateNotify( uint16 connHandle, attHandleValueNoti_t *pNoti )
+    870          		GAPRole_GetParameter(GAPROLE_CONNHANDLE, &gapConnHandle);
+    871          	}
+    872          		break;
+    873          
+    874          	case GAPROLE_WAITING: {
+    875          		HalLcdWriteString("Disconnected", HAL_LCD_LINE_3);
+    876          	}
+    877          		break;
+    878          
+    879          	case GAPROLE_WAITING_AFTER_TIMEOUT: {
+    880          		HalLcdWriteString("Timed Out", HAL_LCD_LINE_3);
+    881          	}
+    882          		break;
+    883          
+    884          	case GAPROLE_ERROR: {
+    885          		HalLcdWriteString("Error", HAL_LCD_LINE_3);
+    886          	}
+    887          		break;
+    888          
+    889          	default: {
+    890          		HalLcdWriteString("", HAL_LCD_LINE_3);
+    891          	}
+    892          		break;
+    893          
+    894          	}
+    895          
+    896          	gapProfileState = newState;
     897          
-    898          /*********************************************************************
-    899           * @fn      simpleProfileChangeCB
-    900           * @brief   Callback from SimpleBLEProfile indicating a value change
-    901           * @param   paramID - parameter ID of the value that was changed.
-    902           *
-    903           * @return  none
-    904           */
-    905          static void simpleProfileChangeCB(uint8 paramID) {
-    906          	 //osal_memset(buf, 0, 20);
-    907            uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0},valuechar5[20]={0},valuechar6[20]={0},valuechar7[20]={0},valuechar8[20]={0};
-    908          	 uint8 databuf_read[20]={0};
-    909          	 uint8 datalen_read=0,i;
-    910                   uint8  irdata_return[20]={0};
-    911          	switch (paramID) {
-    912          	case SIMPLEPROFILE_CHAR1://用于密码用户名修改
-    913                       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1,valuechar1);
-    914                       set_code_name(valuechar1);
-    915          		break;
-    916                          
-    917                  case SIMPLEPROFILE_CHAR2://用于接收 遥控器 红外代码库
-    918                       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR2, valuechar2);
-    919                     //  HalLcdWriteString(valuechar2, HAL_LCD_LINE_5);
-    920          	
-    921                      if ((valuechar2[0] == TRANSFER_DATA_SIGN) && (valuechar2[1] == TRANSFER_DATA_SIGN_RE)) 
-    922          	     {
-    923          			TRANSFER_DATA_STATE_IN = FALSE;
-    924                                 
-    925          	      }
-    926                      
-    927                      
-    928          	   if ((valuechar2[3] != 0) && (!TRANSFER_DATA_STATE_IN)) 
-    929          	    {
-    930          			
-    931                                  data_len = valuechar2[3];
-    932          			TRANSFER_DATA_STATE_IN = TRUE;
-    933          			data_len_index = 0;
-    934          			osal_memset(recv_value, 0, data_len);
-    935                         
-    936          	    }
-    937          	
-    938          	  cur_data_len = osal_strlen((char*)valuechar2);//有问题 是0的话 长度不对
-    939                   //  cur_data_len = sizeof(valuechar2);
-    940                     HalLcdWriteStringValue("cur_data_len:",cur_data_len, 10, HAL_LCD_LINE_1); 
-    941                     
-    942          	   if (TRANSFER_DATA_STATE_IN) 
-    943          	    {
-    944          		osal_memcpy((recv_value + data_len_index), valuechar2, cur_data_len);
-    945                          
-    946          		data_len_index += cur_data_len;
-    947                          
-    948          	     }
-    949                     //HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_6);
-    950                     //HalLcdWriteStringValue("recv_value_len:", osal_strlen((char *)recv_value), 10, HAL_LCD_LINE_7); 
-    951                     //HalLcdWriteStringValue("data_len_index:", data_len_index, 10, HAL_LCD_LINE_8);
-    952                 
-    953                     if (data_len_index == data_len) 
-    954          	   {
-    955          	
-    956          		HalSPIWrite(valuechar2[2]*256,recv_value+3,data_len-3);//存储 红外数据长度（长度包括 0XFE+0XFF+编号+长度+红外数据 ）+红外数据
-    957          		TRANSFER_DATA_STATE_IN = FALSE;
-    958          		//HalLcdWriteStringValue("data_len:", osal_strlen((char *)recv_value), 10, HAL_LCD_LINE_6); 
-    959                         // HalLcdWriteStringValue("listlen:", current_list.listlen, 10, HAL_LCD_LINE_8);
-    960          		data_len = 0;
-    961          		cur_data_len = 0;
-    962          		data_len_index = 0;
-    963          		osal_memset(recv_value, 0, data_len);
-    964                          irdata_return[0]=0x11;          
-    965                          SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN, irdata_return);
-    966                          
-    967                     }
-    968          
-    969                           break;
-    970                           
-    971          	case SIMPLEPROFILE_CHAR3://接收 编码命令  读取红外码并转发  其实是没有时间戳的 红外命令
-    972          		SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, valuechar3);
-    973                         
-    974          		HalSPIRead(valuechar3[0]*256,&datalen_read,1);//读取 红外数据长度  读红外数据、IIC发送时要用到
-    975          		    //延时1S
-    976                         for(i=20; i>0; i--)
-    977                            delay_nus(50);
-    978                          HalSPIRead(valuechar3[0]*256+1,databuf_read,datalen_read-4);//读取 红外数据 	
-    979          		HalLcdWriteString(hex2Str(databuf_read), HAL_LCD_LINE_6);
-    980                          
-    981                           //开始点亮LED
-    982                          P0_4=0;
-    983                         // while(1);
-    984                          for(i=20; i>0; i--)
-    985                            delay_nus(1200);
-    986                          P0_4=1;
+    898          #if !defined( CC2540_MINIDK )
+    899          	VOID gapProfileState; // added to prevent compiler warning with
+    900          						  // "CC2540 Slave" configurations
+    901          #endif
+    902          
+    903          }
+    904          
+    905          /*********************************************************************
+    906           * @fn      performPeriodicTask
+    907           *
+    908           * @brief   Perform a periodic application task. This function gets
+    909           *          called every five seconds as a result of the SBP_PERIODIC_EVT
+    910           *          OSAL event. In this example, the value of the third
+    911           *          characteristic in the SimpleGATTProfile service is retrieved
+    912           *          from the profile, and then copied into the value of the
+    913           *          the fourth characteristic.
+    914           *
+    915           * @param   none
+    916           *
+    917           * @return  none
+    918           */
+    919          static void performPeriodicTask(void) {
+    920          	uint8 valueToCopy;
+    921          	uint8 stat;
+    922          
+    923          	// Call to retrieve the value of the third characteristic in the profile
+    924          	stat = SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR2, &valueToCopy);
+    925          
+    926          	if (stat == SUCCESS) {
+    927          		/*
+    928          		 * Call to set that value of the fourth characteristic in the profile. Note
+    929          		 * that if notifications of the fourth characteristic have been enabled by
+    930          		 * a GATT client device, then a notification will be sent every time this
+    931          		 * function is called.
+    932          		 */
+    933                         // HalLcdWriteString("ok", HAL_LCD_LINE_5);
+    934          		SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR4, sizeof(uint8), &valueToCopy);
+    935          	}
+    936          }
+    937          
+    938          /*********************************************************************
+    939           * @fn      simpleProfileChangeCB
+    940           * @brief   Callback from SimpleBLEProfile indicating a value change
+    941           * @param   paramID - parameter ID of the value that was changed.
+    942           *
+    943           * @return  none
+    944           */
+    945          static void simpleProfileChangeCB(uint8 paramID) {
+    946          	 //osal_memset(buf, 0, 20);
+    947            uint8 valuechar1[20]={0},valuechar2[20]={0},valuechar3[20]={0},valuechar5[20]={0},valuechar6[20]={0},valuechar7[20]={0},valuechar8[20]={0};
+    948          	 uint8 databuf_read[20]={0};
+    949          	 uint8 datalen_read=0,i;
+    950                   uint8  irdata_return[20]={0};
+    951          	switch (paramID) {
+    952          	case SIMPLEPROFILE_CHAR1://用于密码用户名修改
+    953                       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR1,valuechar1);
+    954                       set_code_name(valuechar1);
+    955          		break;
+    956                          
+    957                  case SIMPLEPROFILE_CHAR2://用于接收 遥控器 红外代码库
+    958                       SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR2, valuechar2);
+    959                     //  HalLcdWriteString(valuechar2, HAL_LCD_LINE_5);
+    960          	
+    961                      if ((valuechar2[0] == TRANSFER_DATA_SIGN) && (valuechar2[1] == TRANSFER_DATA_SIGN_RE)) 
+    962          	     {
+    963          			TRANSFER_DATA_STATE_IN = FALSE;
+    964                                 
+    965          	      }
+    966                      
+    967                      
+    968          	   if ((valuechar2[3] != 0) && (!TRANSFER_DATA_STATE_IN)) 
+    969          	    {
+    970          			
+    971                                  data_len = valuechar2[3];
+    972          			TRANSFER_DATA_STATE_IN = TRUE;
+    973          			data_len_index = 0;
+    974          			osal_memset(recv_value, 0, data_len);
+    975                         
+    976          	    }
+    977          	
+    978          	  cur_data_len = osal_strlen((char*)valuechar2);//有问题 是0的话 长度不对
+    979                   //  cur_data_len = sizeof(valuechar2);
+    980                     HalLcdWriteStringValue("cur_data_len:",cur_data_len, 10, HAL_LCD_LINE_1); 
+    981                     
+    982          	   if (TRANSFER_DATA_STATE_IN) 
+    983          	    {
+    984          		osal_memcpy((recv_value + data_len_index), valuechar2, cur_data_len);
+    985                          
+    986          		data_len_index += cur_data_len;
     987                          
-    988          		break;
-    989                  case SIMPLEPROFILE_CHAR4:
-    990                     //  SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR4, newValueBuf);
-    991                    
-    992          		break;
-    993                   case SIMPLEPROFILE_CHAR5://接收完 一条红外代码后  的反馈值
-    994                     
-    995                          SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR5, valuechar5);
-    996                          HalLcdWriteString(hex2Str(valuechar5), HAL_LCD_LINE_7);
-    997                      
-    998          		break;
-    999                   
-   1000                  case SIMPLEPROFILE_CHAR6://接收带有时间戳的指令   编码命令+执行时间戳
-   1001                    
-   1002                        SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR6, valuechar6);
-   1003                
-   1004                        if(!(peripheral_event&SBP_SEND_IRDATA_EVT1))
-   1005          		{	
-   1006          			
-   1007                                  current_list.value1[0]=valuechar6[0];
-   1008                                  current_list.value1[1]=valuechar6[1];
-   1009          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT1, current_list.value1[1]*1000);
-   1010                                  peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT1;
-   1011                                  current_list.listlen++;
-   1012                                  HalLcdWriteString("event_1", HAL_LCD_LINE_8);
-   1013          			 
-   1014          			
-   1015          		}
-   1016          		else if(!(peripheral_event&SBP_SEND_IRDATA_EVT2))
-   1017          		{	
-   1018          			
-   1019                                  current_list.value2[0]=valuechar6[0];
-   1020                                  current_list.value2[1]=valuechar6[1];
-   1021          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT2, current_list.value2[1]*1000);
-   1022                                  peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT2;
-   1023                                  current_list.listlen++;
-   1024                                  HalLcdWriteString("event_2", HAL_LCD_LINE_8);
-   1025          			
-   1026          		}
-   1027          		else if(!(peripheral_event&SBP_SEND_IRDATA_EVT3))
-   1028          		{
-   1029          			current_list.value3[0]=valuechar6[0];
-   1030                                  current_list.value3[1]=valuechar6[1];
-   1031                                  osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT3, current_list.value3[1]*1000);
-   1032                                  peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT3;
-   1033          			current_list.listlen++;
-   1034                                  HalLcdWriteString("event_3", HAL_LCD_LINE_8);
-   1035          		}
-   1036                          else if(!(peripheral_event&SBP_SEND_IRDATA_EVT4))
-   1037                            {
-   1038                                    current_list.value4[0]=valuechar6[0];
-   1039                                    current_list.value4[1]=valuechar6[1];
-   1040                                    osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT4, current_list.value4[1]*1000);
-   1041                                    peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT4;
-   1042                                    current_list.listlen++;
-   1043                                    HalLcdWriteString("event_4", HAL_LCD_LINE_8);
-   1044                            }
-   1045                          else if(!(peripheral_event&SBP_SEND_IRDATA_EVT5))
-   1046                            {
-   1047                                    current_list.value5[0]=valuechar6[0];
-   1048                                    current_list.value5[1]=valuechar6[1];
-   1049                                    osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT5, current_list.value5[1]*1000);
-   1050                                    peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT5;
-   1051                                    current_list.listlen++;
-   1052                                    HalLcdWriteString("event_5", HAL_LCD_LINE_8);
-   1053                            }
-   1054          //                else if(!(peripheral_event&SBP_SEND_IRDATA_EVT6))
-   1055          //                  {
-   1056          //                          current_list.value6[0]=valuechar6[0];
-   1057          //                          current_list.value6[1]=valuechar6[1];
-   1058          //                          osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT6, current_list.value6[1]*1000);
-   1059          //                          peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT6;
-   1060          //                          current_list.listlen++;
-   1061          //                          HalLcdWriteString("event_6", HAL_LCD_LINE_8);
-   1062          //                  }
-   1063                        
-   1064                       
-   1065                           
-   1066          		SimpleProfile_SetParameter( SIMPLEPROFILE_CHAR7, SIMPLEPROFILE_CHAR7_LEN, &current_list.listlen);
-   1067                     
-   1068                          HalLcdWriteStringValue("list_len:", current_list.listlen, 10, HAL_LCD_LINE_2);
-   1069                     
-   1070          
-   1071                        
-   1072                    
-   1073          		break;
-   1074                    case SIMPLEPROFILE_CHAR7:
-   1075                      SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR7, valuechar7);
-   1076          //             if(valuechar7[0]==0xA2)
-   1077          //               {
-   1078          //                  
-   1079          //                  Batt_MeasLevel();
-   1080          //                 
-   1081          //               }
-   1082          //          
-   1083          		break;
-   1084                   case SIMPLEPROFILE_CHAR8:
-   1085                      SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR8, valuechar8);
-   1086           
-   1087                       if(valuechar8[0]==0xA1)
-   1088                         {
-   1089                            // initTempSensor();
-   1090                             valuechar8[0]= getTemperature(); 
-   1091                             SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR8, SIMPLEPROFILE_CHAR8_LEN, valuechar8);
-   1092                             HalLcdWriteString(hex2Str(valuechar8), HAL_LCD_LINE_7);
-   1093                         }
-   1094          
-   1095          	    break;  
-   1096                        
-   1097          	default:
-   1098          		// should not reach here!
-   1099          		break;
-   1100          	}
-   1101          }
-   1102          /*********************************************************************
-   1103           * @fn      Receive_Save_Uartsend_irdata(void)
-   1104           * @brief  if
-   1105           * @param  
-   1106           * @return  none
-   1107           */
-   1108          //  static void Receive_Save_Uartsend_irdata(void)
-   1109          // {
-   1110          //               
-   1111          //		
-   1112          //	
-   1113          //
-   1114          //} 
-   1115          /*********************************************************************
-   1116           * @fn      Uartsend_irdata
-   1117           * @brief  
-   1118           * @param  
-   1119           * @return  none
-   1120           */
-   1121          // static void Uartsend_irdata()
-   1122          // {
-   1123          //	        //HalLcdWriteString("ok", HAL_LCD_LINE_5); 
-   1124          //		recv_value[UART_DATA_START_INDEX] = 0xE3;
-   1125          //                SbpHalUARTWrite(recv_value + UART_DATA_START_INDEX, data_len-4);
-   1126          // }
-   1127           
-   1128          
-   1129          /*********************************************************************
-   1130           * @fn      bdAddr2Str
-   1131           *
-   1132           * @brief   Convert Bluetooth address to string. Only needed when
-   1133           *          LCD display is used.
-   1134           *
-   1135           * @return  none
-   1136           */
-   1137          char *bdAddr2Str(uint8 *pAddr) {
-   1138          	uint8 i;
-   1139          	char hex[] = "0123456789ABCDEF";
-   1140          	static char str[B_ADDR_STR_LEN];
-   1141          	char *pStr = str;
-   1142          
-   1143          	*pStr++ = '0';
-   1144          	*pStr++ = 'x';
-   1145          
-   1146          	// Start from end of addr
-   1147          	pAddr += B_ADDR_LEN;
-   1148          
-   1149          	for (i = B_ADDR_LEN; i > 0; i--) {
-   1150          		*pStr++ = hex[*--pAddr >> 4];
-   1151          		*pStr++ = hex[*pAddr & 0x0F];
-   1152          	}
-   1153          
-   1154          	*pStr = 0;
-   1155          
-   1156          	return str;
-   1157          }
-   1158          char *hex2Str(uint8 *hexcode) {
-   1159          	uint8 i;
-   1160          	uint8 hexlen;
-   1161          	char hex[] = "0123456789ABCDEF";
-   1162          	hexlen=osal_strlen((char*)hexcode);
-   1163          	static char str[20];
-   1164          	char *pStr = str;
-   1165          
-   1166          	*pStr++ = '0';
-   1167          	*pStr++ = 'x';
+    988          	     }
+    989                     //HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_6);
+    990                     //HalLcdWriteStringValue("recv_value_len:", osal_strlen((char *)recv_value), 10, HAL_LCD_LINE_7); 
+    991                     //HalLcdWriteStringValue("data_len_index:", data_len_index, 10, HAL_LCD_LINE_8);
+    992                 
+    993                     if (data_len_index == data_len) 
+    994          	   {
+    995          	
+    996          		HalSPIWrite(valuechar2[2]*256,recv_value+3,data_len-3);//存储 红外数据长度（长度包括 0XFE+0XFF+编号+长度+红外数据 ）+红外数据
+    997          		TRANSFER_DATA_STATE_IN = FALSE;
+    998          		//HalLcdWriteStringValue("data_len:", osal_strlen((char *)recv_value), 10, HAL_LCD_LINE_6); 
+    999                         // HalLcdWriteStringValue("listlen:", current_list.listlen, 10, HAL_LCD_LINE_8);
+   1000          		data_len = 0;
+   1001          		cur_data_len = 0;
+   1002          		data_len_index = 0;
+   1003          		osal_memset(recv_value, 0, data_len);
+   1004                          irdata_return[0]=0x11;          
+   1005                          SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR5, SIMPLEPROFILE_CHAR5_LEN, irdata_return);
+   1006                          
+   1007                     }
+   1008          
+   1009                           break;
+   1010                           
+   1011          	case SIMPLEPROFILE_CHAR3://接收 编码命令  读取红外码并转发  其实是没有时间戳的 红外命令
+   1012          		SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR3, valuechar3);
+   1013                         
+   1014          		HalSPIRead(valuechar3[0]*256,&datalen_read,1);//读取 红外数据长度  读红外数据、IIC发送时要用到
+   1015          		    //延时1S
+   1016                         for(i=20; i>0; i--)
+   1017                            delay_nus(50);
+   1018                          HalSPIRead(valuechar3[0]*256+1,databuf_read,datalen_read-4);//读取 红外数据 	
+   1019          		HalLcdWriteString(hex2Str(databuf_read), HAL_LCD_LINE_6);
+   1020                          
+   1021                           //开始点亮LED
+   1022                          P0_4=0;
+   1023                         // while(1);
+   1024                          for(i=20; i>0; i--)
+   1025                            delay_nus(1200);
+   1026                          P0_4=1;
+   1027                          
+   1028          		break;
+   1029                  case SIMPLEPROFILE_CHAR4:
+   1030                     //  SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR4, newValueBuf);
+   1031                    
+   1032          		break;
+   1033                   case SIMPLEPROFILE_CHAR5://接收完 一条红外代码后  的反馈值
+   1034                     
+   1035                          SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR5, valuechar5);
+   1036                          HalLcdWriteString(hex2Str(valuechar5), HAL_LCD_LINE_7);
+   1037                      
+   1038          		break;
+   1039                   
+   1040                  case SIMPLEPROFILE_CHAR6://接收带有时间戳的指令   编码命令+执行时间戳
+   1041                    
+   1042                        SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR6, valuechar6);
+   1043                
+   1044                        if(!(peripheral_event&SBP_SEND_IRDATA_EVT1))
+   1045          		{	
+   1046          			
+   1047                                  current_list.value1[0]=valuechar6[0];
+   1048                                  current_list.value1[1]=valuechar6[1];
+   1049          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT1, current_list.value1[1]*1000);
+   1050                                  peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT1;
+   1051                                  current_list.listlen++;
+   1052                                  HalLcdWriteString("event_1", HAL_LCD_LINE_8);
+   1053          			 
+   1054          			
+   1055          		}
+   1056          		else if(!(peripheral_event&SBP_SEND_IRDATA_EVT2))
+   1057          		{	
+   1058          			
+   1059                                  current_list.value2[0]=valuechar6[0];
+   1060                                  current_list.value2[1]=valuechar6[1];
+   1061          			osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT2, current_list.value2[1]*1000);
+   1062                                  peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT2;
+   1063                                  current_list.listlen++;
+   1064                                  HalLcdWriteString("event_2", HAL_LCD_LINE_8);
+   1065          			
+   1066          		}
+   1067          		else if(!(peripheral_event&SBP_SEND_IRDATA_EVT3))
+   1068          		{
+   1069          			current_list.value3[0]=valuechar6[0];
+   1070                                  current_list.value3[1]=valuechar6[1];
+   1071                                  osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT3, current_list.value3[1]*1000);
+   1072                                  peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT3;
+   1073          			current_list.listlen++;
+   1074                                  HalLcdWriteString("event_3", HAL_LCD_LINE_8);
+   1075          		}
+   1076                          else if(!(peripheral_event&SBP_SEND_IRDATA_EVT4))
+   1077                            {
+   1078                                    current_list.value4[0]=valuechar6[0];
+   1079                                    current_list.value4[1]=valuechar6[1];
+   1080                                    osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT4, current_list.value4[1]*1000);
+   1081                                    peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT4;
+   1082                                    current_list.listlen++;
+   1083                                    HalLcdWriteString("event_4", HAL_LCD_LINE_8);
+   1084                            }
+   1085                          else if(!(peripheral_event&SBP_SEND_IRDATA_EVT5))
+   1086                            {
+   1087                                    current_list.value5[0]=valuechar6[0];
+   1088                                    current_list.value5[1]=valuechar6[1];
+   1089                                    osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT5, current_list.value5[1]*1000);
+   1090                                    peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT5;
+   1091                                    current_list.listlen++;
+   1092                                    HalLcdWriteString("event_5", HAL_LCD_LINE_8);
+   1093                            }
+   1094          //                else if(!(peripheral_event&SBP_SEND_IRDATA_EVT6))
+   1095          //                  {
+   1096          //                          current_list.value6[0]=valuechar6[0];
+   1097          //                          current_list.value6[1]=valuechar6[1];
+   1098          //                          osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT6, current_list.value6[1]*1000);
+   1099          //                          peripheral_event=peripheral_event|SBP_SEND_IRDATA_EVT6;
+   1100          //                          current_list.listlen++;
+   1101          //                          HalLcdWriteString("event_6", HAL_LCD_LINE_8);
+   1102          //                  }
+   1103                        
+   1104                       
+   1105                           
+   1106          		SimpleProfile_SetParameter( SIMPLEPROFILE_CHAR7, SIMPLEPROFILE_CHAR7_LEN, &current_list.listlen);
+   1107                     
+   1108                          HalLcdWriteStringValue("list_len:", current_list.listlen, 10, HAL_LCD_LINE_2);
+   1109                     
+   1110          
+   1111                        
+   1112                    
+   1113          		break;
+   1114                    case SIMPLEPROFILE_CHAR7:
+   1115                      SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR7, valuechar7);
+   1116          //             if(valuechar7[0]==0xA2)
+   1117          //               {
+   1118          //                  
+   1119          //                  Batt_MeasLevel();
+   1120          //                 
+   1121          //               }
+   1122          //          
+   1123          		break;
+   1124                   case SIMPLEPROFILE_CHAR8:
+   1125                      SimpleProfile_GetParameter(SIMPLEPROFILE_CHAR8, valuechar8);
+   1126           
+   1127                       if(valuechar8[0]==0xA1)
+   1128                         {
+   1129                            // initTempSensor();
+   1130                             valuechar8[0]= getTemperature(); 
+   1131                             SimpleProfile_SetParameter(SIMPLEPROFILE_CHAR8, SIMPLEPROFILE_CHAR8_LEN, valuechar8);
+   1132                             HalLcdWriteString(hex2Str(valuechar8), HAL_LCD_LINE_7);
+   1133                         }
+   1134          
+   1135          	    break;  
+   1136                        
+   1137          	default:
+   1138          		// should not reach here!
+   1139          		break;
+   1140          	}
+   1141          }
+   1142          /*********************************************************************
+   1143           * @fn      Receive_Save_Uartsend_irdata(void)
+   1144           * @brief  if
+   1145           * @param  
+   1146           * @return  none
+   1147           */
+   1148          //  static void Receive_Save_Uartsend_irdata(void)
+   1149          // {
+   1150          //               
+   1151          //		
+   1152          //	
+   1153          //
+   1154          //} 
+   1155          /*********************************************************************
+   1156           * @fn      Uartsend_irdata
+   1157           * @brief  
+   1158           * @param  
+   1159           * @return  none
+   1160           */
+   1161          // static void Uartsend_irdata()
+   1162          // {
+   1163          //	        //HalLcdWriteString("ok", HAL_LCD_LINE_5); 
+   1164          //		recv_value[UART_DATA_START_INDEX] = 0xE3;
+   1165          //                SbpHalUARTWrite(recv_value + UART_DATA_START_INDEX, data_len-4);
+   1166          // }
+   1167           
    1168          
-   1169          	// Start from end of addr
-   1170          	//pAddr += B_ADDR_LEN;
-   1171                  for(i=0;i<hexlen;i++)
-   1172          	{
-   1173          	  *pStr++ = hex[*hexcode>>4];
-   1174                    *pStr++ = hex[*hexcode&0x0F];
-   1175                    *hexcode++;
-   1176          	 
-   1177          	}
-   1178          
-   1179          	*pStr = 0;
-   1180          
-   1181          	return str;
-   1182          }
-   1183          
-   1184          /*********************************************************************
-   1185           *********************************************************************/
-   1186          //static int ascii2hex(char c) {
-   1187          //	int ret = -1;
-   1188          //	if ((c >= '0') && (c <= '9')) {
-   1189          //		ret = c - '0';
-   1190          //	} else if ((c >= 'A') && (c <= 'Z')) {
-   1191          //		ret = c - 'A' + 65;
-   1192          //	} else if ((c >= 'a') && (c <= 'z')) {
-   1193          //		ret = c - 'a' + 97;
-   1194          //	}
-   1195          //	return ret;
-   1196          //}
-   1197          //static void updateDeviceName(char *name, uint8 len) {
-   1198          //	uint8 k = 0;
-   1199          //	for (k = 0; k < len; k++) {
-   1200          //		scanRspData[k + 2] = ascii2hex(*(name + k));
-   1201          //	}
-   1202          //}
-   1203          
-   1204          
+   1169          /*********************************************************************
+   1170           * @fn      bdAddr2Str
+   1171           *
+   1172           * @brief   Convert Bluetooth address to string. Only needed when
+   1173           *          LCD display is used.
+   1174           *
+   1175           * @return  none
+   1176           */
+   1177          char *bdAddr2Str(uint8 *pAddr) {
+   1178          	uint8 i;
+   1179          	char hex[] = "0123456789ABCDEF";
+   1180          	static char str[B_ADDR_STR_LEN];
+   1181          	char *pStr = str;
+   1182          
+   1183          	*pStr++ = '0';
+   1184          	*pStr++ = 'x';
+   1185          
+   1186          	// Start from end of addr
+   1187          	pAddr += B_ADDR_LEN;
+   1188          
+   1189          	for (i = B_ADDR_LEN; i > 0; i--) {
+   1190          		*pStr++ = hex[*--pAddr >> 4];
+   1191          		*pStr++ = hex[*pAddr & 0x0F];
+   1192          	}
+   1193          
+   1194          	*pStr = 0;
+   1195          
+   1196          	return str;
+   1197          }
+   1198          char *hex2Str(uint8 *hexcode) {
+   1199          	uint8 i;
+   1200          	uint8 hexlen;
+   1201          	char hex[] = "0123456789ABCDEF";
+   1202          	hexlen=osal_strlen((char*)hexcode);
+   1203          	static char str[20];
+   1204          	char *pStr = str;
+   1205          
+   1206          	*pStr++ = '0';
+   1207          	*pStr++ = 'x';
+   1208          
+   1209          	// Start from end of addr
+   1210          	//pAddr += B_ADDR_LEN;
+   1211                  for(i=0;i<hexlen;i++)
+   1212          	{
+   1213          	  *pStr++ = hex[*hexcode>>4];
+   1214                    *pStr++ = hex[*hexcode&0x0F];
+   1215                    *hexcode++;
+   1216          	 
+   1217          	}
+   1218          
+   1219          	*pStr = 0;
+   1220          
+   1221          	return str;
+   1222          }
+   1223          
+   1224          /*********************************************************************
+   1225           *********************************************************************/
+   1226          //static int ascii2hex(char c) {
+   1227          //	int ret = -1;
+   1228          //	if ((c >= '0') && (c <= '9')) {
+   1229          //		ret = c - '0';
+   1230          //	} else if ((c >= 'A') && (c <= 'Z')) {
+   1231          //		ret = c - 'A' + 65;
+   1232          //	} else if ((c >= 'a') && (c <= 'z')) {
+   1233          //		ret = c - 'a' + 97;
+   1234          //	}
+   1235          //	return ret;
+   1236          //}
+   1237          //static void updateDeviceName(char *name, uint8 len) {
+   1238          //	uint8 k = 0;
+   1239          //	for (k = 0; k < len; k++) {
+   1240          //		scanRspData[k + 2] = ascii2hex(*(name + k));
+   1241          //	}
+   1242          //}
+   1243          
+   1244          
 
    Maximum stack usage in bytes:
 
@@ -1326,13 +1366,13 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
                           0 0  14 -> GAPRole_StartDevice
                           0 0  14 -> HalLcdWriteString
                           0 0  15 -> HalLcdWriteStringValue
-                          0 0  14 -> HalLedSet
                           0 0  18 -> HalSPIRead
                           0 0  14 -> SimpleProfile_SetParameter
                           0 0  14 -> delay_nus
                           0 0  14 -> hex2Str
                           0 0  14 -> osal_msg_deallocate
                           0 0  14 -> osal_msg_receive
+                          0 0  14 -> simpleBLEPeripheral_HandleKeys
        2      0     49  bdAddr2Str
        2      0    219  hex2Str
                           0 0  26 -> osal_strlen
@@ -1345,6 +1385,10 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
                           0 0  12 -> GAPRole_TerminateConnection
                           0 0  11 -> HalLcdWriteString
                           0 0  12 -> HalLcdWriteStringValue
+       0      0     23  simpleBLEPeripheral_HandleKeys
+                          0 0   9 -> HalLcdWriteString
+                          0 0   9 -> HalLedSet
+                          0 0   9 -> delay_nus
        2      0    197  simpleProfileChangeCB
                           0 0 193 -> HalLcdWriteString
                           0 0 194 -> HalLcdWriteStringValue
@@ -1366,6 +1410,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
 
    Bytes  Function/Label
    -----  --------------
+       4  ?<Constant " ok">
        1  ?<Constant "">
       17  ?<Constant "0123456789ABCDEF">
       17  ?<Constant "0123456789ABCDEF">_1
@@ -1394,7 +1439,6 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
        8  ?<Constant "event_5">
       10  ?<Constant "list_len:">
        8  ?<Constant "long ok">
-       3  ?<Constant "ok">
       20  ?<Constant {0}>
       20  ?<Constant {0}>_1
       20  ?<Constant {0}>_10
@@ -1418,11 +1462,13 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
        2  ?<Initializer for simpleBLEPeripheral_SimplePr
        6  ??SimpleBLEPeripheral_Init?relay
        6  ??SimpleBLEPeripheral_ProcessEvent?relay
-       8  ??Subroutine14_0
+       3  ??Subroutine14_0
+       5  ??Subroutine15_0
        6  ??bdAddr2Str?relay
        6  ??hex2Str?relay
        6  ??peripheralStateNotificationCB?relay
        6  ??simpleBLEPeripheralPairStateCB?relay
+       6  ??simpleBLEPeripheral_HandleKeys?relay
        6  ??simpleProfileChangeCB?relay
        2  ?Subroutine0
       31  ?Subroutine1
@@ -1445,7 +1491,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
        1  P2SEL
        1  PERCFG
      667  SimpleBLEPeripheral_Init
-     874  SimpleBLEPeripheral_ProcessEvent
+     845  SimpleBLEPeripheral_ProcessEvent
        1  TRANSFER_DATA_STATE_IN
        1  U1BAUD
        1  U1GCR
@@ -1470,6 +1516,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
       30  scanRspData
      115  simpleBLEPeripheralPairStateCB
        4  simpleBLEPeripheral_BondMgrCBs
+     120  simpleBLEPeripheral_HandleKeys
        4  simpleBLEPeripheral_PeripheralCBs
        2  simpleBLEPeripheral_SimpleProfileCBs
        1  simpleBLEPeripheral_TaskID
@@ -1484,16 +1531,16 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\SimpleBLEPeripheral\Source\sim
        1  time_datalen_read
 
  
- 3 601 bytes in segment BANKED_CODE
-    42 bytes in segment BANK_RELAYS
+ 3 692 bytes in segment BANKED_CODE
+    48 bytes in segment BANK_RELAYS
     11 bytes in segment SFR_AN
     60 bytes in segment XDATA_I
     60 bytes in segment XDATA_ID
-   619 bytes in segment XDATA_ROM_C
+   620 bytes in segment XDATA_ROM_C
    266 bytes in segment XDATA_Z
  
- 3 703 bytes of CODE  memory
-   615 bytes of CONST memory (+  4 bytes shared)
+ 3 800 bytes of CODE  memory
+   616 bytes of CONST memory (+  4 bytes shared)
      0 bytes of DATA  memory (+ 11 bytes shared)
    326 bytes of XDATA memory
 
