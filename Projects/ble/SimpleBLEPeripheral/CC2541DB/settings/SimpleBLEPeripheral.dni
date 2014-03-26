@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=208982006
+Checksum=-1228082925
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -51,7 +51,7 @@ ActionState=1
 Enabled=0
 ShowSource=1
 [Breakpoints]
-Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\Simplepasscode.c}.43.28" 0 0 0 0 "" 0 ""
+Bp0=_ "STD_CODE" "{$PROJ_DIR$\..\Source\Simplepasscode.c}.43.27" 0 0 0 0 "" 0 ""
 Count=1
 [ChipconEmu]
 Stop timers on halt=0

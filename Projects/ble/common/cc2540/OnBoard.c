@@ -284,7 +284,7 @@ void OnBoard_KeyCallback ( uint8 keys, uint8 state )
 
   /* If any key is currently pressed down and interrupt
      is still enabled, disable interrupt and switch to polling */
-  if( keys != 0 )
+  if( keys == 0x04 )////////////////////////////////////////////key!=0
   {
     if( OnboardKeyIntEnable == HAL_KEY_INTERRUPT_ENABLE )
     {
@@ -294,7 +294,7 @@ void OnBoard_KeyCallback ( uint8 keys, uint8 state )
   }
   /* If no key is currently pressed down and interrupt
      is disabled, enable interrupt and turn off polling */
-  else
+  else 
   {
     if( OnboardKeyIntEnable == HAL_KEY_INTERRUPT_DISABLE )
     {

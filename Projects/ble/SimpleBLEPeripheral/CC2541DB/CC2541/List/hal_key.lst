@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             25/Mar/2014  17:51:24 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             26/Mar/2014  11:01:58 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -316,8 +316,8 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_key.c
     218            HAL_KEY_SW_2_SEL &= ~(HAL_KEY_SW_2_BIT);    /* Set pin function to GPIO */
     219            HAL_KEY_SW_2_DIR &= ~(HAL_KEY_SW_2_BIT);    /* Set pin direction to Input */
     220          #else
-    221            HAL_KEY_SW_6_SEL &= ~(HAL_KEY_SW_6_BIT);    /* Set pin function to GPIO */
-    222            HAL_KEY_SW_6_DIR &= ~(HAL_KEY_SW_6_BIT);    /* Set pin direction to Input */
+    221            HAL_KEY_SW_6_SEL &= ~(HAL_KEY_SW_6_BIT);    /* Set pin function to GPIO 普通口*/
+    222            HAL_KEY_SW_6_DIR &= ~(HAL_KEY_SW_6_BIT);    /* Set pin direction to Input输入 */
     223            HAL_KEY_JOY_MOVE_SEL &= ~(HAL_KEY_JOY_MOVE_BIT); /* Set pin function to GPIO */
     224            HAL_KEY_JOY_MOVE_DIR &= ~(HAL_KEY_JOY_MOVE_BIT); /* Set pin direction to Input */
     225          
@@ -509,283 +509,267 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_key.c
     411                  {
     412                    
     413                    keypresslasttime++;
-    414          //          //因为polling每100ms执行一次，所以当keypresslasttime=20时，发出长按的消息，
-    415          //          if(keypresslasttime==20)                                                  //如果达到2000ms
-    416          //            {
-    417          //              sendkeys = keys | HAL_KEY_LONG;                                          //加上长按标志
-    418          //             (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);              //发送按键消息
-    419          //            // keypresslasttime=1;
-    420          //             
-    421          //            }
-    422          //          else                                                                      //如果没达到2000ms，则直接返回
-    423          //            {
-    424                      /* Exit - since no keys have changed */
-    425                        return;
-    426          //            }
-    427                  }
-    428                else 
-    429                  {
-    430                    //当按键弹起时，看一下按下的时间多长，因为polling的时间是100ms，所以当keypresslasttime<5时，发出短按的消息，
-    431                    if(keypresslasttime <5&&keypresslasttime!=1)
-    432                      {
-    433                          //keys;
-    434                         sendkeys = halKeySavedKeys| HAL_KEY_SHORT;
-    435                        (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
-    436                         keys=0;
-    437                         keypresslasttime=1;
-    438                      }
-    439                     else if(keypresslasttime >15)
-    440                      {
-    441                          
-    442                         sendkeys = halKeySavedKeys| HAL_KEY_LONG;
-    443                        (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
-    444                         keys=0;
-    445                         keypresslasttime=1;
-    446                      }
-    447                    notify = 1;
-    448                   
-    449                  }
-    450              }
-    451           else                                                                            
-    452              {
-    453                /* Key interrupt handled here */
-    454                //如果是按键终端，则开始计时
-    455                keypresslasttime = 1;
-    456                if (keys)
-    457                  {
-    458                    notify = 1;
-    459                  }
-    460           
-    461              }
-    462            
-    463                 /* Store the current keys for comparation next time */
-    464              halKeySavedKeys = keys;
-    465          
-    466              /* Invoke Callback if new keys were depressed */
-    467              if (notify && (pHalKeyProcessFunction))
-    468                {
-    469          
-    470                      (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
-    471                }
-    472           
-    473           
-    474          
-    475          }
-    476          
-    477          #if !defined ( CC2540_MINIDK )
-    478          /**************************************************************************************************
-    479           * @fn      halGetJoyKeyInput
-    480           *
-    481           * @brief   Map the ADC value to its corresponding key.
-    482           *
-    483           * @param   None
-    484           *
-    485           * @return  keys - current joy key status
-    486           **************************************************************************************************/
-    487          uint8 halGetJoyKeyInput(void)
-    488          {
-    489            /* The joystick control is encoded as an analog voltage.
-    490             * Read the JOY_LEVEL analog value and map it to joy movement.
-    491             */
-    492            uint8 adc;
-    493            uint8 ksave0 = 0;
-    494            uint8 ksave1;
-    495          
-    496            /* Keep on reading the ADC until two consecutive key decisions are the same. */
-    497            do
-    498            {
-    499              ksave1 = ksave0;    /* save previouse key reading */
-    500          
-    501              adc = HalAdcRead (HAL_KEY_JOY_CHN, HAL_ADC_RESOLUTION_8);
-    502          
-    503              if ((adc >= 2) && (adc <= 38))
+    414          
+    415                      /* Exit - since no keys have changed */
+    416                        return;
+    417                  }
+    418                else 
+    419                  {
+    420                    //当按键弹起时，看一下按下的时间多长，因为polling的时间是100ms，所以当keypresslasttime<5时，发出短按的消息，
+    421                    if(keypresslasttime <5 && keypresslasttime!=1)
+    422                      {
+    423                          //keys;
+    424                         sendkeys = halKeySavedKeys| HAL_KEY_SHORT;
+    425                        (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
+    426                        keypresslasttime=1;
+    427                      }
+    428                     else if(keypresslasttime >15)
+    429                      {
+    430                          
+    431                         sendkeys = halKeySavedKeys| HAL_KEY_LONG;
+    432                        (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
+    433                         keypresslasttime=1;
+    434                      }
+    435                    notify = 1;
+    436                   
+    437                  }
+    438              }
+    439           else                                                                            
+    440              {
+    441                /* Key interrupt handled here */
+    442                //如果是按键终端，则开始计时
+    443                keypresslasttime = 1;
+    444                if (keys)
+    445                  {
+    446                    notify = 1;
+    447                  }
+    448                    /* Store the current keys for comparation next time */
+    449              halKeySavedKeys = keys;
+    450           /* Invoke Callback if new keys were depressed */
+    451              if (notify && (pHalKeyProcessFunction))
+    452                {
+    453          
+    454                      (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
+    455                }
+    456           
+    457              }
+    458          
+    459          }
+    460          
+    461          #if !defined ( CC2540_MINIDK )
+    462          /**************************************************************************************************
+    463           * @fn      halGetJoyKeyInput
+    464           *
+    465           * @brief   Map the ADC value to its corresponding key.
+    466           *
+    467           * @param   None
+    468           *
+    469           * @return  keys - current joy key status
+    470           **************************************************************************************************/
+    471          uint8 halGetJoyKeyInput(void)
+    472          {
+    473            /* The joystick control is encoded as an analog voltage.
+    474             * Read the JOY_LEVEL analog value and map it to joy movement.
+    475             */
+    476            uint8 adc;
+    477            uint8 ksave0 = 0;
+    478            uint8 ksave1;
+    479          
+    480            /* Keep on reading the ADC until two consecutive key decisions are the same. */
+    481            do
+    482            {
+    483              ksave1 = ksave0;    /* save previouse key reading */
+    484          
+    485              adc = HalAdcRead (HAL_KEY_JOY_CHN, HAL_ADC_RESOLUTION_8);
+    486          
+    487              if ((adc >= 2) && (adc <= 38))
+    488              {
+    489                 ksave0 |= HAL_KEY_UP;
+    490              }
+    491              else if ((adc >= 74) && (adc <= 88))
+    492              {
+    493                ksave0 |= HAL_KEY_RIGHT;
+    494              }
+    495              else if ((adc >= 60) && (adc <= 73))
+    496              {
+    497                ksave0 |= HAL_KEY_LEFT;
+    498              }
+    499              else if ((adc >= 39) && (adc <= 59))
+    500              {
+    501                ksave0 |= HAL_KEY_DOWN;
+    502              }
+    503              else if ((adc >= 89) && (adc <= 100))
     504              {
-    505                 ksave0 |= HAL_KEY_UP;
+    505                ksave0 |= HAL_KEY_CENTER;
     506              }
-    507              else if ((adc >= 74) && (adc <= 88))
-    508              {
-    509                ksave0 |= HAL_KEY_RIGHT;
-    510              }
-    511              else if ((adc >= 60) && (adc <= 73))
-    512              {
-    513                ksave0 |= HAL_KEY_LEFT;
-    514              }
-    515              else if ((adc >= 39) && (adc <= 59))
-    516              {
-    517                ksave0 |= HAL_KEY_DOWN;
-    518              }
-    519              else if ((adc >= 89) && (adc <= 100))
-    520              {
-    521                ksave0 |= HAL_KEY_CENTER;
-    522              }
-    523            } while (ksave0 != ksave1);
-    524          
-    525            return ksave0;
-    526          }
-    527          #endif
-    528          
-    529          /**************************************************************************************************
-    530           * @fn      halProcessKeyInterrupt
-    531           *
-    532           * @brief   Checks to see if it's a valid key interrupt, saves interrupt driven key states for
-    533           *          processing by HalKeyRead(), and debounces keys by scheduling HalKeyRead() 25ms later.
-    534           *
-    535           * @param
-    536           *
-    537           * @return
-    538           **************************************************************************************************/
-    539          void halProcessKeyInterrupt (void)
-    540          {
-    541            bool valid=FALSE;
-    542          
-    543          #if defined ( CC2540_MINIDK )
-    544            if( HAL_KEY_SW_1_PXIFG & HAL_KEY_SW_1_BIT) /* Interrupt Flag has been set by SW1 */
-    545            {
-    546              HAL_KEY_SW_1_PXIFG = ~(HAL_KEY_SW_1_BIT); /* Clear Interrupt Flag */
-    547              valid = TRUE;
-    548            }
-    549          
-    550            if (HAL_KEY_SW_2_PXIFG & HAL_KEY_SW_2_BIT)  /* Interrupt Flag has been set by SW2 */
-    551            {
-    552              HAL_KEY_SW_2_PXIFG = ~(HAL_KEY_SW_2_BIT); /* Clear Interrupt Flag */
-    553              valid = TRUE;
-    554            }
-    555          #else
-    556            if (HAL_KEY_SW_6_PXIFG & HAL_KEY_SW_6_BIT)  /* Interrupt Flag has been set */
-    557            {
-    558              HAL_KEY_SW_6_PXIFG = ~(HAL_KEY_SW_6_BIT); /* Clear Interrupt Flag */
-    559              valid = TRUE;
-    560            }
-    561          
-    562            if (HAL_KEY_JOY_MOVE_PXIFG & HAL_KEY_JOY_MOVE_BIT)  /* Interrupt Flag has been set */
-    563            {
-    564              HAL_KEY_JOY_MOVE_PXIFG = ~(HAL_KEY_JOY_MOVE_BIT); /* Clear Interrupt Flag */
-    565              valid = TRUE;
-    566            }
-    567          #endif
-    568            if (valid)
-    569            {
-    570              osal_start_timerEx (Hal_TaskID, HAL_KEY_EVENT, HAL_KEY_DEBOUNCE_VALUE);
-    571            }
-    572          }
-    573          
-    574          /**************************************************************************************************
-    575           * @fn      HalKeyEnterSleep
-    576           *
-    577           * @brief  - Get called to enter sleep mode
-    578           *
-    579           * @param
-    580           *
-    581           * @return
-    582           **************************************************************************************************/
-    583          void HalKeyEnterSleep ( void )
-    584          {
-    585          }
-    586          
-    587          /**************************************************************************************************
-    588           * @fn      HalKeyExitSleep
-    589           *
-    590           * @brief   - Get called when sleep is over
-    591           *
-    592           * @param
-    593           *
-    594           * @return  - return saved keys
-    595           **************************************************************************************************/
-    596          uint8 HalKeyExitSleep ( void )
-    597          {
-    598            /* Wake up and read keys */
-    599            return ( HalKeyRead () );
-    600          }
-    601          
-    602          /***************************************************************************************************
-    603           *                                    INTERRUPT SERVICE ROUTINE
-    604           ***************************************************************************************************/
-    605          
-    606          /**************************************************************************************************
-    607           * @fn      halKeyPort0Isr
-    608           *
-    609           * @brief   Port0 ISR
-    610           *
-    611           * @param
-    612           *
-    613           * @return
-    614           **************************************************************************************************/
-    615          HAL_ISR_FUNCTION( halKeyPort0Isr, P0INT_VECTOR )
-    616          {
-    617            HAL_ENTER_ISR();
-    618          
-    619          #if defined ( CC2540_MINIDK )
-    620            if ((HAL_KEY_SW_1_PXIFG & HAL_KEY_SW_1_BIT) || (HAL_KEY_SW_2_PXIFG & HAL_KEY_SW_2_BIT))
-    621          #else
-    622            if (HAL_KEY_SW_6_PXIFG & HAL_KEY_SW_6_BIT)
-    623          #endif
-    624            {
-    625              halProcessKeyInterrupt();
-    626            }
+    507            } while (ksave0 != ksave1);
+    508          
+    509            return ksave0;
+    510          }
+    511          #endif
+    512          
+    513          /**************************************************************************************************
+    514           * @fn      halProcessKeyInterrupt
+    515           *
+    516           * @brief   Checks to see if it's a valid key interrupt, saves interrupt driven key states for
+    517           *          processing by HalKeyRead(), and debounces keys by scheduling HalKeyRead() 25ms later.
+    518           *
+    519           * @param
+    520           *
+    521           * @return
+    522           **************************************************************************************************/
+    523          void halProcessKeyInterrupt (void)
+    524          {
+    525            bool valid=FALSE;
+    526          
+    527          #if defined ( CC2540_MINIDK )
+    528            if( HAL_KEY_SW_1_PXIFG & HAL_KEY_SW_1_BIT) /* Interrupt Flag has been set by SW1 */
+    529            {
+    530              HAL_KEY_SW_1_PXIFG = ~(HAL_KEY_SW_1_BIT); /* Clear Interrupt Flag */
+    531              valid = TRUE;
+    532            }
+    533          
+    534            if (HAL_KEY_SW_2_PXIFG & HAL_KEY_SW_2_BIT)  /* Interrupt Flag has been set by SW2 */
+    535            {
+    536              HAL_KEY_SW_2_PXIFG = ~(HAL_KEY_SW_2_BIT); /* Clear Interrupt Flag */
+    537              valid = TRUE;
+    538            }
+    539          #else
+    540            if (HAL_KEY_SW_6_PXIFG & HAL_KEY_SW_6_BIT)  /* Interrupt Flag has been set */
+    541            {
+    542              HAL_KEY_SW_6_PXIFG = ~(HAL_KEY_SW_6_BIT); /* Clear Interrupt Flag */
+    543              valid = TRUE;
+    544            }
+    545          
+    546            if (HAL_KEY_JOY_MOVE_PXIFG & HAL_KEY_JOY_MOVE_BIT)  /* Interrupt Flag has been set */
+    547            {
+    548              HAL_KEY_JOY_MOVE_PXIFG = ~(HAL_KEY_JOY_MOVE_BIT); /* Clear Interrupt Flag */
+    549              valid = TRUE;
+    550            }
+    551          #endif
+    552            if (valid)
+    553            {
+    554              osal_start_timerEx (Hal_TaskID, HAL_KEY_EVENT, HAL_KEY_DEBOUNCE_VALUE);
+    555            }
+    556          }
+    557          
+    558          /**************************************************************************************************
+    559           * @fn      HalKeyEnterSleep
+    560           *
+    561           * @brief  - Get called to enter sleep mode
+    562           *
+    563           * @param
+    564           *
+    565           * @return
+    566           **************************************************************************************************/
+    567          void HalKeyEnterSleep ( void )
+    568          {
+    569          }
+    570          
+    571          /**************************************************************************************************
+    572           * @fn      HalKeyExitSleep
+    573           *
+    574           * @brief   - Get called when sleep is over
+    575           *
+    576           * @param
+    577           *
+    578           * @return  - return saved keys
+    579           **************************************************************************************************/
+    580          uint8 HalKeyExitSleep ( void )
+    581          {
+    582            /* Wake up and read keys */
+    583            return ( HalKeyRead () );
+    584          }
+    585          
+    586          /***************************************************************************************************
+    587           *                                    INTERRUPT SERVICE ROUTINE
+    588           ***************************************************************************************************/
+    589          
+    590          /**************************************************************************************************
+    591           * @fn      halKeyPort0Isr
+    592           *
+    593           * @brief   Port0 ISR
+    594           *
+    595           * @param
+    596           *
+    597           * @return
+    598           **************************************************************************************************/
+    599          HAL_ISR_FUNCTION( halKeyPort0Isr, P0INT_VECTOR )
+    600          {
+    601            HAL_ENTER_ISR();
+    602          
+    603          #if defined ( CC2540_MINIDK )
+    604            if ((HAL_KEY_SW_1_PXIFG & HAL_KEY_SW_1_BIT) || (HAL_KEY_SW_2_PXIFG & HAL_KEY_SW_2_BIT))
+    605          #else
+    606            if (HAL_KEY_SW_6_PXIFG & HAL_KEY_SW_6_BIT)
+    607          #endif
+    608            {
+    609              halProcessKeyInterrupt();
+    610            }
+    611          
+    612            /*
+    613              Clear the CPU interrupt flag for Port_0
+    614              PxIFG has to be cleared before PxIF
+    615            */
+    616          #if defined ( CC2540_MINIDK )
+    617            HAL_KEY_SW_1_PXIFG = 0;
+    618            HAL_KEY_SW_2_PXIFG = 0;
+    619          #else
+    620            HAL_KEY_SW_6_PXIFG = 0;
+    621          #endif
+    622            HAL_KEY_CPU_PORT_0_IF = 0;
+    623          
+    624            CLEAR_SLEEP_MODE();
+    625          
+    626            HAL_EXIT_ISR();
     627          
-    628            /*
-    629              Clear the CPU interrupt flag for Port_0
-    630              PxIFG has to be cleared before PxIF
-    631            */
-    632          #if defined ( CC2540_MINIDK )
-    633            HAL_KEY_SW_1_PXIFG = 0;
-    634            HAL_KEY_SW_2_PXIFG = 0;
-    635          #else
-    636            HAL_KEY_SW_6_PXIFG = 0;
-    637          #endif
-    638            HAL_KEY_CPU_PORT_0_IF = 0;
-    639          
-    640            CLEAR_SLEEP_MODE();
-    641          
-    642            HAL_EXIT_ISR();
-    643          
-    644            return;
-    645          }
-    646          
-    647          #if !defined ( CC2540_MINIDK )
-    648          /**************************************************************************************************
-    649           * @fn      halKeyPort2Isr
-    650           *
-    651           * @brief   Port2 ISR
-    652           *
-    653           * @param
-    654           *
-    655           * @return
-    656           **************************************************************************************************/
-    657          HAL_ISR_FUNCTION( halKeyPort2Isr, P2INT_VECTOR )
-    658          {
-    659            HAL_ENTER_ISR();
-    660          
-    661            if (HAL_KEY_JOY_MOVE_PXIFG & HAL_KEY_JOY_MOVE_BIT)
-    662            {
-    663              halProcessKeyInterrupt();
-    664            }
-    665          
-    666            /*
-    667              Clear the CPU interrupt flag for Port_2
-    668              PxIFG has to be cleared before PxIF
-    669              Notes: P2_1 and P2_2 are debug lines.
-    670            */
-    671            HAL_KEY_JOY_MOVE_PXIFG = 0;
-    672            HAL_KEY_CPU_PORT_2_IF = 0;
-    673          
-    674            CLEAR_SLEEP_MODE();
-    675          
-    676            HAL_EXIT_ISR();
-    677          
-    678            return;
-    679          }
-    680          #endif
-    681          #else
-    682          
-    683          void HalKeyInit(void){}
-    684          void HalKeyConfig(bool interruptEnable, halKeyCBack_t cback){}
-    685          uint8 HalKeyRead(void){ return 0;}
-    686          void HalKeyPoll(void){}
-    687          
-    688          #endif
-    689          /**************************************************************************************************
-    690          **************************************************************************************************/
+    628            return;
+    629          }
+    630          
+    631          #if !defined ( CC2540_MINIDK )
+    632          /**************************************************************************************************
+    633           * @fn      halKeyPort2Isr
+    634           *
+    635           * @brief   Port2 ISR
+    636           *
+    637           * @param
+    638           *
+    639           * @return
+    640           **************************************************************************************************/
+    641          HAL_ISR_FUNCTION( halKeyPort2Isr, P2INT_VECTOR )
+    642          {
+    643            HAL_ENTER_ISR();
+    644          
+    645            if (HAL_KEY_JOY_MOVE_PXIFG & HAL_KEY_JOY_MOVE_BIT)
+    646            {
+    647              halProcessKeyInterrupt();
+    648            }
+    649          
+    650            /*
+    651              Clear the CPU interrupt flag for Port_2
+    652              PxIFG has to be cleared before PxIF
+    653              Notes: P2_1 and P2_2 are debug lines.
+    654            */
+    655            HAL_KEY_JOY_MOVE_PXIFG = 0;
+    656            HAL_KEY_CPU_PORT_2_IF = 0;
+    657          
+    658            CLEAR_SLEEP_MODE();
+    659          
+    660            HAL_EXIT_ISR();
+    661          
+    662            return;
+    663          }
+    664          #endif
+    665          #else
+    666          
+    667          void HalKeyInit(void){}
+    668          void HalKeyConfig(bool interruptEnable, halKeyCBack_t cback){}
+    669          uint8 HalKeyRead(void){ return 0;}
+    670          void HalKeyPoll(void){}
+    671          
+    672          #endif
+    673          /**************************************************************************************************
+    674          **************************************************************************************************/
 
    Maximum stack usage in bytes:
 
@@ -836,7 +820,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_key.c
        3  HalKeyEnterSleep
       10  HalKeyExitSleep
       34  HalKeyInit
-     137  HalKeyPoll
+     133  HalKeyPoll
       27  HalKeyRead
        1  Hal_KeyIntEnable
        1  IEN2
@@ -866,7 +850,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_key.c
        2  pHalKeyProcessFunction
 
  
- 486 bytes in segment BANKED_CODE
+ 482 bytes in segment BANKED_CODE
   48 bytes in segment BANK_RELAYS
    6 bytes in segment INTVEC
   71 bytes in segment NEAR_CODE
@@ -876,7 +860,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_key.c
    4 bytes in segment XDATA_ROM_C
    5 bytes in segment XDATA_Z
  
- 606 bytes of CODE  memory (+  6 bytes shared)
+ 602 bytes of CODE  memory (+  6 bytes shared)
    0 bytes of CONST memory (+  4 bytes shared)
    0 bytes of DATA  memory (+ 17 bytes shared)
    6 bytes of XDATA memory

@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Mar/2014  11:50:22 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             26/Mar/2014  11:07:07 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -382,7 +382,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.c
     284          
     285            /* If any key is currently pressed down and interrupt
     286               is still enabled, disable interrupt and switch to polling */
-    287            if( keys != 0 )
+    287            if( keys == 0x04 )////////////////////////////////////////////key!=0
     288            {
     289              if( OnboardKeyIntEnable == HAL_KEY_INTERRUPT_ENABLE )
     290              {
@@ -392,7 +392,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.c
     294            }
     295            /* If no key is currently pressed down and interrupt
     296               is disabled, enable interrupt and turn off polling */
-    297            else
+    297            else 
     298            {
     299              if( OnboardKeyIntEnable == HAL_KEY_INTERRUPT_DISABLE )
     300              {
@@ -478,7 +478,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.c
        5  ?Subroutine0
        7  ?Subroutine1
       36  InitBoard
-      69  OnBoard_KeyCallback
+      71  OnBoard_KeyCallback
       66  OnBoard_SendKeys
        1  OnboardKeyIntEnable
       40  Onboard_rand
@@ -490,7 +490,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.c
        1  registeredKeysTaskID
 
  
- 402 bytes in segment BANKED_CODE
+ 404 bytes in segment BANKED_CODE
   42 bytes in segment BANK_RELAYS
    6 bytes in segment NEAR_CODE
    1 byte  in segment SFR_AN
@@ -498,7 +498,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.c
    1 byte  in segment XDATA_ID
    1 byte  in segment XDATA_Z
  
- 451 bytes of CODE  memory
+ 453 bytes of CODE  memory
    0 bytes of DATA  memory (+ 1 byte shared)
    2 bytes of XDATA memory
 

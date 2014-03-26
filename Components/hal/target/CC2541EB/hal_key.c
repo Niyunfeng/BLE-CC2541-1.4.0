@@ -218,8 +218,8 @@ void HalKeyInit( void )
   HAL_KEY_SW_2_SEL &= ~(HAL_KEY_SW_2_BIT);    /* Set pin function to GPIO */
   HAL_KEY_SW_2_DIR &= ~(HAL_KEY_SW_2_BIT);    /* Set pin direction to Input */
 #else
-  HAL_KEY_SW_6_SEL &= ~(HAL_KEY_SW_6_BIT);    /* Set pin function to GPIO */
-  HAL_KEY_SW_6_DIR &= ~(HAL_KEY_SW_6_BIT);    /* Set pin direction to Input */
+  HAL_KEY_SW_6_SEL &= ~(HAL_KEY_SW_6_BIT);    /* Set pin function to GPIO 普通口*/
+  HAL_KEY_SW_6_DIR &= ~(HAL_KEY_SW_6_BIT);    /* Set pin direction to Input输入 */
   HAL_KEY_JOY_MOVE_SEL &= ~(HAL_KEY_JOY_MOVE_BIT); /* Set pin function to GPIO */
   HAL_KEY_JOY_MOVE_DIR &= ~(HAL_KEY_JOY_MOVE_BIT); /* Set pin direction to Input */
 
@@ -411,37 +411,25 @@ void HalKeyPoll (void)
         {
           
           keypresslasttime++;
-//          //因为polling每100ms执行一次，所以当keypresslasttime=20时，发出长按的消息，
-//          if(keypresslasttime==20)                                                  //如果达到2000ms
-//            {
-//              sendkeys = keys | HAL_KEY_LONG;                                          //加上长按标志
-//             (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);              //发送按键消息
-//            // keypresslasttime=1;
-//             
-//            }
-//          else                                                                      //如果没达到2000ms，则直接返回
-//            {
+
             /* Exit - since no keys have changed */
               return;
-//            }
         }
       else 
         {
           //当按键弹起时，看一下按下的时间多长，因为polling的时间是100ms，所以当keypresslasttime<5时，发出短按的消息，
-          if(keypresslasttime <5&&keypresslasttime!=1)
+          if(keypresslasttime <5 && keypresslasttime!=1)
             {
                 //keys;
                sendkeys = halKeySavedKeys| HAL_KEY_SHORT;
               (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
-               keys=0;
-               keypresslasttime=1;
+              keypresslasttime=1;
             }
            else if(keypresslasttime >15)
             {
                 
                sendkeys = halKeySavedKeys| HAL_KEY_LONG;
               (pHalKeyProcessFunction) ( sendkeys, HAL_KEY_STATE_NORMAL);
-               keys=0;
                keypresslasttime=1;
             }
           notify = 1;
@@ -457,20 +445,16 @@ void HalKeyPoll (void)
         {
           notify = 1;
         }
- 
-    }
-  
-       /* Store the current keys for comparation next time */
+          /* Store the current keys for comparation next time */
     halKeySavedKeys = keys;
-
-    /* Invoke Callback if new keys were depressed */
+ /* Invoke Callback if new keys were depressed */
     if (notify && (pHalKeyProcessFunction))
       {
 
             (pHalKeyProcessFunction) (keys, HAL_KEY_STATE_NORMAL);
       }
  
- 
+    }
 
 }
 
