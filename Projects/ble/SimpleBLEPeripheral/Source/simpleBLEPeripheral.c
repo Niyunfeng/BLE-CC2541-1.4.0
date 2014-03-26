@@ -498,6 +498,10 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
         //设置P1.0端口为GPIO功能
         P0SEL &= ~BV(4);
         
+        HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );
+        HalLedSet(HAL_LED_2, HAL_LED_MODE_OFF );
+        HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );
+        HalLedSet(HAL_LED_4, HAL_LED_MODE_OFF );
      
 
 
@@ -740,75 +744,27 @@ static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
 //		HalLcdWriteString("change to de_paddkey_name", HAL_LCD_LINE_3);
 //                set_de_passkey();
 	}
-         if(keys ==(HAL_KEY_CENTER|HAL_KEY_LONG))
-          {
-             HalLcdWriteString("long ok", HAL_LCD_LINE_7);
-                      HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
-                      for(i=20; i>0; i--)
-                        delay_nus(50000);
-                      HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
-                      for(i=20; i>0; i--)
-                        delay_nus(50000);
-          }
+         
            if(keys ==(HAL_KEY_CENTER|HAL_KEY_SHORT))
           {
-             HalLcdWriteString(" ok", HAL_LCD_LINE_6);
-                      HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
-                      for(i=20; i>0; i--)
-                        delay_nus(50000);
-                      HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1
-                      for(i=20; i>0; i--)
-                        delay_nus(50000);
+             HalLcdWriteString("test", HAL_LCD_LINE_6);
+              //开始点亮LED
+                P0_4=0;
+               // while(1);
+                for(i=20; i>0; i--)
+                  delay_nus(2000);
+                P0_4=1;
+                     
           }
-//        if (keys == HAL_KEY_CENTER) 
-//        {
-//             HalLcdWriteString(" ok", HAL_LCD_LINE_8);
-//                      HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
-//                      for(i=20; i>0; i--)
-//                        delay_nus(5000);
-//                      HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
-//                      for(i=20; i>0; i--)
-//                        delay_nus(5000);
-//        }
-        
-        
+        if(keys ==(HAL_KEY_CENTER|HAL_KEY_LONG))
+          {
+             HalLcdWriteString("reset all", HAL_LCD_LINE_7);
+             set_de_passkey();
+             HalSPIErase();
+             list current_list={1,{0},{0},{0},{0},{0},{0}};
+              
+          }
 
-
-//	 if (keys & HAL_KEY_CENTER) {
-//           
-//          
-//                 if(keys & HAL_KEY_SHORT)
-//                 {
-//                   HalLcdWriteString("ok", HAL_LCD_LINE_6);
-//                   HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
-//                    for(i=20; i>0; i--)
-//                      delay_nus(5000);
-//                    HalLedSet(HAL_LED_1, HAL_LED_MODE_OFF );   //关LED1
-//                    for(i=20; i>0; i--)
-//                      delay_nus(5000);
-//                    
-//                   
-//                 }
-//                 else if(keys & HAL_KEY_LONG)
-//                 {
-//                   HalLcdWriteString("long ok", HAL_LCD_LINE_7);
-//                    HalLedSet(HAL_LED_3, HAL_LED_MODE_ON );   //开LED1
-//                    for(i=20; i>0; i--)
-//                      delay_nus(5000);
-//                    HalLedSet(HAL_LED_3, HAL_LED_MODE_OFF );   //关LED1
-//                    for(i=20; i>0; i--)
-//                      delay_nus(5000);
-//                 }
-//                   
-//              
-                
-                
-                
-                
-                
-		//HalLcdWriteString("send after 3s...", HAL_LCD_LINE_4);
-		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_SEND_IRDATA_EVT, 3000);
-	//}
         
 	if (keys & HAL_KEY_RIGHT) {
 		//HalLcdWriteStringValue("data_len:", data_len, 10, HAL_LCD_LINE_2);
