@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             24/Mar/2014  11:50:23 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             27/Mar/2014  14:01:41 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -33,9 +33,10 @@
 #                          HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D          #
 #                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o  #
+#                          HAL_LED=TRUE -D HAL_UART=FALSE -D HAL_ADC=TRUE -D  #
+#                          HAL_SLEEP_DEBUG_LED -lcN                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o       #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheral\CC2541DB\CC2541\Obj\ -e        #
 #                          --debug --core=plain --dptr=16,1                   #
@@ -411,7 +412,6 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\common\hal_drivers.c
                           2 0  0 -> HalKeyInit
                           2 0  0 -> HalLcdInit
                           2 0  0 -> HalLedInit
-                          2 0  0 -> HalUARTInit
        2      0      0  Hal_Init
        0      0     14  Hal_ProcessEvent
                           0 0 10 -> HalKeyPoll
@@ -423,8 +423,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\common\hal_drivers.c
                           0 0 10 -> osal_pwrmgr_task_state
                           0 0 14 -> osal_start_timerEx
                           0 0 10 -> osal_stop_timerEx
-       2      0      0  Hal_ProcessPoll
-                          2 0  0 -> HalUARTPoll
+       0      0      0  Hal_ProcessPoll
 
 
    Segment part sizes:
@@ -436,20 +435,20 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\common\hal_drivers.c
        6  ??Hal_ProcessEvent?relay
        6  ??Hal_ProcessPoll?relay
        7  ?Subroutine0
-      27  HalDriverInit
+      24  HalDriverInit
        9  Hal_Init
      180  Hal_ProcessEvent
-      13  Hal_ProcessPoll
+       6  Hal_ProcessPoll
        1  Hal_TaskID
        4  __Constant_64
 
  
- 236 bytes in segment BANKED_CODE
+ 226 bytes in segment BANKED_CODE
   24 bytes in segment BANK_RELAYS
    4 bytes in segment XDATA_ROM_C
    1 byte  in segment XDATA_Z
  
- 260 bytes of CODE  memory
+ 250 bytes of CODE  memory
    0 bytes of CONST memory (+ 4 bytes shared)
    1 byte  of XDATA memory
 

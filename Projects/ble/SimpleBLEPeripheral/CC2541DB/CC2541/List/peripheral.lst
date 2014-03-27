@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  16:35:37 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             27/Mar/2014  14:01:44 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -33,9 +33,10 @@
 #                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D       #
 #                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o  #
+#                          HAL_LED=TRUE -D HAL_UART=FALSE -D HAL_ADC=TRUE -D  #
+#                          HAL_SLEEP_DEBUG_LED -lcN                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o       #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheral\CC2541DB\CC2541\Obj\ -e        #
 #                          --debug --core=plain --dptr=16,1                   #

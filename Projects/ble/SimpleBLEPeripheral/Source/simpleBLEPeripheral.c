@@ -40,7 +40,7 @@
 /*********************************************************************
  * INCLUDES
  */
-
+//#include "hal_drivers.h"
 #include "bcomdef.h"
 #include "OSAL.h"
 #include "OSAL_PwrMgr.h"
@@ -95,7 +95,7 @@
 /*********************************************************************
  * CONSTANTS
  */
-
+#define SBP_START_ADVERT_EVT_PERIOD               60000
 // How often to perform periodic event
 #define SBP_PERIODIC_EVT_PERIOD                   5000
 
@@ -121,10 +121,10 @@
 #define DEFAULT_DISCOVERABLE_MODE             GAP_ADTYPE_FLAGS_GENERAL
 #endif  // defined ( CC2540_MINIDK )
 // Minimum connection interval (units of 1.25ms, 80=100ms) if automatic parameter update request is enabled
-#define DEFAULT_DESIRED_MIN_CONN_INTERVAL     80
+#define DEFAULT_DESIRED_MIN_CONN_INTERVAL  80 
 
 // Maximum connection interval (units of 1.25ms, 800=1000ms) if automatic parameter update request is enabled
-#define DEFAULT_DESIRED_MAX_CONN_INTERVAL    180
+#define DEFAULT_DESIRED_MAX_CONN_INTERVAL  800
 
 // Slave latency to use if automatic parameter update request is enabled
 #define DEFAULT_DESIRED_SLAVE_LATENCY         0//10  参数更新打开 与手机通信时 要小于4
@@ -387,6 +387,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 #else
 		// For other hardware platforms, device starts advertising upon initialization
 		uint8 initial_advertising_enable = TRUE;
+               
 #endif
 
 		// By setting this to zero, the device will go into the waiting state after
@@ -402,6 +403,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 
 		// Set the GAP Role Parameters
 		GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &initial_advertising_enable);
+
 		GAPRole_SetParameter(GAPROLE_ADVERT_OFF_TIME, sizeof(uint16), &gapRole_AdvertOffTime);
 
 		GAPRole_SetParameter(GAPROLE_SCAN_RSP_DATA, sizeof(scanRspData), scanRspData);
@@ -483,12 +485,13 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
 #endif // defined ( DC_DC_P0_7 )
 	// Setup a delayed profile startup
 	osal_set_event(simpleBLEPeripheral_TaskID, SBP_START_DEVICE_EVT);
+        //osal_set_event(simpleBLEPeripheral_TaskID, HAL_PWRMGR_CONSERVE_EVENT);
         
         
          // initialize the ADC for battery reads
         HalAdcInit();
 
-	/***********************************test something zekezang**********************************/
+	/***********************************test something **********************************/
 	//HalLcdWriteString(" start", HAL_LCD_LINE_1);
 	
             XNV_SPI_INIT();
@@ -505,7 +508,7 @@ void SimpleBLEPeripheral_Init(uint8 task_id) {
      
 
 
-	/***********************************test something zekezang**********************************/
+	/***********************************test something **********************************/
 }
 
 /*********************************************************************
@@ -547,7 +550,7 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
 		GAPBondMgr_Register(&simpleBLEPeripheral_BondMgrCBs);
 
 		// Set timer for first periodic event
-		//osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, SBP_PERIODIC_EVT_PERIOD);
+		osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_START_ADVERT_EVT, SBP_START_ADVERT_EVT_PERIOD);
                 
                 // Set timer for first battery read event
                 //osal_start_timerEx(simpleBLEPeripheral_TaskID, SBP_PERIODIC_EVT, BATTERY_CHECK_PERIOD );
@@ -557,6 +560,15 @@ uint16 SimpleBLEPeripheral_ProcessEvent(uint8 task_id, uint16 events) {
           
 		return (events ^ SBP_START_DEVICE_EVT);
 	}
+        if (events & SBP_START_ADVERT_EVT) {
+            
+              uint8 initial_advertising_enable = FALSE;
+	      GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &initial_advertising_enable);
+              
+              HalLcdWriteString("start advertising ok", HAL_LCD_LINE_6);
+              return (events ^ SBP_START_ADVERT_EVT);
+              
+        }
 
 //	if (events & SBP_PERIODIC_EVT) {
 
@@ -736,6 +748,10 @@ static void simpleBLEPeripheral_ProcessOSALMsg(osal_event_hdr_t *pMsg) {
 static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
     uint8 i;
 	if (keys & HAL_KEY_UP) {
+            
+            uint8 initial_advertising_enable = FALSE;
+	    GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &initial_advertising_enable);
+            
 		//u_state = IR_DATA_STUDY_CMD_START_BEGIN_STATE;
 		//SbpHalUARTWrite(&SBP_UART_STUDY_CMD, SBP_UART_STUDY_CMD_LEN);
 	}
@@ -743,6 +759,9 @@ static void simpleBLEPeripheral_HandleKeys(uint8 shift, uint8 keys) {
 	if (keys & HAL_KEY_LEFT) {
 //		HalLcdWriteString("change to de_paddkey_name", HAL_LCD_LINE_3);
 //                set_de_passkey();
+            uint8 initial_advertising_enable = TRUE;
+	    GAPRole_SetParameter(GAPROLE_ADVERT_ENABLED, sizeof(uint8), &initial_advertising_enable);
+            
 	}
          
            if(keys ==(HAL_KEY_CENTER|HAL_KEY_SHORT))

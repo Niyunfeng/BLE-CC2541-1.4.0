@@ -55,7 +55,7 @@ extern "C"
 
 // Simple BLE Peripheral Task Events
 #define SBP_START_DEVICE_EVT                              0x0001
-#define SBP_PERIODIC_EVT                                  0x0002
+#define SBP_START_ADVERT_EVT                              0x0002
 #define SBP_ADV_IN_CONNECTION_EVT                         0x0004
 
 //#define SBP_ZEKEZANG_EVT				  0x0009

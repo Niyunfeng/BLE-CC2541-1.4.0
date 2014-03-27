@@ -102,399 +102,396 @@
 <L><invalid loc>:104:9: macro definition=xPLUS_BROADCASTER <US>c:macro@xPLUS_BROADCASTER<UE> <DS>xPLUS_BROADCASTER<DE> Extent=<ES>104:9 - 104:28<EE>
 <L><invalid loc>:105:9: macro definition=HAL_LCD <US>c:macro@HAL_LCD<UE> <DS>HAL_LCD<DE> Extent=<ES>105:9 - 105:21<EE>
 <L><invalid loc>:106:9: macro definition=HAL_LED <US>c:macro@HAL_LED<UE> <DS>HAL_LED<DE> Extent=<ES>106:9 - 106:21<EE>
-<L><invalid loc>:107:9: macro definition=HAL_UART <US>c:macro@HAL_UART<UE> <DS>HAL_UART<DE> Extent=<ES>107:9 - 107:22<EE>
+<L><invalid loc>:107:9: macro definition=HAL_UART <US>c:macro@HAL_UART<UE> <DS>HAL_UART<DE> Extent=<ES>107:9 - 107:23<EE>
 <L><invalid loc>:108:9: macro definition=HAL_ADC <US>c:macro@HAL_ADC<UE> <DS>HAL_ADC<DE> Extent=<ES>108:9 - 108:21<EE>
-<L><invalid loc>:109:9: macro definition=__CHAR_BITS__ <US>c:macro@__CHAR_BITS__<UE> <DS>__CHAR_BITS__<DE> Extent=<ES>109:9 - 109:24<EE>
-<L><invalid loc>:110:9: macro definition=__CHAR_MAX__ <US>c:macro@__CHAR_MAX__<UE> <DS>__CHAR_MAX__<DE> Extent=<ES>110:9 - 110:26<EE>
-<L><invalid loc>:111:9: macro definition=__CHAR_MIN__ <US>c:macro@__CHAR_MIN__<UE> <DS>__CHAR_MIN__<DE> Extent=<ES>111:9 - 111:23<EE>
-<L><invalid loc>:112:9: macro definition=__CHAR_SIZE__ <US>c:macro@__CHAR_SIZE__<UE> <DS>__CHAR_SIZE__<DE> Extent=<ES>112:9 - 112:24<EE>
-<L><invalid loc>:113:9: macro definition=__UNSIGNED_CHAR_MAX__ <US>c:macro@__UNSIGNED_CHAR_MAX__<UE> <DS>__UNSIGNED_CHAR_MAX__<DE> Extent=<ES>113:9 - 113:35<EE>
-<L><invalid loc>:114:9: macro definition=__SIGNED_CHAR_MAX__ <US>c:macro@__SIGNED_CHAR_MAX__<UE> <DS>__SIGNED_CHAR_MAX__<DE> Extent=<ES>114:9 - 114:32<EE>
-<L><invalid loc>:115:9: macro definition=__SIGNED_CHAR_MIN__ <US>c:macro@__SIGNED_CHAR_MIN__<UE> <DS>__SIGNED_CHAR_MIN__<DE> Extent=<ES>115:9 - 115:53<EE>
-<L><invalid loc>:116:9: macro definition=__CHAR_ALIGN__ <US>c:macro@__CHAR_ALIGN__<UE> <DS>__CHAR_ALIGN__<DE> Extent=<ES>116:9 - 116:25<EE>
-<L><invalid loc>:117:9: macro definition=__SHORT_SIZE__ <US>c:macro@__SHORT_SIZE__<UE> <DS>__SHORT_SIZE__<DE> Extent=<ES>117:9 - 117:25<EE>
-<L><invalid loc>:118:9: macro definition=__UNSIGNED_SHORT_MAX__ <US>c:macro@__UNSIGNED_SHORT_MAX__<UE> <DS>__UNSIGNED_SHORT_MAX__<DE> Extent=<ES>118:9 - 118:38<EE>
-<L><invalid loc>:119:9: macro definition=__SIGNED_SHORT_MAX__ <US>c:macro@__SIGNED_SHORT_MAX__<UE> <DS>__SIGNED_SHORT_MAX__<DE> Extent=<ES>119:9 - 119:35<EE>
-<L><invalid loc>:120:9: macro definition=__SIGNED_SHORT_MIN__ <US>c:macro@__SIGNED_SHORT_MIN__<UE> <DS>__SIGNED_SHORT_MIN__<DE> Extent=<ES>120:9 - 120:55<EE>
-<L><invalid loc>:121:9: macro definition=__SHORT_ALIGN__ <US>c:macro@__SHORT_ALIGN__<UE> <DS>__SHORT_ALIGN__<DE> Extent=<ES>121:9 - 121:26<EE>
-<L><invalid loc>:122:9: macro definition=__LONG_SIZE__ <US>c:macro@__LONG_SIZE__<UE> <DS>__LONG_SIZE__<DE> Extent=<ES>122:9 - 122:24<EE>
-<L><invalid loc>:123:9: macro definition=__UNSIGNED_LONG_MAX__ <US>c:macro@__UNSIGNED_LONG_MAX__<UE> <DS>__UNSIGNED_LONG_MAX__<DE> Extent=<ES>123:9 - 123:43<EE>
-<L><invalid loc>:124:9: macro definition=__SIGNED_LONG_MAX__ <US>c:macro@__SIGNED_LONG_MAX__<UE> <DS>__SIGNED_LONG_MAX__<DE> Extent=<ES>124:9 - 124:40<EE>
-<L><invalid loc>:125:9: macro definition=__SIGNED_LONG_MIN__ <US>c:macro@__SIGNED_LONG_MIN__<UE> <DS>__SIGNED_LONG_MIN__<DE> Extent=<ES>125:9 - 125:53<EE>
-<L><invalid loc>:126:9: macro definition=__LONG_ALIGN__ <US>c:macro@__LONG_ALIGN__<UE> <DS>__LONG_ALIGN__<DE> Extent=<ES>126:9 - 126:25<EE>
-<L><invalid loc>:127:9: macro definition=__LONG_LONG_SIZE__ <US>c:macro@__LONG_LONG_SIZE__<UE> <DS>__LONG_LONG_SIZE__<DE> Extent=<ES>127:9 - 127:29<EE>
-<L><invalid loc>:128:9: macro definition=__UNSIGNED_LONG_LONG_MAX__ <US>c:macro@__UNSIGNED_LONG_LONG_MAX__<UE> <DS>__UNSIGNED_LONG_LONG_MAX__<DE> Extent=<ES>128:9 - 128:49<EE>
-<L><invalid loc>:129:9: macro definition=__SIGNED_LONG_LONG_MAX__ <US>c:macro@__SIGNED_LONG_LONG_MAX__<UE> <DS>__SIGNED_LONG_LONG_MAX__<DE> Extent=<ES>129:9 - 129:46<EE>
-<L><invalid loc>:130:9: macro definition=__SIGNED_LONG_LONG_MIN__ <US>c:macro@__SIGNED_LONG_LONG_MIN__<UE> <DS>__SIGNED_LONG_LONG_MIN__<DE> Extent=<ES>130:9 - 130:63<EE>
-<L><invalid loc>:131:9: macro definition=__LONG_LONG_ALIGN__ <US>c:macro@__LONG_LONG_ALIGN__<UE> <DS>__LONG_LONG_ALIGN__<DE> Extent=<ES>131:9 - 131:30<EE>
-<L><invalid loc>:132:9: macro definition=__INT_SIZE__ <US>c:macro@__INT_SIZE__<UE> <DS>__INT_SIZE__<DE> Extent=<ES>132:9 - 132:23<EE>
-<L><invalid loc>:133:9: macro definition=__UNSIGNED_INT_MAX__ <US>c:macro@__UNSIGNED_INT_MAX__<UE> <DS>__UNSIGNED_INT_MAX__<DE> Extent=<ES>133:9 - 133:37<EE>
-<L><invalid loc>:134:9: macro definition=__SIGNED_INT_MAX__ <US>c:macro@__SIGNED_INT_MAX__<UE> <DS>__SIGNED_INT_MAX__<DE> Extent=<ES>134:9 - 134:33<EE>
-<L><invalid loc>:135:9: macro definition=__SIGNED_INT_MIN__ <US>c:macro@__SIGNED_INT_MIN__<UE> <DS>__SIGNED_INT_MIN__<DE> Extent=<ES>135:9 - 135:51<EE>
-<L><invalid loc>:136:9: macro definition=__INT_ALIGN__ <US>c:macro@__INT_ALIGN__<UE> <DS>__INT_ALIGN__<DE> Extent=<ES>136:9 - 136:24<EE>
-<L><invalid loc>:137:9: macro definition=__INT8_T_TYPE__ <US>c:macro@__INT8_T_TYPE__<UE> <DS>__INT8_T_TYPE__<DE> Extent=<ES>137:9 - 137:36<EE>
-<L><invalid loc>:138:9: macro definition=__INT8_T_MAX__ <US>c:macro@__INT8_T_MAX__<UE> <DS>__INT8_T_MAX__<DE> Extent=<ES>138:9 - 138:27<EE>
-<L><invalid loc>:139:9: macro definition=__INT8_T_MIN__ <US>c:macro@__INT8_T_MIN__<UE> <DS>__INT8_T_MIN__<DE> Extent=<ES>139:9 - 139:43<EE>
-<L><invalid loc>:140:9: macro definition=__UINT8_T_TYPE__ <US>c:macro@__UINT8_T_TYPE__<UE> <DS>__UINT8_T_TYPE__<DE> Extent=<ES>140:9 - 140:39<EE>
-<L><invalid loc>:141:9: macro definition=__UINT8_T_MAX__ <US>c:macro@__UINT8_T_MAX__<UE> <DS>__UINT8_T_MAX__<DE> Extent=<ES>141:9 - 141:29<EE>
-<L><invalid loc>:142:9: macro definition=__INT8_SIZE_PREFIX__ <US>c:macro@__INT8_SIZE_PREFIX__<UE> <DS>__INT8_SIZE_PREFIX__<DE> Extent=<ES>142:9 - 142:34<EE>
-<L><invalid loc>:143:9: macro definition=__INT16_T_TYPE__ <US>c:macro@__INT16_T_TYPE__<UE> <DS>__INT16_T_TYPE__<DE> Extent=<ES>143:9 - 143:36<EE>
-<L><invalid loc>:144:9: macro definition=__INT16_T_MAX__ <US>c:macro@__INT16_T_MAX__<UE> <DS>__INT16_T_MAX__<DE> Extent=<ES>144:9 - 144:30<EE>
-<L><invalid loc>:145:9: macro definition=__INT16_T_MIN__ <US>c:macro@__INT16_T_MIN__<UE> <DS>__INT16_T_MIN__<DE> Extent=<ES>145:9 - 145:45<EE>
-<L><invalid loc>:146:9: macro definition=__UINT16_T_TYPE__ <US>c:macro@__UINT16_T_TYPE__<UE> <DS>__UINT16_T_TYPE__<DE> Extent=<ES>146:9 - 146:39<EE>
-<L><invalid loc>:147:9: macro definition=__UINT16_T_MAX__ <US>c:macro@__UINT16_T_MAX__<UE> <DS>__UINT16_T_MAX__<DE> Extent=<ES>147:9 - 147:33<EE>
-<L><invalid loc>:148:9: macro definition=__INT16_SIZE_PREFIX__ <US>c:macro@__INT16_SIZE_PREFIX__<UE> <DS>__INT16_SIZE_PREFIX__<DE> Extent=<ES>148:9 - 148:33<EE>
-<L><invalid loc>:149:9: macro definition=__INT32_T_TYPE__ <US>c:macro@__INT32_T_TYPE__<UE> <DS>__INT32_T_TYPE__<DE> Extent=<ES>149:9 - 149:41<EE>
-<L><invalid loc>:150:9: macro definition=__INT32_T_MAX__ <US>c:macro@__INT32_T_MAX__<UE> <DS>__INT32_T_MAX__<DE> Extent=<ES>150:9 - 150:36<EE>
-<L><invalid loc>:151:9: macro definition=__INT32_T_MIN__ <US>c:macro@__INT32_T_MIN__<UE> <DS>__INT32_T_MIN__<DE> Extent=<ES>151:9 - 151:45<EE>
-<L><invalid loc>:152:9: macro definition=__UINT32_T_TYPE__ <US>c:macro@__UINT32_T_TYPE__<UE> <DS>__UINT32_T_TYPE__<DE> Extent=<ES>152:9 - 152:44<EE>
-<L><invalid loc>:153:9: macro definition=__UINT32_T_MAX__ <US>c:macro@__UINT32_T_MAX__<UE> <DS>__UINT32_T_MAX__<DE> Extent=<ES>153:9 - 153:38<EE>
-<L><invalid loc>:154:9: macro definition=__INT32_SIZE_PREFIX__ <US>c:macro@__INT32_SIZE_PREFIX__<UE> <DS>__INT32_SIZE_PREFIX__<DE> Extent=<ES>154:9 - 154:34<EE>
-<L><invalid loc>:155:9: macro definition=__INT_LEAST8_T_TYPE__ <US>c:macro@__INT_LEAST8_T_TYPE__<UE> <DS>__INT_LEAST8_T_TYPE__<DE> Extent=<ES>155:9 - 155:42<EE>
-<L><invalid loc>:156:9: macro definition=__INT_LEAST8_T_MAX__ <US>c:macro@__INT_LEAST8_T_MAX__<UE> <DS>__INT_LEAST8_T_MAX__<DE> Extent=<ES>156:9 - 156:33<EE>
-<L><invalid loc>:157:9: macro definition=__INT_LEAST8_T_MIN__ <US>c:macro@__INT_LEAST8_T_MIN__<UE> <DS>__INT_LEAST8_T_MIN__<DE> Extent=<ES>157:9 - 157:55<EE>
-<L><invalid loc>:158:9: macro definition=__UINT_LEAST8_T_TYPE__ <US>c:macro@__UINT_LEAST8_T_TYPE__<UE> <DS>__UINT_LEAST8_T_TYPE__<DE> Extent=<ES>158:9 - 158:45<EE>
-<L><invalid loc>:159:9: macro definition=__UINT_LEAST8_T_MAX__ <US>c:macro@__UINT_LEAST8_T_MAX__<UE> <DS>__UINT_LEAST8_T_MAX__<DE> Extent=<ES>159:9 - 159:35<EE>
-<L><invalid loc>:160:9: macro definition=__INT8_C_SUFFIX__ <US>c:macro@__INT8_C_SUFFIX__<UE> <DS>__INT8_C_SUFFIX__<DE> Extent=<ES>160:9 - 160:26<EE>
-<L><invalid loc>:161:9: macro definition=__UINT8_C_SUFFIX__ <US>c:macro@__UINT8_C_SUFFIX__<UE> <DS>__UINT8_C_SUFFIX__<DE> Extent=<ES>161:9 - 161:27<EE>
-<L><invalid loc>:162:9: macro definition=__INT_LEAST8_SIZE_PREFIX__ <US>c:macro@__INT_LEAST8_SIZE_PREFIX__<UE> <DS>__INT_LEAST8_SIZE_PREFIX__<DE> Extent=<ES>162:9 - 162:40<EE>
-<L><invalid loc>:163:9: macro definition=__INT_LEAST16_T_TYPE__ <US>c:macro@__INT_LEAST16_T_TYPE__<UE> <DS>__INT_LEAST16_T_TYPE__<DE> Extent=<ES>163:9 - 163:42<EE>
-<L><invalid loc>:164:9: macro definition=__INT_LEAST16_T_MAX__ <US>c:macro@__INT_LEAST16_T_MAX__<UE> <DS>__INT_LEAST16_T_MAX__<DE> Extent=<ES>164:9 - 164:36<EE>
-<L><invalid loc>:165:9: macro definition=__INT_LEAST16_T_MIN__ <US>c:macro@__INT_LEAST16_T_MIN__<UE> <DS>__INT_LEAST16_T_MIN__<DE> Extent=<ES>165:9 - 165:57<EE>
-<L><invalid loc>:166:9: macro definition=__UINT_LEAST16_T_TYPE__ <US>c:macro@__UINT_LEAST16_T_TYPE__<UE> <DS>__UINT_LEAST16_T_TYPE__<DE> Extent=<ES>166:9 - 166:45<EE>
-<L><invalid loc>:167:9: macro definition=__UINT_LEAST16_T_MAX__ <US>c:macro@__UINT_LEAST16_T_MAX__<UE> <DS>__UINT_LEAST16_T_MAX__<DE> Extent=<ES>167:9 - 167:39<EE>
-<L><invalid loc>:168:9: macro definition=__INT16_C_SUFFIX__ <US>c:macro@__INT16_C_SUFFIX__<UE> <DS>__INT16_C_SUFFIX__<DE> Extent=<ES>168:9 - 168:27<EE>
-<L><invalid loc>:169:9: macro definition=__UINT16_C_SUFFIX__ <US>c:macro@__UINT16_C_SUFFIX__<UE> <DS>__UINT16_C_SUFFIX__<DE> Extent=<ES>169:9 - 169:30<EE>
-<L><invalid loc>:170:9: macro definition=__INT_LEAST16_SIZE_PREFIX__ <US>c:macro@__INT_LEAST16_SIZE_PREFIX__<UE> <DS>__INT_LEAST16_SIZE_PREFIX__<DE> Extent=<ES>170:9 - 170:39<EE>
-<L><invalid loc>:171:9: macro definition=__INT_LEAST32_T_TYPE__ <US>c:macro@__INT_LEAST32_T_TYPE__<UE> <DS>__INT_LEAST32_T_TYPE__<DE> Extent=<ES>171:9 - 171:47<EE>
-<L><invalid loc>:172:9: macro definition=__INT_LEAST32_T_MAX__ <US>c:macro@__INT_LEAST32_T_MAX__<UE> <DS>__INT_LEAST32_T_MAX__<DE> Extent=<ES>172:9 - 172:42<EE>
-<L><invalid loc>:173:9: macro definition=__INT_LEAST32_T_MIN__ <US>c:macro@__INT_LEAST32_T_MIN__<UE> <DS>__INT_LEAST32_T_MIN__<DE> Extent=<ES>173:9 - 173:57<EE>
-<L><invalid loc>:174:9: macro definition=__UINT_LEAST32_T_TYPE__ <US>c:macro@__UINT_LEAST32_T_TYPE__<UE> <DS>__UINT_LEAST32_T_TYPE__<DE> Extent=<ES>174:9 - 174:50<EE>
-<L><invalid loc>:175:9: macro definition=__UINT_LEAST32_T_MAX__ <US>c:macro@__UINT_LEAST32_T_MAX__<UE> <DS>__UINT_LEAST32_T_MAX__<DE> Extent=<ES>175:9 - 175:44<EE>
-<L><invalid loc>:176:9: macro definition=__INT32_C_SUFFIX__ <US>c:macro@__INT32_C_SUFFIX__<UE> <DS>__INT32_C_SUFFIX__<DE> Extent=<ES>176:9 - 176:29<EE>
-<L><invalid loc>:177:9: macro definition=__UINT32_C_SUFFIX__ <US>c:macro@__UINT32_C_SUFFIX__<UE> <DS>__UINT32_C_SUFFIX__<DE> Extent=<ES>177:9 - 177:31<EE>
-<L><invalid loc>:178:9: macro definition=__INT_LEAST32_SIZE_PREFIX__ <US>c:macro@__INT_LEAST32_SIZE_PREFIX__<UE> <DS>__INT_LEAST32_SIZE_PREFIX__<DE> Extent=<ES>178:9 - 178:40<EE>
-<L><invalid loc>:179:9: macro definition=__INT_FAST8_T_TYPE__ <US>c:macro@__INT_FAST8_T_TYPE__<UE> <DS>__INT_FAST8_T_TYPE__<DE> Extent=<ES>179:9 - 179:41<EE>
-<L><invalid loc>:180:9: macro definition=__INT_FAST8_T_MAX__ <US>c:macro@__INT_FAST8_T_MAX__<UE> <DS>__INT_FAST8_T_MAX__<DE> Extent=<ES>180:9 - 180:32<EE>
-<L><invalid loc>:181:9: macro definition=__INT_FAST8_T_MIN__ <US>c:macro@__INT_FAST8_T_MIN__<UE> <DS>__INT_FAST8_T_MIN__<DE> Extent=<ES>181:9 - 181:53<EE>
-<L><invalid loc>:182:9: macro definition=__UINT_FAST8_T_TYPE__ <US>c:macro@__UINT_FAST8_T_TYPE__<UE> <DS>__UINT_FAST8_T_TYPE__<DE> Extent=<ES>182:9 - 182:44<EE>
-<L><invalid loc>:183:9: macro definition=__UINT_FAST8_T_MAX__ <US>c:macro@__UINT_FAST8_T_MAX__<UE> <DS>__UINT_FAST8_T_MAX__<DE> Extent=<ES>183:9 - 183:34<EE>
-<L><invalid loc>:184:9: macro definition=__INT_FAST8_SIZE_PREFIX__ <US>c:macro@__INT_FAST8_SIZE_PREFIX__<UE> <DS>__INT_FAST8_SIZE_PREFIX__<DE> Extent=<ES>184:9 - 184:39<EE>
-<L><invalid loc>:185:9: macro definition=__INT_FAST16_T_TYPE__ <US>c:macro@__INT_FAST16_T_TYPE__<UE> <DS>__INT_FAST16_T_TYPE__<DE> Extent=<ES>185:9 - 185:41<EE>
-<L><invalid loc>:186:9: macro definition=__INT_FAST16_T_MAX__ <US>c:macro@__INT_FAST16_T_MAX__<UE> <DS>__INT_FAST16_T_MAX__<DE> Extent=<ES>186:9 - 186:35<EE>
-<L><invalid loc>:187:9: macro definition=__INT_FAST16_T_MIN__ <US>c:macro@__INT_FAST16_T_MIN__<UE> <DS>__INT_FAST16_T_MIN__<DE> Extent=<ES>187:9 - 187:55<EE>
-<L><invalid loc>:188:9: macro definition=__UINT_FAST16_T_TYPE__ <US>c:macro@__UINT_FAST16_T_TYPE__<UE> <DS>__UINT_FAST16_T_TYPE__<DE> Extent=<ES>188:9 - 188:44<EE>
-<L><invalid loc>:189:9: macro definition=__UINT_FAST16_T_MAX__ <US>c:macro@__UINT_FAST16_T_MAX__<UE> <DS>__UINT_FAST16_T_MAX__<DE> Extent=<ES>189:9 - 189:38<EE>
-<L><invalid loc>:190:9: macro definition=__INT_FAST16_SIZE_PREFIX__ <US>c:macro@__INT_FAST16_SIZE_PREFIX__<UE> <DS>__INT_FAST16_SIZE_PREFIX__<DE> Extent=<ES>190:9 - 190:38<EE>
-<L><invalid loc>:191:9: macro definition=__INT_FAST32_T_TYPE__ <US>c:macro@__INT_FAST32_T_TYPE__<UE> <DS>__INT_FAST32_T_TYPE__<DE> Extent=<ES>191:9 - 191:46<EE>
-<L><invalid loc>:192:9: macro definition=__INT_FAST32_T_MAX__ <US>c:macro@__INT_FAST32_T_MAX__<UE> <DS>__INT_FAST32_T_MAX__<DE> Extent=<ES>192:9 - 192:41<EE>
-<L><invalid loc>:193:9: macro definition=__INT_FAST32_T_MIN__ <US>c:macro@__INT_FAST32_T_MIN__<UE> <DS>__INT_FAST32_T_MIN__<DE> Extent=<ES>193:9 - 193:55<EE>
-<L><invalid loc>:194:9: macro definition=__UINT_FAST32_T_TYPE__ <US>c:macro@__UINT_FAST32_T_TYPE__<UE> <DS>__UINT_FAST32_T_TYPE__<DE> Extent=<ES>194:9 - 194:49<EE>
-<L><invalid loc>:195:9: macro definition=__UINT_FAST32_T_MAX__ <US>c:macro@__UINT_FAST32_T_MAX__<UE> <DS>__UINT_FAST32_T_MAX__<DE> Extent=<ES>195:9 - 195:43<EE>
-<L><invalid loc>:196:9: macro definition=__INT_FAST32_SIZE_PREFIX__ <US>c:macro@__INT_FAST32_SIZE_PREFIX__<UE> <DS>__INT_FAST32_SIZE_PREFIX__<DE> Extent=<ES>196:9 - 196:39<EE>
-<L><invalid loc>:197:9: macro definition=__INTMAX_T_TYPE__ <US>c:macro@__INTMAX_T_TYPE__<UE> <DS>__INTMAX_T_TYPE__<DE> Extent=<ES>197:9 - 197:42<EE>
-<L><invalid loc>:198:9: macro definition=__INTMAX_T_MAX__ <US>c:macro@__INTMAX_T_MAX__<UE> <DS>__INTMAX_T_MAX__<DE> Extent=<ES>198:9 - 198:37<EE>
-<L><invalid loc>:199:9: macro definition=__INTMAX_T_MIN__ <US>c:macro@__INTMAX_T_MIN__<UE> <DS>__INTMAX_T_MIN__<DE> Extent=<ES>199:9 - 199:47<EE>
-<L><invalid loc>:200:9: macro definition=__UINTMAX_T_TYPE__ <US>c:macro@__UINTMAX_T_TYPE__<UE> <DS>__UINTMAX_T_TYPE__<DE> Extent=<ES>200:9 - 200:45<EE>
-<L><invalid loc>:201:9: macro definition=__UINTMAX_T_MAX__ <US>c:macro@__UINTMAX_T_MAX__<UE> <DS>__UINTMAX_T_MAX__<DE> Extent=<ES>201:9 - 201:39<EE>
-<L><invalid loc>:202:9: macro definition=__INTMAX_C_SUFFIX__ <US>c:macro@__INTMAX_C_SUFFIX__<UE> <DS>__INTMAX_C_SUFFIX__<DE> Extent=<ES>202:9 - 202:30<EE>
-<L><invalid loc>:203:9: macro definition=__UINTMAX_C_SUFFIX__ <US>c:macro@__UINTMAX_C_SUFFIX__<UE> <DS>__UINTMAX_C_SUFFIX__<DE> Extent=<ES>203:9 - 203:32<EE>
-<L><invalid loc>:204:9: macro definition=__INTMAX_SIZE_PREFIX__ <US>c:macro@__INTMAX_SIZE_PREFIX__<UE> <DS>__INTMAX_SIZE_PREFIX__<DE> Extent=<ES>204:9 - 204:35<EE>
-<L><invalid loc>:205:9: macro definition=__FLOAT_SIZE__ <US>c:macro@__FLOAT_SIZE__<UE> <DS>__FLOAT_SIZE__<DE> Extent=<ES>205:9 - 205:25<EE>
-<L><invalid loc>:206:9: macro definition=__FLOAT_ALIGN__ <US>c:macro@__FLOAT_ALIGN__<UE> <DS>__FLOAT_ALIGN__<DE> Extent=<ES>206:9 - 206:26<EE>
-<L><invalid loc>:207:9: macro definition=__DOUBLE_SIZE__ <US>c:macro@__DOUBLE_SIZE__<UE> <DS>__DOUBLE_SIZE__<DE> Extent=<ES>207:9 - 207:26<EE>
-<L><invalid loc>:208:9: macro definition=__DOUBLE_ALIGN__ <US>c:macro@__DOUBLE_ALIGN__<UE> <DS>__DOUBLE_ALIGN__<DE> Extent=<ES>208:9 - 208:27<EE>
-<L><invalid loc>:209:9: macro definition=__LONG_DOUBLE_SIZE__ <US>c:macro@__LONG_DOUBLE_SIZE__<UE> <DS>__LONG_DOUBLE_SIZE__<DE> Extent=<ES>209:9 - 209:31<EE>
-<L><invalid loc>:210:9: macro definition=__LONG_DOUBLE_ALIGN__ <US>c:macro@__LONG_DOUBLE_ALIGN__<UE> <DS>__LONG_DOUBLE_ALIGN__<DE> Extent=<ES>210:9 - 210:32<EE>
-<L><invalid loc>:211:9: macro definition=__NAN_HAS_HIGH_MANTISSA_BIT_SET__ <US>c:macro@__NAN_HAS_HIGH_MANTISSA_BIT_SET__<UE> <DS>__NAN_HAS_HIGH_MANTISSA_BIT_SET__<DE> Extent=<ES>211:9 - 211:44<EE>
-<L><invalid loc>:212:9: macro definition=__SUBNORMAL_FLOATING_POINTS__ <US>c:macro@__SUBNORMAL_FLOATING_POINTS__<UE> <DS>__SUBNORMAL_FLOATING_POINTS__<DE> Extent=<ES>212:9 - 212:40<EE>
-<L><invalid loc>:213:9: macro definition=__SIZE_T_TYPE__ <US>c:macro@__SIZE_T_TYPE__<UE> <DS>__SIZE_T_TYPE__<DE> Extent=<ES>213:9 - 213:37<EE>
-<L><invalid loc>:214:9: macro definition=__SIZE_T_MAX__ <US>c:macro@__SIZE_T_MAX__<UE> <DS>__SIZE_T_MAX__<DE> Extent=<ES>214:9 - 214:31<EE>
-<L><invalid loc>:215:9: macro definition=__PTRDIFF_T_TYPE__ <US>c:macro@__PTRDIFF_T_TYPE__<UE> <DS>__PTRDIFF_T_TYPE__<DE> Extent=<ES>215:9 - 215:38<EE>
-<L><invalid loc>:216:9: macro definition=__PTRDIFF_T_MAX__ <US>c:macro@__PTRDIFF_T_MAX__<UE> <DS>__PTRDIFF_T_MAX__<DE> Extent=<ES>216:9 - 216:32<EE>
-<L><invalid loc>:217:9: macro definition=__PTRDIFF_T_MIN__ <US>c:macro@__PTRDIFF_T_MIN__<UE> <DS>__PTRDIFF_T_MIN__<DE> Extent=<ES>217:9 - 217:49<EE>
-<L><invalid loc>:218:9: macro definition=__INTPTR_T_TYPE__ <US>c:macro@__INTPTR_T_TYPE__<UE> <DS>__INTPTR_T_TYPE__<DE> Extent=<ES>218:9 - 218:42<EE>
-<L><invalid loc>:219:9: macro definition=__INTPTR_T_MAX__ <US>c:macro@__INTPTR_T_MAX__<UE> <DS>__INTPTR_T_MAX__<DE> Extent=<ES>219:9 - 219:37<EE>
-<L><invalid loc>:220:9: macro definition=__INTPTR_T_MIN__ <US>c:macro@__INTPTR_T_MIN__<UE> <DS>__INTPTR_T_MIN__<DE> Extent=<ES>220:9 - 220:47<EE>
-<L><invalid loc>:221:9: macro definition=__UINTPTR_T_TYPE__ <US>c:macro@__UINTPTR_T_TYPE__<UE> <DS>__UINTPTR_T_TYPE__<DE> Extent=<ES>221:9 - 221:45<EE>
-<L><invalid loc>:222:9: macro definition=__UINTPTR_T_MAX__ <US>c:macro@__UINTPTR_T_MAX__<UE> <DS>__UINTPTR_T_MAX__<DE> Extent=<ES>222:9 - 222:39<EE>
-<L><invalid loc>:223:9: macro definition=__INTPTR_SIZE_PREFIX__ <US>c:macro@__INTPTR_SIZE_PREFIX__<UE> <DS>__INTPTR_SIZE_PREFIX__<DE> Extent=<ES>223:9 - 223:35<EE>
-<L><invalid loc>:224:9: macro definition=__JMP_BUF_ELEMENT_TYPE__ <US>c:macro@__JMP_BUF_ELEMENT_TYPE__<UE> <DS>__JMP_BUF_ELEMENT_TYPE__<DE> Extent=<ES>224:9 - 224:45<EE>
-<L><invalid loc>:225:9: macro definition=__JMP_BUF_NUM_ELEMENTS__ <US>c:macro@__JMP_BUF_NUM_ELEMENTS__<UE> <DS>__JMP_BUF_NUM_ELEMENTS__<DE> Extent=<ES>225:9 - 225:36<EE>
-<L><invalid loc>:226:9: macro definition=__TID__ <US>c:macro@__TID__<UE> <DS>__TID__<DE> Extent=<ES>226:9 - 226:23<EE>
-<L><invalid loc>:227:9: macro definition=__VER__ <US>c:macro@__VER__<UE> <DS>__VER__<DE> Extent=<ES>227:9 - 227:20<EE>
-<L><invalid loc>:228:9: macro definition=__SUBVERSION__ <US>c:macro@__SUBVERSION__<UE> <DS>__SUBVERSION__<DE> Extent=<ES>228:9 - 228:25<EE>
-<L><invalid loc>:229:9: macro definition=__BUILD_NUMBER__ <US>c:macro@__BUILD_NUMBER__<UE> <DS>__BUILD_NUMBER__<DE> Extent=<ES>229:9 - 229:30<EE>
-<L><invalid loc>:230:9: macro definition=__IAR_SYSTEMS_ICC__ <US>c:macro@__IAR_SYSTEMS_ICC__<UE> <DS>__IAR_SYSTEMS_ICC__<DE> Extent=<ES>230:9 - 230:30<EE>
-<L><invalid loc>:231:9: macro definition=__VA_STACK_DECREASING__ <US>c:macro@__VA_STACK_DECREASING__<UE> <DS>__VA_STACK_DECREASING__<DE> Extent=<ES>231:9 - 231:34<EE>
-<L><invalid loc>:232:9: macro definition=__VA_STACK_ALIGN__ <US>c:macro@__VA_STACK_ALIGN__<UE> <DS>__VA_STACK_ALIGN__<DE> Extent=<ES>232:9 - 232:29<EE>
-<L><invalid loc>:233:9: macro definition=__VA_STACK_ALIGN_EXTRA_BEFORE__ <US>c:macro@__VA_STACK_ALIGN_EXTRA_BEFORE__<UE> <DS>__VA_STACK_ALIGN_EXTRA_BEFORE__<DE> Extent=<ES>233:9 - 233:42<EE>
-<L><invalid loc>:234:9: macro definition=__LITTLE_ENDIAN__ <US>c:macro@__LITTLE_ENDIAN__<UE> <DS>__LITTLE_ENDIAN__<DE> Extent=<ES>234:9 - 234:28<EE>
-<L><invalid loc>:235:9: macro definition=__BOOL_TYPE__ <US>c:macro@__BOOL_TYPE__<UE> <DS>__BOOL_TYPE__<DE> Extent=<ES>235:9 - 235:36<EE>
-<L><invalid loc>:236:9: macro definition=__WCHAR_T_TYPE__ <US>c:macro@__WCHAR_T_TYPE__<UE> <DS>__WCHAR_T_TYPE__<DE> Extent=<ES>236:9 - 236:44<EE>
-<L><invalid loc>:237:9: macro definition=__WCHAR_T_SIZE__ <US>c:macro@__WCHAR_T_SIZE__<UE> <DS>__WCHAR_T_SIZE__<DE> Extent=<ES>237:9 - 237:27<EE>
-<L><invalid loc>:238:9: macro definition=__WCHAR_T_MAX__ <US>c:macro@__WCHAR_T_MAX__<UE> <DS>__WCHAR_T_MAX__<DE> Extent=<ES>238:9 - 238:31<EE>
-<L><invalid loc>:239:9: macro definition=__DEF_PTR_MEM__ <US>c:macro@__DEF_PTR_MEM__<UE> <DS>__DEF_PTR_MEM__<DE> Extent=<ES>239:9 - 239:32<EE>
-<L><invalid loc>:240:9: macro definition=__DATA_MEM0__ <US>c:macro@__DATA_MEM0__<UE> <DS>__DATA_MEM0__<DE> Extent=<ES>240:9 - 240:28<EE>
-<L><invalid loc>:241:9: macro definition=__DATA_MEM0_POINTER_OK__ <US>c:macro@__DATA_MEM0_POINTER_OK__<UE> <DS>__DATA_MEM0_POINTER_OK__<DE> Extent=<ES>241:9 - 241:35<EE>
-<L><invalid loc>:242:9: macro definition=__DATA_MEM0_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM0_UNIQUE_POINTER__<UE> <DS>__DATA_MEM0_UNIQUE_POINTER__<DE> Extent=<ES>242:9 - 242:39<EE>
-<L><invalid loc>:243:9: macro definition=__DATA_MEM0_VAR_OK__ <US>c:macro@__DATA_MEM0_VAR_OK__<UE> <DS>__DATA_MEM0_VAR_OK__<DE> Extent=<ES>243:9 - 243:31<EE>
-<L><invalid loc>:244:9: macro definition=__DATA_MEM1__ <US>c:macro@__DATA_MEM1__<UE> <DS>__DATA_MEM1__<DE> Extent=<ES>244:9 - 244:28<EE>
-<L><invalid loc>:245:9: macro definition=__DATA_MEM1_POINTER_OK__ <US>c:macro@__DATA_MEM1_POINTER_OK__<UE> <DS>__DATA_MEM1_POINTER_OK__<DE> Extent=<ES>245:9 - 245:35<EE>
-<L><invalid loc>:246:9: macro definition=__DATA_MEM1_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM1_UNIQUE_POINTER__<UE> <DS>__DATA_MEM1_UNIQUE_POINTER__<DE> Extent=<ES>246:9 - 246:39<EE>
-<L><invalid loc>:247:9: macro definition=__DATA_MEM1_VAR_OK__ <US>c:macro@__DATA_MEM1_VAR_OK__<UE> <DS>__DATA_MEM1_VAR_OK__<DE> Extent=<ES>247:9 - 247:31<EE>
-<L><invalid loc>:248:9: macro definition=__DATA_MEM2__ <US>c:macro@__DATA_MEM2__<UE> <DS>__DATA_MEM2__<DE> Extent=<ES>248:9 - 248:29<EE>
-<L><invalid loc>:249:9: macro definition=__DATA_MEM2_POINTER_OK__ <US>c:macro@__DATA_MEM2_POINTER_OK__<UE> <DS>__DATA_MEM2_POINTER_OK__<DE> Extent=<ES>249:9 - 249:35<EE>
-<L><invalid loc>:250:9: macro definition=__DATA_MEM2_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM2_UNIQUE_POINTER__<UE> <DS>__DATA_MEM2_UNIQUE_POINTER__<DE> Extent=<ES>250:9 - 250:39<EE>
-<L><invalid loc>:251:9: macro definition=__DATA_MEM2_VAR_OK__ <US>c:macro@__DATA_MEM2_VAR_OK__<UE> <DS>__DATA_MEM2_VAR_OK__<DE> Extent=<ES>251:9 - 251:31<EE>
-<L><invalid loc>:252:9: macro definition=__DATA_MEM2_INDEX_TYPE__ <US>c:macro@__DATA_MEM2_INDEX_TYPE__<UE> <DS>__DATA_MEM2_INDEX_TYPE__<DE> Extent=<ES>252:9 - 252:45<EE>
-<L><invalid loc>:253:9: macro definition=__DATA_MEM2_SIZE_TYPE__ <US>c:macro@__DATA_MEM2_SIZE_TYPE__<UE> <DS>__DATA_MEM2_SIZE_TYPE__<DE> Extent=<ES>253:9 - 253:46<EE>
-<L><invalid loc>:254:9: macro definition=__DATA_MEM2_INTPTR_TYPE__ <US>c:macro@__DATA_MEM2_INTPTR_TYPE__<UE> <DS>__DATA_MEM2_INTPTR_TYPE__<DE> Extent=<ES>254:9 - 254:46<EE>
-<L><invalid loc>:255:9: macro definition=__DATA_MEM2_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM2_UINTPTR_TYPE__<UE> <DS>__DATA_MEM2_UINTPTR_TYPE__<DE> Extent=<ES>255:9 - 255:49<EE>
-<L><invalid loc>:256:9: macro definition=__DATA_MEM2_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM2_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM2_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>256:9 - 256:46<EE>
-<L><invalid loc>:257:9: macro definition=__DATA_MEM2_MAX_SIZE__ <US>c:macro@__DATA_MEM2_MAX_SIZE__<UE> <DS>__DATA_MEM2_MAX_SIZE__<DE> Extent=<ES>257:9 - 257:36<EE>
-<L><invalid loc>:258:9: macro definition=__DATA_MEM3__ <US>c:macro@__DATA_MEM3__<UE> <DS>__DATA_MEM3__<DE> Extent=<ES>258:9 - 258:30<EE>
-<L><invalid loc>:259:9: macro definition=__DATA_MEM3_POINTER_OK__ <US>c:macro@__DATA_MEM3_POINTER_OK__<UE> <DS>__DATA_MEM3_POINTER_OK__<DE> Extent=<ES>259:9 - 259:35<EE>
-<L><invalid loc>:260:9: macro definition=__DATA_MEM3_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM3_UNIQUE_POINTER__<UE> <DS>__DATA_MEM3_UNIQUE_POINTER__<DE> Extent=<ES>260:9 - 260:39<EE>
-<L><invalid loc>:261:9: macro definition=__DATA_MEM3_VAR_OK__ <US>c:macro@__DATA_MEM3_VAR_OK__<UE> <DS>__DATA_MEM3_VAR_OK__<DE> Extent=<ES>261:9 - 261:31<EE>
-<L><invalid loc>:262:9: macro definition=__DATA_MEM3_INDEX_TYPE__ <US>c:macro@__DATA_MEM3_INDEX_TYPE__<UE> <DS>__DATA_MEM3_INDEX_TYPE__<DE> Extent=<ES>262:9 - 262:45<EE>
-<L><invalid loc>:263:9: macro definition=__DATA_MEM3_SIZE_TYPE__ <US>c:macro@__DATA_MEM3_SIZE_TYPE__<UE> <DS>__DATA_MEM3_SIZE_TYPE__<DE> Extent=<ES>263:9 - 263:46<EE>
-<L><invalid loc>:264:9: macro definition=__DATA_MEM3_INTPTR_TYPE__ <US>c:macro@__DATA_MEM3_INTPTR_TYPE__<UE> <DS>__DATA_MEM3_INTPTR_TYPE__<DE> Extent=<ES>264:9 - 264:46<EE>
-<L><invalid loc>:265:9: macro definition=__DATA_MEM3_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM3_UINTPTR_TYPE__<UE> <DS>__DATA_MEM3_UINTPTR_TYPE__<DE> Extent=<ES>265:9 - 265:49<EE>
-<L><invalid loc>:266:9: macro definition=__DATA_MEM3_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM3_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM3_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>266:9 - 266:46<EE>
-<L><invalid loc>:267:9: macro definition=__DATA_MEM3_MAX_SIZE__ <US>c:macro@__DATA_MEM3_MAX_SIZE__<UE> <DS>__DATA_MEM3_MAX_SIZE__<DE> Extent=<ES>267:9 - 267:36<EE>
-<L><invalid loc>:268:9: macro definition=__DATA_MEM4__ <US>c:macro@__DATA_MEM4__<UE> <DS>__DATA_MEM4__<DE> Extent=<ES>268:9 - 268:30<EE>
-<L><invalid loc>:269:9: macro definition=__DATA_MEM4_POINTER_OK__ <US>c:macro@__DATA_MEM4_POINTER_OK__<UE> <DS>__DATA_MEM4_POINTER_OK__<DE> Extent=<ES>269:9 - 269:35<EE>
-<L><invalid loc>:270:9: macro definition=__DATA_MEM4_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM4_UNIQUE_POINTER__<UE> <DS>__DATA_MEM4_UNIQUE_POINTER__<DE> Extent=<ES>270:9 - 270:39<EE>
-<L><invalid loc>:271:9: macro definition=__DATA_MEM4_VAR_OK__ <US>c:macro@__DATA_MEM4_VAR_OK__<UE> <DS>__DATA_MEM4_VAR_OK__<DE> Extent=<ES>271:9 - 271:31<EE>
-<L><invalid loc>:272:9: macro definition=__DATA_MEM4_INDEX_TYPE__ <US>c:macro@__DATA_MEM4_INDEX_TYPE__<UE> <DS>__DATA_MEM4_INDEX_TYPE__<DE> Extent=<ES>272:9 - 272:45<EE>
-<L><invalid loc>:273:9: macro definition=__DATA_MEM4_SIZE_TYPE__ <US>c:macro@__DATA_MEM4_SIZE_TYPE__<UE> <DS>__DATA_MEM4_SIZE_TYPE__<DE> Extent=<ES>273:9 - 273:46<EE>
-<L><invalid loc>:274:9: macro definition=__DATA_MEM4_INTPTR_TYPE__ <US>c:macro@__DATA_MEM4_INTPTR_TYPE__<UE> <DS>__DATA_MEM4_INTPTR_TYPE__<DE> Extent=<ES>274:9 - 274:46<EE>
-<L><invalid loc>:275:9: macro definition=__DATA_MEM4_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM4_UINTPTR_TYPE__<UE> <DS>__DATA_MEM4_UINTPTR_TYPE__<DE> Extent=<ES>275:9 - 275:49<EE>
-<L><invalid loc>:276:9: macro definition=__DATA_MEM4_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM4_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM4_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>276:9 - 276:46<EE>
-<L><invalid loc>:277:9: macro definition=__DATA_MEM4_MAX_SIZE__ <US>c:macro@__DATA_MEM4_MAX_SIZE__<UE> <DS>__DATA_MEM4_MAX_SIZE__<DE> Extent=<ES>277:9 - 277:36<EE>
-<L><invalid loc>:278:9: macro definition=__DATA_MEM5__ <US>c:macro@__DATA_MEM5__<UE> <DS>__DATA_MEM5__<DE> Extent=<ES>278:9 - 278:30<EE>
-<L><invalid loc>:279:9: macro definition=__DATA_MEM5_POINTER_OK__ <US>c:macro@__DATA_MEM5_POINTER_OK__<UE> <DS>__DATA_MEM5_POINTER_OK__<DE> Extent=<ES>279:9 - 279:35<EE>
-<L><invalid loc>:280:9: macro definition=__DATA_MEM5_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM5_UNIQUE_POINTER__<UE> <DS>__DATA_MEM5_UNIQUE_POINTER__<DE> Extent=<ES>280:9 - 280:39<EE>
-<L><invalid loc>:281:9: macro definition=__DATA_MEM5_VAR_OK__ <US>c:macro@__DATA_MEM5_VAR_OK__<UE> <DS>__DATA_MEM5_VAR_OK__<DE> Extent=<ES>281:9 - 281:31<EE>
-<L><invalid loc>:282:9: macro definition=__DATA_MEM5_INDEX_TYPE__ <US>c:macro@__DATA_MEM5_INDEX_TYPE__<UE> <DS>__DATA_MEM5_INDEX_TYPE__<DE> Extent=<ES>282:9 - 282:45<EE>
-<L><invalid loc>:283:9: macro definition=__DATA_MEM5_SIZE_TYPE__ <US>c:macro@__DATA_MEM5_SIZE_TYPE__<UE> <DS>__DATA_MEM5_SIZE_TYPE__<DE> Extent=<ES>283:9 - 283:46<EE>
-<L><invalid loc>:284:9: macro definition=__DATA_MEM5_INTPTR_TYPE__ <US>c:macro@__DATA_MEM5_INTPTR_TYPE__<UE> <DS>__DATA_MEM5_INTPTR_TYPE__<DE> Extent=<ES>284:9 - 284:46<EE>
-<L><invalid loc>:285:9: macro definition=__DATA_MEM5_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM5_UINTPTR_TYPE__<UE> <DS>__DATA_MEM5_UINTPTR_TYPE__<DE> Extent=<ES>285:9 - 285:49<EE>
-<L><invalid loc>:286:9: macro definition=__DATA_MEM5_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM5_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM5_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>286:9 - 286:46<EE>
-<L><invalid loc>:287:9: macro definition=__DATA_MEM5_MAX_SIZE__ <US>c:macro@__DATA_MEM5_MAX_SIZE__<UE> <DS>__DATA_MEM5_MAX_SIZE__<DE> Extent=<ES>287:9 - 287:36<EE>
-<L><invalid loc>:288:9: macro definition=__DATA_MEM6__ <US>c:macro@__DATA_MEM6__<UE> <DS>__DATA_MEM6__<DE> Extent=<ES>288:9 - 288:30<EE>
-<L><invalid loc>:289:9: macro definition=__DATA_MEM6_POINTER_OK__ <US>c:macro@__DATA_MEM6_POINTER_OK__<UE> <DS>__DATA_MEM6_POINTER_OK__<DE> Extent=<ES>289:9 - 289:35<EE>
-<L><invalid loc>:290:9: macro definition=__DATA_MEM6_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM6_UNIQUE_POINTER__<UE> <DS>__DATA_MEM6_UNIQUE_POINTER__<DE> Extent=<ES>290:9 - 290:39<EE>
-<L><invalid loc>:291:9: macro definition=__DATA_MEM6_VAR_OK__ <US>c:macro@__DATA_MEM6_VAR_OK__<UE> <DS>__DATA_MEM6_VAR_OK__<DE> Extent=<ES>291:9 - 291:31<EE>
-<L><invalid loc>:292:9: macro definition=__DATA_MEM6_INDEX_TYPE__ <US>c:macro@__DATA_MEM6_INDEX_TYPE__<UE> <DS>__DATA_MEM6_INDEX_TYPE__<DE> Extent=<ES>292:9 - 292:37<EE>
-<L><invalid loc>:293:9: macro definition=__DATA_MEM6_SIZE_TYPE__ <US>c:macro@__DATA_MEM6_SIZE_TYPE__<UE> <DS>__DATA_MEM6_SIZE_TYPE__<DE> Extent=<ES>293:9 - 293:45<EE>
-<L><invalid loc>:294:9: macro definition=__DATA_MEM6_INTPTR_TYPE__ <US>c:macro@__DATA_MEM6_INTPTR_TYPE__<UE> <DS>__DATA_MEM6_INTPTR_TYPE__<DE> Extent=<ES>294:9 - 294:44<EE>
-<L><invalid loc>:295:9: macro definition=__DATA_MEM6_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM6_UINTPTR_TYPE__<UE> <DS>__DATA_MEM6_UINTPTR_TYPE__<DE> Extent=<ES>295:9 - 295:54<EE>
-<L><invalid loc>:296:9: macro definition=__DATA_MEM6_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM6_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM6_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>296:9 - 296:45<EE>
-<L><invalid loc>:297:9: macro definition=__DATA_MEM6_MAX_SIZE__ <US>c:macro@__DATA_MEM6_MAX_SIZE__<UE> <DS>__DATA_MEM6_MAX_SIZE__<DE> Extent=<ES>297:9 - 297:38<EE>
-<L><invalid loc>:298:9: macro definition=__DATA_MEM6_HEAP_SEGMENT__ <US>c:macro@__DATA_MEM6_HEAP_SEGMENT__<UE> <DS>__DATA_MEM6_HEAP_SEGMENT__<DE> Extent=<ES>298:9 - 298:48<EE>
-<L><invalid loc>:299:9: macro definition=__DATA_MEM6_PAGE_SIZE__ <US>c:macro@__DATA_MEM6_PAGE_SIZE__<UE> <DS>__DATA_MEM6_PAGE_SIZE__<DE> Extent=<ES>299:9 - 299:34<EE>
-<L><invalid loc>:300:9: macro definition=__DATA_MEM6_HEAP__ <US>c:macro@__DATA_MEM6_HEAP__<UE> <DS>__DATA_MEM6_HEAP__<DE> Extent=<ES>300:9 - 300:29<EE>
-<L><invalid loc>:301:9: macro definition=__DATA_MEM7__ <US>c:macro@__DATA_MEM7__<UE> <DS>__DATA_MEM7__<DE> Extent=<ES>301:9 - 301:31<EE>
-<L><invalid loc>:302:9: macro definition=__DATA_MEM7_POINTER_OK__ <US>c:macro@__DATA_MEM7_POINTER_OK__<UE> <DS>__DATA_MEM7_POINTER_OK__<DE> Extent=<ES>302:9 - 302:35<EE>
-<L><invalid loc>:303:9: macro definition=__DATA_MEM7_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM7_UNIQUE_POINTER__<UE> <DS>__DATA_MEM7_UNIQUE_POINTER__<DE> Extent=<ES>303:9 - 303:39<EE>
-<L><invalid loc>:304:9: macro definition=__DATA_MEM7_VAR_OK__ <US>c:macro@__DATA_MEM7_VAR_OK__<UE> <DS>__DATA_MEM7_VAR_OK__<DE> Extent=<ES>304:9 - 304:31<EE>
-<L><invalid loc>:305:9: macro definition=__DATA_MEM7_INDEX_TYPE__ <US>c:macro@__DATA_MEM7_INDEX_TYPE__<UE> <DS>__DATA_MEM7_INDEX_TYPE__<DE> Extent=<ES>305:9 - 305:37<EE>
-<L><invalid loc>:306:9: macro definition=__DATA_MEM7_SIZE_TYPE__ <US>c:macro@__DATA_MEM7_SIZE_TYPE__<UE> <DS>__DATA_MEM7_SIZE_TYPE__<DE> Extent=<ES>306:9 - 306:45<EE>
-<L><invalid loc>:307:9: macro definition=__DATA_MEM7_INTPTR_TYPE__ <US>c:macro@__DATA_MEM7_INTPTR_TYPE__<UE> <DS>__DATA_MEM7_INTPTR_TYPE__<DE> Extent=<ES>307:9 - 307:44<EE>
-<L><invalid loc>:308:9: macro definition=__DATA_MEM7_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM7_UINTPTR_TYPE__<UE> <DS>__DATA_MEM7_UINTPTR_TYPE__<DE> Extent=<ES>308:9 - 308:54<EE>
-<L><invalid loc>:309:9: macro definition=__DATA_MEM7_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM7_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM7_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>309:9 - 309:45<EE>
-<L><invalid loc>:310:9: macro definition=__DATA_MEM7_MAX_SIZE__ <US>c:macro@__DATA_MEM7_MAX_SIZE__<UE> <DS>__DATA_MEM7_MAX_SIZE__<DE> Extent=<ES>310:9 - 310:38<EE>
-<L><invalid loc>:311:9: macro definition=__DATA_MEM8__ <US>c:macro@__DATA_MEM8__<UE> <DS>__DATA_MEM8__<DE> Extent=<ES>311:9 - 311:34<EE>
-<L><invalid loc>:312:9: macro definition=__DATA_MEM8_POINTER_OK__ <US>c:macro@__DATA_MEM8_POINTER_OK__<UE> <DS>__DATA_MEM8_POINTER_OK__<DE> Extent=<ES>312:9 - 312:35<EE>
-<L><invalid loc>:313:9: macro definition=__DATA_MEM8_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM8_UNIQUE_POINTER__<UE> <DS>__DATA_MEM8_UNIQUE_POINTER__<DE> Extent=<ES>313:9 - 313:39<EE>
-<L><invalid loc>:314:9: macro definition=__DATA_MEM8_VAR_OK__ <US>c:macro@__DATA_MEM8_VAR_OK__<UE> <DS>__DATA_MEM8_VAR_OK__<DE> Extent=<ES>314:9 - 314:31<EE>
-<L><invalid loc>:315:9: macro definition=__DATA_MEM8_INDEX_TYPE__ <US>c:macro@__DATA_MEM8_INDEX_TYPE__<UE> <DS>__DATA_MEM8_INDEX_TYPE__<DE> Extent=<ES>315:9 - 315:37<EE>
-<L><invalid loc>:316:9: macro definition=__DATA_MEM8_SIZE_TYPE__ <US>c:macro@__DATA_MEM8_SIZE_TYPE__<UE> <DS>__DATA_MEM8_SIZE_TYPE__<DE> Extent=<ES>316:9 - 316:45<EE>
-<L><invalid loc>:317:9: macro definition=__DATA_MEM8_INTPTR_TYPE__ <US>c:macro@__DATA_MEM8_INTPTR_TYPE__<UE> <DS>__DATA_MEM8_INTPTR_TYPE__<DE> Extent=<ES>317:9 - 317:44<EE>
-<L><invalid loc>:318:9: macro definition=__DATA_MEM8_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM8_UINTPTR_TYPE__<UE> <DS>__DATA_MEM8_UINTPTR_TYPE__<DE> Extent=<ES>318:9 - 318:54<EE>
-<L><invalid loc>:319:9: macro definition=__DATA_MEM8_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM8_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM8_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>319:9 - 319:45<EE>
-<L><invalid loc>:320:9: macro definition=__DATA_MEM8_MAX_SIZE__ <US>c:macro@__DATA_MEM8_MAX_SIZE__<UE> <DS>__DATA_MEM8_MAX_SIZE__<DE> Extent=<ES>320:9 - 320:38<EE>
-<L><invalid loc>:321:9: macro definition=__DATA_MEM9__ <US>c:macro@__DATA_MEM9__<UE> <DS>__DATA_MEM9__<DE> Extent=<ES>321:9 - 321:32<EE>
-<L><invalid loc>:322:9: macro definition=__DATA_MEM9_POINTER_OK__ <US>c:macro@__DATA_MEM9_POINTER_OK__<UE> <DS>__DATA_MEM9_POINTER_OK__<DE> Extent=<ES>322:9 - 322:35<EE>
-<L><invalid loc>:323:9: macro definition=__DATA_MEM9_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM9_UNIQUE_POINTER__<UE> <DS>__DATA_MEM9_UNIQUE_POINTER__<DE> Extent=<ES>323:9 - 323:39<EE>
-<L><invalid loc>:324:9: macro definition=__DATA_MEM9_VAR_OK__ <US>c:macro@__DATA_MEM9_VAR_OK__<UE> <DS>__DATA_MEM9_VAR_OK__<DE> Extent=<ES>324:9 - 324:31<EE>
-<L><invalid loc>:325:9: macro definition=__DATA_MEM9_INDEX_TYPE__ <US>c:macro@__DATA_MEM9_INDEX_TYPE__<UE> <DS>__DATA_MEM9_INDEX_TYPE__<DE> Extent=<ES>325:9 - 325:37<EE>
-<L><invalid loc>:326:9: macro definition=__DATA_MEM9_SIZE_TYPE__ <US>c:macro@__DATA_MEM9_SIZE_TYPE__<UE> <DS>__DATA_MEM9_SIZE_TYPE__<DE> Extent=<ES>326:9 - 326:45<EE>
-<L><invalid loc>:327:9: macro definition=__DATA_MEM9_INTPTR_TYPE__ <US>c:macro@__DATA_MEM9_INTPTR_TYPE__<UE> <DS>__DATA_MEM9_INTPTR_TYPE__<DE> Extent=<ES>327:9 - 327:43<EE>
-<L><invalid loc>:328:9: macro definition=__DATA_MEM9_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM9_UINTPTR_TYPE__<UE> <DS>__DATA_MEM9_UINTPTR_TYPE__<DE> Extent=<ES>328:9 - 328:53<EE>
-<L><invalid loc>:329:9: macro definition=__DATA_MEM9_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM9_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM9_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>329:9 - 329:45<EE>
-<L><invalid loc>:330:9: macro definition=__DATA_MEM9_MAX_SIZE__ <US>c:macro@__DATA_MEM9_MAX_SIZE__<UE> <DS>__DATA_MEM9_MAX_SIZE__<DE> Extent=<ES>330:9 - 330:38<EE>
-<L><invalid loc>:331:9: macro definition=__DATA_MEM9_HEAP_SEGMENT__ <US>c:macro@__DATA_MEM9_HEAP_SEGMENT__<UE> <DS>__DATA_MEM9_HEAP_SEGMENT__<DE> Extent=<ES>331:9 - 331:48<EE>
-<L><invalid loc>:332:9: macro definition=__DATA_MEM9_PAGE_SIZE__ <US>c:macro@__DATA_MEM9_PAGE_SIZE__<UE> <DS>__DATA_MEM9_PAGE_SIZE__<DE> Extent=<ES>332:9 - 332:39<EE>
-<L><invalid loc>:333:9: macro definition=__DATA_MEM9_HEAP__ <US>c:macro@__DATA_MEM9_HEAP__<UE> <DS>__DATA_MEM9_HEAP__<DE> Extent=<ES>333:9 - 333:29<EE>
-<L><invalid loc>:334:9: macro definition=__DATA_MEM10__ <US>c:macro@__DATA_MEM10__<UE> <DS>__DATA_MEM10__<DE> Extent=<ES>334:9 - 334:30<EE>
-<L><invalid loc>:335:9: macro definition=__DATA_MEM10_POINTER_OK__ <US>c:macro@__DATA_MEM10_POINTER_OK__<UE> <DS>__DATA_MEM10_POINTER_OK__<DE> Extent=<ES>335:9 - 335:36<EE>
-<L><invalid loc>:336:9: macro definition=__DATA_MEM10_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM10_UNIQUE_POINTER__<UE> <DS>__DATA_MEM10_UNIQUE_POINTER__<DE> Extent=<ES>336:9 - 336:40<EE>
-<L><invalid loc>:337:9: macro definition=__DATA_MEM10_VAR_OK__ <US>c:macro@__DATA_MEM10_VAR_OK__<UE> <DS>__DATA_MEM10_VAR_OK__<DE> Extent=<ES>337:9 - 337:32<EE>
-<L><invalid loc>:338:9: macro definition=__DATA_MEM10_INDEX_TYPE__ <US>c:macro@__DATA_MEM10_INDEX_TYPE__<UE> <DS>__DATA_MEM10_INDEX_TYPE__<DE> Extent=<ES>338:9 - 338:38<EE>
-<L><invalid loc>:339:9: macro definition=__DATA_MEM10_SIZE_TYPE__ <US>c:macro@__DATA_MEM10_SIZE_TYPE__<UE> <DS>__DATA_MEM10_SIZE_TYPE__<DE> Extent=<ES>339:9 - 339:46<EE>
-<L><invalid loc>:340:9: macro definition=__DATA_MEM10_INTPTR_TYPE__ <US>c:macro@__DATA_MEM10_INTPTR_TYPE__<UE> <DS>__DATA_MEM10_INTPTR_TYPE__<DE> Extent=<ES>340:9 - 340:45<EE>
-<L><invalid loc>:341:9: macro definition=__DATA_MEM10_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM10_UINTPTR_TYPE__<UE> <DS>__DATA_MEM10_UINTPTR_TYPE__<DE> Extent=<ES>341:9 - 341:55<EE>
-<L><invalid loc>:342:9: macro definition=__DATA_MEM10_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM10_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM10_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>342:9 - 342:46<EE>
-<L><invalid loc>:343:9: macro definition=__DATA_MEM10_MAX_SIZE__ <US>c:macro@__DATA_MEM10_MAX_SIZE__<UE> <DS>__DATA_MEM10_MAX_SIZE__<DE> Extent=<ES>343:9 - 343:39<EE>
-<L><invalid loc>:344:9: macro definition=__CODE_MEM0__ <US>c:macro@__CODE_MEM0__<UE> <DS>__CODE_MEM0__<DE> Extent=<ES>344:9 - 344:34<EE>
-<L><invalid loc>:345:9: macro definition=__CODE_MEM0_POINTER_OK__ <US>c:macro@__CODE_MEM0_POINTER_OK__<UE> <DS>__CODE_MEM0_POINTER_OK__<DE> Extent=<ES>345:9 - 345:35<EE>
-<L><invalid loc>:346:9: macro definition=__CODE_MEM0_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM0_UNIQUE_POINTER__<UE> <DS>__CODE_MEM0_UNIQUE_POINTER__<DE> Extent=<ES>346:9 - 346:39<EE>
-<L><invalid loc>:347:9: macro definition=__CODE_MEM0_VAR_OK__ <US>c:macro@__CODE_MEM0_VAR_OK__<UE> <DS>__CODE_MEM0_VAR_OK__<DE> Extent=<ES>347:9 - 347:31<EE>
-<L><invalid loc>:348:9: macro definition=__CODE_MEM1__ <US>c:macro@__CODE_MEM1__<UE> <DS>__CODE_MEM1__<DE> Extent=<ES>348:9 - 348:42<EE>
-<L><invalid loc>:349:9: macro definition=__CODE_MEM1_POINTER_OK__ <US>c:macro@__CODE_MEM1_POINTER_OK__<UE> <DS>__CODE_MEM1_POINTER_OK__<DE> Extent=<ES>349:9 - 349:35<EE>
-<L><invalid loc>:350:9: macro definition=__CODE_MEM1_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM1_UNIQUE_POINTER__<UE> <DS>__CODE_MEM1_UNIQUE_POINTER__<DE> Extent=<ES>350:9 - 350:39<EE>
-<L><invalid loc>:351:9: macro definition=__CODE_MEM1_VAR_OK__ <US>c:macro@__CODE_MEM1_VAR_OK__<UE> <DS>__CODE_MEM1_VAR_OK__<DE> Extent=<ES>351:9 - 351:31<EE>
-<L><invalid loc>:352:9: macro definition=__CODE_MEM2__ <US>c:macro@__CODE_MEM2__<UE> <DS>__CODE_MEM2__<DE> Extent=<ES>352:9 - 352:42<EE>
-<L><invalid loc>:353:9: macro definition=__CODE_MEM2_POINTER_OK__ <US>c:macro@__CODE_MEM2_POINTER_OK__<UE> <DS>__CODE_MEM2_POINTER_OK__<DE> Extent=<ES>353:9 - 353:35<EE>
-<L><invalid loc>:354:9: macro definition=__CODE_MEM2_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM2_UNIQUE_POINTER__<UE> <DS>__CODE_MEM2_UNIQUE_POINTER__<DE> Extent=<ES>354:9 - 354:39<EE>
-<L><invalid loc>:355:9: macro definition=__CODE_MEM2_VAR_OK__ <US>c:macro@__CODE_MEM2_VAR_OK__<UE> <DS>__CODE_MEM2_VAR_OK__<DE> Extent=<ES>355:9 - 355:31<EE>
-<L><invalid loc>:356:9: macro definition=__CODE_MEM3__ <US>c:macro@__CODE_MEM3__<UE> <DS>__CODE_MEM3__<DE> Extent=<ES>356:9 - 356:34<EE>
-<L><invalid loc>:357:9: macro definition=__CODE_MEM3_POINTER_OK__ <US>c:macro@__CODE_MEM3_POINTER_OK__<UE> <DS>__CODE_MEM3_POINTER_OK__<DE> Extent=<ES>357:9 - 357:35<EE>
-<L><invalid loc>:358:9: macro definition=__CODE_MEM3_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM3_UNIQUE_POINTER__<UE> <DS>__CODE_MEM3_UNIQUE_POINTER__<DE> Extent=<ES>358:9 - 358:39<EE>
-<L><invalid loc>:359:9: macro definition=__CODE_MEM3_VAR_OK__ <US>c:macro@__CODE_MEM3_VAR_OK__<UE> <DS>__CODE_MEM3_VAR_OK__<DE> Extent=<ES>359:9 - 359:31<EE>
-<L><invalid loc>:360:9: macro definition=__CODE_MEM4__ <US>c:macro@__CODE_MEM4__<UE> <DS>__CODE_MEM4__<DE> Extent=<ES>360:9 - 360:36<EE>
-<L><invalid loc>:361:9: macro definition=__CODE_MEM4_POINTER_OK__ <US>c:macro@__CODE_MEM4_POINTER_OK__<UE> <DS>__CODE_MEM4_POINTER_OK__<DE> Extent=<ES>361:9 - 361:35<EE>
-<L><invalid loc>:362:9: macro definition=__CODE_MEM4_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM4_UNIQUE_POINTER__<UE> <DS>__CODE_MEM4_UNIQUE_POINTER__<DE> Extent=<ES>362:9 - 362:39<EE>
-<L><invalid loc>:363:9: macro definition=__CODE_MEM4_VAR_OK__ <US>c:macro@__CODE_MEM4_VAR_OK__<UE> <DS>__CODE_MEM4_VAR_OK__<DE> Extent=<ES>363:9 - 363:31<EE>
-<L><invalid loc>:364:9: macro definition=__HEAP_MEM0__ <US>c:macro@__HEAP_MEM0__<UE> <DS>__HEAP_MEM0__<DE> Extent=<ES>364:9 - 364:24<EE>
-<L><invalid loc>:365:9: macro definition=__HEAP_MEM1__ <US>c:macro@__HEAP_MEM1__<UE> <DS>__HEAP_MEM1__<DE> Extent=<ES>365:9 - 365:24<EE>
-<L><invalid loc>:366:9: macro definition=__MULTIPLE_HEAPS__ <US>c:macro@__MULTIPLE_HEAPS__<UE> <DS>__MULTIPLE_HEAPS__<DE> Extent=<ES>366:9 - 366:29<EE>
-<L><invalid loc>:367:9: macro definition=__DEF_HEAP_MEM__ <US>c:macro@__DEF_HEAP_MEM__<UE> <DS>__DEF_HEAP_MEM__<DE> Extent=<ES>367:9 - 367:33<EE>
-<L><invalid loc>:368:9: macro definition=__C99_BOOL__ <US>c:macro@__C99_BOOL__<UE> <DS>__C99_BOOL__<DE> Extent=<ES>368:9 - 368:23<EE>
-<L><invalid loc>:369:9: macro definition=__MULTIPLE_INHERITANCE__ <US>c:macro@__MULTIPLE_INHERITANCE__<UE> <DS>__MULTIPLE_INHERITANCE__<DE> Extent=<ES>369:9 - 369:35<EE>
-<L><invalid loc>:370:9: macro definition=_CLIB_FP_INF_NAN <US>c:macro@_CLIB_FP_INF_NAN<UE> <DS>_CLIB_FP_INF_NAN<DE> Extent=<ES>370:9 - 370:27<EE>
-<L><invalid loc>:371:9: macro definition=_DIFUNCT_MEMORY <US>c:macro@_DIFUNCT_MEMORY<UE> <DS>_DIFUNCT_MEMORY<DE> Extent=<ES>371:9 - 371:31<EE>
-<L><invalid loc>:372:9: macro definition=__CALLING_CONVENTION__ <US>c:macro@__CALLING_CONVENTION__<UE> <DS>__CALLING_CONVENTION__<DE> Extent=<ES>372:9 - 372:33<EE>
-<L><invalid loc>:373:9: macro definition=__CC_DO__ <US>c:macro@__CC_DO__<UE> <DS>__CC_DO__<DE> Extent=<ES>373:9 - 373:20<EE>
-<L><invalid loc>:374:9: macro definition=__CC_ER__ <US>c:macro@__CC_ER__<UE> <DS>__CC_ER__<DE> Extent=<ES>374:9 - 374:20<EE>
-<L><invalid loc>:375:9: macro definition=__CC_IO__ <US>c:macro@__CC_IO__<UE> <DS>__CC_IO__<DE> Extent=<ES>375:9 - 375:20<EE>
-<L><invalid loc>:376:9: macro definition=__CC_IR__ <US>c:macro@__CC_IR__<UE> <DS>__CC_IR__<DE> Extent=<ES>376:9 - 376:20<EE>
-<L><invalid loc>:377:9: macro definition=__CC_PR__ <US>c:macro@__CC_PR__<UE> <DS>__CC_PR__<DE> Extent=<ES>377:9 - 377:20<EE>
-<L><invalid loc>:378:9: macro definition=__CC_XR__ <US>c:macro@__CC_XR__<UE> <DS>__CC_XR__<DE> Extent=<ES>378:9 - 378:20<EE>
-<L><invalid loc>:379:9: macro definition=__CM_BANKED_EXT2__ <US>c:macro@__CM_BANKED_EXT2__<UE> <DS>__CM_BANKED_EXT2__<DE> Extent=<ES>379:9 - 379:29<EE>
-<L><invalid loc>:380:9: macro definition=__CM_BANKED__ <US>c:macro@__CM_BANKED__<UE> <DS>__CM_BANKED__<DE> Extent=<ES>380:9 - 380:24<EE>
-<L><invalid loc>:381:9: macro definition=__CM_FAR__ <US>c:macro@__CM_FAR__<UE> <DS>__CM_FAR__<DE> Extent=<ES>381:9 - 381:21<EE>
-<L><invalid loc>:382:9: macro definition=__CM_NEAR__ <US>c:macro@__CM_NEAR__<UE> <DS>__CM_NEAR__<DE> Extent=<ES>382:9 - 382:22<EE>
-<L><invalid loc>:383:9: macro definition=__CM_TINY__ <US>c:macro@__CM_TINY__<UE> <DS>__CM_TINY__<DE> Extent=<ES>383:9 - 383:22<EE>
-<L><invalid loc>:384:9: macro definition=__CODE_MODEL__ <US>c:macro@__CODE_MODEL__<UE> <DS>__CODE_MODEL__<DE> Extent=<ES>384:9 - 384:25<EE>
-<L><invalid loc>:385:9: macro definition=__CONSTANT_LOCATION__ <US>c:macro@__CONSTANT_LOCATION__<UE> <DS>__CONSTANT_LOCATION__<DE> Extent=<ES>385:9 - 385:32<EE>
-<L><invalid loc>:386:9: macro definition=__CORE_EXTENDED1__ <US>c:macro@__CORE_EXTENDED1__<UE> <DS>__CORE_EXTENDED1__<DE> Extent=<ES>386:9 - 386:29<EE>
-<L><invalid loc>:387:9: macro definition=__CORE_EXTENDED2__ <US>c:macro@__CORE_EXTENDED2__<UE> <DS>__CORE_EXTENDED2__<DE> Extent=<ES>387:9 - 387:29<EE>
-<L><invalid loc>:388:9: macro definition=__CORE_PLAIN__ <US>c:macro@__CORE_PLAIN__<UE> <DS>__CORE_PLAIN__<DE> Extent=<ES>388:9 - 388:25<EE>
-<L><invalid loc>:389:9: macro definition=__CORE_TINY__ <US>c:macro@__CORE_TINY__<UE> <DS>__CORE_TINY__<DE> Extent=<ES>389:9 - 389:24<EE>
-<L><invalid loc>:390:9: macro definition=__CORE__ <US>c:macro@__CORE__<UE> <DS>__CORE__<DE> Extent=<ES>390:9 - 390:19<EE>
-<L><invalid loc>:391:9: macro definition=__DATA_MODEL__ <US>c:macro@__DATA_MODEL__<UE> <DS>__DATA_MODEL__<DE> Extent=<ES>391:9 - 391:25<EE>
-<L><invalid loc>:392:9: macro definition=__DM_FAR_GENERIC__ <US>c:macro@__DM_FAR_GENERIC__<UE> <DS>__DM_FAR_GENERIC__<DE> Extent=<ES>392:9 - 392:29<EE>
-<L><invalid loc>:393:9: macro definition=__DM_FAR__ <US>c:macro@__DM_FAR__<UE> <DS>__DM_FAR__<DE> Extent=<ES>393:9 - 393:21<EE>
-<L><invalid loc>:394:9: macro definition=__DM_GENERIC__ <US>c:macro@__DM_GENERIC__<UE> <DS>__DM_GENERIC__<DE> Extent=<ES>394:9 - 394:25<EE>
-<L><invalid loc>:395:9: macro definition=__DM_LARGE__ <US>c:macro@__DM_LARGE__<UE> <DS>__DM_LARGE__<DE> Extent=<ES>395:9 - 395:23<EE>
-<L><invalid loc>:396:9: macro definition=__DM_SMALL__ <US>c:macro@__DM_SMALL__<UE> <DS>__DM_SMALL__<DE> Extent=<ES>396:9 - 396:23<EE>
-<L><invalid loc>:397:9: macro definition=__DM_TINY__ <US>c:macro@__DM_TINY__<UE> <DS>__DM_TINY__<DE> Extent=<ES>397:9 - 397:22<EE>
-<L><invalid loc>:398:9: macro definition=__ICC8051__ <US>c:macro@__ICC8051__<UE> <DS>__ICC8051__<DE> Extent=<ES>398:9 - 398:22<EE>
-<L><invalid loc>:399:9: macro definition=__NUMBER_OF_DPTRS__ <US>c:macro@__NUMBER_OF_DPTRS__<UE> <DS>__NUMBER_OF_DPTRS__<DE> Extent=<ES>399:9 - 399:30<EE>
-<L><invalid loc>:400:9: macro definition=__XOR_DPSEL_SELECT__ <US>c:macro@__XOR_DPSEL_SELECT__<UE> <DS>__XOR_DPSEL_SELECT__<DE> Extent=<ES>400:9 - 400:31<EE>
-<L><invalid loc>:401:9: macro definition=__PLAIN_INT_BITFIELD_IS_SIGNED__ <US>c:macro@__PLAIN_INT_BITFIELD_IS_SIGNED__<UE> <DS>__PLAIN_INT_BITFIELD_IS_SIGNED__<DE> Extent=<ES>401:9 - 401:43<EE>
-<L><invalid loc>:402:9: macro definition=__IAR_COMPILERBASE__ <US>c:macro@__IAR_COMPILERBASE__<UE> <DS>__IAR_COMPILERBASE__<DE> Extent=<ES>402:9 - 402:36<EE>
-<L><invalid loc>:405:9: macro definition=__STDC__ <US>c:macro@__STDC__<UE> <DS>__STDC__<DE> Extent=<ES>405:9 - 405:19<EE>
-<L><invalid loc>:406:9: macro definition=__STDC_VERSION__ <US>c:macro@__STDC_VERSION__<UE> <DS>__STDC_VERSION__<DE> Extent=<ES>406:9 - 406:33<EE>
-<L><invalid loc>:407:9: macro definition=__STDC_HOSTED__ <US>c:macro@__STDC_HOSTED__<UE> <DS>__STDC_HOSTED__<DE> Extent=<ES>407:9 - 407:26<EE>
-<L><invalid loc>:408:9: macro definition=__EDG_TYPE_TRAITS_ENABLED <US>c:macro@__EDG_TYPE_TRAITS_ENABLED<UE> <DS>__EDG_TYPE_TRAITS_ENABLED<DE> Extent=<ES>408:9 - 408:36<EE>
-<L><invalid loc>:409:9: macro definition=__EDG__ <US>c:macro@__EDG__<UE> <DS>__EDG__<DE> Extent=<ES>409:9 - 409:18<EE>
-<L><invalid loc>:410:9: macro definition=__EDG_VERSION__ <US>c:macro@__EDG_VERSION__<UE> <DS>__EDG_VERSION__<DE> Extent=<ES>410:9 - 410:28<EE>
-<L><invalid loc>:411:9: macro definition=__EDG_SIZE_TYPE__ <US>c:macro@__EDG_SIZE_TYPE__<UE> <DS>__EDG_SIZE_TYPE__<DE> Extent=<ES>411:9 - 411:39<EE>
-<L><invalid loc>:412:9: macro definition=__EDG_PTRDIFF_TYPE__ <US>c:macro@__EDG_PTRDIFF_TYPE__<UE> <DS>__EDG_PTRDIFF_TYPE__<DE> Extent=<ES>412:9 - 412:33<EE>
-<L><invalid loc>:413:9: macro definition=__EDG_JMP_BUF_ELEMENT_TYPE <US>c:macro@__EDG_JMP_BUF_ELEMENT_TYPE<UE> <DS>__EDG_JMP_BUF_ELEMENT_TYPE<DE> Extent=<ES>413:9 - 413:47<EE>
-<L><invalid loc>:414:9: macro definition=__EDG_JMP_BUF_NUM_ELEMENTS <US>c:macro@__EDG_JMP_BUF_NUM_ELEMENTS<UE> <DS>__EDG_JMP_BUF_NUM_ELEMENTS<DE> Extent=<ES>414:9 - 414:38<EE>
-<L><invalid loc>:415:9: macro definition=__EDG_DELTA_TYPE <US>c:macro@__EDG_DELTA_TYPE<UE> <DS>__EDG_DELTA_TYPE<DE> Extent=<ES>415:9 - 415:29<EE>
-<L><invalid loc>:416:9: macro definition=__EDG_VIRTUAL_FUNCTION_INDEX_TYPE <US>c:macro@__EDG_VIRTUAL_FUNCTION_INDEX_TYPE<UE> <DS>__EDG_VIRTUAL_FUNCTION_INDEX_TYPE<DE> Extent=<ES>416:9 - 416:57<EE>
-<L><invalid loc>:417:9: macro definition=__EDG_VAR_HANDLE_TYPE <US>c:macro@__EDG_VAR_HANDLE_TYPE<UE> <DS>__EDG_VAR_HANDLE_TYPE<DE> Extent=<ES>417:9 - 417:45<EE>
-<L><invalid loc>:418:9: macro definition=__EDG_REGION_NUMBER_TYPE <US>c:macro@__EDG_REGION_NUMBER_TYPE<UE> <DS>__EDG_REGION_NUMBER_TYPE<DE> Extent=<ES>418:9 - 418:48<EE>
-<L><invalid loc>:419:9: macro definition=__EDG_NULL_EH_REGION_NUMBER <US>c:macro@__EDG_NULL_EH_REGION_NUMBER<UE> <DS>__EDG_NULL_EH_REGION_NUMBER<DE> Extent=<ES>419:9 - 419:42<EE>
-<L><invalid loc>:420:9: macro definition=__EDG_LOWER_VARIABLE_LENGTH_ARRAYS <US>c:macro@__EDG_LOWER_VARIABLE_LENGTH_ARRAYS<UE> <DS>__EDG_LOWER_VARIABLE_LENGTH_ARRAYS<DE> Extent=<ES>420:9 - 420:45<EE>
-<L><invalid loc>:421:9: macro definition=__EDG_ELEM_COUNT_PARAM_TYPE <US>c:macro@__EDG_ELEM_COUNT_PARAM_TYPE<UE> <DS>__EDG_ELEM_COUNT_PARAM_TYPE<DE> Extent=<ES>421:9 - 421:41<EE>
-<L><invalid loc>:422:9: macro definition=__EDG_ABI_COMPATIBILITY_VERSION <US>c:macro@__EDG_ABI_COMPATIBILITY_VERSION<UE> <DS>__EDG_ABI_COMPATIBILITY_VERSION<DE> Extent=<ES>422:9 - 422:45<EE>
-<L><invalid loc>:423:9: macro definition=__EDG_ABI_CHANGES_FOR_RTTI <US>c:macro@__EDG_ABI_CHANGES_FOR_RTTI<UE> <DS>__EDG_ABI_CHANGES_FOR_RTTI<DE> Extent=<ES>423:9 - 423:37<EE>
-<L><invalid loc>:424:9: macro definition=__EDG_ABI_CHANGES_FOR_ARRAY_NEW_AND_DELETE <US>c:macro@__EDG_ABI_CHANGES_FOR_ARRAY_NEW_AND_DELETE<UE> <DS>__EDG_ABI_CHANGES_FOR_ARRAY_NEW_AND_DELETE<DE> Extent=<ES>424:9 - 424:53<EE>
-<L><invalid loc>:425:9: macro definition=__EDG_ABI_CHANGES_FOR_PLACEMENT_DELETE <US>c:macro@__EDG_ABI_CHANGES_FOR_PLACEMENT_DELETE<UE> <DS>__EDG_ABI_CHANGES_FOR_PLACEMENT_DELETE<DE> Extent=<ES>425:9 - 425:49<EE>
-<L><invalid loc>:426:9: macro definition=__EDG_BSD <US>c:macro@__EDG_BSD<UE> <DS>__EDG_BSD<DE> Extent=<ES>426:9 - 426:20<EE>
-<L><invalid loc>:427:9: macro definition=__EDG_SYSV <US>c:macro@__EDG_SYSV<UE> <DS>__EDG_SYSV<DE> Extent=<ES>427:9 - 427:21<EE>
-<L><invalid loc>:428:9: macro definition=__EDG_ANSIC <US>c:macro@__EDG_ANSIC<UE> <DS>__EDG_ANSIC<DE> Extent=<ES>428:9 - 428:22<EE>
-<L><invalid loc>:429:9: macro definition=__EDG_CPP0X_IL_EXTENSIONS_SUPPORTED <US>c:macro@__EDG_CPP0X_IL_EXTENSIONS_SUPPORTED<UE> <DS>__EDG_CPP0X_IL_EXTENSIONS_SUPPORTED<DE> Extent=<ES>429:9 - 429:46<EE>
-<L><invalid loc>:430:9: macro definition=BROADCASTER_CFG <US>c:macro@BROADCASTER_CFG<UE> <DS>BROADCASTER_CFG<DE> Extent=<ES>430:9 - 430:29<EE>
-<L><invalid loc>:431:9: macro definition=OBSERVER_CFG <US>c:macro@OBSERVER_CFG<UE> <DS>OBSERVER_CFG<DE> Extent=<ES>431:9 - 431:26<EE>
-<L><invalid loc>:432:9: macro definition=PERIPHERAL_CFG <US>c:macro@PERIPHERAL_CFG<UE> <DS>PERIPHERAL_CFG<DE> Extent=<ES>432:9 - 432:28<EE>
-<L><invalid loc>:433:9: macro definition=CENTRAL_CFG <US>c:macro@CENTRAL_CFG<UE> <DS>CENTRAL_CFG<DE> Extent=<ES>433:9 - 433:25<EE>
-<L><invalid loc>:434:9: macro definition=ADV_NCONN_CFG <US>c:macro@ADV_NCONN_CFG<UE> <DS>ADV_NCONN_CFG<DE> Extent=<ES>434:9 - 434:27<EE>
-<L><invalid loc>:435:9: macro definition=ADV_CONN_CFG <US>c:macro@ADV_CONN_CFG<UE> <DS>ADV_CONN_CFG<DE> Extent=<ES>435:9 - 435:26<EE>
-<L><invalid loc>:436:9: macro definition=SCAN_CFG <US>c:macro@SCAN_CFG<UE> <DS>SCAN_CFG<DE> Extent=<ES>436:9 - 436:22<EE>
-<L><invalid loc>:437:9: macro definition=INIT_CFG <US>c:macro@INIT_CFG<UE> <DS>INIT_CFG<DE> Extent=<ES>437:9 - 437:22<EE>
-<L><invalid loc>:438:9: macro definition=ADV_CFG <US>c:macro@ADV_CFG<UE> <DS>ADV_CFG<DE> Extent=<ES>438:9 - 438:43<EE>
-<L><invalid loc>:439:9: macro definition=LINK_CFG <US>c:macro@LINK_CFG<UE> <DS>LINK_CFG<DE> Extent=<ES>439:9 - 439:39<EE>
-<L><invalid loc>:440:9: macro definition=FULL_CFG <US>c:macro@FULL_CFG<UE> <DS>FULL_CFG<DE> Extent=<ES>440:9 - 440:62<EE>
-<L><invalid loc>:441:9: macro definition=HOST_CONFIG <US>c:macro@HOST_CONFIG<UE> <DS>HOST_CONFIG<DE> Extent=<ES>441:9 - 441:35<EE>
-<L><invalid loc>:442:9: macro definition=GAP_PRIVACY_RECONNECT <US>c:macro@GAP_PRIVACY_RECONNECT<UE> <DS>GAP_PRIVACY_RECONNECT<DE> Extent=<ES>442:9 - 442:32<EE>
-<L><invalid loc>:443:9: macro definition=CC2541 <US>c:macro@CC2541<UE> <DS>CC2541<DE> Extent=<ES>443:9 - 443:17<EE>
-<L><invalid loc>:444:9: macro definition=OAD_IMAGE_VERSION <US>c:macro@OAD_IMAGE_VERSION<UE> <DS>OAD_IMAGE_VERSION<DE> Extent=<ES>444:9 - 444:33<EE>
-<L><invalid loc>:445:9: macro definition=OAD_IMAGE_A_USER_ID <US>c:macro@OAD_IMAGE_A_USER_ID<UE> <DS>OAD_IMAGE_A_USER_ID<DE> Extent=<ES>445:9 - 445:47<EE>
-<L><invalid loc>:446:9: macro definition=OAD_IMAGE_B_USER_ID <US>c:macro@OAD_IMAGE_B_USER_ID<UE> <DS>OAD_IMAGE_B_USER_ID<DE> Extent=<ES>446:9 - 446:47<EE>
-<L><invalid loc>:447:9: macro definition=INT_HEAP_LEN <US>c:macro@INT_HEAP_LEN<UE> <DS>INT_HEAP_LEN<DE> Extent=<ES>447:9 - 447:26<EE>
-<L><invalid loc>:448:9: macro definition=HALNODEBUG <US>c:macro@HALNODEBUG<UE> <DS>HALNODEBUG<DE> Extent=<ES>448:9 - 448:21<EE>
-<L><invalid loc>:449:9: macro definition=OSAL_CBTIMER_NUM_TASKS <US>c:macro@OSAL_CBTIMER_NUM_TASKS<UE> <DS>OSAL_CBTIMER_NUM_TASKS<DE> Extent=<ES>449:9 - 449:33<EE>
-<L><invalid loc>:450:9: macro definition=xHAL_AES_DMA <US>c:macro@xHAL_AES_DMA<UE> <DS>xHAL_AES_DMA<DE> Extent=<ES>450:9 - 450:26<EE>
-<L><invalid loc>:451:9: macro definition=HAL_DMA <US>c:macro@HAL_DMA<UE> <DS>HAL_DMA<DE> Extent=<ES>451:9 - 451:21<EE>
-<L><invalid loc>:452:9: macro definition=POWER_SAVING <US>c:macro@POWER_SAVING<UE> <DS>POWER_SAVING<DE> Extent=<ES>452:9 - 452:23<EE>
-<L><invalid loc>:453:9: macro definition=xPLUS_BROADCASTER <US>c:macro@xPLUS_BROADCASTER<UE> <DS>xPLUS_BROADCASTER<DE> Extent=<ES>453:9 - 453:28<EE>
-<L><invalid loc>:454:9: macro definition=HAL_LCD <US>c:macro@HAL_LCD<UE> <DS>HAL_LCD<DE> Extent=<ES>454:9 - 454:21<EE>
-<L><invalid loc>:455:9: macro definition=HAL_LED <US>c:macro@HAL_LED<UE> <DS>HAL_LED<DE> Extent=<ES>455:9 - 455:21<EE>
-<L><invalid loc>:456:9: macro definition=HAL_UART <US>c:macro@HAL_UART<UE> <DS>HAL_UART<DE> Extent=<ES>456:9 - 456:22<EE>
-<L><invalid loc>:457:9: macro definition=HAL_ADC <US>c:macro@HAL_ADC<UE> <DS>HAL_ADC<DE> Extent=<ES>457:9 - 457:21<EE>
-<L><invalid loc>:458:9: macro definition=__VERSION__ <US>c:macro@__VERSION__<UE> <DS>__VERSION__<DE> Extent=<ES>458:9 - 458:64<EE>
-<L><invalid loc>:459:9: macro definition=__CODE_MEMORY_LIST1__ <US>c:macro@__CODE_MEMORY_LIST1__<UE> <DS>__CODE_MEMORY_LIST1__<DE> Extent=<ES>459:9 - 459:65<EE>
-<L><invalid loc>:460:9: macro definition=__CODE_MEMORY_LIST2__ <US>c:macro@__CODE_MEMORY_LIST2__<UE> <DS>__CODE_MEMORY_LIST2__<DE> Extent=<ES>460:9 - 460:75<EE>
-<L><invalid loc>:461:9: macro definition=__CODE_MEMORY_LIST3__ <US>c:macro@__CODE_MEMORY_LIST3__<UE> <DS>__CODE_MEMORY_LIST3__<DE> Extent=<ES>461:9 - 461:87<EE>
-<L><invalid loc>:462:9: macro definition=__DATA_MEMORY_LIST1__ <US>c:macro@__DATA_MEMORY_LIST1__<UE> <DS>__DATA_MEMORY_LIST1__<DE> Extent=<ES>462:9 - 462:65<EE>
-<L><invalid loc>:463:9: macro definition=__DATA_MEMORY_LIST2__ <US>c:macro@__DATA_MEMORY_LIST2__<UE> <DS>__DATA_MEMORY_LIST2__<DE> Extent=<ES>463:9 - 463:75<EE>
-<L><invalid loc>:464:9: macro definition=__DATA_MEMORY_LIST3__ <US>c:macro@__DATA_MEMORY_LIST3__<UE> <DS>__DATA_MEMORY_LIST3__<DE> Extent=<ES>464:9 - 464:87<EE>
-<L><invalid loc>:465:9: macro definition=__CODE_PTR_MEMORY_LIST1__ <US>c:macro@__CODE_PTR_MEMORY_LIST1__<UE> <DS>__CODE_PTR_MEMORY_LIST1__<DE> Extent=<ES>465:9 - 465:73<EE>
-<L><invalid loc>:466:9: macro definition=__CODE_PTR_MEMORY_LIST2__ <US>c:macro@__CODE_PTR_MEMORY_LIST2__<UE> <DS>__CODE_PTR_MEMORY_LIST2__<DE> Extent=<ES>466:9 - 466:83<EE>
-<L><invalid loc>:467:9: macro definition=__CODE_PTR_MEMORY_LIST3__ <US>c:macro@__CODE_PTR_MEMORY_LIST3__<UE> <DS>__CODE_PTR_MEMORY_LIST3__<DE> Extent=<ES>467:9 - 467:95<EE>
-<L><invalid loc>:468:9: macro definition=__DATA_PTR_MEMORY_LIST1__ <US>c:macro@__DATA_PTR_MEMORY_LIST1__<UE> <DS>__DATA_PTR_MEMORY_LIST1__<DE> Extent=<ES>468:9 - 468:73<EE>
-<L><invalid loc>:469:9: macro definition=__DATA_PTR_MEMORY_LIST2__ <US>c:macro@__DATA_PTR_MEMORY_LIST2__<UE> <DS>__DATA_PTR_MEMORY_LIST2__<DE> Extent=<ES>469:9 - 469:83<EE>
-<L><invalid loc>:470:9: macro definition=__DATA_PTR_MEMORY_LIST3__ <US>c:macro@__DATA_PTR_MEMORY_LIST3__<UE> <DS>__DATA_PTR_MEMORY_LIST3__<DE> Extent=<ES>470:9 - 470:95<EE>
-<L><invalid loc>:471:9: macro definition=__VAR_MEMORY_LIST1__ <US>c:macro@__VAR_MEMORY_LIST1__<UE> <DS>__VAR_MEMORY_LIST1__<DE> Extent=<ES>471:9 - 471:63<EE>
-<L><invalid loc>:472:9: macro definition=__VAR_MEMORY_LIST2__ <US>c:macro@__VAR_MEMORY_LIST2__<UE> <DS>__VAR_MEMORY_LIST2__<DE> Extent=<ES>472:9 - 472:73<EE>
-<L><invalid loc>:473:9: macro definition=__VAR_MEMORY_LIST3__ <US>c:macro@__VAR_MEMORY_LIST3__<UE> <DS>__VAR_MEMORY_LIST3__<DE> Extent=<ES>473:9 - 473:85<EE>
-<L><invalid loc>:474:9: macro definition=__VARD_MEMORY_LIST1__ <US>c:macro@__VARD_MEMORY_LIST1__<UE> <DS>__VARD_MEMORY_LIST1__<DE> Extent=<ES>474:9 - 474:68<EE>
-<L><invalid loc>:475:9: macro definition=__HEAP_MEMORY_LIST1__ <US>c:macro@__HEAP_MEMORY_LIST1__<UE> <DS>__HEAP_MEMORY_LIST1__<DE> Extent=<ES>475:9 - 475:65<EE>
-<L><invalid loc>:476:9: macro definition=__HEAP_MEMORY_LIST2__ <US>c:macro@__HEAP_MEMORY_LIST2__<UE> <DS>__HEAP_MEMORY_LIST2__<DE> Extent=<ES>476:9 - 476:75<EE>
-<L><invalid loc>:477:9: macro definition=__HEAP_MEMORY_LIST3__ <US>c:macro@__HEAP_MEMORY_LIST3__<UE> <DS>__HEAP_MEMORY_LIST3__<DE> Extent=<ES>477:9 - 477:87<EE>
-<L><invalid loc>:478:9: macro definition=__HVAR_MEMORY_LIST1__ <US>c:macro@__HVAR_MEMORY_LIST1__<UE> <DS>__HVAR_MEMORY_LIST1__<DE> Extent=<ES>478:9 - 478:65<EE>
-<L><invalid loc>:479:9: macro definition=__HEAPD_MEMORY_LIST1__ <US>c:macro@__HEAPD_MEMORY_LIST1__<UE> <DS>__HEAPD_MEMORY_LIST1__<DE> Extent=<ES>479:9 - 479:70<EE>
-<L><invalid loc>:480:9: macro definition=__HEAPU_MEMORY_LIST1__ <US>c:macro@__HEAPU_MEMORY_LIST1__<UE> <DS>__HEAPU_MEMORY_LIST1__<DE> Extent=<ES>480:9 - 480:67<EE>
-<L><invalid loc>:481:9: macro definition=__TOPM_DATA_MEMORY_LIST1__ <US>c:macro@__TOPM_DATA_MEMORY_LIST1__<UE> <DS>__TOPM_DATA_MEMORY_LIST1__<DE> Extent=<ES>481:9 - 481:35<EE>
-<L><invalid loc>:482:9: macro definition=__TOPM_DATA_MEMORY_LIST2__ <US>c:macro@__TOPM_DATA_MEMORY_LIST2__<UE> <DS>__TOPM_DATA_MEMORY_LIST2__<DE> Extent=<ES>482:9 - 482:35<EE>
-<L><invalid loc>:483:9: macro definition=__TOPM_DATA_MEMORY_LIST3__ <US>c:macro@__TOPM_DATA_MEMORY_LIST3__<UE> <DS>__TOPM_DATA_MEMORY_LIST3__<DE> Extent=<ES>483:9 - 483:35<EE>
-<L><invalid loc>:484:9: macro definition=__TOPP_DATA_MEMORY_LIST1__ <US>c:macro@__TOPP_DATA_MEMORY_LIST1__<UE> <DS>__TOPP_DATA_MEMORY_LIST1__<DE> Extent=<ES>484:9 - 484:75<EE>
-<L><invalid loc>:485:9: macro definition=__TOPP_DATA_MEMORY_LIST2__ <US>c:macro@__TOPP_DATA_MEMORY_LIST2__<UE> <DS>__TOPP_DATA_MEMORY_LIST2__<DE> Extent=<ES>485:9 - 485:85<EE>
-<L><invalid loc>:486:9: macro definition=__TOPP_DATA_MEMORY_LIST3__ <US>c:macro@__TOPP_DATA_MEMORY_LIST3__<UE> <DS>__TOPP_DATA_MEMORY_LIST3__<DE> Extent=<ES>486:9 - 486:97<EE>
-<L><invalid loc>:487:9: macro definition=__DATA_MEM0_SIZE_TYPE__ <US>c:macro@__DATA_MEM0_SIZE_TYPE__<UE> <DS>__DATA_MEM0_SIZE_TYPE__<DE> Extent=<ES>487:9 - 487:45<EE>
-<L><invalid loc>:488:9: macro definition=__DATA_MEM0_INDEX_TYPE__ <US>c:macro@__DATA_MEM0_INDEX_TYPE__<UE> <DS>__DATA_MEM0_INDEX_TYPE__<DE> Extent=<ES>488:9 - 488:44<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:44:1: inclusion directive=comdef.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h<IE>  [multi-include guarded] Extent=<ES>44:1 - 44:20<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:41:9: macro definition=COMDEF_H <US>c:macro@COMDEF_H<UE> <DS>COMDEF_H<DE> Extent=<ES>41:9 - 41:17<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:54:1: inclusion directive=hal_types.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h<IE>  [multi-include guarded] Extent=<ES>54:1 - 54:23<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:45:9: macro definition=_HAL_TYPES_H <US>c:macro@_HAL_TYPES_H<UE> <DS>_HAL_TYPES_H<DE> Extent=<ES>45:9 - 45:21<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:77:9: macro definition=CODE <US>c:macro@CODE<UE> <DS>CODE<DE> Extent=<ES>77:9 - 77:25<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:78:9: macro definition=XDATA <US>c:macro@XDATA<UE> <DS>XDATA<DE> Extent=<ES>78:9 - 78:26<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:79:9: macro definition=DATA <US>c:macro@DATA<UE> <DS>DATA<DE> Extent=<ES>79:9 - 79:25<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:80:9: macro definition=NEAR_FUNC <US>c:macro@NEAR_FUNC<UE> <DS>NEAR_FUNC<DE> Extent=<ES>80:9 - 80:30<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:81:9: macro definition=ASM_NOP <US>c:macro@ASM_NOP<UE> <DS>ASM_NOP<DE> Extent=<ES>81:9 - 81:30<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:112:9: macro definition=TRUE <US>c:macro@TRUE<UE> <DS>TRUE<DE> Extent=<ES>112:9 - 112:15<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:116:9: macro definition=FALSE <US>c:macro@FALSE<UE> <DS>FALSE<DE> Extent=<ES>116:9 - 116:16<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:120:9: macro definition=NULL <US>c:macro@NULL<UE> <DS>NULL<DE> Extent=<ES>120:9 - 120:15<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:55:1: inclusion directive=hal_defs.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h<IE>  [multi-include guarded] Extent=<ES>55:1 - 55:22<EE>
+<L><invalid loc>:109:9: macro definition=HAL_SLEEP_DEBUG_LED <US>c:macro@HAL_SLEEP_DEBUG_LED<UE> <DS>HAL_SLEEP_DEBUG_LED<DE> Extent=<ES>109:9 - 109:30<EE>
+<L><invalid loc>:110:9: macro definition=__CHAR_BITS__ <US>c:macro@__CHAR_BITS__<UE> <DS>__CHAR_BITS__<DE> Extent=<ES>110:9 - 110:24<EE>
+<L><invalid loc>:111:9: macro definition=__CHAR_MAX__ <US>c:macro@__CHAR_MAX__<UE> <DS>__CHAR_MAX__<DE> Extent=<ES>111:9 - 111:26<EE>
+<L><invalid loc>:112:9: macro definition=__CHAR_MIN__ <US>c:macro@__CHAR_MIN__<UE> <DS>__CHAR_MIN__<DE> Extent=<ES>112:9 - 112:23<EE>
+<L><invalid loc>:113:9: macro definition=__CHAR_SIZE__ <US>c:macro@__CHAR_SIZE__<UE> <DS>__CHAR_SIZE__<DE> Extent=<ES>113:9 - 113:24<EE>
+<L><invalid loc>:114:9: macro definition=__UNSIGNED_CHAR_MAX__ <US>c:macro@__UNSIGNED_CHAR_MAX__<UE> <DS>__UNSIGNED_CHAR_MAX__<DE> Extent=<ES>114:9 - 114:35<EE>
+<L><invalid loc>:115:9: macro definition=__SIGNED_CHAR_MAX__ <US>c:macro@__SIGNED_CHAR_MAX__<UE> <DS>__SIGNED_CHAR_MAX__<DE> Extent=<ES>115:9 - 115:32<EE>
+<L><invalid loc>:116:9: macro definition=__SIGNED_CHAR_MIN__ <US>c:macro@__SIGNED_CHAR_MIN__<UE> <DS>__SIGNED_CHAR_MIN__<DE> Extent=<ES>116:9 - 116:53<EE>
+<L><invalid loc>:117:9: macro definition=__CHAR_ALIGN__ <US>c:macro@__CHAR_ALIGN__<UE> <DS>__CHAR_ALIGN__<DE> Extent=<ES>117:9 - 117:25<EE>
+<L><invalid loc>:118:9: macro definition=__SHORT_SIZE__ <US>c:macro@__SHORT_SIZE__<UE> <DS>__SHORT_SIZE__<DE> Extent=<ES>118:9 - 118:25<EE>
+<L><invalid loc>:119:9: macro definition=__UNSIGNED_SHORT_MAX__ <US>c:macro@__UNSIGNED_SHORT_MAX__<UE> <DS>__UNSIGNED_SHORT_MAX__<DE> Extent=<ES>119:9 - 119:38<EE>
+<L><invalid loc>:120:9: macro definition=__SIGNED_SHORT_MAX__ <US>c:macro@__SIGNED_SHORT_MAX__<UE> <DS>__SIGNED_SHORT_MAX__<DE> Extent=<ES>120:9 - 120:35<EE>
+<L><invalid loc>:121:9: macro definition=__SIGNED_SHORT_MIN__ <US>c:macro@__SIGNED_SHORT_MIN__<UE> <DS>__SIGNED_SHORT_MIN__<DE> Extent=<ES>121:9 - 121:55<EE>
+<L><invalid loc>:122:9: macro definition=__SHORT_ALIGN__ <US>c:macro@__SHORT_ALIGN__<UE> <DS>__SHORT_ALIGN__<DE> Extent=<ES>122:9 - 122:26<EE>
+<L><invalid loc>:123:9: macro definition=__LONG_SIZE__ <US>c:macro@__LONG_SIZE__<UE> <DS>__LONG_SIZE__<DE> Extent=<ES>123:9 - 123:24<EE>
+<L><invalid loc>:124:9: macro definition=__UNSIGNED_LONG_MAX__ <US>c:macro@__UNSIGNED_LONG_MAX__<UE> <DS>__UNSIGNED_LONG_MAX__<DE> Extent=<ES>124:9 - 124:43<EE>
+<L><invalid loc>:125:9: macro definition=__SIGNED_LONG_MAX__ <US>c:macro@__SIGNED_LONG_MAX__<UE> <DS>__SIGNED_LONG_MAX__<DE> Extent=<ES>125:9 - 125:40<EE>
+<L><invalid loc>:126:9: macro definition=__SIGNED_LONG_MIN__ <US>c:macro@__SIGNED_LONG_MIN__<UE> <DS>__SIGNED_LONG_MIN__<DE> Extent=<ES>126:9 - 126:53<EE>
+<L><invalid loc>:127:9: macro definition=__LONG_ALIGN__ <US>c:macro@__LONG_ALIGN__<UE> <DS>__LONG_ALIGN__<DE> Extent=<ES>127:9 - 127:25<EE>
+<L><invalid loc>:128:9: macro definition=__LONG_LONG_SIZE__ <US>c:macro@__LONG_LONG_SIZE__<UE> <DS>__LONG_LONG_SIZE__<DE> Extent=<ES>128:9 - 128:29<EE>
+<L><invalid loc>:129:9: macro definition=__UNSIGNED_LONG_LONG_MAX__ <US>c:macro@__UNSIGNED_LONG_LONG_MAX__<UE> <DS>__UNSIGNED_LONG_LONG_MAX__<DE> Extent=<ES>129:9 - 129:49<EE>
+<L><invalid loc>:130:9: macro definition=__SIGNED_LONG_LONG_MAX__ <US>c:macro@__SIGNED_LONG_LONG_MAX__<UE> <DS>__SIGNED_LONG_LONG_MAX__<DE> Extent=<ES>130:9 - 130:46<EE>
+<L><invalid loc>:131:9: macro definition=__SIGNED_LONG_LONG_MIN__ <US>c:macro@__SIGNED_LONG_LONG_MIN__<UE> <DS>__SIGNED_LONG_LONG_MIN__<DE> Extent=<ES>131:9 - 131:63<EE>
+<L><invalid loc>:132:9: macro definition=__LONG_LONG_ALIGN__ <US>c:macro@__LONG_LONG_ALIGN__<UE> <DS>__LONG_LONG_ALIGN__<DE> Extent=<ES>132:9 - 132:30<EE>
+<L><invalid loc>:133:9: macro definition=__INT_SIZE__ <US>c:macro@__INT_SIZE__<UE> <DS>__INT_SIZE__<DE> Extent=<ES>133:9 - 133:23<EE>
+<L><invalid loc>:134:9: macro definition=__UNSIGNED_INT_MAX__ <US>c:macro@__UNSIGNED_INT_MAX__<UE> <DS>__UNSIGNED_INT_MAX__<DE> Extent=<ES>134:9 - 134:37<EE>
+<L><invalid loc>:135:9: macro definition=__SIGNED_INT_MAX__ <US>c:macro@__SIGNED_INT_MAX__<UE> <DS>__SIGNED_INT_MAX__<DE> Extent=<ES>135:9 - 135:33<EE>
+<L><invalid loc>:136:9: macro definition=__SIGNED_INT_MIN__ <US>c:macro@__SIGNED_INT_MIN__<UE> <DS>__SIGNED_INT_MIN__<DE> Extent=<ES>136:9 - 136:51<EE>
+<L><invalid loc>:137:9: macro definition=__INT_ALIGN__ <US>c:macro@__INT_ALIGN__<UE> <DS>__INT_ALIGN__<DE> Extent=<ES>137:9 - 137:24<EE>
+<L><invalid loc>:138:9: macro definition=__INT8_T_TYPE__ <US>c:macro@__INT8_T_TYPE__<UE> <DS>__INT8_T_TYPE__<DE> Extent=<ES>138:9 - 138:36<EE>
+<L><invalid loc>:139:9: macro definition=__INT8_T_MAX__ <US>c:macro@__INT8_T_MAX__<UE> <DS>__INT8_T_MAX__<DE> Extent=<ES>139:9 - 139:27<EE>
+<L><invalid loc>:140:9: macro definition=__INT8_T_MIN__ <US>c:macro@__INT8_T_MIN__<UE> <DS>__INT8_T_MIN__<DE> Extent=<ES>140:9 - 140:43<EE>
+<L><invalid loc>:141:9: macro definition=__UINT8_T_TYPE__ <US>c:macro@__UINT8_T_TYPE__<UE> <DS>__UINT8_T_TYPE__<DE> Extent=<ES>141:9 - 141:39<EE>
+<L><invalid loc>:142:9: macro definition=__UINT8_T_MAX__ <US>c:macro@__UINT8_T_MAX__<UE> <DS>__UINT8_T_MAX__<DE> Extent=<ES>142:9 - 142:29<EE>
+<L><invalid loc>:143:9: macro definition=__INT8_SIZE_PREFIX__ <US>c:macro@__INT8_SIZE_PREFIX__<UE> <DS>__INT8_SIZE_PREFIX__<DE> Extent=<ES>143:9 - 143:34<EE>
+<L><invalid loc>:144:9: macro definition=__INT16_T_TYPE__ <US>c:macro@__INT16_T_TYPE__<UE> <DS>__INT16_T_TYPE__<DE> Extent=<ES>144:9 - 144:36<EE>
+<L><invalid loc>:145:9: macro definition=__INT16_T_MAX__ <US>c:macro@__INT16_T_MAX__<UE> <DS>__INT16_T_MAX__<DE> Extent=<ES>145:9 - 145:30<EE>
+<L><invalid loc>:146:9: macro definition=__INT16_T_MIN__ <US>c:macro@__INT16_T_MIN__<UE> <DS>__INT16_T_MIN__<DE> Extent=<ES>146:9 - 146:45<EE>
+<L><invalid loc>:147:9: macro definition=__UINT16_T_TYPE__ <US>c:macro@__UINT16_T_TYPE__<UE> <DS>__UINT16_T_TYPE__<DE> Extent=<ES>147:9 - 147:39<EE>
+<L><invalid loc>:148:9: macro definition=__UINT16_T_MAX__ <US>c:macro@__UINT16_T_MAX__<UE> <DS>__UINT16_T_MAX__<DE> Extent=<ES>148:9 - 148:33<EE>
+<L><invalid loc>:149:9: macro definition=__INT16_SIZE_PREFIX__ <US>c:macro@__INT16_SIZE_PREFIX__<UE> <DS>__INT16_SIZE_PREFIX__<DE> Extent=<ES>149:9 - 149:33<EE>
+<L><invalid loc>:150:9: macro definition=__INT32_T_TYPE__ <US>c:macro@__INT32_T_TYPE__<UE> <DS>__INT32_T_TYPE__<DE> Extent=<ES>150:9 - 150:41<EE>
+<L><invalid loc>:151:9: macro definition=__INT32_T_MAX__ <US>c:macro@__INT32_T_MAX__<UE> <DS>__INT32_T_MAX__<DE> Extent=<ES>151:9 - 151:36<EE>
+<L><invalid loc>:152:9: macro definition=__INT32_T_MIN__ <US>c:macro@__INT32_T_MIN__<UE> <DS>__INT32_T_MIN__<DE> Extent=<ES>152:9 - 152:45<EE>
+<L><invalid loc>:153:9: macro definition=__UINT32_T_TYPE__ <US>c:macro@__UINT32_T_TYPE__<UE> <DS>__UINT32_T_TYPE__<DE> Extent=<ES>153:9 - 153:44<EE>
+<L><invalid loc>:154:9: macro definition=__UINT32_T_MAX__ <US>c:macro@__UINT32_T_MAX__<UE> <DS>__UINT32_T_MAX__<DE> Extent=<ES>154:9 - 154:38<EE>
+<L><invalid loc>:155:9: macro definition=__INT32_SIZE_PREFIX__ <US>c:macro@__INT32_SIZE_PREFIX__<UE> <DS>__INT32_SIZE_PREFIX__<DE> Extent=<ES>155:9 - 155:34<EE>
+<L><invalid loc>:156:9: macro definition=__INT_LEAST8_T_TYPE__ <US>c:macro@__INT_LEAST8_T_TYPE__<UE> <DS>__INT_LEAST8_T_TYPE__<DE> Extent=<ES>156:9 - 156:42<EE>
+<L><invalid loc>:157:9: macro definition=__INT_LEAST8_T_MAX__ <US>c:macro@__INT_LEAST8_T_MAX__<UE> <DS>__INT_LEAST8_T_MAX__<DE> Extent=<ES>157:9 - 157:33<EE>
+<L><invalid loc>:158:9: macro definition=__INT_LEAST8_T_MIN__ <US>c:macro@__INT_LEAST8_T_MIN__<UE> <DS>__INT_LEAST8_T_MIN__<DE> Extent=<ES>158:9 - 158:55<EE>
+<L><invalid loc>:159:9: macro definition=__UINT_LEAST8_T_TYPE__ <US>c:macro@__UINT_LEAST8_T_TYPE__<UE> <DS>__UINT_LEAST8_T_TYPE__<DE> Extent=<ES>159:9 - 159:45<EE>
+<L><invalid loc>:160:9: macro definition=__UINT_LEAST8_T_MAX__ <US>c:macro@__UINT_LEAST8_T_MAX__<UE> <DS>__UINT_LEAST8_T_MAX__<DE> Extent=<ES>160:9 - 160:35<EE>
+<L><invalid loc>:161:9: macro definition=__INT8_C_SUFFIX__ <US>c:macro@__INT8_C_SUFFIX__<UE> <DS>__INT8_C_SUFFIX__<DE> Extent=<ES>161:9 - 161:26<EE>
+<L><invalid loc>:162:9: macro definition=__UINT8_C_SUFFIX__ <US>c:macro@__UINT8_C_SUFFIX__<UE> <DS>__UINT8_C_SUFFIX__<DE> Extent=<ES>162:9 - 162:27<EE>
+<L><invalid loc>:163:9: macro definition=__INT_LEAST8_SIZE_PREFIX__ <US>c:macro@__INT_LEAST8_SIZE_PREFIX__<UE> <DS>__INT_LEAST8_SIZE_PREFIX__<DE> Extent=<ES>163:9 - 163:40<EE>
+<L><invalid loc>:164:9: macro definition=__INT_LEAST16_T_TYPE__ <US>c:macro@__INT_LEAST16_T_TYPE__<UE> <DS>__INT_LEAST16_T_TYPE__<DE> Extent=<ES>164:9 - 164:42<EE>
+<L><invalid loc>:165:9: macro definition=__INT_LEAST16_T_MAX__ <US>c:macro@__INT_LEAST16_T_MAX__<UE> <DS>__INT_LEAST16_T_MAX__<DE> Extent=<ES>165:9 - 165:36<EE>
+<L><invalid loc>:166:9: macro definition=__INT_LEAST16_T_MIN__ <US>c:macro@__INT_LEAST16_T_MIN__<UE> <DS>__INT_LEAST16_T_MIN__<DE> Extent=<ES>166:9 - 166:57<EE>
+<L><invalid loc>:167:9: macro definition=__UINT_LEAST16_T_TYPE__ <US>c:macro@__UINT_LEAST16_T_TYPE__<UE> <DS>__UINT_LEAST16_T_TYPE__<DE> Extent=<ES>167:9 - 167:45<EE>
+<L><invalid loc>:168:9: macro definition=__UINT_LEAST16_T_MAX__ <US>c:macro@__UINT_LEAST16_T_MAX__<UE> <DS>__UINT_LEAST16_T_MAX__<DE> Extent=<ES>168:9 - 168:39<EE>
+<L><invalid loc>:169:9: macro definition=__INT16_C_SUFFIX__ <US>c:macro@__INT16_C_SUFFIX__<UE> <DS>__INT16_C_SUFFIX__<DE> Extent=<ES>169:9 - 169:27<EE>
+<L><invalid loc>:170:9: macro definition=__UINT16_C_SUFFIX__ <US>c:macro@__UINT16_C_SUFFIX__<UE> <DS>__UINT16_C_SUFFIX__<DE> Extent=<ES>170:9 - 170:30<EE>
+<L><invalid loc>:171:9: macro definition=__INT_LEAST16_SIZE_PREFIX__ <US>c:macro@__INT_LEAST16_SIZE_PREFIX__<UE> <DS>__INT_LEAST16_SIZE_PREFIX__<DE> Extent=<ES>171:9 - 171:39<EE>
+<L><invalid loc>:172:9: macro definition=__INT_LEAST32_T_TYPE__ <US>c:macro@__INT_LEAST32_T_TYPE__<UE> <DS>__INT_LEAST32_T_TYPE__<DE> Extent=<ES>172:9 - 172:47<EE>
+<L><invalid loc>:173:9: macro definition=__INT_LEAST32_T_MAX__ <US>c:macro@__INT_LEAST32_T_MAX__<UE> <DS>__INT_LEAST32_T_MAX__<DE> Extent=<ES>173:9 - 173:42<EE>
+<L><invalid loc>:174:9: macro definition=__INT_LEAST32_T_MIN__ <US>c:macro@__INT_LEAST32_T_MIN__<UE> <DS>__INT_LEAST32_T_MIN__<DE> Extent=<ES>174:9 - 174:57<EE>
+<L><invalid loc>:175:9: macro definition=__UINT_LEAST32_T_TYPE__ <US>c:macro@__UINT_LEAST32_T_TYPE__<UE> <DS>__UINT_LEAST32_T_TYPE__<DE> Extent=<ES>175:9 - 175:50<EE>
+<L><invalid loc>:176:9: macro definition=__UINT_LEAST32_T_MAX__ <US>c:macro@__UINT_LEAST32_T_MAX__<UE> <DS>__UINT_LEAST32_T_MAX__<DE> Extent=<ES>176:9 - 176:44<EE>
+<L><invalid loc>:177:9: macro definition=__INT32_C_SUFFIX__ <US>c:macro@__INT32_C_SUFFIX__<UE> <DS>__INT32_C_SUFFIX__<DE> Extent=<ES>177:9 - 177:29<EE>
+<L><invalid loc>:178:9: macro definition=__UINT32_C_SUFFIX__ <US>c:macro@__UINT32_C_SUFFIX__<UE> <DS>__UINT32_C_SUFFIX__<DE> Extent=<ES>178:9 - 178:31<EE>
+<L><invalid loc>:179:9: macro definition=__INT_LEAST32_SIZE_PREFIX__ <US>c:macro@__INT_LEAST32_SIZE_PREFIX__<UE> <DS>__INT_LEAST32_SIZE_PREFIX__<DE> Extent=<ES>179:9 - 179:40<EE>
+<L><invalid loc>:180:9: macro definition=__INT_FAST8_T_TYPE__ <US>c:macro@__INT_FAST8_T_TYPE__<UE> <DS>__INT_FAST8_T_TYPE__<DE> Extent=<ES>180:9 - 180:41<EE>
+<L><invalid loc>:181:9: macro definition=__INT_FAST8_T_MAX__ <US>c:macro@__INT_FAST8_T_MAX__<UE> <DS>__INT_FAST8_T_MAX__<DE> Extent=<ES>181:9 - 181:32<EE>
+<L><invalid loc>:182:9: macro definition=__INT_FAST8_T_MIN__ <US>c:macro@__INT_FAST8_T_MIN__<UE> <DS>__INT_FAST8_T_MIN__<DE> Extent=<ES>182:9 - 182:53<EE>
+<L><invalid loc>:183:9: macro definition=__UINT_FAST8_T_TYPE__ <US>c:macro@__UINT_FAST8_T_TYPE__<UE> <DS>__UINT_FAST8_T_TYPE__<DE> Extent=<ES>183:9 - 183:44<EE>
+<L><invalid loc>:184:9: macro definition=__UINT_FAST8_T_MAX__ <US>c:macro@__UINT_FAST8_T_MAX__<UE> <DS>__UINT_FAST8_T_MAX__<DE> Extent=<ES>184:9 - 184:34<EE>
+<L><invalid loc>:185:9: macro definition=__INT_FAST8_SIZE_PREFIX__ <US>c:macro@__INT_FAST8_SIZE_PREFIX__<UE> <DS>__INT_FAST8_SIZE_PREFIX__<DE> Extent=<ES>185:9 - 185:39<EE>
+<L><invalid loc>:186:9: macro definition=__INT_FAST16_T_TYPE__ <US>c:macro@__INT_FAST16_T_TYPE__<UE> <DS>__INT_FAST16_T_TYPE__<DE> Extent=<ES>186:9 - 186:41<EE>
+<L><invalid loc>:187:9: macro definition=__INT_FAST16_T_MAX__ <US>c:macro@__INT_FAST16_T_MAX__<UE> <DS>__INT_FAST16_T_MAX__<DE> Extent=<ES>187:9 - 187:35<EE>
+<L><invalid loc>:188:9: macro definition=__INT_FAST16_T_MIN__ <US>c:macro@__INT_FAST16_T_MIN__<UE> <DS>__INT_FAST16_T_MIN__<DE> Extent=<ES>188:9 - 188:55<EE>
+<L><invalid loc>:189:9: macro definition=__UINT_FAST16_T_TYPE__ <US>c:macro@__UINT_FAST16_T_TYPE__<UE> <DS>__UINT_FAST16_T_TYPE__<DE> Extent=<ES>189:9 - 189:44<EE>
+<L><invalid loc>:190:9: macro definition=__UINT_FAST16_T_MAX__ <US>c:macro@__UINT_FAST16_T_MAX__<UE> <DS>__UINT_FAST16_T_MAX__<DE> Extent=<ES>190:9 - 190:38<EE>
+<L><invalid loc>:191:9: macro definition=__INT_FAST16_SIZE_PREFIX__ <US>c:macro@__INT_FAST16_SIZE_PREFIX__<UE> <DS>__INT_FAST16_SIZE_PREFIX__<DE> Extent=<ES>191:9 - 191:38<EE>
+<L><invalid loc>:192:9: macro definition=__INT_FAST32_T_TYPE__ <US>c:macro@__INT_FAST32_T_TYPE__<UE> <DS>__INT_FAST32_T_TYPE__<DE> Extent=<ES>192:9 - 192:46<EE>
+<L><invalid loc>:193:9: macro definition=__INT_FAST32_T_MAX__ <US>c:macro@__INT_FAST32_T_MAX__<UE> <DS>__INT_FAST32_T_MAX__<DE> Extent=<ES>193:9 - 193:41<EE>
+<L><invalid loc>:194:9: macro definition=__INT_FAST32_T_MIN__ <US>c:macro@__INT_FAST32_T_MIN__<UE> <DS>__INT_FAST32_T_MIN__<DE> Extent=<ES>194:9 - 194:55<EE>
+<L><invalid loc>:195:9: macro definition=__UINT_FAST32_T_TYPE__ <US>c:macro@__UINT_FAST32_T_TYPE__<UE> <DS>__UINT_FAST32_T_TYPE__<DE> Extent=<ES>195:9 - 195:49<EE>
+<L><invalid loc>:196:9: macro definition=__UINT_FAST32_T_MAX__ <US>c:macro@__UINT_FAST32_T_MAX__<UE> <DS>__UINT_FAST32_T_MAX__<DE> Extent=<ES>196:9 - 196:43<EE>
+<L><invalid loc>:197:9: macro definition=__INT_FAST32_SIZE_PREFIX__ <US>c:macro@__INT_FAST32_SIZE_PREFIX__<UE> <DS>__INT_FAST32_SIZE_PREFIX__<DE> Extent=<ES>197:9 - 197:39<EE>
+<L><invalid loc>:198:9: macro definition=__INTMAX_T_TYPE__ <US>c:macro@__INTMAX_T_TYPE__<UE> <DS>__INTMAX_T_TYPE__<DE> Extent=<ES>198:9 - 198:42<EE>
+<L><invalid loc>:199:9: macro definition=__INTMAX_T_MAX__ <US>c:macro@__INTMAX_T_MAX__<UE> <DS>__INTMAX_T_MAX__<DE> Extent=<ES>199:9 - 199:37<EE>
+<L><invalid loc>:200:9: macro definition=__INTMAX_T_MIN__ <US>c:macro@__INTMAX_T_MIN__<UE> <DS>__INTMAX_T_MIN__<DE> Extent=<ES>200:9 - 200:47<EE>
+<L><invalid loc>:201:9: macro definition=__UINTMAX_T_TYPE__ <US>c:macro@__UINTMAX_T_TYPE__<UE> <DS>__UINTMAX_T_TYPE__<DE> Extent=<ES>201:9 - 201:45<EE>
+<L><invalid loc>:202:9: macro definition=__UINTMAX_T_MAX__ <US>c:macro@__UINTMAX_T_MAX__<UE> <DS>__UINTMAX_T_MAX__<DE> Extent=<ES>202:9 - 202:39<EE>
+<L><invalid loc>:203:9: macro definition=__INTMAX_C_SUFFIX__ <US>c:macro@__INTMAX_C_SUFFIX__<UE> <DS>__INTMAX_C_SUFFIX__<DE> Extent=<ES>203:9 - 203:30<EE>
+<L><invalid loc>:204:9: macro definition=__UINTMAX_C_SUFFIX__ <US>c:macro@__UINTMAX_C_SUFFIX__<UE> <DS>__UINTMAX_C_SUFFIX__<DE> Extent=<ES>204:9 - 204:32<EE>
+<L><invalid loc>:205:9: macro definition=__INTMAX_SIZE_PREFIX__ <US>c:macro@__INTMAX_SIZE_PREFIX__<UE> <DS>__INTMAX_SIZE_PREFIX__<DE> Extent=<ES>205:9 - 205:35<EE>
+<L><invalid loc>:206:9: macro definition=__FLOAT_SIZE__ <US>c:macro@__FLOAT_SIZE__<UE> <DS>__FLOAT_SIZE__<DE> Extent=<ES>206:9 - 206:25<EE>
+<L><invalid loc>:207:9: macro definition=__FLOAT_ALIGN__ <US>c:macro@__FLOAT_ALIGN__<UE> <DS>__FLOAT_ALIGN__<DE> Extent=<ES>207:9 - 207:26<EE>
+<L><invalid loc>:208:9: macro definition=__DOUBLE_SIZE__ <US>c:macro@__DOUBLE_SIZE__<UE> <DS>__DOUBLE_SIZE__<DE> Extent=<ES>208:9 - 208:26<EE>
+<L><invalid loc>:209:9: macro definition=__DOUBLE_ALIGN__ <US>c:macro@__DOUBLE_ALIGN__<UE> <DS>__DOUBLE_ALIGN__<DE> Extent=<ES>209:9 - 209:27<EE>
+<L><invalid loc>:210:9: macro definition=__LONG_DOUBLE_SIZE__ <US>c:macro@__LONG_DOUBLE_SIZE__<UE> <DS>__LONG_DOUBLE_SIZE__<DE> Extent=<ES>210:9 - 210:31<EE>
+<L><invalid loc>:211:9: macro definition=__LONG_DOUBLE_ALIGN__ <US>c:macro@__LONG_DOUBLE_ALIGN__<UE> <DS>__LONG_DOUBLE_ALIGN__<DE> Extent=<ES>211:9 - 211:32<EE>
+<L><invalid loc>:212:9: macro definition=__NAN_HAS_HIGH_MANTISSA_BIT_SET__ <US>c:macro@__NAN_HAS_HIGH_MANTISSA_BIT_SET__<UE> <DS>__NAN_HAS_HIGH_MANTISSA_BIT_SET__<DE> Extent=<ES>212:9 - 212:44<EE>
+<L><invalid loc>:213:9: macro definition=__SUBNORMAL_FLOATING_POINTS__ <US>c:macro@__SUBNORMAL_FLOATING_POINTS__<UE> <DS>__SUBNORMAL_FLOATING_POINTS__<DE> Extent=<ES>213:9 - 213:40<EE>
+<L><invalid loc>:214:9: macro definition=__SIZE_T_TYPE__ <US>c:macro@__SIZE_T_TYPE__<UE> <DS>__SIZE_T_TYPE__<DE> Extent=<ES>214:9 - 214:37<EE>
+<L><invalid loc>:215:9: macro definition=__SIZE_T_MAX__ <US>c:macro@__SIZE_T_MAX__<UE> <DS>__SIZE_T_MAX__<DE> Extent=<ES>215:9 - 215:31<EE>
+<L><invalid loc>:216:9: macro definition=__PTRDIFF_T_TYPE__ <US>c:macro@__PTRDIFF_T_TYPE__<UE> <DS>__PTRDIFF_T_TYPE__<DE> Extent=<ES>216:9 - 216:38<EE>
+<L><invalid loc>:217:9: macro definition=__PTRDIFF_T_MAX__ <US>c:macro@__PTRDIFF_T_MAX__<UE> <DS>__PTRDIFF_T_MAX__<DE> Extent=<ES>217:9 - 217:32<EE>
+<L><invalid loc>:218:9: macro definition=__PTRDIFF_T_MIN__ <US>c:macro@__PTRDIFF_T_MIN__<UE> <DS>__PTRDIFF_T_MIN__<DE> Extent=<ES>218:9 - 218:49<EE>
+<L><invalid loc>:219:9: macro definition=__INTPTR_T_TYPE__ <US>c:macro@__INTPTR_T_TYPE__<UE> <DS>__INTPTR_T_TYPE__<DE> Extent=<ES>219:9 - 219:42<EE>
+<L><invalid loc>:220:9: macro definition=__INTPTR_T_MAX__ <US>c:macro@__INTPTR_T_MAX__<UE> <DS>__INTPTR_T_MAX__<DE> Extent=<ES>220:9 - 220:37<EE>
+<L><invalid loc>:221:9: macro definition=__INTPTR_T_MIN__ <US>c:macro@__INTPTR_T_MIN__<UE> <DS>__INTPTR_T_MIN__<DE> Extent=<ES>221:9 - 221:47<EE>
+<L><invalid loc>:222:9: macro definition=__UINTPTR_T_TYPE__ <US>c:macro@__UINTPTR_T_TYPE__<UE> <DS>__UINTPTR_T_TYPE__<DE> Extent=<ES>222:9 - 222:45<EE>
+<L><invalid loc>:223:9: macro definition=__UINTPTR_T_MAX__ <US>c:macro@__UINTPTR_T_MAX__<UE> <DS>__UINTPTR_T_MAX__<DE> Extent=<ES>223:9 - 223:39<EE>
+<L><invalid loc>:224:9: macro definition=__INTPTR_SIZE_PREFIX__ <US>c:macro@__INTPTR_SIZE_PREFIX__<UE> <DS>__INTPTR_SIZE_PREFIX__<DE> Extent=<ES>224:9 - 224:35<EE>
+<L><invalid loc>:225:9: macro definition=__JMP_BUF_ELEMENT_TYPE__ <US>c:macro@__JMP_BUF_ELEMENT_TYPE__<UE> <DS>__JMP_BUF_ELEMENT_TYPE__<DE> Extent=<ES>225:9 - 225:45<EE>
+<L><invalid loc>:226:9: macro definition=__JMP_BUF_NUM_ELEMENTS__ <US>c:macro@__JMP_BUF_NUM_ELEMENTS__<UE> <DS>__JMP_BUF_NUM_ELEMENTS__<DE> Extent=<ES>226:9 - 226:36<EE>
+<L><invalid loc>:227:9: macro definition=__TID__ <US>c:macro@__TID__<UE> <DS>__TID__<DE> Extent=<ES>227:9 - 227:23<EE>
+<L><invalid loc>:228:9: macro definition=__VER__ <US>c:macro@__VER__<UE> <DS>__VER__<DE> Extent=<ES>228:9 - 228:20<EE>
+<L><invalid loc>:229:9: macro definition=__SUBVERSION__ <US>c:macro@__SUBVERSION__<UE> <DS>__SUBVERSION__<DE> Extent=<ES>229:9 - 229:25<EE>
+<L><invalid loc>:230:9: macro definition=__BUILD_NUMBER__ <US>c:macro@__BUILD_NUMBER__<UE> <DS>__BUILD_NUMBER__<DE> Extent=<ES>230:9 - 230:30<EE>
+<L><invalid loc>:231:9: macro definition=__IAR_SYSTEMS_ICC__ <US>c:macro@__IAR_SYSTEMS_ICC__<UE> <DS>__IAR_SYSTEMS_ICC__<DE> Extent=<ES>231:9 - 231:30<EE>
+<L><invalid loc>:232:9: macro definition=__VA_STACK_DECREASING__ <US>c:macro@__VA_STACK_DECREASING__<UE> <DS>__VA_STACK_DECREASING__<DE> Extent=<ES>232:9 - 232:34<EE>
+<L><invalid loc>:233:9: macro definition=__VA_STACK_ALIGN__ <US>c:macro@__VA_STACK_ALIGN__<UE> <DS>__VA_STACK_ALIGN__<DE> Extent=<ES>233:9 - 233:29<EE>
+<L><invalid loc>:234:9: macro definition=__VA_STACK_ALIGN_EXTRA_BEFORE__ <US>c:macro@__VA_STACK_ALIGN_EXTRA_BEFORE__<UE> <DS>__VA_STACK_ALIGN_EXTRA_BEFORE__<DE> Extent=<ES>234:9 - 234:42<EE>
+<L><invalid loc>:235:9: macro definition=__LITTLE_ENDIAN__ <US>c:macro@__LITTLE_ENDIAN__<UE> <DS>__LITTLE_ENDIAN__<DE> Extent=<ES>235:9 - 235:28<EE>
+<L><invalid loc>:236:9: macro definition=__BOOL_TYPE__ <US>c:macro@__BOOL_TYPE__<UE> <DS>__BOOL_TYPE__<DE> Extent=<ES>236:9 - 236:36<EE>
+<L><invalid loc>:237:9: macro definition=__WCHAR_T_TYPE__ <US>c:macro@__WCHAR_T_TYPE__<UE> <DS>__WCHAR_T_TYPE__<DE> Extent=<ES>237:9 - 237:44<EE>
+<L><invalid loc>:238:9: macro definition=__WCHAR_T_SIZE__ <US>c:macro@__WCHAR_T_SIZE__<UE> <DS>__WCHAR_T_SIZE__<DE> Extent=<ES>238:9 - 238:27<EE>
+<L><invalid loc>:239:9: macro definition=__WCHAR_T_MAX__ <US>c:macro@__WCHAR_T_MAX__<UE> <DS>__WCHAR_T_MAX__<DE> Extent=<ES>239:9 - 239:31<EE>
+<L><invalid loc>:240:9: macro definition=__DEF_PTR_MEM__ <US>c:macro@__DEF_PTR_MEM__<UE> <DS>__DEF_PTR_MEM__<DE> Extent=<ES>240:9 - 240:32<EE>
+<L><invalid loc>:241:9: macro definition=__DATA_MEM0__ <US>c:macro@__DATA_MEM0__<UE> <DS>__DATA_MEM0__<DE> Extent=<ES>241:9 - 241:28<EE>
+<L><invalid loc>:242:9: macro definition=__DATA_MEM0_POINTER_OK__ <US>c:macro@__DATA_MEM0_POINTER_OK__<UE> <DS>__DATA_MEM0_POINTER_OK__<DE> Extent=<ES>242:9 - 242:35<EE>
+<L><invalid loc>:243:9: macro definition=__DATA_MEM0_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM0_UNIQUE_POINTER__<UE> <DS>__DATA_MEM0_UNIQUE_POINTER__<DE> Extent=<ES>243:9 - 243:39<EE>
+<L><invalid loc>:244:9: macro definition=__DATA_MEM0_VAR_OK__ <US>c:macro@__DATA_MEM0_VAR_OK__<UE> <DS>__DATA_MEM0_VAR_OK__<DE> Extent=<ES>244:9 - 244:31<EE>
+<L><invalid loc>:245:9: macro definition=__DATA_MEM1__ <US>c:macro@__DATA_MEM1__<UE> <DS>__DATA_MEM1__<DE> Extent=<ES>245:9 - 245:28<EE>
+<L><invalid loc>:246:9: macro definition=__DATA_MEM1_POINTER_OK__ <US>c:macro@__DATA_MEM1_POINTER_OK__<UE> <DS>__DATA_MEM1_POINTER_OK__<DE> Extent=<ES>246:9 - 246:35<EE>
+<L><invalid loc>:247:9: macro definition=__DATA_MEM1_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM1_UNIQUE_POINTER__<UE> <DS>__DATA_MEM1_UNIQUE_POINTER__<DE> Extent=<ES>247:9 - 247:39<EE>
+<L><invalid loc>:248:9: macro definition=__DATA_MEM1_VAR_OK__ <US>c:macro@__DATA_MEM1_VAR_OK__<UE> <DS>__DATA_MEM1_VAR_OK__<DE> Extent=<ES>248:9 - 248:31<EE>
+<L><invalid loc>:249:9: macro definition=__DATA_MEM2__ <US>c:macro@__DATA_MEM2__<UE> <DS>__DATA_MEM2__<DE> Extent=<ES>249:9 - 249:29<EE>
+<L><invalid loc>:250:9: macro definition=__DATA_MEM2_POINTER_OK__ <US>c:macro@__DATA_MEM2_POINTER_OK__<UE> <DS>__DATA_MEM2_POINTER_OK__<DE> Extent=<ES>250:9 - 250:35<EE>
+<L><invalid loc>:251:9: macro definition=__DATA_MEM2_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM2_UNIQUE_POINTER__<UE> <DS>__DATA_MEM2_UNIQUE_POINTER__<DE> Extent=<ES>251:9 - 251:39<EE>
+<L><invalid loc>:252:9: macro definition=__DATA_MEM2_VAR_OK__ <US>c:macro@__DATA_MEM2_VAR_OK__<UE> <DS>__DATA_MEM2_VAR_OK__<DE> Extent=<ES>252:9 - 252:31<EE>
+<L><invalid loc>:253:9: macro definition=__DATA_MEM2_INDEX_TYPE__ <US>c:macro@__DATA_MEM2_INDEX_TYPE__<UE> <DS>__DATA_MEM2_INDEX_TYPE__<DE> Extent=<ES>253:9 - 253:45<EE>
+<L><invalid loc>:254:9: macro definition=__DATA_MEM2_SIZE_TYPE__ <US>c:macro@__DATA_MEM2_SIZE_TYPE__<UE> <DS>__DATA_MEM2_SIZE_TYPE__<DE> Extent=<ES>254:9 - 254:46<EE>
+<L><invalid loc>:255:9: macro definition=__DATA_MEM2_INTPTR_TYPE__ <US>c:macro@__DATA_MEM2_INTPTR_TYPE__<UE> <DS>__DATA_MEM2_INTPTR_TYPE__<DE> Extent=<ES>255:9 - 255:46<EE>
+<L><invalid loc>:256:9: macro definition=__DATA_MEM2_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM2_UINTPTR_TYPE__<UE> <DS>__DATA_MEM2_UINTPTR_TYPE__<DE> Extent=<ES>256:9 - 256:49<EE>
+<L><invalid loc>:257:9: macro definition=__DATA_MEM2_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM2_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM2_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>257:9 - 257:46<EE>
+<L><invalid loc>:258:9: macro definition=__DATA_MEM2_MAX_SIZE__ <US>c:macro@__DATA_MEM2_MAX_SIZE__<UE> <DS>__DATA_MEM2_MAX_SIZE__<DE> Extent=<ES>258:9 - 258:36<EE>
+<L><invalid loc>:259:9: macro definition=__DATA_MEM3__ <US>c:macro@__DATA_MEM3__<UE> <DS>__DATA_MEM3__<DE> Extent=<ES>259:9 - 259:30<EE>
+<L><invalid loc>:260:9: macro definition=__DATA_MEM3_POINTER_OK__ <US>c:macro@__DATA_MEM3_POINTER_OK__<UE> <DS>__DATA_MEM3_POINTER_OK__<DE> Extent=<ES>260:9 - 260:35<EE>
+<L><invalid loc>:261:9: macro definition=__DATA_MEM3_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM3_UNIQUE_POINTER__<UE> <DS>__DATA_MEM3_UNIQUE_POINTER__<DE> Extent=<ES>261:9 - 261:39<EE>
+<L><invalid loc>:262:9: macro definition=__DATA_MEM3_VAR_OK__ <US>c:macro@__DATA_MEM3_VAR_OK__<UE> <DS>__DATA_MEM3_VAR_OK__<DE> Extent=<ES>262:9 - 262:31<EE>
+<L><invalid loc>:263:9: macro definition=__DATA_MEM3_INDEX_TYPE__ <US>c:macro@__DATA_MEM3_INDEX_TYPE__<UE> <DS>__DATA_MEM3_INDEX_TYPE__<DE> Extent=<ES>263:9 - 263:45<EE>
+<L><invalid loc>:264:9: macro definition=__DATA_MEM3_SIZE_TYPE__ <US>c:macro@__DATA_MEM3_SIZE_TYPE__<UE> <DS>__DATA_MEM3_SIZE_TYPE__<DE> Extent=<ES>264:9 - 264:46<EE>
+<L><invalid loc>:265:9: macro definition=__DATA_MEM3_INTPTR_TYPE__ <US>c:macro@__DATA_MEM3_INTPTR_TYPE__<UE> <DS>__DATA_MEM3_INTPTR_TYPE__<DE> Extent=<ES>265:9 - 265:46<EE>
+<L><invalid loc>:266:9: macro definition=__DATA_MEM3_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM3_UINTPTR_TYPE__<UE> <DS>__DATA_MEM3_UINTPTR_TYPE__<DE> Extent=<ES>266:9 - 266:49<EE>
+<L><invalid loc>:267:9: macro definition=__DATA_MEM3_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM3_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM3_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>267:9 - 267:46<EE>
+<L><invalid loc>:268:9: macro definition=__DATA_MEM3_MAX_SIZE__ <US>c:macro@__DATA_MEM3_MAX_SIZE__<UE> <DS>__DATA_MEM3_MAX_SIZE__<DE> Extent=<ES>268:9 - 268:36<EE>
+<L><invalid loc>:269:9: macro definition=__DATA_MEM4__ <US>c:macro@__DATA_MEM4__<UE> <DS>__DATA_MEM4__<DE> Extent=<ES>269:9 - 269:30<EE>
+<L><invalid loc>:270:9: macro definition=__DATA_MEM4_POINTER_OK__ <US>c:macro@__DATA_MEM4_POINTER_OK__<UE> <DS>__DATA_MEM4_POINTER_OK__<DE> Extent=<ES>270:9 - 270:35<EE>
+<L><invalid loc>:271:9: macro definition=__DATA_MEM4_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM4_UNIQUE_POINTER__<UE> <DS>__DATA_MEM4_UNIQUE_POINTER__<DE> Extent=<ES>271:9 - 271:39<EE>
+<L><invalid loc>:272:9: macro definition=__DATA_MEM4_VAR_OK__ <US>c:macro@__DATA_MEM4_VAR_OK__<UE> <DS>__DATA_MEM4_VAR_OK__<DE> Extent=<ES>272:9 - 272:31<EE>
+<L><invalid loc>:273:9: macro definition=__DATA_MEM4_INDEX_TYPE__ <US>c:macro@__DATA_MEM4_INDEX_TYPE__<UE> <DS>__DATA_MEM4_INDEX_TYPE__<DE> Extent=<ES>273:9 - 273:45<EE>
+<L><invalid loc>:274:9: macro definition=__DATA_MEM4_SIZE_TYPE__ <US>c:macro@__DATA_MEM4_SIZE_TYPE__<UE> <DS>__DATA_MEM4_SIZE_TYPE__<DE> Extent=<ES>274:9 - 274:46<EE>
+<L><invalid loc>:275:9: macro definition=__DATA_MEM4_INTPTR_TYPE__ <US>c:macro@__DATA_MEM4_INTPTR_TYPE__<UE> <DS>__DATA_MEM4_INTPTR_TYPE__<DE> Extent=<ES>275:9 - 275:46<EE>
+<L><invalid loc>:276:9: macro definition=__DATA_MEM4_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM4_UINTPTR_TYPE__<UE> <DS>__DATA_MEM4_UINTPTR_TYPE__<DE> Extent=<ES>276:9 - 276:49<EE>
+<L><invalid loc>:277:9: macro definition=__DATA_MEM4_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM4_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM4_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>277:9 - 277:46<EE>
+<L><invalid loc>:278:9: macro definition=__DATA_MEM4_MAX_SIZE__ <US>c:macro@__DATA_MEM4_MAX_SIZE__<UE> <DS>__DATA_MEM4_MAX_SIZE__<DE> Extent=<ES>278:9 - 278:36<EE>
+<L><invalid loc>:279:9: macro definition=__DATA_MEM5__ <US>c:macro@__DATA_MEM5__<UE> <DS>__DATA_MEM5__<DE> Extent=<ES>279:9 - 279:30<EE>
+<L><invalid loc>:280:9: macro definition=__DATA_MEM5_POINTER_OK__ <US>c:macro@__DATA_MEM5_POINTER_OK__<UE> <DS>__DATA_MEM5_POINTER_OK__<DE> Extent=<ES>280:9 - 280:35<EE>
+<L><invalid loc>:281:9: macro definition=__DATA_MEM5_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM5_UNIQUE_POINTER__<UE> <DS>__DATA_MEM5_UNIQUE_POINTER__<DE> Extent=<ES>281:9 - 281:39<EE>
+<L><invalid loc>:282:9: macro definition=__DATA_MEM5_VAR_OK__ <US>c:macro@__DATA_MEM5_VAR_OK__<UE> <DS>__DATA_MEM5_VAR_OK__<DE> Extent=<ES>282:9 - 282:31<EE>
+<L><invalid loc>:283:9: macro definition=__DATA_MEM5_INDEX_TYPE__ <US>c:macro@__DATA_MEM5_INDEX_TYPE__<UE> <DS>__DATA_MEM5_INDEX_TYPE__<DE> Extent=<ES>283:9 - 283:45<EE>
+<L><invalid loc>:284:9: macro definition=__DATA_MEM5_SIZE_TYPE__ <US>c:macro@__DATA_MEM5_SIZE_TYPE__<UE> <DS>__DATA_MEM5_SIZE_TYPE__<DE> Extent=<ES>284:9 - 284:46<EE>
+<L><invalid loc>:285:9: macro definition=__DATA_MEM5_INTPTR_TYPE__ <US>c:macro@__DATA_MEM5_INTPTR_TYPE__<UE> <DS>__DATA_MEM5_INTPTR_TYPE__<DE> Extent=<ES>285:9 - 285:46<EE>
+<L><invalid loc>:286:9: macro definition=__DATA_MEM5_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM5_UINTPTR_TYPE__<UE> <DS>__DATA_MEM5_UINTPTR_TYPE__<DE> Extent=<ES>286:9 - 286:49<EE>
+<L><invalid loc>:287:9: macro definition=__DATA_MEM5_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM5_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM5_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>287:9 - 287:46<EE>
+<L><invalid loc>:288:9: macro definition=__DATA_MEM5_MAX_SIZE__ <US>c:macro@__DATA_MEM5_MAX_SIZE__<UE> <DS>__DATA_MEM5_MAX_SIZE__<DE> Extent=<ES>288:9 - 288:36<EE>
+<L><invalid loc>:289:9: macro definition=__DATA_MEM6__ <US>c:macro@__DATA_MEM6__<UE> <DS>__DATA_MEM6__<DE> Extent=<ES>289:9 - 289:30<EE>
+<L><invalid loc>:290:9: macro definition=__DATA_MEM6_POINTER_OK__ <US>c:macro@__DATA_MEM6_POINTER_OK__<UE> <DS>__DATA_MEM6_POINTER_OK__<DE> Extent=<ES>290:9 - 290:35<EE>
+<L><invalid loc>:291:9: macro definition=__DATA_MEM6_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM6_UNIQUE_POINTER__<UE> <DS>__DATA_MEM6_UNIQUE_POINTER__<DE> Extent=<ES>291:9 - 291:39<EE>
+<L><invalid loc>:292:9: macro definition=__DATA_MEM6_VAR_OK__ <US>c:macro@__DATA_MEM6_VAR_OK__<UE> <DS>__DATA_MEM6_VAR_OK__<DE> Extent=<ES>292:9 - 292:31<EE>
+<L><invalid loc>:293:9: macro definition=__DATA_MEM6_INDEX_TYPE__ <US>c:macro@__DATA_MEM6_INDEX_TYPE__<UE> <DS>__DATA_MEM6_INDEX_TYPE__<DE> Extent=<ES>293:9 - 293:37<EE>
+<L><invalid loc>:294:9: macro definition=__DATA_MEM6_SIZE_TYPE__ <US>c:macro@__DATA_MEM6_SIZE_TYPE__<UE> <DS>__DATA_MEM6_SIZE_TYPE__<DE> Extent=<ES>294:9 - 294:45<EE>
+<L><invalid loc>:295:9: macro definition=__DATA_MEM6_INTPTR_TYPE__ <US>c:macro@__DATA_MEM6_INTPTR_TYPE__<UE> <DS>__DATA_MEM6_INTPTR_TYPE__<DE> Extent=<ES>295:9 - 295:44<EE>
+<L><invalid loc>:296:9: macro definition=__DATA_MEM6_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM6_UINTPTR_TYPE__<UE> <DS>__DATA_MEM6_UINTPTR_TYPE__<DE> Extent=<ES>296:9 - 296:54<EE>
+<L><invalid loc>:297:9: macro definition=__DATA_MEM6_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM6_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM6_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>297:9 - 297:45<EE>
+<L><invalid loc>:298:9: macro definition=__DATA_MEM6_MAX_SIZE__ <US>c:macro@__DATA_MEM6_MAX_SIZE__<UE> <DS>__DATA_MEM6_MAX_SIZE__<DE> Extent=<ES>298:9 - 298:38<EE>
+<L><invalid loc>:299:9: macro definition=__DATA_MEM6_HEAP_SEGMENT__ <US>c:macro@__DATA_MEM6_HEAP_SEGMENT__<UE> <DS>__DATA_MEM6_HEAP_SEGMENT__<DE> Extent=<ES>299:9 - 299:48<EE>
+<L><invalid loc>:300:9: macro definition=__DATA_MEM6_PAGE_SIZE__ <US>c:macro@__DATA_MEM6_PAGE_SIZE__<UE> <DS>__DATA_MEM6_PAGE_SIZE__<DE> Extent=<ES>300:9 - 300:34<EE>
+<L><invalid loc>:301:9: macro definition=__DATA_MEM6_HEAP__ <US>c:macro@__DATA_MEM6_HEAP__<UE> <DS>__DATA_MEM6_HEAP__<DE> Extent=<ES>301:9 - 301:29<EE>
+<L><invalid loc>:302:9: macro definition=__DATA_MEM7__ <US>c:macro@__DATA_MEM7__<UE> <DS>__DATA_MEM7__<DE> Extent=<ES>302:9 - 302:31<EE>
+<L><invalid loc>:303:9: macro definition=__DATA_MEM7_POINTER_OK__ <US>c:macro@__DATA_MEM7_POINTER_OK__<UE> <DS>__DATA_MEM7_POINTER_OK__<DE> Extent=<ES>303:9 - 303:35<EE>
+<L><invalid loc>:304:9: macro definition=__DATA_MEM7_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM7_UNIQUE_POINTER__<UE> <DS>__DATA_MEM7_UNIQUE_POINTER__<DE> Extent=<ES>304:9 - 304:39<EE>
+<L><invalid loc>:305:9: macro definition=__DATA_MEM7_VAR_OK__ <US>c:macro@__DATA_MEM7_VAR_OK__<UE> <DS>__DATA_MEM7_VAR_OK__<DE> Extent=<ES>305:9 - 305:31<EE>
+<L><invalid loc>:306:9: macro definition=__DATA_MEM7_INDEX_TYPE__ <US>c:macro@__DATA_MEM7_INDEX_TYPE__<UE> <DS>__DATA_MEM7_INDEX_TYPE__<DE> Extent=<ES>306:9 - 306:37<EE>
+<L><invalid loc>:307:9: macro definition=__DATA_MEM7_SIZE_TYPE__ <US>c:macro@__DATA_MEM7_SIZE_TYPE__<UE> <DS>__DATA_MEM7_SIZE_TYPE__<DE> Extent=<ES>307:9 - 307:45<EE>
+<L><invalid loc>:308:9: macro definition=__DATA_MEM7_INTPTR_TYPE__ <US>c:macro@__DATA_MEM7_INTPTR_TYPE__<UE> <DS>__DATA_MEM7_INTPTR_TYPE__<DE> Extent=<ES>308:9 - 308:44<EE>
+<L><invalid loc>:309:9: macro definition=__DATA_MEM7_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM7_UINTPTR_TYPE__<UE> <DS>__DATA_MEM7_UINTPTR_TYPE__<DE> Extent=<ES>309:9 - 309:54<EE>
+<L><invalid loc>:310:9: macro definition=__DATA_MEM7_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM7_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM7_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>310:9 - 310:45<EE>
+<L><invalid loc>:311:9: macro definition=__DATA_MEM7_MAX_SIZE__ <US>c:macro@__DATA_MEM7_MAX_SIZE__<UE> <DS>__DATA_MEM7_MAX_SIZE__<DE> Extent=<ES>311:9 - 311:38<EE>
+<L><invalid loc>:312:9: macro definition=__DATA_MEM8__ <US>c:macro@__DATA_MEM8__<UE> <DS>__DATA_MEM8__<DE> Extent=<ES>312:9 - 312:34<EE>
+<L><invalid loc>:313:9: macro definition=__DATA_MEM8_POINTER_OK__ <US>c:macro@__DATA_MEM8_POINTER_OK__<UE> <DS>__DATA_MEM8_POINTER_OK__<DE> Extent=<ES>313:9 - 313:35<EE>
+<L><invalid loc>:314:9: macro definition=__DATA_MEM8_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM8_UNIQUE_POINTER__<UE> <DS>__DATA_MEM8_UNIQUE_POINTER__<DE> Extent=<ES>314:9 - 314:39<EE>
+<L><invalid loc>:315:9: macro definition=__DATA_MEM8_VAR_OK__ <US>c:macro@__DATA_MEM8_VAR_OK__<UE> <DS>__DATA_MEM8_VAR_OK__<DE> Extent=<ES>315:9 - 315:31<EE>
+<L><invalid loc>:316:9: macro definition=__DATA_MEM8_INDEX_TYPE__ <US>c:macro@__DATA_MEM8_INDEX_TYPE__<UE> <DS>__DATA_MEM8_INDEX_TYPE__<DE> Extent=<ES>316:9 - 316:37<EE>
+<L><invalid loc>:317:9: macro definition=__DATA_MEM8_SIZE_TYPE__ <US>c:macro@__DATA_MEM8_SIZE_TYPE__<UE> <DS>__DATA_MEM8_SIZE_TYPE__<DE> Extent=<ES>317:9 - 317:45<EE>
+<L><invalid loc>:318:9: macro definition=__DATA_MEM8_INTPTR_TYPE__ <US>c:macro@__DATA_MEM8_INTPTR_TYPE__<UE> <DS>__DATA_MEM8_INTPTR_TYPE__<DE> Extent=<ES>318:9 - 318:44<EE>
+<L><invalid loc>:319:9: macro definition=__DATA_MEM8_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM8_UINTPTR_TYPE__<UE> <DS>__DATA_MEM8_UINTPTR_TYPE__<DE> Extent=<ES>319:9 - 319:54<EE>
+<L><invalid loc>:320:9: macro definition=__DATA_MEM8_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM8_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM8_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>320:9 - 320:45<EE>
+<L><invalid loc>:321:9: macro definition=__DATA_MEM8_MAX_SIZE__ <US>c:macro@__DATA_MEM8_MAX_SIZE__<UE> <DS>__DATA_MEM8_MAX_SIZE__<DE> Extent=<ES>321:9 - 321:38<EE>
+<L><invalid loc>:322:9: macro definition=__DATA_MEM9__ <US>c:macro@__DATA_MEM9__<UE> <DS>__DATA_MEM9__<DE> Extent=<ES>322:9 - 322:32<EE>
+<L><invalid loc>:323:9: macro definition=__DATA_MEM9_POINTER_OK__ <US>c:macro@__DATA_MEM9_POINTER_OK__<UE> <DS>__DATA_MEM9_POINTER_OK__<DE> Extent=<ES>323:9 - 323:35<EE>
+<L><invalid loc>:324:9: macro definition=__DATA_MEM9_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM9_UNIQUE_POINTER__<UE> <DS>__DATA_MEM9_UNIQUE_POINTER__<DE> Extent=<ES>324:9 - 324:39<EE>
+<L><invalid loc>:325:9: macro definition=__DATA_MEM9_VAR_OK__ <US>c:macro@__DATA_MEM9_VAR_OK__<UE> <DS>__DATA_MEM9_VAR_OK__<DE> Extent=<ES>325:9 - 325:31<EE>
+<L><invalid loc>:326:9: macro definition=__DATA_MEM9_INDEX_TYPE__ <US>c:macro@__DATA_MEM9_INDEX_TYPE__<UE> <DS>__DATA_MEM9_INDEX_TYPE__<DE> Extent=<ES>326:9 - 326:37<EE>
+<L><invalid loc>:327:9: macro definition=__DATA_MEM9_SIZE_TYPE__ <US>c:macro@__DATA_MEM9_SIZE_TYPE__<UE> <DS>__DATA_MEM9_SIZE_TYPE__<DE> Extent=<ES>327:9 - 327:45<EE>
+<L><invalid loc>:328:9: macro definition=__DATA_MEM9_INTPTR_TYPE__ <US>c:macro@__DATA_MEM9_INTPTR_TYPE__<UE> <DS>__DATA_MEM9_INTPTR_TYPE__<DE> Extent=<ES>328:9 - 328:43<EE>
+<L><invalid loc>:329:9: macro definition=__DATA_MEM9_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM9_UINTPTR_TYPE__<UE> <DS>__DATA_MEM9_UINTPTR_TYPE__<DE> Extent=<ES>329:9 - 329:53<EE>
+<L><invalid loc>:330:9: macro definition=__DATA_MEM9_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM9_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM9_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>330:9 - 330:45<EE>
+<L><invalid loc>:331:9: macro definition=__DATA_MEM9_MAX_SIZE__ <US>c:macro@__DATA_MEM9_MAX_SIZE__<UE> <DS>__DATA_MEM9_MAX_SIZE__<DE> Extent=<ES>331:9 - 331:38<EE>
+<L><invalid loc>:332:9: macro definition=__DATA_MEM9_HEAP_SEGMENT__ <US>c:macro@__DATA_MEM9_HEAP_SEGMENT__<UE> <DS>__DATA_MEM9_HEAP_SEGMENT__<DE> Extent=<ES>332:9 - 332:48<EE>
+<L><invalid loc>:333:9: macro definition=__DATA_MEM9_PAGE_SIZE__ <US>c:macro@__DATA_MEM9_PAGE_SIZE__<UE> <DS>__DATA_MEM9_PAGE_SIZE__<DE> Extent=<ES>333:9 - 333:39<EE>
+<L><invalid loc>:334:9: macro definition=__DATA_MEM9_HEAP__ <US>c:macro@__DATA_MEM9_HEAP__<UE> <DS>__DATA_MEM9_HEAP__<DE> Extent=<ES>334:9 - 334:29<EE>
+<L><invalid loc>:335:9: macro definition=__DATA_MEM10__ <US>c:macro@__DATA_MEM10__<UE> <DS>__DATA_MEM10__<DE> Extent=<ES>335:9 - 335:30<EE>
+<L><invalid loc>:336:9: macro definition=__DATA_MEM10_POINTER_OK__ <US>c:macro@__DATA_MEM10_POINTER_OK__<UE> <DS>__DATA_MEM10_POINTER_OK__<DE> Extent=<ES>336:9 - 336:36<EE>
+<L><invalid loc>:337:9: macro definition=__DATA_MEM10_UNIQUE_POINTER__ <US>c:macro@__DATA_MEM10_UNIQUE_POINTER__<UE> <DS>__DATA_MEM10_UNIQUE_POINTER__<DE> Extent=<ES>337:9 - 337:40<EE>
+<L><invalid loc>:338:9: macro definition=__DATA_MEM10_VAR_OK__ <US>c:macro@__DATA_MEM10_VAR_OK__<UE> <DS>__DATA_MEM10_VAR_OK__<DE> Extent=<ES>338:9 - 338:32<EE>
+<L><invalid loc>:339:9: macro definition=__DATA_MEM10_INDEX_TYPE__ <US>c:macro@__DATA_MEM10_INDEX_TYPE__<UE> <DS>__DATA_MEM10_INDEX_TYPE__<DE> Extent=<ES>339:9 - 339:38<EE>
+<L><invalid loc>:340:9: macro definition=__DATA_MEM10_SIZE_TYPE__ <US>c:macro@__DATA_MEM10_SIZE_TYPE__<UE> <DS>__DATA_MEM10_SIZE_TYPE__<DE> Extent=<ES>340:9 - 340:46<EE>
+<L><invalid loc>:341:9: macro definition=__DATA_MEM10_INTPTR_TYPE__ <US>c:macro@__DATA_MEM10_INTPTR_TYPE__<UE> <DS>__DATA_MEM10_INTPTR_TYPE__<DE> Extent=<ES>341:9 - 341:45<EE>
+<L><invalid loc>:342:9: macro definition=__DATA_MEM10_UINTPTR_TYPE__ <US>c:macro@__DATA_MEM10_UINTPTR_TYPE__<UE> <DS>__DATA_MEM10_UINTPTR_TYPE__<DE> Extent=<ES>342:9 - 342:55<EE>
+<L><invalid loc>:343:9: macro definition=__DATA_MEM10_INTPTR_SIZE_PREFIX__ <US>c:macro@__DATA_MEM10_INTPTR_SIZE_PREFIX__<UE> <DS>__DATA_MEM10_INTPTR_SIZE_PREFIX__<DE> Extent=<ES>343:9 - 343:46<EE>
+<L><invalid loc>:344:9: macro definition=__DATA_MEM10_MAX_SIZE__ <US>c:macro@__DATA_MEM10_MAX_SIZE__<UE> <DS>__DATA_MEM10_MAX_SIZE__<DE> Extent=<ES>344:9 - 344:39<EE>
+<L><invalid loc>:345:9: macro definition=__CODE_MEM0__ <US>c:macro@__CODE_MEM0__<UE> <DS>__CODE_MEM0__<DE> Extent=<ES>345:9 - 345:34<EE>
+<L><invalid loc>:346:9: macro definition=__CODE_MEM0_POINTER_OK__ <US>c:macro@__CODE_MEM0_POINTER_OK__<UE> <DS>__CODE_MEM0_POINTER_OK__<DE> Extent=<ES>346:9 - 346:35<EE>
+<L><invalid loc>:347:9: macro definition=__CODE_MEM0_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM0_UNIQUE_POINTER__<UE> <DS>__CODE_MEM0_UNIQUE_POINTER__<DE> Extent=<ES>347:9 - 347:39<EE>
+<L><invalid loc>:348:9: macro definition=__CODE_MEM0_VAR_OK__ <US>c:macro@__CODE_MEM0_VAR_OK__<UE> <DS>__CODE_MEM0_VAR_OK__<DE> Extent=<ES>348:9 - 348:31<EE>
+<L><invalid loc>:349:9: macro definition=__CODE_MEM1__ <US>c:macro@__CODE_MEM1__<UE> <DS>__CODE_MEM1__<DE> Extent=<ES>349:9 - 349:42<EE>
+<L><invalid loc>:350:9: macro definition=__CODE_MEM1_POINTER_OK__ <US>c:macro@__CODE_MEM1_POINTER_OK__<UE> <DS>__CODE_MEM1_POINTER_OK__<DE> Extent=<ES>350:9 - 350:35<EE>
+<L><invalid loc>:351:9: macro definition=__CODE_MEM1_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM1_UNIQUE_POINTER__<UE> <DS>__CODE_MEM1_UNIQUE_POINTER__<DE> Extent=<ES>351:9 - 351:39<EE>
+<L><invalid loc>:352:9: macro definition=__CODE_MEM1_VAR_OK__ <US>c:macro@__CODE_MEM1_VAR_OK__<UE> <DS>__CODE_MEM1_VAR_OK__<DE> Extent=<ES>352:9 - 352:31<EE>
+<L><invalid loc>:353:9: macro definition=__CODE_MEM2__ <US>c:macro@__CODE_MEM2__<UE> <DS>__CODE_MEM2__<DE> Extent=<ES>353:9 - 353:42<EE>
+<L><invalid loc>:354:9: macro definition=__CODE_MEM2_POINTER_OK__ <US>c:macro@__CODE_MEM2_POINTER_OK__<UE> <DS>__CODE_MEM2_POINTER_OK__<DE> Extent=<ES>354:9 - 354:35<EE>
+<L><invalid loc>:355:9: macro definition=__CODE_MEM2_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM2_UNIQUE_POINTER__<UE> <DS>__CODE_MEM2_UNIQUE_POINTER__<DE> Extent=<ES>355:9 - 355:39<EE>
+<L><invalid loc>:356:9: macro definition=__CODE_MEM2_VAR_OK__ <US>c:macro@__CODE_MEM2_VAR_OK__<UE> <DS>__CODE_MEM2_VAR_OK__<DE> Extent=<ES>356:9 - 356:31<EE>
+<L><invalid loc>:357:9: macro definition=__CODE_MEM3__ <US>c:macro@__CODE_MEM3__<UE> <DS>__CODE_MEM3__<DE> Extent=<ES>357:9 - 357:34<EE>
+<L><invalid loc>:358:9: macro definition=__CODE_MEM3_POINTER_OK__ <US>c:macro@__CODE_MEM3_POINTER_OK__<UE> <DS>__CODE_MEM3_POINTER_OK__<DE> Extent=<ES>358:9 - 358:35<EE>
+<L><invalid loc>:359:9: macro definition=__CODE_MEM3_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM3_UNIQUE_POINTER__<UE> <DS>__CODE_MEM3_UNIQUE_POINTER__<DE> Extent=<ES>359:9 - 359:39<EE>
+<L><invalid loc>:360:9: macro definition=__CODE_MEM3_VAR_OK__ <US>c:macro@__CODE_MEM3_VAR_OK__<UE> <DS>__CODE_MEM3_VAR_OK__<DE> Extent=<ES>360:9 - 360:31<EE>
+<L><invalid loc>:361:9: macro definition=__CODE_MEM4__ <US>c:macro@__CODE_MEM4__<UE> <DS>__CODE_MEM4__<DE> Extent=<ES>361:9 - 361:36<EE>
+<L><invalid loc>:362:9: macro definition=__CODE_MEM4_POINTER_OK__ <US>c:macro@__CODE_MEM4_POINTER_OK__<UE> <DS>__CODE_MEM4_POINTER_OK__<DE> Extent=<ES>362:9 - 362:35<EE>
+<L><invalid loc>:363:9: macro definition=__CODE_MEM4_UNIQUE_POINTER__ <US>c:macro@__CODE_MEM4_UNIQUE_POINTER__<UE> <DS>__CODE_MEM4_UNIQUE_POINTER__<DE> Extent=<ES>363:9 - 363:39<EE>
+<L><invalid loc>:364:9: macro definition=__CODE_MEM4_VAR_OK__ <US>c:macro@__CODE_MEM4_VAR_OK__<UE> <DS>__CODE_MEM4_VAR_OK__<DE> Extent=<ES>364:9 - 364:31<EE>
+<L><invalid loc>:365:9: macro definition=__HEAP_MEM0__ <US>c:macro@__HEAP_MEM0__<UE> <DS>__HEAP_MEM0__<DE> Extent=<ES>365:9 - 365:24<EE>
+<L><invalid loc>:366:9: macro definition=__HEAP_MEM1__ <US>c:macro@__HEAP_MEM1__<UE> <DS>__HEAP_MEM1__<DE> Extent=<ES>366:9 - 366:24<EE>
+<L><invalid loc>:367:9: macro definition=__MULTIPLE_HEAPS__ <US>c:macro@__MULTIPLE_HEAPS__<UE> <DS>__MULTIPLE_HEAPS__<DE> Extent=<ES>367:9 - 367:29<EE>
+<L><invalid loc>:368:9: macro definition=__DEF_HEAP_MEM__ <US>c:macro@__DEF_HEAP_MEM__<UE> <DS>__DEF_HEAP_MEM__<DE> Extent=<ES>368:9 - 368:33<EE>
+<L><invalid loc>:369:9: macro definition=__C99_BOOL__ <US>c:macro@__C99_BOOL__<UE> <DS>__C99_BOOL__<DE> Extent=<ES>369:9 - 369:23<EE>
+<L><invalid loc>:370:9: macro definition=__MULTIPLE_INHERITANCE__ <US>c:macro@__MULTIPLE_INHERITANCE__<UE> <DS>__MULTIPLE_INHERITANCE__<DE> Extent=<ES>370:9 - 370:35<EE>
+<L><invalid loc>:371:9: macro definition=_CLIB_FP_INF_NAN <US>c:macro@_CLIB_FP_INF_NAN<UE> <DS>_CLIB_FP_INF_NAN<DE> Extent=<ES>371:9 - 371:27<EE>
+<L><invalid loc>:372:9: macro definition=_DIFUNCT_MEMORY <US>c:macro@_DIFUNCT_MEMORY<UE> <DS>_DIFUNCT_MEMORY<DE> Extent=<ES>372:9 - 372:31<EE>
+<L><invalid loc>:373:9: macro definition=__CALLING_CONVENTION__ <US>c:macro@__CALLING_CONVENTION__<UE> <DS>__CALLING_CONVENTION__<DE> Extent=<ES>373:9 - 373:33<EE>
+<L><invalid loc>:374:9: macro definition=__CC_DO__ <US>c:macro@__CC_DO__<UE> <DS>__CC_DO__<DE> Extent=<ES>374:9 - 374:20<EE>
+<L><invalid loc>:375:9: macro definition=__CC_ER__ <US>c:macro@__CC_ER__<UE> <DS>__CC_ER__<DE> Extent=<ES>375:9 - 375:20<EE>
+<L><invalid loc>:376:9: macro definition=__CC_IO__ <US>c:macro@__CC_IO__<UE> <DS>__CC_IO__<DE> Extent=<ES>376:9 - 376:20<EE>
+<L><invalid loc>:377:9: macro definition=__CC_IR__ <US>c:macro@__CC_IR__<UE> <DS>__CC_IR__<DE> Extent=<ES>377:9 - 377:20<EE>
+<L><invalid loc>:378:9: macro definition=__CC_PR__ <US>c:macro@__CC_PR__<UE> <DS>__CC_PR__<DE> Extent=<ES>378:9 - 378:20<EE>
+<L><invalid loc>:379:9: macro definition=__CC_XR__ <US>c:macro@__CC_XR__<UE> <DS>__CC_XR__<DE> Extent=<ES>379:9 - 379:20<EE>
+<L><invalid loc>:380:9: macro definition=__CM_BANKED_EXT2__ <US>c:macro@__CM_BANKED_EXT2__<UE> <DS>__CM_BANKED_EXT2__<DE> Extent=<ES>380:9 - 380:29<EE>
+<L><invalid loc>:381:9: macro definition=__CM_BANKED__ <US>c:macro@__CM_BANKED__<UE> <DS>__CM_BANKED__<DE> Extent=<ES>381:9 - 381:24<EE>
+<L><invalid loc>:382:9: macro definition=__CM_FAR__ <US>c:macro@__CM_FAR__<UE> <DS>__CM_FAR__<DE> Extent=<ES>382:9 - 382:21<EE>
+<L><invalid loc>:383:9: macro definition=__CM_NEAR__ <US>c:macro@__CM_NEAR__<UE> <DS>__CM_NEAR__<DE> Extent=<ES>383:9 - 383:22<EE>
+<L><invalid loc>:384:9: macro definition=__CM_TINY__ <US>c:macro@__CM_TINY__<UE> <DS>__CM_TINY__<DE> Extent=<ES>384:9 - 384:22<EE>
+<L><invalid loc>:385:9: macro definition=__CODE_MODEL__ <US>c:macro@__CODE_MODEL__<UE> <DS>__CODE_MODEL__<DE> Extent=<ES>385:9 - 385:25<EE>
+<L><invalid loc>:386:9: macro definition=__CONSTANT_LOCATION__ <US>c:macro@__CONSTANT_LOCATION__<UE> <DS>__CONSTANT_LOCATION__<DE> Extent=<ES>386:9 - 386:32<EE>
+<L><invalid loc>:387:9: macro definition=__CORE_EXTENDED1__ <US>c:macro@__CORE_EXTENDED1__<UE> <DS>__CORE_EXTENDED1__<DE> Extent=<ES>387:9 - 387:29<EE>
+<L><invalid loc>:388:9: macro definition=__CORE_EXTENDED2__ <US>c:macro@__CORE_EXTENDED2__<UE> <DS>__CORE_EXTENDED2__<DE> Extent=<ES>388:9 - 388:29<EE>
+<L><invalid loc>:389:9: macro definition=__CORE_PLAIN__ <US>c:macro@__CORE_PLAIN__<UE> <DS>__CORE_PLAIN__<DE> Extent=<ES>389:9 - 389:25<EE>
+<L><invalid loc>:390:9: macro definition=__CORE_TINY__ <US>c:macro@__CORE_TINY__<UE> <DS>__CORE_TINY__<DE> Extent=<ES>390:9 - 390:24<EE>
+<L><invalid loc>:391:9: macro definition=__CORE__ <US>c:macro@__CORE__<UE> <DS>__CORE__<DE> Extent=<ES>391:9 - 391:19<EE>
+<L><invalid loc>:392:9: macro definition=__DATA_MODEL__ <US>c:macro@__DATA_MODEL__<UE> <DS>__DATA_MODEL__<DE> Extent=<ES>392:9 - 392:25<EE>
+<L><invalid loc>:393:9: macro definition=__DM_FAR_GENERIC__ <US>c:macro@__DM_FAR_GENERIC__<UE> <DS>__DM_FAR_GENERIC__<DE> Extent=<ES>393:9 - 393:29<EE>
+<L><invalid loc>:394:9: macro definition=__DM_FAR__ <US>c:macro@__DM_FAR__<UE> <DS>__DM_FAR__<DE> Extent=<ES>394:9 - 394:21<EE>
+<L><invalid loc>:395:9: macro definition=__DM_GENERIC__ <US>c:macro@__DM_GENERIC__<UE> <DS>__DM_GENERIC__<DE> Extent=<ES>395:9 - 395:25<EE>
+<L><invalid loc>:396:9: macro definition=__DM_LARGE__ <US>c:macro@__DM_LARGE__<UE> <DS>__DM_LARGE__<DE> Extent=<ES>396:9 - 396:23<EE>
+<L><invalid loc>:397:9: macro definition=__DM_SMALL__ <US>c:macro@__DM_SMALL__<UE> <DS>__DM_SMALL__<DE> Extent=<ES>397:9 - 397:23<EE>
+<L><invalid loc>:398:9: macro definition=__DM_TINY__ <US>c:macro@__DM_TINY__<UE> <DS>__DM_TINY__<DE> Extent=<ES>398:9 - 398:22<EE>
+<L><invalid loc>:399:9: macro definition=__ICC8051__ <US>c:macro@__ICC8051__<UE> <DS>__ICC8051__<DE> Extent=<ES>399:9 - 399:22<EE>
+<L><invalid loc>:400:9: macro definition=__NUMBER_OF_DPTRS__ <US>c:macro@__NUMBER_OF_DPTRS__<UE> <DS>__NUMBER_OF_DPTRS__<DE> Extent=<ES>400:9 - 400:30<EE>
+<L><invalid loc>:401:9: macro definition=__XOR_DPSEL_SELECT__ <US>c:macro@__XOR_DPSEL_SELECT__<UE> <DS>__XOR_DPSEL_SELECT__<DE> Extent=<ES>401:9 - 401:31<EE>
+<L><invalid loc>:402:9: macro definition=__PLAIN_INT_BITFIELD_IS_SIGNED__ <US>c:macro@__PLAIN_INT_BITFIELD_IS_SIGNED__<UE> <DS>__PLAIN_INT_BITFIELD_IS_SIGNED__<DE> Extent=<ES>402:9 - 402:43<EE>
+<L><invalid loc>:403:9: macro definition=__IAR_COMPILERBASE__ <US>c:macro@__IAR_COMPILERBASE__<UE> <DS>__IAR_COMPILERBASE__<DE> Extent=<ES>403:9 - 403:36<EE>
+<L><invalid loc>:406:9: macro definition=__STDC__ <US>c:macro@__STDC__<UE> <DS>__STDC__<DE> Extent=<ES>406:9 - 406:19<EE>
+<L><invalid loc>:407:9: macro definition=__STDC_VERSION__ <US>c:macro@__STDC_VERSION__<UE> <DS>__STDC_VERSION__<DE> Extent=<ES>407:9 - 407:33<EE>
+<L><invalid loc>:408:9: macro definition=__STDC_HOSTED__ <US>c:macro@__STDC_HOSTED__<UE> <DS>__STDC_HOSTED__<DE> Extent=<ES>408:9 - 408:26<EE>
+<L><invalid loc>:409:9: macro definition=__EDG_TYPE_TRAITS_ENABLED <US>c:macro@__EDG_TYPE_TRAITS_ENABLED<UE> <DS>__EDG_TYPE_TRAITS_ENABLED<DE> Extent=<ES>409:9 - 409:36<EE>
+<L><invalid loc>:410:9: macro definition=__EDG__ <US>c:macro@__EDG__<UE> <DS>__EDG__<DE> Extent=<ES>410:9 - 410:18<EE>
+<L><invalid loc>:411:9: macro definition=__EDG_VERSION__ <US>c:macro@__EDG_VERSION__<UE> <DS>__EDG_VERSION__<DE> Extent=<ES>411:9 - 411:28<EE>
+<L><invalid loc>:412:9: macro definition=__EDG_SIZE_TYPE__ <US>c:macro@__EDG_SIZE_TYPE__<UE> <DS>__EDG_SIZE_TYPE__<DE> Extent=<ES>412:9 - 412:39<EE>
+<L><invalid loc>:413:9: macro definition=__EDG_PTRDIFF_TYPE__ <US>c:macro@__EDG_PTRDIFF_TYPE__<UE> <DS>__EDG_PTRDIFF_TYPE__<DE> Extent=<ES>413:9 - 413:33<EE>
+<L><invalid loc>:414:9: macro definition=__EDG_JMP_BUF_ELEMENT_TYPE <US>c:macro@__EDG_JMP_BUF_ELEMENT_TYPE<UE> <DS>__EDG_JMP_BUF_ELEMENT_TYPE<DE> Extent=<ES>414:9 - 414:47<EE>
+<L><invalid loc>:415:9: macro definition=__EDG_JMP_BUF_NUM_ELEMENTS <US>c:macro@__EDG_JMP_BUF_NUM_ELEMENTS<UE> <DS>__EDG_JMP_BUF_NUM_ELEMENTS<DE> Extent=<ES>415:9 - 415:38<EE>
+<L><invalid loc>:416:9: macro definition=__EDG_DELTA_TYPE <US>c:macro@__EDG_DELTA_TYPE<UE> <DS>__EDG_DELTA_TYPE<DE> Extent=<ES>416:9 - 416:29<EE>
+<L><invalid loc>:417:9: macro definition=__EDG_VIRTUAL_FUNCTION_INDEX_TYPE <US>c:macro@__EDG_VIRTUAL_FUNCTION_INDEX_TYPE<UE> <DS>__EDG_VIRTUAL_FUNCTION_INDEX_TYPE<DE> Extent=<ES>417:9 - 417:57<EE>
+<L><invalid loc>:418:9: macro definition=__EDG_VAR_HANDLE_TYPE <US>c:macro@__EDG_VAR_HANDLE_TYPE<UE> <DS>__EDG_VAR_HANDLE_TYPE<DE> Extent=<ES>418:9 - 418:45<EE>
+<L><invalid loc>:419:9: macro definition=__EDG_REGION_NUMBER_TYPE <US>c:macro@__EDG_REGION_NUMBER_TYPE<UE> <DS>__EDG_REGION_NUMBER_TYPE<DE> Extent=<ES>419:9 - 419:48<EE>
+<L><invalid loc>:420:9: macro definition=__EDG_NULL_EH_REGION_NUMBER <US>c:macro@__EDG_NULL_EH_REGION_NUMBER<UE> <DS>__EDG_NULL_EH_REGION_NUMBER<DE> Extent=<ES>420:9 - 420:42<EE>
+<L><invalid loc>:421:9: macro definition=__EDG_LOWER_VARIABLE_LENGTH_ARRAYS <US>c:macro@__EDG_LOWER_VARIABLE_LENGTH_ARRAYS<UE> <DS>__EDG_LOWER_VARIABLE_LENGTH_ARRAYS<DE> Extent=<ES>421:9 - 421:45<EE>
+<L><invalid loc>:422:9: macro definition=__EDG_ELEM_COUNT_PARAM_TYPE <US>c:macro@__EDG_ELEM_COUNT_PARAM_TYPE<UE> <DS>__EDG_ELEM_COUNT_PARAM_TYPE<DE> Extent=<ES>422:9 - 422:41<EE>
+<L><invalid loc>:423:9: macro definition=__EDG_ABI_COMPATIBILITY_VERSION <US>c:macro@__EDG_ABI_COMPATIBILITY_VERSION<UE> <DS>__EDG_ABI_COMPATIBILITY_VERSION<DE> Extent=<ES>423:9 - 423:45<EE>
+<L><invalid loc>:424:9: macro definition=__EDG_ABI_CHANGES_FOR_RTTI <US>c:macro@__EDG_ABI_CHANGES_FOR_RTTI<UE> <DS>__EDG_ABI_CHANGES_FOR_RTTI<DE> Extent=<ES>424:9 - 424:37<EE>
+<L><invalid loc>:425:9: macro definition=__EDG_ABI_CHANGES_FOR_ARRAY_NEW_AND_DELETE <US>c:macro@__EDG_ABI_CHANGES_FOR_ARRAY_NEW_AND_DELETE<UE> <DS>__EDG_ABI_CHANGES_FOR_ARRAY_NEW_AND_DELETE<DE> Extent=<ES>425:9 - 425:53<EE>
+<L><invalid loc>:426:9: macro definition=__EDG_ABI_CHANGES_FOR_PLACEMENT_DELETE <US>c:macro@__EDG_ABI_CHANGES_FOR_PLACEMENT_DELETE<UE> <DS>__EDG_ABI_CHANGES_FOR_PLACEMENT_DELETE<DE> Extent=<ES>426:9 - 426:49<EE>
+<L><invalid loc>:427:9: macro definition=__EDG_BSD <US>c:macro@__EDG_BSD<UE> <DS>__EDG_BSD<DE> Extent=<ES>427:9 - 427:20<EE>
+<L><invalid loc>:428:9: macro definition=__EDG_SYSV <US>c:macro@__EDG_SYSV<UE> <DS>__EDG_SYSV<DE> Extent=<ES>428:9 - 428:21<EE>
+<L><invalid loc>:429:9: macro definition=__EDG_ANSIC <US>c:macro@__EDG_ANSIC<UE> <DS>__EDG_ANSIC<DE> Extent=<ES>429:9 - 429:22<EE>
+<L><invalid loc>:430:9: macro definition=__EDG_CPP0X_IL_EXTENSIONS_SUPPORTED <US>c:macro@__EDG_CPP0X_IL_EXTENSIONS_SUPPORTED<UE> <DS>__EDG_CPP0X_IL_EXTENSIONS_SUPPORTED<DE> Extent=<ES>430:9 - 430:46<EE>
+<L><invalid loc>:431:9: macro definition=BROADCASTER_CFG <US>c:macro@BROADCASTER_CFG<UE> <DS>BROADCASTER_CFG<DE> Extent=<ES>431:9 - 431:29<EE>
+<L><invalid loc>:432:9: macro definition=OBSERVER_CFG <US>c:macro@OBSERVER_CFG<UE> <DS>OBSERVER_CFG<DE> Extent=<ES>432:9 - 432:26<EE>
+<L><invalid loc>:433:9: macro definition=PERIPHERAL_CFG <US>c:macro@PERIPHERAL_CFG<UE> <DS>PERIPHERAL_CFG<DE> Extent=<ES>433:9 - 433:28<EE>
+<L><invalid loc>:434:9: macro definition=CENTRAL_CFG <US>c:macro@CENTRAL_CFG<UE> <DS>CENTRAL_CFG<DE> Extent=<ES>434:9 - 434:25<EE>
+<L><invalid loc>:435:9: macro definition=ADV_NCONN_CFG <US>c:macro@ADV_NCONN_CFG<UE> <DS>ADV_NCONN_CFG<DE> Extent=<ES>435:9 - 435:27<EE>
+<L><invalid loc>:436:9: macro definition=ADV_CONN_CFG <US>c:macro@ADV_CONN_CFG<UE> <DS>ADV_CONN_CFG<DE> Extent=<ES>436:9 - 436:26<EE>
+<L><invalid loc>:437:9: macro definition=SCAN_CFG <US>c:macro@SCAN_CFG<UE> <DS>SCAN_CFG<DE> Extent=<ES>437:9 - 437:22<EE>
+<L><invalid loc>:438:9: macro definition=INIT_CFG <US>c:macro@INIT_CFG<UE> <DS>INIT_CFG<DE> Extent=<ES>438:9 - 438:22<EE>
+<L><invalid loc>:439:9: macro definition=ADV_CFG <US>c:macro@ADV_CFG<UE> <DS>ADV_CFG<DE> Extent=<ES>439:9 - 439:43<EE>
+<L><invalid loc>:440:9: macro definition=LINK_CFG <US>c:macro@LINK_CFG<UE> <DS>LINK_CFG<DE> Extent=<ES>440:9 - 440:39<EE>
+<L><invalid loc>:441:9: macro definition=FULL_CFG <US>c:macro@FULL_CFG<UE> <DS>FULL_CFG<DE> Extent=<ES>441:9 - 441:62<EE>
+<L><invalid loc>:442:9: macro definition=HOST_CONFIG <US>c:macro@HOST_CONFIG<UE> <DS>HOST_CONFIG<DE> Extent=<ES>442:9 - 442:35<EE>
+<L><invalid loc>:443:9: macro definition=GAP_PRIVACY_RECONNECT <US>c:macro@GAP_PRIVACY_RECONNECT<UE> <DS>GAP_PRIVACY_RECONNECT<DE> Extent=<ES>443:9 - 443:32<EE>
+<L><invalid loc>:444:9: macro definition=CC2541 <US>c:macro@CC2541<UE> <DS>CC2541<DE> Extent=<ES>444:9 - 444:17<EE>
+<L><invalid loc>:445:9: macro definition=OAD_IMAGE_VERSION <US>c:macro@OAD_IMAGE_VERSION<UE> <DS>OAD_IMAGE_VERSION<DE> Extent=<ES>445:9 - 445:33<EE>
+<L><invalid loc>:446:9: macro definition=OAD_IMAGE_A_USER_ID <US>c:macro@OAD_IMAGE_A_USER_ID<UE> <DS>OAD_IMAGE_A_USER_ID<DE> Extent=<ES>446:9 - 446:47<EE>
+<L><invalid loc>:447:9: macro definition=OAD_IMAGE_B_USER_ID <US>c:macro@OAD_IMAGE_B_USER_ID<UE> <DS>OAD_IMAGE_B_USER_ID<DE> Extent=<ES>447:9 - 447:47<EE>
+<L><invalid loc>:448:9: macro definition=INT_HEAP_LEN <US>c:macro@INT_HEAP_LEN<UE> <DS>INT_HEAP_LEN<DE> Extent=<ES>448:9 - 448:26<EE>
+<L><invalid loc>:449:9: macro definition=HALNODEBUG <US>c:macro@HALNODEBUG<UE> <DS>HALNODEBUG<DE> Extent=<ES>449:9 - 449:21<EE>
+<L><invalid loc>:450:9: macro definition=OSAL_CBTIMER_NUM_TASKS <US>c:macro@OSAL_CBTIMER_NUM_TASKS<UE> <DS>OSAL_CBTIMER_NUM_TASKS<DE> Extent=<ES>450:9 - 450:33<EE>
+<L><invalid loc>:451:9: macro definition=xHAL_AES_DMA <US>c:macro@xHAL_AES_DMA<UE> <DS>xHAL_AES_DMA<DE> Extent=<ES>451:9 - 451:26<EE>
+<L><invalid loc>:452:9: macro definition=HAL_DMA <US>c:macro@HAL_DMA<UE> <DS>HAL_DMA<DE> Extent=<ES>452:9 - 452:21<EE>
+<L><invalid loc>:453:9: macro definition=POWER_SAVING <US>c:macro@POWER_SAVING<UE> <DS>POWER_SAVING<DE> Extent=<ES>453:9 - 453:23<EE>
+<L><invalid loc>:454:9: macro definition=xPLUS_BROADCASTER <US>c:macro@xPLUS_BROADCASTER<UE> <DS>xPLUS_BROADCASTER<DE> Extent=<ES>454:9 - 454:28<EE>
+<L><invalid loc>:455:9: macro definition=HAL_LCD <US>c:macro@HAL_LCD<UE> <DS>HAL_LCD<DE> Extent=<ES>455:9 - 455:21<EE>
+<L><invalid loc>:456:9: macro definition=HAL_LED <US>c:macro@HAL_LED<UE> <DS>HAL_LED<DE> Extent=<ES>456:9 - 456:21<EE>
+<L><invalid loc>:457:9: macro definition=HAL_UART <US>c:macro@HAL_UART<UE> <DS>HAL_UART<DE> Extent=<ES>457:9 - 457:23<EE>
+<L><invalid loc>:458:9: macro definition=HAL_ADC <US>c:macro@HAL_ADC<UE> <DS>HAL_ADC<DE> Extent=<ES>458:9 - 458:21<EE>
+<L><invalid loc>:459:9: macro definition=HAL_SLEEP_DEBUG_LED <US>c:macro@HAL_SLEEP_DEBUG_LED<UE> <DS>HAL_SLEEP_DEBUG_LED<DE> Extent=<ES>459:9 - 459:30<EE>
+<L><invalid loc>:460:9: macro definition=__VERSION__ <US>c:macro@__VERSION__<UE> <DS>__VERSION__<DE> Extent=<ES>460:9 - 460:64<EE>
+<L><invalid loc>:461:9: macro definition=__CODE_MEMORY_LIST1__ <US>c:macro@__CODE_MEMORY_LIST1__<UE> <DS>__CODE_MEMORY_LIST1__<DE> Extent=<ES>461:9 - 461:65<EE>
+<L><invalid loc>:462:9: macro definition=__CODE_MEMORY_LIST2__ <US>c:macro@__CODE_MEMORY_LIST2__<UE> <DS>__CODE_MEMORY_LIST2__<DE> Extent=<ES>462:9 - 462:75<EE>
+<L><invalid loc>:463:9: macro definition=__CODE_MEMORY_LIST3__ <US>c:macro@__CODE_MEMORY_LIST3__<UE> <DS>__CODE_MEMORY_LIST3__<DE> Extent=<ES>463:9 - 463:87<EE>
+<L><invalid loc>:464:9: macro definition=__DATA_MEMORY_LIST1__ <US>c:macro@__DATA_MEMORY_LIST1__<UE> <DS>__DATA_MEMORY_LIST1__<DE> Extent=<ES>464:9 - 464:65<EE>
+<L><invalid loc>:465:9: macro definition=__DATA_MEMORY_LIST2__ <US>c:macro@__DATA_MEMORY_LIST2__<UE> <DS>__DATA_MEMORY_LIST2__<DE> Extent=<ES>465:9 - 465:75<EE>
+<L><invalid loc>:466:9: macro definition=__DATA_MEMORY_LIST3__ <US>c:macro@__DATA_MEMORY_LIST3__<UE> <DS>__DATA_MEMORY_LIST3__<DE> Extent=<ES>466:9 - 466:87<EE>
+<L><invalid loc>:467:9: macro definition=__CODE_PTR_MEMORY_LIST1__ <US>c:macro@__CODE_PTR_MEMORY_LIST1__<UE> <DS>__CODE_PTR_MEMORY_LIST1__<DE> Extent=<ES>467:9 - 467:73<EE>
+<L><invalid loc>:468:9: macro definition=__CODE_PTR_MEMORY_LIST2__ <US>c:macro@__CODE_PTR_MEMORY_LIST2__<UE> <DS>__CODE_PTR_MEMORY_LIST2__<DE> Extent=<ES>468:9 - 468:83<EE>
+<L><invalid loc>:469:9: macro definition=__CODE_PTR_MEMORY_LIST3__ <US>c:macro@__CODE_PTR_MEMORY_LIST3__<UE> <DS>__CODE_PTR_MEMORY_LIST3__<DE> Extent=<ES>469:9 - 469:95<EE>
+<L><invalid loc>:470:9: macro definition=__DATA_PTR_MEMORY_LIST1__ <US>c:macro@__DATA_PTR_MEMORY_LIST1__<UE> <DS>__DATA_PTR_MEMORY_LIST1__<DE> Extent=<ES>470:9 - 470:73<EE>
+<L><invalid loc>:471:9: macro definition=__DATA_PTR_MEMORY_LIST2__ <US>c:macro@__DATA_PTR_MEMORY_LIST2__<UE> <DS>__DATA_PTR_MEMORY_LIST2__<DE> Extent=<ES>471:9 - 471:83<EE>
+<L><invalid loc>:472:9: macro definition=__DATA_PTR_MEMORY_LIST3__ <US>c:macro@__DATA_PTR_MEMORY_LIST3__<UE> <DS>__DATA_PTR_MEMORY_LIST3__<DE> Extent=<ES>472:9 - 472:95<EE>
+<L><invalid loc>:473:9: macro definition=__VAR_MEMORY_LIST1__ <US>c:macro@__VAR_MEMORY_LIST1__<UE> <DS>__VAR_MEMORY_LIST1__<DE> Extent=<ES>473:9 - 473:63<EE>
+<L><invalid loc>:474:9: macro definition=__VAR_MEMORY_LIST2__ <US>c:macro@__VAR_MEMORY_LIST2__<UE> <DS>__VAR_MEMORY_LIST2__<DE> Extent=<ES>474:9 - 474:73<EE>
+<L><invalid loc>:475:9: macro definition=__VAR_MEMORY_LIST3__ <US>c:macro@__VAR_MEMORY_LIST3__<UE> <DS>__VAR_MEMORY_LIST3__<DE> Extent=<ES>475:9 - 475:85<EE>
+<L><invalid loc>:476:9: macro definition=__VARD_MEMORY_LIST1__ <US>c:macro@__VARD_MEMORY_LIST1__<UE> <DS>__VARD_MEMORY_LIST1__<DE> Extent=<ES>476:9 - 476:68<EE>
+<L><invalid loc>:477:9: macro definition=__HEAP_MEMORY_LIST1__ <US>c:macro@__HEAP_MEMORY_LIST1__<UE> <DS>__HEAP_MEMORY_LIST1__<DE> Extent=<ES>477:9 - 477:65<EE>
+<L><invalid loc>:478:9: macro definition=__HEAP_MEMORY_LIST2__ <US>c:macro@__HEAP_MEMORY_LIST2__<UE> <DS>__HEAP_MEMORY_LIST2__<DE> Extent=<ES>478:9 - 478:75<EE>
+<L><invalid loc>:479:9: macro definition=__HEAP_MEMORY_LIST3__ <US>c:macro@__HEAP_MEMORY_LIST3__<UE> <DS>__HEAP_MEMORY_LIST3__<DE> Extent=<ES>479:9 - 479:87<EE>
+<L><invalid loc>:480:9: macro definition=__HVAR_MEMORY_LIST1__ <US>c:macro@__HVAR_MEMORY_LIST1__<UE> <DS>__HVAR_MEMORY_LIST1__<DE> Extent=<ES>480:9 - 480:65<EE>
+<L><invalid loc>:481:9: macro definition=__HEAPD_MEMORY_LIST1__ <US>c:macro@__HEAPD_MEMORY_LIST1__<UE> <DS>__HEAPD_MEMORY_LIST1__<DE> Extent=<ES>481:9 - 481:70<EE>
+<L><invalid loc>:482:9: macro definition=__HEAPU_MEMORY_LIST1__ <US>c:macro@__HEAPU_MEMORY_LIST1__<UE> <DS>__HEAPU_MEMORY_LIST1__<DE> Extent=<ES>482:9 - 482:67<EE>
+<L><invalid loc>:483:9: macro definition=__TOPM_DATA_MEMORY_LIST1__ <US>c:macro@__TOPM_DATA_MEMORY_LIST1__<UE> <DS>__TOPM_DATA_MEMORY_LIST1__<DE> Extent=<ES>483:9 - 483:35<EE>
+<L><invalid loc>:484:9: macro definition=__TOPM_DATA_MEMORY_LIST2__ <US>c:macro@__TOPM_DATA_MEMORY_LIST2__<UE> <DS>__TOPM_DATA_MEMORY_LIST2__<DE> Extent=<ES>484:9 - 484:35<EE>
+<L><invalid loc>:485:9: macro definition=__TOPM_DATA_MEMORY_LIST3__ <US>c:macro@__TOPM_DATA_MEMORY_LIST3__<UE> <DS>__TOPM_DATA_MEMORY_LIST3__<DE> Extent=<ES>485:9 - 485:35<EE>
+<L><invalid loc>:486:9: macro definition=__TOPP_DATA_MEMORY_LIST1__ <US>c:macro@__TOPP_DATA_MEMORY_LIST1__<UE> <DS>__TOPP_DATA_MEMORY_LIST1__<DE> Extent=<ES>486:9 - 486:75<EE>
+<L><invalid loc>:487:9: macro definition=__TOPP_DATA_MEMORY_LIST2__ <US>c:macro@__TOPP_DATA_MEMORY_LIST2__<UE> <DS>__TOPP_DATA_MEMORY_LIST2__<DE> Extent=<ES>487:9 - 487:85<EE>
+<L><invalid loc>:488:9: macro definition=__TOPP_DATA_MEMORY_LIST3__ <US>c:macro@__TOPP_DATA_MEMORY_LIST3__<UE> <DS>__TOPP_DATA_MEMORY_LIST3__<DE> Extent=<ES>488:9 - 488:97<EE>
+<L><invalid loc>:489:9: macro definition=__DATA_MEM0_SIZE_TYPE__ <US>c:macro@__DATA_MEM0_SIZE_TYPE__<UE> <DS>__DATA_MEM0_SIZE_TYPE__<DE> Extent=<ES>489:9 - 489:45<EE>
+<L><invalid loc>:490:9: macro definition=__DATA_MEM0_INDEX_TYPE__ <US>c:macro@__DATA_MEM0_INDEX_TYPE__<UE> <DS>__DATA_MEM0_INDEX_TYPE__<DE> Extent=<ES>490:9 - 490:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:43:1: inclusion directive=hal_lcd.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h<IE>  [multi-include guarded] Extent=<ES>43:1 - 43:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:41:9: macro definition=HAL_LCD_H <US>c:macro@HAL_LCD_H<UE> <DS>HAL_LCD_H<DE> Extent=<ES>41:9 - 41:18<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:51:1: inclusion directive=hal_board.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_board.h<IE>  Extent=<ES>51:1 - 51:23<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_board.h:1:1: inclusion directive=hal_board_cfg.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h<IE>  [multi-include guarded] Extent=<ES>1:1 - 1:27<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:43:9: macro definition=HAL_BOARD_CFG_H <US>c:macro@HAL_BOARD_CFG_H<UE> <DS>HAL_BOARD_CFG_H<DE> Extent=<ES>43:9 - 43:24<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:55:1: inclusion directive=hal_mcu.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h<IE>  [multi-include guarded] Extent=<ES>55:1 - 55:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:41:9: macro definition=_HAL_MCU_H <US>c:macro@_HAL_MCU_H<UE> <DS>_HAL_MCU_H<DE> Extent=<ES>41:9 - 41:19<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:53:1: inclusion directive=hal_defs.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h<IE>  [multi-include guarded] Extent=<ES>53:1 - 53:22<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h:41:9: macro definition=HAL_DEFS_H <US>c:macro@HAL_DEFS_H<UE> <DS>HAL_DEFS_H<DE> Extent=<ES>41:9 - 41:19<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h:50:9: macro definition=BV <US>c:macro@BV<UE> <DS>BV<DE> Extent=<ES>50:9 - 50:30<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h:54:9: macro definition=BF <US>c:macro@BF<UE> <DS>BF<DE> Extent=<ES>54:9 - 54:40<EE>
@@ -515,41 +512,16 @@
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h:109:9: macro definition=SET_BIT <US>c:macro@SET_BIT<UE> <DS>SET_BIT<DE> Extent=<ES>109:9 - 109:71<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h:112:9: macro definition=CLR_BIT <US>c:macro@CLR_BIT<UE> <DS>CLR_BIT<DE> Extent=<ES>112:9 - 112:80<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h:138:9: macro definition=st <US>c:macro@st<UE> <DS>st<DE> Extent=<ES>138:9 - 138:51<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:60:9: macro definition=VOID <US>c:macro@VOID<UE> <DS>VOID<DE> Extent=<ES>60:9 - 60:20<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:62:9: macro definition=NULL_OK <US>c:macro@NULL_OK<UE> <DS>NULL_OK<DE> Extent=<ES>62:9 - 62:16<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:63:9: macro definition=INP <US>c:macro@INP<UE> <DS>INP<DE> Extent=<ES>63:9 - 63:12<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:64:9: macro definition=OUTP <US>c:macro@OUTP<UE> <DS>OUTP<DE> Extent=<ES>64:9 - 64:13<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:65:9: macro definition=UNUSED <US>c:macro@UNUSED<UE> <DS>UNUSED<DE> Extent=<ES>65:9 - 65:15<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:66:9: macro definition=ONLY <US>c:macro@ONLY<UE> <DS>ONLY<DE> Extent=<ES>66:9 - 66:13<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:67:9: macro definition=READONLY <US>c:macro@READONLY<UE> <DS>READONLY<DE> Extent=<ES>67:9 - 67:17<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:68:9: macro definition=SHARED <US>c:macro@SHARED<UE> <DS>SHARED<DE> Extent=<ES>68:9 - 68:15<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:69:9: macro definition=KEEP <US>c:macro@KEEP<UE> <DS>KEEP<DE> Extent=<ES>69:9 - 69:13<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:70:9: macro definition=RELAX <US>c:macro@RELAX<UE> <DS>RELAX<DE> Extent=<ES>70:9 - 70:14<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:77:11: macro definition=false <US>c:macro@false<UE> <DS>false<DE> Extent=<ES>77:11 - 77:18<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:81:11: macro definition=true <US>c:macro@true<UE> <DS>true<DE> Extent=<ES>81:11 - 81:17<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:85:11: macro definition=CONST <US>c:macro@CONST<UE> <DS>CONST<DE> Extent=<ES>85:11 - 85:22<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:89:11: macro definition=GENERIC <US>c:macro@GENERIC<UE> <DS>GENERIC<DE> Extent=<ES>89:11 - 89:18<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:93:9: macro definition=SUCCESS <US>c:macro@SUCCESS<UE> <DS>SUCCESS<DE> Extent=<ES>93:9 - 93:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:94:9: macro definition=FAILURE <US>c:macro@FAILURE<UE> <DS>FAILURE<DE> Extent=<ES>94:9 - 94:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:95:9: macro definition=INVALIDPARAMETER <US>c:macro@INVALIDPARAMETER<UE> <DS>INVALIDPARAMETER<DE> Extent=<ES>95:9 - 95:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:96:9: macro definition=INVALID_TASK <US>c:macro@INVALID_TASK<UE> <DS>INVALID_TASK<DE> Extent=<ES>96:9 - 96:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:97:9: macro definition=MSG_BUFFER_NOT_AVAIL <US>c:macro@MSG_BUFFER_NOT_AVAIL<UE> <DS>MSG_BUFFER_NOT_AVAIL<DE> Extent=<ES>97:9 - 97:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:98:9: macro definition=INVALID_MSG_POINTER <US>c:macro@INVALID_MSG_POINTER<UE> <DS>INVALID_MSG_POINTER<DE> Extent=<ES>98:9 - 98:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:99:9: macro definition=INVALID_EVENT_ID <US>c:macro@INVALID_EVENT_ID<UE> <DS>INVALID_EVENT_ID<DE> Extent=<ES>99:9 - 99:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:100:9: macro definition=INVALID_INTERRUPT_ID <US>c:macro@INVALID_INTERRUPT_ID<UE> <DS>INVALID_INTERRUPT_ID<DE> Extent=<ES>100:9 - 100:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:101:9: macro definition=NO_TIMER_AVAIL <US>c:macro@NO_TIMER_AVAIL<UE> <DS>NO_TIMER_AVAIL<DE> Extent=<ES>101:9 - 101:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:102:9: macro definition=NV_ITEM_UNINIT <US>c:macro@NV_ITEM_UNINIT<UE> <DS>NV_ITEM_UNINIT<DE> Extent=<ES>102:9 - 102:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:103:9: macro definition=NV_OPER_FAILED <US>c:macro@NV_OPER_FAILED<UE> <DS>NV_OPER_FAILED<DE> Extent=<ES>103:9 - 103:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:104:9: macro definition=INVALID_MEM_SIZE <US>c:macro@INVALID_MEM_SIZE<UE> <DS>INVALID_MEM_SIZE<DE> Extent=<ES>104:9 - 104:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:105:9: macro definition=NV_BAD_ITEM_LEN <US>c:macro@NV_BAD_ITEM_LEN<UE> <DS>NV_BAD_ITEM_LEN<DE> Extent=<ES>105:9 - 105:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:122:9: macro definition=SYS_EVENT_MSG <US>c:macro@SYS_EVENT_MSG<UE> <DS>SYS_EVENT_MSG<DE> Extent=<ES>122:9 - 122:43<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:128:9: macro definition=KEY_CHANGE <US>c:macro@KEY_CHANGE<UE> <DS>KEY_CHANGE<DE> Extent=<ES>128:9 - 128:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:45:1: inclusion directive=OnBoard.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h<IE>  [multi-include guarded] Extent=<ES>45:1 - 45:21<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:42:9: macro definition=ONBOARD_H <US>c:macro@ONBOARD_H<UE> <DS>ONBOARD_H<DE> Extent=<ES>42:9 - 42:18<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:44:1: inclusion directive=hal_mcu.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h<IE>  [multi-include guarded] Extent=<ES>44:1 - 44:21<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:41:9: macro definition=_HAL_MCU_H <US>c:macro@_HAL_MCU_H<UE> <DS>_HAL_MCU_H<DE> Extent=<ES>41:9 - 41:19<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:53:1: inclusion directive=hal_defs.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h<IE>  [multi-include guarded] Extent=<ES>53:1 - 53:22<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:54:1: inclusion directive=hal_types.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h<IE>  [multi-include guarded] Extent=<ES>54:1 - 54:23<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:45:9: macro definition=_HAL_TYPES_H <US>c:macro@_HAL_TYPES_H<UE> <DS>_HAL_TYPES_H<DE> Extent=<ES>45:9 - 45:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:77:9: macro definition=CODE <US>c:macro@CODE<UE> <DS>CODE<DE> Extent=<ES>77:9 - 77:25<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:78:9: macro definition=XDATA <US>c:macro@XDATA<UE> <DS>XDATA<DE> Extent=<ES>78:9 - 78:26<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:79:9: macro definition=DATA <US>c:macro@DATA<UE> <DS>DATA<DE> Extent=<ES>79:9 - 79:25<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:80:9: macro definition=NEAR_FUNC <US>c:macro@NEAR_FUNC<UE> <DS>NEAR_FUNC<DE> Extent=<ES>80:9 - 80:30<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:81:9: macro definition=ASM_NOP <US>c:macro@ASM_NOP<UE> <DS>ASM_NOP<DE> Extent=<ES>81:9 - 81:30<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:112:9: macro definition=TRUE <US>c:macro@TRUE<UE> <DS>TRUE<DE> Extent=<ES>112:9 - 112:15<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:116:9: macro definition=FALSE <US>c:macro@FALSE<UE> <DS>FALSE<DE> Extent=<ES>116:9 - 116:16<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:120:9: macro definition=NULL <US>c:macro@NULL<UE> <DS>NULL<DE> Extent=<ES>120:9 - 120:15<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:61:9: macro definition=HAL_MCU_CC2540 <US>c:macro@HAL_MCU_CC2540<UE> <DS>HAL_MCU_CC2540<DE> Extent=<ES>61:9 - 61:23<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:73:1: inclusion directive=ioCC2541.h <US><UE> <DS><DE> <IS>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h<IE>  [multi-include guarded] Extent=<ES>73:1 - 73:11<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:13:9: macro definition=IOCC2541_H <US>c:macro@IOCC2541_H<UE> <DS>IOCC2541_H<DE> Extent=<ES>13:9 - 13:19<EE>
@@ -1034,6 +1006,175 @@
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:188:17: macro expansion=__data|<invalid loc>:24:9 <US>c:macro@__data<UE> <DS>__data<DE> Extent=<ES>188:17 - 188:23<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:193:9: macro definition=CLEAR_SLEEP_MODE <US>c:macro@CLEAR_SLEEP_MODE<UE> <DS>CLEAR_SLEEP_MODE<DE> Extent=<ES>193:9 - 193:63<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:194:9: macro definition=ALLOW_SLEEP_MODE <US>c:macro@ALLOW_SLEEP_MODE<UE> <DS>ALLOW_SLEEP_MODE<DE> Extent=<ES>194:9 - 194:71<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:56:1: inclusion directive=hal_defs.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h<IE>  [multi-include guarded] Extent=<ES>56:1 - 56:22<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:57:1: inclusion directive=hal_types.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h<IE>  [multi-include guarded] Extent=<ES>57:1 - 57:23<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:66:11: macro definition=HAL_BOARD_CC2530EB_REV17 <US>c:macro@HAL_BOARD_CC2530EB_REV17<UE> <DS>HAL_BOARD_CC2530EB_REV17<DE> Extent=<ES>66:11 - 66:35<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:71:9: macro definition=HAL_CPU_CLOCK_MHZ <US>c:macro@HAL_CPU_CLOCK_MHZ<UE> <DS>HAL_CPU_CLOCK_MHZ<DE> Extent=<ES>71:9 - 71:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:75:9: macro definition=EXTERNAL_CRYSTAL_OSC <US>c:macro@EXTERNAL_CRYSTAL_OSC<UE> <DS>EXTERNAL_CRYSTAL_OSC<DE> Extent=<ES>75:9 - 75:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:76:9: macro definition=INTERNAL_RC_OSC <US>c:macro@INTERNAL_RC_OSC<UE> <DS>INTERNAL_RC_OSC<DE> Extent=<ES>76:9 - 76:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:79:91: macro expansion=TRUE|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:112:9 <US>c:macro@TRUE<UE> <DS>TRUE<DE> Extent=<ES>79:91 - 79:95<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:80:9: macro definition=OSC_32KHZ <US>c:macro@OSC_32KHZ<UE> <DS>OSC_32KHZ<DE> Extent=<ES>80:9 - 80:59<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:86:9: macro definition=MIN_TIME_TO_STABLE_32KHZ_XOSC <US>c:macro@MIN_TIME_TO_STABLE_32KHZ_XOSC<UE> <DS>MIN_TIME_TO_STABLE_32KHZ_XOSC<DE> Extent=<ES>86:9 - 86:42<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:89:9: macro definition=HAL_LCD_MAX_CHARS <US>c:macro@HAL_LCD_MAX_CHARS<UE> <DS>HAL_LCD_MAX_CHARS<DE> Extent=<ES>89:9 - 89:31<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:90:9: macro definition=HAL_LCD_MAX_BUFF <US>c:macro@HAL_LCD_MAX_BUFF<UE> <DS>HAL_LCD_MAX_BUFF<DE> Extent=<ES>90:9 - 90:31<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:95:11: macro definition=HAL_NUM_LEDS <US>c:macro@HAL_NUM_LEDS<UE> <DS>HAL_NUM_LEDS<DE> Extent=<ES>95:11 - 95:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:102:9: macro definition=HAL_LED_BLINK_DELAY <US>c:macro@HAL_LED_BLINK_DELAY<UE> <DS>HAL_LED_BLINK_DELAY<DE> Extent=<ES>102:9 - 102:91<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:105:9: macro definition=LED1_BV <US>c:macro@LED1_BV<UE> <DS>LED1_BV<DE> Extent=<ES>105:9 - 105:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:106:9: macro definition=LED1_SBIT <US>c:macro@LED1_SBIT<UE> <DS>LED1_SBIT<DE> Extent=<ES>106:9 - 106:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:107:9: macro definition=LED1_DDR <US>c:macro@LED1_DDR<UE> <DS>LED1_DDR<DE> Extent=<ES>107:9 - 107:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:108:9: macro definition=LED1_POLARITY <US>c:macro@LED1_POLARITY<UE> <DS>LED1_POLARITY<DE> Extent=<ES>108:9 - 108:51<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:112:11: macro definition=LED2_BV <US>c:macro@LED2_BV<UE> <DS>LED2_BV<DE> Extent=<ES>112:11 - 112:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:113:11: macro definition=LED2_SBIT <US>c:macro@LED2_SBIT<UE> <DS>LED2_SBIT<DE> Extent=<ES>113:11 - 113:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:114:11: macro definition=LED2_DDR <US>c:macro@LED2_DDR<UE> <DS>LED2_DDR<DE> Extent=<ES>114:11 - 114:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:115:11: macro definition=LED2_POLARITY <US>c:macro@LED2_POLARITY<UE> <DS>LED2_POLARITY<DE> Extent=<ES>115:11 - 115:51<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:118:11: macro definition=LED3_BV <US>c:macro@LED3_BV<UE> <DS>LED3_BV<DE> Extent=<ES>118:11 - 118:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:119:11: macro definition=LED3_SBIT <US>c:macro@LED3_SBIT<UE> <DS>LED3_SBIT<DE> Extent=<ES>119:11 - 119:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:120:11: macro definition=LED3_DDR <US>c:macro@LED3_DDR<UE> <DS>LED3_DDR<DE> Extent=<ES>120:11 - 120:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:121:11: macro definition=LED3_POLARITY <US>c:macro@LED3_POLARITY<UE> <DS>LED3_POLARITY<DE> Extent=<ES>121:11 - 121:51<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:126:9: macro definition=ACTIVE_LOW <US>c:macro@ACTIVE_LOW<UE> <DS>ACTIVE_LOW<DE> Extent=<ES>126:9 - 126:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:127:9: macro definition=ACTIVE_HIGH <US>c:macro@ACTIVE_HIGH<UE> <DS>ACTIVE_HIGH<DE> Extent=<ES>127:9 - 127:42<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:130:9: macro definition=PUSH1_BV <US>c:macro@PUSH1_BV<UE> <DS>PUSH1_BV<DE> Extent=<ES>130:9 - 130:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:131:9: macro definition=PUSH1_SBIT <US>c:macro@PUSH1_SBIT<UE> <DS>PUSH1_SBIT<DE> Extent=<ES>131:9 - 131:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:134:11: macro definition=PUSH1_POLARITY <US>c:macro@PUSH1_POLARITY<UE> <DS>PUSH1_POLARITY<DE> Extent=<ES>134:11 - 134:51<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:142:9: macro definition=PUSH2_BV <US>c:macro@PUSH2_BV<UE> <DS>PUSH2_BV<DE> Extent=<ES>142:9 - 142:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:143:9: macro definition=PUSH2_SBIT <US>c:macro@PUSH2_SBIT<UE> <DS>PUSH2_SBIT<DE> Extent=<ES>143:9 - 143:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:144:9: macro definition=PUSH2_POLARITY <US>c:macro@PUSH2_POLARITY<UE> <DS>PUSH2_POLARITY<DE> Extent=<ES>144:9 - 144:51<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:149:9: macro definition=HAL_FLASH_PAGE_PER_BANK <US>c:macro@HAL_FLASH_PAGE_PER_BANK<UE> <DS>HAL_FLASH_PAGE_PER_BANK<DE> Extent=<ES>149:9 - 149:42<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:152:9: macro definition=HAL_FLASH_PAGE_PHYS <US>c:macro@HAL_FLASH_PAGE_PHYS<UE> <DS>HAL_FLASH_PAGE_PHYS<DE> Extent=<ES>152:9 - 152:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:155:9: macro definition=HAL_FLASH_PAGE_SIZE <US>c:macro@HAL_FLASH_PAGE_SIZE<UE> <DS>HAL_FLASH_PAGE_SIZE<DE> Extent=<ES>155:9 - 155:59<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:156:9: macro definition=HAL_FLASH_WORD_SIZE <US>c:macro@HAL_FLASH_WORD_SIZE<UE> <DS>HAL_FLASH_WORD_SIZE<DE> Extent=<ES>156:9 - 156:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:159:9: macro definition=HAL_FLASH_PAGE_MAP <US>c:macro@HAL_FLASH_PAGE_MAP<UE> <DS>HAL_FLASH_PAGE_MAP<DE> Extent=<ES>159:9 - 159:46<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:162:9: macro definition=HAL_FLASH_LOCK_BITS <US>c:macro@HAL_FLASH_LOCK_BITS<UE> <DS>HAL_FLASH_LOCK_BITS<DE> Extent=<ES>162:9 - 162:42<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:172:9: macro definition=HAL_NV_PAGE_END <US>c:macro@HAL_NV_PAGE_END<UE> <DS>HAL_NV_PAGE_END<DE> Extent=<ES>172:9 - 172:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:176:9: macro definition=HAL_FLASH_IEEE_SIZE <US>c:macro@HAL_FLASH_IEEE_SIZE<UE> <DS>HAL_FLASH_IEEE_SIZE<DE> Extent=<ES>176:9 - 176:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:177:9: macro definition=HAL_FLASH_IEEE_PAGE <US>c:macro@HAL_FLASH_IEEE_PAGE<UE> <DS>HAL_FLASH_IEEE_PAGE<DE> Extent=<ES>177:9 - 177:59<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:178:9: macro definition=HAL_FLASH_IEEE_OSET <US>c:macro@HAL_FLASH_IEEE_OSET<UE> <DS>HAL_FLASH_IEEE_OSET<DE> Extent=<ES>178:9 - 178:105<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:179:9: macro definition=HAL_INFOP_IEEE_OSET <US>c:macro@HAL_INFOP_IEEE_OSET<UE> <DS>HAL_INFOP_IEEE_OSET<DE> Extent=<ES>179:9 - 179:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:181:9: macro definition=HAL_NV_PAGE_CNT <US>c:macro@HAL_NV_PAGE_CNT<UE> <DS>HAL_NV_PAGE_CNT<DE> Extent=<ES>181:9 - 181:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:182:9: macro definition=HAL_NV_PAGE_BEG <US>c:macro@HAL_NV_PAGE_BEG<UE> <DS>HAL_NV_PAGE_BEG<DE> Extent=<ES>182:9 - 182:75<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:185:9: macro definition=HAL_NV_DMA_CH <US>c:macro@HAL_NV_DMA_CH<UE> <DS>HAL_NV_DMA_CH<DE> Extent=<ES>185:9 - 185:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:186:9: macro definition=HAL_DMA_CH_RX <US>c:macro@HAL_DMA_CH_RX<UE> <DS>HAL_DMA_CH_RX<DE> Extent=<ES>186:9 - 186:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:187:9: macro definition=HAL_DMA_CH_TX <US>c:macro@HAL_DMA_CH_TX<UE> <DS>HAL_DMA_CH_TX<DE> Extent=<ES>187:9 - 187:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:189:9: macro definition=HAL_NV_DMA_GET_DESC <US>c:macro@HAL_NV_DMA_GET_DESC<UE> <DS>HAL_NV_DMA_GET_DESC<DE> Extent=<ES>189:9 - 189:51<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:190:9: macro definition=HAL_NV_DMA_SET_ADDR <US>c:macro@HAL_NV_DMA_SET_ADDR<UE> <DS>HAL_NV_DMA_SET_ADDR<DE> Extent=<ES>190:9 - 190:59<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:195:9: macro definition=VDD_2_0 <US>c:macro@VDD_2_0<UE> <DS>VDD_2_0<DE> Extent=<ES>195:9 - 195:20<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:196:9: macro definition=VDD_2_7 <US>c:macro@VDD_2_7<UE> <DS>VDD_2_7<DE> Extent=<ES>196:9 - 196:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:198:9: macro definition=VDD_MIN_RUN <US>c:macro@VDD_MIN_RUN<UE> <DS>VDD_MIN_RUN<DE> Extent=<ES>198:9 - 198:30<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:199:9: macro definition=VDD_MIN_NV <US>c:macro@VDD_MIN_NV<UE> <DS>VDD_MIN_NV<DE> Extent=<ES>199:9 - 199:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:200:9: macro definition=VDD_MIN_XNV <US>c:macro@VDD_MIN_XNV<UE> <DS>VDD_MIN_XNV<DE> Extent=<ES>200:9 - 200:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:208:9: macro definition=PREFETCH_ENABLE <US>c:macro@PREFETCH_ENABLE<UE> <DS>PREFETCH_ENABLE<DE> Extent=<ES>208:9 - 208:46<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:209:9: macro definition=PREFETCH_DISABLE <US>c:macro@PREFETCH_DISABLE<UE> <DS>PREFETCH_DISABLE<DE> Extent=<ES>209:9 - 209:46<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:214:9: macro definition=SET_OSC_TO_HSOSC <US>c:macro@SET_OSC_TO_HSOSC<UE> <DS>SET_OSC_TO_HSOSC<DE> Extent=<ES>214:9 - 218:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:221:9: macro definition=SET_OSC_TO_XOSC <US>c:macro@SET_OSC_TO_XOSC<UE> <DS>SET_OSC_TO_XOSC<DE> Extent=<ES>221:9 - 225:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:228:9: macro definition=SET_32KHZ_OSC <US>c:macro@SET_32KHZ_OSC<UE> <DS>SET_32KHZ_OSC<DE> Extent=<ES>228:9 - 232:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:234:9: macro definition=START_HSOSC_XOSC <US>c:macro@START_HSOSC_XOSC<UE> <DS>START_HSOSC_XOSC<DE> Extent=<ES>234:9 - 238:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:240:9: macro definition=STOP_HSOSC <US>c:macro@STOP_HSOSC<UE> <DS>STOP_HSOSC<DE> Extent=<ES>240:9 - 243:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:246:9: macro definition=HAL_BOARD_INIT <US>c:macro@HAL_BOARD_INIT<UE> <DS>HAL_BOARD_INIT<DE> Extent=<ES>246:9 - 257:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:260:9: macro definition=HAL_DEBOUNCE <US>c:macro@HAL_DEBOUNCE<UE> <DS>HAL_DEBOUNCE<DE> Extent=<ES>260:9 - 260:87<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:263:9: macro definition=HAL_PUSH_BUTTON1 <US>c:macro@HAL_PUSH_BUTTON1<UE> <DS>HAL_PUSH_BUTTON1<DE> Extent=<ES>263:9 - 263:64<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:264:9: macro definition=HAL_PUSH_BUTTON2 <US>c:macro@HAL_PUSH_BUTTON2<UE> <DS>HAL_PUSH_BUTTON2<DE> Extent=<ES>264:9 - 264:64<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:265:9: macro definition=HAL_PUSH_BUTTON3 <US>c:macro@HAL_PUSH_BUTTON3<UE> <DS>HAL_PUSH_BUTTON3<DE> Extent=<ES>265:9 - 265:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:266:9: macro definition=HAL_PUSH_BUTTON4 <US>c:macro@HAL_PUSH_BUTTON4<UE> <DS>HAL_PUSH_BUTTON4<DE> Extent=<ES>266:9 - 266:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:267:9: macro definition=HAL_PUSH_BUTTON5 <US>c:macro@HAL_PUSH_BUTTON5<UE> <DS>HAL_PUSH_BUTTON5<DE> Extent=<ES>267:9 - 267:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:268:9: macro definition=HAL_PUSH_BUTTON6 <US>c:macro@HAL_PUSH_BUTTON6<UE> <DS>HAL_PUSH_BUTTON6<DE> Extent=<ES>268:9 - 268:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:274:11: macro definition=HAL_TURN_OFF_LED1 <US>c:macro@HAL_TURN_OFF_LED1<UE> <DS>HAL_TURN_OFF_LED1<DE> Extent=<ES>274:11 - 274:73<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:275:11: macro definition=HAL_TURN_OFF_LED2 <US>c:macro@HAL_TURN_OFF_LED2<UE> <DS>HAL_TURN_OFF_LED2<DE> Extent=<ES>275:11 - 275:73<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:276:11: macro definition=HAL_TURN_OFF_LED3 <US>c:macro@HAL_TURN_OFF_LED3<UE> <DS>HAL_TURN_OFF_LED3<DE> Extent=<ES>276:11 - 276:73<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:277:11: macro definition=HAL_TURN_OFF_LED4 <US>c:macro@HAL_TURN_OFF_LED4<UE> <DS>HAL_TURN_OFF_LED4<DE> Extent=<ES>277:11 - 277:56<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:279:11: macro definition=HAL_TURN_ON_LED1 <US>c:macro@HAL_TURN_ON_LED1<UE> <DS>HAL_TURN_ON_LED1<DE> Extent=<ES>279:11 - 279:73<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:280:11: macro definition=HAL_TURN_ON_LED2 <US>c:macro@HAL_TURN_ON_LED2<UE> <DS>HAL_TURN_ON_LED2<DE> Extent=<ES>280:11 - 280:73<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:281:11: macro definition=HAL_TURN_ON_LED3 <US>c:macro@HAL_TURN_ON_LED3<UE> <DS>HAL_TURN_ON_LED3<DE> Extent=<ES>281:11 - 281:73<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:282:11: macro definition=HAL_TURN_ON_LED4 <US>c:macro@HAL_TURN_ON_LED4<UE> <DS>HAL_TURN_ON_LED4<DE> Extent=<ES>282:11 - 282:55<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:284:11: macro definition=HAL_TOGGLE_LED1 <US>c:macro@HAL_TOGGLE_LED1<UE> <DS>HAL_TOGGLE_LED1<DE> Extent=<ES>284:11 - 284:99<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:285:11: macro definition=HAL_TOGGLE_LED2 <US>c:macro@HAL_TOGGLE_LED2<UE> <DS>HAL_TOGGLE_LED2<DE> Extent=<ES>285:11 - 285:99<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:286:11: macro definition=HAL_TOGGLE_LED3 <US>c:macro@HAL_TOGGLE_LED3<UE> <DS>HAL_TOGGLE_LED3<DE> Extent=<ES>286:11 - 286:99<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:287:11: macro definition=HAL_TOGGLE_LED4 <US>c:macro@HAL_TOGGLE_LED4<UE> <DS>HAL_TOGGLE_LED4<DE> Extent=<ES>287:11 - 287:54<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:289:11: macro definition=HAL_STATE_LED1 <US>c:macro@HAL_STATE_LED1<UE> <DS>HAL_STATE_LED1<DE> Extent=<ES>289:11 - 289:64<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:290:11: macro definition=HAL_STATE_LED2 <US>c:macro@HAL_STATE_LED2<UE> <DS>HAL_STATE_LED2<DE> Extent=<ES>290:11 - 290:64<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:291:11: macro definition=HAL_STATE_LED3 <US>c:macro@HAL_STATE_LED3<UE> <DS>HAL_STATE_LED3<DE> Extent=<ES>291:11 - 291:64<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:292:11: macro definition=HAL_STATE_LED4 <US>c:macro@HAL_STATE_LED4<UE> <DS>HAL_STATE_LED4<DE> Extent=<ES>292:11 - 292:53<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:320:9: macro definition=XNV_SPI_BEGIN <US>c:macro@XNV_SPI_BEGIN<UE> <DS>XNV_SPI_BEGIN<DE> Extent=<ES>320:9 - 320:50<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:321:9: macro definition=XNV_SPI_TX <US>c:macro@XNV_SPI_TX<UE> <DS>XNV_SPI_TX<DE> Extent=<ES>321:9 - 321:70<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:322:9: macro definition=XNV_SPI_RX <US>c:macro@XNV_SPI_RX<UE> <DS>XNV_SPI_RX<DE> Extent=<ES>322:9 - 322:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:323:9: macro definition=XNV_SPI_WAIT_RXRDY <US>c:macro@XNV_SPI_WAIT_RXRDY<UE> <DS>XNV_SPI_WAIT_RXRDY<DE> Extent=<ES>323:9 - 323:65<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:324:9: macro definition=XNV_SPI_END <US>c:macro@XNV_SPI_END<UE> <DS>XNV_SPI_END<DE> Extent=<ES>324:9 - 324:50<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:327:9: macro definition=XNV_SPI_INIT <US>c:macro@XNV_SPI_INIT<UE> <DS>XNV_SPI_INIT<DE> Extent=<ES>327:9 - 357:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:363:9: macro definition=HAL_TIMER <US>c:macro@HAL_TIMER<UE> <DS>HAL_TIMER<DE> Extent=<ES>363:9 - 363:24<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:378:9: macro definition=HAL_FLASH <US>c:macro@HAL_FLASH<UE> <DS>HAL_FLASH<DE> Extent=<ES>378:9 - 378:23<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:383:9: macro definition=HAL_AES <US>c:macro@HAL_AES<UE> <DS>HAL_AES<DE> Extent=<ES>383:9 - 383:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:387:9: macro definition=HAL_AES_DMA <US>c:macro@HAL_AES_DMA<UE> <DS>HAL_AES_DMA<DE> Extent=<ES>387:9 - 387:25<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:399:31: macro expansion=HAL_LED|<invalid loc>:456:9 <US>c:macro@HAL_LED<UE> <DS>HAL_LED<DE> Extent=<ES>399:31 - 399:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:399:42: macro expansion=TRUE|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:112:9 <US>c:macro@TRUE<UE> <DS>TRUE<DE> Extent=<ES>399:42 - 399:46<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:400:9: macro definition=BLINK_LEDS <US>c:macro@BLINK_LEDS<UE> <DS>BLINK_LEDS<DE> Extent=<ES>400:9 - 400:19<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:405:9: macro definition=HAL_KEY <US>c:macro@HAL_KEY<UE> <DS>HAL_KEY<DE> Extent=<ES>405:9 - 405:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:417:5: macro expansion=HAL_UART|<invalid loc>:457:9 <US>c:macro@HAL_UART<UE> <DS>HAL_UART<DE> Extent=<ES>417:5 - 417:13<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:455:9: macro definition=HAL_UART_DMA <US>c:macro@HAL_UART_DMA<UE> <DS>HAL_UART_DMA<DE> Extent=<ES>455:9 - 455:24<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:456:9: macro definition=HAL_UART_ISR <US>c:macro@HAL_UART_ISR<UE> <DS>HAL_UART_ISR<DE> Extent=<ES>456:9 - 456:24<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h:460:9: macro definition=HAL_UART_SPI <US>c:macro@HAL_UART_SPI<UE> <DS>HAL_UART_SPI<DE> Extent=<ES>460:9 - 460:24<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:52:27: macro expansion=HAL_LCD|<invalid loc>:455:9 <US>c:macro@HAL_LCD<UE> <DS>HAL_LCD<DE> Extent=<ES>52:27 - 52:34<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:52:38: macro expansion=TRUE|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:112:9 <US>c:macro@TRUE<UE> <DS>TRUE<DE> Extent=<ES>52:38 - 52:42<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:60:9: macro definition=HAL_LCD_LINE_1 <US>c:macro@HAL_LCD_LINE_1<UE> <DS>HAL_LCD_LINE_1<DE> Extent=<ES>60:9 - 60:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:61:9: macro definition=HAL_LCD_LINE_2 <US>c:macro@HAL_LCD_LINE_2<UE> <DS>HAL_LCD_LINE_2<DE> Extent=<ES>61:9 - 61:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:66:9: macro definition=HAL_LCD_LINE_3 <US>c:macro@HAL_LCD_LINE_3<UE> <DS>HAL_LCD_LINE_3<DE> Extent=<ES>66:9 - 66:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:67:9: macro definition=HAL_LCD_LINE_4 <US>c:macro@HAL_LCD_LINE_4<UE> <DS>HAL_LCD_LINE_4<DE> Extent=<ES>67:9 - 67:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:68:9: macro definition=HAL_LCD_LINE_5 <US>c:macro@HAL_LCD_LINE_5<UE> <DS>HAL_LCD_LINE_5<DE> Extent=<ES>68:9 - 68:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:69:9: macro definition=HAL_LCD_LINE_6 <US>c:macro@HAL_LCD_LINE_6<UE> <DS>HAL_LCD_LINE_6<DE> Extent=<ES>69:9 - 69:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:70:9: macro definition=HAL_LCD_LINE_7 <US>c:macro@HAL_LCD_LINE_7<UE> <DS>HAL_LCD_LINE_7<DE> Extent=<ES>70:9 - 70:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:71:9: macro definition=HAL_LCD_LINE_8 <US>c:macro@HAL_LCD_LINE_8<UE> <DS>HAL_LCD_LINE_8<DE> Extent=<ES>71:9 - 71:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:44:1: inclusion directive=hal_led.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h<IE>  [multi-include guarded] Extent=<ES>44:1 - 44:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:41:9: macro definition=HAL_LED_H <US>c:macro@HAL_LED_H<UE> <DS>HAL_LED_H<DE> Extent=<ES>41:9 - 41:18<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:51:1: inclusion directive=hal_board.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_board.h<IE>  Extent=<ES>51:1 - 51:23<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_board.h:1:1: inclusion directive=hal_board_cfg.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_board_cfg.h<IE>  [multi-include guarded] Extent=<ES>1:1 - 1:27<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:62:9: macro definition=HAL_LED_1 <US>c:macro@HAL_LED_1<UE> <DS>HAL_LED_1<DE> Extent=<ES>62:9 - 62:27<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:63:9: macro definition=HAL_LED_2 <US>c:macro@HAL_LED_2<UE> <DS>HAL_LED_2<DE> Extent=<ES>63:9 - 63:27<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:64:9: macro definition=HAL_LED_3 <US>c:macro@HAL_LED_3<UE> <DS>HAL_LED_3<DE> Extent=<ES>64:9 - 64:27<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:65:9: macro definition=HAL_LED_4 <US>c:macro@HAL_LED_4<UE> <DS>HAL_LED_4<DE> Extent=<ES>65:9 - 65:27<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:66:9: macro definition=HAL_LED_ALL <US>c:macro@HAL_LED_ALL<UE> <DS>HAL_LED_ALL<DE> Extent=<ES>66:9 - 66:70<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:69:9: macro definition=HAL_LED_MODE_OFF <US>c:macro@HAL_LED_MODE_OFF<UE> <DS>HAL_LED_MODE_OFF<DE> Extent=<ES>69:9 - 69:34<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:70:9: macro definition=HAL_LED_MODE_ON <US>c:macro@HAL_LED_MODE_ON<UE> <DS>HAL_LED_MODE_ON<DE> Extent=<ES>70:9 - 70:34<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:71:9: macro definition=HAL_LED_MODE_BLINK <US>c:macro@HAL_LED_MODE_BLINK<UE> <DS>HAL_LED_MODE_BLINK<DE> Extent=<ES>71:9 - 71:34<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:72:9: macro definition=HAL_LED_MODE_FLASH <US>c:macro@HAL_LED_MODE_FLASH<UE> <DS>HAL_LED_MODE_FLASH<DE> Extent=<ES>72:9 - 72:34<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:73:9: macro definition=HAL_LED_MODE_TOGGLE <US>c:macro@HAL_LED_MODE_TOGGLE<UE> <DS>HAL_LED_MODE_TOGGLE<DE> Extent=<ES>73:9 - 73:34<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:76:9: macro definition=HAL_LED_DEFAULT_MAX_LEDS <US>c:macro@HAL_LED_DEFAULT_MAX_LEDS<UE> <DS>HAL_LED_DEFAULT_MAX_LEDS<DE> Extent=<ES>76:9 - 76:40<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:77:9: macro definition=HAL_LED_DEFAULT_DUTY_CYCLE <US>c:macro@HAL_LED_DEFAULT_DUTY_CYCLE<UE> <DS>HAL_LED_DEFAULT_DUTY_CYCLE<DE> Extent=<ES>77:9 - 77:40<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:78:9: macro definition=HAL_LED_DEFAULT_FLASH_COUNT <US>c:macro@HAL_LED_DEFAULT_FLASH_COUNT<UE> <DS>HAL_LED_DEFAULT_FLASH_COUNT<DE> Extent=<ES>78:9 - 78:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:79:9: macro definition=HAL_LED_DEFAULT_FLASH_TIME <US>c:macro@HAL_LED_DEFAULT_FLASH_TIME<UE> <DS>HAL_LED_DEFAULT_FLASH_TIME<DE> Extent=<ES>79:9 - 79:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:45:1: inclusion directive=comdef.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h<IE>  [multi-include guarded] Extent=<ES>45:1 - 45:20<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:41:9: macro definition=COMDEF_H <US>c:macro@COMDEF_H<UE> <DS>COMDEF_H<DE> Extent=<ES>41:9 - 41:17<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:54:1: inclusion directive=hal_types.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h<IE>  [multi-include guarded] Extent=<ES>54:1 - 54:23<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:55:1: inclusion directive=hal_defs.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_defs.h<IE>  [multi-include guarded] Extent=<ES>55:1 - 55:22<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:60:9: macro definition=VOID <US>c:macro@VOID<UE> <DS>VOID<DE> Extent=<ES>60:9 - 60:20<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:62:9: macro definition=NULL_OK <US>c:macro@NULL_OK<UE> <DS>NULL_OK<DE> Extent=<ES>62:9 - 62:16<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:63:9: macro definition=INP <US>c:macro@INP<UE> <DS>INP<DE> Extent=<ES>63:9 - 63:12<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:64:9: macro definition=OUTP <US>c:macro@OUTP<UE> <DS>OUTP<DE> Extent=<ES>64:9 - 64:13<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:65:9: macro definition=UNUSED <US>c:macro@UNUSED<UE> <DS>UNUSED<DE> Extent=<ES>65:9 - 65:15<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:66:9: macro definition=ONLY <US>c:macro@ONLY<UE> <DS>ONLY<DE> Extent=<ES>66:9 - 66:13<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:67:9: macro definition=READONLY <US>c:macro@READONLY<UE> <DS>READONLY<DE> Extent=<ES>67:9 - 67:17<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:68:9: macro definition=SHARED <US>c:macro@SHARED<UE> <DS>SHARED<DE> Extent=<ES>68:9 - 68:15<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:69:9: macro definition=KEEP <US>c:macro@KEEP<UE> <DS>KEEP<DE> Extent=<ES>69:9 - 69:13<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:70:9: macro definition=RELAX <US>c:macro@RELAX<UE> <DS>RELAX<DE> Extent=<ES>70:9 - 70:14<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:77:11: macro definition=false <US>c:macro@false<UE> <DS>false<DE> Extent=<ES>77:11 - 77:18<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:81:11: macro definition=true <US>c:macro@true<UE> <DS>true<DE> Extent=<ES>81:11 - 81:17<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:85:11: macro definition=CONST <US>c:macro@CONST<UE> <DS>CONST<DE> Extent=<ES>85:11 - 85:22<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:89:11: macro definition=GENERIC <US>c:macro@GENERIC<UE> <DS>GENERIC<DE> Extent=<ES>89:11 - 89:18<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:93:9: macro definition=SUCCESS <US>c:macro@SUCCESS<UE> <DS>SUCCESS<DE> Extent=<ES>93:9 - 93:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:94:9: macro definition=FAILURE <US>c:macro@FAILURE<UE> <DS>FAILURE<DE> Extent=<ES>94:9 - 94:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:95:9: macro definition=INVALIDPARAMETER <US>c:macro@INVALIDPARAMETER<UE> <DS>INVALIDPARAMETER<DE> Extent=<ES>95:9 - 95:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:96:9: macro definition=INVALID_TASK <US>c:macro@INVALID_TASK<UE> <DS>INVALID_TASK<DE> Extent=<ES>96:9 - 96:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:97:9: macro definition=MSG_BUFFER_NOT_AVAIL <US>c:macro@MSG_BUFFER_NOT_AVAIL<UE> <DS>MSG_BUFFER_NOT_AVAIL<DE> Extent=<ES>97:9 - 97:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:98:9: macro definition=INVALID_MSG_POINTER <US>c:macro@INVALID_MSG_POINTER<UE> <DS>INVALID_MSG_POINTER<DE> Extent=<ES>98:9 - 98:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:99:9: macro definition=INVALID_EVENT_ID <US>c:macro@INVALID_EVENT_ID<UE> <DS>INVALID_EVENT_ID<DE> Extent=<ES>99:9 - 99:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:100:9: macro definition=INVALID_INTERRUPT_ID <US>c:macro@INVALID_INTERRUPT_ID<UE> <DS>INVALID_INTERRUPT_ID<DE> Extent=<ES>100:9 - 100:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:101:9: macro definition=NO_TIMER_AVAIL <US>c:macro@NO_TIMER_AVAIL<UE> <DS>NO_TIMER_AVAIL<DE> Extent=<ES>101:9 - 101:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:102:9: macro definition=NV_ITEM_UNINIT <US>c:macro@NV_ITEM_UNINIT<UE> <DS>NV_ITEM_UNINIT<DE> Extent=<ES>102:9 - 102:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:103:9: macro definition=NV_OPER_FAILED <US>c:macro@NV_OPER_FAILED<UE> <DS>NV_OPER_FAILED<DE> Extent=<ES>103:9 - 103:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:104:9: macro definition=INVALID_MEM_SIZE <US>c:macro@INVALID_MEM_SIZE<UE> <DS>INVALID_MEM_SIZE<DE> Extent=<ES>104:9 - 104:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:105:9: macro definition=NV_BAD_ITEM_LEN <US>c:macro@NV_BAD_ITEM_LEN<UE> <DS>NV_BAD_ITEM_LEN<DE> Extent=<ES>105:9 - 105:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:122:9: macro definition=SYS_EVENT_MSG <US>c:macro@SYS_EVENT_MSG<UE> <DS>SYS_EVENT_MSG<DE> Extent=<ES>122:9 - 122:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:128:9: macro definition=KEY_CHANGE <US>c:macro@KEY_CHANGE<UE> <DS>KEY_CHANGE<DE> Extent=<ES>128:9 - 128:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:46:1: inclusion directive=OnBoard.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h<IE>  [multi-include guarded] Extent=<ES>46:1 - 46:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:42:9: macro definition=ONBOARD_H <US>c:macro@ONBOARD_H<UE> <DS>ONBOARD_H<DE> Extent=<ES>42:9 - 42:18<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:44:1: inclusion directive=hal_mcu.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h<IE>  [multi-include guarded] Extent=<ES>44:1 - 44:21<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:45:1: inclusion directive=hal_sleep.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h<IE>  [multi-include guarded] Extent=<ES>45:1 - 45:23<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:41:9: macro definition=HAL_SLEEP_H <US>c:macro@HAL_SLEEP_H<UE> <DS>HAL_SLEEP_H<DE> Extent=<ES>41:9 - 41:20<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:46:1: inclusion directive=osal.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\osal.h<IE>  [multi-include guarded] Extent=<ES>46:1 - 46:18<EE>
@@ -1042,13 +1183,13 @@
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\limits.h:11:9: macro definition=_LIMITS_INCLUDED <US>c:macro@_LIMITS_INCLUDED<UE> <DS>_LIMITS_INCLUDED<DE> Extent=<ES>11:9 - 11:25<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\limits.h:17:1: inclusion directive=sysmac.h <US><UE> <DS><DE> <IS>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h<IE>  [multi-include guarded] Extent=<ES>17:1 - 17:20<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:12:9: macro definition=_SYSMAC_H_ <US>c:macro@_SYSMAC_H_<UE> <DS>_SYSMAC_H_<DE> Extent=<ES>12:9 - 12:19<EE>
-<L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:20:7: macro expansion=__IAR_SYSTEMS_ICC__|<invalid loc>:230:9 <US>c:macro@__IAR_SYSTEMS_ICC__<UE> <DS>__IAR_SYSTEMS_ICC__<DE> Extent=<ES>20:7 - 20:26<EE>
-<L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:22:7: macro expansion=__IAR_SYSTEMS_ICC__|<invalid loc>:230:9 <US>c:macro@__IAR_SYSTEMS_ICC__<UE> <DS>__IAR_SYSTEMS_ICC__<DE> Extent=<ES>22:7 - 22:26<EE>
+<L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:20:7: macro expansion=__IAR_SYSTEMS_ICC__|<invalid loc>:231:9 <US>c:macro@__IAR_SYSTEMS_ICC__<UE> <DS>__IAR_SYSTEMS_ICC__<DE> Extent=<ES>20:7 - 20:26<EE>
+<L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:22:7: macro expansion=__IAR_SYSTEMS_ICC__|<invalid loc>:231:9 <US>c:macro@__IAR_SYSTEMS_ICC__<UE> <DS>__IAR_SYSTEMS_ICC__<DE> Extent=<ES>22:7 - 22:26<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:82:9: macro definition=__INTRINSIC <US>c:macro@__INTRINSIC<UE> <DS>__INTRINSIC<DE> Extent=<ES>82:9 - 82:32<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:83:9: macro definition=__NORETURN <US>c:macro@__NORETURN<UE> <DS>__NORETURN<DE> Extent=<ES>83:9 - 83:30<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:86:9: macro definition=VAPTR <US>c:macro@VAPTR<UE> <DS>VAPTR<DE> Extent=<ES>86:9 - 86:35<EE>
-<L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:89:9: macro expansion=__SIZE_T_TYPE__|<invalid loc>:213:9 <US>c:macro@__SIZE_T_TYPE__<UE> <DS>__SIZE_T_TYPE__<DE> Extent=<ES>89:9 - 89:24<EE>
-<L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:90:9: macro expansion=__PTRDIFF_T_TYPE__|<invalid loc>:215:9 <US>c:macro@__PTRDIFF_T_TYPE__<UE> <DS>__PTRDIFF_T_TYPE__<DE> Extent=<ES>90:9 - 90:27<EE>
+<L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:89:9: macro expansion=__SIZE_T_TYPE__|<invalid loc>:214:9 <US>c:macro@__SIZE_T_TYPE__<UE> <DS>__SIZE_T_TYPE__<DE> Extent=<ES>89:9 - 89:24<EE>
+<L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:90:9: macro expansion=__PTRDIFF_T_TYPE__|<invalid loc>:216:9 <US>c:macro@__PTRDIFF_T_TYPE__<UE> <DS>__PTRDIFF_T_TYPE__<DE> Extent=<ES>90:9 - 90:27<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:92:9: macro definition=_HAS_PRAGMA_PRINTF_ARGS <US>c:macro@_HAS_PRAGMA_PRINTF_ARGS<UE> <DS>_HAS_PRAGMA_PRINTF_ARGS<DE> Extent=<ES>92:9 - 92:32<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:103:9: macro definition=__EFF_NS <US>c:macro@__EFF_NS<UE> <DS>__EFF_NS<DE> Extent=<ES>103:9 - 103:62<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\clib\sysmac.h:104:9: macro definition=__EFF_NE <US>c:macro@__EFF_NE<UE> <DS>__EFF_NE<DE> Extent=<ES>104:9 - 104:72<EE>
@@ -1130,25 +1271,26 @@
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:137:9: macro definition=MIN_SLEEP_TIME <US>c:macro@MIN_SLEEP_TIME<UE> <DS>MIN_SLEEP_TIME<DE> Extent=<ES>137:9 - 137:39<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:138:9: macro definition=OSAL_SET_CPU_INTO_SLEEP <US>c:macro@OSAL_SET_CPU_INTO_SLEEP<UE> <DS>OSAL_SET_CPU_INTO_SLEEP<DE> Extent=<ES>138:9 - 138:48<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:180:8: macro expansion=__near_func|<invalid loc>:69:9 <US>c:macro@__near_func<UE> <DS>__near_func<DE> Extent=<ES>180:8 - 180:19<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:46:1: inclusion directive=OSAL.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\osal.h<IE>  [multi-include guarded] Extent=<ES>46:1 - 46:18<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:47:1: inclusion directive=OSAL_Tasks.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Tasks.h<IE>  [multi-include guarded] Extent=<ES>47:1 - 47:24<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:47:1: inclusion directive=OSAL.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\osal.h<IE>  [multi-include guarded] Extent=<ES>47:1 - 47:18<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:48:1: inclusion directive=OSAL_Tasks.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Tasks.h<IE>  [multi-include guarded] Extent=<ES>48:1 - 48:24<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Tasks.h:41:9: macro definition=OSAL_TASKS_H <US>c:macro@OSAL_TASKS_H<UE> <DS>OSAL_TASKS_H<DE> Extent=<ES>41:9 - 41:21<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Tasks.h:59:9: macro definition=TASK_NO_TASK <US>c:macro@TASK_NO_TASK<UE> <DS>TASK_NO_TASK<DE> Extent=<ES>59:9 - 59:31<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:48:1: inclusion directive=OSAL_Timers.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Timers.h<IE>  [multi-include guarded] Extent=<ES>48:1 - 48:25<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:49:1: inclusion directive=OSAL_PwrMgr.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h<IE>  [multi-include guarded] Extent=<ES>49:1 - 49:25<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:49:1: inclusion directive=OSAL_Timers.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Timers.h<IE>  [multi-include guarded] Extent=<ES>49:1 - 49:25<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:50:1: inclusion directive=OSAL_PwrMgr.h <US><UE> <DS><DE> <IS>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h<IE>  [multi-include guarded] Extent=<ES>50:1 - 50:25<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:41:9: macro definition=OSAL_PWRMGR_H <US>c:macro@OSAL_PWRMGR_H<UE> <DS>OSAL_PWRMGR_H<DE> Extent=<ES>41:9 - 41:22<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:75:9: macro definition=PWRMGR_ALWAYS_ON <US>c:macro@PWRMGR_ALWAYS_ON<UE> <DS>PWRMGR_ALWAYS_ON<DE> Extent=<ES>75:9 - 75:28<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:76:9: macro definition=PWRMGR_BATTERY <US>c:macro@PWRMGR_BATTERY<UE> <DS>PWRMGR_BATTERY<DE> Extent=<ES>76:9 - 76:28<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:81:9: macro definition=PWRMGR_CONSERVE <US>c:macro@PWRMGR_CONSERVE<UE> <DS>PWRMGR_CONSERVE<DE> Extent=<ES>81:9 - 81:26<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:82:9: macro definition=PWRMGR_HOLD <US>c:macro@PWRMGR_HOLD<UE> <DS>PWRMGR_HOLD<DE> Extent=<ES>82:9 - 82:26<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:102:36: macro expansion=PWRMGR_ALWAYS_ON|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:75:9 <US>c:macro@PWRMGR_ALWAYS_ON<UE> <DS>PWRMGR_ALWAYS_ON<DE> Extent=<ES>102:36 - 102:52<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:138:14: macro expansion=INVALID_TASK|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:96:9 <US>c:macro@INVALID_TASK<UE> <DS>INVALID_TASK<DE> Extent=<ES>138:14 - 138:26<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:140:17: macro expansion=PWRMGR_CONSERVE|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:81:9 <US>c:macro@PWRMGR_CONSERVE<UE> <DS>PWRMGR_CONSERVE<DE> Extent=<ES>140:17 - 140:32<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:151:12: macro expansion=SUCCESS|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:93:9 <US>c:macro@SUCCESS<UE> <DS>SUCCESS<DE> Extent=<ES>151:12 - 151:19<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:171:42: macro expansion=PWRMGR_ALWAYS_ON|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:75:9 <US>c:macro@PWRMGR_ALWAYS_ON<UE> <DS>PWRMGR_ALWAYS_ON<DE> Extent=<ES>171:42 - 171:58<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:7: macro expansion=HAL_ENTER_CRITICAL_SECTION|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:115:9 <US>c:macro@HAL_ENTER_CRITICAL_SECTION<UE> <DS>HAL_ENTER_CRITICAL_SECTION<DE> Extent=<ES>177:7 - 177:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:183:7: macro expansion=HAL_EXIT_CRITICAL_SECTION|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:116:9 <US>c:macro@HAL_EXIT_CRITICAL_SECTION<UE> <DS>HAL_EXIT_CRITICAL_SECTION<DE> Extent=<ES>183:7 - 183:44<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:186:7: macro expansion=OSAL_SET_CPU_INTO_SLEEP|E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:138:9 <US>c:macro@OSAL_SET_CPU_INTO_SLEEP<UE> <DS>OSAL_SET_CPU_INTO_SLEEP<DE> Extent=<ES>186:7 - 186:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:77:9: macro definition=PWRMGR_ALWAYS_ON <US>c:macro@PWRMGR_ALWAYS_ON<UE> <DS>PWRMGR_ALWAYS_ON<DE> Extent=<ES>77:9 - 77:28<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:78:9: macro definition=PWRMGR_BATTERY <US>c:macro@PWRMGR_BATTERY<UE> <DS>PWRMGR_BATTERY<DE> Extent=<ES>78:9 - 78:28<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:85:9: macro definition=PWRMGR_CONSERVE <US>c:macro@PWRMGR_CONSERVE<UE> <DS>PWRMGR_CONSERVE<DE> Extent=<ES>85:9 - 85:26<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:86:9: macro definition=PWRMGR_HOLD <US>c:macro@PWRMGR_HOLD<UE> <DS>PWRMGR_HOLD<DE> Extent=<ES>86:9 - 86:26<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:103:36: macro expansion=PWRMGR_ALWAYS_ON|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:77:9 <US>c:macro@PWRMGR_ALWAYS_ON<UE> <DS>PWRMGR_ALWAYS_ON<DE> Extent=<ES>103:36 - 103:52<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:142:14: macro expansion=INVALID_TASK|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:96:9 <US>c:macro@INVALID_TASK<UE> <DS>INVALID_TASK<DE> Extent=<ES>142:14 - 142:26<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:144:17: macro expansion=PWRMGR_CONSERVE|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:85:9 <US>c:macro@PWRMGR_CONSERVE<UE> <DS>PWRMGR_CONSERVE<DE> Extent=<ES>144:17 - 144:32<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:155:12: macro expansion=SUCCESS|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:93:9 <US>c:macro@SUCCESS<UE> <DS>SUCCESS<DE> Extent=<ES>155:12 - 155:19<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:180:42: macro expansion=PWRMGR_ALWAYS_ON|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:77:9 <US>c:macro@PWRMGR_ALWAYS_ON<UE> <DS>PWRMGR_ALWAYS_ON<DE> Extent=<ES>180:42 - 180:58<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:189:7: macro expansion=HAL_ENTER_CRITICAL_SECTION|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:115:9 <US>c:macro@HAL_ENTER_CRITICAL_SECTION<UE> <DS>HAL_ENTER_CRITICAL_SECTION<DE> Extent=<ES>189:7 - 189:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:195:7: macro expansion=HAL_EXIT_CRITICAL_SECTION|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:116:9 <US>c:macro@HAL_EXIT_CRITICAL_SECTION<UE> <DS>HAL_EXIT_CRITICAL_SECTION<DE> Extent=<ES>195:7 - 195:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:196:47: macro expansion=HAL_LCD_LINE_5|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:68:9 <US>c:macro@HAL_LCD_LINE_5<UE> <DS>HAL_LCD_LINE_5<DE> Extent=<ES>196:47 - 196:61<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:198:7: macro expansion=OSAL_SET_CPU_INTO_SLEEP|E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\common\cc2540\OnBoard.h:138:9 <US>c:macro@OSAL_SET_CPU_INTO_SLEEP<UE> <DS>OSAL_SET_CPU_INTO_SLEEP<DE> Extent=<ES>198:7 - 198:38<EE>
 <L><invalid loc>:2:15: TypedefDecl=__builtin_va_list|<invalid loc>:2:15 (Definition) <US><UE> <DS>char *<DE> Extent=<ES>2:1 - 2:32<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:56:25: TypedefDecl=int8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:56:25 (Definition) <US>c:hal_types.h@2682@T@int8<UE> <DS>signed char<DE> Extent=<ES>56:1 - 56:29<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25: TypedefDecl=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Definition) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>57:1 - 57:30<EE>
@@ -1159,12 +1301,6 @@
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:65:25: TypedefDecl=bool|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:65:25 (Definition) <US>c:hal_types.h@3064@T@bool<UE> <DS>unsigned char<DE> Extent=<ES>65:1 - 65:29<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:67:25: TypedefDecl=halDataAlign_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:67:25 (Definition) <US>c:hal_types.h@3124@T@halDataAlign_t<UE> <DS>uint8<DE> Extent=<ES>67:1 - 67:39<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:67:9: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>67:9 - 67:14<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:112:15: TypedefDecl=Status_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:112:15 (Definition) <US>c:comdef.h@3796@T@Status_t<UE> <DS>uint8<DE> Extent=<ES>112:1 - 112:23<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:112:9: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>112:9 - 112:14<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:115:17: TypedefDecl=int24|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:115:17 (Definition) <US>c:comdef.h@3838@T@int24<UE> <DS>int32<DE> Extent=<ES>115:1 - 115:22<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:115:9: TypeRef=int32|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:62:25 (Reference) <US>c:hal_types.h@2936@T@int32<UE> <DS>long<DE> Extent=<ES>115:9 - 115:14<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:116:17: TypedefDecl=uint24|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:116:17 (Definition) <US>c:comdef.h@3862@T@uint24<UE> <DS>uint32<DE> Extent=<ES>116:1 - 116:23<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:116:9: TypeRef=uint32|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:63:25 (Reference) <US>c:hal_types.h@2998@T@uint32<UE> <DS>unsigned long<DE> Extent=<ES>116:9 - 116:15<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:119:1: UnionDecl=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:119:1 (Definition) <US>c:ioCC2541.h@5647@Ua<UE> <DS><DE> Extent=<ES>119:1 - 119:74<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:119:1: FieldDecl=P0|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:119:1 (Definition) <US>c:ioCC2541.h@5647@Ua@FI@P0<UE> <DS>P0<DE> Extent=<ES>119:1 - 119:74<EE>
 <L>C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:119:1: StructDecl=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:119:1 (Definition) <US>c:ioCC2541.h@5647@Ua@Sa<UE> <DS><DE> Extent=<ES>119:1 - 119:74<EE>
@@ -1418,6 +1554,75 @@
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:114:23: TypedefDecl=halIntState_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:114:23 (Definition) <US>c:hal_mcu.h@5018@T@halIntState_t<UE> <DS>unsigned char<DE> Extent=<ES>114:1 - 114:36<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:188:30: VarDecl=halSleepPconValue|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:188:30 (Declaration) <US>c:@halSleepPconValue<UE> <DS>halSleepPconValue<DE> Extent=<ES>188:1 - 188:47<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:188:24: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>188:24 - 188:29<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:95:13: FunctionDecl=HalLcdInit|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:95:13 (Declaration) <US>c:@F@HalLcdInit<UE> <DS>void HalLcdInit(void)<DE> Extent=<ES>95:1 - 95:29<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:100:13: FunctionDecl=HalLcdWriteString|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:100:13 (Declaration) <US>c:@F@HalLcdWriteString<UE> <DS>void HalLcdWriteString(char *, uint8)<DE> Extent=<ES>100:1 - 100:57<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:100:39: ParmDecl=str|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:100:39 (Definition) <US>c:hal_lcd.h@4722@F@HalLcdWriteString@str<UE> <DS>char *<DE> Extent=<ES>100:33 - 100:42<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:100:50: ParmDecl=option|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:100:50 (Definition) <US>c:hal_lcd.h@4733@F@HalLcdWriteString@option<UE> <DS>uint8<DE> Extent=<ES>100:44 - 100:56<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:100:44: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>100:44 - 100:49<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:13: FunctionDecl=HalLcdWriteValue|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:13 (Declaration) <US>c:@F@HalLcdWriteValue<UE> <DS>void HalLcdWriteValue(uint32, const uint8, uint8)<DE> Extent=<ES>105:1 - 105:78<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:39: ParmDecl=value|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:39 (Definition) <US>c:hal_lcd.h@4820@F@HalLcdWriteValue@value<UE> <DS>uint32<DE> Extent=<ES>105:32 - 105:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:32: TypeRef=uint32|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:63:25 (Reference) <US>c:hal_types.h@2998@T@uint32<UE> <DS>unsigned long<DE> Extent=<ES>105:32 - 105:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:58: ParmDecl=radix|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:58 (Definition) <US>c:hal_lcd.h@4834@F@HalLcdWriteValue@radix<UE> <DS>const uint8<DE> Extent=<ES>105:46 - 105:63<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:52: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>105:52 - 105:57<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:71: ParmDecl=option|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:71 (Definition) <US>c:hal_lcd.h@4853@F@HalLcdWriteValue@option<UE> <DS>uint8<DE> Extent=<ES>105:65 - 105:77<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:105:65: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>105:65 - 105:70<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:110:13: FunctionDecl=HalLcdWriteScreen|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:110:13 (Declaration) <US>c:@F@HalLcdWriteScreen<UE> <DS>void HalLcdWriteScreen(char *, char *)<DE> Extent=<ES>110:1 - 110:58<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:110:38: ParmDecl=line1|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:110:38 (Definition) <US>c:hal_lcd.h@4940@F@HalLcdWriteScreen@line1<UE> <DS>char *<DE> Extent=<ES>110:32 - 110:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:110:51: ParmDecl=line2|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:110:51 (Definition) <US>c:hal_lcd.h@4953@F@HalLcdWriteScreen@line2<UE> <DS>char *<DE> Extent=<ES>110:45 - 110:56<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:13: FunctionDecl=HalLcdWriteStringValue|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:13 (Declaration) <US>c:@F@HalLcdWriteStringValue<UE> <DS>void HalLcdWriteStringValue(char *, uint16, uint8, uint8)<DE> Extent=<ES>115:1 - 115:90<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:43: ParmDecl=title|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:43 (Definition) <US>c:hal_lcd.h@5066@F@HalLcdWriteStringValue@title<UE> <DS>char *<DE> Extent=<ES>115:37 - 115:48<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:57: ParmDecl=value|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:57 (Definition) <US>c:hal_lcd.h@5079@F@HalLcdWriteStringValue@value<UE> <DS>uint16<DE> Extent=<ES>115:50 - 115:62<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:50: TypeRef=uint16|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:60:25 (Reference) <US>c:hal_types.h@2870@T@uint16<UE> <DS>unsigned short<DE> Extent=<ES>115:50 - 115:56<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:70: ParmDecl=format|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:70 (Definition) <US>c:hal_lcd.h@5093@F@HalLcdWriteStringValue@format<UE> <DS>uint8<DE> Extent=<ES>115:64 - 115:76<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:64: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>115:64 - 115:69<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:84: ParmDecl=line|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:84 (Definition) <US>c:hal_lcd.h@5107@F@HalLcdWriteStringValue@line<UE> <DS>uint8<DE> Extent=<ES>115:78 - 115:88<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:78: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>115:78 - 115:83<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:13: FunctionDecl=HalLcdWriteStringValueValue|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:13 (Declaration) <US>c:@F@HalLcdWriteStringValueValue<UE> <DS>void HalLcdWriteStringValueValue(char *, uint16, uint8, uint16, uint8, uint8)<DE> Extent=<ES>120:1 - 120:127<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:48: ParmDecl=title|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:48 (Definition) <US>c:hal_lcd.h@5225@F@HalLcdWriteStringValueValue@title<UE> <DS>char *<DE> Extent=<ES>120:42 - 120:53<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:62: ParmDecl=value1|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:62 (Definition) <US>c:hal_lcd.h@5238@F@HalLcdWriteStringValueValue@value1<UE> <DS>uint16<DE> Extent=<ES>120:55 - 120:68<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:55: TypeRef=uint16|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:60:25 (Reference) <US>c:hal_types.h@2870@T@uint16<UE> <DS>unsigned short<DE> Extent=<ES>120:55 - 120:61<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:76: ParmDecl=format1|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:76 (Definition) <US>c:hal_lcd.h@5253@F@HalLcdWriteStringValueValue@format1<UE> <DS>uint8<DE> Extent=<ES>120:70 - 120:83<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:70: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>120:70 - 120:75<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:92: ParmDecl=value2|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:92 (Definition) <US>c:hal_lcd.h@5268@F@HalLcdWriteStringValueValue@value2<UE> <DS>uint16<DE> Extent=<ES>120:85 - 120:98<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:85: TypeRef=uint16|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:60:25 (Reference) <US>c:hal_types.h@2870@T@uint16<UE> <DS>unsigned short<DE> Extent=<ES>120:85 - 120:91<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:106: ParmDecl=format2|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:106 (Definition) <US>c:hal_lcd.h@5283@F@HalLcdWriteStringValueValue@format2<UE> <DS>uint8<DE> Extent=<ES>120:100 - 120:113<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:100: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>120:100 - 120:105<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:121: ParmDecl=line|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:121 (Definition) <US>c:hal_lcd.h@5298@F@HalLcdWriteStringValueValue@line<UE> <DS>uint8<DE> Extent=<ES>120:115 - 120:125<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:120:115: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>120:115 - 120:120<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:125:13: FunctionDecl=HalLcdDisplayPercentBar|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:125:13 (Declaration) <US>c:@F@HalLcdDisplayPercentBar<UE> <DS>void HalLcdDisplayPercentBar(char *, uint8)<DE> Extent=<ES>125:1 - 125:64<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:125:44: ParmDecl=title|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:125:44 (Definition) <US>c:hal_lcd.h@5399@F@HalLcdDisplayPercentBar@title<UE> <DS>char *<DE> Extent=<ES>125:38 - 125:49<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:125:57: ParmDecl=value|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:125:57 (Definition) <US>c:hal_lcd.h@5412@F@HalLcdDisplayPercentBar@value<UE> <DS>uint8<DE> Extent=<ES>125:51 - 125:62<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:125:51: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>125:51 - 125:56<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:128:13: FunctionDecl=HalLcd_HW_WriteLine|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:128:13 (Declaration) <US>c:@F@HalLcd_HW_WriteLine<UE> <DS>void HalLcd_HW_WriteLine(uint8, const char *)<DE> Extent=<ES>128:1 - 128:63<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:128:39: ParmDecl=line|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:128:39 (Definition) <US>c:hal_lcd.h@5464@F@HalLcd_HW_WriteLine@line<UE> <DS>uint8<DE> Extent=<ES>128:33 - 128:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:128:33: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>128:33 - 128:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:128:57: ParmDecl=pText|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:128:57 (Definition) <US>c:hal_lcd.h@5476@F@HalLcd_HW_WriteLine@pText<UE> <DS>const char *<DE> Extent=<ES>128:45 - 128:62<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:93:13: FunctionDecl=HalLedInit|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:93:13 (Declaration) <US>c:@F@HalLedInit<UE> <DS>void HalLedInit(void)<DE> Extent=<ES>93:1 - 93:31<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:14: FunctionDecl=HalLedSet|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:14 (Declaration) <US>c:@F@HalLedSet<UE> <DS>uint8 HalLedSet(uint8, uint8)<DE> Extent=<ES>98:1 - 98:48<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:8: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>98:8 - 98:13<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:31: ParmDecl=led|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:31 (Definition) <US>c:hal_led.h@3713@F@HalLedSet@led<UE> <DS>uint8<DE> Extent=<ES>98:25 - 98:34<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:25: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>98:25 - 98:30<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:42: ParmDecl=mode|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:42 (Definition) <US>c:hal_led.h@3724@F@HalLedSet@mode<UE> <DS>uint8<DE> Extent=<ES>98:36 - 98:46<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:98:36: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>98:36 - 98:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:13: FunctionDecl=HalLedBlink|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:13 (Declaration) <US>c:@F@HalLedBlink<UE> <DS>void HalLedBlink(uint8, uint8, uint8, uint16)<DE> Extent=<ES>103:1 - 103:74<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:32: ParmDecl=leds|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:32 (Definition) <US>c:hal_led.h@3794@F@HalLedBlink@leds<UE> <DS>uint8<DE> Extent=<ES>103:26 - 103:36<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:26: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>103:26 - 103:31<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:44: ParmDecl=cnt|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:44 (Definition) <US>c:hal_led.h@3806@F@HalLedBlink@cnt<UE> <DS>uint8<DE> Extent=<ES>103:38 - 103:47<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:38: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>103:38 - 103:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:55: ParmDecl=duty|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:55 (Definition) <US>c:hal_led.h@3817@F@HalLedBlink@duty<UE> <DS>uint8<DE> Extent=<ES>103:49 - 103:59<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:49: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>103:49 - 103:54<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:68: ParmDecl=time|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:68 (Definition) <US>c:hal_led.h@3829@F@HalLedBlink@time<UE> <DS>uint16<DE> Extent=<ES>103:61 - 103:72<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:103:61: TypeRef=uint16|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:60:25 (Reference) <US>c:hal_types.h@2870@T@uint16<UE> <DS>unsigned short<DE> Extent=<ES>103:61 - 103:67<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:108:13: FunctionDecl=HalLedEnterSleep|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:108:13 (Declaration) <US>c:@F@HalLedEnterSleep<UE> <DS>void HalLedEnterSleep(void)<DE> Extent=<ES>108:1 - 108:37<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:113:13: FunctionDecl=HalLedExitSleep|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:113:13 (Declaration) <US>c:@F@HalLedExitSleep<UE> <DS>void HalLedExitSleep(void)<DE> Extent=<ES>113:1 - 113:36<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:118:14: FunctionDecl=HalLedGetState|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:118:14 (Declaration) <US>c:@F@HalLedGetState<UE> <DS>uint8 HalLedGetState(void)<DE> Extent=<ES>118:1 - 118:37<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_led.h:118:8: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>118:8 - 118:13<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:112:15: TypedefDecl=Status_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:112:15 (Definition) <US>c:comdef.h@3796@T@Status_t<UE> <DS>uint8<DE> Extent=<ES>112:1 - 112:23<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:112:9: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>112:9 - 112:14<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:115:17: TypedefDecl=int24|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:115:17 (Definition) <US>c:comdef.h@3838@T@int24<UE> <DS>int32<DE> Extent=<ES>115:1 - 115:22<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:115:9: TypeRef=int32|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:62:25 (Reference) <US>c:hal_types.h@2936@T@int32<UE> <DS>long<DE> Extent=<ES>115:9 - 115:14<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:116:17: TypedefDecl=uint24|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:116:17 (Definition) <US>c:comdef.h@3862@T@uint24<UE> <DS>uint32<DE> Extent=<ES>116:1 - 116:23<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\comdef.h:116:9: TypeRef=uint32|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:63:25 (Reference) <US>c:hal_types.h@2998@T@uint32<UE> <DS>unsigned long<DE> Extent=<ES>116:9 - 116:15<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:13: FunctionDecl=halSleep|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:13 (Declaration) <US>c:@F@halSleep<UE> <DS>void halSleep(uint32)<DE> Extent=<ES>55:1 - 55:42<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:30: ParmDecl=osal_timer|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:30 (Definition) <US>c:hal_sleep.h@2644@F@halSleep@osal_timer<UE> <DS>uint32<DE> Extent=<ES>55:23 - 55:40<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:23: TypeRef=uint32|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:63:25 (Reference) <US>c:hal_types.h@2998@T@uint32<UE> <DS>unsigned long<DE> Extent=<ES>55:23 - 55:29<EE>
@@ -1734,70 +1939,73 @@
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:67:3: TypeRef=uint16|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:60:25 (Reference) <US>c:hal_types.h@2870@T@uint16<UE> <DS>unsigned short<DE> Extent=<ES>67:3 - 67:9<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:10: FieldDecl=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:10 (Definition) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_device<UE> <DS>pwrmgr_device<DE> Extent=<ES>68:3 - 68:23<EE>
 <L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:3: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>68:3 - 68:8<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:91:27: VarDecl=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:91:27 (Declaration) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>91:1 - 91:43<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:91:8: TypeRef=pwrmgr_attribute_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:69:3 (Reference) <US>c:OSAL_PwrMgr.h@2892@T@pwrmgr_attribute_t<UE> <DS>struct pwrmgr_attribute_t<DE> Extent=<ES>91:8 - 91:26<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:102:15: FunctionDecl=osal_pwrmgr_init|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:100:6 (Declaration) <US>c:@F@osal_pwrmgr_init<UE> <DS>void osal_pwrmgr_init(void)<DE> Extent=<ES>102:3 - 102:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:115:16: FunctionDecl=osal_pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:7 (Declaration) <US>c:@F@osal_pwrmgr_task_state<UE> <DS>uint8 osal_pwrmgr_task_state(uint8, uint8)<DE> Extent=<ES>115:3 - 115:68<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:115:10: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>115:10 - 115:15<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:115:46: ParmDecl=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:115:46 (Definition) <US>c:OSAL_PwrMgr.h@4650@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>115:40 - 115:53<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:115:40: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>115:40 - 115:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:115:61: ParmDecl=state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:115:61 (Definition) <US>c:OSAL_PwrMgr.h@4665@F@osal_pwrmgr_task_state@state<UE> <DS>uint8<DE> Extent=<ES>115:55 - 115:66<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:115:55: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>115:55 - 115:60<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:124:15: FunctionDecl=osal_pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:118:6 (Declaration) <US>c:@F@osal_pwrmgr_device<UE> <DS>void osal_pwrmgr_device(uint8)<DE> Extent=<ES>124:3 - 124:56<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:124:41: ParmDecl=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:124:41 (Definition) <US>c:OSAL_PwrMgr.h@5106@F@osal_pwrmgr_device@pwrmgr_device<UE> <DS>uint8<DE> Extent=<ES>124:35 - 124:54<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:124:35: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>124:35 - 124:40<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:130:15: FunctionDecl=osal_pwrmgr_powerconserve|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:165:6 (Declaration) <US>c:@F@osal_pwrmgr_powerconserve<UE> <DS>void osal_pwrmgr_powerconserve(void)<DE> Extent=<ES>130:3 - 130:48<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20: VarDecl=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20 (Declaration) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>69:1 - 69:36<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:1: TypeRef=pwrmgr_attribute_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:69:3 (Reference) <US>c:OSAL_PwrMgr.h@2892@T@pwrmgr_attribute_t<UE> <DS>struct pwrmgr_attribute_t<DE> Extent=<ES>69:1 - 69:19<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:100:6: FunctionDecl=osal_pwrmgr_init|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:100:6 (Definition) <US>c:@F@osal_pwrmgr_init<UE> <DS>void osal_pwrmgr_init(void)<DE> Extent=<ES>100:1 - 104:2<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:102:20: MemberRefExpr=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_device<UE> <DS>pwrmgr_device<DE> Extent=<ES>102:3 - 102:33<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:102:3: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>102:3 - 102:19<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:103:20: MemberRefExpr=pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:65:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_task_state<UE> <DS>pwrmgr_task_state<DE> Extent=<ES>103:3 - 103:37<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:103:3: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>103:3 - 103:19<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:118:6: FunctionDecl=osal_pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:118:6 (Definition) <US>c:@F@osal_pwrmgr_device<UE> <DS>void osal_pwrmgr_device(uint8)<DE> Extent=<ES>118:1 - 121:2<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:118:32: ParmDecl=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:118:32 (Definition) <US>c:OSAL_PwrMgr.c@4581@F@osal_pwrmgr_device@pwrmgr_device<UE> <DS>uint8<DE> Extent=<ES>118:26 - 118:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:118:26: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>118:26 - 118:31<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:120:20: MemberRefExpr=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_device<UE> <DS>pwrmgr_device<DE> Extent=<ES>120:3 - 120:33<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:120:3: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>120:3 - 120:19<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:120:36: DeclRefExpr=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:118:32 (Reference) <US>c:OSAL_PwrMgr.c@4581@F@osal_pwrmgr_device@pwrmgr_device<UE> <DS>uint8<DE> Extent=<ES>120:36 - 120:49<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:7: FunctionDecl=osal_pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:7 (Definition) <US>c:@F@osal_pwrmgr_task_state<UE> <DS>uint8 osal_pwrmgr_task_state(uint8, uint8)<DE> Extent=<ES>135:1 - 152:2<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:1: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>135:1 - 135:6<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:37: ParmDecl=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:37 (Definition) <US>c:OSAL_PwrMgr.c@5109@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>135:31 - 135:44<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:31: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>135:31 - 135:36<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:52: ParmDecl=state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:52 (Definition) <US>c:OSAL_PwrMgr.c@5124@F@osal_pwrmgr_task_state@state<UE> <DS>uint8<DE> Extent=<ES>135:46 - 135:57<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:46: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>135:46 - 135:51<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:137:8: DeclRefExpr=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:37 (Reference) <US>c:OSAL_PwrMgr.c@5109@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>137:8 - 137:15<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:137:19: DeclRefExpr=tasksCnt|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Tasks.h:75:20 (Reference) <US>c:@tasksCnt<UE> <DS>tasksCnt<DE> Extent=<ES>137:19 - 137:27<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:140:8: DeclRefExpr=state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:52 (Reference) <US>c:OSAL_PwrMgr.c@5124@F@osal_pwrmgr_task_state@state<UE> <DS>uint8<DE> Extent=<ES>140:8 - 140:13<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:143:22: MemberRefExpr=pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:65:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_task_state<UE> <DS>pwrmgr_task_state<DE> Extent=<ES>143:5 - 143:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:143:5: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>143:5 - 143:21<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:143:50: DeclRefExpr=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:37 (Reference) <US>c:OSAL_PwrMgr.c@5109@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>143:50 - 143:57<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:148:22: MemberRefExpr=pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:65:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_task_state<UE> <DS>pwrmgr_task_state<DE> Extent=<ES>148:5 - 148:39<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:148:5: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>148:5 - 148:21<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:148:49: DeclRefExpr=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:135:37 (Reference) <US>c:OSAL_PwrMgr.c@5109@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>148:49 - 148:56<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:165:6: FunctionDecl=osal_pwrmgr_powerconserve|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:165:6 (Definition) <US>c:@F@osal_pwrmgr_powerconserve<UE> <DS>void osal_pwrmgr_powerconserve(void)<DE> Extent=<ES>165:1 - 189:2<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:167:17: VarDecl=next|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:167:17 (Definition) <US>c:OSAL_PwrMgr.c@5876@F@osal_pwrmgr_powerconserve@next<UE> <DS>next<DE> Extent=<ES>167:3 - 167:21<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:167:3: TypeRef=uint32|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:63:25 (Reference) <US>c:hal_types.h@2998@T@uint32<UE> <DS>unsigned long<DE> Extent=<ES>167:3 - 167:9<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:168:17: VarDecl=intState|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:168:17 (Definition) <US>c:OSAL_PwrMgr.c@5899@F@osal_pwrmgr_powerconserve@intState<UE> <DS>intState<DE> Extent=<ES>168:3 - 168:25<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:168:3: TypeRef=halIntState_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:114:23 (Reference) <US>c:hal_mcu.h@5018@T@halIntState_t<UE> <DS>unsigned char<DE> Extent=<ES>168:3 - 168:16<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:171:25: MemberRefExpr=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_device<UE> <DS>pwrmgr_device<DE> Extent=<ES>171:8 - 171:38<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:171:8: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>171:8 - 171:24<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:174:27: MemberRefExpr=pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:65:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_task_state<UE> <DS>pwrmgr_task_state<DE> Extent=<ES>174:10 - 174:44<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:174:10: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:69:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>174:10 - 174:26<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:7: DeclRefExpr=intState|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:168:17 (Reference) <US>c:OSAL_PwrMgr.c@5899@F@osal_pwrmgr_powerconserve@intState<UE> <DS>intState<DE> Extent=<ES>177:7 - 177:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:7: MemberRefExpr=EA|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US>c:ioCC2541.h@9677@Ua@Sa@FI@EA<UE> <DS>EA<DE> Extent=<ES>177:7 - 177:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:7: MemberRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>177:7 - 177:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:7: DeclRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>177:7 - 177:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:7: MemberRefExpr=EA|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US>c:ioCC2541.h@9677@Ua@Sa@FI@EA<UE> <DS>EA<DE> Extent=<ES>177:7 - 177:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:7: MemberRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>177:7 - 177:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:7: DeclRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>177:7 - 177:45<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:180:7: DeclRefExpr=next|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:167:17 (Reference) <US>c:OSAL_PwrMgr.c@5876@F@osal_pwrmgr_powerconserve@next<UE> <DS>next<DE> Extent=<ES>180:7 - 180:11<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:180:14: CallExpr=osal_next_timeout|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Timers.h:137:17 (Reference) <US>c:@F@osal_next_timeout<UE> <DS>uint32 osal_next_timeout(void)<DE> Extent=<ES>180:14 - 180:33<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:180:14: DeclRefExpr=osal_next_timeout|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Timers.h:137:17 (Reference) <US>c:@F@osal_next_timeout<UE> <DS>uint32 osal_next_timeout(void)<DE> Extent=<ES>180:14 - 180:31<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:183:7: MemberRefExpr=EA|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US>c:ioCC2541.h@9677@Ua@Sa@FI@EA<UE> <DS>EA<DE> Extent=<ES>183:7 - 183:44<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:183:7: MemberRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>183:7 - 183:44<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:183:7: DeclRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>183:7 - 183:44<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:183:7: DeclRefExpr=intState|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:168:17 (Reference) <US>c:OSAL_PwrMgr.c@5899@F@osal_pwrmgr_powerconserve@intState<UE> <DS>intState<DE> Extent=<ES>183:7 - 183:44<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:186:7: CallExpr=halSleep|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:13 (Reference) <US>c:@F@halSleep<UE> <DS>void halSleep(uint32)<DE> Extent=<ES>186:7 - 186:38<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:186:7: DeclRefExpr=halSleep|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:13 (Reference) <US>c:@F@halSleep<UE> <DS>void halSleep(uint32)<DE> Extent=<ES>186:7 - 186:38<EE>
-<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:186:7: DeclRefExpr=next|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:167:17 (Reference) <US>c:OSAL_PwrMgr.c@5876@F@osal_pwrmgr_powerconserve@next<UE> <DS>next<DE> Extent=<ES>186:7 - 186:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:96:27: VarDecl=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:96:27 (Declaration) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>96:1 - 96:43<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:96:8: TypeRef=pwrmgr_attribute_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:69:3 (Reference) <US>c:OSAL_PwrMgr.h@2892@T@pwrmgr_attribute_t<UE> <DS>struct pwrmgr_attribute_t<DE> Extent=<ES>96:8 - 96:26<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:107:15: FunctionDecl=osal_pwrmgr_init|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:101:6 (Declaration) <US>c:@F@osal_pwrmgr_init<UE> <DS>void osal_pwrmgr_init(void)<DE> Extent=<ES>107:3 - 107:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:120:16: FunctionDecl=osal_pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:7 (Declaration) <US>c:@F@osal_pwrmgr_task_state<UE> <DS>uint8 osal_pwrmgr_task_state(uint8, uint8)<DE> Extent=<ES>120:3 - 120:68<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:120:10: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>120:10 - 120:15<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:120:46: ParmDecl=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:120:46 (Definition) <US>c:OSAL_PwrMgr.h@4979@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>120:40 - 120:53<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:120:40: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>120:40 - 120:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:120:61: ParmDecl=state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:120:61 (Definition) <US>c:OSAL_PwrMgr.h@4994@F@osal_pwrmgr_task_state@state<UE> <DS>uint8<DE> Extent=<ES>120:55 - 120:66<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:120:55: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>120:55 - 120:60<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:129:15: FunctionDecl=osal_pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:119:6 (Declaration) <US>c:@F@osal_pwrmgr_device<UE> <DS>void osal_pwrmgr_device(uint8)<DE> Extent=<ES>129:3 - 129:56<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:129:41: ParmDecl=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:129:41 (Definition) <US>c:OSAL_PwrMgr.h@5435@F@osal_pwrmgr_device@pwrmgr_device<UE> <DS>uint8<DE> Extent=<ES>129:35 - 129:54<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:129:35: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>129:35 - 129:40<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:135:15: FunctionDecl=osal_pwrmgr_powerconserve|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:174:6 (Declaration) <US>c:@F@osal_pwrmgr_powerconserve<UE> <DS>void osal_pwrmgr_powerconserve(void)<DE> Extent=<ES>135:3 - 135:48<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20: VarDecl=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20 (Declaration) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>70:1 - 70:36<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:1: TypeRef=pwrmgr_attribute_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:69:3 (Reference) <US>c:OSAL_PwrMgr.h@2892@T@pwrmgr_attribute_t<UE> <DS>struct pwrmgr_attribute_t<DE> Extent=<ES>70:1 - 70:19<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:101:6: FunctionDecl=osal_pwrmgr_init|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:101:6 (Definition) <US>c:@F@osal_pwrmgr_init<UE> <DS>void osal_pwrmgr_init(void)<DE> Extent=<ES>101:1 - 105:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:103:20: MemberRefExpr=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_device<UE> <DS>pwrmgr_device<DE> Extent=<ES>103:3 - 103:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:103:3: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>103:3 - 103:19<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:104:20: MemberRefExpr=pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:65:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_task_state<UE> <DS>pwrmgr_task_state<DE> Extent=<ES>104:3 - 104:37<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:104:3: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>104:3 - 104:19<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:119:6: FunctionDecl=osal_pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:119:6 (Definition) <US>c:@F@osal_pwrmgr_device<UE> <DS>void osal_pwrmgr_device(uint8)<DE> Extent=<ES>119:1 - 122:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:119:32: ParmDecl=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:119:32 (Definition) <US>c:OSAL_PwrMgr.c@4672@F@osal_pwrmgr_device@pwrmgr_device<UE> <DS>uint8<DE> Extent=<ES>119:26 - 119:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:119:26: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>119:26 - 119:31<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:121:20: MemberRefExpr=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_device<UE> <DS>pwrmgr_device<DE> Extent=<ES>121:3 - 121:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:121:3: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>121:3 - 121:19<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:121:36: DeclRefExpr=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:119:32 (Reference) <US>c:OSAL_PwrMgr.c@4672@F@osal_pwrmgr_device@pwrmgr_device<UE> <DS>uint8<DE> Extent=<ES>121:36 - 121:49<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:7: FunctionDecl=osal_pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:7 (Definition) <US>c:@F@osal_pwrmgr_task_state<UE> <DS>uint8 osal_pwrmgr_task_state(uint8, uint8)<DE> Extent=<ES>139:1 - 156:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:1: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>139:1 - 139:6<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:37: ParmDecl=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:37 (Definition) <US>c:OSAL_PwrMgr.c@5332@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>139:31 - 139:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:31: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>139:31 - 139:36<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:52: ParmDecl=state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:52 (Definition) <US>c:OSAL_PwrMgr.c@5347@F@osal_pwrmgr_task_state@state<UE> <DS>uint8<DE> Extent=<ES>139:46 - 139:57<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:46: TypeRef=uint8|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:57:25 (Reference) <US>c:hal_types.h@2743@T@uint8<UE> <DS>unsigned char<DE> Extent=<ES>139:46 - 139:51<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:141:8: DeclRefExpr=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:37 (Reference) <US>c:OSAL_PwrMgr.c@5332@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>141:8 - 141:15<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:141:19: DeclRefExpr=tasksCnt|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Tasks.h:75:20 (Reference) <US>c:@tasksCnt<UE> <DS>tasksCnt<DE> Extent=<ES>141:19 - 141:27<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:144:8: DeclRefExpr=state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:52 (Reference) <US>c:OSAL_PwrMgr.c@5347@F@osal_pwrmgr_task_state@state<UE> <DS>uint8<DE> Extent=<ES>144:8 - 144:13<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:147:22: MemberRefExpr=pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:65:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_task_state<UE> <DS>pwrmgr_task_state<DE> Extent=<ES>147:5 - 147:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:147:5: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>147:5 - 147:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:147:50: DeclRefExpr=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:37 (Reference) <US>c:OSAL_PwrMgr.c@5332@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>147:50 - 147:57<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:152:22: MemberRefExpr=pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:65:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_task_state<UE> <DS>pwrmgr_task_state<DE> Extent=<ES>152:5 - 152:39<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:152:5: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>152:5 - 152:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:152:49: DeclRefExpr=task_id|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:139:37 (Reference) <US>c:OSAL_PwrMgr.c@5332@F@osal_pwrmgr_task_state@task_id<UE> <DS>uint8<DE> Extent=<ES>152:49 - 152:56<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:174:6: FunctionDecl=osal_pwrmgr_powerconserve|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:174:6 (Definition) <US>c:@F@osal_pwrmgr_powerconserve<UE> <DS>void osal_pwrmgr_powerconserve(void)<DE> Extent=<ES>174:1 - 201:2<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:176:17: VarDecl=next|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:176:17 (Definition) <US>c:OSAL_PwrMgr.c@6261@F@osal_pwrmgr_powerconserve@next<UE> <DS>next<DE> Extent=<ES>176:3 - 176:21<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:176:3: TypeRef=uint32|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_types.h:63:25 (Reference) <US>c:hal_types.h@2998@T@uint32<UE> <DS>unsigned long<DE> Extent=<ES>176:3 - 176:9<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:17: VarDecl=intState|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:17 (Definition) <US>c:OSAL_PwrMgr.c@6284@F@osal_pwrmgr_powerconserve@intState<UE> <DS>intState<DE> Extent=<ES>177:3 - 177:25<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:3: TypeRef=halIntState_t|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2541EB\hal_mcu.h:114:23 (Reference) <US>c:hal_mcu.h@5018@T@halIntState_t<UE> <DS>unsigned char<DE> Extent=<ES>177:3 - 177:16<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:180:25: MemberRefExpr=pwrmgr_device|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:68:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_device<UE> <DS>pwrmgr_device<DE> Extent=<ES>180:8 - 180:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:180:8: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>180:8 - 180:24<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:184:27: MemberRefExpr=pwrmgr_task_state|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_PwrMgr.h:65:10 (Reference) <US>c:@SA@pwrmgr_attribute_t@FI@pwrmgr_task_state<UE> <DS>pwrmgr_task_state<DE> Extent=<ES>184:10 - 184:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:184:10: DeclRefExpr=pwrmgr_attribute|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:70:20 (Reference) <US>c:@pwrmgr_attribute<UE> <DS>pwrmgr_attribute<DE> Extent=<ES>184:10 - 184:26<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:189:7: DeclRefExpr=intState|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:17 (Reference) <US>c:OSAL_PwrMgr.c@6284@F@osal_pwrmgr_powerconserve@intState<UE> <DS>intState<DE> Extent=<ES>189:7 - 189:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:189:7: MemberRefExpr=EA|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US>c:ioCC2541.h@9677@Ua@Sa@FI@EA<UE> <DS>EA<DE> Extent=<ES>189:7 - 189:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:189:7: MemberRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>189:7 - 189:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:189:7: DeclRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>189:7 - 189:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:189:7: MemberRefExpr=EA|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US>c:ioCC2541.h@9677@Ua@Sa@FI@EA<UE> <DS>EA<DE> Extent=<ES>189:7 - 189:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:189:7: MemberRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>189:7 - 189:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:189:7: DeclRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>189:7 - 189:45<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:192:7: DeclRefExpr=next|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:176:17 (Reference) <US>c:OSAL_PwrMgr.c@6261@F@osal_pwrmgr_powerconserve@next<UE> <DS>next<DE> Extent=<ES>192:7 - 192:11<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:192:14: CallExpr=osal_next_timeout|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Timers.h:137:17 (Reference) <US>c:@F@osal_next_timeout<UE> <DS>uint32 osal_next_timeout(void)<DE> Extent=<ES>192:14 - 192:33<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:192:14: DeclRefExpr=osal_next_timeout|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\include\OSAL_Timers.h:137:17 (Reference) <US>c:@F@osal_next_timeout<UE> <DS>uint32 osal_next_timeout(void)<DE> Extent=<ES>192:14 - 192:31<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:195:7: MemberRefExpr=EA|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US>c:ioCC2541.h@9677@Ua@Sa@FI@EA<UE> <DS>EA<DE> Extent=<ES>195:7 - 195:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:195:7: MemberRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>195:7 - 195:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:195:7: DeclRefExpr=|C:\Program Files\IAR Systems\Embedded Workbench 6.4\8051\inc\ioCC2541.h:170:1 (Reference) <US><UE> <DS><DE> Extent=<ES>195:7 - 195:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:195:7: DeclRefExpr=intState|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:177:17 (Reference) <US>c:OSAL_PwrMgr.c@6284@F@osal_pwrmgr_powerconserve@intState<UE> <DS>intState<DE> Extent=<ES>195:7 - 195:44<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:196:6: CallExpr=HalLcdWriteStringValue|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:13 (Reference) <US>c:@F@HalLcdWriteStringValue<UE> <DS>void HalLcdWriteStringValue(char *, uint16, uint8, uint8)<DE> Extent=<ES>196:6 - 196:62<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:196:6: DeclRefExpr=HalLcdWriteStringValue|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_lcd.h:115:13 (Reference) <US>c:@F@HalLcdWriteStringValue<UE> <DS>void HalLcdWriteStringValue(char *, uint16, uint8, uint8)<DE> Extent=<ES>196:6 - 196:28<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:196:37: DeclRefExpr=next|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:176:17 (Reference) <US>c:OSAL_PwrMgr.c@6261@F@osal_pwrmgr_powerconserve@next<UE> <DS>next<DE> Extent=<ES>196:37 - 196:41<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:198:7: CallExpr=halSleep|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:13 (Reference) <US>c:@F@halSleep<UE> <DS>void halSleep(uint32)<DE> Extent=<ES>198:7 - 198:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:198:7: DeclRefExpr=halSleep|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\include\hal_sleep.h:55:13 (Reference) <US>c:@F@halSleep<UE> <DS>void halSleep(uint32)<DE> Extent=<ES>198:7 - 198:38<EE>
+<L>E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:198:7: DeclRefExpr=next|E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c:176:17 (Reference) <US>c:OSAL_PwrMgr.c@6261@F@osal_pwrmgr_powerconserve@next<UE> <DS>next<DE> Extent=<ES>198:7 - 198:38<EE>

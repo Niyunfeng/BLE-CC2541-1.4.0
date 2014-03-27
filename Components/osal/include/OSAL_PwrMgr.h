@@ -62,21 +62,25 @@ extern "C"
  */
 typedef struct
 {
-  uint16 pwrmgr_task_state;
-  uint16 pwrmgr_next_timeout;
-  uint16 accumulated_sleep_time;
-  uint8  pwrmgr_device;
+  uint16 pwrmgr_task_state;//  任务状态
+  uint16 pwrmgr_next_timeout;//下一次超时
+  uint16 accumulated_sleep_time;//睡眠时间
+  uint8  pwrmgr_device;//电源管理设备属性，有PWRMGR_ALWAYS_ON PWRMGR_BATTERY两种
 } pwrmgr_attribute_t;
 
 /* With PWRMGR_ALWAYS_ON selection, there is no power savings and the
  * device is most likely on mains power. The PWRMGR_BATTERY selection allows
  * the HAL sleep manager to enter SLEEP LITE state or SLEEP DEEP state.
+选择PWRMGR_ALWAYS_ON的话将不会进入睡眠模式，
+选择PWRMGR_BATTERY将允许HAL管理CPU进入SLEEP LITE或者SLEEP DEEP状态。
  */
 #define PWRMGR_ALWAYS_ON  0
 #define PWRMGR_BATTERY    1
 
 /* The PWRMGR_CONSERVE selection turns power savings on, all tasks have to
  * agree. The PWRMGR_HOLD selection turns power savings off.
+
+低功耗标志，主要用于osal_pwrmgr_task_state()这个函数中，用于标志每一任务是否需要低功耗。
  */
 #define PWRMGR_CONSERVE 0
 #define PWRMGR_HOLD     1
@@ -87,6 +91,7 @@ typedef struct
  */
 
 /* This global variable stores the power management attributes.
+定义一个电源管理的全局变量。
  */
 extern pwrmgr_attribute_t pwrmgr_attribute;
 

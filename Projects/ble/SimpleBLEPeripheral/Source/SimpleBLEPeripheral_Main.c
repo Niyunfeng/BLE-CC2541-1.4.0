@@ -96,6 +96,7 @@ int main(void) {
 
 #if defined ( POWER_SAVING )
 	osal_pwrmgr_device( PWRMGR_BATTERY );
+        
 #endif
 
 	/* Start OSAL */

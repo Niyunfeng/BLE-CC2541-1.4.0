@@ -274,8 +274,9 @@
           <state>xPLUS_BROADCASTER</state>
           <state>HAL_LCD=TRUE</state>
           <state>HAL_LED=TRUE</state>
-          <state>HAL_UART=TRUE</state>
+          <state>HAL_UART=FALSE</state>
           <state>HAL_ADC=TRUE</state>
+          <state>HAL_SLEEP_DEBUG_LED</state>
         </option>
         <option>
           <name>CCPreprocFile</name>

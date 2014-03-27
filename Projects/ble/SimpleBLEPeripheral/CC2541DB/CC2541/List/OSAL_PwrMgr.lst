@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  16:35:27 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             27/Mar/2014  15:10:17 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -33,9 +33,10 @@
 #                          HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D          #
 #                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o  #
+#                          HAL_LED=TRUE -D HAL_UART=FALSE -D HAL_ADC=TRUE -D  #
+#                          HAL_SLEEP_DEBUG_LED -lcN                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o       #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheral\CC2541DB\CC2541\Obj\ -e        #
 #                          --debug --core=plain --dptr=16,1                   #
@@ -138,157 +139,169 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c
      40          /*********************************************************************
      41           * INCLUDES
      42           */
-     43          
-     44          #include "comdef.h"
-     45          #include "OnBoard.h"
-     46          #include "OSAL.h"
-     47          #include "OSAL_Tasks.h"
-     48          #include "OSAL_Timers.h"
-     49          #include "OSAL_PwrMgr.h"
-     50          
-     51          /*********************************************************************
-     52           * MACROS
-     53           */
-     54          
-     55          /*********************************************************************
-     56           * CONSTANTS
-     57           */
-     58          
-     59          /*********************************************************************
-     60           * TYPEDEFS
-     61           */
-     62          
-     63          /*********************************************************************
-     64           * GLOBAL VARIABLES
-     65           */
-     66          
-     67          /* This global variable stores the power management attributes.
-     68           */
-     69          pwrmgr_attribute_t pwrmgr_attribute;
-     70          
-     71          /*********************************************************************
-     72           * EXTERNAL VARIABLES
-     73           */
-     74          
-     75          /*********************************************************************
-     76           * EXTERNAL FUNCTIONS
-     77           */
-     78          
-     79          /*********************************************************************
-     80           * LOCAL VARIABLES
-     81           */
-     82          
-     83          /*********************************************************************
-     84           * LOCAL FUNCTION PROTOTYPES
-     85           */
-     86          
-     87          /*********************************************************************
-     88           * FUNCTIONS
-     89           *********************************************************************/
-     90          
-     91          /*********************************************************************
-     92           * @fn      osal_pwrmgr_init
-     93           *
-     94           * @brief   Initialize the power management system.
-     95           *
-     96           * @param   none.
-     97           *
-     98           * @return  none.
-     99           */
-    100          void osal_pwrmgr_init( void )
-    101          {
-    102            pwrmgr_attribute.pwrmgr_device = PWRMGR_ALWAYS_ON; // Default to no power conservation.
-    103            pwrmgr_attribute.pwrmgr_task_state = 0;            // Cleared.  All set to conserve
-    104          }
-    105          
-    106          /*********************************************************************
-    107           * @fn      osal_pwrmgr_device
-    108           *
-    109           * @brief   Sets the device power characteristic.
-    110           *
-    111           * @param   pwrmgr_device - type of power devices. With PWRMGR_ALWAYS_ON
-    112           *          selection, there is no power savings and the device is most
-    113           *          likely on mains power. The PWRMGR_BATTERY selection allows the
-    114           *          HAL sleep manager to enter sleep.
-    115           *
-    116           * @return  none
-    117           */
-    118          void osal_pwrmgr_device( uint8 pwrmgr_device )
-    119          {
-    120            pwrmgr_attribute.pwrmgr_device = pwrmgr_device;
-    121          }
-    122          
-    123          /*********************************************************************
-    124           * @fn      osal_pwrmgr_task_state
-    125           *
-    126           * @brief   This function is called by each task to state whether or
-    127           *          not this task wants to conserve power.
-    128           *
-    129           * @param   task_id - calling task ID.
-    130           *          state - whether the calling task wants to
-    131           *          conserve power or not.
+     43          #include "hal_lcd.h"
+     44          #include "hal_led.h"
+     45          #include "comdef.h"
+     46          #include "OnBoard.h"
+     47          #include "OSAL.h"
+     48          #include "OSAL_Tasks.h"
+     49          #include "OSAL_Timers.h"
+     50          #include "OSAL_PwrMgr.h"
+     51          
+     52          /*********************************************************************
+     53           * MACROS
+     54           */
+     55          
+     56          /*********************************************************************
+     57           * CONSTANTS
+     58           */
+     59          
+     60          /*********************************************************************
+     61           * TYPEDEFS
+     62           */
+     63          
+     64          /*********************************************************************
+     65           * GLOBAL VARIABLES
+     66           */
+     67          
+     68          /* This global variable stores the power management attributes.
+     69           */
+     70          pwrmgr_attribute_t pwrmgr_attribute;
+     71          
+     72          /*********************************************************************
+     73           * EXTERNAL VARIABLES
+     74           */
+     75          
+     76          /*********************************************************************
+     77           * EXTERNAL FUNCTIONS
+     78           */
+     79          
+     80          /*********************************************************************
+     81           * LOCAL VARIABLES
+     82           */
+     83          
+     84          /*********************************************************************
+     85           * LOCAL FUNCTION PROTOTYPES
+     86           */
+     87          
+     88          /*********************************************************************
+     89           * FUNCTIONS
+     90           *********************************************************************/
+     91          
+     92          /*********************************************************************
+     93           * @fn      osal_pwrmgr_init
+     94           *
+     95           * @brief   Initialize the power management system. osal_init_system( )中调用
+     96           *
+     97           * @param   none.
+     98           *
+     99           * @return  none.
+    100           */
+    101          void osal_pwrmgr_init( void )
+    102          {
+    103            pwrmgr_attribute.pwrmgr_device = PWRMGR_ALWAYS_ON; // Default to no power conservation.默认没有睡眠模式。
+    104            pwrmgr_attribute.pwrmgr_task_state = 0;            // Cleared.  All set to conserve 清零
+    105          }
+    106          
+    107          /*********************************************************************
+    108           * @fn      osal_pwrmgr_device
+    109           *
+    110           * @brief   Sets the device power characteristic.
+    111           *
+    112           * @param   pwrmgr_device - type of power devices. With PWRMGR_ALWAYS_ON
+    113           *          selection, there is no power savings and the device is most
+    114           *          likely on mains power. The PWRMGR_BATTERY selection allows the
+    115           *          HAL sleep manager to enter sleep.
+    116           *
+    117           * @return  none
+    118           */
+    119          void osal_pwrmgr_device( uint8 pwrmgr_device )
+    120          {
+    121            pwrmgr_attribute.pwrmgr_device = pwrmgr_device;
+    122          }
+    123          
+    124          /*********************************************************************
+    125           * @fn      osal_pwrmgr_task_state
+    126           *
+    127           * @brief   This function is called by each task to state whether or
+    128           *          not this task wants to conserve power.
+    129               这个函数可以被每一个任务调用，用于设置这个任务是否支持低功耗运行，如
+    130          
+    131           * 果每一个任务不支持低功耗将无法进入低功耗模式运行。
     132           *
-    133           * @return  SUCCESS if task complete
-    134           */
-    135          uint8 osal_pwrmgr_task_state( uint8 task_id, uint8 state )
-    136          {
-    137            if ( task_id >= tasksCnt )
-    138              return ( INVALID_TASK );
-    139          
-    140            if ( state == PWRMGR_CONSERVE )
-    141            {
-    142              // Clear the task state flag
-    143              pwrmgr_attribute.pwrmgr_task_state &= ~(1 << task_id );
-    144            }
-    145            else
-    146            {
-    147              // Set the task state flag
-    148              pwrmgr_attribute.pwrmgr_task_state |= (1 << task_id);
-    149            }
-    150          
-    151            return ( SUCCESS );
-    152          }
-    153          
-    154          #if defined( POWER_SAVING )
-    155          /*********************************************************************
-    156           * @fn      osal_pwrmgr_powerconserve
-    157           *
-    158           * @brief   This function is called from the main OSAL loop when there are
-    159           *          no events scheduled and shouldn't be called from anywhere else.
-    160           *
-    161           * @param   none.
-    162           *
-    163           * @return  none.
-    164           */
-    165          void osal_pwrmgr_powerconserve( void )
-    166          {
-    167            uint32        next;
-    168            halIntState_t intState;
-    169          
-    170            // Should we even look into power conservation
-    171            if ( pwrmgr_attribute.pwrmgr_device != PWRMGR_ALWAYS_ON )
-    172            {
-    173              // Are all tasks in agreement to conserve
-    174              if ( pwrmgr_attribute.pwrmgr_task_state == 0 )
-    175              {
-    176                // Hold off interrupts.
-    177                HAL_ENTER_CRITICAL_SECTION( intState );
+    133           * @param   task_id - calling task ID.
+    134           *          state - whether the calling task wants to
+    135           *          conserve power or not.
+    136           *
+    137           * @return  SUCCESS if task complete
+    138           */
+    139          uint8 osal_pwrmgr_task_state( uint8 task_id, uint8 state )
+    140          {
+    141            if ( task_id >= tasksCnt )
+    142              return ( INVALID_TASK );
+    143          
+    144            if ( state == PWRMGR_CONSERVE )
+    145            { 
+    146              // Clear the task state flag 清零
+    147              pwrmgr_attribute.pwrmgr_task_state &= ~(1 << task_id );
+    148            }
+    149            else
+    150            {
+    151              // Set the task state flag 置位
+    152              pwrmgr_attribute.pwrmgr_task_state |= (1 << task_id);
+    153            }
+    154          
+    155            return ( SUCCESS );
+    156          }
+    157          
+    158          #if defined( POWER_SAVING )
+    159          /*********************************************************************
+    160           * @fn      osal_pwrmgr_powerconserve
+    161           *
+    162           * @brief   This function is called from the main OSAL loop when there are
+    163           *          no events scheduled and shouldn't be called from anywhere else.
+    164           这个函数在OSAL循环中如果没有任何事件需要执行的话将被调用，将设备进入
+    165          
+    166          * 睡眠模式，不可以在其他地方调用该函数。
+    167          
+    168          * 需要打开POWER_SAVING的宏定义。
+    169           *
+    170           * @param   none.
+    171           *
+    172           * @return  none.
+    173           */
+    174          void osal_pwrmgr_powerconserve( void )
+    175          {
+    176            uint32        next;
+    177            halIntState_t intState;
     178          
-    179                // Get next time-out
-    180                next = osal_next_timeout();
-    181          
-    182                // Re-enable interrupts.
-    183                HAL_EXIT_CRITICAL_SECTION( intState );
-    184          
-    185                // Put the processor into sleep mode
-    186                OSAL_SET_CPU_INTO_SLEEP( next );
-    187              }
-    188            }
-    189          }
-    190          #endif /* POWER_SAVING */
-    191          
-    192          /*********************************************************************
-    193          *********************************************************************/
+    179            // Should we even look into power conservation  首先检查是否支持低功耗
+    180            if ( pwrmgr_attribute.pwrmgr_device != PWRMGR_ALWAYS_ON )
+    181            {
+    182                        
+    183              // Are all tasks in agreement to conserve 是否所有任务支持低功耗
+    184              if ( pwrmgr_attribute.pwrmgr_task_state == 0 )
+    185              {                                                              
+    186          //        HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1    
+    187          //        HalLcdWriteString("sleep time ok", HAL_LCD_LINE_6);
+    188                // Hold off interrupts.  关中断
+    189                HAL_ENTER_CRITICAL_SECTION( intState );
+    190          
+    191                // Get next time-out  查询软件定时器链表得到最近一次溢出时间
+    192                next = osal_next_timeout();
+    193          
+    194                // Re-enable interrupts.  开中断
+    195                HAL_EXIT_CRITICAL_SECTION( intState );
+    196               HalLcdWriteStringValue("next:",next, 10, HAL_LCD_LINE_5); 
+    197                // Put the processor into sleep mode  将系统进入睡眠模式
+    198                OSAL_SET_CPU_INTO_SLEEP( next );//在 OnBoard.h中定义如下  #define OSAL_SET_CPU_INTO_SLEEP(m)  halSleep(m)   /* interface to HAL sleep */
+    199              }
+    200            }
+    201          }
+    202          #endif /* POWER_SAVING */
+    203          
+    204          /*********************************************************************
+    205          *********************************************************************/
 
    Maximum stack usage in bytes:
 
@@ -296,9 +309,10 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c
    ------ ------ ------ --------
        2      0      0  osal_pwrmgr_device
        2      0      0  osal_pwrmgr_init
-       0      0     12  osal_pwrmgr_powerconserve
-                          0 0 12 -> halSleep
-                          0 0 12 -> osal_next_timeout
+       0      0     17  osal_pwrmgr_powerconserve
+                          0 0 17 -> HalLcdWriteStringValue
+                          0 0 16 -> halSleep
+                          0 0 16 -> osal_next_timeout
        0      0     10  osal_pwrmgr_task_state
 
 
@@ -306,6 +320,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c
 
    Bytes  Function/Label
    -----  --------------
+       6  ?<Constant "next:">
        6  ??osal_pwrmgr_device?relay
        6  ??osal_pwrmgr_init?relay
        6  ??osal_pwrmgr_powerconserve?relay
@@ -314,19 +329,21 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL_PwrMgr.c
        1  _A_IEN0
       10  osal_pwrmgr_device
       14  osal_pwrmgr_init
-      46  osal_pwrmgr_powerconserve
+      92  osal_pwrmgr_powerconserve
       74  osal_pwrmgr_task_state
        7  pwrmgr_attribute
 
  
- 152 bytes in segment BANKED_CODE
+ 198 bytes in segment BANKED_CODE
   24 bytes in segment BANK_RELAYS
    1 byte  in segment SFR_AN
+   6 bytes in segment XDATA_ROM_C
    7 bytes in segment XDATA_Z
  
- 176 bytes of CODE  memory
+ 222 bytes of CODE  memory
+   6 bytes of CONST memory
    0 bytes of DATA  memory (+ 1 byte shared)
    7 bytes of XDATA memory
 
 Errors: none
-Warnings: none
+Warnings: 1

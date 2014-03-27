@@ -40,6 +40,7 @@
 /*******************************************************************************
  * INCLUDES
  */
+#include "hal_lcd.h"
 #include "hal_types.h"
 #include "hal_mcu.h"
 #include "hal_board.h"
@@ -150,8 +151,8 @@
 
 // MAX_SLEEP_TIME calculation:
 // Sleep timer maximum duration = 0xFFFF7F / 32768 Hz = 511.996 seconds
-// Round it to 510 seconds or 510000 ms
-#define MAX_SLEEP_TIME                      16711680              // max time to sleep allowed by ST, in 32kHz ticks
+// Round it to 510 seconds or 510000 ms最大睡眠时间是510000ms。
+#define MAX_SLEEP_TIME                      16711680 //0xFFFF7F=1677087  // max time to sleep allowed by ST, in 32kHz ticks
 
 // Minimum time to sleep:
 // 1. avoid thrashing in-and-out of sleep with short OSAL timer
@@ -284,6 +285,9 @@ void halSleep( uint32 osal_timeout )
   // TEMP
   P1_0 = 1;
 #endif // DEBUG_GPIO
+  
+  
+  
 
   // max allowed sleep time in ms
   if (osal_timeout > MAX_SLEEP_TIMEOUT)
@@ -333,9 +337,10 @@ void halSleep( uint32 osal_timeout )
     }
   }
 
-  // HAL_SLEEP_PM3 is entered only if the timeout is zero
+  // HAL_SLEEP_PM3 is entered only if the timeout is zero//如果timeout =0 进入深度睡眠，否则进入浅睡眠
   halPwrMgtMode = (timeout == 0) ? HAL_SLEEP_DEEP : HAL_SLEEP_TIMER;
-
+  
+ // HalLcdWriteStringValue("halPwrMgtMode:",halPwrMgtMode, 10, HAL_LCD_LINE_4); 
 #ifdef DEBUG_GPIO
   // TEMP
   P1_0 = 0;
@@ -358,35 +363,38 @@ void halSleep( uint32 osal_timeout )
     if ( halSleepPconValue && ( LL_PowerOffReq(halPwrMgtMode) == LL_SLEEP_REQUEST_ALLOWED ) )
     {
 #if ((defined HAL_KEY) && (HAL_KEY == TRUE))
-      // get peripherals ready for sleep
+      // get peripherals ready for sleep //关闭外设，进入睡眠，此处函数为空
+
       HalKeyEnterSleep();
 #endif // ((defined HAL_KEY) && (HAL_KEY == TRUE))
 
 #ifdef HAL_SLEEP_DEBUG_LED
       HAL_TURN_OFF_LED3();
 #else
-      // use this to turn LEDs off during sleep
+      // use this to turn LEDs off during sleep//关闭LED灯，进入睡眠
       HalLedEnterSleep();
 #endif // HAL_SLEEP_DEBUG_LED
 
-      // enable sleep timer interrupt
+      // enable sleep timer interrupt//启动睡眠定时器中断
+
       if (timeout != 0)
       {
         // check if the time to next wake event is greater than max sleep time
         if (timeout > MAX_SLEEP_TIME )
         {
-          // it is, so limit to max allowed sleep time (~510s)
+          // it is, so limit to max allowed sleep time (~510s)//设置睡眠定时器时间
           halSleepSetTimer( sleepTimer, MAX_SLEEP_TIME );
         }
         else // not more than allowed sleep time
         {
           // so set sleep time to actual amount
           halSleepSetTimer( sleepTimer, timeout );
+        // HalLcdWriteStringValue("timeout:",timeout, 10, HAL_LCD_LINE_6); 
         }
       }
 
       // prep CC254x power mode
-      HAL_SLEEP_PREP_POWER_MODE(halPwrMgtMode);
+      HAL_SLEEP_PREP_POWER_MODE(halPwrMgtMode);//设置SLEEP.MODE=halPwrMgtMode,PCON.IDLE=1
 
       // save interrupt enable registers and disable all interrupts
       HAL_SLEEP_IE_BACKUP_AND_DISABLE(ien0, ien1, ien2);
@@ -441,7 +449,7 @@ void halSleep( uint32 osal_timeout )
 
 #if ((defined HAL_KEY) && (HAL_KEY == TRUE))
       // handle peripherals
-      (void)HalKeyExitSleep();
+      (void)HalKeyExitSleep();//如果有按键按下，跳出睡眠模式，使能所有中断
 #endif // ((defined HAL_KEY) && (HAL_KEY == TRUE))
     }
 

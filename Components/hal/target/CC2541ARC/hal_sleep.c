@@ -304,6 +304,7 @@ void halSleep( uint32 osal_timeout )
   {
     // convet OSAL timeout to sleep time
     // Note: Could be early by one 32kHz timer tick due to rounding.
+       /* 把osal_timeout 转换为320微秒为单位 */
     timeout = HAL_SLEEP_MS_TO_32KHZ( osal_timeout );
 
     // so check time to radio event is non-zero, and if so, use shorter value

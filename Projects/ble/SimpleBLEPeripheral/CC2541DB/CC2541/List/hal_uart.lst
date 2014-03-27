@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  16:35:35 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             27/Mar/2014  14:01:43 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -33,9 +33,10 @@
 #                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D       #
 #                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o  #
+#                          HAL_LED=TRUE -D HAL_UART=FALSE -D HAL_ADC=TRUE -D  #
+#                          HAL_SLEEP_DEBUG_LED -lcN                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o       #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheral\CC2541DB\CC2541\Obj\ -e        #
 #                          --debug --core=plain --dptr=16,1                   #
@@ -489,122 +490,50 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_uart.c
 
    ISTACK PSTACK XSTACK Function
    ------ ------ ------ --------
-       0      0     20  HalUARTBusyDMA
-                          0 0 10 -> HalUARTRxAvailDMA
-       2      0      0  HalUARTInit
-                          2 0  0 -> HalUARTInitDMA
-       1      0     13  HalUARTInitDMA
-                          0 0 13 -> memset
+       0      0      0  HalUARTInit
        0      0      0  HalUARTIsrDMA
-       2      0      0  HalUARTOpen
-       2      0      0  HalUARTPoll
-                          2 0  0 -> HalUARTPollDMA
-       0      0     10  HalUARTPollDMA
-                          0 0 10 -> HalUARTBusyDMA
-                          0 0 10 -> HalUARTRxAvailDMA
-                          0 0 10 -> osal_set_event
-       0      0      9  HalUARTRead
-                          0 0  9 -> HalUARTReadDMA
-       1      0     20  HalUARTReadDMA
+       0      0      0  HalUARTOpen
+       0      0      0  HalUARTPoll
+       0      0      0  HalUARTRead
        0      0      0  HalUARTResume
-       2      0     10  HalUARTRxAvailDMA
        0      0      0  HalUARTSuspend
-       0      0      9  HalUARTWrite
-                          0 0  9 -> HalUARTWriteDMA
-       1      0     18  HalUARTWriteDMA
-       0      0      0  HalUART_DMAIsrDMA
-       0      0      9  Hal_UART_RxBufLen
-                          0 0  9 -> HalUARTRxAvailDMA
-       0      0      9  Hal_UART_TxBufLen
-                          0 0  9 -> HalUARTBusyDMA
-       8      0      0  halUart0TxIsr
-       0      0     14  port0Isr
-                          0 0 14 -> osal_pwrmgr_task_state
+       0      0      0  HalUARTWrite
+       0      0      0  Hal_UART_RxBufLen
+       2      0      0  Hal_UART_TxBufLen
+                          2 0 0 -> HalUARTBusyDMA
 
 
    Segment part sizes:
 
    Bytes  Function/Label
    -----  --------------
-       6  ??HalUARTBusyDMA?relay
        6  ??HalUARTInit?relay
-       6  ??HalUARTInitDMA?relay
        6  ??HalUARTIsrDMA?relay
        6  ??HalUARTOpen?relay
        6  ??HalUARTPoll?relay
-       6  ??HalUARTPollDMA?relay
        6  ??HalUARTRead?relay
-       6  ??HalUARTReadDMA?relay
        6  ??HalUARTResume?relay
-       6  ??HalUARTRxAvailDMA?relay
        6  ??HalUARTSuspend?relay
        6  ??HalUARTWrite?relay
-       6  ??HalUARTWriteDMA?relay
-       6  ??HalUART_DMAIsrDMA?relay
        6  ??Hal_UART_RxBufLen?relay
        6  ??Hal_UART_TxBufLen?relay
-       3  ??halUart0TxIsr??INTVEC 59
-       3  ??port0Isr??INTVEC 107
-       5  ?Subroutine0
-       5  ?Subroutine1
-       7  ?Subroutine2
-      21  ?Subroutine3
-       1  DMAARM
-       1  DMAIRQ
-      40  HalUARTBusyDMA
-       9  HalUARTInit
-     150  HalUARTInitDMA
+       7  ?Subroutine0
+       3  HalUARTInit
        3  HalUARTIsrDMA
-     105  HalUARTOpen
-       9  HalUARTPoll
-     194  HalUARTPollDMA
-      19  HalUARTRead
-     132  HalUARTReadDMA
+       5  HalUARTOpen
+       3  HalUARTPoll
+       0  HalUARTRead
        3  HalUARTResume
-      96  HalUARTRxAvailDMA
        3  HalUARTSuspend
-      17  HalUARTWrite
-     153  HalUARTWriteDMA
-       3  HalUART_DMAIsrDMA
-      19  Hal_UART_RxBufLen
-      16  Hal_UART_TxBufLen
-       1  IEN2
-       1  P0DIR
-       1  P0IEN
-       1  P0IFG
-       1  P0SEL
-       1  P2DIR
-       1  PERCFG
-       1  PICTL
-       1  ST0
-       1  U0BAUD
-       1  U0CSR
-       1  U0DBUF
-       1  U0GCR
-       1  U0UCR
-       1  _A_IEN0
-       1  _A_IEN1
-       1  _A_IRCON
-       1  _A_IRCON2
-       1  _A_P0
-     391  dmaCfg
-       1  dmaRdyDly
-       1  dmaRdyIsr
-     106  halUart0TxIsr
-      59  port0Isr
-       1  sweepIdx
+       2  HalUARTWrite
+       2  Hal_UART_RxBufLen
+      14  Hal_UART_TxBufLen
 
  
- 1 009 bytes in segment BANKED_CODE
-   102 bytes in segment BANK_RELAYS
-     6 bytes in segment INTVEC
-   165 bytes in segment NEAR_CODE
-    21 bytes in segment SFR_AN
-   394 bytes in segment XDATA_Z
+ 45 bytes in segment BANKED_CODE
+ 60 bytes in segment BANK_RELAYS
  
- 1 276 bytes of CODE  memory (+  6 bytes shared)
-     0 bytes of DATA  memory (+ 21 bytes shared)
-   394 bytes of XDATA memory
+ 105 bytes of CODE memory
 
 Errors: none
 Warnings: 1

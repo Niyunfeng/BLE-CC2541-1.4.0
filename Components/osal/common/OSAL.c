@@ -44,7 +44,7 @@
  */
 
 #include <string.h>
-
+#include "hal_led.h"
 #include "comdef.h"
 #include "hal_board.h"
 #include "OSAL.h"
@@ -1135,7 +1135,13 @@ void osal_run_system( void )
 #if defined( POWER_SAVING )
   else  // Complete pass through all task events with no activity?
   {
-    osal_pwrmgr_powerconserve();  // Put the processor/system into sleep
+    
+     // HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
+      
+      osal_pwrmgr_powerconserve();  // Put the processor/system into sleep
+    /*OSAL系统在检查完所有的任务事件之后发现没有事件需要处理，
+    这样在POWER_SAVING宏定义打开的情况下将调用osal_pwrmgr_powerconserve();
+    函数，在这函数中将会根据选择系统进入休眠。*/
   }
 #endif
 

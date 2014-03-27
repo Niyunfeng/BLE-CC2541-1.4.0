@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  16:35:32 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             27/Mar/2014  14:01:41 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -33,9 +33,10 @@
 #                          -D HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D       #
 #                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o  #
+#                          HAL_LED=TRUE -D HAL_UART=FALSE -D HAL_ADC=TRUE -D  #
+#                          HAL_SLEEP_DEBUG_LED -lcN                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o       #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheral\CC2541DB\CC2541\Obj\ -e        #
 #                          --debug --core=plain --dptr=16,1                   #
@@ -229,8 +230,6 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_dma.c
    ISTACK PSTACK XSTACK Function
    ------ ------ ------ --------
        0      0      0  HalDmaInit
-       0      0     14  halDmaIsr
-                          0 0 14 -> HalUARTIsrDMA
 
 
    Segment part sizes:
@@ -238,30 +237,22 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\hal\target\CC2540EB\hal_dma.c
    Bytes  Function/Label
    -----  --------------
        6  ??HalDmaInit?relay
-       3  ??halDmaIsr??INTVEC 67
        1  DMA0CFGH
        1  DMA0CFGL
        1  DMA1CFGH
        1  DMA1CFGL
-       1  DMAIRQ
-      19  HalDmaInit
-       1  _A_IEN0
-       1  _A_IEN1
-       1  _A_IRCON
+      17  HalDmaInit
        8  dmaCh0
       32  dmaCh1234
-      41  halDmaIsr
 
  
- 19 bytes in segment BANKED_CODE
+ 17 bytes in segment BANKED_CODE
   6 bytes in segment BANK_RELAYS
-  3 bytes in segment INTVEC
- 41 bytes in segment NEAR_CODE
-  8 bytes in segment SFR_AN
+  4 bytes in segment SFR_AN
  40 bytes in segment XDATA_Z
  
- 66 bytes of CODE  memory (+ 3 bytes shared)
-  0 bytes of DATA  memory (+ 8 bytes shared)
+ 23 bytes of CODE  memory
+  0 bytes of DATA  memory (+ 4 bytes shared)
  40 bytes of XDATA memory
 
 Errors: none

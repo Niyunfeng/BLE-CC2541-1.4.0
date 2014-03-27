@@ -40,7 +40,8 @@
 /*********************************************************************
  * INCLUDES
  */
-
+#include "hal_lcd.h"
+#include "hal_led.h"
 #include "comdef.h"
 #include "OnBoard.h"
 #include "OSAL.h"
@@ -91,7 +92,7 @@ pwrmgr_attribute_t pwrmgr_attribute;
 /*********************************************************************
  * @fn      osal_pwrmgr_init
  *
- * @brief   Initialize the power management system.
+ * @brief   Initialize the power management system. osal_init_system( )中调用
  *
  * @param   none.
  *
@@ -99,8 +100,8 @@ pwrmgr_attribute_t pwrmgr_attribute;
  */
 void osal_pwrmgr_init( void )
 {
-  pwrmgr_attribute.pwrmgr_device = PWRMGR_ALWAYS_ON; // Default to no power conservation.
-  pwrmgr_attribute.pwrmgr_task_state = 0;            // Cleared.  All set to conserve
+  pwrmgr_attribute.pwrmgr_device = PWRMGR_ALWAYS_ON; // Default to no power conservation.默认没有睡眠模式。
+  pwrmgr_attribute.pwrmgr_task_state = 0;            // Cleared.  All set to conserve 清零
 }
 
 /*********************************************************************
@@ -125,6 +126,9 @@ void osal_pwrmgr_device( uint8 pwrmgr_device )
  *
  * @brief   This function is called by each task to state whether or
  *          not this task wants to conserve power.
+     这个函数可以被每一个任务调用，用于设置这个任务是否支持低功耗运行，如
+
+ * 果每一个任务不支持低功耗将无法进入低功耗模式运行。
  *
  * @param   task_id - calling task ID.
  *          state - whether the calling task wants to
@@ -138,13 +142,13 @@ uint8 osal_pwrmgr_task_state( uint8 task_id, uint8 state )
     return ( INVALID_TASK );
 
   if ( state == PWRMGR_CONSERVE )
-  {
-    // Clear the task state flag
+  { 
+    // Clear the task state flag 清零
     pwrmgr_attribute.pwrmgr_task_state &= ~(1 << task_id );
   }
   else
   {
-    // Set the task state flag
+    // Set the task state flag 置位
     pwrmgr_attribute.pwrmgr_task_state |= (1 << task_id);
   }
 
@@ -157,6 +161,11 @@ uint8 osal_pwrmgr_task_state( uint8 task_id, uint8 state )
  *
  * @brief   This function is called from the main OSAL loop when there are
  *          no events scheduled and shouldn't be called from anywhere else.
+ 这个函数在OSAL循环中如果没有任何事件需要执行的话将被调用，将设备进入
+
+* 睡眠模式，不可以在其他地方调用该函数。
+
+* 需要打开POWER_SAVING的宏定义。
  *
  * @param   none.
  *
@@ -167,23 +176,26 @@ void osal_pwrmgr_powerconserve( void )
   uint32        next;
   halIntState_t intState;
 
-  // Should we even look into power conservation
+  // Should we even look into power conservation  首先检查是否支持低功耗
   if ( pwrmgr_attribute.pwrmgr_device != PWRMGR_ALWAYS_ON )
   {
-    // Are all tasks in agreement to conserve
+              
+    // Are all tasks in agreement to conserve 是否所有任务支持低功耗
     if ( pwrmgr_attribute.pwrmgr_task_state == 0 )
-    {
-      // Hold off interrupts.
+    {                                                              
+//        HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1    
+//        HalLcdWriteString("sleep time ok", HAL_LCD_LINE_6);
+      // Hold off interrupts.  关中断
       HAL_ENTER_CRITICAL_SECTION( intState );
 
-      // Get next time-out
+      // Get next time-out  查询软件定时器链表得到最近一次溢出时间
       next = osal_next_timeout();
 
-      // Re-enable interrupts.
+      // Re-enable interrupts.  开中断
       HAL_EXIT_CRITICAL_SECTION( intState );
-
-      // Put the processor into sleep mode
-      OSAL_SET_CPU_INTO_SLEEP( next );
+     HalLcdWriteStringValue("next:",next, 10, HAL_LCD_LINE_5); 
+      // Put the processor into sleep mode  将系统进入睡眠模式
+      OSAL_SET_CPU_INTO_SLEEP( next );//在 OnBoard.h中定义如下  #define OSAL_SET_CPU_INTO_SLEEP(m)  halSleep(m)   /* interface to HAL sleep */
     }
   }
 }

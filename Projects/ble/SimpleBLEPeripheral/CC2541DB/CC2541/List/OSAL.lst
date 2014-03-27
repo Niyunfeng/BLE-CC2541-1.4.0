@@ -1,6 +1,6 @@
 ###############################################################################
 #                                                                             #
-# IAR C/C++ Compiler V8.20.2.41139 for 8051             18/Mar/2014  16:35:28 #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             27/Mar/2014  14:01:36 #
 # Copyright 2004-2013 IAR Systems AB.                                         #
 #                                                                             #
 #    Core               =  plain                                              #
@@ -33,9 +33,10 @@
 #                          HALNODEBUG -D OSAL_CBTIMER_NUM_TASKS=1 -D          #
 #                          xHAL_AES_DMA=TRUE -D HAL_DMA=TRUE -D POWER_SAVING  #
 #                          -D xPLUS_BROADCASTER -D HAL_LCD=TRUE -D            #
-#                          HAL_LED=TRUE -D HAL_UART=TRUE -D HAL_ADC=TRUE      #
-#                          -lcN E:\TexasInstruments\BLE-CC254x-1.4.0\Projects #
-#                          \ble\SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o  #
+#                          HAL_LED=TRUE -D HAL_UART=FALSE -D HAL_ADC=TRUE -D  #
+#                          HAL_SLEEP_DEBUG_LED -lcN                           #
+#                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
+#                          SimpleBLEPeripheral\CC2541DB\CC2541\List\ -o       #
 #                          E:\TexasInstruments\BLE-CC254x-1.4.0\Projects\ble\ #
 #                          SimpleBLEPeripheral\CC2541DB\CC2541\Obj\ -e        #
 #                          --debug --core=plain --dptr=16,1                   #
@@ -140,7 +141,7 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL.c
      44           */
      45          
      46          #include <string.h>
-     47          
+     47          #include "hal_led.h"
      48          #include "comdef.h"
      49          #include "hal_board.h"
      50          #include "OSAL.h"
@@ -1231,114 +1232,120 @@ E:\TexasInstruments\BLE-CC254x-1.4.0\Components\osal\common\OSAL.c
    1135          #if defined( POWER_SAVING )
    1136            else  // Complete pass through all task events with no activity?
    1137            {
-   1138              osal_pwrmgr_powerconserve();  // Put the processor/system into sleep
-   1139            }
-   1140          #endif
-   1141          
-   1142            /* Yield in case cooperative scheduling is being used. */
-   1143          #if defined (configUSE_PREEMPTION) && (configUSE_PREEMPTION == 0)
-   1144            {
-   1145              osal_task_yield();
-   1146            }
-   1147          #endif
-   1148          }
-   1149          
-   1150          /*********************************************************************
-   1151           * @fn      osal_buffer_uint32
-   1152           *
-   1153           * @brief
-   1154           *
-   1155           *   Buffer an uint32 value - LSB first.
-   1156           *
-   1157           * @param   buf - buffer
-   1158           * @param   val - uint32 value
-   1159           *
-   1160           * @return  pointer to end of destination buffer
-   1161           */
-   1162          uint8* osal_buffer_uint32( uint8 *buf, uint32 val )
-   1163          {
-   1164            *buf++ = BREAK_UINT32( val, 0 );
-   1165            *buf++ = BREAK_UINT32( val, 1 );
-   1166            *buf++ = BREAK_UINT32( val, 2 );
-   1167            *buf++ = BREAK_UINT32( val, 3 );
-   1168          
-   1169            return buf;
-   1170          }
-   1171          
-   1172          /*********************************************************************
-   1173           * @fn      osal_buffer_uint24
-   1174           *
-   1175           * @brief
-   1176           *
-   1177           *   Buffer an uint24 value - LSB first. Note that type uint24 is
-   1178           *   typedef to uint32 in comdef.h
-   1179           *
-   1180           * @param   buf - buffer
-   1181           * @param   val - uint24 value
+   1138              
+   1139               // HalLedSet(HAL_LED_1, HAL_LED_MODE_ON );   //开LED1
+   1140                
+   1141                osal_pwrmgr_powerconserve();  // Put the processor/system into sleep
+   1142              /*OSAL系统在检查完所有的任务事件之后发现没有事件需要处理，
+   1143              这样在POWER_SAVING宏定义打开的情况下将调用osal_pwrmgr_powerconserve();
+   1144              函数，在这函数中将会根据选择系统进入休眠。*/
+   1145            }
+   1146          #endif
+   1147          
+   1148            /* Yield in case cooperative scheduling is being used. */
+   1149          #if defined (configUSE_PREEMPTION) && (configUSE_PREEMPTION == 0)
+   1150            {
+   1151              osal_task_yield();
+   1152            }
+   1153          #endif
+   1154          }
+   1155          
+   1156          /*********************************************************************
+   1157           * @fn      osal_buffer_uint32
+   1158           *
+   1159           * @brief
+   1160           *
+   1161           *   Buffer an uint32 value - LSB first.
+   1162           *
+   1163           * @param   buf - buffer
+   1164           * @param   val - uint32 value
+   1165           *
+   1166           * @return  pointer to end of destination buffer
+   1167           */
+   1168          uint8* osal_buffer_uint32( uint8 *buf, uint32 val )
+   1169          {
+   1170            *buf++ = BREAK_UINT32( val, 0 );
+   1171            *buf++ = BREAK_UINT32( val, 1 );
+   1172            *buf++ = BREAK_UINT32( val, 2 );
+   1173            *buf++ = BREAK_UINT32( val, 3 );
+   1174          
+   1175            return buf;
+   1176          }
+   1177          
+   1178          /*********************************************************************
+   1179           * @fn      osal_buffer_uint24
+   1180           *
+   1181           * @brief
    1182           *
-   1183           * @return  pointer to end of destination buffer
-   1184           */
-   1185          uint8* osal_buffer_uint24( uint8 *buf, uint24 val )
-   1186          {
-   1187            *buf++ = BREAK_UINT32( val, 0 );
-   1188            *buf++ = BREAK_UINT32( val, 1 );
-   1189            *buf++ = BREAK_UINT32( val, 2 );
-   1190          
-   1191            return buf;
-   1192          }
-   1193          
-   1194          /*********************************************************************
-   1195           * @fn      osal_isbufset
-   1196           *
-   1197           * @brief
-   1198           *
-   1199           *   Is all of the array elements set to a value?
-   1200           *
-   1201           * @param   buf - buffer to check
-   1202           * @param   val - value to check each array element for
-   1203           * @param   len - length to check
+   1183           *   Buffer an uint24 value - LSB first. Note that type uint24 is
+   1184           *   typedef to uint32 in comdef.h
+   1185           *
+   1186           * @param   buf - buffer
+   1187           * @param   val - uint24 value
+   1188           *
+   1189           * @return  pointer to end of destination buffer
+   1190           */
+   1191          uint8* osal_buffer_uint24( uint8 *buf, uint24 val )
+   1192          {
+   1193            *buf++ = BREAK_UINT32( val, 0 );
+   1194            *buf++ = BREAK_UINT32( val, 1 );
+   1195            *buf++ = BREAK_UINT32( val, 2 );
+   1196          
+   1197            return buf;
+   1198          }
+   1199          
+   1200          /*********************************************************************
+   1201           * @fn      osal_isbufset
+   1202           *
+   1203           * @brief
    1204           *
-   1205           * @return  TRUE if all "val"
-   1206           *          FALSE otherwise
-   1207           */
-   1208          uint8 osal_isbufset( uint8 *buf, uint8 val, uint8 len )
-   1209          {
-   1210            uint8 x;
-   1211          
-   1212            if ( buf == NULL )
-   1213            {
-   1214              return ( FALSE );
-   1215            }
-   1216          
-   1217            for ( x = 0; x < len; x++ )
-   1218            {
-   1219              // Check for non-initialized value
-   1220              if ( buf[x] != val )
-   1221              {
-   1222                return ( FALSE );
-   1223              }
-   1224            }
-   1225            return ( TRUE );
-   1226          }
-   1227          
-   1228          /*********************************************************************
-   1229           * @fn      osal_self
-   1230           *
-   1231           * @brief
-   1232           *
-   1233           *   This function returns the task ID of the current (active) task.
-   1234           *
-   1235           * @param   void
+   1205           *   Is all of the array elements set to a value?
+   1206           *
+   1207           * @param   buf - buffer to check
+   1208           * @param   val - value to check each array element for
+   1209           * @param   len - length to check
+   1210           *
+   1211           * @return  TRUE if all "val"
+   1212           *          FALSE otherwise
+   1213           */
+   1214          uint8 osal_isbufset( uint8 *buf, uint8 val, uint8 len )
+   1215          {
+   1216            uint8 x;
+   1217          
+   1218            if ( buf == NULL )
+   1219            {
+   1220              return ( FALSE );
+   1221            }
+   1222          
+   1223            for ( x = 0; x < len; x++ )
+   1224            {
+   1225              // Check for non-initialized value
+   1226              if ( buf[x] != val )
+   1227              {
+   1228                return ( FALSE );
+   1229              }
+   1230            }
+   1231            return ( TRUE );
+   1232          }
+   1233          
+   1234          /*********************************************************************
+   1235           * @fn      osal_self
    1236           *
-   1237           * @return   active task ID or TASK_NO_TASK if no task is active
-   1238           */
-   1239          uint8 osal_self( void )
-   1240          {
-   1241            return ( activeTaskID );
-   1242          }
-   1243          
-   1244          /*********************************************************************
-   1245           */
+   1237           * @brief
+   1238           *
+   1239           *   This function returns the task ID of the current (active) task.
+   1240           *
+   1241           * @param   void
+   1242           *
+   1243           * @return   active task ID or TASK_NO_TASK if no task is active
+   1244           */
+   1245          uint8 osal_self( void )
+   1246          {
+   1247            return ( activeTaskID );
+   1248          }
+   1249          
+   1250          /*********************************************************************
+   1251           */
 
    Maximum stack usage in bytes:
 
